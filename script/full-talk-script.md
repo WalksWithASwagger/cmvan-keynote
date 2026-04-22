@@ -3,34 +3,43 @@
 **Speaker:** Kris Krüg
 **Field talk:** Creative Mornings Vancouver — **May 1, 2026**
 **Release Day CTA (global):** **May 29, 2026**
-**Structure:** 4 acts, compressed from the 48-min WAIFF Brazil delivery
-**Design bible:** `source-material/waiff-brazil/BOTH-HANDS-FULL-SLIDES.md`
+**Structure:** 4 acts, compressed from the 48-min WAIFF Brazil delivery — **re-sequenced for CMVan:** creativity biography + lineage first, **AI as one sharp chapter** (consent/theft/systems), then hope, framework, Release Day.
+**Deck:** **10 slides**, cues aligned with [`slides/deck-outline-with-notes.md`](../slides/deck-outline-with-notes.md). **All deck stills 16:9.**
+**Texture reference (not narrative):** `source-material/waiff-brazil/BOTH-HANDS-FULL-SLIDES.md`
 
 ---
 
 ## EMOTIONAL ARC
 
-- **Prologue (0–2):** Warm, grounded, earning trust — the punk lineage
-- **Act 1 (2–8):** Heavy, validating — naming what's real
-- **Act 2 (8–14):** Energy up — stories carry the weight
-- **Act 3 (14–20):** Practical, direct — the punk rock framework
-- **Act 4 (20–25):** Intimate, quiet power → building to challenge
+- **Prologue (0–3):** Warm, grounded — **your** creative life in the room, punk lineage, taste-before-AI
+- **Act 1 (3–9):** Heavy, validating — **the AI chapter:** consent, theft, harms, true names — held beside craft
+- **Act 2 (9–14):** Energy up — stories carry the weight (liberation, access, both/and)
+- **Act 3 (14–20):** Practical, direct — selector discipline, three documents
+- **Act 4 (20–25):** Intimate, quiet power → Release Day → challenge
 
 ---
 
-## PROLOGUE: THE PATTERN (0:00 – 2:00)
+## PROLOGUE: CREATIVE LIFE, THEN THE PATTERN (0:00 – 3:00)
 
-**[NO SLIDES. Screen dark or OFF. Walk to center. No podium. Take a breath. Look at the room. Coffee cups. Morning light. The Creative Mornings energy — warm, curious, not yet caffeinated.]**
+**[Optional: first 30–45 seconds with screen dark or a single title treatment. Walk to center. No podium. Coffee cups. Morning light. Creative Mornings energy — warm, curious, not yet caffeinated.]**
 
 Good morning.
 
+**[SLIDE 1 — TITLE: PUNK ROCK AI. Zine wall / life-in-rooms energy — not a sterile “AI keynote” plate.]**
+
+I'm going to tell you a **creativity story** — the long arcs, the rooms, the stubborn need to finish things — and then I'm going to tell you **one loud chapter** where the machines showed up without asking. That chapter matters. It's not the whole biography.
+
 Every cultural movement that has ever mattered started the exact same way. Someone picks up a cheap tool that a massive corporation built — and they use it wrong.
+
+**[SLIDE 3 — DADA / XEROX COLLAGE. No headline text on screen; let the image carry while you speak.]**
 
 In 1916, Dada poets took the daily newspaper — the corporate information system of the era — cut it up with scissors, and rearranged it on the floor. That was sampling decades before vinyl even existed.
 
 In 1976, a kid named Mark Perry saw the Ramones at the Roundhouse in London, walked out, and realized he didn't need a record label. He went to work the next day, hijacked a defense contractor's Xerox machine, and printed sixty copies of a zine called *Sniffin' Glue*. The punk rock press was born on stolen corporate ink.
 
 **[Beat.]**
+
+**[SLIDE 4 — SOUND SYSTEM / SELECTOR. Text on slide: GENERATION IS CHEAP. TASTE IS NOT.]**
 
 Around the exact same time, in the dancehalls of Kingston, Jamaica, the hero of the dance wasn't the musician. It was the Selector. The person who chose the records. Because making the sound wasn't the hard part anymore. Knowing *which* sound the room needed — that was the skill. That was taste.
 
@@ -40,23 +49,39 @@ That idea took a boat to the Bronx and became Hip Hop.
 
 The pattern is always the same. The corporations build the infrastructure. The weirdos figure out what it's actually for.
 
+### The long game (still prologue)
+
+I've lived most of my adult life behind a camera — not because gear is interesting, but because **showing up** is. Portraits, protests, weddings, the messy human stuff. I published work openly for years because **community** mattered more than locking every file in a vault. That's a creative value. It's also how I learned what "taste in the room" actually means.
+
+**[SLIDE 2 — 90S CASSETTE "27 YEARS" / THE LAST 15%.]**
+
+My friend Matt Lock — Matlock — is a musician. He makes incredible beats. For twenty-seven years, Matt had a box full of cassette tapes sitting in his house. Decades of unreleased music.
+
+Why didn't he release it? Because making the music is only 85% of the job. Finishing it — the mastering, the album art, the distribution — that last 15% is brutal friction. It requires a completely different set of skills. So he sat on those tapes. For twenty-seven years.
+
+**[Beat.]**
+
+Last November, Matt finally released *R3ALMS*. The tools helped him with the **last fifteen percent** — not the soul of the thing. That's the kind of creative problem I actually care about: **how we finish**, how we stop apologizing for being alive in public.
+
 ---
 
-## ACT 1: LEFT HAND — WHAT'S REAL (2:00 – 8:00)
+## ACT 1: LEFT HAND — WHAT'S REAL (3:00 – 9:00)
 
 **[Walk stage left. Energy shifts. This is where we name what hurts.]**
 
-### The Non-Consensual Opening (2:00 – 4:00)
+### The AI chapter — consent (3:00 – 5:00)
 
-**[SLIDE 1: "I FIND MY RELATIONSHIP WITH AI COMPLETELY NON-CONSENSUAL." — Black background. White stencil text. NON-CONSENSUAL in RED.]**
+**[SLIDE 5 — DATA CENTER / THEFT CHAPTER. Cold blue server world, human prints foreground if your visual follows the zine prompt deck. On-slide text can echo: built by corporations / trained on us / ~1,800 frames.]**
 
 **[Pause. Direct eye contact. Serious tone.]**
+
+Here's the chapter where the story gets sharp for me — because it collides with everything I just said about **community** and **sharing on purpose**.
 
 I find my relationship with AI completely non-consensual.
 
 **[Let that land. Silence.]**
 
-I'm a photographer. I released thousands of photos on Flickr over two decades under Creative Commons. Shared them freely — that was the deal.
+I released thousands of photos on Flickr over two decades under Creative Commons. Shared them freely — **that was the deal**.
 
 When I checked a dataset search tool, I found roughly 1,800 of my images scraped into a major training corpus. Nobody asked me. Nobody paid me. They just took it.
 
@@ -64,9 +89,9 @@ When I checked a dataset search tool, I found roughly 1,800 of my images scraped
 
 If you've ever posted a photograph, uploaded a design, published a blog post, shared anything online — it may already be inside these models. You weren't asked. That's not hypothetical. That's what happened.
 
-### Three Fears That Are Real (4:00 – 5:30)
+### Three Fears That Are Real (5:00 – 6:30)
 
-**[SLIDE 2: Three Fears — numbered by hand, red check marks, typewriter text on black]**
+**[NO SLIDE — voice only. Let SLIDE 5 hold the room.]**
 
 Not hypothetical fears. Real things happening right now.
 
@@ -80,9 +105,21 @@ Not hypothetical fears. Real things happening right now.
 
 I teach this stuff for a living and I'll be honest: I don't have the junior pipeline problem solved. Nobody does. Anyone who tells you they do is selling something.
 
-### Name What You're Seeing (5:30 – 7:00)
+### Critique + capability (6:30 – 7:15)
 
-**[SLIDE 3: "STOP SAYING 'BIAS.' NAME WHAT YOU'RE SEEING." — RED stencil on black. Feels spray-painted.]**
+**[SLIDE 6 — SPLIT: CAMERA / TOOL vs SIGNS. Text: CRITIQUE + CAPABILITY. THE PUNK CONDITION.]**
+
+**[Hold up left hand. Physical gesture. Slow.]**
+
+This is what I carry. Stolen work. Devalued craft. Collapsing pipelines. Discrimination laundered through math. A relationship I never consented to.
+
+Don't drop that hand. It's not cynicism — it's **clarity**.
+
+And — *and* — don't pretend the world hasn't also shifted for some people in real, human ways. That's the other half of the punk condition. **Critique plus capability.** Not boosterism. Not purity. Both.
+
+### Name What You're Seeing (7:15 – 8:30)
+
+**[SLIDE 7 — ZINE TYPE: STOP SAYING "BIAS" / SAY THEFT, MISOGYNY, RACISM / FREQUENT ≠ FAIR.]**
 
 And there's something else we need to talk about.
 
@@ -98,45 +135,23 @@ When it spits out a design mimicking an artist's exact style, name the theft.
 
 AI doesn't know what's fair. It only knows what's *frequent* on the internet. The mirror reflects. It doesn't correct. Correcting the mirror is your job.
 
-### Holding the Left Hand (7:00 – 8:00)
-
-**[SLIDE 4: RED hand print — LEFT hand. Spray paint edges. Primal.]**
-
-**[Hold up left hand. Physical gesture. Slow.]**
-
-This is what I carry. Stolen work. Devalued craft. Collapsing pipelines. Discrimination laundered through math. A relationship I never consented to.
-
-Don't drop these. They keep you honest.
-
 **[Pause. Then the turn:]**
 
-Now let me show you what's in my right hand.
+Now let me show you what's in my right hand — stories, not slogans.
 
 **[Energy shifts. Walk stage right.]**
 
 ---
 
-## ACT 2: RIGHT HAND — WHAT'S ALSO TRUE (8:00 – 14:00)
+## ACT 2: RIGHT HAND — WHAT'S ALSO TRUE (9:00 – 14:00)
 
-**[SLIDE 5: "WHAT'S ALSO TRUE" — Background INVERTS from black to WHITE. First white-dominant slide. The visual shift should be jarring.]**
+**[NO SLIDE CHANGE REQUIRED — optional: cut to black for half a beat, or hold SLIDE 6.]**
 
 What's also true. Not hype. Not LinkedIn bullshit. Not some tech bro telling you AI will solve everything. Just actual transformations I've watched happen with my own eyes.
 
-### Matt Lock: The 27-Year Cassette (8:00 – 10:00)
+### Luke Minaker: The Monster Builder (9:30 – 11:00)
 
-My friend Matt Lock — Matlock — is a musician. He makes incredible beats. For twenty-seven years, Matt had a box full of cassette tapes sitting in his house. Decades of unreleased music.
-
-Why didn't he release it? Because making the music is only 85% of the job. Finishing it — the mastering, the album art, the distribution — that last 15% is brutal friction. It requires a completely different set of skills. So he sat on those tapes. For twenty-seven years.
-
-**[Beat.]**
-
-Last November, Matt finally released *R3ALMS*. AI didn't write his music. AI didn't replace his creativity. AI gave him the last fifteen percent he needed to push it across the finish line.
-
-That is not replacement. That is liberation.
-
-### Luke Minaker: The Monster Builder (10:00 – 11:30)
-
-**[SLIDE 6: "80% GRIND / 20% CREATIVE" — crossed out BY HAND in thick red marker. Below: "80% CREATIVE / 20% GRIND" — circled in red.]**
+**[NO SLIDE — storytelling beat. If you have b-roll, run it quiet under Luke; otherwise stay human-scale on stage.]**
 
 Luke is an animator. Twelve years old, he sat in a theater watching Jurassic Park and said: "I want to bring monsters to life."
 
@@ -152,9 +167,9 @@ Luke told me: "I don't care about the money. I am so excited that I get to do ar
 
 The 12-year-old who wanted to bring monsters to life? He's back. After 30 years. That's not replacement. That's liberation.
 
-### Belgium: A Hope to Continue to Exist (11:30 – 12:30)
+### Belgium: A Hope to Continue to Exist (11:00 – 12:00)
 
-**[SLIDE 7: BLACK. White typewriter text. Clean. No collage. No texture. Just the words floating in darkness. Single small red dot in the corner. A heartbeat.]**
+**[NO SLIDE — intimate beat. Optional: single full-screen type line if your deck has a spare black slide; not in the 10-slide CMVan v1.]**
 
 **[Voice drops. Slower pace.]**
 
@@ -168,9 +183,9 @@ She said: "AI film is my hope to be able to continue to exist and to tell someth
 
 When the debates get abstract and ideological, remember Belgium. Remember what access actually means.
 
-### The Both/And Statement (12:30 – 14:00)
+### The Both/And Statement (12:00 – 14:00)
 
-**[SLIDE 8: "AI is trained on stolen work without consent. AND I'm more creative than I've ever been. BOTH STATEMENTS ARE TRUE." — Heavy Xerox grain. Photocopied so many times the edges bleed. RED "AND" is the hinge.]**
+**[NO SLIDE — hinge line in voice. (Brazil deck had a dedicated both/and plate; CMVan v1 keeps the hinge spoken so slides stay life-first.)]**
 
 **[Center stage. Both hands up.]**
 
@@ -204,7 +219,7 @@ Vancouver is the home of Adbusters and Greenpeace. We've been turning corporate 
 
 ### Step 1: Name What You See (14:30 – 15:30)
 
-**[SLIDE 9: Punk zine spread — "STOP SAYING BIAS" crossed out, replaced with "SAY THEFT. SAY RACISM. SAY MISOGYNY."]**
+**[Hold SLIDE 7 if it's still up; otherwise NO SLIDE.]**
 
 We covered this. Stop laundering discrimination through soft language. When you see it, name it.
 
@@ -212,7 +227,7 @@ AI knows what's frequent. Not what's fair. Three questions to carry into every A
 
 ### Step 2: Become a Selector (15:30 – 17:00)
 
-**[SLIDE 10: "GENERATION IS CHEAP. TASTE IS NOT." — stencil text, red underline on "TASTE"]**
+**[OPTIONAL: CUT BACK TO SLIDE 4 FOR ONE BEAT — "remember this room" — or stay off-slide and point to the earlier moment.]**
 
 Remember the Selector from Kingston? The person who chose the records at the sound system dance because taste was the skill?
 
@@ -228,7 +243,7 @@ Unexamined expertise can't be taught to a machine. But articulated taste can sca
 
 ### Step 3: Externalize Your Taste — The Three Documents (17:00 – 19:30)
 
-**[SLIDE 11: Three documents — glowing, radioactive, typewriter text on black. "PERSONAL POLICY / STYLE GUIDE / WORLDVIEW"]**
+**[SLIDE 8 — THREE DOCS / EXTERNALIZE YOUR TASTE. (CMVan outline: kitchen-table papers is fine — doesn't have to read "radioactive SaaS.") ]**
 
 This is the punk rock move. This is practical.
 
@@ -260,7 +275,7 @@ Writing for the bot isn't narcissism. For a designer in Vancouver, for an Indige
 
 ### Creative DNA (20:00 – 22:30)
 
-**[SLIDE 12: BLACK. White typewriter. "CLOSE YOUR EYES."]**
+**[NO SLIDE — room + breath. If you must land a visual, use a black hold; not in CMVan v1 deck.]**
 
 So. The title of this talk. "Punk Rock AI." What does that actually mean?
 
@@ -302,7 +317,7 @@ Everything else is negotiable. You can let AI help with everything else. That pa
 
 ### Release Day (22:30 – 24:30)
 
-**[SLIDE 13: "MAY 29 — RELEASE DAY" — giant graffiti text, spray-painted across a digital canvas. Below: "SHIP SOMETHING IMPERFECT."]**
+**[SLIDE 9 — MAY 29 | RELEASE DAY — graffiti / flyer energy.]**
 
 Which brings us to right now. The theme this month is CREATE. The global activation is **Release Day on May twenty-ninth** — four weeks from today.
 
@@ -320,7 +335,7 @@ Punk never was.
 
 ### The Close (24:30 – 25:00)
 
-**[SLIDE 14: Two RED hand prints — left and right — on black. Between them: "BOTH HANDS FULL. YOU COMING?"]**
+**[SLIDE 10 — KEVIN FRIEL RANSOM-NOTE QUOTE + QR / LINKS PLACEHOLDER.]**
 
 **[Center stage. Both hands up.]**
 
@@ -336,7 +351,7 @@ Three options.
 
 I'm here. Both hands full. Walking forward.
 
-As my friend Kevin Friel says: "Let's use these tools to f*** it up, y'all."
+As my friend Kevin Friel says — and this is on the slide because it's the room I want you to feel — "Let's use these tools to f*** it up, y'all."
 
 **[Beat. Direct eye contact across the room.]**
 
@@ -353,18 +368,18 @@ Thank you Vancouver.
 ## SPEAKER NOTES
 
 ### Physical Movement
-- **Prologue:** CENTER. No slides. Just you and the room.
-- **Act 1:** Stage LEFT (left hand = critique)
-- **Act 2:** Stage RIGHT (right hand = what's also true)
+- **Prologue:** CENTER. Slides **1 → 3 → 4 → 2** track **life + lineage + finishing** before the temperature drops.
+- **Act 1:** Stage LEFT (naming harms) → bring **Slide 6** center as you name "both hands"
+- **Act 2:** Stage RIGHT (liberation stories; mostly **no-slide** beats)
 - **Act 3–4:** CENTER
-- **Close:** CENTER, both hands UP for the climax
+- **Close:** CENTER, both hands UP for the climax (**Slide 10**)
 
 ### Timing Checkpoints
 | Time | Section | Word Target |
 |------|---------|-------------|
-| 0:00 | Prologue — punk lineage | ~350 words |
-| 2:00 | Act 1 — Left Hand | ~800 words |
-| 8:00 | Act 2 — Right Hand (stories) | ~800 words |
+| 0:00 | Prologue — creativity + lineage + Matlock | ~450 words |
+| 3:00 | Act 1 — theft chapter + fears + slides 6–7 | ~800 words |
+| 9:00 | Act 2 — Right Hand (stories) | ~800 words |
 | 14:00 | Act 3 — Framework + Three Docs | ~800 words |
 | 20:00 | Act 4 — Creative DNA + Release Day + Close | ~600 words |
 | 25:00 | "Thank you Vancouver" | |
@@ -382,9 +397,9 @@ Thank you Vancouver.
 10. "Both hands full. You coming?"
 
 ### Transitions
-- **HARD CUT between slides.** No dissolves. No fades. Punk doesn't fade.
-- **Exception:** Slide 12 ("Close your eyes") can fade slowly from the previous slide.
-- **The black-to-white inversion** at Slide 5 ("What's Also True") IS the pivot. The audience feels the change before you name it.
+- **HARD CUT between slides** where you can. Punk doesn't fade.
+- **Creativity-first rule:** early slides are **life / lineage / taste**; the **server-theft** beat is the intentional temperature drop (Slide 5).
+- **"Close your eyes"** is a **no-slide** moment unless you add an optional black hold — keep the room human.
 
 ### What's Different from Brazil
 | Brazil (48 min) | CMVan (25 min) |
@@ -394,7 +409,7 @@ Thank you Vancouver.
 | Portuguese subtitles | English only |
 | "Stay in the room" section (5 min) | Compressed into 1 line in Act 3 |
 | "Ship culture not content" | Replaced by Release Day challenge |
-| 25 slides | 14 slides |
+| 25 slides | **10 slides (16:9 stills)** |
 | "Obrigado" | "Thank you Vancouver" |
 
 ### Companion Site
@@ -405,7 +420,7 @@ Three Documents templates + Release Day registration + "Write for the Bot" exerc
 
 **Word Count:** ~3,200 words
 **Speaking Pace:** ~128 words/minute (allows for pauses)
-**Version:** v2 — locked structure, CMVan-adapted from WAIFF Brazil final
+**Version:** v3 — CMVan **10-slide** deck + **creativity-first** spine; slide cues aligned to `slides/deck-outline-with-notes.md`
 **Created:** 2026-04-22
 **Source:** Adapted from `source-material/waiff-brazil/KEYNOTE-SCRIPT-FINAL.md` (652 lines, 48 min)
 **Status:** Ready for rehearsal

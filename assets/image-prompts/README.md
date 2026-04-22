@@ -4,6 +4,8 @@ Single working area for **slide stills**, **walk-in b-roll**, and **HeyGen / Ele
 
 **This talk is not Both Hands Full.** BHF is prior work; zine *texture* can still echo WAIFF/LaSalle design grammar, but **prompts and slide copy** live in the Punk Rock AI pack below.
 
+**Creativity-first:** Prompts foreground **life, craft, community, taste**; AI is one chapter in the visual story too — not “slides that look like a product launch.” **All slide images 16:9** (`--ar 16:9`), including optional slides.
+
 ## Where everything lives
 
 | Need | File |

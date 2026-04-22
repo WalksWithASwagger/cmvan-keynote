@@ -2,7 +2,11 @@
 
 **v1 deck scope:** **10 slides** for the **May 1, 2026** CMVan field talk. **Punk Rock AI** zine image prompts (10 + 2 optional) live in [`../assets/image-prompts/punk-rock-ai-slide-prompts-zine.md`](../assets/image-prompts/punk-rock-ai-slide-prompts-zine.md) — written for **this** talk, not a BHF find-replace.
 
-**Theme:** Gritty, high-contrast, black-and-white Xerox aesthetics mixed with hyper-modern, colorful generative AI art where it serves the story.
+**Narrative spine (for design + images):** **Creativity story first** — making, community, photography, finishing, taste — with **AI as one important chapter**, not the only headline.
+
+**Theme:** Gritty, high-contrast, black-and-white Xerox zine; color only where the deck calls for it (e.g. cold server slide). **All deck stills 16:9.**
+
+**Speaker note:** Let slides carry **life** (film, rooms, hands, flyers); you carry the AI thread in voice so the room feels wisdom + biography, not only “tech ethics.”
 
 ## Slide 1: Title Card
 **Visual:** Halftone print aesthetic of a modern AI data center layered with a punk rock gig poster.
