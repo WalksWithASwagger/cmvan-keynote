@@ -78,7 +78,7 @@ The first synthesis of "Both Hands Full V2" with the **DIY punk-zine slide aesth
 | `KEYNOTE-OUTLINE-FILM-STUDENTS.md` | Original Creative Rebellion outline (legacy) |
 | `KEYNOTE-SCRIPT-FINAL.md` | Final script |
 | `TALK-TITLES-AND-ABSTRACTS-DRAFT.md` | Five title bench tested against "punk rock but not cynical" — useful for variant titles |
-| `uai-film-festival-brazil-2026-image-prompts.md` | **15 Midjourney-style zine prompts** — Brazil “How to Keep Our Souls Intact” deck; **adapted for CMVan** in `assets/image-prompts/cmvan-slides-01-15.md` |
+| `uai-film-festival-brazil-2026-image-prompts.md` | Brazil BHF-era zine prompts — **texture / history reference only**; CMVan *Punk Rock AI* prompts live in repo `assets/image-prompts/punk-rock-ai-slide-prompts-zine.md` |
 | `BOTH-HANDS-FULL-SCRIPT.md` | Full Brazil delivery script — timing and beats |
 | `BOTH-HANDS-FULL-SPEAKER-NOTES.md` | Speaker notes — stagecraft |
 

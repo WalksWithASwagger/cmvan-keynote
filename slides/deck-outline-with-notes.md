@@ -1,6 +1,6 @@
 # Slide Deck Outline: Punk Rock AI
 
-**v1 deck scope:** **10 slides** for the **May 1, 2026** CMVan field talk. Optional **15** zine-style image prompts (same aesthetic, more beats) live in [`../assets/image-prompts/cmvan-slides-01-15.md`](../assets/image-prompts/cmvan-slides-01-15.md) — not a second “official” deck unless you promote it.
+**v1 deck scope:** **10 slides** for the **May 1, 2026** CMVan field talk. **Punk Rock AI** zine image prompts (10 + 2 optional) live in [`../assets/image-prompts/punk-rock-ai-slide-prompts-zine.md`](../assets/image-prompts/punk-rock-ai-slide-prompts-zine.md) — written for **this** talk, not a BHF find-replace.
 
 **Theme:** Gritty, high-contrast, black-and-white Xerox aesthetics mixed with hyper-modern, colorful generative AI art where it serves the story.
 

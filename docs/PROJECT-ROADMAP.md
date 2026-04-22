@@ -68,11 +68,12 @@ Do not conflate the two on public copy or slide footers.
 | Full script | [`script/full-talk-script.md`](../script/full-talk-script.md) |
 | Quotes | [`script/quote-bank.md`](../script/quote-bank.md) |
 | 10-slide deck | [`slides/deck-outline-with-notes.md`](../slides/deck-outline-with-notes.md) |
-| 15 zine prompts | [`assets/image-prompts/cmvan-slides-01-15.md`](../assets/image-prompts/cmvan-slides-01-15.md) |
+| Punk Rock AI zine prompts (10 + optional) | [`assets/image-prompts/punk-rock-ai-slide-prompts-zine.md`](../assets/image-prompts/punk-rock-ai-slide-prompts-zine.md) |
 | Companion v1 | [`companion-site/index.html`](../companion-site/index.html) |
 | Open decisions | [`OPEN-QUESTIONS.md`](../OPEN-QUESTIONS.md) |
 | External citations | [`PUBLICATION-BIBLIOGRAPHY.md`](./PUBLICATION-BIBLIOGRAPHY.md) |
 | Notion sync rules | [`NOTION-SYNC.md`](./NOTION-SYNC.md) |
+| Deprecated BHF-adapted prompt stub | [`assets/image-prompts/cmvan-slides-01-15.md`](../assets/image-prompts/cmvan-slides-01-15.md) |
 
 ---
 
