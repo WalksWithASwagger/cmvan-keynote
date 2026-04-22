@@ -12,7 +12,7 @@ A Creative Mornings Vancouver keynote by [Kris Krüg](https://kriskrug.co) — *
 
 This repo is the build space for the talk + everything around it: research, script, slides, image prompts, dress-rehearsal media, Release Day activation, and the companion site v1.
 
-**Roadmap + domains + publication checklist:** [docs/PROJECT-ROADMAP.md](./docs/PROJECT-ROADMAP.md) · **Cited sources for publishing:** [docs/PUBLICATION-BIBLIOGRAPHY.md](./docs/PUBLICATION-BIBLIOGRAPHY.md)
+**Roadmap + domains + publication checklist:** [docs/PROJECT-ROADMAP.md](./docs/PROJECT-ROADMAP.md) · **Cited sources for publishing:** [docs/PUBLICATION-BIBLIOGRAPHY.md](./docs/PUBLICATION-BIBLIOGRAPHY.md) · **Notion hub + sync rules:** [docs/NOTION-SYNC.md](./docs/NOTION-SYNC.md) ([open in Notion](https://is.kriskrug.ai/punk-ceo?source=copy_link))
 
 It started as a folder inside the [kk-kb](https://github.com/WalksWithASwagger/kk-kb) knowledge base. Pulled out and given its own room to grow because there's a lot to build between now and Release Day.
 

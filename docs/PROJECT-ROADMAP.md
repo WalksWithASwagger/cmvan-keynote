@@ -4,6 +4,8 @@
 **KB mirror:** [creative-mornings-vancouver-may-2026](file:///Users/kk/Code/notion-local/kk-ai-ecosystem/content/projects/02-bc-ai-ecosystem-nonprofit/speaking-engagements/2026/creative-mornings-vancouver-may-2026/) (kk-bb)  
 **Tracking:** [kk-kb#1570](https://github.com/WalksWithASwagger/kk-kb/issues/1570)
 
+**Notion (share + staging):** [Punk CEO workspace](https://is.kriskrug.ai/punk-ceo?source=copy_link) — keep in sync with this repo using [NOTION-SYNC.md](./NOTION-SYNC.md).
+
 ---
 
 ## Dates (canon)
@@ -51,7 +53,7 @@ Do not conflate the two on public copy or slide footers.
 
 | Phase | Window | Outcomes |
 |-------|--------|----------|
-| **A — Lock narrative** | Now | This roadmap; [PUBLICATION-BIBLIOGRAPHY.md](./PUBLICATION-BIBLIOGRAPHY.md); [SOURCE-INDEX](../source-material/SOURCE-INDEX.md) extended; script outline dates aligned |
+| **A — Lock narrative** | Now | This roadmap; [NOTION-SYNC.md](./NOTION-SYNC.md); [PUBLICATION-BIBLIOGRAPHY.md](./PUBLICATION-BIBLIOGRAPHY.md); [SOURCE-INDEX](../source-material/SOURCE-INDEX.md) extended; script outline dates aligned |
 | **B — Ship public minimum** | Before May 1 | `punkrockai.com` live: hero, dates, `#ReleaseDay2026` CTA aligned with CM official copy; QR → companion |
 | **C — Talk week** | May 1 | Deck + walk-in assets from [`assets/image-prompts/`](../assets/image-prompts/) |
 | **D — Release month** | May 1–29 | Social; optional alignment with CM virtual FieldTrips (see bibliography) |
@@ -70,6 +72,7 @@ Do not conflate the two on public copy or slide footers.
 | Companion v1 | [`companion-site/index.html`](../companion-site/index.html) |
 | Open decisions | [`OPEN-QUESTIONS.md`](../OPEN-QUESTIONS.md) |
 | External citations | [`PUBLICATION-BIBLIOGRAPHY.md`](./PUBLICATION-BIBLIOGRAPHY.md) |
+| Notion sync rules | [`NOTION-SYNC.md`](./NOTION-SYNC.md) |
 
 ---
 
