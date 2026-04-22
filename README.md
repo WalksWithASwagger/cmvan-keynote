@@ -65,7 +65,7 @@ AI is the next Xerox machine. The pattern is the same.
 ├── assets/                         # image/video prompts, generated assets
 │   └── image-prompts/
 ├── dress-rehearsal/                # ElevenLabs / HeyGen run-through scripts
-├── companion-site/                 # (TBD) public-facing site for Release Day
+├── companion-site/                 # v1 spec README — static HTML deferred
 └── source-material/                # canonical KB material (read-only refs)
     ├── kk-voice/                   # voice profile, worldview, bio
     ├── both-hands-full/            # the article that seeded the framework
