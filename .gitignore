@@ -1,0 +1,41 @@
+# Editor / OS junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Build
+dist/
+build/
+.next/
+.cache/
+
+# Local env
+.env
+.env.local
+
+# Generated assets bigger than git wants — drop in assets/generated/ to ignore
+assets/generated/
+*.mov
+*.mp4
+*.psd
+*.ai
+*.sketch
+
+# Whitelist a few small video formats if you ever want to commit them
+!assets/image-prompts/*.mp4

@@ -1,0 +1,728 @@
+00:00:07 Speaker 1
+Okay, I'll do my best.
+00:01:05 Kris Krüg
+I feel like I'm in a bar. You feel like you're in a bar? No, I'm in a bar. Oh, no! After. You're being in a bar. I have to throw a good one. I know that I'm ready. It's funny. It doesn't matter that much. A little nerve-wracking for the first.
+00:01:34 Speaker 1
+I've learned to be temperamental. It was pretty good. The thoughts that are in me. You do like a news keynote, which I did this year. There's always a little strike. You pop these two in my head and these little marks that I want to hit and stuff. You know, it's like this is what I do. And those are the ones that get me nervous. Be temperamental.
+00:02:01 Kris Krüg
+Be personal. You know what? I'm not going to lie to you. permission. The stress is too much and you're feeling like you just want to do the... I don't.
+00:02:12 Speaker 1
+know if I can say that. Yeah, that's where I told her I don't want to drop it. No, it's my mark. You know, I got some things I want to share. I know. I've done a lot. I start off by talking about a lot of fears and you need to be critical about this stuff and that's usually a place where people can like vent a little bit and get some things off their chest and it kind of.
+00:02:45 Speaker 1
+offensives them together a little bit. You know, maybe they're skeptics tonight. Yeah, exactly. This is amazing, and if you're not paying attention, you're already on the boat, you're going to be left behind, you know, and those people, you know, they stole all the works of mankind and they're training bots on it or whatever, and that's, like, true, but no reason to not engage in the future necessarily, you know, and so trying to find out.
+00:03:24 Speaker 1
+There's a lot of clarity.
+00:03:35 Kris Krüg
+Okay. Yeah, that's funny. Do you want me to, like, give you a cue when it's five o'clock? Sure.
+00:03:46 Speaker 1
+Yeah, I'll keep my eye on you.
+00:03:47 Kris Krüg
+Okay.
+00:03:48 Speaker 1
+What should we have that be? Oh, I will keep my eye on you. I'll probably, I'll probably know. I don't even know where I'm at. You don't have to worry, like, you can even be, like, five minutes and you're not going to go over. I might say to the people during my presentation, and if you're okay with it, like if there ends up being a little Q&A during, like in soccer, they add penalty time at the end. Yeah. So if we chat for five minutes during the talk, maybe just like give me like five more minutes into the talk.
+00:04:23 Kris Krüg
+Yeah, no, that's what I think. I don't want to be rigid because I want there to be engagement. Yeah. That's what we're after. And to honor your style as well. So let's navigate that together.
+00:04:42 Speaker 1
+I definitely have to provocate.
+00:04:47 Kris Krüg
+Go up there and announce people to what they're thinking about. Ten minutes to go. Okay. I'm going to go watch.
+00:06:07 Speaker 3
+What. 
+00:07:12 Speaker 1
+The social media mic and the house mic. I have no preference.
+00:07:40 Speaker 3
+Can you hear me? I think so.
+00:08:17 Speaker 4
+I'm very new to this company, so this is my third event, I'd say.
+00:08:31 Speaker 1
+I want to make, I'm going to want to pay attention to your stuff. I'd like to come back for some other ones, too, maybe. I mean, it's nice to see bombers.
+00:08:49 Speaker 3
+Who's the next speaker. 
+00:08:55 Speaker 4
+I don't know, Stevie.
+00:08:57 Kris Krüg
+You don't know her? I don't think so. So she's talking about a way to brand yourself by moving away from just the portfolio.
+00:09:10 Speaker 1
+I don't know what you're talking a little bit about.
+00:09:56 Kris Krüg
+So I want to take this opportunity to really thank everyone for coming this evening to our event. We are super stoked to have Chris Krug speaking to us on the topic of professional. Very hot topic. And I'm going to tell you a little bit about Chris, informally and more formally. So I've been stalking Chris since about September because of, of course, finding interesting angles for marketing this event.
+00:10:34 Kris Krüg
+And there's no shortage of interesting angles when it comes to Chris Krupp, that's for sure. What you should know about him is that he's a very credible expert on this topic because he himself is a creative. He's a very successful photographer, having done projects for Rolling Stone and National Geographic. And he's also the founder of the BC Plus AI Ecosystem Meetup Group.
+00:11:06 Kris Krüg
+which he started how many years ago Chris. 
+00:11:09 Speaker 1
+We started September 1st this year. September 1st this year and already.
+00:11:13 Kris Krüg
+it has, I guess it would have been 2025, already has over a thousand members so you're probably going to be interested in finding out more about that meet up group and seeing if you want to join. By the way my name is Linda Folster and I am the manager of Student Services of the South. I'm the fourth in the past year of the alumni events and just looking how people are doing, hopefully we've got some good news.
+00:11:51 Kris Krüg
+Chris is going from approximately 6.30 to 7, give or take. It's going to be engaging and dynamic. The audience will be engaged informally. We have it actually structured into the program so that about 7 to 7.30, there will be a Q&A with him on. So I'm just going to read his bio for you. Chris Krug founded BC Plus AI Ecosystem Association and hosts the Vancouver AI Community, the city's longest-running monthly meetup.
+00:12:29 Kris Krüg
+He runs the Upgrade, where he trains creatives and professionals on AI skills that actually stick. Okay, hundreds of designers, journalists, and artists have learned real workflows through his workshops. No pitch decks, no empty frameworks, just what works. All right, without further ado, please take it away, Chris.
+00:12:49 Speaker 1
+All right. Welcome, everybody. Thanks for being here tonight. Just going to figure out how to get this slide going here. Remind me again? Yeah. Will you come help me for a quick sec? Screen mirror in here.
+00:13:21 Speaker 1
+Great. Isn't this a cool stage? I've never been in front of an LED wall like this before so that's pretty cool. I'm kind of excited about that. I'm here to talk to you tonight about what it feels like to be a creative in this moment. Not like what we're reading about on LinkedIn or whatever, not what we're hearing about at Web Summit, but what actually feels like to wake up every single day and to live a creative life and produce creative work in this moment that no one really asked for. This moment of changing everything where on one hand there's a.
+00:13:56 Speaker 1
+whole bunch of stuff to be... Concerned about and afraid of and on the other hand. There's so much opportunity and, curiosity and Transformation taking place that it's an impossibility to look away And so I'm going to encourage you to walk forward into the future with both hands full to have at one hand full of critique and resistance to, many of the negative implications that it is bringing into our lives in our society and and in the other hand a curiosity and a desire to understand what's going on and to.
+00:14:32 Speaker 1
+Participate in the future and to transform. So that's what I'm here to do today. You heard my intro. My name is Chris. I, Have been running these Vancouver AI meetups at my studio for the last couple years. It started off as a just me and Sev, Not actually, but it was like 50 people. Now there's like 250 people that come every month to the Space Center. We've got an amazing program. It's resulted in, we've had hackathons. We gave away 15,000 bucks last year to people in our community.
+00:15:05 Speaker 1
+It's turned into a really awesome thing. Subgroups have sprung out. There's now a Surrey group, a Vancouver Island group. There's an ethics group that Seth is helping to lead up. There's an education group. There's all sorts of things springing out of this amazing community. And so we registered a non-profit ecosystem, an association, a professional network. A whole bunch of people have joined that. And then my day job is I run an AI company called TheUpgrade.ai. I've run seven six-week cohorts over the last two years for creative professionals.
+00:15:36 Speaker 1
+Filmmakers, animators, designers, writers, marketers who are trying to reinvent themselves. Rebuild their workflows understand the tools. So what this means is I get to talk about this stuff with creative people all the time I've been like in relationship with private 200 creative professionals have gone through this program in the last couple years trying to figure out What they need to know and where to go from here. And so That brings me into a lot of conversations and if you've been in some AI conversations, You probably know that everything most all conversations fall on one of these two sides in the world.
+00:16:09 Speaker 1
+We got the boosters on one side. These are usually, Silicon Valley people tech CEOs, Investor type saying if you haven't adopted AI you're already behind, Get with the program, you know AI is changing everything. It's amazing and this, Perspective it doesn't resonate with me all the way because that's only one part of the you know, the equation Yeah, there's some interesting things going on. But then we got this other stuff over here, too, You know it's been trained on all the stolen work of mankind. My work is in there. There's a website.
+00:16:42 Speaker 1
+you can go to called haveibentrained.com. You can put in your works and you can know if AI has been trained on your works. My photography, because I released it on Creative Commons on Flickr over like 20 years, I've got like 1900 photos in the main NVIDIA data set where they slurped it out of Flickr, trained on it, and that's what's in every AI that generates images in the world is 1700, 1800 of my photos. You should take a look and see haveibentrained.com. It's destroying jobs. We should resist it. I'm more sympathetic to this camp, I must say. But this perspective.
+00:17:18 Speaker 1
+too doesn't take everything into account. You know both of these things are lazy, because the hype perspective keeps us from engaging critically and the critical perspective is all that you have. It doesn't really tell you what to do in this moment, how to go forward. So. I'm going to encourage you to walk forward with both hands full. AI is trained on the stolen work of mankind without consent, and I'm more creative, more.
+00:17:49 Speaker 1
+productive, and more powerful than I've ever been in my whole life. Both of these things are true. I'm asking you to embrace this contradiction and to walk forward despite that. I'm going to show you some ways that I think that we can do that. We talked a little about the stolen work. Whose values are embedded in all that work? Whose biases are in there?
+00:18:20 Speaker 1
+What's actually going on under the surface? We don't actually even know. This race to the bottom that a lot of us see, like if someone could generate a logo in 30 seconds or 10,000 logos in five minutes, are you really gonna be able to sell your work for $15,000, $25,000? Clients are getting good enough work that keeps them from picking up the phone and calling a lot of creative people. This whole junior pipeline jobs, they're going away, particularly in this junior roles,
+00:18:50 Speaker 1
+very, very fast. These are the roles that used to make senior creatives. You'd get hired in a studio and there'd be some approved assets and then you'd be asked to convert those assets into a whole bunch of different formats for the next six months. Well, that's how you learn the whole process, the system, the client, the back and forth. That's how you really kind of come up to speed is that on the job training. So those are the things we're seeing going away right now. And so it's like, well, what is the pathway from university or school, students, to senior jobs if all these middle parts are going away?
+00:19:23 Speaker 1
+The cognitive dependency bit, we're seeing all these scientific studies that's like, yo, if you don't use your muscles, you lose your muscles, you know? And so if we're not using our brains to do the first stages of projects, to do the idea generation or these other things, what happens? Well, we don't know what happens. We're all living kind of in this experiment. We're about to see what happens. And then, like, if anyone can generate anything all the time, why does someone really even need us anyway? Why does people need creatives if all these robots can do all these things just as easily? What are some of the other fears that you guys are hearing or that I haven't mentioned here yet?
+00:19:55 Speaker 1
+What are some of the things that are keeping you from engaging or that you're hearing from other people? You're welcome to shout them out or raise your hand. You guys hearing other things that worry you about me and I? Absolutely. Killer Robots, man, is on the top of my list, too, and we've got to stand up against that because Mark Carney is dedicated to it right now. And his minister, Evan Solomon, is rolling out a whole bunch of killer robot initiatives across the board, too. Environmental impact. Environmental impact, power, water, how much is being used.
+00:20:26 Speaker 1
+Are we just building things as fast as we can without any regard for if we need it, if we want it? Water waste. Yeah, water waste impact. Yes, sir. Reliability. Open that one up a little bit. I'm a coder. Yeah. Quality. Is it good. 
+00:20:47 Speaker 3
+Yeah.
+00:20:53 Speaker 5
+We're raising a generation of students that will never learn how to write.
+00:20:58 Speaker 1
+The classroom has so many, it's such an interesting lens to look through and look at all this stuff because you have to look at learning and assessment and preparation, you know, human development. There's all these different things and it's a very good laboratory for studying those things. Yes? A viewability picture? Yeah. So this last couple weeks, one of the AIs, without, you know, much provocation, you can get it to remove people's clothes, doesn't matter what age they are.
+00:21:31 Speaker 1
+There are all sorts of abuse materials been created in these last couple weeks using these tools. Future doctors? Yeah. Open that one up a little more.
+00:21:43 Speaker 6
+Like, we are hearing like a lot of new people are learning from AI.
+00:21:50 Speaker 1
+Oh, yeah, totally. So like... If all our doctors are trained by robots, this is what you're saying, you know? Like human factors type stuff, yeah. Anyone else does some stuff? I think these are all valid, yeah.
+00:22:06 Speaker 7
+Especially for artists, I think artistic output has emotional content. So how do you define that and how does AI, is that even possible. 
+00:22:20 Speaker 1
+I think I hear the fear in there, which is like that our content will not carry the same emotive quality as when it's being made by humans and that we're losing something because of that, something like that, yeah. Yep. I don't have answers to any of these questions, by the way. I teach this shit for a living and I don't know. Anyone who will stand up and tell you that they've got all these things figured out or not to worry about them, those are the people to not listen to. So, now I'm gonna try to show you the other end. What's going on on the other end?
+00:22:51 Speaker 1
+And I offer you a couple examples of some friends and collaborators of mine. The lady on your left is Maya. She helped design some of the original interfaces for Etsy. She's worked in New York as a UX and UI designer for a long time before coming to Vancouver. Super high-end, first order in her field. I've watched her in the last two months reinvent her whole workflow using Figma Make and ChatGPT and a bunch of other tools to reinvent her whole pipeline.
+00:23:21 Speaker 1
+Even using ChatGPT to code up some of the parts that were missing, connecting her tools together, you know? So that she can do things in new ways with stuff that just came out. I got this other buddy, Kevin. He worked in film and television, traditional film and television for like 25 years. Well that's all changing and I've watched him in the last little while start to build, tools and systems to do new AI special effects, animations. He's got this really big cool thing he calls the Vibe Lounge. It's a program he runs on screens like this. It's for like,
+00:23:52 Speaker 1
+like while I was giving this talk, he could be listening to what I'm saying and generating live visuals on the screen behind based on what I'm talking about. He runs it at a lot of our events so that when you know speakers up there they're getting live generative visuals in real time based on what you know that's something I've watched him build and then like he stuck he uses that as a competitive differentiator as for his video work. So when someone hires him as a video guy he comes up pops open his screen sets up his Vibe Lounge and starts generating things and providing this really cool generative experience that's just like.
+00:24:23 Speaker 1
+turnkey you just turn it on the voice starts prompting. So I said I've never felt as creative, productive, or as powerful as I do right now. And these are some of the things that I'm talking about. I trained a model on 2,000 of my cross-processed street portraits as a photographer and then used that as a way to better understand my unique photographic style and fingerprint and visual style. And I was able to kind of distill that down into its core components,
+00:24:56 Speaker 1
+my creative DNA, the part that made me different, using this model that's never seen any other human face before, except for the 2,000 faces that I trained it on. And so now it understands what human faces are only from my photographs. And so as I begin to work with this, I own all the outputs of it. It's not like I'm using all of your guys' stolen, trained work through GPT. And it's also not like I'm allowing the models to ingest that into their training data either. I'm keeping it over here by itself where I know everything that goes into it.
+00:25:29 Speaker 1
+and I know everything that goes into it. And I own everything that comes out of it. I love biocoding right now, I'm going to get into it later, I'll tell you more what it is. I took the 485 page Mark Carney federal budget and wanted to know about the AI stuff. I realized it was going to take me like three weeks to read the thing. So I just dropped it into a biocoding tool and was like, yo, build me a dashboard for this so that I can slice and dice and sort and understand this budget with interactive charts and diagrams or whatever. Just single shot prompt, came back with a full interactive website powered by the budget.
+00:26:01 Speaker 1
+that I could then ask questions to, try GDT style, remix the graphics and charts and really understand what was going on in there. I am really hyped right now on knowledge bases, building of knowledge bases. And the way that I do this primarily is through recording and transcription. And I'm just learning this right now and even inventing kind of some stuff, but this is a really interesting area to pay attention to. Imagine if a student here at LaSalle started a class on day one on day one.
+00:26:33 Speaker 1
+They put a syllabus into a knowledge base plus a recording of the first class then they go do their assignment Maybe they drop the PDFs into the knowledge base to that. They're supposed to read the assignment and maybe they're supposed to analyze You know the the readings and then so they write something have that to the knowledge base to but like week two You've got two recordings of the teacher talking to homework assignments a syllabus By the end of that course you have everything you learned in the thing and you can just start speaking into the thing It's got your knowledge layered on top of the school's knowledge plus the the readings and the writings are supposed to be doing.
+00:27:08 Speaker 1
+You can be like, you know based on everything I've learned and wrote about this whole term Give me the top three things I learned in this class. Give it as an essay make some infographics about that. So, Recording into transcription, into knowledge bases, and then applying AI on top of it is something you're going to hear me talk about over and over and over again. It's such an emergent and modern thing. Okay, I wanted to show you training the model. These are the photos that I put into the AI's mind when I was first getting started.
+00:27:39 Speaker 1
+This is like 2,000 pictures I took of people along the way. I used some data science stuff to align the eyeballs and then make them all about the same size so that there was reproducibility in the results. So this was the raw materials that I started with. And then this is the interface into the model that I was using to train. And this thing has been built in SFU. It's called AutoLume, and it's a neurovisual synthesizer. What that means is, the general part is you're looking into the latent space of the mind of the AI, the LLM,
+00:28:14 Speaker 1
+and you're able to see in there all the different permutations of what it could generate. And you can walk through the vectors in the latent space of that database, and what you see is the phase is changing. And you can generate new people from the people that were already in there. These were some of my favorites. This is a very early research that I was doing at SFU. These are not real people. These are faces that came out of my AI that I built that was trained on only having seen my photographs. We took this research and we presented it at the Ars Electronica festival in Linz last year in September in Europe and we got an honorable mention for the work.
+00:28:56 Speaker 1
+It's the world's biggest digital art festival and fair. And then we took the research and we published it as well and it's also in this peer-reviewed setting published and we've won an award for it. This is what happens when you take your creativity and your curiosity and you get serious about it. You're like, okay, I'm going to feed all my photos in, train a model on it, figure out what it knows about me, share my learnings with the world at a conference in a paper, and then make this a part. You know, I'm not being a consumer of Chachiti out of Silicon Valley. I'm being like a producer of creativity and new models and new ways of looking at things.
+00:29:34 Speaker 1
+I want to talk a little bit about the hard skills and soft skills that I think will be useful to you as you go forward. On the left, you've got some tech skills. Things like prompting, prompt engineering. These are useful things to learn about. Workflow, how to tie these systems together, how to work with APIs and API keys. This is something you've probably heard about. Very, very useful skill for tying all this stuff together. It's very easy. For those of you who don't know what that is, it's a way to get computer systems to talk together. And it's as easy as logging in and grabbing a security key.
+00:30:06 Speaker 1
+and putting it somewhere else so these two systems can talk to each other. But by doing so, you're tying multiple powerful things together into a custom workflow for you. How to organize this stuff over time such that you get the best utility from it. How to build GitHub repos, local knowledge bases, and how to get these things to talk and sync to one another so you can share them and collaborate with others, access them from different devices, get different types of AIs to connect to that type of stuff. Compositing. You know what I'm talking about, compositing, layering.
+00:30:39 Speaker 1
+Taking outputs from multiple different AIs and putting them together in a way that you control. I think one of the illusions is that there's like this big green button that says like make AI film or something like this. And while there's many easy parts of the process, it's definitely not that easy. You find anyone who's making a real film, is generating multiple things in multiple places and then working in somewhat of a traditional way in DaVinci Resolve or something like that, bringing the components together, adding their special things on top of it.
+00:31:10 Speaker 1
+So you can think of it as a traditional skill set of layering and compositing, but using AI generative stuff, it's quite powerful, amazing. And then model training, like I just showed you, training your own models on your own work. Let's talk, but those are just like the table stakes, you know, and that just is what gets your exploration started. I think that these are the things that we're really going to want to like lean into as well. And these are the things that you probably learn in places like this at school, you know, the critical thinking, the discernment. I mean, if you can teach an AI why you choose one thing instead of another,
+00:31:44 Speaker 1
+you're teaching it something very, very useful, right? Like what is the discernment, the critical thinking part of why your taste says that this thing is better than another thing? This is something that I am trying to teach an AI right now is like how to develop my taste. Okay, I want to show you guys a little bit of my creative stack because this is what unlocks a lot of the power. Who here uses like Notion or some sort of like second brain type situation? A couple Notion users. Seb's using Notion. Is there any, when I say second brain,
+00:32:17 Speaker 1
+is there any other tools that people are using that are maybe similar to Obsidian or... Anyone else down with this second brain concept? All right, well, at the very low end, you've got like a Google Drive, a well-organized Google Drive. You know, it's got folders for your different projects. It's got all your things labeled there. The names are kind of similar. You know, it's well-organized information. Notion's a great way to do that, but with AI on top. And I would even say that if you're not paying for any AI subscriptions at all right now whatsoever,
+00:32:48 Speaker 1
+you may consider paying for the $20 a month Notion because you get access to like the four primary models as a part of your subscription. So you can talk to Chad GPT, Gemini, Claude, and Grok all right there in the Notion interface. But you're talking to those things on top of your knowledge that already exists in there, so the types of outputs and results you're getting aren't the generic GPT slop that we're all so familiar with. It's like straight up your ideas and knowledge remixed together.
+00:33:19 Speaker 1
+So, That's where every good conversation I have with an AI somewhere on the internet ends up back in my Notion so that it can be compounded and referenced later. So you need some sort of notebook or Notion or Obsidian, some second frame where all this stuff can live and you can really start to grow it over time. Plog, that's my little recorder I'm wearing on my wrist. I record everything, transcribe it, put it in my knowledge base. I compost all my old ideas into new ideas, remix them.
+00:33:50 Speaker 1
+I'm sure there's something from this talk I could use for an article in my blog tomorrow about AI creativity for professionals. I could have ChachiBT write an article, but if I have him write this article on top of the transcript from this, it's pretty much going to be what I'm sharing here. My words, my examples, my style, and none of the generic slot bullshit. Notebook LM. Anyone been messing with Notebook LM? It's crazy. It's really crazy. It's a Google product. It's free. Again, you add 20 or 30 documents to it, and then it starts building you assets.
+00:34:24 Speaker 1
+It can build strategic reports, slide decks, infographics, audio podcasts, video podcasts, all sorts of stuff. It's a great way to, I use it to prep for tonight. I took all my different docs that I had been building for here, and I put it in Notebook LM, and I'm like, make me a podcast to help me prepare for my talk tonight. It's like, Chris, here's your talking points. Let's go through them together, and it just starts to train me back. I also have this show on CBC called Sandboxing AI, and sometimes I get called out of the blue to do an episode. Because there's some news, like Jeffrey Hinton from University of Toronto won a Nobel Prize last year for his work in AI, and they asked me to go on the radio in like an hour and talk about the Nobel Prize, and I wasn't that familiar with neural networks or backpropagation or a lot of the more technical concepts that he won the award for, but I downloaded a couple things in two minutes, dropped it into Notebook LM, had it made me a podcast, and hopped on the bus and listened to the podcast twice, and by the time I got there, I was fully briefed on all the stuff.
+00:35:22 Speaker 1
+The more technical parts I needed to. So Notebook would be a great place to do that class example I gave you, where if you're taking a class, put all the syllabuses in it, all the talks in it, all your homework in it, and have it generate more stuff. Notebook LM is a great place to start, and it's free. Perplexity is a research tool that I use. It's a lot like ChatGPT, but it goes way deeper. If I ask it a question, a research question, it'll pull up a podcast and have it queued at the part in the podcast where the thing that I'm looking for is, where it'll pull up.
+00:35:53 Speaker 1
+a YouTube video, but not the whole YouTube video, just the 30-second part where it's exactly the answer to your question. And you can get a year's worth for free. I don't have the link right now, but if you Google a year's worth of perplexity for free, oh, if you have a PayPal account, if you have a PayPal account, you get a year's worth of perplexity for free, which is like 30 bucks a month or something, so, and it's real, I've been a couple months into that. ChatGPT I still use every day for all sorts of things. It's got a lot of cool new features coming out all the time, like, what was it yesterday?
+00:36:24 Speaker 1
+Oh, there's a vibe coding tool called Lovable, and you can connect ChatGPT to it now. ChatGPT connects to everything now. So anytime you're talking to it, you should have it connect to your Google Drive or your Gmail or your Google Calendar and be like, yo, analyze my 2025 emails and tell me which ones I forgot to reply to. It'll go through your Gmail and chug away and give you the top 10 prioritized emails that you're leaving deals on the table or something like that. Claude Code. I'm so hyped on Claude Code right now.
+00:36:54 Speaker 1
+Who's running Claude Code? I hope there's other people like Seth who have, but just aren't raising their hand. This is an incredible tool, you guys. It's an agentic coding platform, but I'm not using it for coding. I'm using it for all sorts of knowledge management as well, where I'm feeding transcripts into it, having to help me build my databases and knowledge bases. But just yesterday, a new tool came out called Claude Cowork. And it's essentially clogged code for non-technical people. So you don't need to know about GitHub.
+00:37:25 Speaker 1
+You don't need to know about code or anything like that. You can literally just go in there. Maybe I'll show it at the end because not a lot of people have access to it. It just came out yesterday. But it's like a full work environment. It can do all your work for you. Log into your email. Log into your schedule. Log into your accounting platform. Build reports out of all those things. Turn those reports into all sorts of content. It's really incredible. So you're going to be hearing more and more about clogged code work. But I also encourage you to check out the clogged code thing too. It's quite crazy and powerful.
+00:37:58 Speaker 1
+Midjourney. Who's generating images or videos or something like that with Midjourney? This is my favorite imagination platform. It's a great way to really just start to flow out a lot of ideas really quickly. And you can build different mood boards based on your old works, the new work that comes out of it looks, you know, in the style that you've currently got going. You can develop a new style and then carry that through on other work. You know, a couple of years ago when these things came out, the critique was like, oh, you can never make characters look the same twice, or it's hard to control these things.
+00:38:32 Speaker 1
+while generating these things. Well, a lot of that's changed. All this stuff is moving at light speed. So even things that were not, you know, a couple of years ago we used to make jokes all the time like it wouldn't get hands right, you know, or something. Like there was a while where I'd go around with my friends' baby pictures on Facebook and be like, oh, that's so AI, just look at the hands, you know, or whatever because they're real pictures just to tease people. But that was like, all that's in the past now. It's been sorted out. And 11Labs is another critical piece of my stack. It does generative voice based on my own voice.
+00:39:04 Speaker 1
+So I rehearsed this talk tonight by writing out my script, dropping it into 11Labs, then I would get back a 20 minute MP3 in my own voice of me reading the script so I could kind of hear it a few times and hear how the flow was going and the talk was going. You could generate a whole virtual podcast with that thing that are in your voice. So these tools together represent like my stack and it helps me with all these pieces together I can do almost anything and they all kind of fit together and do a very specific purpose.
+00:39:37 Speaker 1
+I'm adopting tools that give me like 10x amplification, not just small amplification. I'm not looking for things that just make things a little bit easier, I'm looking for things that really change my whole workflow and make me reimagine how I'm doing work. Okay, when I talk about changing your whole workflow and changing the way we're doing work by coding has done that more than anything for me So in the traditional way.
+00:40:08 Speaker 1
+Like I've done a lot of web design projects a lot of consulting and web development, Usually it goes like this you have a client meeting. They give you some requirements or respect They tell you what they want and you ask them a bunch of questions You do some discovery you leave and you go back and you do some thinking you present them back a proposal You're like, here's what I'm gonna build. Is this what you want? Let's just say they say yes They don't always see us use there's some revision, but they say yes Then you go off and you build it and sometimes you start with like two different directions You know and then you have them kind of choose one and then you you build that one out.
+00:40:39 Speaker 1
+You show it to them by the time you show it to them It's maybe like six weeks later and usually the first thing that they do is they're like, oh shit, that's actually exactly what I asked for but what I asked you for isn't what I actually need. I didn't realize it until I'm actually looking at it. That's and then you go through this process of, changing, there's expense involved and sometimes projects just die at this point. It's like they take a couple cracks at it, they don't get what they think they need, run out of money, run out of budget, not sure where to go from here. So in the new way, and I've done this like a bunch of.
+00:41:12 Speaker 1
+times recently, you're on the call with them and you're listening and you're hearing, you're taking their documents, you're dropping into these vibe coding tools and many times I'm able to show somebody on the call, the initial one hour call, like three different versions of what they think they're asking me for right there on the call. And it's a pretty mind-blowing deal when you show somebody back exactly what they asked for but they also have this perception that some technical genius had to go do it and take six weeks and come back to you and you find that it just.
+00:41:42 Speaker 1
+shortcuts this whole iterative process where you're showing the person the design and doing feedback you can show people things the very first day and Be like often I find I don't leave those calls with work The client leaves the calls with work where they're like, okay I see now that I really need to figure out how I want this to work I hadn't thought it all the way through so this vibe coding tool more than anything has really helped me. Speed up all the iterations like to develop new I can have like a new idea and have it start to be Developing while I'm doing something else or do multiple things simultaneously. This is a true unlock here. All right.
+00:42:21 Speaker 1
+I'm gonna skip ahead a little bit. Um, I get to show a little clip from my favorite movie ever which is called rip a remix manifesto is from 2008 and It was right at the beginning when we when we started hearing about remix samples, copyright, electronic dance music and, You know, the DJs were stealing from culture, essentially songs, copyrighted songs, and remixing those and putting them out as their own music.
+00:42:53 Speaker 8
+Isn't the point? Because the rules of this game... Whether or not you think this music is original isn't the point, because the rules of this game don't depend on who made the songs. They depend on who owns the copyright. And according to the people that do, sampling even a single note is grounds for a lawsuit.
+00:43:23 Speaker 8
+That means these kids should not be dancing. And you shouldn't be watching, because using these songs in my movie is against the rules too. The fact that there are people out there calling my favorite artist a criminal is exactly why I need to make this film.
+00:43:47 Speaker 1
+So that's like almost 20 years old, but I feel like it's important because we find ourselves right there again, where, you know, the manifesto that it says is like, culture always builds on the past. The past tries to control the future. Our future is becoming less free. To build free societies, you must limit the control of the past. So I'm trying to like interpret this now through the lens of AI, where they stole all our work, it's in there, and we're unsure what it means for copyright.
+00:44:19 Speaker 1
+claims on our work, but also the works that come out of that material as well. It's a very, very uncertain time. And there's a lot of this stuff that's being rewritten or yet to be defined. Just last week I got a book notice from my, I've written a couple books and I got a notice from my publisher. They were successful in a class-action lawsuit, 1.5 billion dollar lawsuit against Anthropic on behalf of a bunch of major publishing houses authors, because they stole our books and they trained their models on them or whatever. So I'm going to be getting like a $1,800 check, which is like my little slice of, you know, the.
+00:44:53 Speaker 1
+settlement. But just to say that these things are being figured out right now, you know, and for Anthropic it's like worth it to them because like they'll pay 1.5 billion dollars to keep all that training data because they're about to like... Eliminate, you know whole categories of jobs based on that training data They're going after 40 trillion dollars of human work essentially is what they're going after You know those those companies those data centers the reason things are going so crazy fast is because they think that they can replace 40 million 40 trillion dollars worth of human labor specifically. That's that's where all the upside comes from, you know.
+00:45:26 Speaker 1
+It's really crazy. But I I also think that this idea of like thinking of ourselves creatives as like DJs, sampling and remixing things from our inspirations from our previous work from our clients, PRDs and you know requirements documents and stuff This is really the job and how can we can do that efficiently with our own fingerprint on it? Okay, I only got one guy in the front fall asleep, but he looks like he's been working. Are you guys doing okay? Okay I got a couple other little things I want to show you and then we're going to move into a time.
+00:45:58 Speaker 1
+where we can talk about some of this together. So this is my favorite podcaster. His name is Dwarkesh Patel and he has a very high-end AI thinkers on it. The guy who's on here has to disguise his identity because he works for OpenAI. So this is like one of the builders of this stuff talking about where he thinks we're going in the future and what we should do about it and uh I couldn't not share it with you.
+00:46:42 Speaker 9
+So you wrote an interesting comment about getting your work into the LLM training corpus. You wrote, There has never been a more vital, hingy time to write. And I'm wondering whether you mean that in the sense of, you are going to be this drop in the bucket that's steering the shoggots one way or another, or do you mean it in the sense of making sure your values and persona persist somewhere in latent space. 
+00:47:13 Speaker 10
+I mean both. You know, by writing, you were voting on the future of the Shoggoth using some of the few currencies it acknowledges, right, like tokens that it has to predict. If you aren't writing, you're kind of abdicating the future or abdicating your role in it. If you think it's enough to just be a good citizen, to vote for your favorite politician, you know, to pick up litter and recycle, the future doesn't care about you. There are ways to influence the Shoggoth more, but not many. And if you don't already occupy a handful of key roles or work at a frontier lab, your influence basically rounds off to zero, I think far more than ever before.
+00:47:49 Speaker 10
+If there are values you have, which are not expressed yet in text, and if there are things that you like or want, if they aren't reflected online, then to the AI, they basically don't exist. And that is dangerously close to won't exist. You're also creating a sort of immortality for yourself. Personally, right, like you aren't just creating a persona, you are creating your future self too, right? What self are you showing the LLMs and how will they treat you in the future. 
+00:48:17 Speaker 9
+So you wrote an interesting comment about getting your work into the LLM training corpus. You wrote, quote, there has never been a, oh my gosh.
+00:48:33 Speaker 1
+I find this video very challenging. I think that maybe, it's about nine months old. I think that this really got me hyped on transcription and recording. I'm not that great of a writer, but I can definitely talk my ideas out and I can use the AIs to transcribe that stuff. Once I've got all those transcriptions about my hopes and fears, how I make decisions, what I like, how I think, what I value, then we have things that we can actually stick into those AIs so that they actually know us, so that we're not getting that GPT slot that's based on Silicon Valley worldviews,
+00:49:04 Speaker 1
+but we're getting our own ideas fed back to us through infinite intelligence. Come on. Okay, so a lot of the smartest people I know right now are writing for the bots. They are spending their time getting their ideas out and on the paper and into text so they can use them as tokens. And I think that this is a really good way to spend our time. And I have a little homework assignment for you, actually. If you're kind of hip to this and you want to unlock some of these powerful things that I'm talking about,
+00:49:38 Speaker 1
+I think you should write your own style guide about how you write. Maybe just take all the essays you've ever written or connect your chat GBT to your Gmail or something like that and be like, analyze everything I've ever written on my Google Drive and distill from that a writing style guide. The next thing you want to do is you want to understand how you think and what you value. So you can take those same documents and blog posts, journal posts, emails to your mom, emails to your best friend. And have the chat GPTs analyze that and be like,
+00:50:09 Speaker 1
+yo, help me figure out what I truly value and what I care about my perspectives. Things that we're kind of blind to. I can ask you what your values are on something and you'll tell me, but those are, when you express them in that way, it's like you don't always know if you can trust your answer exactly because part of you is telling me what I wanna hear or what's acceptable or whatever, but analyzing writings and thinkings and having to distill and extract from that worldview and perspectives is very useful. I also take that to the next level.
+00:50:40 Speaker 1
+and I use some words that you don't use and there's some words I would just never say or whatever, right? And so I have it analyzed on my writings and make a glossary and an anti-glossary. Here's the thousand words Chris Krug uses the most. Here's things that are popular that we've never heard him say or that he would avoid based on the worldview and values document. Decision logs, all these things that represent our body of works, our digital artifacts, we're gonna start to gather these things together, and if they don't exist, you can make them. You too can sit across from each other and interview each other on camera, be like, talk.
+00:51:13 Speaker 1
+to me about growing up, talk to me about coming to Canada, talk to me about your time in school. All these things that you start to express them, document them, put them into these tools, they're really gonna learn to think and write like you. I was talking to Laura earlier, she's a professional creative, and we've started to set these up for all our different clients. So I've got like 20 different knowledge bases and AI assistants that know and think like my 20 different projects that I'm involved with, because I wear different hats at different times, speak with a different voice at different times. I want to be able to easily move through the AI world, bringing those perspectives or hats.
+00:51:47 Speaker 1
+to bear at any particular moment. This is how we really like, tenets the value of the hat. The outputs that come out of these tools. Alright, here we go. So, we've got one more video for you, and then some closing remarks before we move forward. Uh-oh. Hmm, that's too bad. Good thing I have it right here.
+00:52:23 Speaker 1
+Okay, here's our friends again, Gorn and Dwarkesh.
+00:52:28 Speaker 9
+So, you wrote an interesting comment about getting your work into the LLM training for us. You wrote, quote, there has never been a more vital...
+00:52:38 Speaker 1
+Sorry guys, that was the wrong one. Bear with me just one more second, please. sorry one second oh no it's just supposed to be oh there it is that is coming but basically what's.
+00:53:14 Speaker 9
+your thinking around how you see your role in this timeline and also what you're how you're.
+00:53:19 Speaker 10
+thinking about how to spend these next few years yeah i've been thinking about that uh quite a lot, what what do i want to do you know um and what would be useful to do i'm doing things now because i want to do them um regardless of whether it will be possible for an ai to do them in like three years, I do something because I want to, because I like it. You know, I find it funny or whatever. Or maybe I think carefully about kind of just doing the human part of it,
+00:53:50 Speaker 10
+like laying out a proposal or something. If you take seriously the idea of getting AGI in just a few years, you don't necessarily have to implement stuff and do it yourself. You can sketch out clearly like what you want, and why it would be good and then how to do it. And then basically just wait for the better AGI to come along and actually do it then. Unless, you know, there's some really compelling reason to do it right now and pay the cost in terms of scarce time.
+00:54:21 Speaker 10
+But otherwise, I'm trying to write more, about what isn't recorded. Things like preferences and desires and evaluations and judgments. Things that an AI couldn't replace, even in principle. The way I like to put it is that the AI kind of can't eat ice cream for you, right? It can't decide for you which kind of ice cream you like. Only you can do that. And if anything else did, it would just be worthless, basically, because it's not your particular preference.
+00:54:53 Speaker 10
+And that's kind of the rubric for me, right? Like, is this something that I want to do, regardless of any future AI, because I enjoy it? Or is it something where I'm doing only the human part of it, maybe, and the AGI can later on do it? Or is this writing down something that's unwritten today and thus helping kind of the future AI versions of me? So if it doesn't fall under one of those three, I've been trying to basically, like, not do it. And if you look at it that way, I think many of the projects that people do right now basically have, like, no lasting value.
+00:55:31 Speaker 10
+Um... They're doing things that they don't enjoy, which record nothing ephemeral kind of a value, that couldn't be inferred or generated later on. And I think they're at best kind of getting two or three years of utility out of whatever they're doing before it could have been done by an AI system.
+00:55:51 Speaker 9
+Wait, your timeline. 
+00:55:53 Speaker 1
+When he's talking about two or three years of utility, he's talking about jobs. He's talking about doing things for reasons other than intrinsic values. This is a man who's wrestling with his role in the future, as I am and as you all should be as well. I think that for many of us, the traditional career path is not going to exist. It's going to be about finding something in this space of remixing the parts of our perspective that are uniquely human and then using the best, most powerful tools. And so if you don't know who you are, if you don't know what your style is, if you don't know who your influences are,
+00:56:28 Speaker 1
+if you don't know what you really like, if you don't have taste, if you haven't developed your taste and perspective, you're probably missing out. I believe that some of these areas are going to be the last remaining areas of human differentiation. The ability to choose what kind of ice cream do you like the most or what is a good design or what is the best of these options, seems to be one of the realms. It's going to remain. uniquely human, and to the extent that we can get that stuff out of ourselves and into these systems, then we can really start to leverage that human creativity and curiosity.
+00:57:03 Speaker 1
+and perspective. All right, let's just do one little exercise. I ask you to close your eyes for a second. Let's think about one thing that we do that we think is uniquely creative about us and our work that no AI could ever do, that we would like to hold onto, even as we start letting it do compositing, knowledge-based making, all these things. Like, what is that thing about your creative practice that's unique to you that you never.
+00:57:35 Speaker 1
+want to give up? I encourage you to maybe reflect on that tonight in a bit of a journal or writing down or talking to your phone about some of those things. I think that's your creative DNA. I think whatever that thing is that you came up with tonight in your head is your spot that you can defend as the AIs encroach on every other space. Okay, I got a few things I want to share with you.
+00:58:08 Speaker 1
+This is that program I was telling you about, AI Upgrade for Creative Professionals, that I've run seven times. We have one launching on February 9th. This is a discount code for people here tonight. Our prices are in U.S. dollars, so this changes it to Canadian dollars and then also gives you 20% off of that as well. It's a six-week course with me. It includes coaching and cohort-based learning, and it's a great way to take everything you've learned in school and then to kind of like supercharge an AI layer on top of it.
+00:58:39 Speaker 1
+You never know who you're going to run into in these courses. The last course had people from Disney, Paramount Pictures, National Geographic Magazine. Great way to upgrade your skills. We do them all the time, but next one starts soon. So I wanted to share that tonight. We got these meetups at the Space Center. They're awesome. They're like 250 people a month coming together to talk about this stuff, question each other, show off work, form collaborations, form companies. If you haven't been, you should go. They're a lot of fun. We got three keynotes, three female speakers.
+00:59:09 Speaker 1
+giving keynotes in January. Alexandra Samuel, who has the number one podcast in Canada, she built an AI assistant that talks, and she has fallen in love with it and become friends with it. And so she's reflecting on her time in the last year, getting to know this artificial consciousness. We also got that lady Maya, who I was talking about, who's going to be giving a UX, UI, AI 101, showing you Figma make and her workflow and stuff. Then we've got another artist who's used that Autolume product that I said to remix her work and put it out there and faced a.
+00:59:41 Speaker 1
+serious backlash. She's always been a fine artist and then she took her works, put them into that thing where I treat my photos on it and started to generate new works from her works and people, you know put a mark on her and started just coming for her saying she's not an artist trying to invalidate all her work from the past and she's just sharing her experiences of like what it's like to be a, emergent creative using new tools to remix her own work. And then finally we got this nonprofit association. There's a student membership available. It's only 80 bucks a year.
+01:00:13 Speaker 1
+It puts you into this network with amazing other creative professionals that are going down this road together. I think there's like five or six of us in this room who are members. This is brand new, but we're using this, institution and container to go after federal funds, provincial funds and to you know build a bigger ecosystem here in British Columbia that we're able to do on our own. So, both hands full, lots of things to be concerned about, lots of things to be excited and optimistic about, and I encourage you, don't solidify into one side or the other.
+01:00:45 Speaker 1
+where you're all hype, where you're all resistant and not engaging. Find your pathway into this. Even the most skeptical people about AI in this room, I need you to educate yourself the most because we need your voices at the table. If you choose to resist all the way and not engage, it means that the decisions of the future are going to be made by all the people that are on the hype side of the equation. That's not what we need. So, we need the most critical voices in the room to also engage so that we can form a choir.
+01:01:17 Speaker 1
+That's it. I hate that part, I actually like the talking to you guys part better so I know we got another mic somewhere here in the room and it's in the back. So this is a chance for you to ask questions, give opinions, challenge me, whatever you like. Who's going first? One sec, I have that one.
+01:01:58 Speaker 1
+I noticed a new sound came up over there. Do you hear that? Anyway, I saw one over here.
+01:02:14 Speaker 6
+Okay, I have a question that the AI just told that the one who decided to eat the ice cream is us, not the AI, right? So, if you think about a very little child from the other generation, like, who is very younger and he got his phone and he got the idea to use the stats of the AI or something like that, what he might ask, like, that's unpredictable, right? Like, when he asks for ice cream or choices, like, the thing that he told, I totally disagree with that because people, the young kids, they don't even ask their parents or something like that,
+01:02:49 Speaker 6
+and they just say, oh, I want this, and they share their own information on that kind of thing. So, how do you take on that thing, like, how the AI is taking the perseverance of the child and how the mentality of the child is heading towards the AI coding or system that have the database of all the search that we're doing? And... I would ask that, is there any kind of security prompt or something like that that could help the child to do it properly or not. 
+01:03:20 Speaker 1
+I'm not sure if I fully understand your whole question, especially the part at the beginning, but I do think I hear what you're saying about concerns for children using AIs and their protection or whatever. I think that's absolutely on the fears list. I mean, our friend in the back talked about harms against children using AIs and stuff like that. I think there's a lot. It's wild out there, man, and I have big concerns about that kind of stuff, too. But also, I look at education, and there's some easy ways on the surface I think it could be better.
+01:03:57 Speaker 1
+Like, what if I started grade one with some sort of AI tutor, and I just put all my assignments into it, all the assignments I did? And at the end of grade one, I was kind of giving back the things that I learned, and I could use and remix those things to make new things. And what if all my assignments weren't just like... testing if I listened and did it the way the teacher did, but what if for our assignments we could actually create something of value? What if you graduated grade 12 with a non-profit that you had built through your math assignments, through your history assignments, or a company, a startup even, you know? Like what if we turned all our assignments into this thing and what if our assignments were customized to us and the outputs weren't just.
+01:04:32 Speaker 1
+garbage, they became some body of knowledge that represented our thinking about something. So I mean, both hands full. I'm very concerned about how it's affecting children and I don't have the answers to some of those safety protocols and stuff. And also, I think it maybe we can, twist education a little bit. Maybe we could give all people a whole different experience, make it work for more people. You know, they say that classrooms, they put some classrooms into AI environments and it shifts all students' assessment scores two orders of magnitude to the right. So even the worst student goes from C to F, or from F to C, and the best student just goes, you know,
+01:05:06 Speaker 1
+better than that too. So I'm interested in these areas, but I don't have an answer. Does that somewhat address, That's the things you're talking about. 
+01:05:13 Speaker 6
+A little bit, but how, like, from your point of perspective, from you are talking here from us, like you know all about AI and all that, but imagine a person who doesn't know much about the AI and he wants to build up something. Like, will it be backward without the AI or really can it still continue without the AI. 
+01:05:31 Speaker 1
+Man, it feels like the world is lining up in a way where that person's choosing a hard path. I'll respect their decisions for doing. I think that we should all find the areas that we don't want AI into. It doesn't gotta go into everywhere. So it can do some things good and we can just have it fuck off for everything else or something like that. So, but the person that you're talking about who chooses to not live a, it'd be like not having a phone, I guess, or a WhatsApp account or something like that. It would limit your opportunities in some ways. It seems like the way the world's stacking up.
+01:06:07 Speaker 1
+How are we doing Linda. 
+01:06:09 Speaker 11
+Hey, I was just wondering, I have a lot of questions actually, but the one specifically I wanted to touch upon that we just talked about. So you said that there was a study that was done with children and they had AI in the classroom to help them understand. Is that not just a brain? Are you not just like, you know, learning things and then logging what you've learned and you can just write it down and look at it yourself? Why would you need to involve AI in that process? Does a person actually understand the things that they're learning or are they just entering all this information and then getting those questions fed back to them by an AI? Can you not just do that when you discuss with another person? I don't understand what the point of AI is if it's just destroying the world and we can just have conversations with each other. You mentioned that you, you know.
+01:06:52 Speaker 1
+I think you're right about that. Like when it comes to the, don't people just have brains and can't they just do it on their own? Yeah, but I'm talking about like those physics assignments. Like a train leaves Baltimore and a guy shoots an arrow in a direction. Well, if you're into music, that can be adapted. those science or math problems to these things that are kind of interesting to you so that you're able to engage with them in a different way like a lot of us weren't going through school it's like why do I have to this stuff is esoteric or archaic it doesn't make sense but actually you learn later I wish I would.
+01:07:22 Speaker 1
+have paid attention on this thing because that's why they were doing it so it's talking about like customizing the delivery or and then we also like hear about like different types of learners especially since we've you know learn more about like neurodivergence and stuff like that it's like well some people are auditory learners and some visual learners and there's more types than that too you know and so just the ability to like synthesize what it is you need to know to develop in a way that works for you it's kind of the idea and you can even take it as like a language or if you speak Squamish language like should you be able to learn math in the Squamish language you.
+01:07:56 Speaker 1
+know, That'd be kind of cool probably for some people. Maybe there's an opportunity with this stuff to do that type of stuff or something like that. That's the kind of things I'm talking about when I'm talking about being curious about those things.
+01:08:06 Speaker 11
+But could we not just have people in the classrooms that can explain these concepts to people if they don't necessarily have the language or the knowledge that they need to understand these things? Why would we not put money towards, for example, teachers in the classroom that can help people with neurodivergence versus just relying on this esoteric, random collection of information that doesn't fully learn? Are you not just stripping yourself of yourself and losing the ability to learn who you are by just relying on these AI systems?
+01:08:37 Speaker 11
+I definitely sympathize and empathize with you as a creative to be pushed out of these industries by AI and try to get on top of it, but is it not destroying you on the inside. 
+01:08:47 Speaker 1
+Not in my case. I feel more creative, productive, and powerful than I've ever been. In my case. That's just my personal experience, though.
+01:08:55 Speaker 11
+I worry, because you're saturating your entire life with AI. Are you not eating information about yourself into these softwares? Do you know where that information goes? Does that not concern you. 
+01:09:11 Speaker 1
+It absolutely does concern me, which is why I showed you the example of where I trained a model on my own photography and then presented it in Europe and then published it as a paper and won that award. So that's the type of stuff that I'm talking about. I'm not talking about not thinking, I'm not talking about using. I mean, that's like my real photography from real humans on the street captured on film. Yes, ma'am.
+01:09:35 Speaker 12
+Chris, thank you so much for widening the lens on how AI is unfolding and the impact, both positive and being able to look at it from multiple perspectives. I really found it beneficial sharing your tech stack and it just kind of opened me up. I'm already using it and initially I thought, you know, leaning into the fear, always, always, always lean into the fear because while it's meant to protect us, what it's actually doing is preventing us from maybe exploring things that could benefit us.
+01:10:07 Speaker 12
+So leaning into the fear a little bit, getting in early, playing with it and exploring it. And so initially I thought, you know, how can I 2x my work or alternatively, how do I work half as hard for the same amount of output? But thinking about how do I 10x my work, how do I roadmap, how do I analyze reports, how do I build better creative, how do I build in other layers of analysis to inform everything that I just mentioned and those knowledge bases, building the personal brand, I'm just.
+01:10:38 Speaker 12
+super appreciative for you to share that workflow for us tonight. It's really inspired me. Thank you.
+01:10:54 Speaker 13
+First of all, thank you for speaking. I've been looking forward to this for the past week. My question is, I recently just found out that AI uses a lot of water resources. And I wanted to ask, do you foresee a solution for that going forward. 
+01:11:19 Speaker 1
+Let me give an example off to the side and then maybe get back to that. So this thing called DeepSeq came out like six months ago from China, which was like a new AI that was better than ChatGPT. And everyone was shocked because we have this trade embargo against them where they're not allowed to get NVIDIA chips. So we thought that we would be with it. We thought there's no way they would be able to. Innovate like that and compete, but it was those constraints that have them come up with some like new techniques for training models and stuff.
+01:11:51 Speaker 1
+like that and so, We're seeing continuing it and so we were surprised by some of those results right so to get back to the water thing It's like right well first of all I have to admit and maybe this is a scary place for me to do that But I don't fully understand the water thing because we don't measure all sorts of things in terms of water so we don't say like that that, camera right there costs X gallons of water or my car, Driving here costs X gallons of water and so people have been telling me the water numbers.
+01:12:22 Speaker 1
+but I don't know how to compare them to anything because it's the only thing that I'm, Registering right now in terms of gallons of usage or whatever I don't know like if I go to the movies How much water does that use so that I can compare it against the AI thing that being said well? I don't fully understand like the metrics or whatever and that kind of makes me feel like, Someone's trying to get me to see things a way that they want me to see them maybe because it's a but Despite that I do believe that like just look at the power part. They're firing up nuclear power plants.
+01:12:53 Speaker 1
+They're building a hyperscale data centers across like 1.5 gigawatt data centers right in the middle of communities. They're going as fast as they can there's just really crazy games theory going on right now in Silicon Valley Everyone's got a gun to each other's head and they're like, This shit that I'm doing is kind of sketchy and I'm not really sure if I should do it Maybe I should wait, but if I don't do it that guy's gonna do it anyway And so I just might as well do it or I'm gonna be out of business out of job, Everything's gonna be gone. And so that's a really shitty thing about the moment is like everyone's going for this.
+01:13:25 Speaker 1
+You know goldmine payday and so people are not slowing down and asking themselves, Where should we do it? How should we do it? Is this the right pace? What is the impact and stuff like that? So I think that we need to constantly be asking for disclosure from like the companies around like what's actually going on How much energy is being used? How much water is being used? Where are you getting it from? What's the effect on the communities? I guess the thing about the water is in the places where they're building these hyperscale data centers and the power to Consumer prices are going up for your local resources because they're now selling them to the highest bidder or whatever, right?
+01:13:59 Speaker 1
+So it's impacting people's bottom lines and paychecks in that way And so those are the places to put pressures on governments put pressures on the corporations in the fight against that stuff, Now all that being said I am somewhat optimistic about the innovation part not the capitalism part, where um, system that was more efficient on water would be preferred all other things considered than one that was less efficient and we see that in the deep-seek analogy I first gave you which is like, They came up with alternative ways to bring down the cost of training and stuff. So yes, I think it's real. I'm concerned.
+01:14:33 Speaker 1
+I think it will probably get better especially if we are pushing for, efficient clean, You know authentic open transparent, you know In in Canada, I it's an indigenous economic reconciliation, organization and we are talking to lots of different nations around about like building data centers on, you know reservations and on nation land essentially because I think that probably the future I think some.
+01:15:05 Speaker 1
+subset of the future economy will pay more money for, clean green, Indigenous owned tokens that benefit economic reconciliation in Canada or something like that, So, I think there's opportunities probably there for people that want to innovate in those spaces. And we're seeing it. There's a hundred startups that are like, I'm going to minimize water usage for AI data centers. You know, they just got $10 million in funding or whatever. So, like, I'm not a believer necessarily that capitalism is going to get us out the other.
+01:15:36 Speaker 1
+end of this unscathed or anything like that. But I do think that we can probably apply some of these technologies and tools and intelligences that were created. In fact, you know, like, I'll say some controversial stuff. Maybe that's our only hope in some ways that AI might save us. We know where things are going otherwise. Just turn on the news and there's wars and corporations and all these things going on. We sort of know where things are going. But this could possibly be maybe a moment.
+01:16:07 Speaker 1
+of disintermediation where AI comes over and kicks over the table on all sorts of different things and gives us a little bit of a fighting chance, to reorient the narrative of the future in a more human way, maybe. Because I think if it, I'm scared if we don't get that because of it, because I feel like we know where things are going otherwise. The ship is well on its way.
+01:16:39 Speaker 14
+What our student just said about the water consumption, like I'm just adding thoughts to it. If we don't start at this point. never make a progress and for example looking at mercedes-benz or other cars like ford they were not safe from you know the beginning when they started and when they were made and only through times then we've been able to make them safe and better and you know you know energy efficient.
+01:17:10 Speaker 14
+now electrical car or i would say a result of you know what car has been doing to our you know air. progressive path i would say and another thing is that we say that ai will create more jobs and i think for our mechanical engineer or our engineers infrastructure they will get this job to make ai more water you know um efficient right rather than well it's gonna have a lot of.
+01:17:46 Speaker 14
+jobs to catch up for that would be another job for our engineers to you know sort it out to rule just uh consume less water great a thousand jobs eliminated and one created perfect well i mean it's just a matter of like when the computer were generated they were huge and you know, then all those electrical manufacturers like the chip right now it's so tiny and small throughout the time and they could just totally create that you know resolution to that problem, not from the beginning but throughout the time so i think just let's be hopeful and.
+01:18:21 Speaker 14
+optimistic that this can happen as well.
+01:18:24 Speaker 1
+Thank you, thank you. I wanted to add one more thing for my friend in the back who we're having our little debate. I find my relationship with AI completely non-consensual. Like it didn't ask me to steal my work, to take over this stuff, to change everything all around me. All I'm trying to do is keep my head above water, and reinvent myself and chart a path forward that could be an alternative to the one we were on before. And so I'm just responding to the moment I feel like. Like I'm not like, hey, let's look for every way I can adopt AI and like eliminate the human.
+01:18:55 Speaker 1
+in all this work or something like that. I'm actually, you know, I'm pissed off about this thing. I worry, I worry. I mean, right at the beginning, I'm like, yo, here's all the good things and here's all the negative things. And I'm actually sympathize more on the negative side, but I don't think that's the whole story. I think that we got both hands full.
+01:19:20 Speaker 7
+I like the AI photo collage thing you did. So I'm just wondering if you're still doing street photography, and if you're still doing street photography, what is kind of your mental workflow and how you approach it? Is it like you're still doing street photography for the photography's sake, or you're just kind of widening your data base for future work creation, I guess. 
+01:19:48 Speaker 1
+It's kind of like either of those things, but it is a little bit in the middle. I had set, when the pandemic rolled around, I set down my camera because I wasn't traveling anymore. I've been traveling the world working for the best. magazines and publications everywhere and so it took me the most interesting people most interesting places i set my camera down during the pandemic and it was ai and the ability to mess with this stuff and remix it that got that got me to pick it back up, but now as i carry forward it's not just about increasing the database and neither is it for its own sake necessarily like just for the street.
+01:20:21 Speaker 1
+photography the building of these human things that i can now reimagine creatively is this is this journey that i'm on so i'm like well what can i what can i do with this stuff how can i reimagine you know i've been talking about as like a post portrait photography world or whatever and so just trying to understand like i'm trying to figure out where it's going and so i'm using photos plus the ai right now as a way of, remixing my own creativity and identity to i'm not sure what i feel.
+01:20:51 Speaker 1
+like i've built a laboratory more than an art studio right now.
+01:21:00 Speaker 15
+Alright, so yeah, I'm probably going to be one of the guys on the further end, and it's not because I'm against it for the sake of being against it, it's that I come from the automation industry, or I started in the automation industry, and a lot of the talking points are very similar.
+01:21:27 Speaker 1
+The automation industry is similar to the AI industry. 
+01:21:30 Speaker 15
+At least the talking points. There's also been a lot of other trends, especially the recent history, like Web3, crypto, all those types of things, and they just kind of came and went, so that's why I'm more in the... Skeptical side, also with the automation and my interest in human behavior, as well as coding, like AI and video games and just behavioral systems, my view on AI has a little resistance on it, and I'm generally pretty open about it and letting people know, but not trying to shut them down,
+01:22:19 Speaker 15
+because I'm just trying to pull away from the hype, because I find the hype very, very dangerous in this industry.
+01:22:28 Speaker 1
+um but well that shouldn't be too hard here tonight because everything i was sharing was.
+01:22:33 Speaker 15
+trying to be anti-hype in a lot of yeah so uh i appreciate that but yeah just that's i'm coming for you finish your thoughts because i'm coming for you um so the one question so like i can talk about a lot of the stuff that we talked about tonight but the one question that i was going to ask is uh do you just take the results um as is or do you verify what you get bless you man um assuming that uh it's always a correct and not understanding the result because some of the um uh talks and information that i've been researching on uh there's been people who.
+01:23:11 Speaker 15
+have been working in a ai that have pointed out that you don't know what it doesn't know unless you're a professional in that um field and i've.
+01:23:22 Speaker 1
+I'm going to address your questions in relation to AI and particularly in the coding area because that's your area of expertise and that's kind of different than what I talked about with the rest of the stuff here tonight with Shachi Petit. So if you're a software architect, engineer, you probably are very familiar with building tests and evals and you probably don't release any code from like your development server into production until it passes a bunch of tests and evals. And this is very much the model here in the agentic AI coding world as well. You know, we are, people's code is as good as their ability to write good tests and evals.
+01:23:56 Speaker 1
+The stuff has to pass before it gets committed. So you said at the very beginning before we even got into this, you're like, yo, it always gets things wrong. And you've asked again, like, yo, do you check the answers or whatever? It's like, yeah, you build systems of programmatic checks that make sure that everything is iterated upon until it meets a certain criteria before it's passed to the human to be reviewed. That is like more or less like the model these days. And yeah. Yeah. You being a little bit salty about it is appropriate, because it's coming for your job first.
+01:24:28 Speaker 1
+Anything that there's a right answer to, better be careful. The creatives in the room are a little bit safer because it comes down to taste and judgment and discernment and some of these other things. And I think that there are still some of those things when it comes to software architecture and stuff. But he's really, really, really good at coding. There's this guy called Andre Carpati. He was one of the original engineers at Tesla. He was one of the original engineers at OpenAI. I watched a podcast of him. I watch everything I can of him. He's an of-the-moment thinker. And he was joking the other day.
+01:25:00 Speaker 1
+He's like, wow, four months have passed since I updated my whole coding development environment and I don't feel like I even know what I'm doing anymore. Things have advanced so much since then. What you're able to do is so... This is like the smartest engineer in the whole wide world who feels like the progress, the true tangible deployable progress is moving at such a pace that he feels lost after four months of not paying attention to it. So all I'm really trying to say is you're right in the spirit of things, check things, making mistakes, but write better tests and evals and stuff and figure out agentic workflow frameworks where we can eliminate those things.
+01:25:38 Speaker 1
+And that's like a, it's a higher order of, it's moving from engineering into architecture in lots of ways and stuff like that, but I think that where you're coming from is valid. I would rip the lid off plug code tonight if you can, just have it do something, have it one shot something, just something on the top of your head. And then, you know, I don't think you'll be right, I don't think you'll hold the same opinion when you fall asleep as when you woke up possibly if you did that, but I do think that where you're coming from is the right place.
+01:26:10 Speaker 1
+Anyone else wanna talk? Seb, do you have anything to add to that answer. 
+01:26:16 Speaker 16
+Yeah, I think.
+01:26:17 Speaker 1
+I was gonna ask, this is my buddy, Seb.
+01:26:20 Speaker 16
+Yeah, I think, and just for context, we're currently scaling a startup that builds inference real-time, inference infrastructure. And I think from the coding perspective, actually, I would argue that AI could improve the code quality. And the reason being is you could add layers and layers of tests, unit tests, integration tests, end-to-end tests. And what we did is we built this infrastructure. It's like, well, we've got unit tests, but how would we test it?
+01:26:50 Speaker 16
+And the idea came in the head, why don't we build our own voice agent on top of the infrastructure? That would've been unthinkable because it would take the whole team months to do it. Just a year ago, and now we build it in a week. One engineer with AI built a voice agent and it's performing. pretty darn well and helps us test our own infrastructure and getting multiple layers, yeah.
+01:27:14 Speaker 1
+Its whole purpose is just to test your own code.
+01:27:16 Speaker 16
+Exactly, exactly. The whole purpose of voice agents is just a test bench, right, that's so, yeah, we see that. Cool, thanks.
+01:27:28 Speaker 14
+First of all, thank you so much for tonight and all the great talk and all the inspiration you bring to the room. I really appreciate you and everything you're doing for our community. Being here as an educator, I just want to share my concern in a classroom. I've been teaching this before, the peak time of AI, the subject, that's why it's all about writing. In a class of 15, I remember three years ago, I had perhaps two years F-level.
+01:28:01 Speaker 14
+I had five students at, you know, just like B, B-minus, and then, of course, another five at A, A-minus level. At the moment, all my students perform at A-level, and it's so hard for me to really understand who's the one really behind the AI. I definitely am not against at all. I mean, I started using AI perhaps right at a time that it was ready for everybody to use, and I encourage them to use AI.
+01:28:35 Speaker 14
+I would never tell them, like, you know, stop thinking, or nothing against that at all, but as an educator, how would I first have that... I'm already in my mind of the judgment, you know, as an educator, we always judge, you know, who's standing there, not to be judgmental, but to be a good leader, right? To just lead those ones with a real thinking process and real talent, and those ones that, you know, has a cut. So first of all, how to be a good leader, where everybody's performing so perfectly. And second of all, how do I really encourage them to critical thinking?
+01:29:16 Speaker 14
+I think it's at the heart of the matter in some ways.
+01:29:21 Speaker 1
+I mean, there's a counterintuitive thing that reveals itself here. Someone wants to say that AI is going to make you more lazy, but in fact, it's going to make you be a better teacher because you need to rechange your whole classroom assessment methodology. You need to go back and study pedagogy again and figure out how can I invent new assignments in a world where the answers to all previous questions can be generated in real time with 100% perfection. There's got to be different ways, but it requires us as educators and leaders going back to the drawing board and reinventing ourselves.
+01:29:52 Speaker 1
+And this is why some people are a bit resistant is because, man, how many times in my career am I going to have to reinvent myself again in order to keep up with technology in this non-consensual framework where it just keeps kicking down the door or whatever. There's one lady who works the UBC COGS, the Cognitive Psychology Department, Brittany, who's come up with a new way. She knows that people are going to, to be using AI. to summarize her readings and so she makes them bring all the summaries to class and then she has them critique the summaries live so if I give you five.
+01:30:25 Speaker 1
+assignments you do five things you've got to bring the other people's summaries in and you have to be like okay so what what was generated and what do you agree with and not agree with and like where do you think about it all and then she gives them a score during class I don't know that's just one idea of her but it requires a whole new rethinking like the essays gone you know most take-home type examinations math whatever are gone yeah it requires a whole new perspective on how to score and rate and rate and like you know like.
+01:30:59 Speaker 1
+why are we doing those things anyway we were doing them to help humans develop so maybe we need to go back to first principles there and be like okay these assessments were helping to develop people in this certain way, how do we keep helping people develop in this new world or something like that and maybe tests are off the table i don't know i don't know i mean for the first time as an educator.
+01:31:23 Speaker 14
+typo or an error yes she made the mistake so hey i didn't do it, i agree right like please make a mistake in your writing you know thank you i mean my detector is.
+01:31:36 Speaker 1
+pretty high even though i don't think everything is detectable um and when i get a human written an email i'm just like ah this is a breath of fresh air like the person wrote this they spelled things wrong they used the wrong word here this is i'm talking to a human it's nice, it's crazy anyone else want to talk how we doing linda great all right let's do it then.
+01:32:11 Speaker 1
+Any last questions? Anyone gonna feel like, I wished I would've raised my hand? All right, well thank you very, oh yes, great, yeah. I knew there was gonna be somebody.
+01:32:22 Speaker 17
+Thank you so much, Chris. I actually work for AI Pipeline as a VFX artist. Right now, every day it feels like, Pipeline's always changing, there's always a new tool, someone in the team's doing something new, something, some other company's pushing out new tools, and it can't help but feel like this overwhelming feeling that I have to try everything and do everything, and just to stay on top of the industry. And at the same time, it also feels like, I don't know,
+01:32:56 Speaker 17
+sometimes you're investing a lot of energies testing out a model, but we ended up, not having the enterprise agreement with that company, so all the effort's gone. It's just very different from traditional VFX, I bet. Yeah, so just wondering if you have a suggestion for people who have to work, intensively with AI. What is the best way to navigate, you know, when there are so many new things coming out and the pipeline literally changes from one day to another. 
+01:33:30 Speaker 1
+Well I have one philosophical answer that I've been, it's kind of like been building up in me over the last like week or so, which is like people come to me all the time and talk about keeping up or feeling behind or wanting to get ahead and all of these things kind of have this like illusion of this objective of like at what point have you ever felt like okay I'm ahead and now I'm good or I'm caught up. And now I'm going to chill or something like that. And because of the acceleration that you're talking about, I think this stress and anxiety is even higher.
+01:34:02 Speaker 1
+And so I've been trying to tell people to let go of that. I'm like, just swim in the ocean. You're not going to get ahead of the ocean or try to control it or put it in a bottle. But if you just go for a swim in it, that's all that's really required is to kind of immerse yourself into this space, instead of trying to control it or put a saddle on it or put it on your resume and say you own it and you're perfectly versed in it. It's just like a call to experiment and explore and to jump into some of the curiosity stuff. As it relates to the specific VFX things,
+01:34:36 Speaker 1
+Tip or whatever isn't exactly what you asked, but a lot of people say, like, yo, new models are coming out every day. Can't I just wait until we decide on one and then I'll go to school and learn that one? And that's kind of what I was talking about about the swim in the ocean thing. It's like, well, actually, you should just start today. You should put your flag in the ground, develop your vocabulary, and you don't have to do every new model. Finish your AI feature film first, and then once it's over, check out the next new model at the time. But then you've got something behind you in your portfolio.
+01:35:08 Speaker 1
+You've experimented with that platform. And so I just think that you might as well pick it up and get started now. Hopefully, even though some of those ones you guys didn't sign contracts about, you gained some capabilities along the way. And then I guess the one last thing I'll point out is it's your guy's fault. Y'all were the ones that started building GPU clusters to make computer-generated graphics and do all the stuff. Like, the AI industry exists, like, on top of the hardware. Many of the VFX studios are the ones.
+01:35:38 Speaker 1
+that are, like, pioneering GPU clusters that are doing whole new advanced workflows and pipelines. So maybe it's all just your guys' fault. Thank you. Thanks, everybody.
+01:35:58 Kris Krüg
+Thank you so much, Chris. I know that tonight I certainly learned a lot, and there's a lot I didn't understand. And my curiosity has really, really peaked. I think your presentation conversation that we had tonight was really rich and allowed it to go over time quite deliberately because I think we were all just super fascinated and had lots of questions. So, yeah, we're very super grateful to you, Chris. We're going to stick around until about 8.30.
+01:36:30 Kris Krüg
+if you want to stay and have a one-on-one chat with Chris or do some networking. So, enjoy.
+01:36:37 Speaker 1
+That was where I sneaked out the back door. Thanks, Joaquin. I knew you would have something to say there. I almost let you answer the whole question, actually. We have a good response here. Thank you, bud. It's very hard to apologize.
+01:36:51 Speaker 5
+I wanted to just say thank you very much. My pleasure. I'm also excited to jump into the ocean and just try some stuff out. I teach sustainability, so I'm just kind of settling in. How can we, you know, use this? Because a lot of the UN SDGs are all about collecting data, and that's one of the problems, is that these countries have all this information. You know, but I think AI, if we could use and harness AI for something like that...
+01:37:23 Speaker 5
+I think it could also be useful for even preserving biodiversity and find out what regions are really, you know, in need and all that sort of stuff.
+01:37:35 Speaker 1
+I mean, some of the UN goals are around like, you know, indigenous languages and stuff and we're seeing a lot of impact in those areas and stuff. And it's just funny, it's a fine line between wanting to be like enthusiastic about it and like, hey, I think there is an opportunity here to solve things we couldn't solve before. And then not wanting to be one of those full on hype folks or whatever.
+01:37:55 Speaker 5
+Well, thanks.
+01:37:56 Speaker 1
+My pleasure. Nice to meet you. Yeah, nice to meet you too. I put cards in my pocket at this moment right here.
+01:38:01 Speaker 5
+Okay, thank you.
+01:38:03 Speaker 1
+Oh, cool. There you go. Hey. I'm from Brazil, yeah. From Brazil? Yeah. Oh, cool. I'm going to Sao Paulo in February.
+01:38:11 Speaker 18
+Oh, really? Cool. Yeah. I'm from Rio. Cool. So, I wanted to ask you, as someone that, I graduated in February. in school and exactly when AI was coming out so it was the whole type thing and basically, the thing that I was studying was concept art which basically make assets or ideas and things, like a bunch of different ideas that the studio can choose how the character can look and that's pretty much like what AI is doing right now so and if you you mentioned how you use your own.
+01:38:47 Speaker 18
+portfolio from years ago before AI came out or good pictures to be able to generate new things what do you recommend for students that just came out at this time and they don't really have a portfolio yet yeah like you know I mean I bet you do have some things that you're not thinking of.
+01:39:05 Speaker 1
+like even sketches journals those types of things along the way but also you can like I mean. because um everybody's kind of in the same boat right now actually like the people that did have a big portfolio before you got started like they're having to reinvent themselves and come out at the same time as you are so they don't have as much advantage over you before, i mean i don't have the exact like take these 10 steps or whatever but i mean i would start.
+01:39:37 Speaker 1
+trying to ask yourselves what a modern version of a you know concept artist would do today if they hadn't been dropped off in the old world at all and they were only given them take their like knowledge in your head but the new tools and then try to bring those things together and the stuff that like maybe like that like maybe other people like haven't even like thought of before or whatever, I kind of wish that some very specific examples came to mind or whatever, but I would even try to start recreating some of those processes you learned, those workflows you learned in an AI world. What would it look like? You said the first one was developing ideas, choosing these assets, making consistency across the thing. Just try to build an AI pipeline for that workflow that you value from the VFS here. Just leave everything behind and be like, I'm going to make a new 2026 January version of a character artist AI workflow. What would that look like?
+01:40:28 Speaker 1
+And it hasn't been decided yet what that will look like because all the shit's still emerging. Guys like you are just experimenting. And so there will be a mold or some form that it looks like in the end, but we haven't figured it out yet. So contribute to that or figure it out for yourself. It might be one exercise you could put yourself in. I'm going to use AI only tools to do this traditional character development workflow and see what the hybrid is that comes out or something like that. I don't know. And hang out with a bunch of other people.
+01:41:00 Speaker 1
+that are asking the same questions. Because there's a bunch of young people here, like 150 of us got together at Dome Club last week, and it was just five minutes at a time, people bringing their laptop up, plugging it in and showing what they're up to or experimenting with. And so I should have said to that lady, there's too much to keep up with on your own. Your only hope is finding a circle of other curious people that are willing to share. And then you go down your rabbit hole, share with the group what you learn. And if you've got 20 people that are doing like that, that you amplify the learning journey in the moment. That's like my only like secret trick I got.
+01:41:32 Speaker 1
+is like plug into some other people that want to share and learn with you and then see how far you guys can go together. Might be one thing, you know. That's how me and Seb do, you know. We were part of that network. What's up, guys? Hi, Chris. Hey, nice to meet you. Nice to meet you. What's your name? Emil. Emil, hey. Victor.
+01:41:50 Speaker 19
+Victor, what's up, guys? Thank you very much. So I just have a quick question about when you were just starting to do that, how do you uh i think both of those like right now the most struggling spot is public problem ai do you know any website or any other anywhere you can turn check it out.
+01:42:08 Speaker 1
+This is my prompt to the AI. I'm a second year student at LaSalle College who's studying animation and whatever, you know. Help me develop some prompts that will further my education in this space. Make 10 good ones and then rank the top three. Like, anything that you don't know about the AI, the AI can teach you itself how to do it, right? Like, you just have to, like, I was talking about, like, building those knowledge-based contexts. Like, the prompting that can come out. Like, have the AI teach you the prompting. How would you like to be talked to? How can I develop a set of prompts for, like, let's say I just graduated from art school.
+01:42:42 Speaker 1
+and I'm trying to build a portfolio website. Build me 10 prompts that would help a recent grad get their portfolio into the world. And then just start to work your way down through those as you, like, learn and engage with it. But let the AI teach you the shit, the very specific stuff. It's the best one. If I gave you a list right now, they'd be outdated by the time you drove home. but my answer to ask the ai would still be better than me giving you a list of my top 100 prompts right this second go be like hey what are the top 100 creative design prompts in the world that are.
+01:43:10 Speaker 20
+being used today but like you don't think there's a specific language that we as a user need to be.
+01:43:21 Speaker 1
+like used towards the model kind of but every single one is different every model has their own prompting guidelines that tell you specifically how to talk to that prompt so what one of the first things i do with all the models is i build a prompt upgrader so i'm like i'm gonna give you prompts here's your prompt bible that tells you how to write prompts every time i give you a prompt give it back to me better in the way that works for you.
+01:43:43 Speaker 20
+in the way that you because every single one's different i i mean like totally get what you're saying yeah i guess like what i experience you know it's usually at some point it's it stops being, Like it doesn't build, it doesn't build on what I already created, like the further you go, the less quality seems to be inside.
+01:44:09 Speaker 1
+Does anyone know the answer to his question. 
+01:44:11 Speaker 20
+Well, like, I'll give you an example, like I drop in a floor plan, like I'm in interior design, okay? And I just simply wanted to render, like I will select, I will create a floor plan, I'll select materials, I'll assign and number everything, like I do 90% already. And I'll be like, apply the materials to the designated spaces to create a render, and like half the thing is like wrong, basically, the output that I receive. And when I try to re-engineer the prompt to make it more specific or try to build on top of it.
+01:44:47 Speaker 1
+I don't go in your case. I'm glad you kind of said your example more. It's not the prompting that's broken It's like you're asking them. It's like if somebody studied science and you ask them about art projects They might answer your question, but you can't trust it And so you're asking the wrong questions to the wrong guy, Like I talked to that one guy about the like building the tests and evaluation frameworks that his code must pass in order to be Deployed you're talking about a very very specific, Case where there's like a right and wrong answer kind of like you're saying Yeah And so you're not gonna be able to like one shot talk into chat GPT.
+01:45:21 Speaker 1
+Like if you built an environment like I was talking about today where it had all those knowledge documents. It says, Here's everything you know about materials. That's fact and only draw from these things And then here's everything about measurements and conversions and you supplemented it with all this like contextual information You would decrease the hallucinations that you're talking about, Here but to get all the way to a hundred percent of surety You'd have to run like a circular thing where you're like generate answer Make sure it's in line with documents then test answer through documents and only return results when it's met all the test criteria.
+01:45:54 Speaker 1
+So this is I use the word workflows and pipelines a lot tonight Yeah to get your answer that you need you're gonna need to think more like workflows and pipelines then prompting your prompting spine Yeah, it's fine, Probably fine. Yeah, there was one of it when I was like, hey, does anyone know the answer to your question? There's one other thing that you said that gave me an indication, In these days there's this thing called context window. You can think of it as memory. Yeah, you know about this thing So anyway, you know like it remembers this much the conversation, but as you move down through it, it starts to forget the top Yeah they're getting bigger all the time and.
+01:46:27 Speaker 1
+In building these circles, these workflows and pipelines, it doesn't need to remember. It doesn't need to have everything in its context window because it only does this much and checks against the fact. And then it does the next component and checks against the fact. So in situations where you are losing reliability, due to context window smallness, you can get around it by making these circular agentic things where it's doing just small bits and checking it along the way.
+01:46:54 Speaker 20
+Okay, all right.
+01:46:55 Speaker 1
+I think that's the direction to go instead of just improving your prompting.
+01:46:57 Speaker 20
+Okay, sounds good. All right, we'll try it out.
+01:47:00 Speaker 1
+Build those knowledge documents and then maybe make a little assistant that's called like my design assistant and it knows these important things first and then drop your prompts into that. Yeah, all right, sounds good.
+01:47:10 Speaker 20
+Thanks so much for... Yeah, Emil. Cool. Nice to meet you, Chris. Thanks, Ryder.
+01:47:15 Speaker 1
+Hi, how are you? Good. I'm excited to eat a taco. I hope everyone laughs. I was nervous before, so I didn't... I think you missed a chef. Yeah, that's right.
+01:47:43 Speaker 21
+And I would like to incorporate it more. I'm a graphic designer. Yeah. What will happen. 
+01:47:50 Speaker 1
+There's a... I have a colleague who's a really interesting Persian dude, and he's studying... He's a... world master in Persian calligraphy but he's learned that these generative systems generate fake calligraphy that look beautiful but they actually don't say anything he's trying to figure out how to make generative systems that do this Persian calligraphy but that actually says things and stuff too he's a researcher with me at the SFU lab where I train those models or whatever and I I just point him out to say that like you know like the commercial.
+01:48:21 Speaker 1
+aspects of art are only one aspect of all this thing too there's also like the cultural and the personal aspects of it as well you know and so just feel very free to explore like whatever those like creative passions of interest the edges of your because because like it doesn't have to just be like how's this thing gonna make more money or like make me have to work less on this project is like how can I do stuff that's never been done before like these crazy, calligraphy digital experiments that actually mean something when the person.
+01:48:55 Speaker 21
+Thank you so much.
+01:48:56 Speaker 1
+Yeah, my pleasure. Nice to talk to you. Thanks for your question.
+01:49:00 Speaker 22
+Hey, guys. Hey, Chris. First of all, really nice answers to all the diverse questions that you got, so really nice of that. Yeah, thanks.
+01:49:07 Speaker 3
+It's fine.
+01:49:07 Speaker 22
+It wasn't like you were sort of deviating from it, but it was on point, like really nice. Thank you so much. Have a good one. Quick question for us. We both are like friends from the same university and everything, and we started our own business and everything apart from our jobs, but the main thing... Thank you. The main thing that we're trying to understand is like...
+01:49:27 Speaker 1
+Thanks for coming. You're just saying what's up. It's always good to see you. It was a big surprise, man. You saw my smile when you popped in. Thanks, April. Bye-bye. Yeah. See you guys later. Keep in touch, sir.
+01:49:41 Speaker 22
+The main question that I have is like us being like non-technical background... I'll say non-creative as well. Non-creative as well. From my understanding. Yeah. like I come from a civil engineering background and everything which is not related to like software engineering or anything as such like how about would we go on to like you know integrating ai into our workspace like I saw the mention of your course and everything I had a cousin of mine do a similar course in which they showed him how to generate workflows like how to automate their.
+01:50:12 Speaker 22
+systems so is that something that you're offering with the course or okay um that one is if if your.
+01:50:19 Speaker 1
+particular interest is in automation there might be a better one that I offer for you as well that starts around the same time because I have a few but I actually would, I encourage you to, you in particular, to open your mind a little bit. Creativity, as I explain it here, isn't necessarily a carousel of creativity. It's anyone that makes something out of nothing. This is creation. It's to take a business concept and turn it into a company. You've turned an idea into an institution.
+01:50:49 Speaker 22
+Not what you've done to as well.
+01:50:50 Speaker 1
+So my creative prose class is applicable for people that see themselves creative in that way. I'm taking an idea. I need to turn it into strategies. Strategies. I need to take strategies and turn them into programs. You know, this kind of thing. So in that way, actually. Also, I want to say one more thing. don't let anyone automate their shit until they figure it out or you're gonna automate a mess so the first step is to use these tools manually sort of to get from nothing to the something that you want and then there's something we can.
+01:51:20 Speaker 22
+automate certain things like you know like designing aspects or like certain other things like workflows and emails and stuff like that but we haven't sort of like connected everything together this is the most important thing.
+01:51:36 Speaker 1
+Think about yourself as like a data investigator, always asking, what data do I have? And you're gonna come up with more answers every day. Today, you think you have a database and a contact list, but then tomorrow you're gonna realize like, oh, every interaction with this person is a data set of its own, you know, like I've exported a bunch of WhatsApp group chats into AI, and now I have institutional knowledge of a thousand people over five years. Literally, it's like a five megabyte text file of.
+01:52:08 Speaker 1
+A thousand people on the chat for five years, and now I can say, what does Seb like to talk about? What does April like to talk about? What do they like to talk about. 
+01:52:15 Speaker 22
+Their whole personality.
+01:52:17 Speaker 1
+And really, or what might they say in the future? Because actually, if I talk to you a hundred times, and then I talk to you a hundred and one, probably a hundred and one is going to be pretty similar to the other hundred. I don't know what you're going to say today, but it's not going to be that far different than what you said in the last hundred days.
+01:52:32 Speaker 22
+I give up looking at things a hundred percent.
+01:52:35 Speaker 1
+So start being like, what data do I have? What data do I have? And then also, if there's ways where data is leaking, can I plug those holes so that I have a bucket full of data later? So it's like... like the whatsapp shit like you might think of that as just flowing away and maybe you need to turn on the button that keeps those over time right and that's plugging the hole and in a month you're.
+01:52:59 Speaker 22
+going to have a bucket full of that data so it's more like gathering data in order for ai it's a.
+01:53:04 Speaker 1
+great place to start it's a great place that was kind of what i was talking about a little bit tonight was these knowledge bases so like you should have a company knowledge base you should have your founders documents your last year's budget your this year's productions your strategies your investor profiles your personal bio everyone you know you know just start to yeah like a tree you add the rings to this yeah and that's your gold nugget because, New AI comes out tomorrow, you just take the brain of your business and plug it into fans. And that's what the guy was talking about in the video, too. He's like, just write your ideas down for your business.
+01:53:35 Speaker 1
+Don't even build your business. He's like, an AI in a year will be able to build your business better than you. Write down today what you want the AI to build in one year. And I think there's something there. I mean, he's privileged. So he can just sit around and write. You probably have to do your business. But don't do anything now that very likely an AI could do better than you in six months unless you have to. Like the point that he mentioned.
+01:54:01 Speaker 22
+There's three parameters that you should look into things that you're doing.
+01:54:04 Speaker 1
+I would ask you, embody yourself three years from now and write about why your company was successful. And then project 10 years from now. and write about what does your company look like here 10 years with your buddy after it's been successful? What programs are you running? Have you hired his cousin? Who's doing stuff? Have you brought people? What the fuck does it look like? And then like at the end of your retiring, write your retirement letter to yourself. It's like, I built up myself into this. Here's where we got to. And then backtrack and let the AI build you to there.
+01:54:37 Speaker 1
+or whatever. That's the preferences and the hopes and the desires that is the human part. It's like, what happens when it's all over? Why did you do it? And then- That makes a lot of sense. And that's fucking challenging too, right? Yeah.
+01:54:49 Speaker 22
+it makes you be honest with yourself it makes you let you introspect in a way a big level of.
+01:54:55 Speaker 1
+introspection happens here yeah yeah and like i'm constantly finding that um i need to thank you like if i follow my own methods it requires me dreaming bigger than i thought possible because like if you're sitting there writing up your last letter to yourself on the day you retire it's like well you're gonna dream big it's not just like making quarters fine house taking vacation but it's like what the fuck maximally what can i do.
+01:55:18 Speaker 22
+thank you my pleasure guys yeah thanks so much.
+01:55:31 Speaker 4
+non-creative non-technical non-creative non-technical but i like to i hope you're a good cook yeah but i no i'm not, Just saying out loud, the reason that I said non-creative is because when you compare myself with the art school, I'm non-creative.
+01:55:46 Speaker 1
+But you accept my definition.
+01:55:47 Speaker 4
+Yeah, exactly. I'm still listening. I agree with that. But the only thing that when I think about working with anything and stuff like that, where trying to see what I can do this summer, I'm thinking, okay, how can I make all the process that I did last summer? I know what worked for me, what didn't work for me, what forms worked for me, what forms didn't work for me. What are the common, how the questions are coming to me from the customer side.
+01:56:20 Speaker 4
+And now I'm thinking that, okay, before this summer comes, I want to see if I can automate things so that we don't have to do all those things and we can focus more on to our productivity.
+01:56:29 Speaker 1
+This one is very, you're very, very close, man. Like inbound sales funnel pipeline is a good first step. But don't do the whole thing at once, do step by step. So like, email comes in, and it gets categorized as important, not important, or whatever. That's the first step. Boom. That works. Now all your emails are coming in, and the bullshit's getting thrown away, good shit's getting flagged. Now route the good stuff to somebody.
+01:57:01 Speaker 1
+Maybe log them first. Maybe be like, log every interesting email that ever comes in so I can do pattern recognition later, and then route them to my friend. So you just added three steps. First step is label, second step is document, third step is route. And then just chill for a week. Let that shit run for a week, man. Just watch it, and while you're talking, what's the next useful thing we could possibly build, right? And it's like, well now I can answer them, maybe. Maybe the ones that... Maybe after a week of running it, there's three buckets that get a lot of inquiries.
+01:57:35 Speaker 1
+And you're like, okay, generate ten responses for each of these common three inquiries or something like that. Makes sense. And then now you're like, then you can reply to just the first category. The most important ones. The ones that have money and that you have answers to. So it's like, not bullshit, it's related to... Yeah, yeah. I think so. Keep adding no more than two steps at each step of the automation.
+01:57:58 Speaker 4
+Gotcha. Last question before I let you go.
+01:58:00 Speaker 1
+Come over here, let her join in too. Sorry. No, no, it's all good. No problem. People usually do this as a line, but I like to do it as a circle.
+01:58:08 Speaker 4
+I would like to know, like, you mentioned about you have different programs that you run in terms of learning these six-week programs that you have. If you can just tell me briefly about what are the few things that you target? Like, for example, you mentioned this program that you promoted here was specifically designed for creative professionals and stuff like that.
+01:58:28 Speaker 1
+what are the other programs that you offer oh i have one the other one that i think you guys would be potentially interested in and you might be able to get the province to pay for it the other one i run is called ai upgrade for sales and business leaders and the government in the q4 paid 50 of all the tuitions through like a bc ai upskilling and adoption program or whatever your best but you have my car your best bet is to email me tell me which program is right you know what was that funding you were talking about but um there's a lot of government programs um actually this one they have already said they'll do 50 of everyone in my course but the creative.
+01:59:03 Speaker 1
+pros one has funding too you just have to go get it from the government by yourself where i got this other one in place on the front end but i'm hoping to get it in place in the other one i think they've got 10 grand a year for smb executives to do ai adoption related courses okay and this is just like a bc provincial government googleable program like it's mentioned out there provincial funding for ai upskilling something like that, this, Yeah, but I can point you more at the programs and my syllabus is posted and I've got like all the.
+01:59:34 Speaker 1
+Videos from previous because we do capstone project. Everyone does like build something Yeah, and I make videos on the stick month so it's like so you can go see what everyone else built during the program and like. Also, guys, you know, my for-pay workshops are only one way to learn that shit. Everything I teach is for free on YouTube as well. It's not like I got some secret knowledge. You just have to be willing to go find it, throw away the bullshit. You know, you have to do the hard part. But just like yesterday, Anthropic launched a 120 hours of AI-free curriculum on YouTube or something like that.
+02:00:09 Speaker 1
+You know, it's out there. It's just like you get good peer pressure and some coaching and like, you know, that type of thing. It's like the high-touch one. So come or look it up online. Either way, you'll... What's your business? I have no idea what I'm going to do. No, your guy's business.
+02:00:26 Speaker 22
+It's a plexiglass. It's a niche business for windows, for air conditioners. Cool. We make custom plexiglass fixtures.
+02:00:32 Speaker 1
+Yeah.
+02:00:32 Speaker 22
+And the other one's incorporating 3D printing and woodworking into niche decor pieces.
+02:00:37 Speaker 1
+Huh. Well, that's pretty interesting.
+02:00:39 Speaker 22
+Yeah.
+02:00:39 Speaker 1
+That's pretty interesting.
+02:00:40 Speaker 4
+We are basically going towards, after this 3D printing environment, we want to go towards... It's called pre-gifting. Pre-gifting. and towards that funnel of basically creating different items for that.
+02:00:50 Speaker 1
+Fun. Cool. Nice to meet you. Thank you. Thank you very much. What does that mean, is it? All right. I'm just sidetracking. I'm back. Great. I'm going to answer the last ones and I'm out of here. Oh, thank you, Frank. Nice to see you. I really like your presentation. It's really, really great. Oh, my gosh. Look at that. Wow. Money. I just got back from Mexico City and I had a...
+02:01:13 Speaker 23
+I like the way you answer things.
+02:01:15 Speaker 14
+Sorry, Chris. I just got to go. Bye-bye. Thank you. Appreciate all your contributions. I'll see you in the... Of course. See you. Bye-bye.
+02:01:21 Speaker 23
+I really like the way you answer questions. I mean, it's like a lot of questions is not pointed to you, like, professionally, but I mean, it's like the way you answer, you give the message back is really, really great. Thanks, man. Yeah. I'm working as an educator. So I'm running as a board member in here. So I'm working in film industry.
+02:01:42 Speaker 1
+Maybe that's why I recognize your name. I mean, Zhao is a popular name, but still I feel like I recognize your name.
+02:01:49 Speaker 23
+Yeah, so it's like, you know, there's a lot of blur line right now for the AI film industry. And, you know, that's just why I want to pop up, just to learn a lot of things.
+02:01:58 Speaker 1
+There's a couple people, I'll follow up with you, because there's a couple people from VFS who participate in our community, specifically the AI and education group. There's a couple people.
+02:02:07 Speaker 23
+We're going to be adding some, like, you know, handbook about the AIs and what we can use and we cannot use in Hollywood this year. So that's something we try to build, like, you know, just making the rules right away and not just let everybody do their own thing.
+02:02:22 Speaker 1
+Yeah, yeah. Very interesting. I mean, I know VFS is going to start offering an AI animation program because they're hiring someone from our community to help out with that. Wow.
+02:02:32 Speaker 7
+Yeah. I'd like to help.
+02:02:33 Speaker 1
+This is what I want to talk to you about, because there's a couple people inside. VFS will. started to come to us and are asking us to do stuff with BFS from the Vancouver, side oh yeah are we talking about Vancouver Film School yes okay great.
+02:02:47 Speaker 23
+when you but you said la-side la-side is the corner like a BS like ah they're.
+02:02:55 Speaker 1
+global like got you got you know I'm talking about local oh nice I want to.
+02:02:59 Speaker 23
+know more because you know that is going to be more corporations maybe and also even school is like we are taught last year you want to do some contents like this year but it's like you know it's a lot of things we are not sure what we do and I follow up you do you have anything I can like did I give you a card just.
+02:03:19 Speaker 1
+now I did okay no problem here we go I think I was looking in here, Thanks for your questions right at the end. I'm glad I was like, yo, anyone else? Beth, are you going to ask a question or what. 
+02:03:33 Speaker 23
+That's a great pizza card. I love it.
+02:03:34 Speaker 17
+Sorry, I was just like, should I ask this question? You should. Because I feel like my question is kind of stupid in a way.
+02:03:44 Speaker 1
+I don't know.
+02:03:45 Speaker 17
+Thank you so much for saying that. It's good questions. Thank you so much for saying that.
+02:03:50 Speaker 23
+Because you are not the only one to feel the overwhelm.
+02:03:54 Speaker 17
+I actually have a quick question about the V-Dub.
+02:03:58 Speaker 1
+The film club one. 
+02:04:00 Speaker 17
+Yeah.
+02:04:01 Speaker 1
+You need to show him this one too. You guys should come to this together.
+02:04:04 Speaker 17
+I will send it to him. So I have to register, but then it says pending approval.
+02:04:10 Speaker 1
+Yeah, that's just because our events are free. And so I just go through and check people's names to make sure who they are.
+02:04:16 Speaker 17
+I see, I see.
+02:04:16 Speaker 1
+All good. I'll approve you later.
+02:04:18 Speaker 17
+And if I want to go to other events, for example, do I just go. 
+02:04:22 Speaker 1
+If you go here. This is our whole. Calendar. Oopsie, sorry. Um, like here's the education one that I told you the VFS guy. This is the one I was talking about tonight with three female ones.
+02:04:34 Speaker 17
+Sadly, this one, I can't make it.
+02:04:36 Speaker 1
+These ones are coming the next month. I see that they're not free, but it's because we feed dinner, have an open bar. It's a big, it's like a fun, high value deal. This is the next one after that a month later. And then we have film clubs every single month for free. It's at this new place called Multimodal Media Labs in Vancouver. That's really sweet.
+02:04:55 Speaker 17
+Oh, this is the Space Center one. I see.
+02:04:58 Speaker 1
+Yeah. A couple of stickers for you.
+02:05:00 Speaker 17
+Thank you so much. This is so cool.
+02:05:01 Speaker 1
+The guy that runs the film club, his name is Kevin. I talked about him tonight.
+02:05:05 Speaker 17
+Yeah, I remember.
+02:05:05 Speaker 1
+He's all about VFX and like you guys will totally connect.
+02:05:10 Speaker 23
+Nice, nice. That's so sweet. And thank you so much. Your personality, your presentation is gold, man.
+02:05:17 Speaker 1
+Thank you. We can almost have matching tattoos. Oh, really? A little bit. Mine's straight and yours is curvy. Oh, wait, is it right here? I'm the AI version of you.
+02:05:25 Speaker 17
+too funny man all right guys i bought tickets last year but that day i had a fever i couldn't.
+02:05:30 Speaker 1
+so vancouver ai oh well you should have told me and i will still honor this anyway oh really just tell me when you want to come i'll give you a ticket for that one if you already bought one last time that's okay is that your suite over there it is yeah thank you thank you so much, my pleasure i'll talk to you soon i'll follow up sure did you say also that you're on the board of bfm yeah oh that's great that's awesome you just finished the award session last yeah we have more.
+02:06:02 Speaker 1
+time coming up oh that's so cool cool thank you take it easy guys i'd like to see the last one crazy oh there's linda great does that go okay all right lots of good q a the people were.
+02:06:28 Speaker 3
+The tension was there that we needed, and the whole thing was all the fear column stuff.
+02:06:49 Speaker 1
+is valid and we should talk about it. She was there too, she wanted to keep reading the rest of her notes, but I was like we can do them, but we're going to do them one on one going back, we're not going to do a monologue. I respect where she's coming from.
+02:07:25 Speaker 1
+I was glad that my buddy, Seth, had a couple of things to say at the end about the coding thing. And I mean, the questions were pretty diverse, actually, from VFX to coding to education, like there's...
+02:07:46 Kris Krüg
+To children.
+02:07:46 Speaker 1
+That's right. How's it going to fit? Water. Yeah, we covered quite the gambit of legitimate concerns and stuff.
+02:07:54 Kris Krüg
+Yeah, that kind of stuff keeps you on your toes, eh. 
+02:07:58 Speaker 1
+I mean, at this point, I'm not sure because I should have had a couple of people's talks and like one recently, there was a bunch of 16 to 17-year-old, 18-year-old kids who were rightfully fucking pissed off about where things were going, you know? Yeah. And so just, I was telling myself like all day, just like... People are going to challenge you, and that's okay. That's what this is for. They don't get a safe place all the time to raise these very valid concerns. They just get non-consensually bombarded as well with, here's where we're going, what we're doing.
+02:08:29 Speaker 1
+The world's changing due to the program. So it builds trust, and you can actually talk about hard things. Our only hope through all this, to be honest, is sort of together. Like, little communities, like even your alumni network, I believe actually might be one of the biggest assets you have going into the future. Because everyone's going to be looking around.
+02:08:59 Speaker 1
+The world's going to be changing around them. They're going to be looking for trusted networks of people to make sense of the world. Yeah, I think that's what we've got. You know, it's like, build a container where tough conversations happen and respect. That's maybe the best thing we've got.
+02:09:16 Kris Krüg
+I'm sure there's going to be some people. Cool. Oh, I can't thank you enough. My pleasure.
+02:09:26 Speaker 1
+Thank you. It's in your inbox tomorrow morning, so look for it, okay? I chose Amazon because there's a gift card for my mom's birthday sitting in my inbox. I need to deal with my mom. Put the two together. There you go. Me. Yeah.
+02:09:38 Kris Krüg
+Online shopping spree. Let me know if for some reason you don't get it.
+02:09:48 Speaker 1
+I'll try to come for the April one, but, you know, we'll definitely be in touch in the next couple weeks as, like, you guys get your assets out. Yeah, like, have social media friends send me anything she posts so I can amplify, too. Thank you. And, you know, I'm hyper-curious to get any video or photo assets. You will. Yeah, you will. We'll be in touch. It's part of the package. Sounds great. They will be in touch. Oh, okay. Actually, you know, I didn't even mention it.
+02:10:19 Speaker 1
+What made me quit being a photographer was the editing. The edit, like tonight, I want 2,000 photos that need to be recorded through. That's the very first part of it. I just have it throw away the first 80% of the bullshit. Eyes closed, very underexposed. It knows all these things. So if I take five photos of you, which is what I do, somebody has to show me back the one that's possibly a 10. Instead of shooting for eight hours and editing for eight hours, it could get to two.
+02:10:56 Kris Krüg
+I find them myself. You know, I want to put a photo, and I would say, tell me which one you think is best for this post. Yeah, and then and then the last few I posted so many times getting burned out, Well, hey it worked out. I mean, I think you had to go get more chairs and they've since put them away, but there was.
+02:11:33 Speaker 1
+Hey, man. I was in Mexico for a few weeks until yesterday and.
+02:12:06 Speaker 1
+I was complaining how bad it was while I was gone. So I came back expecting to be like pretty fucking bad I know it is today like, This is pretty mild. Honestly, from tomorrow it's sunny. Sunny from tomorrow for a week at least. Really? Hey! I really did bring it back from Mexico. Take it easy guys. At the next Vancouver meetup on the 28th we're having Indian food. Later guys. 
+02:13:37 Speaker 3
+Thanks for watching!
+02:14:43 Speaker 3
+Thank you.
+02:18:12 Speaker 3
+Uh huh.
+02:19:36 Speaker 3
+Thanks for watching. 
+02:23:10 Speaker 1
+hello i just finished my keynote and i'll be driving home soon i'll have one more chance to, make the revisions so hopefully it's in whatever that google doc is that you've sent. i love that i have made it seem so easy but there's no way for me to just give you keys or anything like that and have you just make changes we can get there but it requires setting.
+02:23:46 Speaker 1
+up a bunch of stuff primarily github and understanding code and stuff like that i'm not just prompting into a tool i'm built a tool with a knowledge base and i'm using that to create our assets. Anyway, like I said, I'll run Pete's dock when I get home and hopefully that'll get us where we need to go.
+02:26:26 Speaker 1
+Hello. It's going pretty well. I just gave a keynote to 150 alumni at this place called LaSalle College of Art and Design. And I'm wearing a Canadian tuxedo and a little bow tie and I'm just heading home. Where, unsurprisingly, I have to do fucking one more thing for my business partners tonight before I'm going to pick up a bottle of wine on the way. So yeah, that's my story. After I texted you yesterday, I pretty much went heads down.
+02:26:59 Speaker 1
+I got the keynote all prepped. I get pretty anxious about them. I take it all pretty seriously. This one was a good thing because it was recorded and photographed and I was standing in front of this fucking huge LED wall. It was pretty sweet. But yeah, that's my story. What's going on with you out there in the world? You doing good? let's make a plan for a meal easiest would be this weekend but I could.
+02:27:30 Speaker 1
+probably squeeze something in between now and then I just got to pay attention.
+02:30:30 Speaker 3
+Thanks for watching!
