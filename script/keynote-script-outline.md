@@ -1,5 +1,7 @@
 # Punk Rock AI: Keynote Script Outline
-**CreativeMornings Vancouver | Theme: CREATE | Release Day: May 29, 2026**
+**CreativeMornings Vancouver — field talk: May 1, 2026**  
+**Global theme (working):** CREATE — *confirm exact May 2026 label with Mark / chapter before publishing*  
+**Release Day (global CTA):** May 29, 2026 — not the Vancouver stage date
 
 ## Movement 1: The Cassette Tape (The Hook)
 *Visuals: Raw, static, VHS glitch aesthetics.*

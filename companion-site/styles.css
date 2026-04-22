@@ -1,0 +1,168 @@
+:root {
+  --bg: #0a0a0a;
+  --fg: #f2f2f2;
+  --muted: #9a9a9a;
+  --accent: #e11d2e;
+  --paper: #141414;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.55;
+  font-size: 1.05rem;
+}
+
+a {
+  color: var(--fg);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+header {
+  padding: 2.5rem 1.25rem 2rem;
+  border-bottom: 3px solid var(--accent);
+  background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 2px,
+      rgba(255, 255, 255, 0.03) 4px
+    ),
+    var(--bg);
+}
+
+header h1 {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  letter-spacing: -0.02em;
+}
+
+header .tagline {
+  margin: 0;
+  color: var(--muted);
+  max-width: 40rem;
+}
+
+header .dates {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+header .dates strong {
+  color: var(--fg);
+}
+
+main {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+section {
+  margin-bottom: 2.75rem;
+}
+
+section h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+section p {
+  margin: 0 0 0.75rem;
+}
+
+.kicker {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.35rem;
+}
+
+.panel {
+  background: var(--paper);
+  border: 1px solid #2a2a2a;
+  padding: 1rem 1.1rem;
+  margin: 0.75rem 0;
+}
+
+.panel ul {
+  margin: 0.25rem 0 0;
+  padding-left: 1.1rem;
+}
+
+label.block {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+}
+
+textarea {
+  width: 100%;
+  min-height: 6rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #333;
+  background: #0d0d0d;
+  color: var(--fg);
+  font: inherit;
+  resize: vertical;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--fg);
+  background: transparent;
+  color: var(--fg);
+}
+
+button:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+footer {
+  border-top: 1px solid #2a2a2a;
+  padding: 1.5rem 1.25rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+footer a {
+  color: var(--muted);
+}
+
+footer a:hover {
+  color: var(--accent);
+}

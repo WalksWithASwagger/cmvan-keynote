@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Punk Rock AI — Kris Krüg</title>
+  <meta name="description" content="Xerox machines, stolen work, and the most creative year of my life. Creative Mornings Vancouver, May 1, 2026. Release Day May 29." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <p class="kicker">Creative Mornings Vancouver</p>
+    <h1>Punk Rock AI</h1>
+    <p class="tagline">Xerox machines, stolen work, and the most creative year of my life. Both hands full — critique in one hand, capability in the other.</p>
+    <p class="dates"><strong>Talk:</strong> May 1, 2026 · <strong>Global Release Day:</strong> May 29, 2026 — <a href="https://creativemornings.com/releaseday">creativemornings.com/releaseday</a></p>
+  </header>
+
+  <main>
+    <section id="both-hands">
+      <h2>Both hands full</h2>
+      <p>AI is trained on stolen work without consent — and many of us are also more creative than we’ve ever been. Both things can be true. The punk move is to stay in the room: name the harm, then use the tools wrong on purpose so the story isn’t written only by people who don’t see the problem.</p>
+    </section>
+
+    <section id="three-documents">
+      <h2>Three documents</h2>
+      <p>Externalize your taste so the machine stops giving you the average of the internet. Rough draft tonight:</p>
+      <div class="panel">
+        <ul>
+          <li><strong>Personal AI policy</strong> — what you will and won’t use AI for.</li>
+          <li><strong>Style guide</strong> — words you refuse, references you love, “never sounds like me when…”</li>
+          <li><strong>Worldview</strong> — what you believe about people, craft, and justice in five sentences.</li>
+        </ul>
+      </div>
+      <p class="kicker">Templates / kb links — add your real URLs when ready.</p>
+    </section>
+
+    <section id="write-for-the-bot">
+      <h2>Write for the bot</h2>
+      <p>If your values aren’t in text, to the model they barely exist. Drop three sentences: what you believe, why you make, what you’ll never outsource.</p>
+      <label class="block" for="wfb">Three sentences (draft)</label>
+      <textarea id="wfb" placeholder="I believe… / I make because… / I will never give…"></textarea>
+      <div class="row">
+        <button type="button" id="copyWfb">Copy to clipboard</button>
+      </div>
+      <p id="wfbStatus" class="kicker" aria-live="polite"></p>
+    </section>
+
+    <section id="creative-dna">
+      <h2>Creative DNA</h2>
+      <p>Close your eyes for a second. What’s the one thing you’d never give to AI? That line is your compass.</p>
+      <label class="block" for="dna">One line (private — stays in this browser unless you copy it)</label>
+      <textarea id="dna" placeholder="I’d never give…"></textarea>
+    </section>
+
+    <section id="release-day">
+      <h2>Release Day — May 29</h2>
+      <p>Ship something imperfect by the global deadline. Official program, hashtags, and how to participate: <a href="https://creativemornings.com/releaseday">creativemornings.com/releaseday</a> · register: <a href="https://creativemornings.com/talks/register-here-for-release-day-friday-may-29th">May 29 celebration</a>.</p>
+      <p class="kicker">Confirm #ReleaseDay2026 and @ tags on the official page before posting.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Kris Krüg · <a href="https://kriskrug.co">kriskrug.co</a> · BC + AI / Vancouver AI community</p>
+    <p>Static v1 — repo: <a href="https://github.com/WalksWithASwagger/cmvan-keynote">cmvan-keynote</a></p>
+  </footer>
+
+  <script>
+    (function () {
+      var ta = document.getElementById("wfb");
+      var status = document.getElementById("wfbStatus");
+      document.getElementById("copyWfb").addEventListener("click", function () {
+        if (!ta || !navigator.clipboard) {
+          if (status) status.textContent = "Copy not supported in this browser.";
+          return;
+        }
+        navigator.clipboard.writeText(ta.value).then(function () {
+          if (status) status.textContent = "Copied.";
+        }).catch(function () {
+          if (status) status.textContent = "Copy failed — select text manually.";
+        });
+      });
+      try {
+        var saved = localStorage.getItem("punkrockai-wfb");
+        if (saved && ta) ta.value = saved;
+        ta && ta.addEventListener("input", function () {
+          localStorage.setItem("punkrockai-wfb", ta.value);
+        });
+      } catch (e) {}
+    })();
+  </script>
+</body>
+</html>

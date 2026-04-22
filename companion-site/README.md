@@ -37,4 +37,6 @@ Mirror the interactive patterns from the LaSalle delivery — see [`../source-ma
 
 ## Build note
 
-Implement as `index.html` + `styles.css` in this folder when ready; keep assets under `/assets` or relative `./assets` for easy static deploy (Netlify, GitHub Pages, etc.).
+**v1 shipped in repo:** [`index.html`](./index.html) + [`styles.css`](./styles.css). Deploy the **folder root** as the site root (so `styles.css` resolves). Point **punkrockai.com** (and optional redirects) at this static bundle — see [`../docs/PROJECT-ROADMAP.md`](../docs/PROJECT-ROADMAP.md#domains-and-routing-registered).
+
+Add real URLs for Three Documents templates when ready (kb, Google Doc, or download links).

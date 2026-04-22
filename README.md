@@ -10,7 +10,9 @@ A Creative Mornings Vancouver keynote by [Kris Krüg](https://kriskrug.co) — *
 
 ## What this is
 
-This repo is the build space for the talk + everything around it: research, script, slides, image prompts, dress-rehearsal media, Release Day activation, and (maybe) a companion site.
+This repo is the build space for the talk + everything around it: research, script, slides, image prompts, dress-rehearsal media, Release Day activation, and the companion site v1.
+
+**Roadmap + domains + publication checklist:** [docs/PROJECT-ROADMAP.md](./docs/PROJECT-ROADMAP.md) · **Cited sources for publishing:** [docs/PUBLICATION-BIBLIOGRAPHY.md](./docs/PUBLICATION-BIBLIOGRAPHY.md)
 
 It started as a folder inside the [kk-kb](https://github.com/WalksWithASwagger/kk-kb) knowledge base. Pulled out and given its own room to grow because there's a lot to build between now and Release Day.
 
@@ -58,6 +60,7 @@ AI is the next Xerox machine. The pattern is the same.
 .
 ├── README.md                       # this file
 ├── OPEN-QUESTIONS.md               # contradictions and decisions to make
+├── docs/                           # roadmap, DNS, pre-publish checklist, bibliography
 ├── pitch/                          # the original pitch to Mark Busse
 ├── script/                         # talk script + outlines
 ├── slides/                         # slide deck outline + builds
@@ -65,7 +68,7 @@ AI is the next Xerox machine. The pattern is the same.
 ├── assets/                         # image/video prompts, generated assets
 │   └── image-prompts/
 ├── dress-rehearsal/                # ElevenLabs / HeyGen run-through scripts
-├── companion-site/                 # v1 spec README — static HTML deferred
+├── companion-site/                 # v1 static page (index.html) + spec README
 └── source-material/                # canonical KB material (read-only refs)
     ├── kk-voice/                   # voice profile, worldview, bio
     ├── both-hands-full/            # the article that seeded the framework

@@ -99,6 +99,35 @@ The first synthesis of "Both Hands Full V2" with the **DIY punk-zine slide aesth
 
 ---
 
+## `kris-krug-keynote-concepts/` (kb only — index in this repo)
+
+**Not duplicated** into `source-material/` (large scripts). See **[`kris-krug-keynote-concepts/INDEX.md`](./kris-krug-keynote-concepts/INDEX.md)** for kk-bb paths.
+
+| Package | Use for Punk Rock AI / publishing |
+|---------|-----------------------------------|
+| `03-both-hands-full/` | 45-min script, worksheets, slide concepts — mine “five fears,” both-hands metaphor, governance beats for long-form without bloating 25-min CMVan |
+| `02-taste-as-moat/` | Taste audit, “four documents” depth — publishable sidebar |
+| `05-who-sets-direction/` | Transcript-grounded script — “who writes the rules” / power / showing up |
+| `01-bc-real-ai-advantage/` | Optional: BC-only epilogue for regional publish |
+
+**Kb root:** `content/knowledge/keynotes/kris-krug-keynote-concepts/` — overview [`README.md`](https://github.com/WalksWithASwagger/kk-kb/blob/main/content/knowledge/keynotes/kris-krug-keynote-concepts/README.md).
+
+---
+
+## `banff-ai-culture-summit-2026/` (kb only — index in this repo)
+
+March 2026 Banff AI Culture Summit materials — **governance, national AI culture, “stay in the room.”** See **[`banff-ai-culture-summit-2026/INDEX.md`](./banff-ai-culture-summit-2026/INDEX.md)**.
+
+**Kb root:** `content/projects/02-bc-ai-ecosystem-nonprofit/speaking-engagements/2026/2026-03-16-banff-ai-culture-summit/`
+
+| Start here | Why |
+|--------------|-----|
+| `summit-synthesis-memo.md` | Executive synthesis for post-talk article |
+| `post-summit-roadmap.md` | Policy / follow-up framing |
+| `transcripts/README.md` | Index of transcript files |
+
+---
+
 ## `prior-cmvan-quotes/`
 
 `street-art-quotes.md` — April 2026 quote bank curated for guest street-artist portraits/stickers at CMVan. 20 quotes mined from BHF / LaSalle / Taste-as-Moat. Useful for slide pull-quotes and Release Day zine source material.
