@@ -14,67 +14,71 @@ Older sources (e.g. [#1570](https://github.com/WalksWithASwagger/kk-kb/issues/15
 
 ---
 
-## 2. What's the actual talk structure?
+## 2. What's the actual talk structure? — **RESOLVED (4-act, ~25 min)**
 
-Three competing structures in the same project folder:
+**Decision:** Lock the **4-act structure** adapted from the WAIFF Brazil delivery, compressed from 48 min → 25 min:
 
-- **Issue #1570:** 4 acts, ~25 min total — Pattern → Both Hands Full → Framework → Release Day
-- **[script/keynote-script-outline.md](./script/keynote-script-outline.md):** 6 movements — Cassette → Mother of Punk → Xerox → Selector's Era → Tactical Toolkit → Release Day
-- **[pitch/pitch-for-mark-busse.md](./pitch/pitch-for-mark-busse.md):** 3-step framework — Name it / Externalize it / Ship it
+| Act | Time | Content |
+|-----|------|---------|
+| Prologue | 0:00–2:00 | Punk lineage (Dada → Sniffin' Glue → Selector → the pattern) |
+| Act 1: Left Hand | 2:00–8:00 | Non-consensual, Three Fears, Name What You See |
+| Act 2: Right Hand | 8:00–14:00 | Matlock, Luke, Belgium, Kevin, Both/And |
+| Act 3: Framework | 14:00–20:00 | Selector's Era, Three Documents, Write for the Bot |
+| Act 4: Soul + Close | 20:00–25:00 | Creative DNA (eyes-closed exercise), Release Day, Both Hands Full close |
 
-**Action:** lock one structure before drafting full script. The 6-movement is the most narratively complete; the 4-act is the most time-disciplined; the 3-step is the most memorable.
+The **3-step pitch framework** (Name it / Externalize it / Ship it) lives inside Act 3 as the payload. The 6-movement outline is absorbed into this structure.
 
----
-
-## 3. How many slides? — **PARTIALLY RESOLVED**
-
-- **v1 deck (CMVan):** **[slides/deck-outline-with-notes.md](./slides/deck-outline-with-notes.md)** — **10 slides** for the May 1 talk (sparse, punk pacing).
-- **Extended zine prompt bank:** **[assets/image-prompts/cmvan-slides-01-15.md](./assets/image-prompts/cmvan-slides-01-15.md)** — up to **15** image prompts adapted from WAIFF Brazil *Both Hands Full* pipeline (optional density / B-roll slides — not a second competing “official” deck unless you promote it).
-
-Issue #1570’s **23 slides** reference is legacy / BHF-scale; ignore unless you explicitly expand scope.
+**Canonical file:** `script/full-talk-script.md` (v2, locked 2026-04-22)
 
 ---
 
-## 4. What's the closing CTA — Release Day or FPC cohort?
+## 3. How many slides? — **RESOLVED (14 slides)**
 
-Two different soft-launches are documented for the same talk:
+**Decision:** 14 slides for the May 1 talk. Sparse, punk pacing. One visual per major beat.
 
-- **[pitch/pitch-for-mark-busse.md](./pitch/pitch-for-mark-busse.md)** + issue #1570: closing CTA is the **Release Day Challenge** — ship something by May 29, possibly compiled into a punk-style zine/broadsheet.
-- **[source-material/cmvan-context/fpc-relaunch-readme-FOR-REFERENCE.md](./source-material/cmvan-context/fpc-relaunch-readme-FOR-REFERENCE.md)**: closing beat is a **soft launch of Future Proof Creatives** with founding-member pricing for CMVan attendees.
+The 15-prompt zine bank in `assets/image-prompts/cmvan-slides-01-15.md` remains available for B-roll / social / extended use but is not the "official" deck count.
 
-**Action:** these aren't necessarily mutually exclusive (Release Day is the room-wide call; FPC is a quieter "if you want more, here's where to find me"). But pick one as the load-bearing close.
-
----
-
-## 5. What's the companion site for?
-
-The user mentioned "maybe even a companion website or something." Open scope. Possibilities:
-
-- **Release Day landing page** — submission portal for audience projects, public gallery
-- **Three Documents toolkit** — interactive prompts that walk a creative through writing their personal AI policy / style guide / worldview
-- **Talk recap + clip library** — post-event home for video, transcript, frameworks
-- **Punk-zine generator** — turn submitted Release Day projects into a digital broadsheet (the "full circle to Xerox culture" idea from the pitch notes)
-
-**Action:** decide scope before writing code. Punkest answer is probably a single fast-loading page that serves the Release Day challenge.
+Issue #1570's 23-slide reference was legacy BHF-scale — superseded.
 
 ---
 
-## 6. Adobe involvement?
+## 4. What's the closing CTA — Release Day or FPC cohort? — **RESOLVED (Release Day)**
 
-The CREATE theme was co-created with Adobe globally. Are they:
-- A passive theme partner only (most likely)
-- Sponsoring the chapter event
-- Wanting product mentions / placement in slides
-- Open to a Release Day partnership
+**Decision:** **Release Day is the load-bearing close.** "Ship something by May 29" is the stage moment. It's punk. An enrollment pitch from the stage isn't.
 
-**Action:** ask Mark.
+FPC can appear as a quiet QR code on the companion site (`punkrockai.com`) — "Want to go deeper? Future Proof Creatives launches this month." But the room-wide call-to-action is the Release Day challenge. That's the energy. That's what ties to the global CREATE theme and Adobe activation.
 
 ---
 
-## 7. Recording rights
+## 5. What's the companion site for? — **RESOLVED (Release Day + Three Documents)**
+
+**Decision:** Single fast-loading static page serving two things:
+1. **Three Documents toolkit** — interactive exercise from Act 3 ("Write for the Bot" textarea, copy-to-clipboard)
+2. **Release Day CTA** — link to official CM Release Day registration + submission info
+
+The v1 `companion-site/index.html` already covers both. Deploy to `punkrockai.com`.
+
+Post-talk: add recap, video embed, and punk-zine gallery if the broadsheet activation materializes.
+
+---
+
+## 6. Adobe involvement? — **UNRESOLVED (ask Mark)**
+
+The CREATE theme was co-created with Adobe globally. Most likely a passive theme partner only.
+
+**Action:** Ask Mark before May 1:
+- Are they sponsoring the chapter event?
+- Do they want product mentions / placement in slides?
+- Are they open to a Release Day partnership?
+
+---
+
+## 7. Recording rights — **UNRESOLVED (ask Mark)**
 
 CreativeMornings traditionally records and posts talks publicly. Confirm:
 - Will this be recorded?
 - Who owns the footage?
 - When will it be released?
 - Can clips be used pre-release for promo?
+
+**Action:** Ask Mark before May 1.
