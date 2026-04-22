@@ -45,11 +45,25 @@ Full article package from `content/articles/kris-krug-thought-leadership/18-mome
 
 ---
 
+## `kevin-friel-pixel-wizard/` — “Mr. Pixel Wizard” feature package
+
+| File | Origin | Why |
+|---|---|---|
+| `kevin-friel-full-feature-kk.md` | `content/projects/01-vancouver-ai-community/special-features/kevin-friel/kevin-friel-full-feature-kk.md` | Long-form KK voice profile: ComfyUI stack, Film Club, **punk rock AI** quotes, economics receipts |
+| `README-kevin-friel-feature.md` | same folder / `README.md` | Distribution notes, naming (“Pixel Wizard” vs “Pixel Vision”) |
+| `kevin-friel-social-shares.md` | same folder | Pull-quotes for deck / social |
+
+---
+
 ## `lasalle/` — Jan 14, 2026 LaSalle College keynote
 
 The most recent full delivery of "Both Hands Full" before this CMVan talk. Source for tone, monologue voice, audience interaction patterns. Markdown + transcript only — slide assets stripped (canonical lives in kk-kb).
 
 Includes: `speaker-script.md`, `speaker-monologue.md`, `talk-outline.md`, `recap.md`, `feature-article.md`, `social-content.md`, plus the raw lecture transcript.
+
+| File | Why |
+|---|---|
+| `COMPANION-SITE-REFERENCE.md` | Pointer to canonical **`both-hands-full.html`** interactive companion in kk-bb — template for CMVan `companion-site/` build |
 
 ---
 
@@ -64,6 +78,9 @@ The first synthesis of "Both Hands Full V2" with the **DIY punk-zine slide aesth
 | `KEYNOTE-OUTLINE-FILM-STUDENTS.md` | Original Creative Rebellion outline (legacy) |
 | `KEYNOTE-SCRIPT-FINAL.md` | Final script |
 | `TALK-TITLES-AND-ABSTRACTS-DRAFT.md` | Five title bench tested against "punk rock but not cynical" — useful for variant titles |
+| `uai-film-festival-brazil-2026-image-prompts.md` | **15 Midjourney-style zine prompts** — Brazil “How to Keep Our Souls Intact” deck; **adapted for CMVan** in `assets/image-prompts/cmvan-slides-01-15.md` |
+| `BOTH-HANDS-FULL-SCRIPT.md` | Full Brazil delivery script — timing and beats |
+| `BOTH-HANDS-FULL-SPEAKER-NOTES.md` | Speaker notes — stagecraft |
 
 ---
 

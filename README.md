@@ -2,7 +2,7 @@
 
 **Xerox Machines, Stolen Work, and the Most Creative Year of My Life**
 
-A Creative Mornings Vancouver keynote by [Kris Krüg](https://kriskrug.co) — May 2026.
+A Creative Mornings Vancouver keynote by [Kris Krüg](https://kriskrug.co) — **May 1, 2026** (field talk).
 
 > AI is our generation's Xerox machine. Built by the biggest corporations on earth. Trained on stolen work — including about 1,800 of my own photos, scraped without anyone asking. And I'm also more creative than I've ever been in my life. Both true. Not contradiction. Punk rock.
 
@@ -24,8 +24,8 @@ It started as a folder inside the [kk-kb](https://github.com/WalksWithASwagger/k
 |---|---|
 | **Event** | Creative Mornings Vancouver |
 | **Global theme** | CREATE (co-created with Adobe) |
-| **Talk date** | TBC — see [OPEN-QUESTIONS.md](./OPEN-QUESTIONS.md) |
-| **Release Day** | May 29, 2026 |
+| **Talk date (Vancouver)** | **May 1, 2026** |
+| **Release Day (global CTA)** | May 29, 2026 |
 | **Host** | Mark Busse (`mark@markbusse.ca`) |
 | **Speaker** | Kris Krüg |
 | **Status** | In development |
@@ -83,17 +83,15 @@ See [source-material/SOURCE-INDEX.md](./source-material/SOURCE-INDEX.md) for wha
 
 ---
 
-## Timeline (from issue #1570 — verify)
+## Timeline (canon: May 1 talk, May 29 Release Day)
 
 | Window | Milestone |
 |---|---|
-| Now → May 1 | Research + script lock |
-| May 1–10 | Slide build + image gen |
-| May 10–13 | Lenfest / Philadelphia |
-| ~May 13 | Vancouver AI Meetup (test material) |
-| ~May 15 | **Creative Mornings Vancouver — TALK** |
-| May 15–29 | Release Day campaign |
-| **May 29** | **Release Day** |
+| Now → late April | Research + script lock |
+| Late April | Slide build + image gen |
+| **May 1** | **Creative Mornings Vancouver — field talk** |
+| May 1–29 | Release Day campaign (room CTA + follow-ups) |
+| **May 29** | **Global Release Day** |
 
 ---
 

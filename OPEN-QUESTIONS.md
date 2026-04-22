@@ -4,18 +4,13 @@ Contradictions found across the source documents. Resolve before locking the scr
 
 ---
 
-## 1. What date is the talk?
+## 1. What date is the talk? — **RESOLVED (May 1, 2026)**
 
-Three different dates show up in the source material:
+**Canon:** **Thursday May 1, 2026** = Creative Mornings Vancouver field talk. **May 29, 2026** = global **Release Day** / CREATE activation (closing CTA in the room — ship something — not the Vancouver stage date).
 
-| Source | Date claimed |
-|---|---|
-| [kk-kb#1570](https://github.com/WalksWithASwagger/kk-kb/issues/1570) | **~May 15, 2026** (talk) — May 29 is "Release Day," not the talk date |
-| [content/projects/.../creative-mornings-vancouver-may-2026/README.md](./source-material/cmvan-context/) | **May 29, 2026** as the talk date itself |
-| [pitch/pitch-for-mark-busse.md](./pitch/pitch-for-mark-busse.md) | **May 29** as Release Day, talk date implied earlier but unspecified |
-| [source-material/cmvan-context/fpc-relaunch-readme-FOR-REFERENCE.md](./source-material/cmvan-context/fpc-relaunch-readme-FOR-REFERENCE.md) | "Week 4: May 1–8" launch window |
+Older sources (e.g. [#1570](https://github.com/WalksWithASwagger/kk-kb/issues/1570) draft text, stale README lines) may still say ~May 15 or conflate May 29 with the talk; treat those as superseded unless Mark publishes a different official schedule.
 
-**Action:** confirm with Mark Busse. CreativeMornings.com publishes city schedules — verify there.
+**Still verify:** chapter calendar on CreativeMornings.com and with Mark Busse — but project docs use **May 1** until any correction.
 
 ---
 
@@ -31,12 +26,12 @@ Three competing structures in the same project folder:
 
 ---
 
-## 3. How many slides?
+## 3. How many slides? — **PARTIALLY RESOLVED**
 
-- Issue #1570 deliverables list says **23 slides**
-- [slides/slide-deck-outline.md](./slides/slide-deck-outline.md) shows **10 slides**
+- **v1 deck (CMVan):** **[slides/deck-outline-with-notes.md](./slides/deck-outline-with-notes.md)** — **10 slides** for the May 1 talk (sparse, punk pacing).
+- **Extended zine prompt bank:** **[assets/image-prompts/cmvan-slides-01-15.md](./assets/image-prompts/cmvan-slides-01-15.md)** — up to **15** image prompts adapted from WAIFF Brazil *Both Hands Full* pipeline (optional density / B-roll slides — not a second competing “official” deck unless you promote it).
 
-**Action:** decide once structure is locked. 10 slides for a 25-min talk is sparse-and-punky (more KK voice). 23 slides is closer to a TED rhythm.
+Issue #1570’s **23 slides** reference is legacy / BHF-scale; ignore unless you explicitly expand scope.
 
 ---
 
