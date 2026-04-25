@@ -14,15 +14,21 @@ Older sources (e.g. [#1570](https://github.com/WalksWithASwagger/kk-kb/issues/15
 
 ---
 
-## 2. What's the actual talk structure?
+## 2. What's the actual talk structure? — **RESOLVED (discussion-first framework)**
 
-Three competing structures in the same project folder:
+**Canon (as of 2026-04-25, after Mark Busse feedback):**
 
-- **Issue #1570:** 4 acts, ~25 min total — Pattern → Both Hands Full → Framework → Release Day
-- **[script/keynote-script-outline.md](./script/keynote-script-outline.md):** 6 movements — Cassette → Mother of Punk → Xerox → Selector's Era → Tactical Toolkit → Release Day
-- **[pitch/pitch-for-mark-busse.md](./pitch/pitch-for-mark-busse.md):** 3-step framework — Name it / Externalize it / Ship it
+The format is **not a straight monologue**. It's:
+1. 2-min biographical intro (Kris's story, not credentials)
+2. One honest statement + crowd prompt (~1 min)
+3. Crowd discusses (~3–5 min)
+4. Kris responds with truth bombs keyed to what the room raised (~15 min)
+5. Close + Release Day CTA (~2 min)
 
-**Action:** lock one structure before drafting full script. The 6-movement is the most narratively complete; the 4-act is the most time-disciplined; the 3-step is the most memorable.
+**Primary script:** `script/talk-framework-v4.md`
+**Reference/fallback:** `script/full-talk-script.md` (v3 monologue — keeps all the prose)
+
+See `docs/MARK-FEEDBACK.md` for full context.
 
 ---
 

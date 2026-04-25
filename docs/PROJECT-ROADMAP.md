@@ -53,10 +53,11 @@ Do not conflate the two on public copy or slide footers.
 
 | Phase | Window | Outcomes |
 |-------|--------|----------|
-| **A — Lock narrative** | Now | This roadmap; [NOTION-SYNC.md](./NOTION-SYNC.md); [PUBLICATION-BIBLIOGRAPHY.md](./PUBLICATION-BIBLIOGRAPHY.md); [SOURCE-INDEX](../source-material/SOURCE-INDEX.md) extended; script outline dates aligned |
-| **B — Ship public minimum** | Before May 1 | `punkrockai.com` live: hero, dates, `#ReleaseDay2026` CTA aligned with CM official copy; QR → companion |
-| **C — Talk week** | May 1 | Deck + walk-in assets from [`assets/image-prompts/`](../assets/image-prompts/) |
-| **D — Release month** | May 1–29 | Social; optional alignment with CM virtual FieldTrips (see bibliography) |
+| **A — Lock narrative** | Done | This roadmap; [NOTION-SYNC.md](./NOTION-SYNC.md); [PUBLICATION-BIBLIOGRAPHY.md](./PUBLICATION-BIBLIOGRAPHY.md); source-material indexed; script outline dates aligned |
+| **A2 — Script refactor** | Now → Apr 28 | Mark's feedback formalized ([MARK-FEEDBACK.md](./MARK-FEEDBACK.md)); book draft ingested; creativity biography doc written; talk framework v4 (discussion-first) written |
+| **B — Ship public minimum** | Before May 1 | `punkrockai.com` live: hero, dates, `#ReleaseDay2026` CTA; QR → companion |
+| **C — Talk week** | May 1 | Deck + walk-in assets; talk framework v4 is primary script |
+| **D — Release month** | May 1–29 | Social; optional CM virtual FieldTrips alignment |
 | **E — Post-publish** | After May 29 | Long article (Banff + BHF + CMVan arc); optional zine/PDF |
 
 ---

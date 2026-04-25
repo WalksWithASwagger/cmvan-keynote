@@ -2,7 +2,7 @@
 
 Snapshots from the canonical knowledge base at [`WalksWithASwagger/kk-kb`](https://github.com/WalksWithASwagger/kk-kb). Treat these as **read-only references** — when working drafts diverge from these, update the canonical KB and re-snapshot, don't edit in place.
 
-Snapshot date: 2026-04-22
+Snapshot date: 2026-04-22 (updated 2026-04-25)
 
 ---
 
@@ -125,6 +125,25 @@ March 2026 Banff AI Culture Summit materials — **governance, national AI cultu
 | `summit-synthesis-memo.md` | Executive synthesis for post-talk article |
 | `post-summit-roadmap.md` | Policy / follow-up framing |
 | `transcripts/README.md` | Index of transcript files |
+
+---
+
+## `life-love-internet/` — Book draft ← NEW, PRIMARY BIOGRAPHICAL SOURCE
+
+`life-love-internet-book-draft.md` — Kris's in-progress autobiography/memoir, written with AI. ~40K tokens. The most raw, personal, and story-rich biographical source in the project. **Not yet mined for the keynote until the April 2026 refactor.**
+
+Key chapters for the CMVan talk:
+- **Ch 1–2:** Harrisburg SD → Sacramento → leaving the cult → Trinity Western 1995 — origin story
+- **Ch 3:** Silicon Valley, spark-online, Sierra born (1998), Judah's NICU (2001) — **the camera origin story**
+- **Ch 4:** Bryght, Dead.net, open-source movement, BarCamp China — the open everything chapter
+- **Ch 5:** Flickr (100K CC photos), True North Media House, BP oil spill, Copenhagen, teaching at Emily Carr
+- **Ch 6:** Galiano Island, off-grid, IMERSS, Coast Salish partnership — the analog oasis
+
+**Critical scene (not in any prior talk):** Kris picks up a camera in 2001 not for art — because the company needed photos and they were too broke to hire a pro. He posts NICU photos of Judah to Flickr. One lands on Flickr's homepage. Photography comes from crisis, not career. This is the human origin story the current script is missing.
+
+Also the origin of the mantra: *"Any dead fish can float downstream. But it takes a live fish to swim against the current."* — Dr. Ronald Shaw, Sacramento youth pastor, ~1992.
+
+**Note:** Ingested from `/Users/kk/Desktop/Private & Shared/Life, Love & the Internet 17c361a5ab654a80855c237ac02c4239.md`
 
 ---
 
