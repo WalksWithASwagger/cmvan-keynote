@@ -35,6 +35,26 @@ Co-founded spark-online with Robert Delamar. "Not just another dot-com wet dream
 
 ---
 
+## SCENE 3.5: "Worldly" — the permission gap (~1990s–2001)
+
+Growing up, Kris didn't know that a person could be a creative professional. Not in the abstract — literally didn't know any artists, photographers, filmmakers, designers, fashion people. People who worked in those worlds were called **"worldly"** — a loaded word from a religious conservative background that meant: not for you, not your people, not a real path.
+
+So he dabbled. Music. Drawing. Writing. Things he could never quite get right. Not because he lacked something — because he had no map. No models. No one who showed him that making things was a life you could actually build.
+
+At 20, he got to know a photographer for the first time. That was the insight: *"Yo, there are people out there that work in these industries. These are real jobs. These are real lives."* A permission structure cracked open.
+
+But it still didn't click — not the camera, not yet. More years of trying things. More dabbling. The medium he'd eventually live in for thirty years was still out there somewhere.
+
+It found him at 31, in a hospital, in a crisis. (→ Scene 4)
+
+**Why this matters for the talk:** The gatekeeping wasn't institutional — it was cultural, religious, built into how the world was named to him as a kid. "Worldly" is one word for it. The talk is about who gets permission to be a creative, and Kris didn't grow up with that permission. He found it sideways, late, in the last place anyone would look for it.
+
+**Use with care:** Kris's note — "we don't make too big a deal of it." A line or two in the open, not a set piece. It deepens the camera origin story without becoming its own story.
+
+**Usable line:** "I didn't grow up knowing creative professionals existed. Where I came from, those people were called worldly — which was not a compliment. I found photography at 31, in a hospital, and it was the first creative thing that ever actually worked for me. I didn't know until then that I'd been looking for it."
+
+---
+
 ## SCENE 4: The camera (Silicon Valley / Stanford NICU, 2001) ← THE HUMAN ORIGIN STORY
 
 This is the scene that's missing from the current script. 
