@@ -113,8 +113,14 @@ These are modular. Deploy based on what the room raised. The clusters below are 
 **Truth bomb 6: The Selector**
 > In the dancehalls of Kingston, Jamaica, the hero of the dance wasn't the musician. It was the Selector. The person who chose the records. Because making the sound wasn't the hard part anymore. Knowing *which* sound the room needed — that was the skill. That was taste. That idea took a boat to the Bronx and became Hip Hop. Generation is cheap. Taste is not. That's always been true. AI just turned the volume up on it.
 
-**Truth bomb 7: What did you throw away?**
-> Here's a question nobody asks: what did you throw away this week? What's on your cutting room floor? Because that's your taste. Not what you chose to keep — what you refused to keep. I spent ten years posting photos to Flickr every single day. Not because every photo was good. Because I was training my eye to know the difference. The practice of throwing away is the practice of taste. AI can generate ten thousand options. Your job is to know which one is yours.
+**Truth bomb 7: The loop — how mastery actually works**
+> Think about what the feedback loop used to look like. Traditional photography: shoot a roll of film, develop it, hope a magazine publishes it, hope a reader writes a letter to the editor, hope the letter makes it to print. That loop took a year. That's why mastery took fifteen.
+>
+> Then Flickr happened. I started posting every single day. Getting feedback every single day. Incorporating it, going back out, running the whole loop again the next morning. I think that compressed fifteen years of mastery to maybe five — for people who were genuinely using it, genuinely listening, genuinely willing to throw work away.
+>
+> What AI does now is compress that loop further still. Dramatically further. You can run taste loops in an afternoon that used to take a season. But the loop is only as good as the judgment you bring to it. Speed without taste is just noise at scale.
+>
+> Here's a question nobody asks: what did you throw away this week? What's on your cutting room floor? Because that's your taste. Not what you chose to keep — what you refused to keep. The machine didn't teach me what good looks like. Twenty years of choosing did.
 
 **Truth bomb 8: Three Documents**
 > This is the practical punk move. I challenge every person in this room to write three documents before May 29th.

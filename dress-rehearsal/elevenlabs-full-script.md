@@ -33,7 +33,23 @@ I moved back to Vancouver and co-founded Bryght — the world's first Drupal ser
 
 That became my operating principle. I released a hundred thousand photographs on Flickr under Creative Commons. People told me I was devaluing my work. I told them they were thinking about it wrong. Those photos spread across the internet like a benevolent virus, each one carrying my name. The calls came from National Geographic, Rolling Stone, the New York Times. They didn't want the free stuff. They wanted the premium experience. Giving away made me invaluable.
 
-And then I built a daily practice around it. Shoot every day. Archive everything. Review what worked. Understand why. After ten years of this on Flickr, I had trained my eye to recognize patterns I couldn't consciously articulate. That became my theory of taste: it's not what you choose to keep. It's what you choose to throw away. The cutting room floor is where your taste actually lives.
+And then I built a daily practice around it. Shoot every day. Archive everything. Review what worked. Understand why.
+
+Think about what the feedback loop used to look like for a photographer before any of this.
+
+You'd shoot a roll of film. You'd develop it — days of waiting. If you were good enough, maybe a magazine published it. Maybe a reader wrote a letter to the editor. That letter went in the mail. Weeks later, if you were lucky, it got published. You'd read it. The loop — from making something to getting real feedback to making the next thing — took months. Sometimes a year. That's why mastery traditionally took fifteen years. Not because people were slower. Because the loop was slow.
+
+Then Flickr happened.
+
+I started posting every single day. Not because I was already good — because I wanted to become good. Every day: comments, favorites, people telling me what landed and what didn't. I'd incorporate it, go back out the next day, run the whole loop again. I think that compression shortcut the traditional mastery path from fifteen years to maybe five. Not for everyone — only for people who were genuinely using the loop, actually listening, willing to throw work away when it wasn't right.
+
+That's what people miss about that era. It wasn't the audience. It was the loop speed.
+
+What AI does now is compress that further. Dramatically further. You can make a hundred variations of something in an afternoon, critique them, filter them, run taste loops that used to take a season. The question is never whether the tools are fast. The question is whether you've developed the judgment to run the loop well. Whether you know which ninety-seven to throw away.
+
+Because the loop is only as good as the taste you bring to it. Speed without judgment is just noise at scale. The Flickr practice taught me that before AI ever arrived. The machine didn't teach me what good looks like. Twenty years of choosing did.
+
+And that became my theory of taste: it's not what you choose to keep. It's what you choose to throw away. The cutting room floor is where your taste actually lives.
 
 I covered the Olympics with a guerrilla newsroom — no press passes, just bloggers and smartphones and the instinct to tell the stories that weren't being told. I taught photography at Emily Carr and VFS. I moved to Galiano Island, off the grid, solar power and rainwater, because I needed the analog oasis as a counterweight to all the digital noise. I co-founded a research institute in partnership with the Coast Salish people to study the Salish Sea. Every chapter was the same move: pick up the tool, use it wrong, share everything, build community.
 

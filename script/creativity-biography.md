@@ -105,17 +105,33 @@ Result: calls from National Geographic, Rolling Stone, New York Times. They didn
 
 ---
 
-## SCENE 7: The iterative loop practice
+## SCENE 7: The feedback loop — Flickr, mastery, and what AI actually does
 
-From Kris's own brain dump, April 2026:
+**The core idea:** Every era of technology has compressed the feedback loop between making a thing and learning whether it's good. The compression is what actually accelerates mastery. AI is the latest — and most dramatic — step in that compression. This is a through-line from Kris's Flickr practice to his current AI work.
 
-*"Flickr teaching me value of iterative looping to shortcut mastery. Daily looping iteration and archiving meticulously and dedicated physical and temporal space."*
+**The three eras:**
 
-*"Taste more important than ever. What did you throw away? Leave on cutting room floor."*
+*Traditional era (pre-social media):* Shoot a roll of film. Develop it — days of waiting. If you're good enough, a magazine publishes it. A reader writes a letter to the editor. The letter goes in the mail. Weeks later, if you're lucky, it's published. You read it. Loop time: months to a year. Traditional mastery path: ~15 years.
 
-The practice: shoot every day, archive everything, review what worked, understand why. After ten years of this on Flickr, Kris had trained his eye to recognize patterns he couldn't consciously articulate. That unconscious expertise became the foundation for everything — photography, teaching, AI work.
+*Flickr era (2004–2012):* Post every day. Get feedback every day. Comments, favorites, real signals. Incorporate, go out the next day, run the whole loop again. Loop time: 24 hours. Estimated mastery compression: ~15 years → ~5 years. The key: not the audience, the loop speed.
 
-**Usable line:** "Taste isn't something you're born with. It's the ten-year Flickr practice of shooting, archiving, and honestly asking yourself: what did I throw away today? What's on the cutting room floor? That's where your taste lives — in what you refused to keep."
+*AI era (now):* Make hundreds of variations, critique them, filter them, run taste loops in an afternoon that used to take a season. But the loop is only as good as the judgment you bring to it. Speed without taste is noise at scale.
+
+**The critical point:** The machine doesn't teach you what good looks like. Twenty years of choosing does. AI amplifies existing taste — it doesn't create taste from nothing. Someone who has run the Flickr loop for a decade gets more from AI than someone who hasn't. The investment in the iterative practice compounds.
+
+**Connection to Three Documents:** Externalizing your taste (policy, style guide, worldview) is how you make the AI loop actually yours — otherwise you're running someone else's taste through the machine.
+
+**Usable lines:**
+
+"Think about what the feedback loop used to look like. Shoot a roll of film. Develop it. Magazine publishes it. Reader writes a letter. Letter goes in the mail. That loop took a year. That's why mastery took fifteen."
+
+"Then Flickr happened. Post every single day. Get feedback every day. Run the loop again tomorrow. I think that compressed fifteen years to five — for people who were genuinely using it."
+
+"What AI does now is compress that further. Dramatically further. The question is never whether the tools are fast. The question is whether you've developed the judgment to run the loop well. Whether you know which ninety-seven to throw away."
+
+"Speed without judgment is just noise at scale. The machine didn't teach me what good looks like. Twenty years of choosing did."
+
+"Taste isn't what you keep. It's what you throw away. The cutting room floor is where taste actually lives."
 
 ---
 
