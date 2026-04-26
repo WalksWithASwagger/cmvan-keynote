@@ -28,13 +28,13 @@ Walk out. Take a breath. Don't rush.
 
 **[Beat. Let the room settle.]**
 
-> I've been building things on the internet since 1995. Websites, companies, communities, photos — thirty years of making stuff with whatever tool was in front of me. Open-source software when nobody was doing that. A hundred thousand photos on Flickr under Creative Commons because I believed sharing builds more than hoarding. A guerrilla newsroom at the Olympics with no press pass. A research institute on a tiny island. Hundreds of creative professionals trained to work with AI.
+> I've been building things on the internet since 1995. Websites, companies, communities, photos — thirty years of making stuff with whatever tool was in front of me. Open-source software when nobody was doing that. A hundred and forty-five thousand photos on Flickr under Creative Commons because I believed sharing builds more than hoarding. A guerrilla newsroom at the Olympics with no press pass. A research institute on a tiny island. Hundreds of creative professionals trained to work with AI.
 
 > The tool changes. The move is always the same: pick it up, use it wrong, share what you learn, build community around it.
 
 **[Pause.]**
 
-> Here's where I am right now. I find my relationship with AI completely non-consensual. I released those hundred thousand Flickr photos freely — that was the deal I made. When I checked a training data search tool, I found roughly 1,800 of my images scraped into a major AI corpus. Nobody asked me. Nobody paid me. They just took it.
+> Here's where I am right now. I find my relationship with AI completely non-consensual. I released those hundred and forty-five thousand Flickr photos freely — that was the deal I made. When I checked a training data search tool, I found roughly 1,800 of my images scraped into a major AI corpus. Nobody asked me. Nobody paid me. They just took it.
 
 > And I'm more creative, more productive, and more powerful than I've ever been in my entire life.
 
