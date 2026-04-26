@@ -33,6 +33,9 @@ build/
 assets/generated/
 *.mov
 *.mp4
+*.mp3
+*.wav
+*.aiff
 *.psd
 *.ai
 *.sketch
