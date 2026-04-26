@@ -19,34 +19,27 @@ API_KEY = "0510b476d05adc003eb1dcba0afff2a77bbfdb23a7290caa5c57cd98f5bbe710"
 VOICE_ID = "h5o5VIOBAddU9BdX8t8E"
 MODEL = "eleven_multilingual_v2"
 
-SCRIPT = Path(__file__).parent.parent / "script" / "full-talk-script.md"
+SCRIPT = Path(__file__).parent / "elevenlabs-full-script.md"
 OUTPUT = Path(__file__).parent / "punk-rock-ai-full-talk.mp3"
 
 
 def clean_script(raw: str) -> str:
-    # Cut at SPEAKER NOTES — everything after is not spoken
-    if "## SPEAKER NOTES" in raw:
-        raw = raw[:raw.index("## SPEAKER NOTES")]
+    # Strip the header block (everything before the first ---)
+    if "---\n" in raw:
+        raw = raw[raw.index("---\n") + 4:]
+    if "---\n" in raw:
+        raw = raw[raw.index("---\n") + 4:]
 
-    # Remove YAML-style frontmatter lines (lines starting with **)
-    # Remove all stage directions: **[...]**
-    text = re.sub(r"\*\*\[.*?\]\*\*", "", raw)
-
-    # Remove markdown headers
-    text = re.sub(r"^#{1,6}\s.*$", "", text, flags=re.MULTILINE)
-
-    # Remove horizontal rules
+    # Remove markdown headers and horizontal rules
+    text = re.sub(r"^#{1,6}\s.*$", "", raw, flags=re.MULTILINE)
     text = re.sub(r"^---+$", "", text, flags=re.MULTILINE)
+
+    # Remove italic front-matter note (*For audio generation...*)
+    text = re.sub(r"^\*.*?\*$", "", text, flags=re.MULTILINE)
 
     # Remove bold/italic markers but keep the words
     text = re.sub(r"\*\*(.*?)\*\*", r"\1", text)
     text = re.sub(r"\*(.*?)\*", r"\1", text)
-
-    # Remove markdown links
-    text = re.sub(r"\[.*?\]\(.*?\)", "", text)
-
-    # Remove lines that are just metadata (Duration, Speaker, etc.)
-    text = re.sub(r"^\*\*.*?\*\*:.*$", "", text, flags=re.MULTILINE)
 
     # Normalize whitespace
     text = re.sub(r"\n{3,}", "\n\n", text)
