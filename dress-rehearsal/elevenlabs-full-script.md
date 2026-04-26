@@ -83,7 +83,7 @@ I started posting every single day. Not because I was already good — because I
 
 That's what people miss about that era. It wasn't the audience. It was the loop speed.
 
-What AI does now is compress that further. Dramatically further. You can make a hundred variations of something in an afternoon, critique them, filter them, run taste loops that used to take a season. The question is never whether the tools are fast. The question is whether you've developed the judgment to run the loop well. Whether you know which ninety-seven to throw away.
+What AI does now is compress that further. Dramatically further. You can make a hundred variations of something in an afternoon, critique them, filter them, run taste loops that used to take a season. People call it swarm looping — running dozens of variations simultaneously, letting the signal rise from the noise. But here's what nobody tells you about swarm looping: speed is not the point. The point is what you do at each transition. The AI assists within each phase. It must not determine what comes next. That's the human's job. Every time. The loop is only as good as the judgment you bring to every handoff. Whether you know which ninety-seven to throw away.
 
 ---
 
@@ -91,7 +91,7 @@ What AI does now is compress that further. Dramatically further. You can make a 
 
 Because the loop is only as good as the taste you bring to it. Speed without judgment is just noise at scale. The Flickr practice taught me that before AI ever arrived. The machine didn't teach me what good looks like. Twenty years of choosing did.
 
-And that became my theory of taste: it's not what you choose to keep. It's what you choose to throw away. The cutting room floor is where your taste actually lives.
+And that became my theory of taste: it's not what you choose to keep. It's what you choose to throw away. The cutting room floor is where your taste actually lives. Intuition develops through repeated exposure to patterns — and AI just turned up the repetition rate. But only you can decide what carries forward.
 
 Here's a question nobody asks: what did you throw away this week? What's on your cutting room floor? Because that's your taste. Not what you chose to keep — what you refused to keep. The machine didn't teach me what good looks like. Two decades of deciding did.
 

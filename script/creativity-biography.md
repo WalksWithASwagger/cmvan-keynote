@@ -119,6 +119,8 @@ Result: calls from National Geographic, Rolling Stone, New York Times. They didn
 
 **The critical point:** The machine doesn't teach you what good looks like. Twenty years of choosing does. AI amplifies existing taste — it doesn't create taste from nothing. Someone who has run the Flickr loop for a decade gets more from AI than someone who hasn't. The investment in the iterative practice compounds.
 
+**Swarm looping (Matt Lambert / cardeo):** What AI enables now is running many variations in parallel — a "swarm" of iterations — rather than one at a time. This is a further compression of the feedback loop. But Lambert's key insight (from his SWARM protocol) is that the human must remain active at every *transition* between phases, not just at the end. "The AI assists within each phase; it must not determine progression between phases." The loop is only as valuable as the judgment applied at each handoff. Intuition develops through repeated exposure to patterns — the swarm accelerates the pattern exposure, but the human decides what carries forward.
+
 **Connection to Three Documents:** Externalizing your taste (policy, style guide, worldview) is how you make the AI loop actually yours — otherwise you're running someone else's taste through the machine.
 
 **Usable lines:**

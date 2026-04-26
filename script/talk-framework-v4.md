@@ -118,9 +118,9 @@ These are modular. Deploy based on what the room raised. The clusters below are 
 >
 > Then Flickr happened. I started posting every single day. Getting feedback every single day. Incorporating it, going back out, running the whole loop again the next morning. I think that compressed fifteen years of mastery to maybe five — for people who were genuinely using it, genuinely listening, genuinely willing to throw work away.
 >
-> What AI does now is compress that loop further still. Dramatically further. You can run taste loops in an afternoon that used to take a season. But the loop is only as good as the judgment you bring to it. Speed without taste is just noise at scale.
+> What AI does now is compress that loop further still. Dramatically further. You can run taste loops in an afternoon that used to take a season. People call it "swarm looping" — running dozens of variations simultaneously, critiquing them in parallel, letting the signal rise. But here's what nobody tells you about swarm looping: speed is not the point. The point is what you do at each transition. The AI assists within each phase. It must not determine what comes next. That's the human's job. Every time. Judgment is not optional at the transitions — it's the whole practice.
 >
-> Here's a question nobody asks: what did you throw away this week? What's on your cutting room floor? Because that's your taste. Not what you chose to keep — what you refused to keep. The machine didn't teach me what good looks like. Twenty years of choosing did.
+> Here's a question nobody asks: what did you throw away this week? What's on your cutting room floor? Because that's your taste. Not what you chose to keep — what you refused to keep. The machine didn't teach me what good looks like. Twenty years of choosing did. Intuition develops through repeated exposure to patterns — and AI just turned up the repetition rate. But only you can decide what carries forward.
 
 **Truth bomb 8: Three Documents**
 > This is the practical punk move. I challenge every person in this room to write three documents before May 29th.
