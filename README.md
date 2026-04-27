@@ -26,48 +26,56 @@ Theme: CREATE. Format: discussion-first. Duration: 20–25 min.
 
 ---
 
-## Images (HOPECODE v2 — 20 slides)
+## Images (v3 — 28 slides)
 
-Both runs in `assets/generated/slides/`. View via local server:
+All runs in `assets/generated/slides/`. View via local server:
 
 ```bash
 python3 -m http.server 7772 --directory assets/generated/slides
 # then open: http://127.0.0.1:7772/viewer.html
 ```
 
-| Run | Model | Slides |
-|-----|-------|--------|
-| `run-20260426-101433-hopecode-v2-gpt` | gpt-image-2 | 20 |
-| `run-20260426-113917-hopecode-v2-nano` | gemini-3-pro-image-preview | 20 |
+| Run | Model | Slides | Prompt File |
+|-----|-------|--------|-------------|
+| `run-20260426-101433-hopecode-v2-gpt` | gpt-image-2 | 20 | hope-code-v2 (archived) |
+| `run-20260426-113917-hopecode-v2-nano` | gemini-3-pro-image-preview | 20 | hope-code-v2 (archived) |
 
-Prompt file: `assets/image-prompts/hope-code-v2-rafiki.md`
-
-Earlier runs (zine style, 10 slides each) also available for comparison.
+**v3 prompt files (28 slides, ready to run):**
+- `assets/image-prompts/hope-code-v3-28-rafiki.md` — solar punk / Aurora Borealis / bioluminescent / mycelial
+- `assets/image-prompts/punk-v2-28-rafiki.md` — xerox grain / cut-and-paste / blood red / zine
 
 ---
 
-## Slide Map (v2, 20 slides)
+## Slide Map (v3, 28 slides)
 
 1. Title — PUNK ROCK AI
 2. The Permission Gap — "worldly"
 3. The Camera Origin — NICU, Judah, Stanford 2001
 4. 145,000 Frames — Flickr CC
-5. Dada → Punks → DJs → AI
-6. The Selector — generation is cheap, taste is not
-7. The Feedback Loop — mastery compression + swarm looping
-8. The Cutting Room Floor — taste lives in what you throw away
-9. The AI Chapter — 1,800 scraped, non-consensual
-10. The Three Fears — theft, pipeline, race to bottom
-11. Name What You See — stop saying bias
-12. Frequent ≠ Fair — mirror reflects, doesn't correct
-13. The Punk Condition — both hands full
-14. What's Also True — liberation
-15. Who Writes the Rules? — don't opt out
-16. The Three Documents — policy, style guide, worldview
-17. Write for the Bot — cultural activism
-18. The Stubborn Human Soul — what remains
-19. Release Day — May 29
-20. Close — dead fish + "You coming?"
+5. Bryght / Dead.net — open source as values
+6. Dada → Punks → DJs → AI
+7. Burroughs / Situationists — deeper lineage
+8. The Selector — generation is cheap, taste is not
+9. The Feedback Loop — mastery compression + swarm looping
+10. The Cutting Room Floor — taste lives in what you throw away
+11. Vicki — the pattern you couldn't name
+12. The AI Chapter — 1,800 scraped, non-consensual
+13. The Three Fears — theft, pipeline, race to bottom
+14. The Junior Pipeline — honest acknowledgment
+15. Name What You See — stop saying bias
+16. Frequent ≠ Fair — mirror reflects, doesn't correct
+17. The Punk Condition — both hands full
+18. What's Also True — liberation
+19. The Analog Oasis — Galiano Island
+20. Who Writes the Rules? — don't opt out
+21. True North — Olympics guerrilla newsroom
+22. Anthony Joseph — "they would've used it"
+23. The Best Tool — the one you have with you
+24. The Three Documents — policy, style guide, worldview
+25. Write for the Bot — cultural activism
+26. The Stubborn Human Soul — what remains
+27. Release Day — May 29
+28. Close — dead fish + "You coming?"
 
 ---
 

@@ -1,4 +1,4 @@
-# Punk Rock AI — ElevenLabs Audio Script v2
+# Punk Rock AI — ElevenLabs Audio Script v3
 ## Personal essay version — biography as argument
 
 *For audio generation. Paragraph breaks = natural pauses. No stage directions, no slide cues, no third-party case studies. This is Kris's story as the creative argument.*
@@ -39,11 +39,19 @@ That camera didn't leave my hands for the next twenty years.
 
 ## 145,000 Frames
 
-I moved back to Vancouver and co-founded Bryght with Boris Mann — the world's first Drupal services company — out of an East Van office with second-hand desks and whiteboards covered in code. We built Dead.net for the Grateful Dead. Open-source wasn't just about free software to us. It was about refusing to build walls. The more you give away, the more valuable you become.
-
-That became my operating principle with the camera too. I released a hundred and forty-five thousand photographs on Flickr under Creative Commons. People told me I was devaluing my work. I told them they were thinking about it wrong. Those photos spread across the internet like a benevolent virus, each one carrying my name. The calls came from National Geographic, Rolling Stone, the New York Times. They didn't want the free stuff. They wanted the premium experience. Giving away made me invaluable.
+That became my operating principle. I released a hundred and forty-five thousand photographs on Flickr under Creative Commons. People told me I was devaluing my work. I told them they were thinking about it wrong. Those photos spread across the internet like a benevolent virus, each one carrying my name. The calls came from National Geographic, Rolling Stone, the New York Times. They didn't want the free stuff. They wanted the premium experience. Giving away made me invaluable.
 
 And then I built a daily practice around it. Shoot every day. Archive everything. Review what worked. Understand why.
+
+---
+
+## Open Source as Values
+
+Around the same time, I moved back to Vancouver and co-founded Bryght with Boris Mann — the world's first Drupal services company — out of an East Van office with second-hand desks and whiteboards covered in code.
+
+We weren't just building websites. We were building a movement. We landed Dead.net for the Grateful Dead. Warner Brothers Records. We built digital homes for musicians who believed in what open content could do. A client once asked me: "So let me get this straight — you want me to pay you for software that's free?" I told him: you know how to drive a car, but if the engine explodes, you don't rebuild it yourself. You pay a mechanic. We were the mechanics. The software was free. The expertise wasn't.
+
+Open-source wasn't just a business model. It was a values statement. Refusing to build walls. The more you share, the stronger the network becomes. That principle — the same one that drove the Flickr release — runs through every chapter of my creative life. Including this one.
 
 ---
 
@@ -58,6 +66,20 @@ That idea took a boat to the Bronx and became Hip Hop.
 Every generation: the corporations build the infrastructure. The weirdos figure out what it's actually for.
 
 AI is the latest chapter. The corporations built it. Now the question is what the weirdos do with it.
+
+---
+
+## The Deeper Lineage
+
+Actually — the lineage goes deeper than Dada.
+
+William S. Burroughs was doing cut-ups in the 1950s. Taking a page of text — newspaper, novel, anything — cutting it into strips and reassembling it at random. The point wasn't the randomness. The point was what Burroughs said about it: arrangement and selection is the medium. Not the words — the choosing of which words go next to which words.
+
+The Situationists in France were doing something similar — détournement, they called it. Taking the tools and images of corporate spectacle and turning them against the spectacle. Not rejecting the infrastructure — redirecting it. Using the enemy's weapons to say something the enemy would never sanction.
+
+This is older and deeper than any of us tends to remember. Every time we talk about AI as unprecedented — we're forgetting centuries of artists who did exactly what we're doing now. They picked up the corporate tool. They used it wrong. They made it mean something.
+
+We are in that tradition. This is not a departure from creative history. It is creative history, doing what it has always done.
 
 ---
 
@@ -97,6 +119,20 @@ Here's a question nobody asks: what did you throw away this week? What's on your
 
 ---
 
+## The Pattern You Couldn't Name
+
+I've watched something happen to creative people when they first start using AI for their own work — their actual work, not experiments. Not everyone, but some people. A visual artist I know uploaded twenty of her own photographs to an image model and asked it to abstract the underlying patterns across all of them. What came back stopped her cold.
+
+The AI had identified a structural pattern in how she composed images — a specific relationship between negative space and subject position — that she had never consciously articulated. She'd been doing it for fifteen years. It was hers. But she'd never seen it named.
+
+She described it as: seeing a map of a city you've lived in for decades but never seen from above.
+
+What you thought was instinct turns out to be twenty years of choosing, encoded. The AI didn't create that pattern. She created it, one image at a time, over fifteen years of practice. What the AI did was make it legible. Visible. Nameable.
+
+That's not replacement. That's revelation. And it only works if you have twenty years of choosing to reveal.
+
+---
+
 ## The AI Chapter
 
 And then AI arrived. And here's where the story gets complicated in a way I haven't fully resolved.
@@ -120,6 +156,22 @@ Second: the junior pipeline. How does a young photographer learn if there's no m
 Third: the race to the bottom. AI-generated content competing with human creative work at the low end, driving down rates, normalizing mediocrity-at-scale. Good enough for the client who doesn't care. Which is a lot of clients.
 
 These are real. I don't want to paper over them.
+
+---
+
+## The Junior Pipeline
+
+On the second fear — the pipeline — I want to be honest in a way that's uncomfortable.
+
+I don't have a clean answer.
+
+I know what the argument for concern is: the entry-level work has historically been where young creatives build the skills that eventually become the senior work. You learn composition by shooting thousands of product photos you don't care about. You learn to write by cranking copy that pays the rent. If AI displaces the entry-level work, where does the next generation get the practice hours?
+
+I also know what the counterargument is: every wave of automation created new kinds of entry-level work. Desktop publishing killed typesetting and created graphic design. The internet killed the travel agency and created the UX industry. Maybe something new grows in the space that AI opens.
+
+I genuinely don't know which of those is right. I suspect it's both, depending on the field and the decade.
+
+What I do know: if we don't acknowledge the problem clearly, we won't build the systems to address it. The junior pipeline isn't a talking point. It's a generation of creative people trying to figure out if there's a rung on the ladder for them. We owe them honesty, not reassurance.
 
 ---
 
@@ -147,6 +199,18 @@ I hold the critique in one hand. I hold the capability in the other. Both hands 
 
 ---
 
+## The Analog Oasis
+
+This is also why I need Galiano Island.
+
+I live part of the year off the grid on a small island in the Salish Sea — solar panels, rainwater collection, growing food. Slowly, over years, I've built a relationship with the Lelum Saratanaough Coast Salish people and the Galiano Conservancy. I co-founded IMERSS — the Institute of Multidisciplinary Ecological Research in the Salish Sea — because I needed to be in relationship with something that doesn't update, doesn't version, doesn't get deprecated.
+
+I'm not romanticizing rural life. I'm not anti-technology. I'm saying: if your whole existence is inside the feedback loop, you lose your ability to hear the signal inside the noise. The analog oasis isn't a retreat. It's a calibration. Standing in the Salish Sea at low tide reminds me what real feedback looks like — the feedback that took thousands of years of trial and consequence to encode.
+
+The punk who tears down walls also knows when to be quiet. The Selector also knows when not to play a record.
+
+---
+
 ## Who Writes the Rules?
 
 Here's the question that keeps me in this, even when it's uncomfortable.
@@ -156,6 +220,48 @@ If every thoughtful, ethical, critical creative person opts out of using AI beca
 The tech bros. The people who don't see the problems. The people who think the consent issues aren't real, that the pipeline doesn't matter, that cultural homogenization is fine as long as it's efficient.
 
 Vancouver is the home of Adbusters and Greenpeace. We have been turning corporate infrastructure into counterculture since before most tech cities had a scene. That's the tradition you're in. Not opting out — using it wrong. Using it to tell stories that matter. Using it to get your weird specific voice into the training data instead of leaving that field to the defaults.
+
+---
+
+## True North
+
+I've lived this principle more than once.
+
+At the 2010 Vancouver Olympics, we set up what we called True North Media House — a guerrilla newsroom out of a converted warehouse, no official press credentials, just bloggers and veteran photojournalists and smartphones and the instinct to tell the stories that weren't being told. While the mainstream media was bogged down in bureaucracy, we were nimble. We were making our own press passes. We were rubbing shoulders — the bloggers and the veterans, the coders and the activists — figuring out what citizen journalism could actually be.
+
+It wasn't perfect. It was scrappy. It was exactly the same move I'd made with every other tool: pick it up, use it wrong, share everything, build community around it. The infrastructure — in this case the Olympic media platform — was corporate. What we did with it wasn't.
+
+That's the tradition. Nimble is not the same as naive. We knew the problems with the Olympics. We used the platform anyway, on our terms.
+
+---
+
+## The Same Creative Impulse
+
+Every time I run an AI meetup or workshop in Vancouver, we start with an indigenous welcome. The person who's given that welcome most often is Anthony Joseph — Isiléyu — from the Coast Salish territory.
+
+He told a story once that I think about more than almost anything else in this conversation.
+
+He said: my ancestors didn't have chainsaws. But they would have used them if they'd been there.
+
+That's it. That's the whole thing.
+
+It's not "embrace all technology uncritically." It's not "modernity betrays tradition." It's: the creative impulse is continuous. The tools change. The people who pick them up and make something with them — they're in the same lineage, doing the same fundamental thing. Every generation figures out what the new tool is actually for. Not what the manufacturer says it's for. What the maker, the carver, the selector, the photographer, the weirdos — what they figure out it's for.
+
+Humor got us through the darkest of times. Adaptability is not capitulation.
+
+---
+
+## The Best Tool
+
+There's a book I wrote in 2010 called Killer Photos with Your iPhone.
+
+The premise was simple: the best camera is the one you have with you. Not the most expensive camera. Not the camera with the best specs. The one that's in your pocket when the moment happens. That camera, used with skill and intent and a good eye, will make better images than a camera that stays home because it's too heavy.
+
+That same logic applies now.
+
+Everyone thinks they need to wait for the perfect AI tool — the one that's more powerful, more reliable, more ethically sourced, more aligned with their values. And yes, push for better tools. Yes, engage with the ethics. But don't wait. The best AI tool is the one you'll actually use. The one you understand well enough to run the loop with. The one you can bring to the moment.
+
+A sophisticated tool in the hands of someone who hasn't developed taste is still just noise at scale. A modest tool in the hands of someone who has — that's a different story.
 
 ---
 
@@ -201,7 +307,7 @@ The AI era doesn't make that less valuable. It makes it more valuable. Because n
 
 ## Release Day
 
-I covered the Olympics with a guerrilla newsroom — no press passes, just bloggers and smartphones and the instinct to tell the stories that weren't being told. I taught photography at Emily Carr and VFS. I moved to Galiano Island, off the grid, solar power and rainwater, because I needed the analog oasis as a counterweight to the digital noise. I co-founded a research institute in partnership with the Coast Salish people to study the Salish Sea. Every chapter was the same move: pick up the tool, use it wrong, share everything, build community.
+Every chapter of my life has been the same move: pick up the tool, use it wrong, share everything, build community.
 
 That's what I'm asking you to do.
 
