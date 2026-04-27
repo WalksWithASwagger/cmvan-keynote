@@ -56,18 +56,20 @@ Do not conflate the two on public copy or slide footers.
 | **A — Lock narrative** | Done | ✅ | This roadmap; [NOTION-SYNC.md](./NOTION-SYNC.md); [PUBLICATION-BIBLIOGRAPHY.md](./PUBLICATION-BIBLIOGRAPHY.md); source-material indexed; script outline dates aligned |
 | **A2 — Script refactor** | Apr 25 | ✅ | Mark's feedback formalized ([MARK-FEEDBACK.md](./MARK-FEEDBACK.md)); book draft ingested ([source-material/life-love-internet/](../source-material/life-love-internet/)); creativity biography doc written; talk framework v4 (discussion-first) written |
 | **A3 — Visual + audio draft** | Apr 25 | ✅ | 10 zine prompts in Rafiki format; gpt-image-2 + Nano Pro full-deck runs; ElevenLabs dress rehearsal audio generated (`dress-rehearsal/punk-rock-ai-full-talk.mp3`, gitignored); generation script committed |
+| **A4 — 28-slide expansion** | Apr 27 | ✅ | 8 new content sections (Bryght/Dead.net, Burroughs/Situationists, Vicki, Junior Pipeline, Galiano, True North, Anthony Joseph, Best Tool); HOPECODE v3 + punk v2 prompt files; Nano Pro runs complete (28 slides each); audio script v3 (~28 min); audio regenerated |
 | **B — Ship public minimum** | Before May 1 | 🔲 | `punkrockai.com` live: hero, dates, `#ReleaseDay2026` CTA; QR → companion site |
 | **C — Talk week** | May 1 | 🔲 | Final slide deck built from chosen images; talk framework v4 rehearsed in discussion-first format; confirm recording rights with Mark |
 | **D — Release month** | May 1–29 | 🔲 | Social cadence; Release Day submissions; optional CM virtual FieldTrips alignment |
 | **E — Post-publish** | After May 29 | 🔲 | Long article (Banff + BHF + CMVan arc); optional zine/PDF; talk recording posted |
 
-### Before May 1 — remaining blockers (6 days)
+### Before May 1 — remaining blockers (4 days out, as of Apr 27)
 
-1. **punkrockai.com DNS** — apex + www must resolve; QR on slide 10 points here (see DNS checklist above)
-2. **Final slide deck** — review generated images in viewer, select winners per slide, build Keynote/Slides file
-3. **One live dress rehearsal** — say the v4 discussion-first framework out loud; time it; adjust truth bomb order
-4. **Close OPEN-QUESTIONS #4** — Release Day CTA vs FPC soft-launch: pick one as the load-bearing close
-5. **Confirm with Mark** — recording rights (Q#7); Adobe involvement level (Q#6); any last format notes
+1. **Final slide deck** — open viewer, pick style (HOPECODE vs punk/zine or mixed), build Keynote/Canva from chosen images
+2. **Timed run-through** — say the v4 discussion-first framework out loud; clock it at 22 min; adjust which truth bombs to deploy
+3. **Close OPEN-QUESTIONS #4** — Release Day CTA vs FPC soft-launch: pick one as the load-bearing close
+4. **Confirm with Mark** — recording rights (Q#7); Adobe involvement level (Q#6); any last format notes
+5. **punkrockai.com DNS** — apex + www should resolve before May 1 (QR points here)
+6. **OpenAI billing** (optional) — raise spending cap at platform.openai.com if gpt-image-2 comparison images are wanted
 
 ---
 
@@ -76,22 +78,19 @@ Do not conflate the two on public copy or slide footers.
 | Asset | Path | Notes |
 |-------|------|-------|
 | **PRIMARY SCRIPT** (discussion-first) | [`script/talk-framework-v4.md`](../script/talk-framework-v4.md) | Modular truth bomb clusters; use this May 1 |
-| Full prose script (fallback / TTS source) | [`script/full-talk-script.md`](../script/full-talk-script.md) | v3 monologue; source for ElevenLabs audio |
-| Creativity biography reference | [`script/creativity-biography.md`](../script/creativity-biography.md) | 11 curated scenes from book draft + KB |
-| Quote bank | [`script/quote-bank.md`](../script/quote-bank.md) | |
-| 10-slide deck outline | [`slides/deck-outline-with-notes.md`](../slides/deck-outline-with-notes.md) | |
-| Zine image prompts (Rafiki format) | [`assets/image-prompts/punk-rock-ai-rafiki.md`](../assets/image-prompts/punk-rock-ai-rafiki.md) | Feed to `npx rafiki` |
-| Zine image prompts (reference / human-readable) | [`assets/image-prompts/punk-rock-ai-slide-prompts-zine.md`](../assets/image-prompts/punk-rock-ai-slide-prompts-zine.md) | |
-| Generated slide images | `assets/generated/slides/` | gitignored; viewer at `assets/generated/slides/viewer.html`; two runs: gpt-image-2 + Nano Pro |
-| ElevenLabs audio generator | [`dress-rehearsal/generate-audio.py`](../dress-rehearsal/generate-audio.py) | Run to regenerate audio from updated script |
-| Dress rehearsal audio | `dress-rehearsal/punk-rock-ai-full-talk.mp3` | gitignored; ~17 min; regenerate with `generate-audio.py` |
-| Book draft (biography source) | [`source-material/life-love-internet/life-love-internet-book-draft.md`](../source-material/life-love-internet/life-love-internet-book-draft.md) | Primary biographical source; ingested Apr 25 |
+| Creativity biography reference | [`script/creativity-biography.md`](../script/creativity-biography.md) | 11 curated scenes; pull from in the room |
+| ElevenLabs audio script v3 | [`dress-rehearsal/elevenlabs-full-script.md`](../dress-rehearsal/elevenlabs-full-script.md) | ~28 min, full 28-section biography-forward prose |
+| HOPECODE v3 image prompts (28 slides) | [`assets/image-prompts/hope-code-v3-28-rafiki.md`](../assets/image-prompts/hope-code-v3-28-rafiki.md) | Solar punk / Aurora Borealis / mycelial |
+| Punk v2 image prompts (28 slides) | [`assets/image-prompts/punk-v2-28-rafiki.md`](../assets/image-prompts/punk-v2-28-rafiki.md) | Xerox grain / blood red / cut-and-paste |
+| Generated slide images | `assets/generated/slides/` | gitignored; 8 runs; viewer at `assets/generated/slides/viewer.html` |
+| ElevenLabs audio generator | [`dress-rehearsal/generate-audio.py`](../dress-rehearsal/generate-audio.py) | Run: `python3 dress-rehearsal/generate-audio.py` |
+| Dress rehearsal audio | `dress-rehearsal/punk-rock-ai-full-talk.mp3` | gitignored; ~28 min; regenerate with generator |
+| Book draft (biography source) | [`source-material/life-love-internet/life-love-internet-book-draft.md`](../source-material/life-love-internet/life-love-internet-book-draft.md) | Primary biographical source |
 | Mark's feedback | [`docs/MARK-FEEDBACK.md`](./MARK-FEEDBACK.md) | Discussion-first format direction; brain dump |
 | Companion site v1 | [`companion-site/index.html`](../companion-site/index.html) | Needs DNS before May 1 |
 | Open decisions | [`OPEN-QUESTIONS.md`](../OPEN-QUESTIONS.md) | Q4, Q6, Q7 still open |
 | External citations | [`PUBLICATION-BIBLIOGRAPHY.md`](./PUBLICATION-BIBLIOGRAPHY.md) | |
 | Notion sync rules | [`NOTION-SYNC.md`](./NOTION-SYNC.md) | |
-| Deprecated prompt stub | [`assets/image-prompts/cmvan-slides-01-15.md`](../assets/image-prompts/cmvan-slides-01-15.md) | Legacy BHF-adapted; ignore |
 
 ---
 

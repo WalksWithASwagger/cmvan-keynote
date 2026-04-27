@@ -32,12 +32,19 @@ See `docs/MARK-FEEDBACK.md` for full context.
 
 ---
 
-## 3. How many slides? — **PARTIALLY RESOLVED**
+## 3. How many slides? — **RESOLVED (28 slides)**
 
-- **v1 deck (CMVan):** **[slides/deck-outline-with-notes.md](./slides/deck-outline-with-notes.md)** — **10 slides** for the May 1 talk (sparse, punk pacing).
-- **Zine image prompts (this talk):** **[assets/image-prompts/punk-rock-ai-slide-prompts-zine.md](./assets/image-prompts/punk-rock-ai-slide-prompts-zine.md)** — **10 + 2 optional**, Punk Rock AI native (not BHF). Deprecated stub: `assets/image-prompts/cmvan-slides-01-15.md`.
+**Canon (as of 2026-04-27):** **28 slides** — full narrative arc from Permission Gap through Close.
 
-Issue #1570’s **23 slides** reference is legacy / BHF-scale; ignore unless you explicitly expand scope.
+Two complete image prompt batches in Rafiki format:
+- `assets/image-prompts/hope-code-v3-28-rafiki.md` — solar punk / Aurora Borealis / mycelial (HOPECODE style)
+- `assets/image-prompts/punk-v2-28-rafiki.md` — xerox grain / cut-and-paste / blood red (zine style)
+
+Both styles generated via Nano Pro (gemini-3-pro-image-preview) — 28 images each. gpt-image-2 runs blocked by OpenAI billing limit (add credit at platform.openai.com to unlock).
+
+View in browser: `python3 -m http.server 7772 --directory assets/generated/slides` → `http://127.0.0.1:7772/viewer.html`
+
+**Action still needed:** pick one style (or mixed) for the actual Canva/Keynote deck build.
 
 ---
 
