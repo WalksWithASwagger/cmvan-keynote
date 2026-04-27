@@ -151,6 +151,123 @@ These are modular. Deploy based on what the room raised. The clusters below are 
 
 ---
 
+---
+
+## EXTENDED MATERIAL — EXTEMPORANEOUS RESERVE
+
+*These are fully written truth bombs that don't fit the standard 22-min run but give you 10–15 more minutes of deployable material. Pull any of these when the room opens a door, or when you feel a cluster landing and want to go deeper. Nothing here is required — it's all in reserve.*
+
+---
+
+### CLUSTER E: Who Gets to Create — Permission, Access, the Excluded Voice
+
+*Deploy if someone says "I don't know how to start," "these tools aren't for me," or if the room feels like the conversation is happening over their heads rather than with them*
+
+**Truth bomb E1: The "Worldly" story — you didn't get permission either**
+> I want to tell you something I don't say a lot. I grew up not knowing that a person could be a creative professional. Literally. Where I came from — religious conservative, small-town South Dakota, then Sacramento — the people who made art, who took photographs, who designed things, who worked in film — those people were called worldly. That was not a compliment. It meant not your people. Not your path.
+>
+> I tried things. Music. Drawing. Writing. I wasn't bad at any of it. I just had no map. No model. No one who showed me that making things could be a life you actually build.
+>
+> I found photography at thirty-one, in a hospital, because my son was fighting for his life and I needed something to hold onto. Not on a career path. Not with a grant. In a crisis.
+>
+> If you're sitting here thinking "these AI tools aren't for someone like me" — I know that feeling. I lived it for most of my adult life. The answer to that feeling is always the same: you don't wait for permission. You pick it up.
+
+**Truth bomb E2: Best tool you have with you**
+> I wrote a book called *Killer Photos with Your iPhone*. The whole argument was one sentence: the best camera is the one you have with you. People would say "but it's not a professional camera." Yeah. And? The photo exists or it doesn't. The moment is captured or it isn't. The perfect tool you don't use has produced exactly zero work.
+>
+> Same principle applies here. Don't wait for the ethical perfect AI tool. Don't wait until you've resolved all your feelings about consent and training data. Don't wait until the regulation catches up. Use what's available, use it on your terms, use it toward something that matters. The best AI tool is the one you'll actually use.
+
+**Truth bomb E3: Vicki and the pattern recognition revelation**
+> A visual artist in our community — her name's Vicki — uploaded twenty of her own analog photographs and asked AI to identify and abstract the patterns in her work. What she expected was a style exercise. What she got was a revelation. The AI described what she'd been doing intuitively for twenty years in language she'd never had for it. She realized her artistic instinct — the thing she thought was mysterious, ineffable, unteachable — was deep pattern recognition she'd simply never articulated.
+>
+> She said it was like seeing a map of a city you've lived in for decades but never seen from above.
+>
+> What you think of as your artistic instinct? That's twenty years of choosing, encoded in your body and your eye. AI can't use it until you put it in words. But once you do — once you articulate the pattern — it doesn't diminish the magic. It amplifies it.
+
+---
+
+### CLUSTER F: Kevin Friel — The Full Story
+
+*Deploy if the room is scared of replacement, or when you want a living example of someone who went through the fear and came out the other side — not as a cheerleader but as a practitioner*
+
+**Truth bomb F1: Two years not working**
+> I want to tell you about Kevin Friel. Kevin's been working in Hollywood VFX for twenty-five years. He's worked on films you've seen. When the AI wave hit the film industry, Kevin wasn't working for two years. Not a slow patch. Not a pivot. Two years.
+>
+> He picked up the tools anyway. Not because he was optimistic. Because he was a professional who'd built a life in a craft he loved, and he wasn't prepared to watch from the sidelines while someone else figured out what the technology was actually for.
+>
+> His framing now: AI isn't the orchestra. It gives the conductor a bigger orchestra. The conducting still requires everything you've developed over a career. The taste, the judgment, the instinct for what the scene needs. The tools don't replace that. They give you more instrument to work with.
+
+**Truth bomb F2: Kevin's Xerox line**
+> Kevin dropped something at our ethics panel that I've been thinking about ever since. He said: "Punk rock. The aesthetic came to life because of the Xerox copying machine." He wasn't being glib. He was naming the pattern.
+>
+> Xerox was a terrible company. They were selling office equipment to corporations. They weren't trying to enable DIY zines and underground culture. But punk rockers grabbed those machines and made them into something Xerox never intended.
+>
+> Kevin's point — and this is a twenty-five-year Hollywood veteran saying this — is that there's something very punk rock about having a tool staring you in the face and using it to tell the stories, to create the change. Not waiting for permission from the company that built it. Not waiting for it to be ethically resolved. Picking it up.
+>
+> Kevin closes every talk with something that I've adopted as a kind of motto: "Let's use these tools to f*** it up, y'all."
+
+---
+
+### CLUSTER G: The Open Source Chapter — Where This Philosophy Came From
+
+*Deploy if the room wants to know where Kris's values around openness come from, or if the conversation has gone deep into community/collaboration/free culture*
+
+**Truth bomb G1: Bryght and Dead.net**
+> In 2004 I co-founded Bryght with Boris Mann. First Drupal services company in the world. East Van office, second-hand desks, whiteboards covered in code. We landed Dead.net for the Grateful Dead. Warner Brothers Records. Building digital homes for musicians.
+>
+> We had clients ask us: "So let me get this straight — you want me to pay for software that's free?" And the answer was: you know how to drive a car, right? But if your engine explodes, you're not rebuilding it yourself. You're paying a mechanic. The software is free. The expertise is not.
+>
+> But the real lesson wasn't the business model. It was what open-source actually meant. We weren't just building websites. We were building a movement. Open-source wasn't about free software — it was about refusing to build walls. The more you give away, the more valuable you become. That principle is why I released 145,000 photos under Creative Commons. It's also why I got scraped. Both are true.
+
+**Truth bomb G2: The Olympics guerrilla newsroom**
+> In 2010 we set up the True North Media House as a guerrilla newsroom at the Vancouver Olympics. No press credentials. We made our own. Bloggers rubbing shoulders with veteran photojournalists. Coders collaborating with activists. The air thick with coffee and the feeling that we were covering something the accredited press wasn't going to get to.
+>
+> While the mainstream media was bogged down with bureaucracy and press passes and official channels — we were nimble. We weren't just reporting on the Olympics. We were creating a parallel narrative, one that gave voice to the stories on the margins.
+>
+> That's what I mean when I talk about Vancouver as the home of counterculture. Adbusters and Greenpeace are the famous examples. But it's also this. Finding the gap in the credential system and walking through it. Using whatever tools were available to tell the story that needed to be told.
+
+**Truth bomb G3: The junior pipeline — honest acknowledgment**
+> I want to say something I don't have a clean answer to, because I think the clean answers in this room are mostly bullshit.
+>
+> The junior pipeline. How does the next generation of creative professionals learn their craft when the entry-level work — the work that teaches you — gets automated away? How does a junior designer build the muscle if there's nothing for them to do? How does a young photographer develop taste if there's no market for the photography that develops taste?
+>
+> I've been asked this a lot. And I'll tell you what I actually believe: I don't know. The people who say they know are not being honest with you. The pipeline question is real. The uncertainty is real. What I do know is that the answer isn't "don't use the tools." The answer is probably about building more intentional apprenticeship structures, about treating the human development of craft as something that has to be actively protected, about making sure the community of experienced practitioners is genuinely invested in bringing the next generation through.
+>
+> But I don't have a tidy solution. And I think the room deserves to hear that.
+
+---
+
+### CLUSTER H: Depth, Counterweight, the Wider Picture
+
+*Deploy for rooms that want more intellectual grounding, more of the full picture of who Kris is, or when the conversation has been heavy and you want to give it texture*
+
+**Truth bomb H1: Burroughs, the Situationists, the deeper lineage**
+> The lineage I'm describing goes back further than Dada. William S. Burroughs took scissors to existing texts, rearranged them on the floor, and called it literature. His argument — which he lived — was that arrangement and selection IS the medium. The Situationists went further: they coined *détournement*, which means turning the tools of the spectacle against the spectacle. Using the infrastructure of corporate capitalism to undermine it from inside.
+>
+> That's not a metaphor for what I'm asking you to do. That's literally the tradition. Every generation inherits a set of tools it didn't design, built by people with interests that aren't yours, and every generation has to decide: do I opt out, or do I pick it up and figure out what it's actually for?
+>
+> The Dadaists. The Situationists. The Xerox punks. The Selectors. And now this.
+
+**Truth bomb H2: Galiano Island — the analog oasis**
+> I want to give you a true picture of who I am, not a caricature. I live partly on Galiano Island, off the grid. Solar power, collecting rainwater, growing food. I co-founded a research institute in partnership with the Lelum Saratanaough Coast Salish people to study the Salish Sea. I needed the analog oasis as a counterweight to all the digital noise.
+>
+> I'm not a tech evangelist. I'm not trying to sell you on AI. I'm someone who has had a complicated, sometimes painful, always interesting relationship with the tools of my era — and who needed to step back physically from the screen in order to have anything worth saying when I came back to it.
+>
+> True sustainability isn't just about technology. It's about listening. About learning from people who have lived in harmony with the land for generations. The punk who tears down walls also knows when to be quiet.
+
+**Truth bomb H3: Anthony Joseph — "they would've used it"**
+> We start every Vancouver AI Community gathering with an indigenous welcome. At one of our recent meetups, the welcome came from Anthony Joseph — Isiléyu — from the Squamish Nation. He was talking about his community's relationship to new tools, and someone had implied that there was something inauthentic about using modern technology.
+>
+> He said: my ancestors didn't have chainsaws. But they would've used them if they were there.
+>
+> That's it. That's the whole thing. The question isn't whether the tool is traditional or new or corporate or indie. The question is: does it help you do the work that matters? Does it help you carry the story forward?
+>
+> He also said: humor is what got us through the darkest of times, and humor is what will continue to catch us.
+>
+> That lands for me. Both of those things. The pragmatism and the joy.
+
+---
+
 ## CLOSE (2 min)
 
 **[Quieter. Slower. Move to center.]**
