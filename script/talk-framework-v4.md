@@ -186,28 +186,6 @@ These are modular. Deploy based on what the room raised. The clusters below are 
 
 ---
 
-### CLUSTER F: Kevin Friel — The Full Story
-
-*Deploy if the room is scared of replacement, or when you want a living example of someone who went through the fear and came out the other side — not as a cheerleader but as a practitioner*
-
-**Truth bomb F1: Two years not working**
-> I want to tell you about Kevin Friel. Kevin's been working in Hollywood VFX for twenty-five years. He's worked on films you've seen. When the AI wave hit the film industry, Kevin wasn't working for two years. Not a slow patch. Not a pivot. Two years.
->
-> He picked up the tools anyway. Not because he was optimistic. Because he was a professional who'd built a life in a craft he loved, and he wasn't prepared to watch from the sidelines while someone else figured out what the technology was actually for.
->
-> His framing now: AI isn't the orchestra. It gives the conductor a bigger orchestra. The conducting still requires everything you've developed over a career. The taste, the judgment, the instinct for what the scene needs. The tools don't replace that. They give you more instrument to work with.
-
-**Truth bomb F2: Kevin's Xerox line**
-> Kevin dropped something at our ethics panel that I've been thinking about ever since. He said: "Punk rock. The aesthetic came to life because of the Xerox copying machine." He wasn't being glib. He was naming the pattern.
->
-> Xerox was a terrible company. They were selling office equipment to corporations. They weren't trying to enable DIY zines and underground culture. But punk rockers grabbed those machines and made them into something Xerox never intended.
->
-> Kevin's point — and this is a twenty-five-year Hollywood veteran saying this — is that there's something very punk rock about having a tool staring you in the face and using it to tell the stories, to create the change. Not waiting for permission from the company that built it. Not waiting for it to be ethically resolved. Picking it up.
->
-> Kevin closes every talk with something that I've adopted as a kind of motto: "Let's use these tools to f*** it up, y'all."
-
----
-
 ### CLUSTER G: The Open Source Chapter — Where This Philosophy Came From
 
 *Deploy if the room wants to know where Kris's values around openness come from, or if the conversation has gone deep into community/collaboration/free culture*
