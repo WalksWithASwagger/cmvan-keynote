@@ -250,7 +250,7 @@ These are modular. Deploy based on what the room raised. The clusters below are 
 
 **[Quieter. Slower. Move to center.]**
 
-**[SLIDE 9 — RELEASE DAY. Optional: hold slides until now entirely if the crowd discussion ran hot.]**
+**[SLIDE 27 — RELEASE DAY. Optional: hold slides until now entirely if the crowd discussion ran hot.]**
 
 > So here's where I want to land.
 
@@ -270,7 +270,7 @@ These are modular. Deploy based on what the room raised. The clusters below are 
 
 > There's a line I've carried since I was fifteen. My youth pastor used to say it in Sacramento. It stayed with me through Silicon Valley, through a NICU in Stanford, through Flickr, through Bryght, through building AI community in this city:
 
-**[SLIDE 10 — Kevin Friel quote.]**
+**[SLIDE 28 — Close / dead fish.]**
 
 > *Any dead fish can float downstream. But it takes a live fish to swim against the current.*
 
@@ -300,7 +300,8 @@ These are modular. Deploy based on what the room raised. The clusters below are 
 - **Hold all slides until after the crowd discussion**, or at minimum until you begin the truth bombs
 - The open and the crowd prompt happen with NO SLIDES — just you and the room
 - Advance slides only when you're in a truth bomb that has a corresponding visual
-- Slide 9 (Release Day) and Slide 10 (Kevin Friel) are the close
+- Slide 27 (Release Day) and Slide 28 (Close / dead fish) are the close
+- Full deck is 28 slides — not all will be used; deploy visuals when they reinforce what the room raised
 
 ### What to do if the room goes quiet after the prompt
 Don't panic. Wait a genuine five seconds — longer than comfortable. Then:
