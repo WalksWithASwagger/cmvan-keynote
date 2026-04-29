@@ -24,9 +24,7 @@ OUTPUT = Path(__file__).parent / "punk-rock-ai-full-talk.mp3"
 
 
 def clean_script(raw: str) -> str:
-    # Strip the header block (everything before the first ---)
-    if "---\n" in raw:
-        raw = raw[raw.index("---\n") + 4:]
+    # Strip the header block (everything up to and including the first ---)
     if "---\n" in raw:
         raw = raw[raw.index("---\n") + 4:]
 
