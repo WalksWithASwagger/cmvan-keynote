@@ -20,7 +20,7 @@ Start human. Stay human. The ideas land because the story lands first.
 
 *The biographical foundation. By the end of this act the audience knows who Kris is and what he believes about sharing and openness — which makes the betrayal in Act III land harder.*
 
-**[SLIDE 1 — PUNK ROCK AI]**
+**[SLIDE 1 — BOTH HANDS FULL]**
 
 Walk out. No rush. Let the room settle.
 

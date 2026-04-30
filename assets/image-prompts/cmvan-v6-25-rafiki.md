@@ -3,13 +3,13 @@
 
 ---
 
-## 1. PUNK ROCK AI — Title
+## 1. BOTH HANDS FULL — Title
 
 **For:** Slide 1 — Title
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
-> Black background, full bleed. Enormous dripping-paint hot pink/magenta letters fill the top two-thirds: PUNK ROCK AI — paint runs and bleeds down from every letter. Below in blood-red stencil: CREATIVE MORNINGS VANCOUVER. A halftone-treated camera lens silhouette at lower right, distressed. Scattered illegible typewriter text fragments wheat-pasted across the background. A torn paper strip with red ink at the bottom edge. Three spray-painted red X marks, slightly askew. Maximum xerox grain. Total collage chaos — the title is the only readable element.
+> Black background, full bleed. Enormous dripping-paint hot pink/magenta letters fill the top two-thirds: BOTH HANDS FULL — paint runs and bleeds down from every letter. Below in blood-red stencil: CREATIVE MORNINGS VANCOUVER. A halftone-treated camera lens silhouette at lower right, distressed. Scattered illegible typewriter text fragments wheat-pasted across the background. A torn paper strip with red ink at the bottom edge. Three spray-painted red X marks, slightly askew. Maximum xerox grain. Total collage chaos — the title is the only readable element.
 
 ---
 

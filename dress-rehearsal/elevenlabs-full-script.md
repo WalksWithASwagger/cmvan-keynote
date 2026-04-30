@@ -1,4 +1,4 @@
-# Punk Rock AI — ElevenLabs Audio Script v5
+# Both Hands Full — ElevenLabs Audio Script v5
 ## Personal essay version — biography as argument
 
 *For audio generation. Paragraph breaks = natural pauses. No stage directions, no slide cues. This is Kris's story as the creative argument.*

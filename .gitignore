@@ -31,6 +31,8 @@ build/
 
 # Generated assets bigger than git wants — drop in assets/generated/ to ignore
 assets/generated/
+assets/slides/
+assets/image-prompts/images/
 *.mov
 *.mp4
 *.mp3
