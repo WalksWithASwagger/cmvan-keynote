@@ -44,7 +44,7 @@ Do not conflate the two on public copy or slide footers.
 - [ ] **May 2026 global theme label:** Pitch materials use **CREATE** (Adobe co-created). Official CM theme numbering may differ by month; **confirm exact wording with Mark Busse / chapter comms** before printing “CREATE” on the public site. Release Day copy may still cite [official Release Day URLs](./PUBLICATION-BIBLIOGRAPHY.md#creativemornings--adobe-release-day).
 - [ ] **CreativeMornings / Adobe:** Paraphrase program language; link to official pages for hashtags and participant instructions (see bibliography).
 - [ ] **Photos / b-roll:** Rights for any face or venue on punkrockai.com.
-- [ ] **Kevin Friel quotes:** Confirm “Pixel Wizard” vs “Pixel Vision” for public use ([feature README](https://github.com/WalksWithASwagger/kk-kb/blob/main/content/projects/01-vancouver-ai-community/special-features/kevin-friel/README.md) in kb).
+- [x] **Kevin Friel quotes:** ~~Confirm “Pixel Wizard” vs “Pixel Vision”~~ — **CONFIRMED: “Pixel Wizard.”** Handle is @mrpixelwizard everywhere. Safe to publish.
 - [ ] **Banff / summit excerpts:** If publishing long-form pulls from Banff transcripts, confirm consent / attribution rules for named speakers.
 
 ---
