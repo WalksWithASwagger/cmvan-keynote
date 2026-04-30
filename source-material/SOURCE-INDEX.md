@@ -2,7 +2,7 @@
 
 Snapshots from the canonical knowledge base at [`WalksWithASwagger/kk-kb`](https://github.com/WalksWithASwagger/kk-kb). Treat these as **read-only references** — when working drafts diverge from these, update the canonical KB and re-snapshot, don't edit in place.
 
-Snapshot date: 2026-04-22 (updated 2026-04-25)
+Snapshot date: 2026-04-22 (updated 2026-04-30)
 
 ---
 
@@ -150,3 +150,15 @@ Also the origin of the mantra: *"Any dead fish can float downstream. But it take
 ## `prior-cmvan-quotes/`
 
 `street-art-quotes.md` — April 2026 quote bank curated for guest street-artist portraits/stickers at CMVan. 20 quotes mined from BHF / LaSalle / Taste-as-Moat. Useful for slide pull-quotes and Release Day zine source material.
+
+---
+
+## `karpathy-vibe-coding-agentic-engineering-2026.md` ← standalone file
+
+Full cleaned transcript of Andrej Karpathy's Sequoia Capital AI Ascent 2026 talk (29:49). Added 2026-04-30. Key thesis: "You can outsource your thinking but you can't outsource your understanding." Directly mirrors the CMVan taste/judgment argument — technical establishment's version of what the 145K frames / cutting room floor section says from a photographer's POV.
+
+---
+
+## `both-hands-burning-lyrics.md` ← standalone file
+
+Original song written 2026-04-30 (Kris Krug + Claude) as a companion piece to the CMVan keynote. Doom country / cowpunk. Spirit of the talk, not literal recap. Ready for Suno generation in Custom Mode. Also saved to `notion-local/projects/10-creative-practice/music/too-weird-to-die/` as a LP1 bonus candidate.
