@@ -1,5 +1,5 @@
 # Punk Rock AI — Creative Mornings Vancouver
-## Image Prompts v6 · cmvan style · 16:9 · 25 slides
+## Image Prompts v6 · cmvan style · 16:9 · 23 slides
 
 ---
 
@@ -123,29 +123,19 @@
 
 ---
 
-## 13. Three Fears
+## 13. Boosters vs Doomers
 
-**For:** Slide 13 — Three Fears
+**For:** Slide 13 — The Binary Trap
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
-> Off-white worn paper. Three torn-paper panels roughly assembled side by side with visible tape. Panel 1: a hand reaching into photographs in B&W halftone — blood-red label: THEFT. Panel 2: a ladder with bottom rungs cut off, hot pink label: JUNIOR PIPELINE. Panel 3: a downward-spiral drain arrow in blood red — label: RACE TO THE BOTTOM. Hot pink numbers 1, 2, 3 stamped above each panel. Dripping hot pink paint at top: THESE ARE REAL. Illegible news clippings pasted everywhere. No comfortable framing. No softening.
+> Black background. Two enormous options stacked vertically — BOOSTER in hot pink dripping paint at the top, DOOMER in blood-red stencil below — both violently crossed out with thick spray-paint X marks. A deliberate empty space below them — a white typewriter question mark sits in the void. Blood-red stencil at the bottom: BOTH FEEL CLEAN. BOTH ARE INCOMPLETE. Scattered illegible collage fragments at the edges. Maximum tension. The binary trap made visible — the third option is the empty space.
 
 ---
 
-## 14. Junior Pipeline
+## 14. Both Hands Full — Climax
 
-**For:** Slide 14 — Junior Pipeline
-**Style:** cmvan
-**Aspect Ratio:** 16:9
-**Prompt:**
-> Black background. A tall ladder against a wall — B&W halftone, high contrast — with the bottom three rungs severed, hot pink paint dripping where they were cut. A young figure silhouette at the base, looking up, unable to reach. The wall covered in ghost shadows of people who climbed before — faint xerox halftone figures. Blood-red dripping paint across the image: WE OWE THEM HONESTY NOT REASSURANCE. A torn paper note stuck to the wall: the bottom rungs are GONE. Illegible typewriter text filling the background.
-
----
-
-## 15. Both Hands Full
-
-**For:** Slide 15 — Both Hands Full (Climax)
+**For:** Slide 14 — Both Hands Full (Climax)
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -153,13 +143,23 @@
 
 ---
 
-## 16. Name What You See
+## 15. Name What You See
 
-**For:** Slide 16 — Dr. Joy Buolamwini
+**For:** Slide 15 — Dr. Joy Buolamwini
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
 > Black background. Massive hot pink dripping paint letters at top: STOP SAYING BIAS. Blood-red stencil below: NAME WHAT YOU'RE SEEING. A face recognition grid in white — partially failing, red X marks across the lower quadrant where the system errors. White typewriter: MISOGYNY. RACISM. BIAS LAUNDERING. Hot pink rubber stamp: ALGORITHMIC JUSTICE LEAGUE. A torn paper fragment: discrimination that looks like math. Maximum collage density. Halftone grain throughout. Precise, confrontational, not abstract.
+
+---
+
+## 16. Three Fears
+
+**For:** Slide 16 — Three Fears
+**Style:** cmvan
+**Aspect Ratio:** 16:9
+**Prompt:**
+> Off-white worn paper. Three torn-paper panels roughly assembled side by side with visible tape. Panel 1: a hand reaching into photographs in B&W halftone — blood-red label: THEFT. Panel 2: a ladder with bottom rungs cut off, hot pink label: JUNIOR PIPELINE. Panel 3: a downward-spiral drain arrow in blood red — label: RACE TO THE BOTTOM. Hot pink numbers 1, 2, 3 stamped above each panel. Dripping hot pink paint at top: THESE ARE REAL. Illegible news clippings pasted everywhere. No comfortable framing. No softening.
 
 ---
 
@@ -173,19 +173,9 @@
 
 ---
 
-## 18. True North
+## 18. Build a Posse
 
-**For:** Slide 18 — True North
-**Style:** cmvan
-**Aspect Ratio:** 16:9
-**Prompt:**
-> Black background. A warehouse interior in B&W halftone — cameras everywhere, people packed in, photographers and bloggers shoulder to shoulder. Olympic rings in the background faded to halftone ghost. Hot pink dripping paint: NO PRESS CREDENTIALS. Blood-red handwriting across the image: CAMERAS. FEEDS. TAGS. LINKS. EACH OTHER. A press badge torn in half with hot pink X over it. A wheat-pasted note: WE MADE OUR OWN PERMISSION. 2010. Unauthorized media as genuine media.
-
----
-
-## 19. Build a Posse
-
-**For:** Slide 19 — BC AI Community
+**For:** Slide 18 — BC AI Community
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -193,29 +183,19 @@
 
 ---
 
-## 20. What Did You Throw Away
+## 19. Three Documents
 
-**For:** Slide 20 — Cutting Room Floor collective
+**For:** Slide 19 — Three Documents
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
-> Black background. Multiple pairs of hands in B&W halftone over a shared pile of film strips and paper scraps — collective editing, collective taste. Hot pink dripping paint question mark dominating the right. Blood-red stencil: WHAT DID YOU THROW AWAY THIS WEEK? One film strip circled in hot pink at center — the chosen one surrounded by hundreds of rejected others. Illegible collage fragments everywhere. The machine didn't decide this. Decades of choosing did.
+> Off-white paper. Three torn pages stacked at angles with visible tape — each with a title in blood-red stencil: AI POLICY then STYLE GUIDE + VOICE then WORLDVIEW + VALUES. White typewriter text on each page, dense and imperfect. Behind them, a ghost collage of source material: a resume fragment, a blog post printout, a photo contact sheet, an interview transcript — all halftoned and layered. A blood-red rubber stamp at the bottom: FEED THIS TO THE MACHINE. Hot pink dripping paint arrow pointing from the source pile into the three pages — the corpus becoming the document. Small typewriter text: if your values aren't in text, to AI they basically don't exist. The punk policy move.
 
 ---
 
-## 21. Three Documents
+## 20. The Tool Is Never Neutral
 
-**For:** Slide 21 — Three Documents
-**Style:** cmvan
-**Aspect Ratio:** 16:9
-**Prompt:**
-> Off-white paper. Three torn pages stacked at angles with visible tape — each with a title in blood-red stencil: PERSONAL AI POLICY then STYLE GUIDE then WORLDVIEW. White typewriter text on each page, dense and imperfect. Hot pink handwriting across them: 3 MIN. 4 MIN. 3 MIN. A blood-red rubber stamp at the bottom: FEED THIS TO THE MACHINE. The pages look handmade and urgent. Small typewriter text: if your values aren't in text, to AI they basically don't exist. The punk policy move.
-
----
-
-## 22. The Tool Is Never Neutral
-
-**For:** Slide 22 — Anthony Joseph / Tool Never Neutral
+**For:** Slide 20 — Anthony Joseph / Tool Never Neutral
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -223,19 +203,9 @@
 
 ---
 
-## 23. Best Tool
+## 21. Release Day
 
-**For:** Slide 23 — Best Tool
-**Style:** cmvan
-**Aspect Ratio:** 16:9
-**Prompt:**
-> Off-white worn paper. An iPhone and an old film camera side by side — both B&W halftone, equal weight, neither privileged over the other. Hot pink dripping paint at top: THE BEST CAMERA IS THE ONE YOU HAVE WITH YOU. Blood-red stencil: THE BEST TOOL IS THE ONE YOU'LL ACTUALLY USE. A blood-red line connecting the two objects. A hot pink sticky-note shape with blood-red typewriter: YOUR VALUES. YOUR VOICE. YOUR TASTE. Small illegible typewriter fragments. The perfect tool you don't use has produced exactly zero work.
-
----
-
-## 24. Release Day
-
-**For:** Slide 24 — Release Day
+**For:** Slide 21 — Release Day
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -243,10 +213,21 @@
 
 ---
 
-## 25. Dead Fish Live Fish
+## 22. Dead Fish Live Fish
 
-**For:** Slide 25 — Close
+**For:** Slide 22 — Close
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
 > Black background, full bleed. A river in B&W halftone — current moving strongly left to right. Two fish: one floating downstream limp with the current — blood-red X above it. The second fish facing upstream, fins pushing hard against the flow — hot pink circle around it, dripping paint. Blood-red stencil filling the upper half: ANY DEAD FISH CAN FLOAT DOWNSTREAM. Below it: IT TAKES A LIVE FISH TO SWIM AGAINST THE CURRENT. At the very bottom, massive hot pink dripping paint: YOU COMING? Maximum grain. Maximum weight. The last image. The one that stays.
+
+---
+
+## 23. Credits / Thank You
+
+**For:** Slide 23 — Credits
+**Style:** cmvan
+**Aspect Ratio:** 16:9
+**Note:** Images already generated at `assets/slides/cmvan-title-redo/26-credits-gpt2-v*.png` — select best.
+**Prompt:**
+> Black background. A warm punk collage — halftone portraits arranged like a contact sheet, hot pink paint circles around each face. Large dripping hot pink paint letters dominate the center: THANK YOU. A hand making devil horns in blood-red stencil — raw and imperfect. Below in dense white typewriter, a list: DR. JOY BUOLAMWINI · MATT LAMBERT · KEVIN FRIEL · BRETT GAILOR · COREY DOCTOROW · MARK BUSSE · KELLY & DEBBIE KRUG. Torn paper edges. Illegible collage fragments. Maximum warmth, maximum gratitude — still punk.

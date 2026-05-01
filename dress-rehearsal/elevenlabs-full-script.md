@@ -1,4 +1,4 @@
-# Both Hands Full — ElevenLabs Audio Script v5
+# Both Hands Full — ElevenLabs Audio Script v6
 ## Personal essay version — biography as argument
 
 *For audio generation. Paragraph breaks = natural pauses. No stage directions, no slide cues. This is Kris's story as the creative argument.*
@@ -143,35 +143,19 @@ The thing that made me who I am — the openness — is the thing that was explo
 
 ---
 
-## Three Fears
+## Boosters vs Doomers
 
-I want to name the fears directly. Not "AI is scary." The specific things.
+Most conversations about AI force you to pick a side.
 
-First: consent and theft. Not just my photos — the entire infrastructure of human creative work, scraped without permission, to build commercial products. I am not anti-remix. Dada was remix. Hip Hop was remix. The open internet I helped build was remix. Remix has culture. Extraction has appetite. What AI did was extraction.
+The Boosters: embrace it fully, stop being afraid, you're a luddite if you don't.
 
-Second: the junior pipeline. How does a young creative learn if there's no market for the entry-level work that teaches you? What happens when the bottom rungs disappear? Entry-level jobs are vanishing. That's the pipeline that trained the next generation.
+The Doomers: resist completely, don't participate, you're complicit if you do.
 
-Third: the race to the bottom. AI-generated output competing with human creative work at the low end, driving down rates, normalizing mediocrity at scale.
-
-These are real. I don't want to paper over them.
-
----
-
-## The Junior Pipeline — Honesty
-
-On the pipeline, I want to be honest in a way that's uncomfortable. I don't have a clean answer. The people who say they do are not being honest with you. We owe young creatives honesty, not reassurance.
+Both feel clean. Both are incomplete. You're in a room full of creative professionals. You know the binary is lazy writing. Two-dimensional characters don't move anyone. The interesting choice is always the third option — the one that's harder to hold.
 
 ---
 
 ## Both Hands Full
-
-Every AI conversation you've ever been a part of probably falls into one of these camps.
-
-The Boosters: embrace it fully. Stop being afraid. You're a luddite if you don't.
-
-The Doomers: resist completely. Don't participate. You're complicit if you do.
-
-Both feel clean. Both are incomplete. You're in a room full of creative professionals. You know the binary is lazy writing. Two-dimensional characters don't move anyone. The interesting choice is always the third option — the one that's harder to hold.
 
 And here's what I need you to sit with at the same time as everything I just told you:
 
@@ -197,6 +181,20 @@ I call it bias laundering — discrimination that looks like math. AI knows what
 
 ---
 
+## Three Fears
+
+I want to name the fears directly. Not "AI is scary." The specific things.
+
+First: consent and theft. Not just my photos — the entire infrastructure of human creative work, scraped without permission, to build commercial products. I am not anti-remix. Dada was remix. Hip Hop was remix. The open internet I helped build was remix. Remix has culture. Extraction has appetite. What AI did was extraction.
+
+Second: the junior pipeline. How does a young creative learn if there's no market for the entry-level work that teaches you? What happens when the bottom rungs disappear? Entry-level jobs are vanishing. That's the pipeline that trained the next generation. I don't have a clean answer. The people who say they do are not being honest with you. We owe young creatives honesty, not reassurance.
+
+Third: the race to the bottom. AI-generated output competing with human creative work at the low end, driving down rates, normalizing mediocrity at scale.
+
+These are real. I don't want to paper over them.
+
+---
+
 ## Stay at the Table
 
 If every thoughtful, ethical, critical creative opts out of using AI because it is messy — who writes the rules? The tech bros. The people who don't see the problems.
@@ -204,12 +202,6 @@ If every thoughtful, ethical, critical creative opts out of using AI because it 
 We need the most critical voices at the table.
 
 Vancouver is the home of Adbusters and Greenpeace. We have been turning corporate infrastructure into counterculture since before most tech cities had a scene. That's the tradition you're in. Not opting out — using it wrong.
-
----
-
-## True North
-
-At the 2010 Vancouver Olympics — no press credentials. We made our own. We didn't have permission. We had cameras, feeds, tags, links, and each other. Bloggers and veteran photojournalists in the same warehouse. While mainstream media was bogged down in bureaucracy, we were nimble. That's the move. Not waiting for permission from the people who built the system.
 
 ---
 
@@ -223,27 +215,19 @@ The Selector didn't work alone. The weirdos always traveled in packs.
 
 ---
 
-## What Did You Throw Away This Week?
-
-The machine didn't teach me what good looks like. Decades of deciding did.
-
-That's what a posse does at scale. You run your taste loops together. The collective cutting room floor gets sharper. Someone calls out what you couldn't see from inside your own work.
-
-What did you throw away this week? What's on your cutting room floor? That's where your taste lives. That's the thing AI cannot generate.
-
----
-
 ## Three Documents
 
 The most practical punk move I know: write three documents.
 
-One — a personal AI policy. What will you use these tools for? What will you refuse? Three minutes.
+One — a personal AI policy. What will you use these tools for? What will you refuse?
 
-Two — a style guide. What are the ten words you refuse to say? What does your work sound like when it's really you? Ban the word delve. Four minutes.
+Two — a style and voice guide. What are the ten words you refuse to say? What does your work sound like when it's really you? Ban the word delve.
 
-Three — a worldview document. Are you a feminist? An anarchist? A punk? Five sentences. Three minutes.
+Three — a worldview document. Your values, your politics, your perspective. Are you a feminist? An anarchist? A punk? Five sentences.
 
-Feed those to whatever AI you use. The machine stops giving you the average of the internet. It starts amplifying what makes you you. If your values aren't in text, to AI they basically don't exist.
+Here's the thing: you don't have to write them from scratch. You already have the raw material. Your old blog posts. Your interviews. Your emails. Your photos. Your resume. Feed your corpus into AI and ask it to find the patterns. Ask it what you believe. Ask it what you sound like. It will hand you a first draft of who you already are.
+
+Feed those documents back to whatever AI you use every day. The machine stops giving you the average of the internet. It starts amplifying what makes you you. If your values aren't in text, to AI they basically don't exist.
 
 ---
 
@@ -256,14 +240,6 @@ He said: my ancestors didn't have chainsaws. But they would've used them if they
 That's it. The creative impulse is continuous. The tools change. The people who pick them up are in the same lineage. Adaptability is not capitulation.
 
 The tool is never neutral. But neither are we.
-
----
-
-## Best Tool
-
-I wrote a book called Killer Photos with Your iPhone. The whole argument: the best camera is the one you have with you. The perfect tool you don't use has produced exactly zero work.
-
-Same principle. The best AI tool is the one you'll actually engage with, on your own terms, toward something that matters. And those three documents make it yours. Your values, your voice, your taste. If it's not in text, to AI it doesn't exist.
 
 ---
 
@@ -291,7 +267,7 @@ You coming?
 
 ---
 
-## Acknowledgements
+## Credits
 
 This talk exists because of many people.
 
@@ -302,3 +278,5 @@ Matt Lambert. Kevin Friel. Brett Gailor. Corey Doctorow.
 Mark Busse — for pushing harder, every time.
 
 And Kelly and Debbie Krug — for choosing their kid over the rules.
+
+Thank you.

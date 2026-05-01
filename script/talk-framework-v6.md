@@ -1,6 +1,6 @@
 # Talk Framework v6: Sequential Narrative
 ## Creative Mornings Vancouver — May 1, 2026
-## 20 minutes · Five acts · 25 slides
+## 20 minutes · Five acts · 23 slides
 
 **Format:** Straight monologue. Biography as argument. Story first, ideas second.  
 **Timing:** 20 min hard.  
@@ -114,9 +114,9 @@ Walk out. No rush. Let the room settle.
 
 ---
 
-## ACT III — THE COMPLICATION + CLIMAX (~4 min · Slides 12–15)
+## ACT III — THE COMPLICATION + CLIMAX (~5 min · Slides 12–14)
 
-*The temperature drops. This act earns the right to say "both things are true" — because the critique is specific and honest. The climax is Both Hands Full.*
+*The temperature drops. The covenant breaks. The binary trap is named and refused. Both Hands Full is the climax.*
 
 **[SLIDE 12 — The AI Chapter]**
 
@@ -132,35 +132,17 @@ Walk out. No rush. Let the room settle.
 
 > The thing that made me who I am — the openness — is the thing that was exploited. I haven't resolved that. I'm living inside it.
 
-**[SLIDE 13 — Three Fears + Audience Interaction]**
+**[SLIDE 13 — Boosters vs Doomers]**
 
-> Before I name the fears I carry — I want to hear yours. What scares you about this moment? Shout it out.
+> Most conversations about AI force you to pick a side.
 
-*[~60 sec: listen, acknowledge themes. Then:]*
+> The Boosters: embrace it fully, stop being afraid, you're a luddite if you don't.
 
-> Here's what I carry. Three specific fears, not "AI is scary."
-
-> Consent and theft. Not just my photos — the entire infrastructure of human creative work, scraped without permission, to build commercial products. I'm not anti-remix. Dada was remix. Hip Hop was remix. *Remix has culture. Extraction has appetite.* What AI did was extraction.
-
-> The junior pipeline. How does a young creative learn if there's no market for the entry-level work that teaches you? What happens when the bottom rungs disappear?
-
-> The race to the bottom. AI-generated output competing with human work at the low end, driving down rates, normalizing mediocrity at scale.
-
-> These are real. I don't want to paper over them.
-
-**[SLIDE 14 — The Junior Pipeline]**
-
-> On the pipeline — I want to be honest in a way that's uncomfortable. I don't have a clean answer. The people who say they do are not being honest with you. Entry-level creative jobs are vanishing. That's the pipeline that trained the next generation. We owe young creatives honesty, not reassurance.
-
-**[SLIDE 15 — BOTH HANDS FULL]** ← THE CLIMAX
-
-> Every AI conversation you've ever been a part of probably falls into one of these camps.
-
-> The Boosters: "Embrace it fully! Stop being afraid! You're a luddite if you don't!"
-
-> The Doomers: "Resist completely! Don't participate! You're complicit if you do!"
+> The Doomers: resist completely, don't participate, you're complicit if you do.
 
 > Both feel clean. Both are incomplete. You're in a room full of creative professionals. You know the binary is lazy writing. Two-dimensional characters don't move anyone. The interesting choice is always the third option — the one that's harder to hold.
+
+**[SLIDE 14 — BOTH HANDS FULL]** ← THE CLIMAX
 
 > And here's what I need you to sit with at the same time as everything I just told you:
 
@@ -170,13 +152,15 @@ Walk out. No rush. Let the room settle.
 
 > That's not contradiction. That's complexity. I hold the critique in one hand. I hold the capability in the other. Both hands full. That's the only honest place to stand.
 
+> And if you're paralyzed by the weight of the critique — action is the antidote to despair. Not solutions. Not answers. Action. Make something small. Make it today.
+
 ---
 
-## ACT IV — THE PUNK CONDITION (~5 min · Slides 16–22)
+## ACT IV — THE PUNK CONDITION (~7 min · Slides 15–20)
 
-*The turn. The argument expands into history, community, and practice. Each slide is a tool.*
+*The turn. The argument expands into naming, community, and practice. Each slide is a tool.*
 
-**[SLIDE 16 — Dr. Joy Buolamwini / Name What You See]**
+**[SLIDE 15 — Dr. Joy Buolamwini / Name What You See]**
 
 > Now that we're holding both, the left hand has more weight in it.
 
@@ -188,6 +172,22 @@ Walk out. No rush. Let the room settle.
 
 > I call it bias laundering — discrimination that looks like math. AI knows what's frequent, not what's fair. The mirror reflects. It doesn't correct. Correcting the mirror is your job.
 
+**[SLIDE 16 — Three Fears + Audience Engagement]**
+
+> Before I name the fears I carry — I want to hear yours. What scares you about this moment? Shout it out.
+
+*[~60 sec: listen, acknowledge themes. Then:]*
+
+> Here's what I carry. Three specific fears, not "AI is scary."
+
+> Consent and theft. Not just my photos — the entire infrastructure of human creative work, scraped without permission, to build commercial products. I'm not anti-remix. Dada was remix. Hip Hop was remix. *Remix has culture. Extraction has appetite.* What AI did was extraction.
+
+> The junior pipeline. How does a young creative learn if there's no market for the entry-level work that teaches you? What happens when the bottom rungs disappear? The people who say they have this solved are not being honest with you.
+
+> The race to the bottom. AI-generated output competing with human work at the low end, driving down rates, normalizing mediocrity at scale.
+
+> These are real. I don't want to paper over them.
+
 **[SLIDE 17 — Stay at the Table]**
 
 > If every thoughtful, ethical, critical creative opts out of using AI because it is messy — who writes the rules? The tech bros. The people who don't see the problems.
@@ -196,11 +196,7 @@ Walk out. No rush. Let the room settle.
 
 > Vancouver is the home of Adbusters and Greenpeace. We have been turning corporate infrastructure into counterculture since before most tech cities had a scene. That's the tradition you're in. Not opting out — using it wrong.
 
-**[SLIDE 18 — True North]**
-
-> At the 2010 Vancouver Olympics — no press credentials. We made our own. We didn't have permission. We had cameras, feeds, tags, links, and each other. Bloggers and veteran photojournalists in the same warehouse. While mainstream media was bogged down in bureaucracy, we were nimble. Not waiting for permission from the people who built the system.
-
-**[SLIDE 19 — BC AI Community]**
+**[SLIDE 18 — BC AI Community / Build a Posse]**
 
 > Don't build community — that word has lost its teeth. Build a posse. A small circle who share your taste, your ethics, your trust.
 
@@ -208,29 +204,23 @@ Walk out. No rush. Let the room settle.
 
 > The Selector didn't work alone. The weirdos always traveled in packs.
 
-**[SLIDE 20 — What Did You Throw Away This Week?]**
-
-> The machine didn't teach me what good looks like. Decades of deciding did.
-
-> That's what a posse does at scale: you run your taste loops together. The collective cutting room floor gets sharper. Someone calls out what you couldn't see from inside your own work. That's the gym running at full capacity.
-
-> What did you throw away this week? What's on your cutting room floor? That's where your taste lives.
-
-**[SLIDE 21 — Three Documents]**
+**[SLIDE 19 — Three Documents]**
 
 > The most practical punk move I know: write three documents.
 
-> One — a personal AI policy. What will you use these tools for? What will you refuse? Three minutes.
+> One — a personal AI policy. What will you use these tools for? What will you refuse?
 
-> Two — a style guide. What are the ten words you refuse to say? What does your work sound like when it's really you? Ban the word *delve*. Four minutes.
+> Two — a style and voice guide. What are the ten words you refuse to say? What does your work sound like when it's really you? Ban the word *delve*.
 
-> Three — a worldview document. Are you a feminist? An anarchist? A punk? Five sentences. Three minutes.
+> Three — a worldview document. Your values, your politics, your perspective. Are you a feminist? An anarchist? A punk? Five sentences.
 
-> Feed those to whatever AI you use. The machine stops giving you the average of the internet. It starts amplifying what makes you *you*. If your values aren't in text, to AI they basically don't exist.
+> Here's the thing: you don't have to write them from scratch. You already have the raw material. Your old blog posts. Your interviews. Your emails. Your photos. Your resume. Feed your corpus into AI and ask it to find the patterns. Ask it what you believe. Ask it what you sound like. It will hand you a first draft of who you already are.
 
-**[SLIDE 22 — The Tool Is Never Neutral]**
+> Feed those documents back to whatever AI you use every day. The machine stops giving you the average of the internet. It starts amplifying what makes you *you*. If your values aren't in text, to AI they basically don't exist.
 
-> Every Vancouver AI Community gathering starts with an Indigenous welcome. Anthony Joseph — Isiléyu — from the Coast Salish territory said something I think about constantly.
+**[SLIDE 20 — The Tool Is Never Neutral]**
+
+> Every Vancouver AI Community gathering starts with an Indigenous welcome from the Coast Salish territory. Anthony Joseph — Isiléyu — said something I think about constantly.
 
 > He said: my ancestors didn't have chainsaws. But they would've used them if they were there.
 
@@ -240,17 +230,11 @@ Walk out. No rush. Let the room settle.
 
 ---
 
-## ACT V — THE MOVE (~2 min · Slides 23–25)
+## ACT V — THE MOVE (~2 min · Slides 21–23)
 
 *The turn from argument to action. Concrete, fast, earned.*
 
-**[SLIDE 23 — Best Tool]**
-
-> I wrote a book called *Killer Photos with Your iPhone*. The whole argument: the best camera is the one you have with you. The perfect tool you don't use has produced exactly zero work.
-
-> Same principle. The best AI tool is the one you'll actually engage with on your own terms, toward something that matters. And when you do — those three documents make it yours. Your values, your voice, your taste. If it's not in text, to AI it doesn't exist.
-
-**[SLIDE 24 — Release Day]**
+**[SLIDE 21 — Release Day]**
 
 > The global Release Day is May twenty-ninth. Four weeks.
 
@@ -262,7 +246,7 @@ Walk out. No rush. Let the room settle.
 
 > Punk never was.
 
-**[SLIDE 25 — Dead Fish / Live Fish]**
+**[SLIDE 22 — Dead Fish / Live Fish]**
 
 > I've carried a line since I was fifteen. My youth pastor used to say it: any dead fish can float downstream. But it takes a live fish to swim against the current.
 
@@ -272,55 +256,59 @@ Walk out. No rush. Let the room settle.
 
 > You coming?
 
----
+**[SLIDE 23 — Credits / Thank You]**
 
-## ACKNOWLEDGEMENTS
-
-*Spoken at close or as a final slide.*
+*Warm close. Acknowledge the people. Let it breathe.*
 
 Dr. Joy Buolamwini · Matt Lambert · Kevin Friel · Brett Gailor · Corey Doctorow · Mark Busse · Kelly & Debbie Krug
 
 ---
 
-## SPEAKER NOTES
+## TIMING CHECKPOINTS
 
-### Physical
-- Open quiet. No slides until Cult Baby. Let the room find you.
-- Name Kelly and Debbie out loud. Look for them in the room.
-- "I find my relationship with AI completely non-consensual" — let it land. Don't rush.
-- Slide 13: genuinely listen. Don't perform listening.
-- Slide 15 is the climax — let both-hands energy shift the room.
-- Act IV is tools, not argument. Keep it moving.
-- "You coming?" is the last line. Nothing after it. Look at the room.
-
-### Timing checkpoints
 | Time | Where |
 |------|-------|
 | 0:00 | Act I opens — Cult Baby |
 | 4:00 | Act II — Spark Online / Dada lineage |
 | 9:00 | Act III — "I find my relationship with AI..." |
-| 13:00 | Slide 15 — "Both hands full" |
-| 17:00 | Act V — Three Documents / Release Day |
+| 13:30 | Slide 14 — "Both hands full" — THE CLIMAX |
+| 15:00 | Act IV — Name What You See / Three Fears |
+| 19:00 | Act V — Release Day |
 | 20:00 | "You coming?" |
 
-### Key lines — nail these
+---
+
+## KEY LINES — NAIL THESE
+
 1. "My mom and dad, Kelly and Debbie — they are in this room today."
-2. "I find my relationship with AI completely non-consensual."
-3. "The camera interrupted the despair."
-4. "You can't outgive the goddess, definitely a benevolent curse."
+2. "The camera interrupted the despair."
+3. "Giving away made me invaluable."
+4. "I find my relationship with AI completely non-consensual."
 5. "Generation is completely free now. What's scarce — genuinely scarce — is taste."
 6. "Speed without judgment is kind of like a leaf blower."
-7. "It's like a gym for the development of taste."
-8. "Remix has culture. Extraction has appetite."
-9. "Every AI conversation you've ever been a part of probably falls into one of these camps."
-10. "I am more creative, more productive, and more powerful than I have ever been in my entire life."
+7. "Remix has culture. Extraction has appetite."
+8. "Both feel clean. Both are incomplete."
+9. "I am more creative, more productive, and more powerful than I have ever been in my entire life."
+10. "That's not contradiction. That's complexity."
 11. "Both hands full. That's the only honest place to stand."
 12. "Stop saying bias. Name what you're seeing."
 13. "Bias laundering — discrimination that looks like math."
 14. "We need the most critical voices at the table."
-15. "The tool is never neutral. But neither are we."
-16. "If your values aren't in text, to AI they basically don't exist."
-17. "What did you throw away this week?"
-18. "Pick up the tool. Use it wrong. Share what you learn. Build a posse."
-19. "Any dead fish can float downstream. But it takes a live fish to swim against the current."
-20. "You coming?"
+15. "If your values aren't in text, to AI they basically don't exist."
+16. "The tool is never neutral. But neither are we."
+17. "Pick up the tool. Use it wrong. Share what you learn. Build a posse."
+18. "Any dead fish can float downstream. But it takes a live fish to swim against the current."
+19. "You coming?"
+
+---
+
+## PHYSICAL NOTES
+
+- Open quiet. No slides until Cult Baby. Let the room find you.
+- Name Kelly and Debbie out loud. Look for them in the room.
+- "I find my relationship with AI completely non-consensual" — let it land. Don't rush.
+- Slide 13 (Boosters vs Doomers) — set the trap, pause before the pivot.
+- Slide 14 is the climax — let both-hands energy shift the room.
+- Slide 16: genuinely listen to the audience. Don't perform listening.
+- Act IV is tools, not argument. Keep it moving.
+- "You coming?" is the last line. Nothing after it. Look at the room.
