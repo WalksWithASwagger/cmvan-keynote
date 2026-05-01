@@ -1,0 +1,16 @@
+{
+  "name": "punk-rock-ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Interactive learning portal for the Punk Rock AI / Both Hands Full keynote.",
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes serve site -l 3000",
+    "build:quotes": "node scripts/build-quotes.mjs",
+    "build:lineage": "node scripts/build-lineage.mjs",
+    "ingest:slides": "node scripts/ingest-slides.mjs"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

@@ -1,0 +1,307 @@
+/* Punk Rock AI — page-level layout. Header, footer, nav, grid, hero.
+   Page-specific layout lives in css/widgets/*.css.
+   --------------------------------------------------------------------- */
+
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.shell > main {
+  flex: 1 0 auto;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.wrap--narrow {
+  max-width: var(--max-w-narrow);
+}
+
+/* ------------------------------------------------------------------
+   SITE HEADER — loaded via partials/header.html through
+   js/common/header.js. Two stripes: brand row + nav row.
+   ------------------------------------------------------------------ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 3px solid var(--accent);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-block: 0.9rem;
+}
+
+.site-header__brand {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--fs-md);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.site-header__brand::before {
+  content: "";
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  background: var(--accent);
+  transform: rotate(45deg);
+}
+
+.site-header__brand:hover,
+.site-header__brand:focus-visible {
+  color: var(--fg);
+  outline: none;
+}
+
+.site-header__brand:hover::before {
+  background: var(--fg);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  font-size: var(--fs-sm);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.site-nav a {
+  color: var(--fg-soft);
+  text-decoration: none;
+  padding: 0.2rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .site-header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+    padding-block: 0.75rem;
+  }
+  .site-nav {
+    gap: var(--space-2);
+    font-size: var(--fs-xs);
+  }
+}
+
+/* ------------------------------------------------------------------
+   SITE FOOTER
+   ------------------------------------------------------------------ */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: var(--space-7);
+  padding-block: var(--space-5);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+
+.site-footer__inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-4);
+  align-items: end;
+}
+
+.site-footer__inner a {
+  color: var(--muted);
+}
+
+.site-footer__inner a:hover {
+  color: var(--accent);
+}
+
+.site-footer__motto {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-md);
+  color: var(--fg-soft);
+}
+
+@media (max-width: 720px) {
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------------------------------------------------------
+   HERO — used on landing. Brutalist masthead.
+   ------------------------------------------------------------------ */
+
+.hero {
+  position: relative;
+  padding-block: var(--space-6) var(--space-7);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.hero__date {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  margin-bottom: var(--space-3);
+}
+
+.hero__title {
+  font-size: var(--fs-3xl);
+  margin: 0 0 var(--space-3);
+}
+
+.hero__title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  line-height: 1.25;
+  max-width: 36ch;
+  color: var(--fg-soft);
+  margin: 0 0 var(--space-4);
+}
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+/* ------------------------------------------------------------------
+   SECTION — generic page section
+   ------------------------------------------------------------------ */
+
+.section {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.section:last-of-type {
+  border-bottom: 0;
+}
+
+.section__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.section__title {
+  margin: 0;
+}
+
+/* card grid for nav tiles to widgets */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--space-3);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--fg);
+  transition: transform 160ms var(--ease-snap),
+    border-color 160ms var(--ease-snap), background 160ms var(--ease-snap);
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translate(-2px, -2px);
+  border-color: var(--accent);
+  background: #181818;
+  color: var(--fg);
+  box-shadow: 4px 4px 0 var(--accent);
+  outline: none;
+}
+
+.card__num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.18em;
+  color: var(--accent);
+}
+
+.card__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  margin: 0;
+}
+
+.card__body {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  margin: 0;
+}
+
+.card__cta {
+  margin-top: auto;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-soft);
+}
+
+.card:hover .card__cta {
+  color: var(--accent);
+}
+
+/* simple two-column band */
+.band {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .band {
+    grid-template-columns: 1fr;
+  }
+}
