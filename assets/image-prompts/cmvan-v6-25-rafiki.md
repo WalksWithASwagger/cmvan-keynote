@@ -1,5 +1,5 @@
 # Punk Rock AI — Creative Mornings Vancouver
-## Image Prompts v6 · cmvan style · 16:9 · 21 slides
+## Image Prompts v6 · cmvan style · 16:9 · 22 slides
 
 ---
 
@@ -113,19 +113,29 @@
 
 ---
 
-## 12. Both Hands Full — Climax
+## 12. Both Hands Full — The Frame
 
-**For:** Slide 12 — Both Hands Full (Climax)
+**For:** Slide 12 — Both Hands Full (The Frame)
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
-> Black background. Two punk figures in studded jackets, holding hands, walking forward — high-contrast B&W halftone — fire photographically rendered and halftoned behind them. A rising sun motif in blood red at upper right. Hot pink dripping paint text on the left: BOTH HANDS FULL. Blood-red stencil: NOT CONTRADICTION. COMPLEXITY. Two options crossed out in hot pink spray paint — BOOSTER with an X and DOOMER with an X. A skull at lower left in B&W halftone. Illegible collaged text fragments everywhere. Maximum energy. Maximum density. The climax of everything.
+> Black background. Two punk figures in studded jackets, holding hands, walking forward — high-contrast B&W halftone — fire photographically rendered and halftoned behind them. A rising sun motif in blood red at upper right. Hot pink dripping paint text on the left: BOTH HANDS FULL. Blood-red stencil: NOT CONTRADICTION. COMPLEXITY. Two options crossed out in hot pink spray paint — BOOSTER with an X and DOOMER with an X. A skull at lower left in B&W halftone. Illegible collaged text fragments everywhere. Maximum energy. Maximum density.
 
 ---
 
-## 13. Name What You See
+## 13. More Creative Than Ever — The Proof
 
-**For:** Slide 13 — Dr. Joy Buolamwini
+**For:** Slide 13 — Personal Testimony
+**Style:** cmvan
+**Aspect Ratio:** 16:9
+**Prompt:**
+> Black background. Massive hot pink dripping paint dominates the center, three lines stacked: MORE CREATIVE. MORE PRODUCTIVE. MORE POWERFUL. Blood-red stencil below: THAN I HAVE EVER BEEN IN MY ENTIRE LIFE. A silhouette of a person with a camera — high-contrast B&W halftone — arms mid-motion, caught in the act of making. Hot pink spray paint circle around the figure. White typewriter at the bottom: BOTH STATEMENTS ARE TRUE. AT THE EXACT SAME TIME. Scattered illegible collage fragments. Maximum grain. The personal testimony made visible.
+
+---
+
+## 14. Name What You See
+
+**For:** Slide 14 — Dr. Joy Buolamwini
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -133,9 +143,9 @@
 
 ---
 
-## 14. Three Fears
+## 15. Three Fears
 
-**For:** Slide 14 — Three Fears
+**For:** Slide 15 — Three Fears
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -143,9 +153,9 @@
 
 ---
 
-## 15. Stay at the Table
+## 16. Stay at the Table
 
-**For:** Slide 15 — Stay at the Table
+**For:** Slide 16 — Stay at the Table
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -153,9 +163,9 @@
 
 ---
 
-## 16. Build a Posse
+## 17. Build a Posse
 
-**For:** Slide 16 — BC AI Community
+**For:** Slide 17 — BC AI Community
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -163,9 +173,9 @@
 
 ---
 
-## 17. Three Documents
+## 18. Three Documents
 
-**For:** Slide 17 — Three Documents
+**For:** Slide 18 — Three Documents
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -173,9 +183,9 @@
 
 ---
 
-## 18. The Tool Is Never Neutral
+## 19. The Tool Is Never Neutral
 
-**For:** Slide 18 — Anthony Joseph / Tool Never Neutral
+**For:** Slide 19 — Anthony Joseph / Tool Never Neutral
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -183,9 +193,9 @@
 
 ---
 
-## 19. Release Day
+## 20. Release Day
 
-**For:** Slide 19 — Release Day
+**For:** Slide 20 — Release Day
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -193,9 +203,9 @@
 
 ---
 
-## 20. Dead Fish Live Fish
+## 21. Dead Fish Live Fish
 
-**For:** Slide 20 — Close
+**For:** Slide 21 — Close
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -203,9 +213,9 @@
 
 ---
 
-## 21. Credits / Thank You
+## 22. Credits / Thank You
 
-**For:** Slide 21 — Credits
+**For:** Slide 22 — Credits
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Note:** Images already generated at `assets/slides/cmvan-title-redo/26-credits-gpt2-v*.png` — select best.

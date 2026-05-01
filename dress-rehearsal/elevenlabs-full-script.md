@@ -141,13 +141,19 @@ Both feel clean. Both are incomplete. You're in a room full of creative professi
 
 ## Both Hands Full
 
+That's not contradiction. That's complexity. I hold the critique in one hand. I hold the capability in the other. Both hands full. That's the only honest place to stand.
+
+---
+
+## More Creative Than Ever
+
 And here's what I need you to sit with at the same time as everything I just told you:
 
 I am more creative, more productive, and more powerful than I have ever been in my entire life.
 
 Both of those statements are true. At the exact same time.
 
-That's not contradiction. That's complexity. I hold the critique in one hand. I hold the capability in the other. Both hands full. That's the only honest place to stand. And if you're paralyzed by the weight of the critique — action is the antidote to despair. Not solutions. Not answers. Action. Make something small. Make it today.
+Action is the antidote to despair. Not solutions. Not answers. Action. Make something small. Make it today.
 
 ---
 

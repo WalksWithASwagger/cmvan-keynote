@@ -1,6 +1,6 @@
 # Talk Framework v6: Sequential Narrative
 ## Creative Mornings Vancouver — May 1, 2026
-## 20 minutes · Five acts · 21 slides
+## 20 minutes · Five acts · 22 slides
 
 **Format:** Straight monologue. Biography as argument. Story first, ideas second.  
 **Timing:** 20 min hard.  
@@ -100,9 +100,9 @@ Walk out. No rush. Let the room settle.
 
 ---
 
-## ACT III — THE COMPLICATION + CLIMAX (~4 min · Slides 10–12)
+## ACT III — THE COMPLICATION + CLIMAX (~5 min · Slides 10–13)
 
-*The temperature drops. The covenant breaks. The binary trap is named and refused. Both Hands Full is the climax.*
+*The temperature drops. The covenant breaks. The binary trap is named and refused. Both Hands Full names the frame — then the personal testimony lands as the proof.*
 
 **[SLIDE 10 — The AI Chapter]**
 
@@ -128,7 +128,11 @@ Walk out. No rush. Let the room settle.
 
 > Both feel clean. Both are incomplete. You're in a room full of creative professionals. You know the binary is lazy writing. Two-dimensional characters don't move anyone. The interesting choice is always the third option — the one that's harder to hold.
 
-**[SLIDE 12 — BOTH HANDS FULL]** ← THE CLIMAX
+**[SLIDE 12 — BOTH HANDS FULL]** ← THE FRAME
+
+> That's not contradiction. That's complexity. I hold the critique in one hand. I hold the capability in the other. Both hands full. That's the only honest place to stand.
+
+**[SLIDE 13 — MORE CREATIVE THAN EVER]** ← THE PROOF
 
 > And here's what I need you to sit with at the same time as everything I just told you:
 
@@ -136,17 +140,15 @@ Walk out. No rush. Let the room settle.
 
 > Both of those statements are true. At the exact same time.
 
-> That's not contradiction. That's complexity. I hold the critique in one hand. I hold the capability in the other. Both hands full. That's the only honest place to stand.
-
-> And if you're paralyzed by the weight of the critique — action is the antidote to despair. Not solutions. Not answers. Action. Make something small. Make it today.
+> Action is the antidote to despair. Not solutions. Not answers. Action. Make something small. Make it today.
 
 ---
 
-## ACT IV — THE PUNK CONDITION (~7 min · Slides 13–18)
+## ACT IV — THE PUNK CONDITION (~7 min · Slides 14–19)
 
 *The turn. Naming, community, and practice. Each slide is a tool.*
 
-**[SLIDE 13 — Dr. Joy Buolamwini / Name What You See]**
+**[SLIDE 14 — Dr. Joy Buolamwini / Name What You See]**
 
 > Now that we're holding both, the left hand has more weight in it.
 
@@ -158,7 +160,7 @@ Walk out. No rush. Let the room settle.
 
 > I call it bias laundering — discrimination that looks like math. AI knows what's frequent, not what's fair. The mirror reflects. It doesn't correct. Correcting the mirror is your job.
 
-**[SLIDE 14 — Three Fears + Audience Engagement]**
+**[SLIDE 15 — Three Fears + Audience Engagement]**
 
 > Before I name the fears I carry — I want to hear yours. What scares you about this moment? Shout it out.
 
@@ -174,7 +176,7 @@ Walk out. No rush. Let the room settle.
 
 > These are real. I don't want to paper over them.
 
-**[SLIDE 15 — Stay at the Table]**
+**[SLIDE 16 — Stay at the Table]**
 
 > If every thoughtful, ethical, critical creative opts out of using AI because it is messy — who writes the rules? The tech bros. The people who don't see the problems.
 
@@ -182,7 +184,7 @@ Walk out. No rush. Let the room settle.
 
 > Vancouver is the home of Adbusters and Greenpeace. We have been turning corporate infrastructure into counterculture since before most tech cities had a scene. That's the tradition you're in. Not opting out — using it wrong.
 
-**[SLIDE 16 — BC AI Community / Build a Posse]**
+**[SLIDE 17 — BC AI Community / Build a Posse]**
 
 > Don't build community — that word has lost its teeth. Build a posse. A small circle who share your taste, your ethics, your trust.
 
@@ -190,7 +192,7 @@ Walk out. No rush. Let the room settle.
 
 > The Selector didn't work alone. The weirdos always traveled in packs.
 
-**[SLIDE 17 — Three Documents]**
+**[SLIDE 18 — Three Documents]**
 
 > The most practical punk move I know: write three documents.
 
@@ -204,7 +206,7 @@ Walk out. No rush. Let the room settle.
 
 > Feed those documents back to whatever AI you use every day. The machine stops giving you the average of the internet. It starts amplifying what makes you *you*. If your values aren't in text, to AI they basically don't exist.
 
-**[SLIDE 18 — The Tool Is Never Neutral]**
+**[SLIDE 19 — The Tool Is Never Neutral]**
 
 > Every Vancouver AI Community gathering starts with an Indigenous welcome. Anthony Joseph — Isiléyu — said something I think about constantly.
 
@@ -216,11 +218,11 @@ Walk out. No rush. Let the room settle.
 
 ---
 
-## ACT V — THE MOVE (~2 min · Slides 19–21)
+## ACT V — THE MOVE (~2 min · Slides 20–22)
 
 *The turn from argument to action. Concrete, fast, earned.*
 
-**[SLIDE 19 — Release Day]**
+**[SLIDE 20 — Release Day]**
 
 > The global Release Day is May twenty-ninth. Four weeks.
 
@@ -232,7 +234,7 @@ Walk out. No rush. Let the room settle.
 
 > Punk never was.
 
-**[SLIDE 20 — Dead Fish / Live Fish]**
+**[SLIDE 21 — Dead Fish / Live Fish]**
 
 > I've carried a line since I was fifteen. My youth pastor used to say it: any dead fish can float downstream. But it takes a live fish to swim against the current.
 
@@ -242,7 +244,7 @@ Walk out. No rush. Let the room settle.
 
 > You coming?
 
-**[SLIDE 21 — Credits / Thank You]**
+**[SLIDE 22 — Credits / Thank You]**
 
 *Warm close. Acknowledge the people. Let it breathe.*
 
@@ -257,7 +259,8 @@ Dr. Joy Buolamwini · Matt Lambert · Kevin Friel · Brett Gailor · Corey Docto
 | 0:00 | Act I opens — Cult Baby |
 | 3:00 | Act II — Dada lineage |
 | 7:00 | Act III — "I find my relationship with AI..." |
-| 11:00 | Slide 12 — "Both hands full" — THE CLIMAX |
+| 11:00 | Slide 12 — "Both hands full" — THE FRAME |
+| 11:30 | Slide 13 — "I am more creative..." — THE PROOF |
 | 13:00 | Act IV — Name What You See / Three Fears |
 | 18:00 | Act V — Release Day |
 | 20:00 | "You coming?" |
@@ -274,9 +277,9 @@ Dr. Joy Buolamwini · Matt Lambert · Kevin Friel · Brett Gailor · Corey Docto
 6. "Speed without judgment is kind of like a leaf blower."
 7. "Remix has culture. Extraction has appetite."
 8. "Both feel clean. Both are incomplete."
-9. "I am more creative, more productive, and more powerful than I have ever been in my entire life."
-10. "That's not contradiction. That's complexity."
-11. "Both hands full. That's the only honest place to stand."
+9. "Both hands full. That's the only honest place to stand."
+10. "I am more creative, more productive, and more powerful than I have ever been in my entire life."
+11. "Both of those statements are true. At the exact same time."
 12. "Stop saying bias. Name what you're seeing."
 13. "Bias laundering — discrimination that looks like math."
 14. "We need the most critical voices at the table."
@@ -294,7 +297,8 @@ Dr. Joy Buolamwini · Matt Lambert · Kevin Friel · Brett Gailor · Corey Docto
 - Name Kelly and Debbie out loud. Look for them in the room.
 - "I find my relationship with AI completely non-consensual" — let it land. Don't rush.
 - Slide 11 (Boosters vs Doomers) — set the trap, pause before the pivot.
-- Slide 12 is the climax — let both-hands energy shift the room.
-- Slide 14: genuinely listen to the audience. Don't perform listening.
+- Slide 12 — ONE sentence names the frame. Advance quickly.
+- Slide 13 — hold "I am more creative..." before continuing. Let the room sit with it.
+- Slide 15: genuinely listen to the audience. Don't perform listening.
 - Act IV is tools, not argument. Keep it moving.
 - "You coming?" is the last line. Nothing after it. Look at the room.

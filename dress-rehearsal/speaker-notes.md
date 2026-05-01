@@ -1,5 +1,5 @@
 # Both Hands Full — Speaker Notes
-## Creative Mornings Vancouver · May 1, 2026 · 21 slides · ~20 min
+## Creative Mornings Vancouver · May 1, 2026 · 22 slides · ~20 min
 
 ---
 
@@ -38,7 +38,7 @@
 ## Slide 5 — Dada >> Punk >> DJs >> Hip Hop >> AI
 **Theme:** Every generation uses corporate infrastructure against the spectacle — this story is not new
 - Open with energy: "Here's a framework. Because this story is not new."
-- Détournement, Burroughs, Xerox punks, Selector, Hip Hop — just land the rhythm, don't explain
+- Détournement, Burroughs, Xerox punks, Selector, Hip Hop — land the rhythm, don't explain each one
 - "The weirdos figure out what it's actually for." — pause on this. This is the thesis.
 
 ---
@@ -87,20 +87,29 @@
 **Theme:** Name the binary trap before refusing it
 - "Both feel clean. Both are incomplete." — pause between each
 - "You know the binary is lazy writing." — CMVan audience will feel this viscerally
-- Leave the third option unnamed — the next slide IS the answer. Hold silence before advancing.
+- Leave the third option unnamed — the next two slides ARE the answer. Hold silence before advancing.
 
 ---
 
-## Slide 12 — Both Hands Full ← THE CLIMAX
-**Theme:** Complexity, not contradiction — the only honest place to stand
-- "I am more creative, more productive, and more powerful than I have ever been in my entire life." — say this big, then pause
-- "Both of those statements are true. At the exact same time." — let the room feel both simultaneously
-- "Action is the antidote to despair. Make something small. Make it today." — point at the room
-- Energy shifts here. This is the turn. The rest of the talk is practical.
+## Slide 12 — Both Hands Full ← THE FRAME
+**Theme:** Name the frame — one sentence, then move
+- ONE sentence: "That's not contradiction. That's complexity."
+- "Both hands full. That's the only honest place to stand." — land it, then advance
+- This slide is the name. The next slide is the proof.
 
 ---
 
-## Slide 13 — Name What You See (Dr. Joy)
+## Slide 13 — More Creative Than Ever ← THE PROOF
+**Theme:** The personal testimony — sit with all of it and ALSO this
+- "And here's what I need you to sit with..." — setup, then pause before the reveal
+- "I am more creative, more productive, and more powerful than I have ever been in my entire life." — say it big, then go quiet
+- "Both of those statements are true. At the exact same time." — let the room hold both
+- "Action is the antidote to despair." — this is the call. Point at the room.
+- Big energy shift here. The rest of the talk is practical.
+
+---
+
+## Slide 14 — Name What You See (Dr. Joy)
 **Theme:** Stop saying bias — name misogyny, racism, bias laundering
 - "Stop saying bias. Name what you're seeing." — firm, not preachy
 - The marketing professor story gets recognition in every room — let it breathe
@@ -109,7 +118,7 @@
 
 ---
 
-## Slide 14 — Three Fears + Audience Engagement
+## Slide 15 — Three Fears + Audience Engagement
 **Theme:** Three specific fears — named honestly, then audience invited in
 - AUDIENCE BEAT: "What scares you about this moment? Shout it out." — genuinely listen, ~60 sec
 - Acknowledge themes from the room before naming your own three
@@ -119,7 +128,7 @@
 
 ---
 
-## Slide 15 — Stay at the Table
+## Slide 16 — Stay at the Table
 **Theme:** Critical voices cannot opt out — Vancouver counterculture tradition
 - "Who writes the rules? The tech bros." — direct, let it sting
 - "Adbusters. Greenpeace." — the room knows these; Vancouver pride beat
@@ -127,7 +136,7 @@
 
 ---
 
-## Slide 16 — BC AI Community / Build a Posse
+## Slide 17 — BC AI Community / Build a Posse
 **Theme:** Posse not community — a resiliency network with taste and ethics
 - "Community has lost its teeth. Build a posse." — the distinction lands
 - Kevin Friel: "85% AI, then craft to finish" — the conductor metaphor is the frame
@@ -135,7 +144,7 @@
 
 ---
 
-## Slide 17 — Three Documents
+## Slide 18 — Three Documents
 **Theme:** The practical punk move — write your values in text before AI writes them for you
 - AI policy, style guide, worldview — say them fast, they're simple
 - "Feed your corpus into AI — ask it what you believe, what you sound like" — this surprises people
@@ -143,7 +152,7 @@
 
 ---
 
-## Slide 18 — The Tool Is Never Neutral
+## Slide 19 — The Tool Is Never Neutral
 **Theme:** Anthony Joseph's chainsaw line — adaptability is not capitulation
 - "My ancestors didn't have chainsaws. But they would've used them." — pause after it
 - "The creative impulse is continuous. The tools change." — closes the lineage from slide 5
@@ -151,7 +160,7 @@
 
 ---
 
-## Slide 19 — Release Day
+## Slide 20 — Release Day
 **Theme:** Four concrete actions — do this today, not someday
 - "May twenty-ninth. Four weeks." — specific date, specific urgency
 - "Pick up the tool. Use it wrong. Share what you learn. Build a posse." — say it like a list, then like a chant
@@ -159,7 +168,7 @@
 
 ---
 
-## Slide 20 — Dead Fish / Live Fish
+## Slide 21 — Dead Fish / Live Fish
 **Theme:** The close — one line, then silence
 - "Any dead fish can float downstream. But it takes a live fish to swim against the current." — slower, lower
 - "You coming?" — last word. Look at the room. Hold silence three full seconds. Nothing after.
@@ -167,7 +176,7 @@
 
 ---
 
-## Slide 21 — Credits / Thank You
+## Slide 22 — Credits / Thank You
 **Theme:** Gratitude — brief, warm, punk
 - Dr. Joy Buolamwini, Matt Lambert, Kevin Friel, Brett Gailor, Corey Doctorow
 - "Mark Busse — for pushing harder, every time." — look at Mark if he's visible
