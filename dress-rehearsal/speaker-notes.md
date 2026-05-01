@@ -68,10 +68,10 @@
 ---
 
 ## Slide 9 — Pattern I Couldn't Name
-**Theme:** AI as mirror that reveals unconscious patterns — revelation, not replacement
-- "Fifteen years without consciously articulating it" — lands on photographers and writers
-- "Like seeing a map of a city I've lived in for decades" — this image works
+**Theme:** Encoded choice — taste has a shape, AI makes it legible
+- "That accumulation has a shape — even when you can't name it" — this lands on photographers and writers
 - "That's not replacement. That's revelation." — say it slow. Temperature about to drop.
+- "I'll show you exactly how to do that for yourself in a minute." — plant the Three Documents payoff, then advance
 
 ---
 
@@ -151,6 +151,8 @@
 **Theme:** The practical punk move — write your values in text before AI writes them for you
 - AI policy, style guide, worldview — say them fast, they're simple
 - "Feed your corpus into AI — ask it what you believe, what you sound like" — this surprises people
+- HERE: deliver the 20-photos story as the concrete example — "I did this with my own photographs..." — pays off the plant from slide 9
+- "Like seeing a map of a city I've lived in for decades but never seen from above." — the image lands here as proof, not mystery
 - "If your values aren't in text, to AI they basically don't exist." — land this as the takeaway
 
 ---

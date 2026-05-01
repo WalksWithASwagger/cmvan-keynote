@@ -103,11 +103,13 @@ Here's a question nobody asks: what did you throw away this week? What's on your
 
 ## The Pattern I Couldn't Name
 
-I uploaded twenty of my own photographs and asked AI to describe the structural patterns in my work. What came back stopped me cold. It had named something I'd been doing for fifteen years without ever consciously articulating it.
+Fifteen years of choices. Thousands of decisions about what to keep and what to refuse. That accumulation has a shape — even when you can't name it.
 
-It was like seeing a map of a city I've lived in for decades but never seen from above.
+What you call artistic instinct? That's encoded choice. Decades on the cutting room floor, compressed into a sensibility.
 
-What I thought of as artistic instinct? That's twenty years of choosing, encoded. AI made it legible. That's not replacement. That's revelation.
+AI made it legible. That's not replacement. That's revelation.
+
+I'll show you exactly how to do that for yourself in a minute.
 
 ---
 
@@ -218,6 +220,8 @@ Two — a style and voice guide. What are the ten words you refuse to say? What 
 Three — a worldview document. Your values, your politics, your perspective. Are you a feminist? An anarchist? A punk? Five sentences.
 
 Here's the thing: you don't have to write them from scratch. You already have the raw material. Your old blog posts. Your interviews. Your emails. Your photos. Your resume. Feed your corpus into AI and ask it to find the patterns. Ask it what you believe. Ask it what you sound like. It will hand you a first draft of who you already are.
+
+I did this with my own photographs. Twenty images. I asked AI to describe the structural patterns in my work. What came back stopped me cold. It named something I'd been doing for fifteen years without ever consciously articulating it — like seeing a map of a city I've lived in for decades but never seen from above. That's the document. That's who you already are on the page.
 
 Feed those documents back to whatever AI you use every day. The machine stops giving you the average of the internet. It starts amplifying what makes you you. If your values aren't in text, to AI they basically don't exist.
 
