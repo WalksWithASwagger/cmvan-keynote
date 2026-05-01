@@ -109,7 +109,7 @@
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
-> Black background. Two enormous options stacked vertically — BOOSTER in hot pink dripping paint at the top, DOOMER in blood-red stencil below — both violently crossed out with thick spray-paint X marks. A deliberate empty space below them — a white typewriter question mark sits in the void. Blood-red stencil at the bottom: BOTH FEEL CLEAN. BOTH ARE INCOMPLETE. Scattered illegible collage fragments at the edges. Maximum tension. The binary trap made visible — the third option is the empty space.
+> Black background. Split composition — a blood-red spray-painted vertical line divides the frame down the center. LEFT HALF: "BOOSTER" in massive hot pink dripping paint fills the top quarter. Below it, white typewriter text stacked in a column: "GET ON BOARD LOSER" / "DON'T CHOOSE — AI CHOOSES YOU" / "DISRUPTION IS DESTINY" / "RESISTANCE IS FUTILE" — frenetic, crowded, toxic positivity. RIGHT HALF: "DOOMER" in massive blood-red degraded stencil fills the top quarter. Below it, xerox-worn grim text stacked: "ENVIRONMENTAL COLLAPSE" / "SURVEILLANCE CAPITALISM" / "BIAS LAUNDERED AS MATH" / "RACE TO THE BOTTOM" — dark, grimy. Both labels crossed out with violent overlapping spray-paint X marks — hot pink on left, blood-red on right. Bottom center spanning both halves in white stencil: BOTH FEEL CLEAN. / BOTH ARE INCOMPLETE. Scattered illegible collage fragments bleed off all edges. Maximum xerox grain.
 
 ---
 
@@ -123,13 +123,13 @@
 
 ---
 
-## 13. More Creative Than Ever — The Proof
+## 13. Three Fears
 
-**For:** Slide 13 — Personal Testimony
+**For:** Slide 13 — Three Fears + Audience Engagement
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
-> Black background. Massive hot pink dripping paint dominates the center, three lines stacked: MORE CREATIVE. MORE PRODUCTIVE. MORE POWERFUL. Blood-red stencil below: THAN I HAVE EVER BEEN IN MY ENTIRE LIFE. A silhouette of a person with a camera — high-contrast B&W halftone — arms mid-motion, caught in the act of making. Hot pink spray paint circle around the figure. White typewriter at the bottom: BOTH STATEMENTS ARE TRUE. AT THE EXACT SAME TIME. Scattered illegible collage fragments. Maximum grain. The personal testimony made visible.
+> Off-white worn paper. Three torn-paper panels roughly assembled side by side with visible tape. Panel 1: a hand reaching into photographs in B&W halftone — blood-red label: THEFT. Panel 2: a ladder with bottom rungs cut off, hot pink label: JUNIOR PIPELINE. Panel 3: a downward-spiral drain arrow in blood red — label: RACE TO THE BOTTOM. Hot pink numbers 1, 2, 3 stamped above each panel. Dripping hot pink paint at top: THESE ARE REAL. Illegible news clippings pasted everywhere. No comfortable framing. No softening.
 
 ---
 
@@ -143,13 +143,13 @@
 
 ---
 
-## 15. Three Fears
+## 15. More Creative Than Ever — The Climax
 
-**For:** Slide 15 — Three Fears
+**For:** Slide 15 — Personal Testimony (after the full weight)
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
-> Off-white worn paper. Three torn-paper panels roughly assembled side by side with visible tape. Panel 1: a hand reaching into photographs in B&W halftone — blood-red label: THEFT. Panel 2: a ladder with bottom rungs cut off, hot pink label: JUNIOR PIPELINE. Panel 3: a downward-spiral drain arrow in blood red — label: RACE TO THE BOTTOM. Hot pink numbers 1, 2, 3 stamped above each panel. Dripping hot pink paint at top: THESE ARE REAL. Illegible news clippings pasted everywhere. No comfortable framing. No softening.
+> Black background, full bleed. Three massive stacked lines of hot pink dripping paint dominate the entire frame — each line a full third of the vertical space: MORE CREATIVE. / MORE PRODUCTIVE. / MORE POWERFUL. — paint drips running down from every letter. Beneath them in blood-red stencil, smaller but sharp: THAN I HAVE EVER BEEN IN MY ENTIRE LIFE. A high-contrast B&W halftone photographic silhouette composited into the design — a person with a camera raised mid-shot, arms extended, caught in the exact moment of making — figure partially obscured by the pink paint drips but the camera is visible. A hot pink spray-paint halo circle surrounds the figure. Lower quarter: white typewriter text, two centered lines: BOTH STATEMENTS ARE TRUE. / AT THE EXACT SAME TIME. Scattered illegible newspaper clippings and collage fragments bleeding off every edge. Maximum grain, maximum ink saturation. The personal testimony made visible after the full weight of the negative.
 
 ---
 

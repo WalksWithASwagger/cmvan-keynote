@@ -1,29 +1,58 @@
-# Session Handoff — May 1, 2026 (Talk Day)
+# Session Handoff — May 1, 2026 (Talk Day · v9 Final)
 ## Both Hands Full · Creative Mornings Vancouver
 
 ---
 
-## Final State
+## Final State (v9)
 
-**22 slides. ~18 min. Audio at 15.9MB.** All script, framework, image prompts, and speaker notes aligned.
+**22 slides. ~18 min. Audio regenerated.** All script, framework, image prompts, and speaker notes aligned to v9 climax reorder.
 
-**2 slides still need images generated:**
-- Slide 11 — Boosters vs Doomers
-- Slide 13 — More Creative Than Ever
+**All slides now have images:**
+- Slide 11 — Boosters vs Doomers: `cmvan-v6-gpt2/new-slides-20260501/run-20260501-060904/01-boosters-vs-doomers-split-composition.png` (variant B also available)
+- Slide 15 — More Creative Than Ever: `cmvan-v6-gpt2/new-slides-20260501/run-20260501-060904/03-more-creative-than-ever-text-as-artwork.png` (variant B also available)
 
-Everything else has existing 16:9 images from `assets/slides/cmvan-v6-gpt2-16x9/run-20260430-150613/`.
-Credits (slide 22) already generated at `assets/slides/cmvan-title-redo/26-credits-gpt2-v1.png`.
+All other slides: `assets/slides/cmvan-v6-gpt2-16x9/run-20260430-150613/`
+Credits (slide 22): `assets/slides/cmvan-title-redo/26-credits-gpt2-v1.png`
 
-**Viewer:** `assets/slides/viewer-22-final.html` — open in Chrome to see the full 22-slide layout with prompts for missing images.
+**Viewer:** `assets/slides/viewer-22-final.html` — open in Chrome to see the full 22-slide layout.
 
 ---
 
-## Tonight's Commit History (newest first)
+## Morning Session Changes (v9 Climax Reorder)
+
+### The structural fix
+"More Creative Than Ever" was at slide 13, right after "Both Hands Full." It didn't land with full weight because the audience hadn't felt the negative side yet.
+
+**New order (slides 13–15):**
+- Slide 13: Three Fears + Audience Engagement ← moved UP
+- Slide 14: Name What You See / Dr. Joy ← same position
+- Slide 15: More Creative Than Ever ← THE CLIMAX (moved down, lands as surprise after full weight)
+
+### Why it works now
+The emotional arc: Both Hands Full names the frame → Three Fears fills the left hand → Name What You See gets specific about harms → THEN the gut-punch: "Despite all that — I am more creative, more productive, and more powerful than I have ever been in my entire life."
+
+### Posse slide rewrite
+BC AI Community section reframed with bloodbath/lifeboat language: "I'm watching a bloodbath. Generative AI is consuming one creative industry after another... So I stopped waiting for someone to build the lifeboat and started building it myself."
+
+### New image prompts (slides 11 and 15)
+Both rejected from earlier attempt. New prompts are content-specific:
+- Slide 11: Split composition — left side has actual Booster phrases, right side has actual Doomer harms from the talk
+- Slide 15: Text-as-artwork (variant A) or portrait-as-testimony (variant B) — photographer silhouette composited with massive pink paint typography
+
+### Transitions patched
+1. BHF → Three Fears: "But before I rest there — let me be honest about what I'm holding in that left hand."
+2. Three Fears → Name What You See: "Now that we've named what's in that left hand — let me get specific about what we're holding."
+3. Name What You See → More Creative Than Ever: "Despite the extraction. Despite the misogyny laundered as math. Despite everything we just named in this room — here's what I need you to sit with at the exact same time:"
+
+---
+
+## Full Commit History (newest first)
 
 ```
-8c1b569  split BHF climax into two slides: frame + personal testimony
-bd5323e  trim to 21 slides: cut Open Everything + Spark Online; regenerate audio
-0bd1b0e  restructure to 23-slide final deck; add speaker notes + regenerate audio
+[v9 commit]  climax reorder: Three Fears → Name What You See → More Creative Than Ever; bloodbath/lifeboat Posse; new slide 11+15 images
+8c1b569      split BHF climax into two slides: frame + personal testimony
+bd5323e      trim to 21 slides: cut Open Everything + Spark Online; regenerate audio
+0bd1b0e      restructure to 23-slide final deck; add speaker notes + regenerate audio
 ```
 
 ---

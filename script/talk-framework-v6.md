@@ -1,6 +1,6 @@
 # Talk Framework v6: Sequential Narrative
 ## Creative Mornings Vancouver — May 1, 2026
-## 20 minutes · Five acts · 22 slides
+## 20 minutes · Seven acts · 22 slides
 
 **Format:** Straight monologue. Biography as argument. Story first, ideas second.  
 **Timing:** 20 min hard.  
@@ -100,9 +100,9 @@ Walk out. No rush. Let the room settle.
 
 ---
 
-## ACT III — THE COMPLICATION + CLIMAX (~5 min · Slides 10–13)
+## ACT III — THE CONFRONTATION (~3 min · Slides 10–12)
 
-*The temperature drops. The covenant breaks. The binary trap is named and refused. Both Hands Full names the frame — then the personal testimony lands as the proof.*
+*The temperature drops. The covenant breaks. The binary trap is named and refused. Both Hands Full names the frame.*
 
 **[SLIDE 10 — The AI Chapter]**
 
@@ -132,35 +132,13 @@ Walk out. No rush. Let the room settle.
 
 > That's not contradiction. That's complexity. I hold the critique in one hand. I hold the capability in the other. Both hands full. That's the only honest place to stand.
 
-**[SLIDE 13 — MORE CREATIVE THAN EVER]** ← THE PROOF
-
-> And here's what I need you to sit with at the same time as everything I just told you:
-
-> I am more creative, more productive, and more powerful than I have ever been in my entire life.
-
-> Both of those statements are true. At the exact same time.
-
-> Action is the antidote to despair. Not solutions. Not answers. Action. Make something small. Make it today.
-
 ---
 
-## ACT IV — THE PUNK CONDITION (~7 min · Slides 14–19)
+## ACT IV — THE WEIGHT (~3 min · Slides 13–14)
 
-*The turn. Naming, community, and practice. Each slide is a tool.*
+*Now that the frame is named — we fill the left hand. Fears named by the audience. Harms named precisely. The full weight of the negative before the surprise.*
 
-**[SLIDE 14 — Dr. Joy Buolamwini / Name What You See]**
-
-> Now that we're holding both, the left hand has more weight in it.
-
-> We've said the word "bias" so many times it's lost all meaning. Stop saying bias. Name what you're seeing.
-
-> Dr. Joy Buolamwini — founder of the Algorithmic Justice League — ran the Gender Shades study. Facial recognition fails on darker-skinned women at thirty-four point seven percent error rate versus zero-point-eight percent for lighter-skinned men. That's not a performance gap. That's racism and sexism embedded in code.
-
-> A colleague asked an image generator to create a "marketing professor." She got a man in a power pose — Harvard blazer, authority, gravitas. She asked for a female professor. She got a timid school teacher. Multiple rounds of prompting to get the same authority the system gave a man by default. That's not bias. That's misogyny.
-
-> I call it bias laundering — discrimination that looks like math. AI knows what's frequent, not what's fair. The mirror reflects. It doesn't correct. Correcting the mirror is your job.
-
-**[SLIDE 15 — Three Fears + Audience Engagement]**
+**[SLIDE 13 — Three Fears + Audience Engagement]**
 
 > Before I name the fears I carry — I want to hear yours. What scares you about this moment? Shout it out.
 
@@ -176,6 +154,40 @@ Walk out. No rush. Let the room settle.
 
 > These are real. I don't want to paper over them.
 
+**[SLIDE 14 — Dr. Joy Buolamwini / Name What You See]**
+
+> Now that we've named what's in that left hand — let me get specific about what we're holding.
+
+> We've said the word "bias" so many times it's lost all meaning. Stop saying bias. Name what you're seeing.
+
+> Dr. Joy Buolamwini — founder of the Algorithmic Justice League — ran the Gender Shades study. Facial recognition fails on darker-skinned women at thirty-four point seven percent error rate versus zero-point-eight percent for lighter-skinned men. That's not a performance gap. That's racism and sexism embedded in code.
+
+> A colleague asked an image generator to create a "marketing professor." She got a man in a power pose — Harvard blazer, authority, gravitas. She asked for a female professor. She got a timid school teacher. Multiple rounds of prompting to get the same authority the system gave a man by default. That's not bias. That's misogyny.
+
+> I call it bias laundering — discrimination that looks like math. AI knows what's frequent, not what's fair. The mirror reflects. It doesn't correct. Correcting the mirror is your job.
+
+---
+
+## ACT V — THE SURPRISE (~1 min · Slide 15)
+
+*The personal testimony. Only lands here because the audience has felt the full weight. The gut-punch after the weight.*
+
+**[SLIDE 15 — MORE CREATIVE THAN EVER]** ← THE CLIMAX
+
+> Despite the extraction. Despite the misogyny laundered as math. Despite everything we just named in this room — here's what I need you to sit with at the exact same time:
+
+> I am more creative, more productive, and more powerful than I have ever been in my entire life.
+
+> Both of those statements are true. At the exact same time.
+
+> Action is the antidote to despair. Not solutions. Not answers. Action. Make something small. Make it today.
+
+---
+
+## ACT VI — THE RESPONSE (~4 min · Slides 16–19)
+
+*The turn. Each slide is a tool.*
+
 **[SLIDE 16 — Stay at the Table]**
 
 > If every thoughtful, ethical, critical creative opts out of using AI because it is messy — who writes the rules? The tech bros. The people who don't see the problems.
@@ -186,11 +198,13 @@ Walk out. No rush. Let the room settle.
 
 **[SLIDE 17 — BC AI Community / Build a Posse]**
 
-> Don't build community — that word has lost its teeth. Build a posse. A small circle who share your taste, your ethics, your trust.
+> I'm watching a bloodbath. Generative AI is consuming one creative industry after another — coders, journalists, photographers, strategists. You see it. I see it. Nobody in this room is immune.
 
-> The BC AI Community started as exactly that. What's emerged is something closer to a resiliency network — an interconnected organism where people share what's working, what's failing, what they've learned. Kevin Friel — twenty-five years in Hollywood visual effects, Dune, Detective Pikachu — describes it like a conductor with a bigger orchestra. Get it eighty-five percent of the way there with the tools, then use craft to finish. The conductor doesn't become irrelevant when the orchestra grows. The conductor becomes more important.
+> So I stopped waiting for someone to build the lifeboat and started building it myself.
 
-> The Selector didn't work alone. The weirdos always traveled in packs.
+> The BC AI Community. Four hundred members. Nine thousand newsletter subscribers. We're learning together — what's working, what's failing, what to refuse. Kevin Friel — twenty-five years in Hollywood visual effects, Dune, Detective Pikachu — describes it like a conductor with a bigger orchestra. Get it eighty-five percent there with AI, then use craft to finish. The conductor doesn't become irrelevant when the orchestra grows. The conductor becomes more important.
+
+> Don't build community — that word has lost its teeth. Build a posse. The lifeboat is the posse. And it has room for one more.
 
 **[SLIDE 18 — Three Documents]**
 
@@ -218,7 +232,7 @@ Walk out. No rush. Let the room settle.
 
 ---
 
-## ACT V — THE MOVE (~2 min · Slides 20–22)
+## ACT VII — THE CLOSE (~2 min · Slides 20–22)
 
 *The turn from argument to action. Concrete, fast, earned.*
 
@@ -260,9 +274,10 @@ Dr. Joy Buolamwini · Matt Lambert · Kevin Friel · Brett Gailor · Corey Docto
 | 3:00 | Act II — Dada lineage |
 | 7:00 | Act III — "I find my relationship with AI..." |
 | 11:00 | Slide 12 — "Both hands full" — THE FRAME |
-| 11:30 | Slide 13 — "I am more creative..." — THE PROOF |
-| 13:00 | Act IV — Name What You See / Three Fears |
-| 18:00 | Act V — Release Day |
+| 11:30 | Act IV — Three Fears + Name What You See |
+| 14:00 | Slide 15 — "I am more creative..." — THE CLIMAX |
+| 15:00 | Act VI — Stay at Table / Posse / Documents |
+| 18:00 | Act VII — Release Day |
 | 20:00 | "You coming?" |
 
 ---
@@ -298,7 +313,7 @@ Dr. Joy Buolamwini · Matt Lambert · Kevin Friel · Brett Gailor · Corey Docto
 - "I find my relationship with AI completely non-consensual" — let it land. Don't rush.
 - Slide 11 (Boosters vs Doomers) — set the trap, pause before the pivot.
 - Slide 12 — ONE sentence names the frame. Advance quickly.
-- Slide 13 — hold "I am more creative..." before continuing. Let the room sit with it.
-- Slide 15: genuinely listen to the audience. Don't perform listening.
+- Slide 13: genuinely listen to the audience. Don't perform listening.
+- Slide 15 — hold "I am more creative..." before continuing. The surprise only lands because the weight came first.
 - Act IV is tools, not argument. Keep it moving.
 - "You coming?" is the last line. Nothing after it. Look at the room.

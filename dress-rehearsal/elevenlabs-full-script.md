@@ -145,21 +145,23 @@ That's not contradiction. That's complexity. I hold the critique in one hand. I 
 
 ---
 
-## More Creative Than Ever
+## Three Fears
 
-And here's what I need you to sit with at the same time as everything I just told you:
+But before I rest there — let me be honest about what I'm holding in that left hand. I want to name the fears directly. Not "AI is scary." The specific things.
 
-I am more creative, more productive, and more powerful than I have ever been in my entire life.
+First: consent and theft. Not just my photos — the entire infrastructure of human creative work, scraped without permission, to build commercial products. I am not anti-remix. Dada was remix. Hip Hop was remix. The open internet I helped build was remix. Remix has culture. Extraction has appetite. What AI did was extraction.
 
-Both of those statements are true. At the exact same time.
+Second: the junior pipeline. How does a young creative learn if there's no market for the entry-level work that teaches you? What happens when the bottom rungs disappear? Entry-level jobs are vanishing. That's the pipeline that trained the next generation. I don't have a clean answer. The people who say they do are not being honest with you. We owe young creatives honesty, not reassurance.
 
-Action is the antidote to despair. Not solutions. Not answers. Action. Make something small. Make it today.
+Third: the race to the bottom. AI-generated output competing with human creative work at the low end, driving down rates, normalizing mediocrity at scale.
+
+These are real. I don't want to paper over them.
 
 ---
 
 ## Dr. Joy Buolamwini — Name What You See
 
-Now that we're holding both, the left hand has more weight in it.
+Now that we've named what's in that left hand — let me get specific about what we're holding.
 
 We've said the word bias so many times it's lost all meaning. Stop saying bias. Name what you're seeing.
 
@@ -171,17 +173,15 @@ I call it bias laundering — discrimination that looks like math. AI knows what
 
 ---
 
-## Three Fears
+## More Creative Than Ever
 
-I want to name the fears directly. Not "AI is scary." The specific things.
+Despite the extraction. Despite the misogyny laundered as math. Despite everything we just named in this room — here's what I need you to sit with at the exact same time:
 
-First: consent and theft. Not just my photos — the entire infrastructure of human creative work, scraped without permission, to build commercial products. I am not anti-remix. Dada was remix. Hip Hop was remix. The open internet I helped build was remix. Remix has culture. Extraction has appetite. What AI did was extraction.
+I am more creative, more productive, and more powerful than I have ever been in my entire life.
 
-Second: the junior pipeline. How does a young creative learn if there's no market for the entry-level work that teaches you? What happens when the bottom rungs disappear? Entry-level jobs are vanishing. That's the pipeline that trained the next generation. I don't have a clean answer. The people who say they do are not being honest with you. We owe young creatives honesty, not reassurance.
+Both of those statements are true. At the exact same time.
 
-Third: the race to the bottom. AI-generated output competing with human creative work at the low end, driving down rates, normalizing mediocrity at scale.
-
-These are real. I don't want to paper over them.
+Action is the antidote to despair. Not solutions. Not answers. Action. Make something small. Make it today.
 
 ---
 
@@ -197,11 +197,13 @@ Vancouver is the home of Adbusters and Greenpeace. We have been turning corporat
 
 ## BC AI Community — Build a Posse
 
-Don't build community — that word has lost its teeth. Build a posse. A small circle who share your taste, your ethics, your trust.
+I'm watching a bloodbath. Generative AI is consuming one creative industry after another — coders, journalists, photographers, strategists. You see it. I see it. Nobody in this room is immune.
 
-The BC AI Community started as exactly that. What's emerged is closer to a resiliency network — an interconnected organism where people share what's working, what's failing, what they've learned. Kevin Friel — twenty-five years in Hollywood visual effects, Dune, Detective Pikachu — describes it like a conductor with a bigger orchestra. Get it eighty-five percent of the way there with AI, then use craft to finish. The conductor doesn't become irrelevant when the orchestra grows. The conductor becomes more important.
+So I stopped waiting for someone to build the lifeboat and started building it myself.
 
-The Selector didn't work alone. The weirdos always traveled in packs.
+The BC AI Community. Four hundred members. Nine thousand newsletter subscribers. We're learning together — what's working, what's failing, what to refuse. Kevin Friel — twenty-five years in Hollywood visual effects, Dune, Detective Pikachu — describes it like a conductor with a bigger orchestra. Get it eighty-five percent there with AI, then use craft to finish. The conductor doesn't become irrelevant when the orchestra grows. The conductor becomes more important.
+
+Don't build community — that word has lost its teeth. Build a posse. The lifeboat is the posse. And it has room for one more.
 
 ---
 

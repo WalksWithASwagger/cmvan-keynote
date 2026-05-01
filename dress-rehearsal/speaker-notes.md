@@ -99,18 +99,20 @@
 
 ---
 
-## Slide 13 — More Creative Than Ever ← THE PROOF
-**Theme:** The personal testimony — sit with all of it and ALSO this
-- "And here's what I need you to sit with..." — setup, then pause before the reveal
-- "I am more creative, more productive, and more powerful than I have ever been in my entire life." — say it big, then go quiet
-- "Both of those statements are true. At the exact same time." — let the room hold both
-- "Action is the antidote to despair." — this is the call. Point at the room.
-- Big energy shift here. The rest of the talk is practical.
+## Slide 13 — Three Fears + Audience Engagement
+**Theme:** Name the weight in the left hand before the surprise
+- AUDIENCE BEAT: "What scares you about this moment? Shout it out." — genuinely listen, ~60 sec
+- Acknowledge themes from the room before naming your own three
+- "Remix has culture. Extraction has appetite." — say it like a verdict
+- "We owe young creatives honesty, not reassurance." — don't soften this
+- "These are real. I don't want to paper over them." — close firmly
 
 ---
 
 ## Slide 14 — Name What You See (Dr. Joy)
-**Theme:** Stop saying bias — name misogyny, racism, bias laundering
+**Theme:** Stop saying bias — get specific, get named
+- Left hand is now loaded — fears named by audience AND by you. Get specific now.
+- "Now that we've named what's in that left hand — let me get specific about what we're holding."
 - "Stop saying bias. Name what you're seeing." — firm, not preachy
 - The marketing professor story gets recognition in every room — let it breathe
 - "Bias laundering — discrimination that looks like math." — this phrase does the work
@@ -118,13 +120,14 @@
 
 ---
 
-## Slide 15 — Three Fears + Audience Engagement
-**Theme:** Three specific fears — named honestly, then audience invited in
-- AUDIENCE BEAT: "What scares you about this moment? Shout it out." — genuinely listen, ~60 sec
-- Acknowledge themes from the room before naming your own three
-- "Remix has culture. Extraction has appetite." — say it like a verdict
-- "We owe young creatives honesty, not reassurance." — don't soften this
-- "These are real. I don't want to paper over them." — close firmly
+## Slide 15 — More Creative Than Ever ← THE CLIMAX
+**Theme:** The surprise testimony — only lands here because the full weight came first
+- The surprise hits hardest here. Acknowledge the weight: "Despite the extraction. Despite the misogyny laundered as math. Despite everything we just named..."
+- Pause before: "here's what I need you to sit with at the exact same time:"
+- "I am more creative, more productive, and more powerful than I have ever been in my entire life." — say it big, then go quiet
+- "Both of those statements are true. At the exact same time." — let the room hold both
+- "Action is the antidote to despair." — this is the call. Point at the room.
+- Big energy shift here. The rest of the talk is practical.
 
 ---
 
