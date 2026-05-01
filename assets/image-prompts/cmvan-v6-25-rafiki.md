@@ -1,5 +1,5 @@
 # Punk Rock AI — Creative Mornings Vancouver
-## Image Prompts v6 · cmvan style · 16:9 · 23 slides
+## Image Prompts v6 · cmvan style · 16:9 · 21 slides
 
 ---
 
@@ -43,29 +43,9 @@
 
 ---
 
-## 5. Open Everything
+## 5. Dada to AI Lineage
 
-**For:** Slide 5 — Open Source
-**Style:** cmvan
-**Aspect Ratio:** 16:9
-**Prompt:**
-> Off-white worn paper background. A hand-drawn network map of interconnected nodes — websites, band names, studios — in black ink, with blood-red connecting lines. Massive hot pink dripping-paint letters across the top: OPEN EVERYTHING. Collaged elements: a Grateful Dead skull-and-roses motif in B&W halftone, a band flyer fragment, rain drops. A padlock with a blood-red X slashed through it. Illegible typewriter fragments everywhere. Hot pink spray-painted circles around key nodes. Nothing locked, everything connected. Abundance through openness.
-
----
-
-## 6. Spark Online
-
-**For:** Slide 6 — Spark Online
-**Style:** cmvan
-**Aspect Ratio:** 16:9
-**Prompt:**
-> Black background. A zine masthead layout. Blood-red stencil letters at top: SPARK ONLINE — hot pink registration marks bleeding around the edges. Below in white typewriter: EXPLORING ELECTRONIC CONSCIOUSNESS. A browser window circa 1998 in B&W halftone, distressed. A design award ribbon in hot pink. Torn paper edges everywhere. Illegible margin text on all sides. Multiple wheat-pasted layers overlapping. A glowing spark or signal point in blood red at center. Early internet energy — raw, handmade, electric.
-
----
-
-## 7. Dada to AI Lineage
-
-**For:** Slide 7 — Dada lineage
+**For:** Slide 5 — Dada lineage
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -73,9 +53,9 @@
 
 ---
 
-## 8. The Selector
+## 6. The Selector
 
-**For:** Slide 8 — Taste / Selector
+**For:** Slide 6 — Taste / Selector
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -83,9 +63,9 @@
 
 ---
 
-## 9. Feedback Loop Mastery Gym
+## 7. Feedback Loop Mastery Gym
 
-**For:** Slide 9 — Feedback Loop
+**For:** Slide 7 — Feedback Loop
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -93,9 +73,9 @@
 
 ---
 
-## 10. Cutting Room Floor
+## 8. Cutting Room Floor
 
-**For:** Slide 10 — Cutting Room Floor
+**For:** Slide 8 — Cutting Room Floor
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -103,9 +83,9 @@
 
 ---
 
-## 11. Pattern I Couldn't Name
+## 9. Pattern I Couldn't Name
 
-**For:** Slide 11 — Pattern Recognition
+**For:** Slide 9 — Pattern Recognition
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -113,9 +93,9 @@
 
 ---
 
-## 12. The AI Chapter
+## 10. The AI Chapter
 
-**For:** Slide 12 — AI Chapter
+**For:** Slide 10 — AI Chapter
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -123,9 +103,9 @@
 
 ---
 
-## 13. Boosters vs Doomers
+## 11. Boosters vs Doomers
 
-**For:** Slide 13 — The Binary Trap
+**For:** Slide 11 — The Binary Trap
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -133,9 +113,9 @@
 
 ---
 
-## 14. Both Hands Full — Climax
+## 12. Both Hands Full — Climax
 
-**For:** Slide 14 — Both Hands Full (Climax)
+**For:** Slide 12 — Both Hands Full (Climax)
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -143,9 +123,9 @@
 
 ---
 
-## 15. Name What You See
+## 13. Name What You See
 
-**For:** Slide 15 — Dr. Joy Buolamwini
+**For:** Slide 13 — Dr. Joy Buolamwini
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -153,9 +133,9 @@
 
 ---
 
-## 16. Three Fears
+## 14. Three Fears
 
-**For:** Slide 16 — Three Fears
+**For:** Slide 14 — Three Fears
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -163,9 +143,9 @@
 
 ---
 
-## 17. Stay at the Table
+## 15. Stay at the Table
 
-**For:** Slide 17 — Stay at the Table
+**For:** Slide 15 — Stay at the Table
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -173,9 +153,9 @@
 
 ---
 
-## 18. Build a Posse
+## 16. Build a Posse
 
-**For:** Slide 18 — BC AI Community
+**For:** Slide 16 — BC AI Community
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -183,9 +163,9 @@
 
 ---
 
-## 19. Three Documents
+## 17. Three Documents
 
-**For:** Slide 19 — Three Documents
+**For:** Slide 17 — Three Documents
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -193,9 +173,9 @@
 
 ---
 
-## 20. The Tool Is Never Neutral
+## 18. The Tool Is Never Neutral
 
-**For:** Slide 20 — Anthony Joseph / Tool Never Neutral
+**For:** Slide 18 — Anthony Joseph / Tool Never Neutral
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -203,9 +183,9 @@
 
 ---
 
-## 21. Release Day
+## 19. Release Day
 
-**For:** Slide 21 — Release Day
+**For:** Slide 19 — Release Day
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -213,9 +193,9 @@
 
 ---
 
-## 22. Dead Fish Live Fish
+## 20. Dead Fish Live Fish
 
-**For:** Slide 22 — Close
+**For:** Slide 20 — Close
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Prompt:**
@@ -223,9 +203,9 @@
 
 ---
 
-## 23. Credits / Thank You
+## 21. Credits / Thank You
 
-**For:** Slide 23 — Credits
+**For:** Slide 21 — Credits
 **Style:** cmvan
 **Aspect Ratio:** 16:9
 **Note:** Images already generated at `assets/slides/cmvan-title-redo/26-credits-gpt2-v*.png` — select best.

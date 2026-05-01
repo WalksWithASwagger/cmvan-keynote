@@ -1,6 +1,6 @@
 # Talk Framework v6: Sequential Narrative
 ## Creative Mornings Vancouver — May 1, 2026
-## 20 minutes · Five acts · 23 slides
+## 20 minutes · Five acts · 21 slides
 
 **Format:** Straight monologue. Biography as argument. Story first, ideas second.  
 **Timing:** 20 min hard.  
@@ -16,9 +16,9 @@ Start human. Stay human. The ideas land because the story lands first.
 
 ---
 
-## ACT I — WHO I AM (~4 min · Slides 1–5)
+## ACT I — ORIGIN (~3 min · Slides 1–4)
 
-*The biographical foundation. By the end of this act the audience knows who Kris is and what he believes about sharing and openness — which makes the betrayal in Act III land harder.*
+*Three biographical stories in a row. By slide 4 the audience knows: sharing freely was the covenant, openness was the identity. That's what makes the betrayal land.*
 
 **[SLIDE 1 — BOTH HANDS FULL]**
 
@@ -50,27 +50,13 @@ Walk out. No rush. Let the room settle.
 
 > For twenty years that logic was sound. AI broke it. I'll come back to that.
 
-**[SLIDE 5 — Open Everything]**
-
-> Same principle when I moved back to Vancouver and co-founded Bryght with Boris Mann — the world's first Drupal services company. We built a reseller network, built fifty-plus band sites, built Dead.net for the Grateful Dead. I eventually acquired Rain City Studios and became its president.
-
-> A client once asked: "You want me to pay for software that's free?" I said: you know how to drive a car, but if the engine explodes, you're not rebuilding it yourself. The software was free. The expertise wasn't. Open source wasn't a business model. It was a refusal to build walls.
-
-> Open source taught me: value doesn't live in the locked file. Value lives in relationship, expertise, community, trust. I couldn't see it yet, but that's the principle AI would later turn against me.
-
 ---
 
-## ACT II — THE PATTERN (~5 min · Slides 6–11)
+## ACT II — THE PATTERN (~4 min · Slides 5–9)
 
-*The lineage. This is where the talk earns the right to say "this story is not new." Every generation does the same thing with the infrastructure they inherit.*
+*The lineage. Every generation uses the new corporate infrastructure against the spectacle. This earns the right to say AI is not new — and sets up the Selector as the frame for taste.*
 
-**[SLIDE 6 — Spark Online]**
-
-> In 1998, I launched a web publication called Spark Online. I was Editor-in-Chief. We won design awards. Got invited to speak at Columbia University's Masters of Journalism conference. The tagline was "exploring electronic consciousness." Pre-blog, pre-social media — a small circle of people building public lives on the web. The practice that came with it: document everything. Publish before, during, and after.
-
-> Before I get to what happened next, I need to give you a framework. Because this story is not new.
-
-**[SLIDE 7 — Dada >> Punk >> DJs >> Hip Hop >> AI]**
+**[SLIDE 5 — Dada >> Punk >> DJs >> Hip Hop >> AI]**
 
 > The Dadaists picked up the newspaper — a corporate mass-production technology — and tore it into collage. The Situationists called it *détournement* — taking the tools of corporate spectacle and turning them against the spectacle. The Xerox punks picked up the copy machine and made zines. Burroughs cut up text and rearranged it on the floor: *arrangement and selection is the medium*.
 
@@ -78,7 +64,7 @@ Walk out. No rush. Let the room settle.
 
 > Every generation: the corporations build the infrastructure. The weirdos figure out what it's actually for.
 
-**[SLIDE 8 — The Selector / Taste]**
+**[SLIDE 6 — The Selector / Taste]**
 
 > In Kingston, making the sound wasn't the hard part anymore. Knowing *which* sound the room needed at that exact moment — that was the skill. That was taste.
 
@@ -88,7 +74,7 @@ Walk out. No rush. Let the room settle.
 
 > The Selector is the job. It always was.
 
-**[SLIDE 9 — The Feedback Loop / Mastery Gym]**
+**[SLIDE 7 — The Feedback Loop / Mastery Gym]**
 
 > Think about what mastery used to look like. Shoot a roll of film. Develop it. Hope a magazine publishes it. A reader writes a letter. That loop took a year. That's why mastery took fifteen.
 
@@ -98,13 +84,13 @@ Walk out. No rush. Let the room settle.
 
 > The AI assists within each phase. It must not determine what comes next. That's the human's job. Every time.
 
-**[SLIDE 10 — The Cutting Room Floor]**
+**[SLIDE 8 — The Cutting Room Floor]**
 
 > The loop is only as good as the taste you bring to it. The machine didn't teach me what good looks like. Twenty years of choosing did.
 
 > Here's a question nobody asks: *what did you throw away this week?* What's on your cutting room floor? Because that's your taste. Not what you kept — what you refused to keep.
 
-**[SLIDE 11 — Pattern I Couldn't Name]**
+**[SLIDE 9 — Pattern I Couldn't Name]**
 
 > I uploaded twenty of my own photographs and asked AI to describe the structural patterns in my work. What came back stopped me cold. It had named something I'd been doing for fifteen years without ever consciously articulating it.
 
@@ -114,11 +100,11 @@ Walk out. No rush. Let the room settle.
 
 ---
 
-## ACT III — THE COMPLICATION + CLIMAX (~5 min · Slides 12–14)
+## ACT III — THE COMPLICATION + CLIMAX (~4 min · Slides 10–12)
 
 *The temperature drops. The covenant breaks. The binary trap is named and refused. Both Hands Full is the climax.*
 
-**[SLIDE 12 — The AI Chapter]**
+**[SLIDE 10 — The AI Chapter]**
 
 > And then AI arrived. Here's where it gets complicated in a way I haven't fully resolved.
 
@@ -132,7 +118,7 @@ Walk out. No rush. Let the room settle.
 
 > The thing that made me who I am — the openness — is the thing that was exploited. I haven't resolved that. I'm living inside it.
 
-**[SLIDE 13 — Boosters vs Doomers]**
+**[SLIDE 11 — Boosters vs Doomers]**
 
 > Most conversations about AI force you to pick a side.
 
@@ -142,7 +128,7 @@ Walk out. No rush. Let the room settle.
 
 > Both feel clean. Both are incomplete. You're in a room full of creative professionals. You know the binary is lazy writing. Two-dimensional characters don't move anyone. The interesting choice is always the third option — the one that's harder to hold.
 
-**[SLIDE 14 — BOTH HANDS FULL]** ← THE CLIMAX
+**[SLIDE 12 — BOTH HANDS FULL]** ← THE CLIMAX
 
 > And here's what I need you to sit with at the same time as everything I just told you:
 
@@ -156,11 +142,11 @@ Walk out. No rush. Let the room settle.
 
 ---
 
-## ACT IV — THE PUNK CONDITION (~7 min · Slides 15–20)
+## ACT IV — THE PUNK CONDITION (~7 min · Slides 13–18)
 
-*The turn. The argument expands into naming, community, and practice. Each slide is a tool.*
+*The turn. Naming, community, and practice. Each slide is a tool.*
 
-**[SLIDE 15 — Dr. Joy Buolamwini / Name What You See]**
+**[SLIDE 13 — Dr. Joy Buolamwini / Name What You See]**
 
 > Now that we're holding both, the left hand has more weight in it.
 
@@ -172,7 +158,7 @@ Walk out. No rush. Let the room settle.
 
 > I call it bias laundering — discrimination that looks like math. AI knows what's frequent, not what's fair. The mirror reflects. It doesn't correct. Correcting the mirror is your job.
 
-**[SLIDE 16 — Three Fears + Audience Engagement]**
+**[SLIDE 14 — Three Fears + Audience Engagement]**
 
 > Before I name the fears I carry — I want to hear yours. What scares you about this moment? Shout it out.
 
@@ -188,7 +174,7 @@ Walk out. No rush. Let the room settle.
 
 > These are real. I don't want to paper over them.
 
-**[SLIDE 17 — Stay at the Table]**
+**[SLIDE 15 — Stay at the Table]**
 
 > If every thoughtful, ethical, critical creative opts out of using AI because it is messy — who writes the rules? The tech bros. The people who don't see the problems.
 
@@ -196,7 +182,7 @@ Walk out. No rush. Let the room settle.
 
 > Vancouver is the home of Adbusters and Greenpeace. We have been turning corporate infrastructure into counterculture since before most tech cities had a scene. That's the tradition you're in. Not opting out — using it wrong.
 
-**[SLIDE 18 — BC AI Community / Build a Posse]**
+**[SLIDE 16 — BC AI Community / Build a Posse]**
 
 > Don't build community — that word has lost its teeth. Build a posse. A small circle who share your taste, your ethics, your trust.
 
@@ -204,7 +190,7 @@ Walk out. No rush. Let the room settle.
 
 > The Selector didn't work alone. The weirdos always traveled in packs.
 
-**[SLIDE 19 — Three Documents]**
+**[SLIDE 17 — Three Documents]**
 
 > The most practical punk move I know: write three documents.
 
@@ -218,9 +204,9 @@ Walk out. No rush. Let the room settle.
 
 > Feed those documents back to whatever AI you use every day. The machine stops giving you the average of the internet. It starts amplifying what makes you *you*. If your values aren't in text, to AI they basically don't exist.
 
-**[SLIDE 20 — The Tool Is Never Neutral]**
+**[SLIDE 18 — The Tool Is Never Neutral]**
 
-> Every Vancouver AI Community gathering starts with an Indigenous welcome from the Coast Salish territory. Anthony Joseph — Isiléyu — said something I think about constantly.
+> Every Vancouver AI Community gathering starts with an Indigenous welcome. Anthony Joseph — Isiléyu — said something I think about constantly.
 
 > He said: my ancestors didn't have chainsaws. But they would've used them if they were there.
 
@@ -230,11 +216,11 @@ Walk out. No rush. Let the room settle.
 
 ---
 
-## ACT V — THE MOVE (~2 min · Slides 21–23)
+## ACT V — THE MOVE (~2 min · Slides 19–21)
 
 *The turn from argument to action. Concrete, fast, earned.*
 
-**[SLIDE 21 — Release Day]**
+**[SLIDE 19 — Release Day]**
 
 > The global Release Day is May twenty-ninth. Four weeks.
 
@@ -246,7 +232,7 @@ Walk out. No rush. Let the room settle.
 
 > Punk never was.
 
-**[SLIDE 22 — Dead Fish / Live Fish]**
+**[SLIDE 20 — Dead Fish / Live Fish]**
 
 > I've carried a line since I was fifteen. My youth pastor used to say it: any dead fish can float downstream. But it takes a live fish to swim against the current.
 
@@ -256,7 +242,7 @@ Walk out. No rush. Let the room settle.
 
 > You coming?
 
-**[SLIDE 23 — Credits / Thank You]**
+**[SLIDE 21 — Credits / Thank You]**
 
 *Warm close. Acknowledge the people. Let it breathe.*
 
@@ -269,11 +255,11 @@ Dr. Joy Buolamwini · Matt Lambert · Kevin Friel · Brett Gailor · Corey Docto
 | Time | Where |
 |------|-------|
 | 0:00 | Act I opens — Cult Baby |
-| 4:00 | Act II — Spark Online / Dada lineage |
-| 9:00 | Act III — "I find my relationship with AI..." |
-| 13:30 | Slide 14 — "Both hands full" — THE CLIMAX |
-| 15:00 | Act IV — Name What You See / Three Fears |
-| 19:00 | Act V — Release Day |
+| 3:00 | Act II — Dada lineage |
+| 7:00 | Act III — "I find my relationship with AI..." |
+| 11:00 | Slide 12 — "Both hands full" — THE CLIMAX |
+| 13:00 | Act IV — Name What You See / Three Fears |
+| 18:00 | Act V — Release Day |
 | 20:00 | "You coming?" |
 
 ---
@@ -307,8 +293,8 @@ Dr. Joy Buolamwini · Matt Lambert · Kevin Friel · Brett Gailor · Corey Docto
 - Open quiet. No slides until Cult Baby. Let the room find you.
 - Name Kelly and Debbie out loud. Look for them in the room.
 - "I find my relationship with AI completely non-consensual" — let it land. Don't rush.
-- Slide 13 (Boosters vs Doomers) — set the trap, pause before the pivot.
-- Slide 14 is the climax — let both-hands energy shift the room.
-- Slide 16: genuinely listen to the audience. Don't perform listening.
+- Slide 11 (Boosters vs Doomers) — set the trap, pause before the pivot.
+- Slide 12 is the climax — let both-hands energy shift the room.
+- Slide 14: genuinely listen to the audience. Don't perform listening.
 - Act IV is tools, not argument. Keep it moving.
 - "You coming?" is the last line. Nothing after it. Look at the room.

@@ -57,25 +57,9 @@ For twenty years that logic was sound. AI broke it. I'll come back to that.
 
 ---
 
-## Open Everything
-
-Around the same time, I moved back to Vancouver and co-founded Bryght with Boris Mann — the world's first Drupal services company. We built a reseller network. Built fifty-plus band sites. Built Dead.net for the Grateful Dead. I eventually acquired Rain City Studios and became its president.
-
-A client once asked me: "You want me to pay for software that's free?" I said: you know how to drive a car, but if the engine explodes, you're not rebuilding it yourself. The software was free. The expertise wasn't. Open source wasn't a business model. It was a refusal to build walls.
-
-Open source taught me: value doesn't live in the locked file. Value lives in relationship, expertise, community, trust. The more you share, the stronger the network becomes. I couldn't see it yet, but that's the principle AI would later turn against me.
-
----
-
-## Spark Online
-
-In 1998, I launched a web publication called Spark Online. I was the Editor-in-Chief. We won design awards. Got invited to speak at Columbia University's Masters of Journalism conference. The tagline was "exploring electronic consciousness." Pre-blog, pre-social media — a small circle of people building public lives on the web. And the practice that came with it: document everything. Publish before, during, and after. Not to build an audience. To build infrastructure against forgetting.
-
-Before I get to what happened next, I need to give you a framework. Because this story is not new.
-
----
-
 ## Dada, Punk, DJs, Hip Hop, AI
+
+Here's a framework. Because this story is not new.
 
 The Dadaists picked up the newspaper — a corporate mass-production technology — and tore it into collage. The Situationists called it détournement: taking the tools of corporate spectacle and turning them against the spectacle. William Burroughs cut up text and rearranged it on the floor. His whole point: arrangement and selection is the medium.
 

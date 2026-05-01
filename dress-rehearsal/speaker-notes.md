@@ -1,5 +1,5 @@
 # Both Hands Full — Speaker Notes
-## Creative Mornings Vancouver · May 1, 2026 · 23 slides · ~20 min
+## Creative Mornings Vancouver · May 1, 2026 · 21 slides · ~20 min
 
 ---
 
@@ -28,38 +28,22 @@
 ---
 
 ## Slide 4 — 145,000 Frames
-**Theme:** Radical openness as strategy — and its eventual betrayal
-- "Obscurity is your enemy, not piracy" — this is the thesis of the next twenty years
-- "Giving away made me invaluable" — biggest laugh/recognition beat in Act I
-- End with: "For twenty years that logic was sound. AI broke it. I'll come back to that." — plant the hook
+**Theme:** Radical openness as strategy — and the covenant that will be broken
+- "Obscurity is your enemy, not piracy" — the thesis of the next twenty years
+- "Giving away made me invaluable" — biggest recognition beat in Act I
+- "For twenty years that logic was sound. AI broke it. I'll come back to that." — plant the hook, then pivot to the pattern
 
 ---
 
-## Slide 5 — Open Everything
-**Theme:** Open source as philosophy — value lives in relationship, not locked files
-- Dead.net, Bryght, Rain City — establish Vancouver creative tech roots briefly
-- "The expertise wasn't free" — the punchline of the client story
-- Close: "That's the principle AI would later turn against me." — second hook planted
+## Slide 5 — Dada >> Punk >> DJs >> Hip Hop >> AI
+**Theme:** Every generation uses corporate infrastructure against the spectacle — this story is not new
+- Open with energy: "Here's a framework. Because this story is not new."
+- Détournement, Burroughs, Xerox punks, Selector, Hip Hop — just land the rhythm, don't explain
+- "The weirdos figure out what it's actually for." — pause on this. This is the thesis.
 
 ---
 
-## Slide 6 — Spark Online
-**Theme:** Early internet punk — document everything, build in public
-- 1998, Columbia journalism, "exploring electronic consciousness" — land the absurdity with warmth
-- "This story is not new" — frame shift coming
-- Brief slide — don't linger; it's a bridge to the lineage
-
----
-
-## Slide 7 — Dada >> Punk >> DJs >> Hip Hop >> AI
-**Theme:** Every generation uses corporate infrastructure against itself
-- Détournement, Burroughs, Xerox punks — you don't need to explain all of them, just land the rhythm
-- "The weirdos figure out what it's actually for." — pause on this
-- This is the thesis of the whole talk. Say it like it matters.
-
----
-
-## Slide 8 — The Selector / Taste
+## Slide 6 — The Selector / Taste
 **Theme:** Taste is the scarce resource now that generation is free
 - "Your specific weird eye" — give this room to land
 - "Instinct for when something is technically fine but somehow wrong" — this gets nods
@@ -67,7 +51,7 @@
 
 ---
 
-## Slide 9 — Feedback Loop / Mastery Gym
+## Slide 7 — Feedback Loop / Mastery Gym
 **Theme:** Speed without judgment is noise — the gym only works if you show up
 - "Like a gym for the development of taste" — the metaphor that lands consistently
 - "Leaf blower — moving the mess around, turning gas into noise" — this gets laughs
@@ -75,7 +59,7 @@
 
 ---
 
-## Slide 10 — Cutting Room Floor
+## Slide 8 — Cutting Room Floor
 **Theme:** What you reject defines your taste more than what you keep
 - Short beat — don't over-explain
 - "What did you throw away this week?" — rhetorical, but pause for it to sink in
@@ -83,23 +67,23 @@
 
 ---
 
-## Slide 11 — Pattern I Couldn't Name
+## Slide 9 — Pattern I Couldn't Name
 **Theme:** AI as mirror that reveals unconscious patterns — revelation, not replacement
-- "Fifteen years without consciously articulating it" — this lands on photographers and writers
+- "Fifteen years without consciously articulating it" — lands on photographers and writers
 - "Like seeing a map of a city I've lived in for decades" — this image works
-- "That's not replacement. That's revelation." — say it slow, let it sit. Temperature about to drop.
+- "That's not replacement. That's revelation." — say it slow. Temperature about to drop.
 
 ---
 
-## Slide 12 — The AI Chapter
+## Slide 10 — The AI Chapter
 **Theme:** The covenant broke — non-consensual, 1800 images scraped
 - "I find my relationship with AI completely non-consensual." — let it land, hold the beat
 - "They took the file. They did not keep the relationship." — the clearest sentence in the talk
-- "I haven't resolved that. I'm living inside it." — do NOT rush past this. Authenticity is the whole slide.
+- "I haven't resolved that. I'm living inside it." — do NOT rush. Authenticity is the whole slide.
 
 ---
 
-## Slide 13 — Boosters vs Doomers
+## Slide 11 — Boosters vs Doomers
 **Theme:** Name the binary trap before refusing it
 - "Both feel clean. Both are incomplete." — pause between each
 - "You know the binary is lazy writing." — CMVan audience will feel this viscerally
@@ -107,25 +91,25 @@
 
 ---
 
-## Slide 14 — Both Hands Full ← THE CLIMAX
+## Slide 12 — Both Hands Full ← THE CLIMAX
 **Theme:** Complexity, not contradiction — the only honest place to stand
 - "I am more creative, more productive, and more powerful than I have ever been in my entire life." — say this big, then pause
-- "Both of those statements are true. At the exact same time." — let the room feel both things simultaneously
+- "Both of those statements are true. At the exact same time." — let the room feel both simultaneously
 - "Action is the antidote to despair. Make something small. Make it today." — point at the room
-- Energy shifts here — this is the turn. The rest of the talk is practical.
+- Energy shifts here. This is the turn. The rest of the talk is practical.
 
 ---
 
-## Slide 15 — Name What You See (Dr. Joy)
+## Slide 13 — Name What You See (Dr. Joy)
 **Theme:** Stop saying bias — name misogyny, racism, bias laundering
 - "Stop saying bias. Name what you're seeing." — firm, not preachy
 - The marketing professor story gets recognition in every room — let it breathe
 - "Bias laundering — discrimination that looks like math." — this phrase does the work
-- "The mirror reflects. It doesn't correct. Correcting the mirror is your job." — point at room again
+- "The mirror reflects. It doesn't correct. Correcting the mirror is your job." — point at room
 
 ---
 
-## Slide 16 — Three Fears + Audience Engagement
+## Slide 14 — Three Fears + Audience Engagement
 **Theme:** Three specific fears — named honestly, then audience invited in
 - AUDIENCE BEAT: "What scares you about this moment? Shout it out." — genuinely listen, ~60 sec
 - Acknowledge themes from the room before naming your own three
@@ -135,7 +119,7 @@
 
 ---
 
-## Slide 17 — Stay at the Table
+## Slide 15 — Stay at the Table
 **Theme:** Critical voices cannot opt out — Vancouver counterculture tradition
 - "Who writes the rules? The tech bros." — direct, let it sting
 - "Adbusters. Greenpeace." — the room knows these; Vancouver pride beat
@@ -143,15 +127,15 @@
 
 ---
 
-## Slide 18 — BC AI Community / Build a Posse
+## Slide 16 — BC AI Community / Build a Posse
 **Theme:** Posse not community — a resiliency network with taste and ethics
 - "Community has lost its teeth. Build a posse." — the distinction lands
 - Kevin Friel: "85% AI, then craft to finish" — the conductor metaphor is the frame
-- "The conductor becomes more important when the orchestra grows." — this is the reassurance that's actually earned
+- "The conductor becomes more important when the orchestra grows." — earned reassurance
 
 ---
 
-## Slide 19 — Three Documents
+## Slide 17 — Three Documents
 **Theme:** The practical punk move — write your values in text before AI writes them for you
 - AI policy, style guide, worldview — say them fast, they're simple
 - "Feed your corpus into AI — ask it what you believe, what you sound like" — this surprises people
@@ -159,15 +143,15 @@
 
 ---
 
-## Slide 20 — The Tool Is Never Neutral
+## Slide 18 — The Tool Is Never Neutral
 **Theme:** Anthony Joseph's chainsaw line — adaptability is not capitulation
 - "My ancestors didn't have chainsaws. But they would've used them." — pause after it
-- "The creative impulse is continuous. The tools change." — the lineage from slide 7 closes here
+- "The creative impulse is continuous. The tools change." — closes the lineage from slide 5
 - "The tool is never neutral. But neither are we." — double beat, land both
 
 ---
 
-## Slide 21 — Release Day
+## Slide 19 — Release Day
 **Theme:** Four concrete actions — do this today, not someday
 - "May twenty-ninth. Four weeks." — specific date, specific urgency
 - "Pick up the tool. Use it wrong. Share what you learn. Build a posse." — say it like a list, then like a chant
@@ -175,7 +159,7 @@
 
 ---
 
-## Slide 22 — Dead Fish / Live Fish
+## Slide 20 — Dead Fish / Live Fish
 **Theme:** The close — one line, then silence
 - "Any dead fish can float downstream. But it takes a live fish to swim against the current." — slower, lower
 - "You coming?" — last word. Look at the room. Hold silence three full seconds. Nothing after.
@@ -183,7 +167,7 @@
 
 ---
 
-## Slide 23 — Credits / Thank You
+## Slide 21 — Credits / Thank You
 **Theme:** Gratitude — brief, warm, punk
 - Dr. Joy Buolamwini, Matt Lambert, Kevin Friel, Brett Gailor, Corey Doctorow
 - "Mark Busse — for pushing harder, every time." — look at Mark if he's visible
