@@ -1,0 +1,204 @@
+/* /widgets/three-documents.html — externalize your taste */
+
+.tdoc-intro {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.tdoc-intro h1 {
+  margin: 0 0 var(--space-3);
+  font-size: var(--fs-2xl);
+}
+
+.tdoc-intro__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 50ch;
+  color: var(--fg-soft);
+}
+
+.tdoc-progress {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.tdoc-progress__pill {
+  border: 1px solid var(--border-strong);
+  padding: 0.25rem 0.6rem;
+  color: var(--muted);
+}
+
+.tdoc-progress__pill[data-state="ready"] {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(225, 29, 46, 0.08);
+}
+
+/* ------------------------------------------------------------------
+   DOC SECTIONS — three identical-shape blocks, distinct accent stripes
+   ------------------------------------------------------------------ */
+
+.tdoc {
+  padding-block: var(--space-5);
+  border-bottom: 1px dashed var(--border-strong);
+}
+
+.tdoc__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.tdoc__num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.2em;
+  color: var(--accent);
+}
+
+.tdoc h2 {
+  margin: 0;
+  font-size: var(--fs-xl);
+}
+
+.tdoc__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  line-height: 1.35;
+  color: var(--fg-soft);
+  max-width: 60ch;
+}
+
+.tdoc__prompts {
+  list-style: none;
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+  font-size: var(--fs-sm);
+  color: var(--fg-soft);
+  border-left: 2px solid var(--accent);
+  padding-left: var(--space-3);
+}
+
+.tdoc__prompts li::before {
+  content: "›";
+  color: var(--accent);
+  margin-right: 0.4rem;
+  font-weight: 700;
+}
+
+.tdoc__io {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+}
+
+.tdoc textarea {
+  min-height: 14rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-md);
+  line-height: 1.5;
+}
+
+.tdoc__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.tdoc__meta strong {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+.tdoc__meta [data-state="ready"] {
+  color: var(--accent);
+}
+
+/* ------------------------------------------------------------------
+   EXPORT — at the bottom, three actions + preview
+   ------------------------------------------------------------------ */
+
+.tdoc-export {
+  padding-block: var(--space-6);
+}
+
+.tdoc-export__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.tdoc-export__hint {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.tdoc-export__preview {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  white-space: pre-wrap;
+  max-height: 26rem;
+  overflow: auto;
+  color: var(--fg-soft);
+}
+
+.tdoc-export__preview:empty::before {
+  content: "Fill out at least one document to preview the export.";
+  color: var(--muted);
+  font-style: italic;
+}
+
+.tdoc-export__tabs {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--border-strong);
+  border-bottom: 0;
+  width: max-content;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.tdoc-export__tabs button {
+  font: inherit;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 0.5rem 0.9rem;
+  border: 0;
+  border-right: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.tdoc-export__tabs button:last-child {
+  border-right: 0;
+}
+
+.tdoc-export__tabs button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
