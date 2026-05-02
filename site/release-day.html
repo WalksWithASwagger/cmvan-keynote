@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Release Day &mdash; Punk Rock AI</title>
+    <meta
+      name="description"
+      content="Ship something imperfect by May 29 2026. Pick up the tool. Use it wrong. Share what you learn. Build a posse."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta property="og:title" content="Release Day — May 29, 2026" />
+    <meta property="og:description" content="Ship something imperfect by the deadline." />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/widgets/release-day.css" />
+  </head>
+  <body class="shell">
+    <header class="site-header" data-include="header"></header>
+
+    <main>
+      <section class="rd-hero halftone">
+        <div class="wrap wrap--narrow">
+          <p class="rd-hero__date">29 . 05 . 2026 &middot; 23:59 PT</p>
+          <h1>Ship something imperfect.</h1>
+          <p class="rd-hero__lede">
+            The global Release Day is May twenty-ninth. Pick up the tool. Use
+            it wrong. Share what you learn. Build a posse.
+          </p>
+
+          <div class="rd-countdown" id="rd-countdown" aria-live="polite" aria-label="Countdown to Release Day">
+            <div class="rd-countdown__chunk">
+              <span class="rd-countdown__num" data-rd="days">--</span>
+              <span class="rd-countdown__label">days</span>
+            </div>
+            <div class="rd-countdown__chunk">
+              <span class="rd-countdown__num" data-rd="hours">--</span>
+              <span class="rd-countdown__label">hours</span>
+            </div>
+            <div class="rd-countdown__chunk">
+              <span class="rd-countdown__num" data-rd="minutes">--</span>
+              <span class="rd-countdown__label">minutes</span>
+            </div>
+            <div class="rd-countdown__chunk">
+              <span class="rd-countdown__num" data-rd="seconds">--</span>
+              <span class="rd-countdown__label">seconds</span>
+            </div>
+          </div>
+
+          <p class="rd-passed" id="rd-passed" hidden>
+            Release Day has passed. The work continues.
+          </p>
+
+          <p>
+            <a class="btn btn--primary" href="https://creativemornings.com/releaseday" target="_blank" rel="noopener">Official Release Day</a>
+            <a class="btn" href="#submit">Submit your work</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="rd-rubric">
+        <div class="wrap">
+          <div class="rd-rubric__head">
+            <p class="kicker kicker--accent">Slide 20 &middot; what to ship</p>
+            <h2>It doesn&rsquo;t need to be perfect. Punk never was.</h2>
+            <p class="rd-rubric__lede">
+              Write your three documents first &mdash; then build something
+              that only you could build. Here are four shapes that work.
+            </p>
+          </div>
+          <ul class="rd-rubric__grid">
+            <li class="rd-rubric__card">
+              <h3>A zine</h3>
+              <p>Eight pages. One subject. Photocopier aesthetic. Mail it to ten people you respect.</p>
+            </li>
+            <li class="rd-rubric__card">
+              <h3>A short film</h3>
+              <p>Ninety seconds. One shot. One idea. Music you didn&rsquo;t make. Voice you didn&rsquo;t train.</p>
+            </li>
+            <li class="rd-rubric__card">
+              <h3>A photo series</h3>
+              <p>Twelve frames. One refusal. Show what you didn&rsquo;t keep alongside what you did.</p>
+            </li>
+            <li class="rd-rubric__card">
+              <h3>The album</h3>
+              <p>The one you&rsquo;ve been sitting on for years. Use the tools wrong on purpose.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="rd-portal" id="submit">
+        <div class="wrap wrap--narrow">
+          <p class="kicker kicker--accent">Submit</p>
+          <h2>What did you make?</h2>
+          <p class="rd-portal__lede">
+            Drop a link to whatever you shipped. Drafts queue locally if the
+            submission portal isn&rsquo;t connected yet &mdash; nothing is lost.
+          </p>
+
+          <form class="rd-form" id="rd-form" novalidate>
+            <div class="rd-form__row">
+              <label for="rd-name">Name</label>
+              <input id="rd-name" name="name" type="text" required maxlength="80" />
+            </div>
+            <div class="rd-form__row">
+              <label for="rd-handle">Handle (optional)</label>
+              <input id="rd-handle" name="handle" type="text" maxlength="80" />
+            </div>
+            <div class="rd-form__row">
+              <label for="rd-url">Link to the work</label>
+              <input id="rd-url" name="url" type="url" required maxlength="500" placeholder="https://" />
+              <span class="rd-form__hint">Anywhere public — your own site, Are.na, Substack, YouTube, Bandcamp.</span>
+            </div>
+            <div class="rd-form__row">
+              <label for="rd-what">What is it?</label>
+              <input id="rd-what" name="what" type="text" required maxlength="120" placeholder="A zine. A short film. A photo series." />
+            </div>
+            <div class="rd-form__row">
+              <label for="rd-why">Why did you make it?</label>
+              <textarea id="rd-why" name="why" rows="4" maxlength="600" placeholder="Five sentences max. Tell us what the punk move was."></textarea>
+            </div>
+            <div class="rd-form__actions">
+              <button class="btn btn--primary" type="submit">Send it</button>
+              <button class="btn" type="button" id="rd-clear">Clear draft</button>
+              <p class="rd-form__status" id="rd-status" aria-live="polite"></p>
+            </div>
+          </form>
+
+          <div class="rd-form__pending" id="rd-pending" hidden>
+            <strong>Pending submissions on this device</strong>
+            <p>Submissions queue locally when the portal isn&rsquo;t connected. They&rsquo;ll send when the worker comes online &mdash; or you can copy the JSON below into an email to <a href="mailto:hello@punkrockai.com">hello@punkrockai.com</a> and we&rsquo;ll add you by hand.</p>
+            <pre id="rd-pending-json"></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="rd-gallery">
+        <div class="wrap">
+          <h2>Gallery</h2>
+          <p class="rd-gallery__empty" id="rd-gallery-empty">
+            The first submission lands here on May 22.
+          </p>
+          <ol class="card-grid" id="rd-gallery"></ol>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/release-day.js"></script>
+  </body>
+</html>
