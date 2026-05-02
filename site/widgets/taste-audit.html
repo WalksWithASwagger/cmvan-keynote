@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Taste Audit &mdash; Punk Rock AI</title>
+    <meta
+      name="description"
+      content="What's on your cutting room floor? List ten things you've made or considered. Mark each kept or refused. Find the pattern in your refusals."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta property="og:title" content="Taste Audit — Punk Rock AI" />
+    <meta property="og:description" content="What's on your cutting room floor?" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/widgets/taste-audit.css" />
+  </head>
+  <body class="shell">
+    <header class="site-header" data-include="header"></header>
+
+    <main>
+      <section class="ta-intro">
+        <div class="wrap wrap--narrow">
+          <p class="kicker kicker--accent">Slides 6&ndash;9 &middot; cutting room floor</p>
+          <h1>What did you throw away?</h1>
+          <p class="ta-intro__lede" id="ta-prompt"></p>
+          <p class="ta-intro__pull">
+            What you call artistic instinct? That&rsquo;s encoded choice.
+            Decades on the cutting room floor, compressed into a sensibility.
+          </p>
+        </div>
+      </section>
+
+      <section class="ta-step" id="step-list">
+        <div class="wrap wrap--narrow">
+          <header class="ta-step__head">
+            <span class="ta-step__num">STEP 01</span>
+            <h2 id="step-list-title"></h2>
+          </header>
+          <p class="ta-step__body" id="step-list-body"></p>
+          <ol class="ta-list" id="ta-list"></ol>
+          <div class="ta-add">
+            <button class="btn" type="button" id="ta-add">+ Add another</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="ta-step" id="step-refusals">
+        <div class="wrap wrap--narrow">
+          <header class="ta-step__head">
+            <span class="ta-step__num">STEP 02</span>
+            <h2 id="step-refusals-title"></h2>
+          </header>
+          <p class="ta-step__body" id="step-refusals-body"></p>
+          <div class="ta-refusals" id="ta-refusals"></div>
+        </div>
+      </section>
+
+      <section class="ta-step" id="step-synth">
+        <div class="wrap wrap--narrow">
+          <header class="ta-step__head">
+            <span class="ta-step__num">STEP 03</span>
+            <h2 id="step-synth-title"></h2>
+          </header>
+          <p class="ta-step__body" id="step-synth-body"></p>
+          <div class="ta-synth">
+            <p class="kicker kicker--accent">Prompts to think with</p>
+            <ol class="ta-prompts" id="ta-prompts"></ol>
+            <label class="kicker" for="ta-synth-input">Your synthesis</label>
+            <textarea
+              id="ta-synth-input"
+              placeholder="Read your refusal-reasons together. What pattern connects three or more? That's your taste in negative."
+            ></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="ta-export">
+        <div class="wrap wrap--narrow">
+          <p class="kicker kicker--accent">Take it with you</p>
+          <h2>Print it. Tape it on a wall.</h2>
+          <p class="ta-export__hint">
+            Markdown export with your full audit, the synthesis paragraph,
+            and the four reflection prompts &mdash; ready to paste into
+            your three-documents builder or a journal.
+          </p>
+          <div class="ta-export__actions">
+            <button class="btn btn--primary" type="button" data-export="download">Download .md</button>
+            <button class="btn" type="button" data-export="copy">Copy</button>
+            <button class="btn" type="button" data-export="reset">Reset</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/taste-audit.js"></script>
+  </body>
+</html>

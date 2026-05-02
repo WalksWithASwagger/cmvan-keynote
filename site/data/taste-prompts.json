@@ -1,0 +1,41 @@
+{
+  "source": "script/talk-framework-v6.md slides 6-9 + source-material/taste-as-moat/",
+  "thesis": "What you call artistic instinct? That's encoded choice. Decades on the cutting room floor, compressed into a sensibility.",
+  "promptCopy": "Generation is completely free now. What's scarce is taste. Your specific weird eye. Your refusal to use the five corporate adjectives everyone else reaches for. The Selector is the job. It always was.",
+  "framework": [
+    {
+      "id": "list",
+      "title": "List ten things you've made or considered making this year.",
+      "body": "Done is fine. Half-done is fine. Imagined-but-never-started counts. Don't pre-filter. Just list them.",
+      "minItems": 5,
+      "maxItems": 12
+    },
+    {
+      "id": "mark",
+      "title": "Mark each one: kept, refused, or undecided.",
+      "body": "Kept = you finished or are still pursuing. Refused = you walked away from. Undecided = you don't know yet.",
+      "states": [
+        { "id": "kept", "label": "Kept", "tone": "accent" },
+        { "id": "refused", "label": "Refused", "tone": "muted" },
+        { "id": "undecided", "label": "Undecided", "tone": "neutral" }
+      ]
+    },
+    {
+      "id": "why",
+      "title": "Why for the refusals.",
+      "body": "One sentence each. Not 'I ran out of time' — that's a calendar fact. The refusal is the data. What did the work fail at? What about you did it not match?",
+      "minWords": 5
+    },
+    {
+      "id": "synth",
+      "title": "What your refusals say about your taste.",
+      "body": "Read the refusal-reasons together. Look for the pattern that connects three or more. That's your taste in negative — what you refuse to make defines the shape of what you do make. Write the synthesis as one paragraph."
+    }
+  ],
+  "promptsForExport": [
+    "What pattern is in my refusals?",
+    "What word do I keep using when I describe what I walked away from?",
+    "What do I keep saying yes to?",
+    "What is the smallest possible next thing I can make that has the refusal pattern as its compass?"
+  ]
+}

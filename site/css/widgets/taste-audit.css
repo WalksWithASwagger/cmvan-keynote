@@ -1,0 +1,252 @@
+/* /widgets/taste-audit.html — cutting room floor */
+
+.ta-intro {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.ta-intro h1 {
+  font-size: var(--fs-2xl);
+  margin: 0 0 var(--space-3);
+  max-width: 22ch;
+}
+
+.ta-intro__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 50ch;
+  color: var(--fg-soft);
+}
+
+.ta-intro__pull {
+  margin-top: var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  line-height: 1.2;
+  border-left: 3px solid var(--accent);
+  padding: var(--space-2) 0 var(--space-2) var(--space-3);
+  color: var(--accent);
+  max-width: 44ch;
+}
+
+/* ------------------------------------------------------------------
+   STAGE — three guided steps + synthesis
+   ------------------------------------------------------------------ */
+
+.ta-step {
+  padding-block: var(--space-5);
+  border-bottom: 1px dashed var(--border-strong);
+}
+
+.ta-step__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.ta-step__num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.2em;
+  color: var(--accent);
+}
+
+.ta-step h2 {
+  margin: 0;
+  font-size: var(--fs-xl);
+}
+
+.ta-step__body {
+  font-size: var(--fs-md);
+  color: var(--fg-soft);
+  margin: 0 0 var(--space-3);
+  max-width: 60ch;
+}
+
+/* ------------------------------------------------------------------
+   ITEM LIST — the 10 things
+   ------------------------------------------------------------------ */
+
+.ta-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.ta-item {
+  display: grid;
+  grid-template-columns: 1.8rem 1fr auto;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.ta-item__num {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: var(--fs-md);
+  text-align: right;
+}
+
+.ta-item__what {
+  font: inherit;
+  font-family: var(--font-mono);
+  background: transparent;
+  color: var(--fg);
+  border: 0;
+  border-bottom: 1px solid var(--border-strong);
+  padding: 0.4rem 0;
+  width: 100%;
+  font-size: var(--fs-md);
+}
+
+.ta-item__what:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-bottom-color: var(--accent);
+}
+
+.ta-item__what::placeholder {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.ta-item__states {
+  display: flex;
+  gap: 0.2rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.ta-item__state {
+  font: inherit;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.ta-item__state:hover,
+.ta-item__state:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  outline: none;
+}
+
+.ta-item__state[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.ta-item__state[data-state="refused"][aria-pressed="true"] {
+  background: var(--fg);
+  border-color: var(--fg);
+  color: var(--bg);
+}
+
+.ta-item__state[data-state="undecided"][aria-pressed="true"] {
+  background: var(--muted);
+  border-color: var(--muted);
+  color: var(--bg);
+}
+
+.ta-add {
+  margin-top: var(--space-2);
+}
+
+/* ------------------------------------------------------------------
+   REFUSAL REASONS — only show for items marked refused
+   ------------------------------------------------------------------ */
+
+.ta-refusals {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.ta-refusal {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.ta-refusal__what {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  color: var(--fg-soft);
+}
+
+.ta-refusal__why {
+  font: inherit;
+  font-family: var(--font-mono);
+  background: var(--bg-elevated);
+  color: var(--fg);
+  border: 1px solid var(--border-strong);
+  padding: 0.5rem 0.7rem;
+  font-size: var(--fs-md);
+  width: 100%;
+}
+
+.ta-refusal__why:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.ta-empty {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* ------------------------------------------------------------------
+   SYNTHESIS
+   ------------------------------------------------------------------ */
+
+.ta-synth {
+  display: grid;
+  gap: var(--space-3);
+  background: var(--bg-elevated);
+  border: 1px solid var(--accent);
+  padding: var(--space-4);
+}
+
+.ta-synth textarea {
+  min-height: 9rem;
+  background: var(--bg);
+}
+
+.ta-prompts {
+  margin: 0;
+  padding-left: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  line-height: 1.4;
+  color: var(--fg-soft);
+}
+
+.ta-prompts li {
+  margin-bottom: 0.4rem;
+}
+
+.ta-export {
+  padding-block: var(--space-5);
+}
+
+.ta-export__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.ta-export__hint {
+  margin-top: var(--space-3);
+  color: var(--muted);
+  font-size: var(--fs-sm);
+  max-width: 60ch;
+}
