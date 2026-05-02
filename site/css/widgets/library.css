@@ -1,0 +1,214 @@
+/* /library — searchable knowledge base */
+
+.lib-intro {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.lib-intro h1 {
+  margin: 0 0 var(--space-3);
+  font-size: var(--fs-2xl);
+}
+
+.lib-intro__lede {
+  color: var(--fg-soft);
+  max-width: 60ch;
+}
+
+.lib-stats {
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+}
+
+/* ------------------------------------------------------------------
+   SEARCH BAR — sticky at the top
+   ------------------------------------------------------------------ */
+
+.lib-search {
+  position: sticky;
+  top: 4.5rem;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding-block: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+@supports (-webkit-touch-callout: none) {
+  .lib-search { top: 5.5rem; }
+}
+
+.lib-search__row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.lib-search__input {
+  font: inherit;
+  font-family: var(--font-mono);
+  font-size: var(--fs-md);
+  padding: 0.7rem 0.9rem;
+  width: 100%;
+  background: var(--bg-elevated);
+  color: var(--fg);
+  border: 1px solid var(--border-strong);
+}
+
+.lib-search__input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.lib-search__count {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+
+.lib-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.lib-chip {
+  font: inherit;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.lib-chip:hover,
+.lib-chip:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  outline: none;
+}
+
+.lib-chip[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* ------------------------------------------------------------------
+   RESULTS
+   ------------------------------------------------------------------ */
+
+.lib-results {
+  padding-block: var(--space-3) var(--space-7);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.lib-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: var(--space-3) var(--space-4);
+  display: grid;
+  gap: var(--space-2);
+}
+
+.lib-card:hover,
+.lib-card:focus-within {
+  border-color: var(--accent);
+}
+
+.lib-card__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.lib-card__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  margin: 0;
+}
+
+.lib-card__title a {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.lib-card__title a:hover {
+  color: var(--accent);
+}
+
+.lib-card__collection {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.1rem 0.4rem;
+}
+
+.lib-card__path {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.lib-card__summary {
+  font-size: var(--fs-sm);
+  color: var(--fg-soft);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.lib-card__summary mark {
+  background: rgba(225, 29, 46, 0.25);
+  color: var(--fg);
+  padding: 0 0.1rem;
+}
+
+.lib-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.lib-card__meta a {
+  color: var(--fg-soft);
+}
+
+.lib-card__meta a:hover {
+  color: var(--accent);
+}
+
+.lib-empty {
+  text-align: center;
+  padding-block: var(--space-6);
+  color: var(--muted);
+}
+
+.lib-empty p {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  max-width: 30ch;
+  margin: 0 auto;
+}

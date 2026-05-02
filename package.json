@@ -8,6 +8,9 @@
     "dev": "npx --yes serve site -l 3000",
     "build:quotes": "node scripts/build-quotes.mjs",
     "build:lineage": "node scripts/build-lineage.mjs",
+    "build:library": "node scripts/build-library-index.mjs",
+    "build:audio": "node scripts/build-audio-cues.mjs",
+    "build:decisions": "node scripts/build-decisions.mjs",
     "ingest:slides": "node scripts/ingest-slides.mjs"
   },
   "devDependencies": {
