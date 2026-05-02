@@ -1,0 +1,23 @@
+name = "submissions"
+main = "index.js"
+compatibility_date = "2026-04-01"
+
+# Bindings:
+#   NOTION_API_KEY  → wrangler secret put NOTION_API_KEY
+#   NOTION_DB_ID    → set via [vars] below or wrangler secret
+#   RATE_LIMIT      → optional KV namespace
+#
+# To create the KV namespace:
+#   wrangler kv namespace create RATE_LIMIT
+# Paste the id under [[kv_namespaces]] below.
+#
+# To deploy:
+#   wrangler deploy
+
+[vars]
+ALLOWED_ORIGIN = "https://punkrockai.com"
+# NOTION_DB_ID = "..."   ← uncomment and paste the database id (32-char hex)
+
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT"
+# id = "<paste id here>"
