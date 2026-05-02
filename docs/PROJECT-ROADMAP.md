@@ -61,6 +61,7 @@ Do not conflate the two on public copy or slide footers.
 | **C — Talk week** | May 1 | 🔲 | Final slide deck built from chosen images; talk framework v4 rehearsed in discussion-first format; confirm recording rights with Mark |
 | **D — Release month** | May 1–29 | 🔲 | Social cadence; Release Day submissions; optional CM virtual FieldTrips alignment |
 | **E — Post-publish** | After May 29 | 🔲 | Long article (Banff + BHF + CMVan arc); optional zine/PDF; talk recording posted |
+| **P — punkrockai.com portal** | May 1 → ongoing | 🟡 in progress | Interactive learning portal at `site/`; see "Portal phase" below |
 
 ### Before May 1 — remaining blockers (4 days out, as of Apr 27)
 
@@ -98,3 +99,48 @@ Do not conflate the two on public copy or slide footers.
 
 CMVan folder on kk-bb may live on branch `chore/cmvan-2026-creative-mornings-mirror`. Open a PR when ready:  
 https://github.com/WalksWithASwagger/kk-kb/pull/new/chore/cmvan-2026-creative-mornings-mirror
+
+---
+
+## Portal phase — `site/` (punkrockai.com)
+
+The interactive learning portal that turns the talk into a working set of widgets. Vanilla HTML/CSS/JS, zero runtime deps. Tracked as epic [#1](https://github.com/WalksWithASwagger/cmvan-keynote/issues/1). Dev onboarding lives at [`site/README.md`](../site/README.md).
+
+### Phase 1 — Foundation + four widgets (shipped)
+
+| Issue | Title | Commit | Notes |
+|-------|-------|--------|-------|
+| [#2](https://github.com/WalksWithASwagger/cmvan-keynote/issues/2) | Foundation scaffold | `ab545e5` | site/ tree, theme tokens, header/footer includes, storage helpers |
+| [#3](https://github.com/WalksWithASwagger/cmvan-keynote/issues/3) | R2 ingest pipeline | `ab5dedf` | Code lands; running blocked on R2 creds + `SLIDES_SRC` |
+| [#4](https://github.com/WalksWithASwagger/cmvan-keynote/issues/4) | Slide reel + quote wall | `3ef0890` | All 19 quotes mapped, 22 slides extracted, native `<dialog>` lightbox |
+| [#5](https://github.com/WalksWithASwagger/cmvan-keynote/issues/5) | Three Documents builder | `0397049` | Local-first, autosave, MD + bot-prompt export |
+| [#6](https://github.com/WalksWithASwagger/cmvan-keynote/issues/6) | Both Hands Full canvas | `e0ec5a7` | Diptych, up/down reorder, html-to-image PNG export, share-via-hash |
+| [#7](https://github.com/WalksWithASwagger/cmvan-keynote/issues/7) | Lineage timeline | `8c9d3ab` | Six beats Dada → AI, IntersectionObserver reveal, recurring refrain |
+
+Phase 1 outputs verified: every route returns 200, every JS module passes `node --check`, every Phase 1 issue has a status comment with acceptance criteria.
+
+### Phase 2 — Widget rack expansion (in progress)
+
+| Issue | Title | Status | Notes |
+|-------|-------|--------|-------|
+| [#9](https://github.com/WalksWithASwagger/cmvan-keynote/issues/9) | Taste Audit / Cutting Room Floor | 🔄 | Text-first; image upload deferred to a follow-up |
+| [#10](https://github.com/WalksWithASwagger/cmvan-keynote/issues/10) | Name What You See | 🔄 | Five hand-curated bias case studies |
+| [#11](https://github.com/WalksWithASwagger/cmvan-keynote/issues/11) | Audio sync | 🟡 scaffold | Cue extractor + player; mp3 hosting blocked on ElevenLabs run + R2 |
+| [#12](https://github.com/WalksWithASwagger/cmvan-keynote/issues/12) | `/library` searchable | 🔄 | 63 markdown files indexed; Fuse.js client-side fuzzy search |
+
+### Phase 3 — Community + intelligence (scaffolds + scopes)
+
+| Issue | Title | Status | Notes |
+|-------|-------|--------|-------|
+| [#13](https://github.com/WalksWithASwagger/cmvan-keynote/issues/13) | Pattern Finder LLM | 🟡 scaffold | Cloudflare Worker + Anthropic. Blocked on API key + CF account |
+| [#14](https://github.com/WalksWithASwagger/cmvan-keynote/issues/14) | Release Day portal | 🔄 | Countdown lands; submission portal blocked on Notion DB |
+| [#15](https://github.com/WalksWithASwagger/cmvan-keynote/issues/15) | `/posse` audience map | 🔄 | 20 hand-curated profiles from `research/audience-rsvp-may1.md` |
+| [#16](https://github.com/WalksWithASwagger/cmvan-keynote/issues/16) | Decisions log | 🔄 | Renders `OPEN-QUESTIONS.md` + `SESSION-HANDOFF.md` |
+
+### Outstanding handoffs (you-only)
+
+- **R2 + slide imagery:** Cloudflare account with R2, an Object R/W token, bucket name, public URL prefix. Path to local slide source folder set as `SLIDES_SRC`. Once landed: `npm run ingest:slides`.
+- **ElevenLabs run:** `python3 dress-rehearsal/generate-audio.py` to generate mp3s, upload per-slide clips to R2, re-run `npm run build:audio`. The `/talk` page wires up automatically.
+- **Anthropic API key + Cloudflare Workers account:** for Pattern Finder (#13). `cd worker/pattern-finder && wrangler secret put ANTHROPIC_API_KEY && wrangler deploy`.
+- **Notion DB + integration token:** for Release Day submissions (#14). Schema documented in `worker/submissions/README.md`.
+- **Cloudflare Pages project:** create the project, point at this repo, set output directory to `site/`. The `_headers` + `_redirects` + `wrangler.toml` are already in the tree.
