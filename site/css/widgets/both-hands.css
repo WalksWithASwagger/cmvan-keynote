@@ -272,3 +272,9 @@
   color: var(--accent);
   min-height: 1em;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .bhf-item__move {
+    transition: none;
+  }
+}

@@ -553,3 +553,17 @@
     width: 100%;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .tile,
+  .lightbox__nav button,
+  .lightbox__close,
+  .quote__actions button,
+  .quote__actions a {
+    transition: none;
+  }
+  .tile:hover,
+  .tile:focus-visible {
+    transform: none;
+  }
+}
