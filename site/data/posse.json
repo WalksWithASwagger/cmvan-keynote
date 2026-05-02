@@ -1,0 +1,152 @@
+{
+  "source": "research/audience-rsvp-may1.md",
+  "generated": "hand-curated from public-facing dossier entries",
+  "totalRsvps": 181,
+  "highlightedCount": 11,
+  "consentNote": "Listed here because the dossier flagged each as audience leads with public-facing professional profiles (LinkedIn, personal sites, Substacks). To be added or removed, open an issue at github.com/WalksWithASwagger/cmvan-keynote.",
+  "profiles": [
+    {
+      "id": "philippe-pasquier",
+      "name": "Philippe Pasquier",
+      "role": "Director, Metacreation Lab for Creative AI",
+      "org": "SFU SIAT",
+      "location": "Vancouver",
+      "stance": "Practitioner from inside the field. Frames AI as co-creation partner, which complicates the theft narrative in interesting ways. Expect nuanced pushback, not hostility.",
+      "relevance": "Most likely to engage hardest on the ethics section. 250+ peer-reviewed papers; consent and training data are live research questions for him, not abstract.",
+      "links": [
+        { "label": "metacreation.net", "url": "https://www.metacreation.net/" },
+        { "label": "SFU profile", "url": "https://www.sfu.ca/siat/people/research-faculty/philippe-pasquier.html" },
+        { "label": "LinkedIn", "url": "https://ca.linkedin.com/in/philpass" }
+      ]
+    },
+    {
+      "id": "morten-rand-hendriksen",
+      "name": "Morten Rand-Hendriksen",
+      "role": "Senior Staff Instructor, AI Demythifier",
+      "org": "LinkedIn Learning",
+      "location": "Vancouver",
+      "stance": "Most ideologically aligned with the talk's themes. Argues AI companies should be required to get active opt-in consent from creators, not rely on opt-out. Anti-anthropomorphization, pro-creator-rights.",
+      "relevance": "Wrote the canonical 'AI Training and the Slow Poison of Opt-Out' essay. Educator reach measured in millions. The opt-in consent fight maps directly onto Slide 10.",
+      "links": [
+        { "label": "mor10.com", "url": "https://mor10.com/" },
+        { "label": "@mor10 on Mastodon", "url": "https://mastodon.social/@mor10" },
+        { "label": "LinkedIn", "url": "https://ca.linkedin.com/in/mortenrandhendriksen" }
+      ]
+    },
+    {
+      "id": "tom-froese",
+      "name": "Tom Froese",
+      "role": "Award-winning illustrator, Skillshare Top Teacher",
+      "org": "Independent",
+      "location": "Yarrow BC",
+      "stance": "Cautiously pragmatic with real anxiety. Did a full episode 'Surviving the AI Illustration Apocalypse'. Uses AI for admin but not as a creative tool. Publicly wrestling with 'Should You Be Embarrassed About Using AI?'",
+      "relevance": "His 120K+ Skillshare students are illustrators who are worried. His Luddite episode mirrors the historical pattern Kris opens with. The 'taste as the moat' frame is exactly what his students need.",
+      "links": [
+        { "label": "tomfroese.com", "url": "https://www.tomfroese.com" },
+        { "label": "Substack", "url": "https://mrtomfroese.substack.com" }
+      ]
+    },
+    {
+      "id": "zain-meghji",
+      "name": "Zain Meghji",
+      "role": "Associate Director, Creative Strategy",
+      "org": "RHEI (formerly BBTV)",
+      "location": "Vancouver",
+      "stance": "Interviewer energy. 20+ years in Canadian TV — Oprah, Beyoncé, Matt Damon. Now grows YouTube channels for major studios. Algorithmic platforms are his day-to-day.",
+      "relevance": "Hosts 'Chaotic Creative' podcast — the exact frame as punk-rock-meets-AI. Potential post-talk feature. Amplifier with media instincts.",
+      "links": [
+        { "label": "Chaotic Creative podcast", "url": "https://redcircle.com/shows/chaotic-creative-with-zain-meghji" },
+        { "label": "Beacons", "url": "https://beacons.ai/zainmeghji" }
+      ]
+    },
+    {
+      "id": "sean-cranbury",
+      "name": "Sean Cranbury",
+      "role": "Honcho · Founding Member of BC+AI",
+      "org": "Sympathetic Technology",
+      "location": "Vancouver",
+      "stance": "Skepticism toward AI discourse and hype, with curiosity as key. Defends analog/tactile culture while working on responsible AI adoption. Substack 'doomscrōll' — the name says everything.",
+      "relevance": "Natural ally and already in the orbit (BC+AI). He's doing professionally what Kris is saying from the stage. AI governance consultant for nonprofits, healthcare, arts orgs across BC.",
+      "links": [
+        { "label": "seancranbury.com", "url": "https://www.seancranbury.com/" },
+        { "label": "sympathetictechnology.com", "url": "https://sympathetictechnology.com/" },
+        { "label": "doomscrōll", "url": "https://doomscrollspells.substack.com/" }
+      ]
+    },
+    {
+      "id": "jai-djwa",
+      "name": "Jai Djwa",
+      "role": "Principal · Lecturer Emily Carr & Capilano",
+      "org": "Agentic Digital Media",
+      "location": "Vancouver",
+      "stance": "Approaches AI through equity, not productivity or hype. Frames AI as a resource-multiplier for under-resourced organizations.",
+      "relevance": "Has spoken on 'AI and Justice'. Will connect to the 'who does AI serve?' thread. The 'Agentic Digital Media' name predates the 'agentic' buzzword — pointed coincidence.",
+      "links": [
+        { "label": "djwa.ca", "url": "https://djwa.ca" },
+        { "label": "agentic.ca", "url": "https://agentic.ca" }
+      ]
+    },
+    {
+      "id": "kemp-edmonds",
+      "name": "Kemp Edmonds",
+      "role": "Director · Co-organizer of Vancouver AI meetup",
+      "org": "Weatherhood / Glacier Media",
+      "location": "Vancouver",
+      "stance": "Enthusiast and connector. Three words he uses: technology, education, community. Builds the room.",
+      "relevance": "Built Hootsuite's training function from 25 to 900+. Created BCIT's first social media courses. Connector for future Vancouver AI creative events.",
+      "links": [
+        { "label": "kempedmonds.com", "url": "https://www.kempedmonds.com" }
+      ]
+    },
+    {
+      "id": "bradley-shende",
+      "name": "Bradley Shende",
+      "role": "Founding Partner",
+      "org": "Indigenext",
+      "location": "Vancouver",
+      "stance": "Multi-award-winning creative technologist. Indigenext is an Indigenous business incubator built on 'Reconciliation through Innovation'. Critically aware of technology's extractive potential.",
+      "relevance": "The live crisis his world is navigating: no federal or tribal legislation protects Indigenous data from AI scraping. The consent/theft frame in the talk maps directly onto a policy crisis he lives professionally. 'Data as land.'",
+      "links": [
+        { "label": "bradleyshende.com", "url": "https://www.bradleyshende.com" },
+        { "label": "indigenext.com", "url": "https://www.indigenext.com" }
+      ]
+    },
+    {
+      "id": "robin-ashmore",
+      "name": "Robin Ashmore",
+      "role": "Co-founder & CEO",
+      "org": "All Purpose (B Corp)",
+      "location": "Vancouver",
+      "stance": "Studio originally from IBM's Center for Advanced Learning — IBM Design's AI ethics frameworks shaped institutional context. 680+ projects, mission to catalyze behavior change at scale.",
+      "relevance": "The 'creative liberation' angle lands here. Climate Smart, Living Wage, Accessible Employer certified. Works on traditional Musqueam, Squamish, and Tsleil-Waututh territory.",
+      "links": [
+        { "label": "allpurpose.io", "url": "https://www.allpurpose.io" }
+      ]
+    },
+    {
+      "id": "marcia-chandra",
+      "name": "Marcia Chandra",
+      "role": "Visual Ethnographer",
+      "org": "Independent",
+      "location": "Vancouver / UK",
+      "stance": "Participatory ethnography requires informed consent from subjects. Consent is literally her professional framework. AI image generation trained on scraped photographers is a live professional threat.",
+      "relevance": "Master of Environmental Studies. Contributor to openDemocracy. Her 'Who Are We' project work and community-centered visual practice sit in direct tension with AI image scraping.",
+      "links": [
+        { "label": "marciachandra.com", "url": "https://www.marciachandra.com" }
+      ]
+    },
+    {
+      "id": "yuri-artibise",
+      "name": "Yuri Artibise",
+      "role": "Executive Director",
+      "org": "Vancouver City Planning Commission",
+      "location": "Vancouver",
+      "stance": "Not an AI person — his lane is urban planning and civic engagement. DIY Urbanism, co-op housing advocacy. Regular CM attendee.",
+      "relevance": "Bridge to civic / public-policy thinking. Director of VCPC since 2016, advising Council on long-range planning.",
+      "links": [
+        { "label": "yuriartibise.com", "url": "http://yuriartibise.com" },
+        { "label": "Spacing Vancouver", "url": "http://spacing.ca/vancouver/" }
+      ]
+    }
+  ]
+}
