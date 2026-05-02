@@ -3,6 +3,11 @@
 // act, and renders the quote wall keyed to anchor IDs from quotes.json.
 // Lightbox uses the native <dialog> element. Keyboard nav: ←/→ to step,
 // Esc to close. Featured slides (1, 12, 15) span two columns.
+// Audio playback layered in via /js/common/audio-player.js — buttons appear
+// when an mp3Url is present in /data/audio-cues.json, gracefully disabled
+// when audio isn't recorded yet.
+
+import { audioPlayer } from "/js/common/audio-player.js";
 
 const FEATURED = new Set([1, 12, 15]);
 
@@ -38,6 +43,8 @@ async function main() {
     slides = slidesPayload.slides || [];
     quotes = quotesPayload.quotes || [];
     quotesBySlide = groupBy(quotes, (q) => q.slide);
+    audioPlayer.ensureLoaded(); // fire-and-forget; player handles its own readiness
+    audioPlayer.addEventListener("statechange", paintAudioState);
     renderReel();
     renderQuoteWall();
     renderActRail();
@@ -97,13 +104,51 @@ function renderTile(slide) {
     ${placeholder}
     <span class="tile__num">SLIDE ${String(slide.n).padStart(2, "0")}</span>
     ${slide.note ? `<span class="tile__frame">${escapeHTML(slide.note)}</span>` : ""}
+    <button type="button" class="tile__audio" data-audio="${escapeAttr(slide.id)}" aria-label="Play audio for slide ${slide.n}" hidden>▶</button>
     <div class="tile__body">
       <h3 class="tile__title">${escapeHTML(slide.title)}</h3>
       ${headlineQuote ? `<p class="tile__quote">&ldquo;${escapeHTML(headlineQuote)}&rdquo;</p>` : ""}
     </div>
   `;
+  // wire audio button when cue is present (after audio-cues.json loads)
+  const audioBtn = tile.querySelector(".tile__audio");
+  if (audioBtn) {
+    audioBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleAudio(slide.id, audioBtn);
+    });
+    waitForAudio(slide.id, () => {
+      if (audioPlayer.hasAudio(slide.id)) audioBtn.hidden = false;
+    });
+  }
   li.appendChild(tile);
   return li;
+}
+
+function waitForAudio(slideId, fn) {
+  audioPlayer.ensureLoaded().then(fn);
+}
+
+function toggleAudio(slideId, btn) {
+  if (audioPlayer.currentSlideId === slideId && audioPlayer.state === "playing") {
+    audioPlayer.pause();
+    return;
+  }
+  audioPlayer.play(slideId);
+}
+
+function paintAudioState(e) {
+  const { state, slideId } = e.detail || {};
+  document.querySelectorAll(".tile__audio").forEach((btn) => {
+    const id = btn.getAttribute("data-audio");
+    btn.textContent = id === slideId && state === "playing" ? "⏸" : "▶";
+    btn.setAttribute("data-state", id === slideId ? state : "idle");
+  });
+  const lbAudio = document.querySelector("[data-lb-audio]");
+  if (lbAudio) {
+    const id = lbAudio.getAttribute("data-audio");
+    lbAudio.textContent = id === slideId && state === "playing" ? "⏸ Pause" : "▶ Play";
+  }
 }
 
 function renderActRail() {
@@ -197,6 +242,21 @@ function paintLightbox() {
     lightboxQuotes.hidden = true;
   }
 
+  // audio control inside the lightbox
+  const lbAudio = lightbox.querySelector("[data-lb-audio]");
+  if (lbAudio) {
+    audioPlayer.ensureLoaded().then(() => {
+      const has = audioPlayer.hasAudio(slide.id);
+      lbAudio.hidden = !has;
+      lbAudio.setAttribute("data-audio", slide.id);
+      lbAudio.textContent = audioPlayer.currentSlideId === slide.id && audioPlayer.state === "playing" ? "⏸ Pause" : "▶ Play";
+    });
+  }
+  // pause any in-flight audio when navigating to a different slide
+  if (audioPlayer.currentSlideId && audioPlayer.currentSlideId !== slide.id) {
+    audioPlayer.stop();
+  }
+
   lightboxPrev.disabled = active === 0;
   lightboxNext.disabled = active === slides.length - 1;
 }
@@ -206,6 +266,12 @@ function wireLightbox() {
   lightboxPrev?.addEventListener("click", () => step(-1));
   lightboxNext?.addEventListener("click", () => step(1));
   lightboxClose?.addEventListener("click", () => lightbox.close());
+  const lbAudio = lightbox.querySelector("[data-lb-audio]");
+  lbAudio?.addEventListener("click", () => {
+    const slide = slides[active];
+    if (!slide) return;
+    toggleAudio(slide.id, lbAudio);
+  });
   // close when backdrop clicked
   lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) lightbox.close();
@@ -220,6 +286,8 @@ function wireLightbox() {
       e.preventDefault();
     }
   });
+  // pause audio when the lightbox closes
+  lightbox.addEventListener("close", () => audioPlayer.stop());
 }
 
 function step(delta) {

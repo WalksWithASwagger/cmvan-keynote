@@ -1,0 +1,223 @@
+{
+  "source": "dress-rehearsal/elevenlabs-full-script.md",
+  "generated": "2026-05-02T15:31:57.655Z",
+  "wpm": 165,
+  "publicBase": null,
+  "totalEstimatedMs": 964726,
+  "totalEstimatedMinutes": 16.1,
+  "cues": {
+    "slide-02": {
+      "slideId": "slide-02",
+      "slideN": 2,
+      "section": "Cult Baby",
+      "words": 283,
+      "length": 102909,
+      "startMs": 0,
+      "endMs": 102909,
+      "mp3Url": null
+    },
+    "slide-03": {
+      "slideId": "slide-03",
+      "slideN": 3,
+      "section": "My Camera Saved My Life",
+      "words": 227,
+      "length": 82545,
+      "startMs": 102909,
+      "endMs": 185454,
+      "mp3Url": null
+    },
+    "slide-04": {
+      "slideId": "slide-04",
+      "slideN": 4,
+      "section": "145,000 Frames",
+      "words": 142,
+      "length": 51636,
+      "startMs": 185454,
+      "endMs": 237090,
+      "mp3Url": null
+    },
+    "slide-05": {
+      "slideId": "slide-05",
+      "slideN": 5,
+      "section": "Dada, Punk, DJs, Hip Hop, AI",
+      "words": 123,
+      "length": 44727,
+      "startMs": 237090,
+      "endMs": 281817,
+      "mp3Url": null
+    },
+    "slide-06": {
+      "slideId": "slide-06",
+      "slideN": 6,
+      "section": "The Selector and Taste",
+      "words": 125,
+      "length": 45455,
+      "startMs": 281817,
+      "endMs": 327272,
+      "mp3Url": null
+    },
+    "slide-07": {
+      "slideId": "slide-07",
+      "slideN": 7,
+      "section": "The Feedback Loop — A Gym for Taste",
+      "words": 148,
+      "length": 53818,
+      "startMs": 327272,
+      "endMs": 381090,
+      "mp3Url": null
+    },
+    "slide-08": {
+      "slideId": "slide-08",
+      "slideN": 8,
+      "section": "The Cutting Room Floor",
+      "words": 68,
+      "length": 24727,
+      "startMs": 381090,
+      "endMs": 405817,
+      "mp3Url": null
+    },
+    "slide-09": {
+      "slideId": "slide-09",
+      "slideN": 9,
+      "section": "The Pattern I Couldn't Name",
+      "words": 76,
+      "length": 27636,
+      "startMs": 405817,
+      "endMs": 433453,
+      "mp3Url": null
+    },
+    "slide-10": {
+      "slideId": "slide-10",
+      "slideN": 10,
+      "section": "The AI Chapter — A Non-Consensual Relationship",
+      "words": 153,
+      "length": 55636,
+      "startMs": 433453,
+      "endMs": 489089,
+      "mp3Url": null
+    },
+    "slide-11": {
+      "slideId": "slide-11",
+      "slideN": 11,
+      "section": "Boosters vs Doomers",
+      "words": 81,
+      "length": 29455,
+      "startMs": 489089,
+      "endMs": 518544,
+      "mp3Url": null
+    },
+    "slide-01": {
+      "slideId": "slide-01",
+      "slideN": 1,
+      "section": "Both Hands Full",
+      "words": 33,
+      "length": 12000,
+      "startMs": 518544,
+      "endMs": 530544,
+      "mp3Url": null
+    },
+    "slide-13": {
+      "slideId": "slide-13",
+      "slideN": 13,
+      "section": "Three Fears",
+      "words": 193,
+      "length": 70182,
+      "startMs": 530544,
+      "endMs": 600726,
+      "mp3Url": null
+    },
+    "slide-14": {
+      "slideId": "slide-14",
+      "slideN": 14,
+      "section": "Dr. Joy Buolamwini — Name What You See",
+      "words": 182,
+      "length": 66182,
+      "startMs": 600726,
+      "endMs": 666908,
+      "mp3Url": null
+    },
+    "slide-15": {
+      "slideId": "slide-15",
+      "slideN": 15,
+      "section": "More Creative Than Ever",
+      "words": 83,
+      "length": 30182,
+      "startMs": 666908,
+      "endMs": 697090,
+      "mp3Url": null
+    },
+    "slide-16": {
+      "slideId": "slide-16",
+      "slideN": 16,
+      "section": "Stay at the Table",
+      "words": 84,
+      "length": 30545,
+      "startMs": 697090,
+      "endMs": 727635,
+      "mp3Url": null
+    },
+    "slide-17": {
+      "slideId": "slide-17",
+      "slideN": 17,
+      "section": "BC AI Community — Build a Posse",
+      "words": 144,
+      "length": 52364,
+      "startMs": 727635,
+      "endMs": 779999,
+      "mp3Url": null
+    },
+    "slide-18": {
+      "slideId": "slide-18",
+      "slideN": 18,
+      "section": "Three Documents",
+      "words": 258,
+      "length": 93818,
+      "startMs": 779999,
+      "endMs": 873817,
+      "mp3Url": null
+    },
+    "slide-19": {
+      "slideId": "slide-19",
+      "slideN": 19,
+      "section": "The Tool Is Never Neutral",
+      "words": 79,
+      "length": 28727,
+      "startMs": 873817,
+      "endMs": 902544,
+      "mp3Url": null
+    },
+    "slide-20": {
+      "slideId": "slide-20",
+      "slideN": 20,
+      "section": "Release Day",
+      "words": 71,
+      "length": 25818,
+      "startMs": 902544,
+      "endMs": 928362,
+      "mp3Url": null
+    },
+    "slide-21": {
+      "slideId": "slide-21",
+      "slideN": 21,
+      "section": "Dead Fish / Live Fish",
+      "words": 44,
+      "length": 16000,
+      "startMs": 928362,
+      "endMs": 944362,
+      "mp3Url": null
+    },
+    "slide-22": {
+      "slideId": "slide-22",
+      "slideN": 22,
+      "section": "Credits",
+      "words": 56,
+      "length": 20364,
+      "startMs": 944362,
+      "endMs": 964726,
+      "mp3Url": null
+    }
+  },
+  "unmappedSections": [
+    "Personal essay version — biography as argument"
+  ]
+}
