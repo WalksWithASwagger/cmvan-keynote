@@ -1,0 +1,392 @@
+/* /widgets/junior-pipeline — two parallel ladders, old + new.
+   Bottom three rungs of the new ladder are visibly "eaten". The whole
+   widget reveals on scroll so the gap registers physically as you read.
+   ------------------------------------------------------------------ */
+
+.pipeline-hero {
+  padding-block: var(--space-7) var(--space-5);
+  border-bottom: 3px solid var(--accent);
+  position: relative;
+}
+
+.pipeline-hero__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  margin-bottom: var(--space-3);
+}
+
+.pipeline-hero h1 {
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--space-3);
+  max-width: 32ch;
+}
+
+.pipeline-hero__sub {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 56ch;
+  color: var(--fg-soft);
+  margin-bottom: var(--space-3);
+}
+
+.pipeline-hero__warning {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  border-top: 1px dashed var(--accent);
+  border-bottom: 1px dashed var(--accent);
+  padding-block: var(--space-2);
+  margin-block: var(--space-4);
+  max-width: 56ch;
+}
+
+.pipeline-hero__hint {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ------------------------------------------------------------------
+   LADDERS — two columns side by side. Same trajectory, same number of
+   rungs. The new ladder gets the cracked-rung treatment at the bottom.
+   ------------------------------------------------------------------ */
+
+.pipeline-ladders {
+  padding-block: var(--space-6);
+}
+
+.pipeline-ladders > .wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 4vw, var(--space-5));
+  align-items: start;
+}
+
+.ladder {
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  padding: var(--space-4);
+  position: relative;
+}
+
+.ladder--new {
+  border-color: var(--accent);
+}
+
+.ladder__head {
+  border-bottom: 1px dashed var(--border-strong);
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.ladder__tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+  border: 1px solid var(--border-strong);
+  padding: 0.15rem 0.55rem;
+  margin-bottom: var(--space-2);
+}
+
+.ladder__tag--alarm {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.ladder__head h3 {
+  font-size: var(--fs-xl);
+  margin: 0 0 var(--space-2);
+}
+
+.ladder__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  color: var(--fg-soft);
+  margin: 0;
+  max-width: 36ch;
+}
+
+/* ------------------------------------------------------------------
+   RUNGS — list. Top of list = master. Bottom = shoot-for-free.
+   Each rung is a button that toggles a detail panel.
+   ------------------------------------------------------------------ */
+
+.rungs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.rung {
+  opacity: 0;
+  transform: translateY(0.75rem);
+  transition: opacity 600ms var(--ease-snap), transform 600ms var(--ease-snap);
+}
+
+.rung[data-on="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+.rung__btn {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: #0d0d0d;
+  border: 1px solid var(--border-strong);
+  color: var(--fg);
+  font: inherit;
+  font-family: var(--font-mono);
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 160ms var(--ease-snap),
+    background 160ms var(--ease-snap),
+    transform 160ms var(--ease-snap);
+}
+
+.rung__btn:hover,
+.rung__btn:focus-visible,
+.rung__btn[aria-expanded="true"] {
+  outline: none;
+  border-color: var(--accent);
+  background: #131313;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--accent);
+}
+
+.rung__order {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.18em;
+  color: var(--accent);
+}
+
+.rung__label {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+
+.rung__mark {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.rung__mark--ok {
+  color: var(--fg-soft);
+}
+
+.rung__bar {
+  grid-column: 1 / -1;
+  height: 3px;
+  margin-top: var(--space-2);
+  background: var(--accent);
+  width: 100%;
+}
+
+.rung--old .rung__bar {
+  background: var(--accent);
+}
+
+.rung--new .rung__bar {
+  background: var(--accent);
+}
+
+/* ------------------------------------------------------------------
+   EATEN — bottom three rungs of the new ladder. Slashed, faded,
+   marked. The rung is still visible (so the gap is legible) but
+   visibly chewed.
+   ------------------------------------------------------------------ */
+
+.rung--eaten .rung__btn {
+  background: transparent;
+  border-style: dashed;
+  border-color: var(--rule);
+  color: var(--muted);
+}
+
+.rung--eaten .rung__label {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+}
+
+.rung--eaten .rung__mark {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.rung--eaten .rung__bar {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--accent) 0 0.6rem,
+    transparent 0.6rem 1.1rem
+  );
+  opacity: 0.85;
+}
+
+.rung--eaten .rung__btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    -22deg,
+    transparent 0 0.6rem,
+    rgba(225, 29, 46, 0.18) 0.6rem 0.7rem
+  );
+  mix-blend-mode: screen;
+}
+
+/* ------------------------------------------------------------------
+   DETAIL — the example pulled from source-material/. Toggled via the
+   button's aria-expanded; we set [hidden] in JS so it stays
+   accessible to AT.
+   ------------------------------------------------------------------ */
+
+.rung__detail {
+  margin-top: var(--space-2);
+  padding: var(--space-3);
+  border-left: 3px solid var(--accent);
+  background: #0d0d0d;
+}
+
+.rung__detail[hidden] {
+  display: none;
+}
+
+.rung__summary {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  line-height: 1.4;
+  color: var(--fg);
+  margin: 0 0 var(--space-2);
+  max-width: none;
+}
+
+.rung__example {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--fg-soft);
+  border: 0;
+  padding: var(--space-2) 0 0;
+  margin: 0 0 var(--space-2);
+  border-top: 1px dashed var(--border-strong);
+}
+
+.rung__source {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  margin: 0;
+  word-break: break-all;
+}
+
+.rung__source code {
+  font-family: inherit;
+  color: var(--accent);
+  background: transparent;
+  padding: 0;
+}
+
+/* ------------------------------------------------------------------
+   FINAL — the punchline that turns the diagram into a problem
+   ------------------------------------------------------------------ */
+
+.pipeline-final {
+  padding-block: var(--space-7);
+  text-align: center;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.pipeline-final h2 {
+  font-size: var(--fs-2xl);
+  margin: 0 auto var(--space-3);
+  max-width: 24ch;
+  color: var(--accent-ink);
+}
+
+.pipeline-final p {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 50ch;
+  margin: 0 auto var(--space-4);
+}
+
+.pipeline-final .btn {
+  background: var(--accent-ink);
+  color: var(--accent);
+  border-color: var(--accent-ink);
+  margin: 0 var(--space-1) var(--space-2);
+}
+
+.pipeline-final .btn:hover,
+.pipeline-final .btn:focus-visible {
+  background: var(--bg);
+  color: var(--accent);
+  border-color: var(--bg);
+  box-shadow: 3px 3px 0 var(--accent-ink);
+}
+
+/* ------------------------------------------------------------------
+   RESPONSIVE — stack ladders on narrow viewports. The "new" ladder
+   ends up below the "old" one which preserves the bottom-of-the-page
+   = bottom-of-the-ladder visual logic.
+   ------------------------------------------------------------------ */
+
+@media (max-width: 860px) {
+  .pipeline-ladders > .wrap {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+  .ladder {
+    padding: var(--space-3);
+  }
+  .rung__btn {
+    grid-template-columns: auto 1fr;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+  }
+  .rung__mark {
+    grid-column: 1 / -1;
+    font-size: 0.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rung {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .rung__btn:hover,
+  .rung__btn:focus-visible,
+  .rung__btn[aria-expanded="true"] {
+    transform: none;
+  }
+}
