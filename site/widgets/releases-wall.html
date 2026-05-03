@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Releases Wall &mdash; Punk Rock AI</title>
+    <meta
+      name="description"
+      content="A public stream of Release Day submissions. The keynote's call-to-action as a living artifact — what people shipped, when, and why."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta property="og:title" content="Releases Wall — Punk Rock AI" />
+    <meta property="og:description" content="What people shipped on Release Day." />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/widgets/releases-wall.css" />
+  </head>
+  <body class="shell">
+    <header class="site-header" data-include="header"></header>
+
+    <main>
+      <section class="rw-intro">
+        <div class="wrap wrap--narrow">
+          <p class="kicker kicker--accent">Release Day &middot; living artifact</p>
+          <h1>Releases Wall.</h1>
+          <p class="rw-intro__lede">
+            Everything submitted to <a href="/release-day.html">Release Day</a>
+            lands here once it&rsquo;s published. Most recent first. Open the
+            link, see the work, send the maker a note.
+          </p>
+          <p class="rw-stats" id="rw-stats" aria-live="polite">loading&hellip;</p>
+        </div>
+      </section>
+
+      <section class="rw">
+        <div class="wrap">
+          <p class="rw__empty" id="rw-empty" hidden>
+            No published submissions yet. The first one lands here on May 22.
+          </p>
+          <p class="rw__error" id="rw-error" hidden>
+            Couldn&rsquo;t load the submissions feed. Try again in a moment.
+          </p>
+          <ol class="rw__grid" id="rw-grid" aria-live="polite"></ol>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/releases-wall.js"></script>
+  </body>
+</html>
