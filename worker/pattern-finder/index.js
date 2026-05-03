@@ -9,8 +9,9 @@
 //
 // Required wrangler bindings (see wrangler.toml):
 //   secret  ANTHROPIC_API_KEY
-//   kv      RATE_LIMIT
-//   var     ALLOWED_ORIGIN  (default: https://punkrockai.com)
+//   kv      RATE_LIMIT     (per-IP rate limiting)
+//   kv      KV_PATTERNS    (response cache, keyed by sha256 of corpus)
+//   var     ALLOWED_ORIGIN (default: https://punkrockai.com)
 //
 // Deploy:
 //   cd worker/pattern-finder
@@ -23,6 +24,7 @@ const MODEL = "claude-sonnet-4-6";
 const MAX_TOKENS = 1500;
 const RATE_LIMIT_PER_HOUR = 10;
 const MAX_INPUT_CHARS = 40_000;
+const CACHE_TTL_SECONDS = 60 * 60 * 24 * 7; // 7 days
 
 const SYSTEM_PROMPT = `You are a Pattern Finder. The user gives you a corpus
 of their own creative work — blog posts, photo captions, project descriptions,
@@ -85,7 +87,20 @@ export default {
     }
 
     if (!env.ANTHROPIC_API_KEY) {
-      return jsonError(500, "worker missing ANTHROPIC_API_KEY", env);
+      return jsonError(
+        503,
+        "Pattern Finder is not configured yet — ANTHROPIC_API_KEY missing on the worker",
+        env,
+      );
+    }
+
+    const cacheKey = await sha256(`${MODEL}:${corpus}`);
+    const cached = await readCache(env, cacheKey);
+    if (cached) {
+      return new Response(JSON.stringify(cached), {
+        status: 200,
+        headers: { ...corsHeaders(env), "x-cache": "HIT" },
+      });
     }
 
     try {
@@ -127,9 +142,11 @@ export default {
         return jsonError(502, "claude returned non-JSON output", env);
       }
 
+      ctx.waitUntil(writeCache(env, cacheKey, parsed));
+
       return new Response(JSON.stringify(parsed), {
         status: 200,
-        headers: corsHeaders(env),
+        headers: { ...corsHeaders(env), "x-cache": "MISS" },
       });
     } catch (err) {
       return jsonError(500, `worker error: ${err.message}`, env);
@@ -146,6 +163,36 @@ async function checkRateLimit(env, ip) {
   if (current >= RATE_LIMIT_PER_HOUR) return false;
   await env.RATE_LIMIT.put(key, String(current + 1), { expirationTtl: 3700 });
   return true;
+}
+
+async function readCache(env, key) {
+  if (!env.KV_PATTERNS) return null;
+  try {
+    return await env.KV_PATTERNS.get(`pf:${key}`, "json");
+  } catch {
+    return null;
+  }
+}
+
+async function writeCache(env, key, value) {
+  if (!env.KV_PATTERNS) return;
+  try {
+    await env.KV_PATTERNS.put(`pf:${key}`, JSON.stringify(value), {
+      expirationTtl: CACHE_TTL_SECONDS,
+    });
+  } catch {
+    // best-effort cache; never fail the request on cache write
+  }
+}
+
+async function sha256(input) {
+  const buf = await crypto.subtle.digest(
+    "SHA-256",
+    new TextEncoder().encode(input),
+  );
+  return Array.from(new Uint8Array(buf))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
 }
 
 function currentHour() {
