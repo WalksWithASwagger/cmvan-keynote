@@ -226,3 +226,41 @@ Continuing from these commits. Documentation lands first (this entry +
 [`docs/PROJECT-ROADMAP.md`](./docs/PROJECT-ROADMAP.md)). Then the eight remaining
 issues — see `docs/PROJECT-ROADMAP.md#portal-phase` for the running ledger of what
 shipped and what's still blocked.
+
+---
+
+## Linear + Agentic Pipeline Setup — May 3, 2026
+
+Linear project seeded: **Punk Rock AI Portal** in team `Bc-ai`.
+
+Repo-side automation:
+- Backlog registry: `ops/roadmap/features.json`
+- Operating guide: `docs/LINEAR-GITHUB-PIPELINE.md`
+- PR gate: `.github/workflows/ci.yml` running `npm run eval`
+- Roadmap issue sync: `.github/workflows/roadmap-sync.yml`
+- Issue template: `.github/ISSUE_TEMPLATE/roadmap-feature.md`
+- PR template: `.github/pull_request_template.md`
+
+Linear issues created:
+
+| Linear | GitHub | State | Notes |
+|--------|--------|-------|-------|
+| `BC-8` | `#8` | Backlog | Cloudflare Pages project and staging URL |
+| `BC-9` | `#9` | In Progress | Taste Audit / Cutting Room Floor |
+| `BC-10` | `#10` | In Progress | Name What You See |
+| `BC-11` | `#11` | Todo + `status:blocked` | Audio sync; GitHub issue is already closed as completed, external audio/R2 work remains tracked as blocker context |
+| `BC-12` | `#12` | In Progress | `/library` searchable; GitHub issue is already closed as completed |
+| `BC-13` | `#13` | Todo + `status:blocked` | Pattern Finder LLM; GitHub issue is already closed as completed, API/deploy credentials remain blocked |
+| `BC-14` | `#14` | Todo + `status:blocked` | Release Day portal; GitHub issue is already closed as completed, Notion/deploy credentials remain blocked |
+| `BC-15` | `#15` | In Progress | `/posse` audience map; GitHub issue is already closed as completed |
+| `BC-16` | `#16` | In Progress | Decisions log; GitHub issue is already closed as completed |
+
+Verification:
+- `npm run eval` passes locally.
+- GitHub issues `#8` through `#16` have roadmap bodies with Linear links.
+- Linear labels were created for area, kind, phase, priority, blocked status, and eval requirements.
+
+Still external / account-level:
+- Enable Linear's GitHub integration in the Linear UI for `WalksWithASwagger/cmvan-keynote`.
+- Re-authenticate local `gh`; current local token is invalid.
+- Provide Cloudflare, Anthropic, Notion, and ElevenLabs credentials to unblock deployed worker/audio work.

@@ -1,0 +1,43 @@
+name: Roadmap Sync
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "ops/roadmap/**"
+      - "scripts/lib/roadmap.mjs"
+      - "scripts/sync-roadmap-issues.mjs"
+      - ".github/workflows/roadmap-sync.yml"
+  workflow_dispatch:
+    inputs:
+      roadmap_id:
+        description: "Optional roadmap item id to sync"
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate roadmap registry
+        run: npm run check:roadmap
+
+      - name: Sync roadmap issues
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          ROADMAP_ID: ${{ inputs.roadmap_id }}
+        run: node scripts/sync-roadmap-issues.mjs --write

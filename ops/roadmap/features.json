@@ -1,0 +1,544 @@
+{
+  "version": 1,
+  "project": {
+    "name": "Punk Rock AI Portal",
+    "githubRepository": "WalksWithASwagger/cmvan-keynote",
+    "defaultEvalCommand": "npm run eval",
+    "linearProject": "Punk Rock AI Portal",
+    "linearProjectId": "1ea775ca-1e85-4bf1-81f8-7a7444ed1093",
+    "linearProjectUrl": "https://linear.app/bc-ai/project/punk-rock-ai-portal-e9aec6edd886",
+    "linearTeam": "Bc-ai"
+  },
+  "labelCatalog": [
+    {
+      "name": "area:infra",
+      "color": "5319e7",
+      "description": "Deployment and infrastructure work."
+    },
+    {
+      "name": "area:site",
+      "color": "1d76db",
+      "description": "Static site pages, widgets, and data contracts."
+    },
+    {
+      "name": "area:workers",
+      "color": "0e8a16",
+      "description": "Cloudflare Worker and API integration work."
+    },
+    {
+      "name": "kind:feature",
+      "color": "0052cc",
+      "description": "User-facing feature delivery."
+    },
+    {
+      "name": "kind:ops",
+      "color": "6f42c1",
+      "description": "Operational or platform setup."
+    },
+    {
+      "name": "phase:portal-1",
+      "color": "d4c5f9",
+      "description": "Portal Phase 1 work."
+    },
+    {
+      "name": "phase:portal-2",
+      "color": "bfd4f2",
+      "description": "Portal Phase 2 work."
+    },
+    {
+      "name": "phase:portal-3",
+      "color": "c2e0c6",
+      "description": "Portal Phase 3 work."
+    },
+    {
+      "name": "priority:p1",
+      "color": "b60205",
+      "description": "Highest-priority delivery work."
+    },
+    {
+      "name": "priority:p2",
+      "color": "d93f0b",
+      "description": "Second-priority delivery work."
+    },
+    {
+      "name": "status:blocked",
+      "color": "000000",
+      "description": "Work is blocked by an external dependency."
+    },
+    {
+      "name": "eval:required",
+      "color": "fbca04",
+      "description": "PR must include explicit eval and test coverage."
+    }
+  ],
+  "items": [
+    {
+      "id": "portal-phase-1-cloudflare-pages",
+      "title": "Cloudflare Pages project and staging URL",
+      "phase": "Portal Phase 1",
+      "type": "ops",
+      "priority": "p1",
+      "status": "planned",
+      "summary": "Create the Cloudflare Pages project for the static site and document the staging URL so the portal has a durable deploy target.",
+      "github": {
+        "issue": 8,
+        "labels": [
+          "area:infra",
+          "kind:ops",
+          "phase:portal-1",
+          "priority:p1",
+          "eval:required"
+        ]
+      },
+      "linear": {
+        "project": "Punk Rock AI Portal",
+        "team": "Bc-ai",
+        "issue": "BC-8",
+        "url": "https://linear.app/bc-ai/issue/BC-8/cloudflare-pages-project-and-staging-url",
+        "state": "Backlog"
+      },
+      "paths": [
+        "site",
+        "site/_headers",
+        "site/_redirects",
+        "site/README.md",
+        "wrangler.toml"
+      ],
+      "acceptanceCriteria": [
+        "A Cloudflare Pages project is connected to the repository and serves `site/` as the output directory.",
+        "The staging URL is documented in repo docs so agents can test against a shared target.",
+        "Headers and redirects behave the same on the deployed target as they do locally."
+      ],
+      "evals": [
+        "npm run eval"
+      ],
+      "tests": [
+        "Verify `/`, `/talk.html`, `/lineage.html`, and widget routes return 200 on the deployed Pages URL.",
+        "Verify `site/_headers` and `site/_redirects` behavior on the staging deployment."
+      ],
+      "blockedBy": [
+        "Cloudflare account access and Pages project creation."
+      ],
+      "definitionOfDone": [
+        "The staging URL is recorded in repo docs.",
+        "A human or agent can validate the portal against the same deployment target without guessing settings."
+      ]
+    },
+    {
+      "id": "portal-phase-2-taste-audit",
+      "title": "Taste Audit / Cutting Room Floor",
+      "phase": "Portal Phase 2",
+      "type": "feature",
+      "priority": "p1",
+      "status": "in_progress",
+      "summary": "Ship the taste-audit widget as a durable local-first exercise that turns refusal patterns into usable prompts and exported notes.",
+      "github": {
+        "issue": 9,
+        "labels": [
+          "area:site",
+          "kind:feature",
+          "phase:portal-2",
+          "priority:p1",
+          "eval:required"
+        ]
+      },
+      "linear": {
+        "project": "Punk Rock AI Portal",
+        "team": "Bc-ai",
+        "issue": "BC-9",
+        "url": "https://linear.app/bc-ai/issue/BC-9/taste-audit-cutting-room-floor",
+        "state": "In Progress"
+      },
+      "paths": [
+        "site/widgets/taste-audit.html",
+        "site/js/widgets/taste-audit.js",
+        "site/css/widgets/taste-audit.css",
+        "site/data/taste-prompts.json"
+      ],
+      "acceptanceCriteria": [
+        "Users can capture kept, refused, and undecided work items without leaving the page.",
+        "The widget converts refusal patterns into prompt-ready synthesis and exportable notes.",
+        "Autosave and reset flows are explicit, predictable, and local-first."
+      ],
+      "evals": [
+        "npm run eval"
+      ],
+      "tests": [
+        "Verify autosave survives a reload and reset clears only the taste-audit namespace.",
+        "Verify exported prompt copy reflects the current refusal pattern state."
+      ],
+      "blockedBy": [],
+      "definitionOfDone": [
+        "The page is usable without any network dependency beyond committed JSON.",
+        "The issue body, PR, and docs describe how the widget externalizes taste rather than just collecting text."
+      ]
+    },
+    {
+      "id": "portal-phase-2-name-what-you-see",
+      "title": "Name What You See",
+      "phase": "Portal Phase 2",
+      "type": "feature",
+      "priority": "p1",
+      "status": "in_progress",
+      "summary": "Turn the anti-bias section into a concrete walkthrough with hand-curated cases and language that names the specific harm being shown.",
+      "github": {
+        "issue": 10,
+        "labels": [
+          "area:site",
+          "kind:feature",
+          "phase:portal-2",
+          "priority:p1",
+          "eval:required"
+        ]
+      },
+      "linear": {
+        "project": "Punk Rock AI Portal",
+        "team": "Bc-ai",
+        "issue": "BC-10",
+        "url": "https://linear.app/bc-ai/issue/BC-10/name-what-you-see",
+        "state": "In Progress"
+      },
+      "paths": [
+        "site/widgets/name-what-you-see.html",
+        "site/js/widgets/name-what-you-see.js",
+        "site/css/widgets/name-what-you-see.css",
+        "site/data/cases.json",
+        "site/data/bingo.json"
+      ],
+      "acceptanceCriteria": [
+        "The widget walks through the curated case studies without flattening them into generic `bias` language.",
+        "A user can move from headline to precise harm statement to prompt-ready framing.",
+        "The page remains legible and intentional on desktop and mobile."
+      ],
+      "evals": [
+        "npm run eval"
+      ],
+      "tests": [
+        "Walk through all curated cases and verify each one renders a precise harm statement and supporting citation.",
+        "Verify the bingo or checklist state behaves predictably across reload and reset."
+      ],
+      "blockedBy": [],
+      "definitionOfDone": [
+        "Five case studies are reviewable from the same route without broken citations or empty states.",
+        "The final UX makes the naming move feel concrete rather than sermon-like."
+      ]
+    },
+    {
+      "id": "portal-phase-2-audio-sync",
+      "title": "Audio sync",
+      "phase": "Portal Phase 2",
+      "type": "feature",
+      "priority": "p2",
+      "status": "blocked",
+      "summary": "Thread timed audio cues and hosted mp3 assets through the talk reel so slide playback can align with the rehearsal script.",
+      "github": {
+        "issue": 11,
+        "labels": [
+          "area:site",
+          "kind:feature",
+          "phase:portal-2",
+          "priority:p2",
+          "status:blocked",
+          "eval:required"
+        ]
+      },
+      "linear": {
+        "project": "Punk Rock AI Portal",
+        "team": "Bc-ai",
+        "issue": "BC-11",
+        "url": "https://linear.app/bc-ai/issue/BC-11/audio-sync",
+        "state": "Todo",
+        "blocked": true
+      },
+      "paths": [
+        "dress-rehearsal/elevenlabs-full-script.md",
+        "scripts/build-audio-cues.mjs",
+        "site/js/common/audio-player.js",
+        "site/js/widgets/slide-reel.js",
+        "site/data/audio-cues.json"
+      ],
+      "acceptanceCriteria": [
+        "Cue generation produces a stable `audio-cues.json` contract keyed by slide id.",
+        "When hosted audio exists, the talk reel can play, pause, and seek against the cue map.",
+        "The page degrades cleanly when audio files are not yet available."
+      ],
+      "evals": [
+        "npm run eval",
+        "node scripts/build-audio-cues.mjs"
+      ],
+      "tests": [
+        "Verify cue timestamps are monotonic and cover every mapped slide section.",
+        "With `R2_PUBLIC_BASE` set, verify per-slide `mp3Url` fields render and player controls work end to end."
+      ],
+      "blockedBy": [
+        "ElevenLabs audio generation and hosted mp3 assets in R2."
+      ],
+      "definitionOfDone": [
+        "A reviewer can hear the slide reel progress against real or stubbed cue data.",
+        "Missing audio never breaks the talk page."
+      ]
+    },
+    {
+      "id": "portal-phase-2-library-search",
+      "title": "/library searchable",
+      "phase": "Portal Phase 2",
+      "type": "feature",
+      "priority": "p1",
+      "status": "in_progress",
+      "summary": "Keep the markdown corpus searchable in-browser with a generated JSON index and a fast client-side search experience.",
+      "github": {
+        "issue": 12,
+        "labels": [
+          "area:site",
+          "kind:feature",
+          "phase:portal-2",
+          "priority:p1",
+          "eval:required"
+        ]
+      },
+      "linear": {
+        "project": "Punk Rock AI Portal",
+        "team": "Bc-ai",
+        "issue": "BC-12",
+        "url": "https://linear.app/bc-ai/issue/BC-12/library-searchable",
+        "state": "In Progress"
+      },
+      "paths": [
+        "site/library.html",
+        "site/js/widgets/library.js",
+        "site/css/widgets/library.css",
+        "site/data/library.json",
+        "scripts/build-library-index.mjs"
+      ],
+      "acceptanceCriteria": [
+        "The library page can search across the committed markdown collections without a server.",
+        "Generated index data stays small enough to ship while still surfacing useful excerpts.",
+        "The search UX highlights why a result matched, not just that it matched."
+      ],
+      "evals": [
+        "npm run eval",
+        "node scripts/build-library-index.mjs"
+      ],
+      "tests": [
+        "Verify search returns hits from `script/`, `source-material/`, `dress-rehearsal/`, and `research/`.",
+        "Verify large documents stay truncated without breaking search or page performance."
+      ],
+      "blockedBy": [],
+      "definitionOfDone": [
+        "The generated index remains the only runtime contract the page needs.",
+        "A reviewer can find a known line or concept from each source collection."
+      ]
+    },
+    {
+      "id": "portal-phase-3-pattern-finder-llm",
+      "title": "Pattern Finder LLM",
+      "phase": "Portal Phase 3",
+      "type": "feature",
+      "priority": "p2",
+      "status": "blocked",
+      "summary": "Connect the Pattern Finder widget to a Cloudflare Worker-backed model endpoint with rate limiting, prompt caching, and a strong fallback when the worker is unavailable.",
+      "github": {
+        "issue": 13,
+        "labels": [
+          "area:workers",
+          "kind:feature",
+          "phase:portal-3",
+          "priority:p2",
+          "status:blocked",
+          "eval:required"
+        ]
+      },
+      "linear": {
+        "project": "Punk Rock AI Portal",
+        "team": "Bc-ai",
+        "issue": "BC-13",
+        "url": "https://linear.app/bc-ai/issue/BC-13/pattern-finder-llm",
+        "state": "Todo",
+        "blocked": true
+      },
+      "paths": [
+        "site/widgets/pattern-finder.html",
+        "site/js/widgets/pattern-finder.js",
+        "site/css/widgets/pattern-finder.css",
+        "worker/pattern-finder",
+        "worker/pattern-finder/index.js"
+      ],
+      "acceptanceCriteria": [
+        "The front-end can call a deployed worker route and handle both success and degraded fallback states.",
+        "The worker enforces rate limiting and bounded prompt size before forwarding model traffic.",
+        "The system prompt and response shape are stable enough for review and iteration."
+      ],
+      "evals": [
+        "npm run eval"
+      ],
+      "tests": [
+        "From `worker/pattern-finder/`, run `wrangler dev` and verify the widget can round-trip a sample corpus.",
+        "Verify rate limiting and offline fallback copy both behave as designed."
+      ],
+      "blockedBy": [
+        "Anthropic API key and Cloudflare Workers account access."
+      ],
+      "definitionOfDone": [
+        "The widget is useful with or without the worker being reachable.",
+        "The worker contract is documented well enough that agents can continue iterating safely."
+      ]
+    },
+    {
+      "id": "portal-phase-3-release-day-portal",
+      "title": "Release Day portal",
+      "phase": "Portal Phase 3",
+      "type": "feature",
+      "priority": "p2",
+      "status": "blocked",
+      "summary": "Finish the submission portal flow so people can post work into a moderated gallery backed by Notion and surfaced on the static site.",
+      "github": {
+        "issue": 14,
+        "labels": [
+          "area:workers",
+          "kind:feature",
+          "phase:portal-3",
+          "priority:p2",
+          "status:blocked",
+          "eval:required"
+        ]
+      },
+      "linear": {
+        "project": "Punk Rock AI Portal",
+        "team": "Bc-ai",
+        "issue": "BC-14",
+        "url": "https://linear.app/bc-ai/issue/BC-14/release-day-portal",
+        "state": "Todo",
+        "blocked": true
+      },
+      "paths": [
+        "site/release-day.html",
+        "site/js/widgets/release-day.js",
+        "site/css/widgets/release-day.css",
+        "site/data/submissions.json",
+        "worker/submissions",
+        "worker/submissions/index.js"
+      ],
+      "acceptanceCriteria": [
+        "The public page can submit entries to a moderation queue and render approved submissions back out.",
+        "The worker validates and sanitizes fields before touching Notion.",
+        "The page still gives the user a usable fallback when the worker is not wired yet."
+      ],
+      "evals": [
+        "npm run eval"
+      ],
+      "tests": [
+        "From `worker/submissions/`, run `wrangler dev` against a test database and verify POST plus moderated GET flows.",
+        "Verify missing-worker fallback copy is visible and actionable on the page."
+      ],
+      "blockedBy": [
+        "Notion database, integration token, and deployment target for the worker."
+      ],
+      "definitionOfDone": [
+        "Submission moderation is explicit and documented.",
+        "The static site can hydrate from committed `submissions.json` or the worker response without code changes."
+      ]
+    },
+    {
+      "id": "portal-phase-3-posse-audience-map",
+      "title": "/posse audience map",
+      "phase": "Portal Phase 3",
+      "type": "feature",
+      "priority": "p2",
+      "status": "in_progress",
+      "summary": "Render the audience dossier as a navigable map of people, relationships, and why each connection matters for the talk and the broader project.",
+      "github": {
+        "issue": 15,
+        "labels": [
+          "area:site",
+          "kind:feature",
+          "phase:portal-3",
+          "priority:p2",
+          "eval:required"
+        ]
+      },
+      "linear": {
+        "project": "Punk Rock AI Portal",
+        "team": "Bc-ai",
+        "issue": "BC-15",
+        "url": "https://linear.app/bc-ai/issue/BC-15/posse-audience-map",
+        "state": "In Progress"
+      },
+      "paths": [
+        "site/posse.html",
+        "site/js/widgets/posse.js",
+        "site/css/widgets/posse.css",
+        "site/data/posse.json",
+        "research/audience-rsvp-may1.md"
+      ],
+      "acceptanceCriteria": [
+        "The page presents the highlighted audience profiles without exposing anything that should stay private.",
+        "Users can scan by name, role, or stance and understand why each person matters.",
+        "The experience remains readable on mobile and feels like a map, not a spreadsheet."
+      ],
+      "evals": [
+        "npm run eval"
+      ],
+      "tests": [
+        "Verify every highlighted profile renders its links, stance, and relevance fields.",
+        "Verify the page handles an empty or reduced profile set without layout breakage."
+      ],
+      "blockedBy": [],
+      "definitionOfDone": [
+        "The page turns the dossier into a usable pre-talk tool, not just a data dump.",
+        "Profile data can continue to be curated from repo markdown without introducing a database."
+      ]
+    },
+    {
+      "id": "portal-phase-3-decisions-log",
+      "title": "Decisions log",
+      "phase": "Portal Phase 3",
+      "type": "feature",
+      "priority": "p2",
+      "status": "in_progress",
+      "summary": "Expose the project decision trail directly on the site so open questions, handoff notes, and resolved calls stay legible without a separate CMS.",
+      "github": {
+        "issue": 16,
+        "labels": [
+          "area:site",
+          "kind:feature",
+          "phase:portal-3",
+          "priority:p2",
+          "eval:required"
+        ]
+      },
+      "linear": {
+        "project": "Punk Rock AI Portal",
+        "team": "Bc-ai",
+        "issue": "BC-16",
+        "url": "https://linear.app/bc-ai/issue/BC-16/decisions-log",
+        "state": "In Progress"
+      },
+      "paths": [
+        "site/decisions.html",
+        "site/js/widgets/decisions.js",
+        "site/css/widgets/decisions.css",
+        "OPEN-QUESTIONS.md",
+        "SESSION-HANDOFF.md",
+        "scripts/build-decisions.mjs"
+      ],
+      "acceptanceCriteria": [
+        "The decisions page renders both open questions and handoff history from committed markdown.",
+        "Formatting failures in the source docs surface as build-time errors instead of silent blank states.",
+        "The page makes it obvious which questions are open versus resolved."
+      ],
+      "evals": [
+        "npm run eval",
+        "node scripts/build-decisions.mjs"
+      ],
+      "tests": [
+        "Verify resolved and open questions render into separate, readable sections.",
+        "Verify the markdown-to-HTML transform preserves links, lists, and code fences without injecting raw HTML."
+      ],
+      "blockedBy": [],
+      "definitionOfDone": [
+        "The public-facing decision trail stays in sync with the repo docs that agents already edit.",
+        "A reviewer can trace a decision from source markdown to rendered page without manual copy-paste."
+      ]
+    }
+  ]
+}

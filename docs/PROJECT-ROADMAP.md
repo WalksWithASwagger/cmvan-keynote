@@ -106,6 +106,8 @@ https://github.com/WalksWithASwagger/kk-kb/pull/new/chore/cmvan-2026-creative-mo
 
 The interactive learning portal that turns the talk into a working set of widgets. Vanilla HTML/CSS/JS, zero runtime deps. Tracked as epic [#1](https://github.com/WalksWithASwagger/cmvan-keynote/issues/1). Dev onboarding lives at [`site/README.md`](../site/README.md).
 
+Machine-readable delivery queue: [`ops/roadmap/features.json`](../ops/roadmap/features.json). Linear/GitHub operating model: [`docs/LINEAR-GITHUB-PIPELINE.md`](./LINEAR-GITHUB-PIPELINE.md). Linear project: [Punk Rock AI Portal](https://linear.app/bc-ai/project/punk-rock-ai-portal-e9aec6edd886), seeded as `BC-8` through `BC-16`.
+
 ### Phase 1 — Foundation + four widgets (shipped)
 
 | Issue | Title | Commit | Notes |
