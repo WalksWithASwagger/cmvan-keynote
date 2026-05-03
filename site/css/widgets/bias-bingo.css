@@ -355,12 +355,13 @@
 .bbingo-cell[data-line-cleared="diag1"]::before,
 .bbingo-cell[data-line-cleared="diag2"]::before {
   top: 50%;
-  left: -21%;
+  left: 50%;
   width: 142%;
   height: 4px;
   margin-top: -2px;
-  transform: scaleX(0);
+  transform: translateX(-50%) scaleX(0);
   transform-origin: center center;
+  animation-name: bbingo-strike-diagonal;
 }
 
 .bbingo-cell[data-line-cleared="diag1"]::before {
@@ -383,16 +384,24 @@
   100% { transform: scaleY(1); opacity: 0; }
 }
 
+@keyframes bbingo-strike-diagonal {
+  0% { transform: translateX(-50%) scaleX(0); opacity: 0.9; }
+  60% { transform: translateX(-50%) scaleX(1); opacity: 1; }
+  100% { transform: translateX(-50%) scaleX(1); opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   /* global rule collapses animation-duration; show a static strike instead */
   .bbingo-cell[data-line-cleared]::before {
     opacity: 1;
     animation: none !important;
   }
-  .bbingo-cell[data-line-cleared="row"]::before,
+  .bbingo-cell[data-line-cleared="row"]::before {
+    transform: scaleX(1);
+  }
   .bbingo-cell[data-line-cleared="diag1"]::before,
   .bbingo-cell[data-line-cleared="diag2"]::before {
-    transform: scaleX(1);
+    transform: translateX(-50%) scaleX(1);
   }
   .bbingo-cell[data-line-cleared="col"]::before {
     transform: scaleY(1);
