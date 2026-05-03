@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pattern cluster graph &mdash; Punk Rock AI</title>
+    <meta
+      name="description"
+      content="Force-directed graph of the Punk Rock AI lineage. Each era a node, each shared move (cut-up, sampling, détournement, selection, reuse, refusal) an edge. Hover for citations. Click an edge for cross-era manifestations."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta property="og:title" content="Pattern cluster graph — Punk Rock AI" />
+    <meta property="og:description" content="Force-directed graph of the lineage. Six moves, six eras, one through-line." />
+    <meta property="og:url" content="https://punkrockai.com/widgets/pattern-graph.html" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/widgets/pattern-graph.css" />
+  </head>
+  <body class="shell">
+    <header class="site-header" data-include="header"></header>
+
+    <main>
+      <section class="pg-intro grain scanlines">
+        <div class="wrap wrap--narrow">
+          <p class="kicker kicker--accent">Slide 5 &middot; the through-line, drawn</p>
+          <h1>Pattern cluster.</h1>
+          <p class="pg-intro__lede">
+            Six eras. Six moves. The same gestures keep coming back wearing
+            different tools. <em>Hover</em> a node to read the era&rsquo;s
+            citation. <em>Click</em> a move&mdash;edge to see how it manifests
+            across every era it touches.
+          </p>
+        </div>
+      </section>
+
+      <section class="pg">
+        <div class="wrap">
+          <div class="pg__layout">
+            <div class="pg__stage">
+              <div class="pg__legend" id="pg-legend" aria-label="Move legend"></div>
+              <div class="pg__canvas-wrap">
+                <svg
+                  id="pg-svg"
+                  class="pg__svg"
+                  viewBox="0 0 800 560"
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  aria-label="Force-directed pattern cluster graph"
+                ></svg>
+                <div class="pg__hint" id="pg-hint" aria-live="polite">
+                  Hover an era. Click a move to expand.
+                </div>
+              </div>
+            </div>
+
+            <aside class="pg__panel" id="pg-panel" aria-live="polite">
+              <p class="pg__panel-empty">
+                Hover an era&mdash;node to read its citation. Click a
+                move&mdash;edge to see how the same gesture manifests across
+                eras.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" defer></script>
+    <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/pattern-graph.js"></script>
+  </body>
+</html>
