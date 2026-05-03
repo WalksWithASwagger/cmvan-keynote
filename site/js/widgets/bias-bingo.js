@@ -21,6 +21,8 @@ let bingo = null;
 let cases = null;
 let seen = new Set();
 let activeCellId = null;
+let clearedLines = new Set();
+const LINE_ANIM_MS = 1400;
 
 main();
 
@@ -42,6 +44,8 @@ async function main() {
   seen = new Set(Array.isArray(stored.value) ? stored.value : []);
   renderBoard();
   bindModal();
+  // seed cleared-line set so pre-existing completed lines don't auto-animate on load
+  clearedLines = new Set(detectLines().map((l) => l.key));
   paintStats();
 }
 
@@ -155,10 +159,22 @@ function syncCellState(id) {
 
 function paintStats() {
   const seenCount = seen.size;
-  const linesCleared = countLines();
+  const lines = detectLines();
+  const linesCleared = lines.length;
   setStat("seen", `${seenCount}/${bingo.cells.length}`);
   setStat("lines", String(linesCleared));
   unlockEl.dataset.unlocked = linesCleared > 0 ? "true" : "false";
+
+  for (const line of lines) {
+    if (!clearedLines.has(line.key)) {
+      clearedLines.add(line.key);
+      animateLine(line);
+    }
+  }
+  // forget lines that are no longer complete so they re-trigger if reseen
+  for (const key of [...clearedLines]) {
+    if (!lines.some((l) => l.key === key)) clearedLines.delete(key);
+  }
 }
 
 function setStat(name, value) {
@@ -167,23 +183,60 @@ function setStat(name, value) {
 }
 
 function countLines() {
+  return detectLines().length;
+}
+
+function detectLines() {
   const rows = bingo.rows;
   const cols = bingo.cols;
-  const grid = Array.from({ length: rows }, () => Array(cols).fill(false));
+  const grid = Array.from({ length: rows }, () => Array(cols).fill(null));
   for (const cell of bingo.cells) {
-    if (seen.has(cell.id)) grid[cell.row][cell.col] = true;
+    grid[cell.row][cell.col] = cell;
   }
-  let lines = 0;
+  const isSeen = (cell) => cell && seen.has(cell.id);
+  const lines = [];
   for (let r = 0; r < rows; r++) {
-    if (grid[r].every(Boolean)) lines++;
+    if (grid[r].every(isSeen)) {
+      lines.push({ key: `row:${r}`, dir: "row", cells: grid[r].slice() });
+    }
   }
   for (let c = 0; c < cols; c++) {
-    if (grid.every((row) => row[c])) lines++;
+    const col = grid.map((row) => row[c]);
+    if (col.every(isSeen)) {
+      lines.push({ key: `col:${c}`, dir: "col", cells: col });
+    }
   }
-  // diagonals
-  if (grid.every((row, i) => row[i])) lines++;
-  if (grid.every((row, i) => row[cols - 1 - i])) lines++;
+  const diag1 = grid.map((row, i) => row[i]);
+  if (diag1.every(isSeen)) {
+    lines.push({ key: "diag:1", dir: "diag1", cells: diag1 });
+  }
+  const diag2 = grid.map((row, i) => row[cols - 1 - i]);
+  if (diag2.every(isSeen)) {
+    lines.push({ key: "diag:2", dir: "diag2", cells: diag2 });
+  }
   return lines;
+}
+
+function animateLine(line) {
+  const els = line.cells
+    .map((cell, i) => {
+      const el = boardEl.querySelector(`[data-cell="${cell.id}"]`);
+      return el ? { el, i } : null;
+    })
+    .filter(Boolean);
+  for (const { el, i } of els) {
+    el.dataset.lineCleared = line.dir;
+    el.style.setProperty("--line-pos", String(i));
+  }
+  setTimeout(() => {
+    for (const { el } of els) {
+      // only clear if no other line claimed this cell in the meantime
+      if (el.dataset.lineCleared === line.dir) {
+        delete el.dataset.lineCleared;
+        el.style.removeProperty("--line-pos");
+      }
+    }
+  }, LINE_ANIM_MS);
 }
 
 // ---------------------------------------------------------------------------
