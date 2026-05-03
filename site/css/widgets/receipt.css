@@ -1,0 +1,429 @@
+/* /widgets/receipt.html — Open Source Receipt
+   Paper-receipt aesthetic. Monospace only inside the receipt.
+   ------------------------------------------------------------------ */
+
+.osr-intro {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.osr-intro h1 {
+  margin: 0 0 var(--space-3);
+}
+
+.osr-intro__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 50ch;
+  color: var(--fg-soft);
+}
+
+.osr-intro__hint {
+  margin-top: var(--space-3);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.osr-intro__caveat {
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-3);
+  border: 1px dashed var(--accent);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--fg-soft);
+  max-width: 60ch;
+}
+
+.osr-intro__caveat strong {
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ------------------------------------------------------------------
+   FORM
+   ------------------------------------------------------------------ */
+
+.osr-form-wrap {
+  padding-block: var(--space-5);
+}
+
+.osr-form {
+  font-family: var(--font-mono);
+}
+
+.osr-fieldset {
+  border: 1px solid var(--border-strong);
+  padding: var(--space-4);
+  margin: 0;
+}
+
+.osr-legend {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-inline: var(--space-2);
+}
+
+.osr-fieldset__hint {
+  margin: 0 0 var(--space-4);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.osr-questions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.osr-q {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 560px) {
+  .osr-q {
+    grid-template-columns: auto 1fr;
+  }
+  .osr-q__control {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+  }
+}
+
+.osr-q__num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+
+.osr-q__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+  color: var(--fg);
+}
+
+.osr-q__hint {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.osr-q__control {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.osr-q__yesno {
+  display: inline-flex;
+  border: 1px solid var(--border-strong);
+}
+
+.osr-q__yesno button {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 0;
+  color: var(--fg-soft);
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  transition: background 120ms var(--ease-snap), color 120ms var(--ease-snap);
+}
+
+.osr-q__yesno button + button {
+  border-left: 1px solid var(--border-strong);
+}
+
+.osr-q__yesno button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.osr-q__yesno button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.osr-q__number {
+  width: 7rem;
+  padding: 0.45rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  background: #0d0d0d;
+  color: var(--fg);
+  border: 1px solid var(--border-strong);
+  border-radius: 0;
+  text-align: right;
+}
+
+.osr-form__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.osr-form__status {
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  min-height: 1.2em;
+}
+
+/* ------------------------------------------------------------------
+   RECEIPT — paper, monospace, halftone print feel.
+   Captured by html-to-image as PNG.
+   ------------------------------------------------------------------ */
+
+.osr-receipt-wrap {
+  padding-block: var(--space-5);
+}
+
+.osr-receipt {
+  font-family: var(--font-mono);
+  color: var(--paper-ink);
+  background-color: var(--paper);
+  margin-inline: auto;
+  max-width: 28rem;
+  width: 100%;
+  padding: var(--space-4) var(--space-3);
+  position: relative;
+  isolation: isolate;
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.4),
+    8px 12px 0 rgba(0, 0, 0, 0.45);
+  /* deckle / torn edge top + bottom */
+  clip-path: polygon(
+    0 4px,
+    3% 0,
+    9% 5px,
+    16% 1px,
+    24% 4px,
+    33% 0,
+    41% 5px,
+    50% 1px,
+    59% 4px,
+    68% 0,
+    77% 5px,
+    86% 1px,
+    94% 4px,
+    100% 0,
+    100% calc(100% - 4px),
+    96% 100%,
+    89% calc(100% - 5px),
+    80% calc(100% - 1px),
+    71% calc(100% - 4px),
+    62% 100%,
+    53% calc(100% - 5px),
+    44% calc(100% - 1px),
+    35% calc(100% - 4px),
+    26% 100%,
+    17% calc(100% - 5px),
+    8% calc(100% - 1px),
+    2% calc(100% - 4px),
+    0 100%
+  );
+}
+
+.osr-receipt p,
+.osr-receipt ul,
+.osr-receipt li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono);
+  color: var(--paper-ink);
+  font-size: var(--fs-xs);
+  line-height: 1.55;
+}
+
+.osr-receipt__head {
+  text-align: center;
+}
+
+.osr-receipt__brand {
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  font-size: var(--fs-sm);
+}
+
+.osr-receipt__addr {
+  letter-spacing: 0.08em;
+}
+
+.osr-receipt__rule {
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  user-select: none;
+  margin-block: var(--space-1);
+}
+
+.osr-receipt__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  letter-spacing: 0.08em;
+}
+
+.osr-receipt__head .osr-receipt__meta {
+  justify-content: center;
+}
+
+.osr-receipt__body {
+  margin-top: var(--space-2);
+}
+
+.osr-receipt__line {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  letter-spacing: 0.04em;
+}
+
+.osr-receipt__line--header {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.osr-receipt__lines {
+  display: grid;
+  gap: 0.15rem;
+  margin-block: var(--space-2);
+}
+
+.osr-receipt__line--item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-2);
+  align-items: baseline;
+}
+
+.osr-receipt__item-name {
+  white-space: normal;
+  word-break: break-word;
+}
+
+.osr-receipt__item-math {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: var(--fs-xs);
+  color: var(--paper-ink);
+  opacity: 0.7;
+  letter-spacing: 0.02em;
+}
+
+.osr-receipt__line--subtotal {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.osr-receipt__line--total {
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.osr-receipt__line--total-sub {
+  justify-content: flex-end;
+  font-size: var(--fs-xs);
+  color: var(--paper-ink);
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.osr-receipt__foot {
+  margin-top: var(--space-3);
+  text-align: center;
+}
+
+.osr-receipt__caveat {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.osr-receipt__caveat--body {
+  margin-top: var(--space-2);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  text-align: left;
+  font-size: var(--fs-xs);
+  line-height: 1.5;
+}
+
+.osr-receipt__thanks {
+  margin-block: var(--space-3) var(--space-2);
+  letter-spacing: 0.16em;
+  font-weight: 700;
+}
+
+.osr-receipt__barcode {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  margin-block: var(--space-1) var(--space-1);
+}
+
+.osr-receipt__sig {
+  letter-spacing: 0.06em;
+  opacity: 0.7;
+}
+
+/* ------------------------------------------------------------------
+   ACTIONS
+   ------------------------------------------------------------------ */
+
+.osr-actions {
+  padding-block: var(--space-5) var(--space-7);
+  border-top: 1px solid var(--border);
+}
+
+.osr-actions__hint {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  max-width: 60ch;
+  margin: 0 0 var(--space-3);
+}
+
+.osr-actions__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.osr-actions__status {
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  min-height: 1.2em;
+}
