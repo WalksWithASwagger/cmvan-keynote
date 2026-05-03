@@ -1,0 +1,157 @@
+/* /widgets/releases-wall — public masonry stream of Release Day submissions */
+
+.rw-intro {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.rw-intro h1 {
+  margin: 0 0 var(--space-3);
+  font-size: var(--fs-2xl);
+}
+
+.rw-intro__lede {
+  color: var(--fg-soft);
+  max-width: 60ch;
+  margin: 0;
+}
+
+.rw-stats {
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+}
+
+/* ------------------------------------------------------------------
+   GRID — CSS columns give a true masonry effect with vanilla CSS
+   ------------------------------------------------------------------ */
+
+.rw {
+  padding-block: var(--space-5);
+}
+
+.rw__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  column-gap: var(--space-3);
+  column-count: 1;
+}
+
+@media (min-width: 40rem) {
+  .rw__grid {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 64rem) {
+  .rw__grid {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 90rem) {
+  .rw__grid {
+    column-count: 4;
+  }
+}
+
+.rw__empty,
+.rw__error {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--muted);
+  text-align: center;
+  padding-block: var(--space-5);
+  font-style: italic;
+}
+
+.rw__error {
+  color: var(--accent);
+}
+
+/* ------------------------------------------------------------------
+   CARD — break-inside: avoid keeps cards intact across columns
+   ------------------------------------------------------------------ */
+
+.rw-card {
+  break-inside: avoid;
+  display: block;
+  margin: 0 0 var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+}
+
+.rw-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.rw-card__handle {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  word-break: break-word;
+}
+
+.rw-card__time {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.rw-card__title {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.2;
+}
+
+.rw-card__title-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 120ms ease;
+}
+
+.rw-card__title-link:hover,
+.rw-card__title-link:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.rw-card__body {
+  margin: 0 0 var(--space-2);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--fg-soft);
+}
+
+.rw-card__cta {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.rw-card__cta:hover,
+.rw-card__cta:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
