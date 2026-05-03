@@ -1,0 +1,41 @@
+{
+  "source": "site/widgets/both-hands.html — `#s=` hash format",
+  "consentNote": "Public gallery of opt-in Both Hands canvases. Each entry is a base64url-encoded diptych decoded entirely client-side. To add or remove a canvas, open a PR or issue at github.com/WalksWithASwagger/cmvan-keynote.",
+  "entries": [
+    {
+      "id": "kk-may1",
+      "submittedBy": "Kris Krüg",
+      "submittedAt": "2026-05-01",
+      "note": "The seed stance from Slide 12 — both hands full, walking forward.",
+      "hash": "eyJuIjoiS3JpcyBLcsO8ZyIsImMiOlsiVGhlZnQgd2l0aG91dCBjb25zZW50LiIsIlRoZSBqdW5pb3IgcGlwZWxpbmUgY29sbGFwc2luZy4iLCJCaWFzIGxhdW5kZXJpbmcgYXMgbWF0aC4iLCJOYW1lcyBkaXNhcHBlYXJpbmcgZnJvbSBjcmVkaXQgbGluZXMuIiwiUmFjZSB0byB0aGUgYm90dG9tIG9uIHJhdGVzLiJdLCJwIjpbIk1vcmUgY3JlYXRpdmUgdGhhbiBJIGhhdmUgZXZlciBiZWVuLiIsIkFuIGlkZWEgcGVyIG5pZ2h0LCBtYWRlIGJ5IG1vcm5pbmcuIiwiQSBwb3NzZSB0byByZWZ1c2UgdG9nZXRoZXIuIiwiTXkgdm9pY2UgYW1wbGlmaWVkIOKAlCBub3QgYXZlcmFnZWQuIiwiVGltZSBnaXZlbiBiYWNrIHRvIHRoZSB3b3JrIEkgbG92ZS4iXX0"
+    },
+    {
+      "id": "maya-skeptic",
+      "submittedBy": "Maya — strategic skeptic",
+      "submittedAt": "2026-04-22",
+      "note": "From resistant to fluent in six weeks. Critique kept, capability claimed.",
+      "hash": "eyJuIjoiTWF5YSDigJQgc3RyYXRlZ2ljIHNrZXB0aWMiLCJjIjpbIlNrZXB0aWNhbCBvZiB0aGUgaHlwZS4iLCJXb3JyaWVkIGFib3V0IHRoZSB0YWtlLiIsIldhdGNoaW5nIGNvbGxlYWd1ZXMgZ2V0IGJ1bGxkb3plZC4iLCJTdXNwaWNpb3VzIG9mIHZlbmRvciBkZW1vcy4iLCJSZWZ1c2luZyB0byBvdXRzb3VyY2UganVkZ21lbnQuIl0sInAiOlsiRmlnbWEgKyBDaGF0R1BULCBjYXJlZnVsIHRlc3RzLiIsIlRocmVlLXdlZWsgcHJvamVjdHMgaW4gZm91ciBob3Vycy4iLCJSZXNpc3RhbnQg4oaSIGZsdWVudCBpbiBzaXggd2Vla3MuIiwiVGVhY2hpbmcgb3RoZXIgZGVzaWduZXJzIG5vdy4iLCJWYWx1ZSB1cCwgbm90IGRvd24uIl19"
+    },
+    {
+      "id": "emily-bee-school",
+      "submittedBy": "Emily — Bee School",
+      "submittedAt": "2026-03-14",
+      "note": "Capability and consent in the same lesson plan.",
+      "hash": "eyJuIjoiRW1pbHkg4oCUIEJlZSBTY2hvb2wiLCJjIjpbIkRpc3RyaWN0cyB3YW50aW5nIHRvIGJhbiBpdC4iLCJLaWRzIGxlYXJuaW5nIEFJIGZyb20gWW91VHViZS4iLCJDb25zZW50IGVyYXNlZCBmcm9tIHRoZSBjdXJyaWN1bHVtLiIsIkVkdGVjaCBicm9zIHNlbGxpbmcgc25ha2Ugb2lsLiIsIkRhdGEgc292ZXJlaWdudHkgaWdub3JlZC4iXSwicCI6WyJCZWUgU2Nob29sIGJ1aWx0IHdpdGggQUkuIiwiS2lkcyBsZWFybmluZyBjb25zZW50IGZyYW1ld29ya3MuIiwiQ2FwYWJpbGl0eSArIGV0aGljcyBpbiB0aGUgc2FtZSBsZXNzb24uIiwiU3RheWluZyBpbiB0aGUgcm9vbSwgbm90IG9wdGluZyBvdXQuIiwiRGlzdHJpY3RzIGFza2luZyB0byBidXkgdGhlIHRvb2xzLiJdfQ"
+    },
+    {
+      "id": "bcai-working-groups",
+      "submittedBy": "BC + AI working groups",
+      "submittedAt": "2026-02-07",
+      "note": "Practical use of AI alongside Indigenous data sovereignty work.",
+      "hash": "eyJuIjoiQkMgKyBBSSB3b3JraW5nIGdyb3VwcyIsImMiOlsiRXh0cmFjdGlvbiBtYXNxdWVyYWRpbmcgYXMgaW5ub3ZhdGlvbi4iLCJJbmRpZ2Vub3VzIGRhdGEgdGFrZW4gd2l0aG91dCBjb25zZW50LiIsIkV0aGljYWwgZnJhbWV3b3JrcyBib2x0ZWQgb24gYWZ0ZXIuIiwiR292ZXJuYW5jZSBieSB0cnVlIGJlbGlldmVycyBvbmx5LiIsIlB1cmUgYm9vc3RlcnMgZ29pbmcgdW5jaGFsbGVuZ2VkLiJdLCJwIjpbIkluZGlnZW5vdXMgZGF0YSBzb3ZlcmVpZ250eSBncm91cC4iLCJMb2NhbCB0cmFpbmluZyBleHBlcmltZW50cy4iLCJBcnRpc3Qtb3duZWQgZGF0YXNldHMuIiwiQ29uc2VudCBtb2RlbHMgd2UgYWN0dWFsbHkgd3JvdGUuIiwiUHJhY3RpY2FsIHVzZSArIGFjdGl2ZSBjcml0aXF1ZS4iXX0"
+    },
+    {
+      "id": "anonymous-punk",
+      "submittedBy": "Anonymous punk",
+      "submittedAt": "2026-04-30",
+      "note": "Refusal and engagement, both. No clean side picked.",
+      "hash": "eyJuIjoiQW5vbnltb3VzIHB1bmsiLCJjIjpbIkkgYW0gcGlzc2VkIGFib3V0IG5vbi1jb25zZW50LiIsIkkgd2lsbCBub3QgcHJldGVuZCBpdCBpcyBmaW5lLiIsIkkgd2lsbCBuYW1lIHRoZSB0aGVmdCBvdXQgbG91ZC4iLCJJIHdpbGwgbm90IGRyb3AgdGhlIGNyaXRpcXVlLiIsIkkgd2lsbCBub3QgcGVyZm9ybSBwdXJpdHkuIl0sInAiOlsiSSB3aWxsIGxldmVyYWdlIHRoZSBtb21lbnQuIiwiSSB3aWxsIGJ1aWxkIHRoZSBhbHRlcm5hdGl2ZXMuIiwiSSB3aWxsIHRlYWNoIHRoZSBuZXh0IG9uZXMuIiwiSSB3aWxsIGtlZXAgYm90aCBoYW5kcyBmdWxsLiIsIkkgd2lsbCBzdGF5IGluIHRoZSByb29tLiJdfQ"
+    }
+  ]
+}
