@@ -214,3 +214,37 @@
   min-height: 1em;
   margin-top: var(--space-2);
 }
+
+/* Touch / mobile polish — issue #46.
+   Hides drag-handle affordances that don't apply on touch, bumps primary
+   targets to >=44pt, and trims the textarea so cut/scatter controls fit
+   above the fold on a 360x640 viewport. Desktop pointer path is unchanged. */
+@media (hover: none) {
+  .cutup [draggable="true"],
+  .cutup [data-drag-handle],
+  .cutup .drag-handle,
+  .cutup .grip {
+    display: none !important;
+  }
+
+  .cutup__textarea {
+    min-height: 9rem;
+  }
+
+  .cutup__chip,
+  .cutup__seed button {
+    min-height: 44px;
+    padding: 0.6rem 1rem;
+  }
+
+  .cutup .btn {
+    min-height: 44px;
+    padding: 0.7rem 1.1rem;
+  }
+}
+
+@media (max-height: 700px) and (max-width: 600px) {
+  .cutup__textarea {
+    min-height: 7rem;
+  }
+}
