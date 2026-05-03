@@ -1,0 +1,283 @@
+/* /widgets/pattern-graph.html — D3 force-directed lineage cluster
+   Six era-nodes, six move-edges. Hover a node to read the era citation,
+   click an edge to expand cross-era manifestations. Tokens only. */
+
+.pg-intro {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.pg-intro h1 {
+  font-size: var(--fs-2xl);
+  margin: 0 0 var(--space-3);
+  max-width: 22ch;
+}
+
+.pg-intro__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 56ch;
+  color: var(--fg-soft);
+}
+
+.pg-intro__lede em {
+  color: var(--accent);
+  font-style: normal;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 1px;
+}
+
+/* ------------------------------------------------------------------
+   STAGE — graph + side panel
+   ------------------------------------------------------------------ */
+
+.pg {
+  padding-block: var(--space-5) var(--space-7);
+}
+
+.pg__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .pg__layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pg__stage {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: var(--space-3);
+  position: relative;
+}
+
+.pg__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.pg__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.55rem;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  transition: color 120ms var(--ease-snap),
+    border-color 120ms var(--ease-snap), background 120ms var(--ease-snap);
+}
+
+.pg__legend-item:hover,
+.pg__legend-item:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+  outline: none;
+}
+
+.pg__legend-item[aria-pressed="true"] {
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.pg__legend-swatch {
+  width: 14px;
+  height: 2px;
+  background: currentColor;
+  display: inline-block;
+}
+
+.pg__canvas-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.pg__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: transparent;
+  touch-action: pan-y;
+}
+
+.pg__hint {
+  position: absolute;
+  inset: auto var(--space-2) var(--space-2) auto;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------------
+   SVG — links + nodes
+   ------------------------------------------------------------------ */
+
+.pg__svg .pg-link {
+  stroke: var(--border-strong);
+  stroke-opacity: 0.65;
+  stroke-width: 1.4px;
+  fill: none;
+  cursor: pointer;
+  transition: stroke 120ms var(--ease-snap),
+    stroke-opacity 120ms var(--ease-snap),
+    stroke-width 120ms var(--ease-snap);
+}
+
+.pg__svg .pg-link:hover,
+.pg__svg .pg-link.is-active {
+  stroke: var(--accent);
+  stroke-opacity: 1;
+  stroke-width: 2.2px;
+}
+
+.pg__svg .pg-link.is-dim {
+  stroke-opacity: 0.18;
+}
+
+.pg__svg .pg-node {
+  cursor: pointer;
+}
+
+.pg__svg .pg-node circle {
+  fill: var(--bg);
+  stroke: var(--fg);
+  stroke-width: 1.6px;
+  transition: fill 120ms var(--ease-snap), stroke 120ms var(--ease-snap),
+    r 160ms var(--ease-snap);
+}
+
+.pg__svg .pg-node:hover circle,
+.pg__svg .pg-node:focus-visible circle,
+.pg__svg .pg-node.is-active circle {
+  fill: var(--accent);
+  stroke: var(--accent);
+}
+
+.pg__svg .pg-node.is-dim circle {
+  opacity: 0.35;
+}
+
+.pg__svg .pg-node text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  fill: var(--fg);
+  paint-order: stroke;
+  stroke: var(--bg);
+  stroke-width: 3px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.pg__svg .pg-node.is-dim text {
+  opacity: 0.4;
+}
+
+/* ------------------------------------------------------------------
+   PANEL — citations + manifestations
+   ------------------------------------------------------------------ */
+
+.pg__panel {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: var(--space-4);
+  min-height: 14rem;
+}
+
+.pg__panel-empty {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  margin: 0;
+}
+
+.pg__panel-kicker {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin: 0 0 var(--space-2);
+}
+
+.pg__panel h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  margin: 0 0 var(--space-2);
+  letter-spacing: -0.01em;
+}
+
+.pg__panel-meta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin: 0 0 var(--space-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.pg__panel-meta span + span::before {
+  content: "·";
+  margin-right: var(--space-2);
+  color: var(--border-strong);
+}
+
+.pg__panel p,
+.pg__panel li {
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--fg-soft);
+}
+
+.pg__panel-cite {
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.pg__manifest {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.pg__manifest li {
+  border-left: 2px solid var(--accent);
+  padding: 0 0 0 var(--space-3);
+}
+
+.pg__manifest-era {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.25rem;
+}
