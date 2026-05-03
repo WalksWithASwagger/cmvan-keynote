@@ -304,6 +304,59 @@
   transition: width 80ms linear;
 }
 
+.sel__player[data-state="paused"] .sel__player-bar span {
+  opacity: 0.5;
+}
+
+.sel__shortcuts {
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  text-align: left;
+}
+
+.sel__shortcuts summary {
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  list-style: none;
+  text-align: center;
+}
+
+.sel__shortcuts summary::-webkit-details-marker {
+  display: none;
+}
+
+.sel__shortcuts summary:hover,
+.sel__shortcuts[open] summary {
+  color: var(--accent);
+}
+
+.sel__shortcuts ul {
+  list-style: none;
+  padding: var(--space-2) 0 0;
+  margin: 0;
+  display: grid;
+  gap: 0.25rem;
+  justify-content: center;
+}
+
+.sel__shortcuts kbd {
+  display: inline-block;
+  min-width: 2.4em;
+  padding: 0 0.4em;
+  margin-right: 0.5em;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+  text-align: center;
+  color: var(--fg);
+  background: rgba(255, 255, 255, 0.04);
+}
+
 /* ACTIONS */
 
 .sel__actions {
