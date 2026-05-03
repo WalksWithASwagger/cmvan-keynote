@@ -50,13 +50,18 @@ const hitsList = document.getElementById("wban-hit-list");
 const countsBox = document.getElementById("wban-counts");
 const statusEl = document.getElementById("wban-status");
 const listCountEl = document.querySelector("[data-list-count]");
+const presetSelectEl = document.getElementById("wban-preset");
+const presetBlurbEl = document.getElementById("wban-preset-blurb");
 
 const debouncedSaveList = debounceSave(STORAGE_KEY, 300);
 const debouncedSaveInput = debounceSave(LAST_INPUT_KEY, 600);
 
+let presets = [];
+
 hydrate();
 bind();
 paintListMeta();
+loadPresets();
 
 function hydrate() {
   const { value } = load(STORAGE_KEY, null);
@@ -71,6 +76,11 @@ function bind() {
   document.querySelector('[data-action="copy-clean"]').addEventListener("click", copyClean);
   document.querySelector('[data-action="load-style"]').addEventListener("click", loadFromStyleGuide);
   document.querySelector('[data-action="reset-list"]').addEventListener("click", resetList);
+  document.querySelector('[data-action="apply-preset"]').addEventListener("click", applySelectedPreset);
+
+  if (presetSelectEl) {
+    presetSelectEl.addEventListener("change", paintPresetBlurb);
+  }
 
   inputEl.addEventListener("input", () => debouncedSaveInput(inputEl.value));
   listEl.addEventListener("input", () => {
@@ -254,6 +264,67 @@ function resetList() {
   debouncedSaveList(DEFAULTS);
   paintListMeta();
   flash("reset to defaults");
+}
+
+// ---------------------------------------------------------------------------
+// industry presets — fetched from /data/word-ban-presets.json, stacked onto
+// the user's current list when chosen. Custom additions persist alongside.
+
+async function loadPresets() {
+  if (!presetSelectEl) return;
+  try {
+    const res = await fetch("/data/word-ban-presets.json");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    presets = Array.isArray(data?.presets) ? data.presets : [];
+    paintPresetOptions();
+  } catch (err) {
+    presetSelectEl.disabled = true;
+    flash("presets failed to load");
+  }
+}
+
+function paintPresetOptions() {
+  const placeholder = presetSelectEl.querySelector('option[value=""]');
+  presetSelectEl.innerHTML = "";
+  if (placeholder) presetSelectEl.appendChild(placeholder);
+  for (const p of presets) {
+    const opt = document.createElement("option");
+    opt.value = p.id;
+    opt.textContent = p.label;
+    presetSelectEl.appendChild(opt);
+  }
+}
+
+function paintPresetBlurb() {
+  if (!presetBlurbEl) return;
+  const id = presetSelectEl.value;
+  const p = presets.find((x) => x.id === id);
+  presetBlurbEl.textContent = p?.blurb || "";
+}
+
+function applySelectedPreset() {
+  const id = presetSelectEl?.value;
+  if (!id) {
+    flash("pick a preset first");
+    return;
+  }
+  const preset = presets.find((p) => p.id === id);
+  if (!preset || !Array.isArray(preset.words) || !preset.words.length) {
+    flash("preset is empty");
+    return;
+  }
+  const before = parseList(listEl.value);
+  const merged = parseList([listEl.value, preset.words.join("\n")].join("\n"));
+  const added = merged.length - before.length;
+  listEl.value = merged.join("\n");
+  debouncedSaveList(merged);
+  paintListMeta();
+  flash(
+    added
+      ? `added ${added} from ${preset.label}`
+      : `${preset.label} already in your list`
+  );
 }
 
 // ---------------------------------------------------------------------------

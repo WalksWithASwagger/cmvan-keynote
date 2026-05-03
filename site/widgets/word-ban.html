@@ -63,6 +63,19 @@
             </div>
 
             <aside class="wban__sidebar">
+              <div class="wban__presets">
+                <h2>Industry presets</h2>
+                <p class="wban__presets-help">Stack any preset onto your list. Custom additions stay.</p>
+                <label class="sr-only" for="wban-preset">Choose an industry preset</label>
+                <div class="wban__row wban__row--tight">
+                  <select id="wban-preset" class="wban__select">
+                    <option value="">Pick a preset&hellip;</option>
+                  </select>
+                  <button class="btn" type="button" data-action="apply-preset">Add to list</button>
+                </div>
+                <p class="wban__preset-blurb" id="wban-preset-blurb"></p>
+              </div>
+
               <div class="wban__list">
                 <h2>Your refuse list</h2>
                 <label class="sr-only" for="wban-list">Refuse list, one word or phrase per line</label>

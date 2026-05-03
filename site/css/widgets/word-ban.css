@@ -158,6 +158,50 @@
   gap: var(--space-3);
 }
 
+.wban__presets {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: var(--space-3);
+}
+
+.wban__presets h2 {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin: 0 0 var(--space-2);
+}
+
+.wban__presets-help {
+  font-size: var(--fs-sm);
+  color: var(--fg-soft);
+  margin: 0 0 var(--space-2);
+}
+
+.wban__select {
+  flex: 1 1 12rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  padding: 0.4rem 0.5rem;
+}
+
+.wban__row--tight {
+  margin-top: 0;
+}
+
+.wban__preset-blurb {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-top: var(--space-2);
+  min-height: 1em;
+}
+
 .wban__list {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
