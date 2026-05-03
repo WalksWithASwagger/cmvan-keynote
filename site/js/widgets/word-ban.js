@@ -41,6 +41,8 @@ const DEFAULTS = [
 
 const STORAGE_KEY = "wban:list";
 const LAST_INPUT_KEY = "wban:input";
+const HISTORY_KEY = "wordban:history";
+const HISTORY_MAX = 10;
 
 const inputEl = document.getElementById("wban-input");
 const listEl = document.getElementById("wban-list");
@@ -52,6 +54,16 @@ const statusEl = document.getElementById("wban-status");
 const listCountEl = document.querySelector("[data-list-count]");
 const presetSelectEl = document.getElementById("wban-preset");
 const presetBlurbEl = document.getElementById("wban-preset-blurb");
+const historyBox = document.getElementById("wban-history");
+const historyList = document.getElementById("wban-history-list");
+const sparkEl = document.getElementById("wban-sparkline");
+const diffBox = document.getElementById("wban-diff");
+const diffMeta = document.getElementById("wban-diff-meta");
+const diffAddedEl = document.getElementById("wban-diff-added");
+const diffRemovedEl = document.getElementById("wban-diff-removed");
+const diffSameEl = document.getElementById("wban-diff-same");
+
+const selectedIds = new Set();
 
 const debouncedSaveList = debounceSave(STORAGE_KEY, 300);
 const debouncedSaveInput = debounceSave(LAST_INPUT_KEY, 600);
@@ -62,6 +74,7 @@ hydrate();
 bind();
 paintListMeta();
 loadPresets();
+paintHistory();
 
 function hydrate() {
   const { value } = load(STORAGE_KEY, null);
@@ -81,6 +94,9 @@ function bind() {
   if (presetSelectEl) {
     presetSelectEl.addEventListener("change", paintPresetBlurb);
   }
+
+  document.querySelector('[data-action="clear-history"]').addEventListener("click", clearHistory);
+  historyList.addEventListener("change", onHistoryToggle);
 
   inputEl.addEventListener("input", () => debouncedSaveInput(inputEl.value));
   listEl.addEventListener("input", () => {
@@ -140,6 +156,7 @@ function scan() {
   outputEl.innerHTML = html;
   paintCounts(totalHits, hits.size, totalWords);
   paintHits(hits);
+  recordScan({ text, banList, hits, totalHits, totalWords });
   flash(totalHits ? `${totalHits} hit${totalHits === 1 ? "" : "s"} found` : "no offenders — clean draft");
 }
 
@@ -325,6 +342,179 @@ function applySelectedPreset() {
       ? `added ${added} from ${preset.label}`
       : `${preset.label} already in your list`
   );
+}
+
+// ---------------------------------------------------------------------------
+// Scan history. Each scan stores { id, ts, input, banlist, flagged, totalWords,
+// totalHits, rate, banlistHash }. Capped at last HISTORY_MAX. Two scans can be
+// selected to render a Set-difference diff of flagged words.
+
+function loadHistory() {
+  const { value } = load(HISTORY_KEY, []);
+  return Array.isArray(value) ? value : [];
+}
+
+function recordScan({ text, banList, hits, totalHits, totalWords }) {
+  const flagged = [...hits.keys()].sort();
+  const entry = {
+    id: `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`,
+    ts: Date.now(),
+    input: text.slice(0, 4000), // cap to avoid blowing storage on giant pastes
+    banlist: banList,
+    banlistHash: hashList(banList),
+    flagged,
+    totalWords,
+    totalHits,
+    rate: totalWords ? Math.round((totalHits / totalWords) * 1000) / 10 : 0,
+  };
+  const next = [entry, ...loadHistory()].slice(0, HISTORY_MAX);
+  save(HISTORY_KEY, next);
+  paintHistory();
+}
+
+function paintHistory() {
+  const items = loadHistory();
+  if (!items.length) {
+    historyBox.hidden = true;
+    historyList.innerHTML = "";
+    sparkEl.hidden = true;
+    diffBox.hidden = true;
+    selectedIds.clear();
+    return;
+  }
+  historyBox.hidden = false;
+  // prune selection to ids that still exist
+  const livingIds = new Set(items.map((i) => i.id));
+  for (const id of [...selectedIds]) if (!livingIds.has(id)) selectedIds.delete(id);
+
+  historyList.innerHTML = items.map(renderHistoryItem).join("");
+  paintSparkline(items);
+  paintDiff(items);
+}
+
+function renderHistoryItem(item) {
+  const checked = selectedIds.has(item.id) ? " checked" : "";
+  const disabled = !checked && selectedIds.size >= 2 ? " disabled" : "";
+  const when = formatWhen(item.ts);
+  const preview = escapeHTML(firstLine(item.input));
+  return `
+    <li class="wban__history-item">
+      <label class="wban__history-row">
+        <input type="checkbox" name="wban-history-pick" value="${item.id}"${checked}${disabled} />
+        <span class="wban__history-when">${escapeHTML(when)}</span>
+        <span class="wban__history-rate">${item.rate}%</span>
+        <span class="wban__history-counts">${item.totalHits}/${item.totalWords}</span>
+        <code class="wban__history-hash" title="banlist hash">${escapeHTML(item.banlistHash)}</code>
+        <span class="wban__history-preview">${preview}</span>
+      </label>
+    </li>`;
+}
+
+function onHistoryToggle(e) {
+  const cb = e.target;
+  if (!(cb instanceof HTMLInputElement) || cb.name !== "wban-history-pick") return;
+  if (cb.checked) {
+    if (selectedIds.size >= 2) {
+      cb.checked = false;
+      return;
+    }
+    selectedIds.add(cb.value);
+  } else {
+    selectedIds.delete(cb.value);
+  }
+  paintHistory();
+}
+
+function paintDiff(items) {
+  if (selectedIds.size !== 2) {
+    diffBox.hidden = true;
+    return;
+  }
+  // order picks by recency: older = "from", newer = "to"
+  const picked = items.filter((i) => selectedIds.has(i.id)).sort((a, b) => a.ts - b.ts);
+  const [from, to] = picked;
+  const fromSet = new Set(from.flagged);
+  const toSet = new Set(to.flagged);
+  const added = [...toSet].filter((w) => !fromSet.has(w)).sort();
+  const removed = [...fromSet].filter((w) => !toSet.has(w)).sort();
+  const same = [...toSet].filter((w) => fromSet.has(w)).sort();
+
+  diffBox.hidden = false;
+  diffMeta.textContent = `${formatWhen(from.ts)} → ${formatWhen(to.ts)}`;
+  paintDiffList(diffAddedEl, added, "added");
+  paintDiffList(diffRemovedEl, removed, "removed");
+  paintDiffList(diffSameEl, same, "same");
+}
+
+function paintDiffList(el, words, kind) {
+  const countEl = document.querySelector(`[data-diff-count="${kind}"]`);
+  if (countEl) countEl.textContent = String(words.length);
+  el.innerHTML = words.length
+    ? words.map((w) => `<li>${escapeHTML(w)}</li>`).join("")
+    : `<li class="wban__diff-empty">none</li>`;
+}
+
+function paintSparkline(items) {
+  if (items.length < 2) {
+    sparkEl.hidden = true;
+    return;
+  }
+  // chronological order, oldest left
+  const series = [...items].reverse().map((i) => i.rate);
+  const maxRate = Math.max(...series, 1);
+  const w = 200;
+  const h = 40;
+  const stepX = series.length > 1 ? w / (series.length - 1) : 0;
+  const points = series
+    .map((r, idx) => {
+      const x = idx * stepX;
+      const y = h - (r / maxRate) * (h - 4) - 2;
+      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    })
+    .join(" ");
+  const lastX = (series.length - 1) * stepX;
+  const lastY = h - (series[series.length - 1] / maxRate) * (h - 4) - 2;
+  sparkEl.hidden = false;
+  sparkEl.innerHTML = `
+    <polyline fill="none" stroke="currentColor" stroke-width="1.5" points="${points}" />
+    <circle cx="${lastX.toFixed(1)}" cy="${lastY.toFixed(1)}" r="2.5" fill="currentColor" />
+  `;
+}
+
+function clearHistory() {
+  if (!loadHistory().length) {
+    flash("history already empty");
+    return;
+  }
+  if (!window.confirm("Clear all saved scans?")) return;
+  remove(HISTORY_KEY);
+  selectedIds.clear();
+  paintHistory();
+  flash("history cleared");
+}
+
+function hashList(list) {
+  // small, stable, non-cryptographic fingerprint of the banlist so users can
+  // see which list a rate corresponds to. djb2 over the sorted joined string.
+  const joined = [...list].sort().join("|");
+  let h = 5381;
+  for (let i = 0; i < joined.length; i++) h = ((h << 5) + h + joined.charCodeAt(i)) >>> 0;
+  return h.toString(16).padStart(8, "0").slice(0, 8);
+}
+
+function formatWhen(ts) {
+  const d = new Date(ts);
+  const now = new Date();
+  const sameDay = d.toDateString() === now.toDateString();
+  const time = d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  if (sameDay) return time;
+  const date = d.toLocaleDateString([], { month: "short", day: "numeric" });
+  return `${date} ${time}`;
+}
+
+function firstLine(text) {
+  const line = String(text || "").split(/\r?\n/)[0].trim();
+  return line.length > 80 ? line.slice(0, 77) + "…" : line;
 }
 
 // ---------------------------------------------------------------------------
