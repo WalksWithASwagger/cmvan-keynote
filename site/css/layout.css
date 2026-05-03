@@ -29,9 +29,9 @@
    ------------------------------------------------------------------ */
 
 :root {
-  /* Approximate height of .site-header (sticky). Mobile = two stacked rows;
-     desktop = single row. Used by sticky elements like /recap TOC. */
-  --site-header-height: 5rem;
+  /* Matches .site-header's sticky height: stacked brand/nav on mobile,
+     single-row header on desktop. Used by sticky elements and anchors. */
+  --site-header-height: 5.1rem;
 }
 
 @media (min-width: 721px) {

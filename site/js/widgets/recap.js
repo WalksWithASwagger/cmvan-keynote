@@ -63,13 +63,11 @@ function escapeAttr(s) {
   return escapeHTML(s).replaceAll('"', "&quot;").replaceAll("'", "&#39;");
 }
 
-// Sticky TOC progress indicator. Watches each <section[id]> via
-// IntersectionObserver and toggles `.is-active` on the matching TOC link.
-// Activation band sits in the upper third of the viewport so exactly one
-// section is "current" at a time.
+// Sticky TOC progress indicator. Uses scroll position instead of a narrow
+// IntersectionObserver band so short sections still become current.
 (function initRecapToc() {
   const toc = document.querySelector("[data-recap-toc]");
-  if (!toc || typeof IntersectionObserver === "undefined") return;
+  if (!toc) return;
 
   const links = new Map();
   toc.querySelectorAll('a[href^="#"]').forEach((a) => {
@@ -85,38 +83,53 @@ function escapeAttr(s) {
   });
   if (!sections.length) return;
 
-  const visible = new Map();
+  let activeId = "";
+  let ticking = false;
 
   const setActive = (id) => {
+    activeId = id;
     links.forEach((link, key) => {
-      link.classList.toggle("is-active", key === id);
+      const active = key === id;
+      link.classList.toggle("is-active", active);
+      if (active) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
     });
   };
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          visible.set(entry.target.id, entry.boundingClientRect.top);
-        } else {
-          visible.delete(entry.target.id);
-        }
-      });
-      if (!visible.size) return;
-      // Pick the visible section with the smallest non-negative top — i.e.
-      // the one whose top edge is closest to (but not above) the viewport top.
-      let activeId = null;
-      let bestTop = Infinity;
-      visible.forEach((top, id) => {
-        if (top >= 0 && top < bestTop) {
-          bestTop = top;
-          activeId = id;
-        }
-      });
-      if (activeId) setActive(activeId);
-    },
-    { rootMargin: "-20% 0px -70% 0px", threshold: 0 }
-  );
+  const getActivationLine = () => {
+    const scrollMargin = Number.parseFloat(getComputedStyle(sections[0]).scrollMarginTop) || 0;
+    return Math.min(scrollMargin + 1, window.innerHeight * 0.55);
+  };
 
-  sections.forEach((section) => observer.observe(section));
+  const updateActive = () => {
+    ticking = false;
+    const activationLine = getActivationLine();
+    let nextId = sections[0].id;
+
+    sections.forEach((section) => {
+      if (section.getBoundingClientRect().top <= activationLine) {
+        nextId = section.id;
+      }
+    });
+
+    if (nextId !== activeId) setActive(nextId);
+  };
+
+  const requestUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateActive);
+  };
+
+  const initialHash = window.location.hash.slice(1);
+  setActive(links.has(initialHash) ? initialHash : sections[0].id);
+  requestUpdate();
+
+  window.addEventListener("load", requestUpdate);
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
+  window.addEventListener("hashchange", requestUpdate);
 })();
