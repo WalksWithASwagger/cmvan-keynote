@@ -202,3 +202,66 @@
   background: var(--accent);
   color: var(--accent-ink);
 }
+
+/* ------------------------------------------------------------------
+   SOCIAL — generated post variants
+   ------------------------------------------------------------------ */
+
+.tdoc-social {
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--border);
+}
+
+.tdoc-social__hint {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.tdoc-social__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.tdoc-social__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.tdoc-social__item {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: var(--space-3) var(--space-4);
+  display: grid;
+  gap: var(--space-2);
+}
+
+.tdoc-social__label {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+
+.tdoc-social__body {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  white-space: pre-wrap;
+  color: var(--fg-soft);
+}
+
+.tdoc-social__meta {
+  margin: 0;
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+

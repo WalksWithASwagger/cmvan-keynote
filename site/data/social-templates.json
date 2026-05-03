@@ -1,0 +1,70 @@
+{
+  "_comment": "Templates for /widgets/three-documents.html social-post generator. Each template has an id, a label (shown in the UI), and a build descriptor consumed by buildPost() in three-documents.js. Tokens: {policy.first}, {style.first}, {worldview.first}, {policy.line:N}, {worldview.last}, {style.refusals}, {tldr}.",
+  "maxChars": 280,
+  "templates": [
+    {
+      "id": "policy-oneliner",
+      "label": "Policy one-liner",
+      "requires": ["policy"],
+      "prefix": "My AI policy, in one line: ",
+      "body": "{policy.first}",
+      "suffix": ""
+    },
+    {
+      "id": "style-oneliner",
+      "label": "Style one-liner",
+      "requires": ["style"],
+      "prefix": "Voice rules I keep close: ",
+      "body": "{style.first}",
+      "suffix": ""
+    },
+    {
+      "id": "worldview-oneliner",
+      "label": "Worldview one-liner",
+      "requires": ["worldview"],
+      "prefix": "What I actually believe: ",
+      "body": "{worldview.first}",
+      "suffix": ""
+    },
+    {
+      "id": "refusals",
+      "label": "Refusals (style)",
+      "requires": ["style"],
+      "prefix": "Words I refuse to use: ",
+      "body": "{style.refusals}",
+      "suffix": ""
+    },
+    {
+      "id": "key-quote",
+      "label": "Key quote (worldview close)",
+      "requires": ["worldview"],
+      "prefix": "\"",
+      "body": "{worldview.last}",
+      "suffix": "\""
+    },
+    {
+      "id": "tldr",
+      "label": "TLDR (all three)",
+      "requires": ["policy", "style", "worldview"],
+      "prefix": "TLDR of my three documents:\n",
+      "body": "{tldr}",
+      "suffix": ""
+    },
+    {
+      "id": "manifesto",
+      "label": "Mini manifesto",
+      "requires": ["policy", "worldview"],
+      "prefix": "I won't outsource taste. ",
+      "body": "{policy.first} {worldview.first}",
+      "suffix": ""
+    },
+    {
+      "id": "feed-the-bot",
+      "label": "Feed-the-bot dare",
+      "requires": ["policy"],
+      "prefix": "Feed your AI three documents — policy, style, worldview. Mine starts: ",
+      "body": "{policy.first}",
+      "suffix": ""
+    }
+  ]
+}
