@@ -43,6 +43,8 @@ Linear project: [Punk Rock AI Portal](https://linear.app/bc-ai/project/punk-rock
 5. Implement the change, run `npm run eval`, and open a PR with the repo template.
 6. When the PR lands, update [`docs/PROJECT-ROADMAP.md`](./PROJECT-ROADMAP.md) and [`SESSION-HANDOFF.md`](../SESSION-HANDOFF.md) if the change altered scope, status, or blockers.
 
+Branch names should keep the repo prefix and include the Linear key, for example `codex/bc-17-verify-linear-github-pr-linking`.
+
 ## Commands
 
 ```sh
