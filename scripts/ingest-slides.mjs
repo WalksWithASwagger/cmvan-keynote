@@ -23,6 +23,11 @@
 // Optional env:
 //   DRY_RUN=1                 – no R2 upload, no file writes; prints plan only
 //   SKIP_UPLOAD=1             – build WebPs + manifest, but don't push to R2
+//   R2_MAX_RETRIES=3          – upload retry attempts on transient failure
+//
+// CLI flags:
+//   --dry-run                 – same as DRY_RUN=1
+//   --skip-upload             – same as SKIP_UPLOAD=1
 //
 // Optional per-slide overrides: $SLIDES_SRC/manifest.json with shape
 //   { "01": { "alt": "...", "prompt": "..." }, ... }
@@ -37,12 +42,23 @@ const ROOT = resolve(HERE, "..");
 const SLIDES_JSON = resolve(ROOT, "site/data/slides.json");
 const FALLBACK_DIR = resolve(ROOT, "site/public/images/slides");
 
-const DRY_RUN = !!process.env.DRY_RUN;
-const SKIP_UPLOAD = !!process.env.SKIP_UPLOAD;
+const argv = new Set(process.argv.slice(2));
+const DRY_RUN = !!process.env.DRY_RUN || argv.has("--dry-run");
+const SKIP_UPLOAD = !!process.env.SKIP_UPLOAD || argv.has("--skip-upload");
+const MAX_RETRIES = Math.max(1, Number(process.env.R2_MAX_RETRIES) || 3);
 const SRC = process.env.SLIDES_SRC;
 
-if (!SRC) die("SLIDES_SRC is required (absolute path to your slide source dir).");
+if (!SRC) die(envHelp("SLIDES_SRC is required (absolute path to your slide source dir)."));
 if (!existsSync(SRC)) die(`SLIDES_SRC does not exist: ${SRC}`);
+
+// Fail fast on missing R2 creds for a real run, with a clear message that
+// names exactly which vars are missing — we don't want a cryptic AWS SDK
+// error 200ms into the upload loop.
+if (!DRY_RUN && !SKIP_UPLOAD) {
+  const need = ["R2_ACCOUNT_ID", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_BUCKET", "R2_PUBLIC_BASE"];
+  const missing = need.filter((k) => !process.env[k]);
+  if (missing.length) die(envHelp(`missing R2 env: ${missing.join(", ")}`));
+}
 
 if (!existsSync(SLIDES_JSON)) {
   die("site/data/slides.json not found — run `node scripts/build-quotes.mjs` first.");
@@ -148,14 +164,9 @@ async function loadManifest(dir) {
 
 async function initR2() {
   if (DRY_RUN || SKIP_UPLOAD) return null;
-  const need = ["R2_ACCOUNT_ID", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_BUCKET", "R2_PUBLIC_BASE"];
-  const missing = need.filter((k) => !process.env[k]);
-  if (missing.length) {
-    console.warn(`  ! R2 env missing (${missing.join(", ")}) — skipping upload`);
-    return null;
-  }
+  // Required-env check happens up-front; if we got here, all five are set.
   const sdk = await tryImport("@aws-sdk/client-s3");
-  if (!sdk) die("missing dep: install @aws-sdk/client-s3.");
+  if (!sdk) die("missing dep: install @aws-sdk/client-s3 (run `npm install`).");
   const { S3Client, PutObjectCommand } = sdk;
   const client = new S3Client({
     region: "auto",
@@ -167,14 +178,27 @@ async function initR2() {
   });
   return {
     async put(key, body, contentType) {
-      await client.send(
-        new PutObjectCommand({
-          Bucket: process.env.R2_BUCKET,
-          Key: key,
-          Body: body,
-          ContentType: contentType,
-        })
-      );
+      let lastErr;
+      for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+        try {
+          await client.send(
+            new PutObjectCommand({
+              Bucket: process.env.R2_BUCKET,
+              Key: key,
+              Body: body,
+              ContentType: contentType,
+            })
+          );
+          return;
+        } catch (err) {
+          lastErr = err;
+          if (attempt === MAX_RETRIES) break;
+          const delay = 500 * 2 ** (attempt - 1);
+          console.warn(`  ! upload ${key} failed (attempt ${attempt}/${MAX_RETRIES}): ${err.message} — retrying in ${delay}ms`);
+          await new Promise((r) => setTimeout(r, delay));
+        }
+      }
+      throw new Error(`upload failed for ${key} after ${MAX_RETRIES} attempts: ${lastErr?.message}`);
     },
   };
 }
@@ -207,4 +231,21 @@ function rel(p) {
 function die(msg) {
   console.error(msg);
   process.exit(1);
+}
+
+function envHelp(headline) {
+  return [
+    headline,
+    "",
+    "Required env (see .env.example and scripts/README.md):",
+    "  SLIDES_SRC            absolute path to local slide images",
+    "  R2_ACCOUNT_ID         Cloudflare account id",
+    "  R2_ACCESS_KEY_ID      R2 token",
+    "  R2_SECRET_ACCESS_KEY  R2 token",
+    "  R2_BUCKET             e.g. punkrockai-slides",
+    "  R2_PUBLIC_BASE        public URL prefix (e.g. https://pub-xxx.r2.dev)",
+    "",
+    "To preview without creds:  node scripts/ingest-slides.mjs --dry-run",
+    "To skip just the upload:   node scripts/ingest-slides.mjs --skip-upload",
+  ].join("\n");
 }
