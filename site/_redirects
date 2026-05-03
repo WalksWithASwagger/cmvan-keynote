@@ -18,6 +18,9 @@
 /widgets/mastery-gym         /widgets/mastery-gym.html         200
 /widgets/receipt             /widgets/receipt.html             200
 /widgets/detournement        /widgets/detournement.html        200
+/widgets/posse-builder       /widgets/posse-builder.html       200
+/widgets/posse-graph         /widgets/posse-builder.html       200
+/widgets/posse-graph.html    /widgets/posse-builder.html       200
 
 # If an old companion-site path leaks, route home.
 /companion-site/*           /                                  301

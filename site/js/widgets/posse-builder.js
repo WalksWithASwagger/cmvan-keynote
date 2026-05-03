@@ -298,7 +298,39 @@ function removeNode(id) {
 // ---------------- export PNG ----------------
 
 function exportPNG() {
-  const svg = svgEl;
+  // External stylesheets and CSS custom properties (var(--font-mono),
+  // var(--bg)) do NOT apply when an SVG is loaded into an <Image> for
+  // canvas rasterization. Clone the live SVG and embed a <style> block
+  // with literal resolved values so labels render correctly.
+  const root = getComputedStyle(document.documentElement);
+  const fontMono = root.getPropertyValue("--font-mono").trim() || "monospace";
+  const bg = root.getPropertyValue("--bg").trim() || "#0a0a0a";
+  const fg = root.getPropertyValue("--fg").trim() || "#ffffff";
+  const accent = root.getPropertyValue("--accent").trim() || "#e11d2e";
+  const accentInk = root.getPropertyValue("--accent-ink").trim() || "#ffffff";
+
+  const svg = svgEl.cloneNode(true);
+  if (!svg.getAttribute("xmlns")) {
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+  }
+  const styleEl = document.createElementNS("http://www.w3.org/2000/svg", "style");
+  styleEl.textContent = `
+    .pb-link { stroke-opacity: 0.85; stroke-width: 1.6px; fill: none; }
+    .pb-node circle { fill: ${bg}; stroke: ${fg}; stroke-width: 1.6px; }
+    .pb-node--self circle { fill: ${accent}; stroke: ${accent}; }
+    .pb-node text {
+      font-family: ${fontMono};
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      fill: ${fg};
+      paint-order: stroke;
+      stroke: ${bg};
+      stroke-width: 3px;
+    }
+    .pb-node--self text { fill: ${accentInk}; stroke: ${accent}; }
+  `;
+  svg.insertBefore(styleEl, svg.firstChild);
+
   const xml = new XMLSerializer().serializeToString(svg);
   const svgBlob = new Blob([xml], { type: "image/svg+xml;charset=utf-8" });
   const url = URL.createObjectURL(svgBlob);
