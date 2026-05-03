@@ -21,7 +21,7 @@ const playerBar = document.getElementById("sel-player-bar");
 let allRecords = [];
 let activeFilter = "all";
 let queue = []; // array of record ids
-let player = { idx: -1, timer: null, raf: null, started: 0, duration: 0 };
+let player = { idx: -1, timer: null, raf: null, started: 0, duration: 0, remaining: 0, paused: false };
 
 const debouncedSave = debounceSave(STORAGE_KEY, 250);
 
@@ -48,6 +48,7 @@ async function main() {
   renderQueue();
   bindFilters();
   bindActions();
+  bindShortcuts();
 }
 
 function buildRecords(quotes, lineage, slides) {
@@ -216,6 +217,36 @@ function bindActions() {
   document.querySelector('[data-action="reset"]').addEventListener("click", resetSet);
 }
 
+function bindShortcuts() {
+  document.addEventListener("keydown", (e) => {
+    if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey) return;
+    const t = e.target;
+    if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) return;
+    switch (e.key) {
+      case " ":
+      case "Spacebar":
+        e.preventDefault();
+        togglePlayPause();
+        break;
+      case "ArrowRight":
+        if (player.idx < 0) return;
+        e.preventDefault();
+        nextRecord();
+        break;
+      case "ArrowLeft":
+        if (player.idx <= 0) return;
+        e.preventDefault();
+        prevRecord();
+        break;
+      case "Escape":
+        if (player.idx < 0) return;
+        e.preventDefault();
+        stopPlayback();
+        break;
+    }
+  });
+}
+
 function startPlayback() {
   if (!queue.length) {
     flash("build a set list first");
@@ -245,11 +276,60 @@ function playRecord(idx) {
   const duration = Math.min(12000, READ_BASE_MS + READ_PER_CHAR_MS * (r.body || "").length);
   player.started = performance.now();
   player.duration = duration;
+  player.remaining = duration;
+  player.paused = false;
   tickBar();
   player.timer = setTimeout(() => playRecord(idx + 1), duration);
 
   // re-render queue to highlight active row
   renderQueue();
+}
+
+function pausePlayback() {
+  if (player.idx < 0 || player.paused) return;
+  clearTimeout(player.timer);
+  cancelAnimationFrame(player.raf);
+  player.timer = null;
+  player.raf = null;
+  const elapsed = performance.now() - player.started;
+  player.remaining = Math.max(0, player.duration - elapsed);
+  player.paused = true;
+  playerEl.dataset.state = "paused";
+  flash("paused");
+}
+
+function resumePlayback() {
+  if (player.idx < 0 || !player.paused) return;
+  player.paused = false;
+  player.started = performance.now() - (player.duration - player.remaining);
+  playerEl.dataset.state = "playing";
+  tickBar();
+  const idx = player.idx;
+  player.timer = setTimeout(() => playRecord(idx + 1), player.remaining);
+  flash("resumed");
+}
+
+function togglePlayPause() {
+  if (player.idx < 0) {
+    startPlayback();
+    return;
+  }
+  if (player.paused) resumePlayback();
+  else pausePlayback();
+}
+
+function nextRecord() {
+  if (player.idx < 0) return;
+  clearTimeout(player.timer);
+  cancelAnimationFrame(player.raf);
+  playRecord(player.idx + 1);
+}
+
+function prevRecord() {
+  if (player.idx <= 0) return;
+  clearTimeout(player.timer);
+  cancelAnimationFrame(player.raf);
+  playRecord(player.idx - 1);
 }
 
 function tickBar() {
@@ -272,6 +352,9 @@ function stopPlayback() {
   player.idx = -1;
   player.timer = null;
   player.raf = null;
+  player.paused = false;
+  player.remaining = 0;
+  player.duration = 0;
   playerEl.dataset.state = "idle";
   playerTag.textContent = "";
   playerBody.textContent = "";
