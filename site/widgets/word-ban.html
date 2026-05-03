@@ -60,6 +60,33 @@
                 <h3>Top offenders</h3>
                 <ul class="wban__hit-list" id="wban-hit-list"></ul>
               </div>
+
+              <div class="wban__history" id="wban-history" hidden>
+                <div class="wban__history-head">
+                  <h3>Scan history</h3>
+                  <button class="btn btn--ghost" type="button" data-action="clear-history">Clear history</button>
+                </div>
+                <p class="wban__history-meta">Last 10 scans &middot; pick two to diff</p>
+                <svg class="wban__sparkline" id="wban-sparkline" viewBox="0 0 200 40" preserveAspectRatio="none" aria-label="cliche rate over recent scans" hidden></svg>
+                <ul class="wban__history-list" id="wban-history-list"></ul>
+                <div class="wban__diff" id="wban-diff" hidden>
+                  <h3>Diff <span class="wban__diff-meta" id="wban-diff-meta"></span></h3>
+                  <div class="wban__diff-cols">
+                    <div class="wban__diff-col">
+                      <h4>Added <span data-diff-count="added">0</span></h4>
+                      <ul class="wban__diff-list" id="wban-diff-added"></ul>
+                    </div>
+                    <div class="wban__diff-col">
+                      <h4>Removed <span data-diff-count="removed">0</span></h4>
+                      <ul class="wban__diff-list" id="wban-diff-removed"></ul>
+                    </div>
+                    <div class="wban__diff-col">
+                      <h4>Unchanged <span data-diff-count="same">0</span></h4>
+                      <ul class="wban__diff-list" id="wban-diff-same"></ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <aside class="wban__sidebar">
