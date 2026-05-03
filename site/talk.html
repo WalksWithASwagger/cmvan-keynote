@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/css/theme.css" />
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/widgets/slide-reel.css" />
+    <link rel="stylesheet" href="/css/widgets/talk-waveform.css" />
   </head>
   <body class="shell">
     <header class="site-header" data-include="header"></header>
@@ -35,6 +36,29 @@
             (right-click &rarr; copy link) and lives at its own anchor.
           </p>
           <nav class="act-rail" id="act-rail" aria-label="Acts"></nav>
+        </div>
+      </section>
+
+      <section class="talk-waveform" id="talk-waveform">
+        <div class="wrap">
+          <div class="talk-waveform__head">
+            <h2>Hear the talk</h2>
+            <span class="talk-waveform__kicker">Dress rehearsal &middot; click wave to scrub</span>
+          </div>
+          <div class="talk-waveform__stage">
+            <canvas
+              class="talk-waveform__canvas"
+              role="img"
+              aria-label="Waveform of the talk audio"
+            ></canvas>
+          </div>
+          <audio
+            class="talk-waveform__audio"
+            controls
+            preload="none"
+            src="/public/audio/talk.mp3"
+          ></audio>
+          <span class="talk-waveform__status" data-waveform-status></span>
         </div>
       </section>
 
@@ -88,5 +112,6 @@
 
     <script type="module" src="/js/common/header.js"></script>
     <script type="module" src="/js/widgets/slide-reel.js"></script>
+    <script type="module" src="/js/widgets/talk-waveform.js"></script>
   </body>
 </html>

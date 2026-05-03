@@ -1,0 +1,63 @@
+/* /talk — hero waveform visualizer */
+
+.talk-waveform {
+  padding-block: var(--space-5);
+  border-bottom: 1px solid var(--border);
+}
+
+.talk-waveform__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.talk-waveform__head h2 {
+  margin: 0;
+  font-size: var(--fs-lg);
+}
+
+.talk-waveform__kicker {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.talk-waveform__stage {
+  position: relative;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-2, #111);
+  padding: var(--space-3);
+}
+
+.talk-waveform__canvas {
+  display: block;
+  width: 100%;
+  height: 140px;
+  cursor: pointer;
+}
+
+.talk-waveform__audio {
+  display: block;
+  width: 100%;
+  margin-top: var(--space-3);
+}
+
+.talk-waveform__status {
+  display: block;
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .talk-waveform__canvas {
+    cursor: default;
+  }
+}
