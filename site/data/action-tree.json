@@ -1,0 +1,123 @@
+{
+  "title": "Action chooser",
+  "intro": "The talk ended on Release Day — May 29. Five quick questions. One concrete next move. No homework, no inbox course, no maybe-later list. Pick the truer answer over the prettier one.",
+  "root": "q-role",
+  "actions": {
+    "write-doc": {
+      "title": "Write your three documents.",
+      "rationale": "Your AI keeps sounding like everyone else's AI because you've never told it who you are. Spend 20 minutes on the worldview / style / refuse-list trio. Save them. Reuse them in every prompt from now on.",
+      "cta": "Open /three-documents",
+      "href": "/widgets/three-documents.html",
+      "kind": "portal"
+    },
+    "audit-taste": {
+      "title": "Run a taste audit on your last ten outputs.",
+      "rationale": "You're shipping fast but the room is starting to blur. Pull the last ten things the model made for you. Score each one against your style guide. Cut the bot tells. The hero of the dancehall is the one with taste.",
+      "cta": "Open /taste-audit",
+      "href": "/widgets/taste-audit.html",
+      "kind": "portal"
+    },
+    "both-hands": {
+      "title": "Map your work onto Both Hands.",
+      "rationale": "You're stuck because you're working with one hand. List what only you can do (the human hand) next to what the model can do (the machine hand). The seam between them is the work.",
+      "cta": "Open /both-hands",
+      "href": "/widgets/both-hands.html",
+      "kind": "portal"
+    },
+    "build-set": {
+      "title": "Build a Selector set on what you actually believe.",
+      "rationale": "You don't have a distribution problem — you have a position problem. Drag the talk's quotes, your favourite beats, the slides that hit. Order them. That order is your point of view. Ship that.",
+      "cta": "Open /selector",
+      "href": "/widgets/selector.html",
+      "kind": "portal"
+    },
+    "ship-zine": {
+      "title": "Cut up something old. Ship a zine by Release Day.",
+      "rationale": "Stop generating new. Take what's already in your drafts folder, run it through the cut-up tool, print one page, hand it to one person. That's a release. May 29 is the deadline you set yourself by being in the room.",
+      "cta": "Open /cut-up",
+      "href": "/widgets/cut-up.html",
+      "kind": "portal"
+    },
+    "find-posse": {
+      "title": "Find your posse of three.",
+      "rationale": "You're trying to do this alone and it's why you keep stalling. Pick three people from the room — one ahead of you, one beside you, one behind you. Send each of them a sentence today. The work gets easier when somebody's watching.",
+      "cta": "Open /posse",
+      "href": "/posse.html",
+      "kind": "portal"
+    },
+    "release-day": {
+      "title": "Commit to Release Day. Pick the thing.",
+      "rationale": "You don't need another framework. You need a deadline with a public on the other side. Open the Release Day page, name what you're shipping by May 29, paste the link to a friend before you close the tab.",
+      "cta": "Open /release-day",
+      "href": "/release-day.html",
+      "kind": "portal"
+    },
+    "meetup": {
+      "title": "Show up at the next BC AI meetup.",
+      "rationale": "You learn this in rooms, not feeds. The Vancouver scene meets in person, on purpose, on the regular. Bring the half-finished thing. Trade notes with someone whose work you admire. Repeat.",
+      "cta": "Open BC AI Community",
+      "href": "https://bcaicommunity.com/",
+      "kind": "external"
+    }
+  },
+  "nodes": {
+    "q-role": {
+      "question": "Are you mostly making or mostly managing?",
+      "hint": "Pick where you spent the most hours last week.",
+      "options": [
+        { "label": "Making — words, images, code, sound", "next": "q-maker-block" },
+        { "label": "Managing — people, projects, decisions", "next": "q-manager-pain" },
+        { "label": "Both, honestly", "next": "q-both-priority" }
+      ]
+    },
+    "q-maker-block": {
+      "question": "What stops you most often?",
+      "hint": "First instinct, not the polished answer.",
+      "options": [
+        { "label": "The output sounds like every other AI", "next": "q-voice-doc" },
+        { "label": "I can't tell which draft is good", "next": "audit-taste" },
+        { "label": "I can ship — nobody sees it", "next": "build-set" },
+        { "label": "I have ten half-finished things", "next": "ship-zine" }
+      ]
+    },
+    "q-manager-pain": {
+      "question": "Where's the friction?",
+      "hint": "What's costing your team the most this month.",
+      "options": [
+        { "label": "No shared rules — everyone uses AI differently", "next": "write-doc" },
+        { "label": "Outputs are shipping but the quality is sliding", "next": "audit-taste" },
+        { "label": "I'm doing it alone and burning out", "next": "find-posse" },
+        { "label": "We can't decide what's human vs. what's machine", "next": "both-hands" }
+      ]
+    },
+    "q-both-priority": {
+      "question": "If you only had two hours this week, where do they go?",
+      "hint": "Two hours, no meetings, your call.",
+      "options": [
+        { "label": "Sharpen my voice", "next": "q-voice-doc" },
+        { "label": "Finish one thing", "next": "ship-zine" },
+        { "label": "Find collaborators", "next": "find-posse" },
+        { "label": "Audit what I've already made", "next": "audit-taste" }
+      ]
+    },
+    "q-voice-doc": {
+      "question": "Have you written your style guide yet?",
+      "hint": "The actual document, not a vibe.",
+      "options": [
+        { "label": "No — never sat down to do it", "next": "write-doc" },
+        { "label": "Sort of — a few notes somewhere", "next": "write-doc" },
+        { "label": "Yes — and I still hate the outputs", "next": "q-have-style" }
+      ]
+    },
+    "q-have-style": {
+      "question": "When did you last update it?",
+      "hint": "Style guides rot. Yours probably has too.",
+      "options": [
+        { "label": "Months ago, maybe longer", "next": "audit-taste" },
+        { "label": "Recently — the model still ignores it", "next": "both-hands" },
+        { "label": "Honestly, I copy-pasted somebody else's", "next": "write-doc" }
+      ]
+    }
+  },
+  "leafBlurb": "Save this. The result lives in your browser — come back to it when you finish, or shuffle and pick again."
+}
