@@ -2,7 +2,9 @@
 
 Snapshots from the canonical knowledge base at [`WalksWithASwagger/kk-kb`](https://github.com/WalksWithASwagger/kk-kb). Treat these as **read-only references** — when working drafts diverge from these, update the canonical KB and re-snapshot, don't edit in place.
 
-Snapshot date: 2026-04-22 (updated 2026-04-30)
+Snapshot date: 2026-04-22 (updated 2026-04-30, 2026-05-02)
+
+> See [`SYNC-NOTES.md`](./SYNC-NOTES.md) for the dated sync log + provenance table for the most recent refresh.
 
 ---
 
@@ -12,7 +14,10 @@ Snapshot date: 2026-04-22 (updated 2026-04-30)
 |---|---|---|
 | `kk-voice-profile.md` | `content/reference/kk-voice-profile.md` | The formula (deep wisdom + sassy swagger), glossary, anti-glossary, tone-by-context. Ground-truth for staying in voice. |
 | `kk-worldview.md` | `content/reference/kk-worldview.md` | Underlying values, perspective, how KK sees the world. |
+| `kk-voice-by-context.md` | `content/reference/kk-voice-by-context.md` | Channel-specific voice dial — keynote vs. blog vs. social. Use to tune drafts for the medium. |
+| `kk-writing-style-guide.md` | `content/reference/kk-writing-style-guide.md` | Prose-level rulebook — sentence length, punctuation, em-dash discipline, voice tics. |
 | `bio-master.md` | `content/people/kris-krug/bio-master.md` | Single source of truth for all bio variants — for intro card / event page / press. |
+| `telos/` | `content/people/kris-krug/telos/` | MISSION, BELIEFS, NARRATIVES, MODELS, README — the upstream spine that everything in the talk descends from. |
 
 ---
 
@@ -31,6 +36,24 @@ Full article package from `content/articles/kris-krug-thought-leadership/17-tast
 ## `moment-no-permission/` — Article #18
 
 Full article package from `content/articles/kris-krug-thought-leadership/18-moment-no-permission/`. Title: *"The Moment Didn't Ask Permission: Agency Within Inevitability."* This is the article-form evolution of BHF that pushes hardest on the consent / governance angle. Heavily reusable for the "if all the critics opt out" beat.
+
+---
+
+## `clarity-as-exposure/` — Article #19
+
+Full package from `content/articles/kris-krug-thought-leadership/19-clarity-as-exposure/`. *"AI Will Reveal Everyone Who Doesn't Know Who They Are."* Canonical written form of the **AI-is-a-mirror** beat — directly feeds the cutting-room-floor / 145K-frames argument and any moment where the talk says generic-in / generic-out.
+
+---
+
+## `mycorrhizal-network/` — Article #20
+
+Full package from `content/articles/kris-krug-thought-leadership/20-mycorrhizal-network/`. The horizontal-vs-vertical scaling frame. Underground network → visible forest. Backs the BC + AI / Posse / community-first argument.
+
+---
+
+## `who-sets-direction/` — Article #21
+
+Package (no draft / outline upstream — only `final.md`, `image-prompts.md`, `seo.md`, `social-content.md`) from `content/articles/kris-krug-thought-leadership/21-who-sets-direction/`. *"How a Grassroots Community Became Essential Stakeholders in 20 Months."* All-In Montreal, BC delegation, Minister Solomon. Spine for the "stay in the room" governance close and the post-talk publishing follow-up.
 
 ---
 
