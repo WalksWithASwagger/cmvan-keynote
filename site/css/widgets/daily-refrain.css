@@ -1,0 +1,71 @@
+/* Daily refrain banner — top of /. One of 19 quotes per calendar day,
+   deterministic. Anchors back to its slide on /talk. Tokens-only. */
+
+.daily-refrain {
+  --refrain-min-h: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--refrain-min-h);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--accent);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--fg-soft);
+  text-align: center;
+}
+
+.daily-refrain__inner {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-3);
+  max-width: min(72ch, 100%);
+}
+
+.daily-refrain__tag {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.daily-refrain__link {
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  line-height: 1.35;
+  transition: border-color 120ms var(--ease-snap), color 120ms var(--ease-snap);
+}
+
+.daily-refrain__link:hover,
+.daily-refrain__link:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  outline: none;
+}
+
+.daily-refrain__cite {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.daily-refrain[data-state="error"] {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  .daily-refrain {
+    padding-block: var(--space-2);
+  }
+  .daily-refrain__link {
+    font-size: var(--fs-sm);
+  }
+}
