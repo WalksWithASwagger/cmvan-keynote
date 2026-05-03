@@ -1,0 +1,318 @@
+/* /widgets/tool-not-neutral.html — case showcase for slide 19 */
+
+.tnn-intro {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.tnn-intro h1 {
+  font-size: var(--fs-2xl);
+  margin: 0 0 var(--space-3);
+  max-width: 22ch;
+}
+
+.tnn-intro__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 52ch;
+  color: var(--fg-soft);
+}
+
+.tnn-intro__pull {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  margin: var(--space-4) 0 var(--space-3);
+  border-left: 3px solid var(--accent);
+  padding: var(--space-2) 0 var(--space-2) var(--space-3);
+  color: var(--accent);
+  max-width: 40ch;
+}
+
+.tnn-intro__rubric {
+  font-size: var(--fs-base);
+  color: var(--fg-soft);
+  max-width: 56ch;
+}
+
+/* ------------------------------------------------------------------
+   CASE SHOWCASE — one card at a time, prev/next, jump strip
+   ------------------------------------------------------------------ */
+
+.tnn {
+  padding-block: var(--space-5);
+}
+
+.tnn__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: var(--space-2);
+}
+
+.tnn__progress {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.tnn__nav {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.tnn__nav button {
+  font: inherit;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 0.45rem 0.9rem;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--fg);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.tnn__nav button:hover:not(:disabled),
+.tnn__nav button:focus-visible {
+  background: var(--accent);
+  color: var(--bg);
+  outline: none;
+}
+
+.tnn__nav button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* ------------------------------------------------------------------
+   CARD
+   ------------------------------------------------------------------ */
+
+.tnn__card {
+  display: grid;
+  gap: var(--space-3);
+  border: 1px solid var(--border-strong);
+  border-left: 4px solid var(--accent);
+  background: var(--surface, rgba(255, 255, 255, 0.02));
+  padding: var(--space-4);
+  min-height: 18rem;
+}
+
+.tnn-card--in {
+  animation: tnn-fade 240ms ease-out both;
+}
+
+@keyframes tnn-fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tnn-card__head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.tnn-card__num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tnn-card__tool {
+  margin: 0;
+  font-size: var(--fs-xl);
+  line-height: 1.2;
+  flex: 1 1 60%;
+}
+
+.tnn-card__pairs {
+  margin: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.tnn-card__row {
+  display: grid;
+  grid-template-columns: minmax(8rem, 12rem) 1fr;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 1px dashed var(--border-strong);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.tnn-card__row dt {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  align-self: start;
+}
+
+.tnn-card__row dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.35;
+}
+
+.tnn-card__row--decision {
+  border-left: 3px solid var(--fg-soft);
+}
+
+.tnn-card__row--outcome[data-valence="harm"] {
+  border-left: 3px solid var(--accent);
+}
+
+.tnn-card__row--outcome[data-valence="harm"] dt {
+  color: var(--accent);
+}
+
+.tnn-card__row--outcome[data-valence="benefit"] {
+  border-left: 3px solid #5fd47a;
+}
+
+.tnn-card__row--outcome[data-valence="benefit"] dt {
+  color: #5fd47a;
+}
+
+.tnn-card__harm-name,
+.tnn-card__precise {
+  margin: 0;
+  font-size: var(--fs-base);
+  line-height: 1.45;
+  color: var(--fg-soft);
+}
+
+.tnn-card__harm-name .kicker,
+.tnn-card__precise .kicker {
+  display: inline-block;
+  margin-right: var(--space-2);
+}
+
+.tnn-card__cite {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  word-break: break-word;
+}
+
+.tnn-card__cite a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.tnn-card__cite a:hover,
+.tnn-card__cite a:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+
+/* ------------------------------------------------------------------
+   JUMP STRIP — numbered chips, click to jump, current is solid
+   ------------------------------------------------------------------ */
+
+.tnn__strip {
+  list-style: none;
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tnn__strip li { margin: 0; }
+
+.tnn__strip button {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.12em;
+  padding: 0.35rem 0.65rem;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--muted);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.tnn__strip button:hover,
+.tnn__strip button:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  outline: none;
+}
+
+.tnn__strip button.is-active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+/* ------------------------------------------------------------------
+   CODA
+   ------------------------------------------------------------------ */
+
+.tnn-coda {
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--border);
+}
+
+.tnn-coda__line {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  margin: 0 0 var(--space-2);
+  max-width: 56ch;
+}
+
+.tnn-coda__line + .tnn-coda__line {
+  color: var(--accent);
+}
+
+/* ------------------------------------------------------------------
+   RESPONSIVE
+   ------------------------------------------------------------------ */
+
+@media (max-width: 720px) {
+  .tnn-card__row {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+  .tnn-card__row dd {
+    font-size: var(--fs-base);
+  }
+  .tnn__head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* ------------------------------------------------------------------
+   REDUCED MOTION
+   ------------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  .tnn-card--in {
+    animation: none;
+  }
+  .tnn__nav button,
+  .tnn__strip button,
+  .tnn-card__cite a {
+    transition: none;
+  }
+}
