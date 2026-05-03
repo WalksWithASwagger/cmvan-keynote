@@ -1,0 +1,194 @@
+{
+  "generated": "hand-curated",
+  "source": "publicly documented dataset cards, papers, and project sites as of 2026-05",
+  "note": "Crawl windows are approximate. Inclusion is plausibility, not proof. Models trained on these corpora are downstream — a date hit means your work could be in the corpus, not that any specific model has memorized it.",
+  "corpora": [
+    {
+      "id": "common-crawl",
+      "name": "Common Crawl",
+      "type": "text",
+      "kind": "web crawl",
+      "windowStart": "2008-01",
+      "windowEnd": "present",
+      "swept": "Public web pages, monthly snapshots. The substrate under almost every other text corpus on this list — C4, The Pile, RedPajama, FineWeb all start here.",
+      "respectsRobotsTxt": true,
+      "userAgents": ["CCBot"],
+      "link": "https://commoncrawl.org/",
+      "optOut": "Block CCBot in robots.txt. Past snapshots already published cannot be recalled."
+    },
+    {
+      "id": "c4",
+      "name": "C4 (Colossal Clean Crawled Corpus)",
+      "type": "text",
+      "kind": "filtered web",
+      "windowStart": "2019-04",
+      "windowEnd": "2019-04",
+      "swept": "A single Common Crawl snapshot from April 2019, cleaned and deduplicated. Used to train T5 and many open models since.",
+      "respectsRobotsTxt": false,
+      "userAgents": [],
+      "link": "https://www.tensorflow.org/datasets/catalog/c4",
+      "optOut": "None — C4 is a frozen historical snapshot."
+    },
+    {
+      "id": "the-pile",
+      "name": "The Pile",
+      "type": "text",
+      "kind": "mixed corpus",
+      "windowStart": "2008-01",
+      "windowEnd": "2020-12",
+      "swept": "825 GB of text: arXiv, GitHub, Stack Exchange, PubMed, Wikipedia, Books3, OpenWebText2, plus a Common Crawl slice. Built by EleutherAI; foundational for many open LLMs.",
+      "respectsRobotsTxt": false,
+      "userAgents": [],
+      "link": "https://pile.eleuther.ai/",
+      "optOut": "None — The Pile is a frozen archive. Books3 was removed from the official distribution in 2023 but persists in older mirrors."
+    },
+    {
+      "id": "books3",
+      "name": "Books3",
+      "type": "text",
+      "kind": "books",
+      "windowStart": "2008-01",
+      "windowEnd": "2020-09",
+      "swept": "~196,000 books scraped from Bibliotik. Removed from public distribution in 2023 after author lawsuits but remains in many trained models.",
+      "respectsRobotsTxt": false,
+      "userAgents": [],
+      "link": "https://en.wikipedia.org/wiki/Books3",
+      "optOut": "The Atlantic's lookup tool can tell you if your title is in the set."
+    },
+    {
+      "id": "openwebtext",
+      "name": "OpenWebText / OpenWebText2",
+      "type": "text",
+      "kind": "filtered web",
+      "windowStart": "2005-01",
+      "windowEnd": "2019-04",
+      "swept": "Pages linked from Reddit posts with at least 3 upvotes. A reconstruction of OpenAI's original WebText.",
+      "respectsRobotsTxt": false,
+      "userAgents": [],
+      "link": "https://skylion007.github.io/OpenWebTextCorpus/",
+      "optOut": "None — frozen historical snapshot."
+    },
+    {
+      "id": "laion-400m",
+      "name": "LAION-400M",
+      "type": "image",
+      "kind": "image-text pairs",
+      "windowStart": "2014-01",
+      "windowEnd": "2021-08",
+      "swept": "400 million image URLs paired with alt text, harvested from Common Crawl. Used to train early Stable Diffusion variants and many open vision-language models.",
+      "respectsRobotsTxt": true,
+      "userAgents": ["CCBot"],
+      "link": "https://laion.ai/blog/laion-400-open-dataset/",
+      "optOut": "Submit URLs to Have I Been Trained for inclusion in the Spawning opt-out registry."
+    },
+    {
+      "id": "laion-5b",
+      "name": "LAION-5B",
+      "type": "image",
+      "kind": "image-text pairs",
+      "windowStart": "2014-01",
+      "windowEnd": "2022-03",
+      "swept": "5.85 billion image-text pairs from Common Crawl. The training set behind Stable Diffusion 1.x/2.x and many derivatives. Pulled from public download in late 2023 after CSAM was found in the index; a cleaned version (Re-LAION) followed.",
+      "respectsRobotsTxt": true,
+      "userAgents": ["CCBot"],
+      "link": "https://laion.ai/blog/laion-5b/",
+      "optOut": "Have I Been Trained (Spawning) — submit URLs and request removal from future LAION releases."
+    },
+    {
+      "id": "redpajama",
+      "name": "RedPajama",
+      "type": "text",
+      "kind": "mixed corpus",
+      "windowStart": "2008-01",
+      "windowEnd": "2023-04",
+      "swept": "1.2 trillion token open reproduction of LLaMA's training mix: Common Crawl, C4, GitHub, ArXiv, Wikipedia, Stack Exchange, books.",
+      "respectsRobotsTxt": false,
+      "userAgents": [],
+      "link": "https://www.together.ai/blog/redpajama",
+      "optOut": "None — frozen snapshot. Block CCBot to reduce future inclusion."
+    },
+    {
+      "id": "fineweb",
+      "name": "FineWeb / FineWeb-Edu",
+      "type": "text",
+      "kind": "filtered web",
+      "windowStart": "2013-01",
+      "windowEnd": "2024-04",
+      "swept": "15 trillion tokens of cleaned Common Crawl text from HuggingFace. The current open-source standard for high-quality web text.",
+      "respectsRobotsTxt": true,
+      "userAgents": ["CCBot"],
+      "link": "https://huggingface.co/datasets/HuggingFaceFW/fineweb",
+      "optOut": "Block CCBot in robots.txt before the next CC snapshot."
+    },
+    {
+      "id": "github-public",
+      "name": "GitHub public code",
+      "type": "code",
+      "kind": "source code",
+      "windowStart": "2008-04",
+      "windowEnd": "present",
+      "swept": "Public repositories scraped for The Stack, CodeParrot, RedPajama-Code, and used in training Codex, Copilot, Claude, GPT-4, and most code LLMs.",
+      "respectsRobotsTxt": false,
+      "userAgents": [],
+      "link": "https://huggingface.co/datasets/bigcode/the-stack",
+      "optOut": "Am I In The Stack — opt out by repo or commit email at https://huggingface.co/spaces/bigcode/in-the-stack"
+    },
+    {
+      "id": "wikipedia",
+      "name": "Wikipedia",
+      "type": "text",
+      "kind": "encyclopedia",
+      "windowStart": "2001-01",
+      "windowEnd": "present",
+      "swept": "Every public Wikipedia article, every revision. Included in essentially every text corpus ever assembled.",
+      "respectsRobotsTxt": false,
+      "userAgents": [],
+      "link": "https://en.wikipedia.org/wiki/Wikipedia:Database_download",
+      "optOut": "None — Wikipedia is CC-BY-SA and dumped openly."
+    }
+  ],
+  "optOutTools": [
+    {
+      "name": "Have I Been Trained",
+      "by": "Spawning",
+      "url": "https://haveibeentrained.com/",
+      "covers": "LAION-400M, LAION-5B (image search). Lets you opt URLs out of future Spawning-partnered training runs (Stability AI, Hugging Face, Shutterstock).",
+      "type": "image"
+    },
+    {
+      "name": "Am I In The Stack",
+      "by": "BigCode / Hugging Face",
+      "url": "https://huggingface.co/spaces/bigcode/in-the-stack",
+      "covers": "The Stack v1/v2 — public GitHub code corpus. Opt out by GitHub username; future Stack releases honor the registry.",
+      "type": "code"
+    },
+    {
+      "name": "Glaze",
+      "by": "University of Chicago SAND Lab",
+      "url": "https://glaze.cs.uchicago.edu/",
+      "covers": "Adversarial perturbation that protects images from style mimicry by future training runs. Defensive — does not remove past inclusions.",
+      "type": "image"
+    },
+    {
+      "name": "Nightshade",
+      "by": "University of Chicago SAND Lab",
+      "url": "https://nightshade.cs.uchicago.edu/",
+      "covers": "Adversarial poison for images — corrupts the concept association in models that train on shaded images. Offensive variant of Glaze.",
+      "type": "image"
+    },
+    {
+      "name": "robots.txt + ai.txt",
+      "by": "open standard",
+      "url": "https://spawning.ai/ai-txt",
+      "covers": "Block crawlers like CCBot, GPTBot, ClaudeBot, Google-Extended, anthropic-ai, PerplexityBot. Only affects future crawls; past snapshots are immutable.",
+      "type": "site-wide"
+    },
+    {
+      "name": "The Atlantic — Books3 search",
+      "by": "The Atlantic",
+      "url": "https://www.theatlantic.com/technology/archive/2023/09/books3-database-generative-ai-training-copyright-infringement/675363/",
+      "covers": "Look up whether a book title is in the Books3 corpus. Read-only — there is no opt-out.",
+      "type": "books"
+    }
+  ]
+}
