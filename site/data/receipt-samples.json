@@ -1,0 +1,30 @@
+{
+  "source": "Hand-curated AI outputs that read like AI outputs.",
+  "generated": "hand-curated",
+  "samples": [
+    {
+      "id": "delve-tapestry",
+      "label": "The classic delve",
+      "prompt": "Write a paragraph about creativity in the age of AI.",
+      "output": "In today's rapidly evolving digital landscape, it's important to delve into the multifaceted ways artificial intelligence is reshaping the creative process. From streamlining workflows to unlocking unprecedented possibilities, AI serves as both a tool and a collaborator. Ultimately, the synergy between human ingenuity and machine intelligence weaves a rich tapestry of innovation that empowers creators to push boundaries and redefine what's possible."
+    },
+    {
+      "id": "hedge-stack",
+      "label": "Hedge stack",
+      "prompt": "Should I use AI for writing my novel?",
+      "output": "It's worth noting that the answer may vary depending on a number of factors. While some writers find AI tools helpful, others may prefer to rely on their own creativity. Generally speaking, it could be argued that the best approach is one that aligns with your individual goals and writing style. That said, it's important to remember that AI is just a tool, and the creative spark must ultimately come from you."
+    },
+    {
+      "id": "bullet-spam",
+      "label": "Bullet spam",
+      "prompt": "Tips for taking better photographs.",
+      "output": "Here are some key tips to help you take better photographs:\n- Pay attention to lighting: natural light is your friend.\n- Use the rule of thirds to compose more dynamic shots.\n- Don't be afraid to experiment with angles and perspectives.\n- Practice consistently to develop your eye.\n- Remember: the best camera is the one you have with you.\n\nBy following these guidelines, you'll be well on your way to capturing more compelling images."
+    },
+    {
+      "id": "punk-rock-ai",
+      "label": "Punk Rock AI manifesto",
+      "prompt": "Why does punk rock matter for AI?",
+      "output": "Punk wasn't a sound. It was a permission slip.\n\nThree chords. A garage. A xerox zine. The covenant: if you make it, you ship it. If you ship it, somebody else can take it apart.\n\nThe machines we use today were trained on the open web that covenant built. We kept our side of the deal. Now the deal is being renegotiated without us in the room.\n\nSo: name what you see. Make the thing. Show your work. Bring a posse.\n\nThe mainstream will catch up in eighteen months. By then we'll be somewhere else."
+    }
+  ]
+}
