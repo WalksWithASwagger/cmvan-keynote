@@ -4,19 +4,28 @@ compatibility_date = "2026-04-01"
 
 # Bindings:
 #   ANTHROPIC_API_KEY  →  wrangler secret put ANTHROPIC_API_KEY
-#   RATE_LIMIT         →  KV namespace, see below
+#   RATE_LIMIT         →  KV namespace, per-IP rate limiting (10 req/hr)
+#   KV_PATTERNS        →  KV namespace, response cache (7-day TTL)
 #
-# To create the KV namespace and bind it:
+# To create the KV namespaces:
 #   wrangler kv namespace create RATE_LIMIT
-# Then paste the returned id into [[kv_namespaces]] below.
+#   wrangler kv namespace create KV_PATTERNS
+# Then paste the returned ids into [[kv_namespaces]] below.
 #
 # To deploy:
+#   wrangler secret put ANTHROPIC_API_KEY
 #   wrangler deploy
+#
+# See SETUP.md for the full walk-through.
 
 [vars]
 ALLOWED_ORIGIN = "https://punkrockai.com"
 
-# Uncomment after creating the KV namespace via wrangler.
+# Uncomment and fill in after creating the KV namespaces via wrangler.
 # [[kv_namespaces]]
 # binding = "RATE_LIMIT"
-# id = "<paste id here>"
+# id = "<paste id from `wrangler kv namespace create RATE_LIMIT`>"
+#
+# [[kv_namespaces]]
+# binding = "KV_PATTERNS"
+# id = "<paste id from `wrangler kv namespace create KV_PATTERNS`>"

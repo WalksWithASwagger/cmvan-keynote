@@ -7,15 +7,22 @@ prompt caching so per-call cost stays low under load. Per-IP rate-limit
 
 ## Deploy
 
+See `SETUP.md` for the full step-by-step (Anthropic key, KV namespaces,
+secret, deploy, smoke test). TL;DR:
+
 ```sh
 cd worker/pattern-finder
-wrangler kv namespace create RATE_LIMIT     # paste id into wrangler.toml
-wrangler secret put ANTHROPIC_API_KEY        # paste your key
+wrangler kv namespace create RATE_LIMIT      # paste id into wrangler.toml
+wrangler kv namespace create KV_PATTERNS     # paste id into wrangler.toml
+wrangler secret put ANTHROPIC_API_KEY         # paste your key
 wrangler deploy
 ```
 
 Then update `site/_redirects` to point `/api/pattern-finder` at the deployed
 worker URL.
+
+If `ANTHROPIC_API_KEY` isn't set, the worker returns 503 with a clear
+"not configured" message — the front-end already handles that gracefully.
 
 ## Local dev
 
@@ -34,5 +41,8 @@ is gated on the worker existing.
 - `MAX_INPUT_CHARS = 40_000` — caps user corpus size.
 - `MAX_TOKENS = 1500` — caps Claude's response.
 - Rate limit `10 / IP / hour` — adjustable in `index.js`.
+- Response cache in `KV_PATTERNS` — identical corpus skips Anthropic entirely
+  for 7 days. `x-cache: HIT` / `MISS` header signals which path served the
+  request.
 - System prompt has `cache_control: { type: "ephemeral" }` — prompt cache hits
   drop the per-call cost roughly 10x once the cache is warm.
