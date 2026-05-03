@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Am I In There? &mdash; Punk Rock AI</title>
+    <meta
+      name="description"
+      content="A heuristic check for whether your work is plausibly inside the major AI training corpora — Common Crawl, LAION, The Pile, RedPajama, FineWeb. Educational, not authoritative. Runs entirely in your browser."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta property="og:title" content="Am I In There? — Punk Rock AI" />
+    <meta property="og:description" content="If you put it on the public web before 2024, the odds are: yes." />
+    <meta property="og:url" content="https://punkrockai.com/widgets/in-there.html" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/widgets/in-there.css" />
+  </head>
+  <body class="shell">
+    <header class="site-header" data-include="header"></header>
+
+    <main>
+      <section class="ait-intro grain scanlines">
+        <div class="wrap wrap--narrow">
+          <p class="kicker kicker--accent">Slide 10 &middot; the receipts moment</p>
+          <h1>Am I in there?</h1>
+          <p class="ait-intro__lede">
+            Paste a URL or describe what you&rsquo;ve published. This page tells
+            you which of the major AI training corpora plausibly swept it &mdash;
+            based on what each dataset publicly says it crawled, and when.
+          </p>
+          <p class="ait-intro__pull">
+            If you put it on the public web before 2024, the honest answer is:
+            yes, probably, in several.
+          </p>
+        </div>
+      </section>
+
+      <section class="ait-caveat" aria-label="What this widget is and isn't">
+        <div class="wrap wrap--narrow">
+          <p class="ait-caveat__tag">Read this first</p>
+          <ul class="ait-caveat__list">
+            <li>
+              This is a <strong>heuristic</strong> built from publicly documented
+              crawl windows. It is <strong>not</strong> a definitive check
+              against any specific dataset or model.
+            </li>
+            <li>
+              No data leaves your browser. Nothing is uploaded, logged, or
+              sent to a server. The check runs entirely on this page.
+            </li>
+            <li>
+              A &ldquo;likely&rdquo; result means a corpus&rsquo;s crawl window
+              overlaps your publish date and the corpus type matches. It does
+              <strong>not</strong> mean any model has memorized your work.
+            </li>
+            <li>
+              An &ldquo;unlikely&rdquo; result means the dates don&rsquo;t line
+              up. It does <strong>not</strong> guarantee absence &mdash; private
+              datasets and licensing deals are out of scope here.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="ait">
+        <div class="wrap">
+          <div class="ait__io">
+            <form class="ait__form" id="ait-form" novalidate>
+              <fieldset class="ait__field">
+                <legend>What did you publish?</legend>
+                <label class="ait__radio">
+                  <input type="radio" name="ait-mode" value="url" checked />
+                  <span>A URL I control</span>
+                </label>
+                <label class="ait__radio">
+                  <input type="radio" name="ait-mode" value="content" />
+                  <span>Something I wrote, photographed, or coded</span>
+                </label>
+              </fieldset>
+
+              <div class="ait__field" data-mode="url">
+                <label for="ait-url">URL</label>
+                <input
+                  type="url"
+                  id="ait-url"
+                  name="ait-url"
+                  placeholder="https://yoursite.com/2018/some-post"
+                  autocomplete="off"
+                  inputmode="url"
+                />
+                <p class="ait__hint">
+                  We parse the domain and look for a date in the path. Nothing
+                  is fetched.
+                </p>
+              </div>
+
+              <div class="ait__field" data-mode="content" hidden>
+                <fieldset class="ait__subfield">
+                  <legend>What kind of work?</legend>
+                  <label class="ait__radio">
+                    <input type="radio" name="ait-type" value="text" checked />
+                    <span>Writing &mdash; blog, article, caption, doc</span>
+                  </label>
+                  <label class="ait__radio">
+                    <input type="radio" name="ait-type" value="image" />
+                    <span>Image &mdash; photo, illustration, design</span>
+                  </label>
+                  <label class="ait__radio">
+                    <input type="radio" name="ait-type" value="code" />
+                    <span>Code &mdash; on public GitHub or similar</span>
+                  </label>
+                  <label class="ait__radio">
+                    <input type="radio" name="ait-type" value="books" />
+                    <span>A book &mdash; published, ISBN&rsquo;d</span>
+                  </label>
+                </fieldset>
+              </div>
+
+              <div class="ait__field">
+                <label for="ait-year">Year first put on the public web</label>
+                <input
+                  type="number"
+                  id="ait-year"
+                  name="ait-year"
+                  min="1995"
+                  max="2026"
+                  step="1"
+                  placeholder="e.g. 2018"
+                  inputmode="numeric"
+                />
+                <p class="ait__hint">
+                  Approximate is fine. Use the year it became publicly
+                  reachable, not the year you wrote it.
+                </p>
+              </div>
+
+              <div class="ait__actions">
+                <button class="btn btn--primary" type="submit" id="ait-check">Check the windows</button>
+                <button class="btn" type="reset" id="ait-reset">Reset</button>
+              </div>
+              <p class="ait__status" id="ait-status" aria-live="polite"></p>
+            </form>
+
+            <div class="ait__verdict" id="ait-verdict" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ait-corpora">
+        <div class="wrap">
+          <h2>The corpora &mdash; what they swept, when</h2>
+          <p class="ait-corpora__lede">
+            Reference list. Hand-curated from each dataset&rsquo;s public
+            documentation. Click out for primary sources.
+          </p>
+          <div class="ait-corpora__grid" id="ait-corpora-grid"></div>
+        </div>
+      </section>
+
+      <section class="ait-optout">
+        <div class="wrap wrap--narrow">
+          <h2>Opt-out and defense</h2>
+          <p class="ait-optout__lede">
+            None of these recall past inclusions. They affect future training
+            runs, future crawls, future datasets. The internet doesn&rsquo;t
+            forget; you can only steer what comes next.
+          </p>
+          <ul class="ait-optout__list" id="ait-optout-list"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/in-there.js"></script>
+  </body>
+</html>
