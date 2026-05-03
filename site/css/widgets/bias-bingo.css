@@ -355,12 +355,12 @@
 .bbingo-cell[data-line-cleared="diag1"]::before,
 .bbingo-cell[data-line-cleared="diag2"]::before {
   top: 50%;
-  left: -10%;
-  width: 120%;
+  left: -21%;
+  width: 142%;
   height: 4px;
   margin-top: -2px;
   transform: scaleX(0);
-  transform-origin: left center;
+  transform-origin: center center;
 }
 
 .bbingo-cell[data-line-cleared="diag1"]::before {
