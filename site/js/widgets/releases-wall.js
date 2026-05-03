@@ -77,7 +77,8 @@ function paintGrid(list) {
 
 function renderCard(s) {
   const handle = displayHandle(s);
-  const when = s.submittedAt ? formatRelative(Date.parse(s.submittedAt)) : "";
+  const ts = timestamp(s);
+  const when = ts ? formatRelative(ts) : "";
   const what = (s.what ?? "").trim() || "Untitled";
   const why = snippet(s.why);
   const url = isHttp(s.url) ? s.url : "";
