@@ -1,0 +1,194 @@
+/* C5 — Map of the punk stack
+   A demonstrative SVG diagram embedded inside /recap.html #stack.
+   Theme tokens only — no new design language. */
+
+.punk-stack-map {
+  margin-block: var(--space-5) 0;
+  padding: var(--space-4);
+  border: 2px solid var(--accent);
+  background: var(--bg-elevated);
+  position: relative;
+}
+
+.punk-stack-map__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.punk-stack-map__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  margin: 0;
+}
+
+.punk-stack-map__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  margin: 0;
+  color: var(--fg);
+  letter-spacing: -0.01em;
+}
+
+.punk-stack-map__hint {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  margin: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.punk-stack-map__svg-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.punk-stack-map__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+  font-family: var(--font-mono);
+}
+
+/* SVG primitives */
+.punk-stack-map__layer-bg {
+  fill: var(--bg);
+  stroke: var(--border);
+  stroke-width: 1;
+}
+
+.punk-stack-map__layer-label {
+  fill: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.punk-stack-map__node {
+  cursor: default;
+}
+
+.punk-stack-map__node-rect {
+  fill: var(--bg-elevated);
+  stroke: var(--border-strong);
+  stroke-width: 1.5;
+  transition: stroke 120ms var(--ease-snap), fill 120ms var(--ease-snap);
+}
+
+.punk-stack-map__node:hover .punk-stack-map__node-rect,
+.punk-stack-map__node:focus-visible .punk-stack-map__node-rect,
+.punk-stack-map__node[data-active="true"] .punk-stack-map__node-rect {
+  fill: var(--bg);
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.punk-stack-map__node-text {
+  fill: var(--fg);
+  font-size: 11px;
+  pointer-events: none;
+  font-family: var(--font-mono);
+}
+
+.punk-stack-map__node:focus-visible {
+  outline: none;
+}
+
+.punk-stack-map__arrow {
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  fill: none;
+  opacity: 0.7;
+}
+
+.punk-stack-map__arrow-head {
+  fill: var(--accent);
+}
+
+/* Tooltip — absolutely positioned over the SVG, populated by JS. */
+.punk-stack-map__tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: var(--bg);
+  border: 1.5px solid var(--accent);
+  color: var(--fg);
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  line-height: 1.4;
+  max-width: min(28rem, 90%);
+  z-index: 2;
+  opacity: 0;
+  transform: translate(-50%, calc(-100% - 8px));
+  transition: opacity 120ms var(--ease-snap);
+  white-space: normal;
+  word-break: break-word;
+}
+
+.punk-stack-map__tooltip[data-visible="true"] {
+  opacity: 1;
+}
+
+.punk-stack-map__tooltip-path {
+  display: block;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.punk-stack-map__tooltip-meta {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.punk-stack-map__tooltip-label {
+  display: block;
+  color: var(--fg-soft);
+  margin-top: 2px;
+}
+
+.punk-stack-map__legend {
+  margin-top: var(--space-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.punk-stack-map__legend strong {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+/* Mobile: SVG is responsive via viewBox; no horizontal scroll. */
+@media (max-width: 600px) {
+  .punk-stack-map {
+    padding: var(--space-3);
+  }
+  .punk-stack-map__hint {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .punk-stack-map__node-rect,
+  .punk-stack-map__tooltip {
+    transition: none;
+  }
+}

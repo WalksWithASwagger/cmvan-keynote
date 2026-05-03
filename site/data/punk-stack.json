@@ -1,0 +1,69 @@
+{
+  "generated": "2026-05-03",
+  "note": "Map of the punk stack: source markdown -> build scripts -> JSON manifests -> page widgets -> exports. Line counts captured at implementation time (see recap PR #36).",
+  "layers": [
+    {
+      "id": "markdown",
+      "title": "Source markdown",
+      "blurb": "Hand-edited prose lives in the repo as plain text.",
+      "items": [
+        { "path": "script/talk-framework-v6.md", "lines": 323, "label": "talk-framework-v6.md" },
+        { "path": "script/creativity-biography.md", "lines": 211, "label": "creativity-biography.md" },
+        { "path": "dress-rehearsal/elevenlabs-full-script.md", "lines": 278, "label": "elevenlabs-full-script.md" }
+      ]
+    },
+    {
+      "id": "scripts",
+      "title": "Build scripts",
+      "blurb": "Node ES modules in scripts/ — run by hand, never at request time.",
+      "items": [
+        { "path": "scripts/build-quotes.mjs", "lines": 198, "label": "build-quotes.mjs" },
+        { "path": "scripts/build-lineage.mjs", "lines": 51, "label": "build-lineage.mjs" },
+        { "path": "scripts/build-library-index.mjs", "lines": 153, "label": "build-library-index.mjs" },
+        { "path": "scripts/build-audio-cues.mjs", "lines": 160, "label": "build-audio-cues.mjs" },
+        { "path": "scripts/build-decisions.mjs", "lines": 210, "label": "build-decisions.mjs" },
+        { "path": "scripts/ingest-slides.mjs", "lines": 210, "label": "ingest-slides.mjs" }
+      ]
+    },
+    {
+      "id": "manifests",
+      "title": "JSON manifests",
+      "blurb": "Static contracts. Pages only read JSON; no runtime computation.",
+      "items": [
+        { "path": "site/data/quotes.json", "lines": 178, "label": "quotes.json" },
+        { "path": "site/data/slides.json", "lines": 249, "label": "slides.json" },
+        { "path": "site/data/lineage.json", "lines": 130, "label": "lineage.json" },
+        { "path": "site/data/library.json", "lines": 5672, "label": "library.json" },
+        { "path": "site/data/audio-cues.json", "lines": 223, "label": "audio-cues.json" },
+        { "path": "site/data/decisions.json", "lines": 216, "label": "decisions.json" }
+      ]
+    },
+    {
+      "id": "widgets",
+      "title": "Page widgets",
+      "blurb": "One HTML file per widget. Each ES module owns one job.",
+      "items": [
+        { "path": "site/widgets/three-documents.html", "lines": 164, "label": "three-documents.html" },
+        { "path": "site/widgets/both-hands.html", "lines": 88, "label": "both-hands.html" },
+        { "path": "site/widgets/name-what-you-see.html", "lines": 83, "label": "name-what-you-see.html" },
+        { "path": "site/widgets/taste-audit.html", "lines": 101, "label": "taste-audit.html" },
+        { "path": "site/widgets/pattern-finder.html", "lines": 95, "label": "pattern-finder.html" },
+        { "path": "site/widgets/selector.html", "lines": 85, "label": "selector.html" },
+        { "path": "site/widgets/cut-up.html", "lines": 105, "label": "cut-up.html" },
+        { "path": "site/widgets/word-ban.html", "lines": 100, "label": "word-ban.html" },
+        { "path": "site/widgets/bias-bingo.html", "lines": 76, "label": "bias-bingo.html" }
+      ]
+    },
+    {
+      "id": "exports",
+      "title": "Exports",
+      "blurb": "What leaves the browser: PNGs, share hashes, R2-hosted audio.",
+      "items": [
+        { "path": "html-to-image PNG", "lines": 0, "label": "Both Hands canvas -> PNG" },
+        { "path": "#s=<base64> share hash", "lines": 0, "label": "no-server share link" },
+        { "path": "R2 // per-slide.mp3", "lines": 0, "label": "ElevenLabs audio on R2" },
+        { "path": "Markdown export", "lines": 0, "label": "Three Documents .md" }
+      ]
+    }
+  ]
+}

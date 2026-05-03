@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/css/theme.css" />
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/widgets/recap.css" />
+    <link rel="stylesheet" href="/css/widgets/punk-stack-map.css" />
   </head>
   <body class="shell recap">
     <header class="site-header" data-include="header"></header>
@@ -503,6 +504,21 @@
                 <a href="/talk.html#q-15-if-your-values-aren-t-in-text">Slide 18 &middot; Three Documents</a>
               </span>
             </aside>
+
+            <aside id="punk-stack-map" class="punk-stack-map" aria-labelledby="punk-stack-map-title">
+              <header class="punk-stack-map__head">
+                <p class="punk-stack-map__eyebrow">C5 &middot; map of the punk stack</p>
+                <h3 id="punk-stack-map-title" class="punk-stack-map__title">Markdown &rarr; scripts &rarr; manifests &rarr; widgets &rarr; exports.</h3>
+                <p class="punk-stack-map__hint">Hover any box for the file path + line count.</p>
+              </header>
+              <div class="punk-stack-map__svg-wrap" data-stack-svg-wrap>
+                <div class="punk-stack-map__tooltip" role="status" aria-live="polite" data-stack-tooltip></div>
+              </div>
+              <p class="punk-stack-map__legend">
+                <span><strong>Direction:</strong> left to right, build time to runtime.</span>
+                <span><strong>Counts:</strong> live <code>wc -l</code> snapshot at PR time.</span>
+              </p>
+            </aside>
           </div>
         </section>
 
@@ -643,5 +659,6 @@
 
     <script type="module" src="/js/common/header.js"></script>
     <script type="module" src="/js/widgets/recap.js"></script>
+    <script type="module" src="/js/widgets/punk-stack-map.js" defer></script>
   </body>
 </html>
