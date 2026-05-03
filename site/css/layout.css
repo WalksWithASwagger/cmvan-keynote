@@ -28,6 +28,18 @@
    js/common/header.js. Two stripes: brand row + nav row.
    ------------------------------------------------------------------ */
 
+:root {
+  /* Matches .site-header's sticky height: stacked brand/nav on mobile,
+     single-row header on desktop. Used by sticky elements and anchors. */
+  --site-header-height: 5.1rem;
+}
+
+@media (min-width: 721px) {
+  :root {
+    --site-header-height: 3.6rem;
+  }
+}
+
 .site-header {
   position: sticky;
   top: 0;

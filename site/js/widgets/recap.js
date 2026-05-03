@@ -62,3 +62,74 @@ function escapeHTML(s) {
 function escapeAttr(s) {
   return escapeHTML(s).replaceAll('"', "&quot;").replaceAll("'", "&#39;");
 }
+
+// Sticky TOC progress indicator. Uses scroll position instead of a narrow
+// IntersectionObserver band so short sections still become current.
+(function initRecapToc() {
+  const toc = document.querySelector("[data-recap-toc]");
+  if (!toc) return;
+
+  const links = new Map();
+  toc.querySelectorAll('a[href^="#"]').forEach((a) => {
+    const id = a.getAttribute("href").slice(1);
+    if (id) links.set(id, a);
+  });
+  if (!links.size) return;
+
+  const sections = [];
+  links.forEach((_link, id) => {
+    const section = document.getElementById(id);
+    if (section) sections.push(section);
+  });
+  if (!sections.length) return;
+
+  let activeId = "";
+  let ticking = false;
+
+  const setActive = (id) => {
+    activeId = id;
+    links.forEach((link, key) => {
+      const active = key === id;
+      link.classList.toggle("is-active", active);
+      if (active) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  };
+
+  const getActivationLine = () => {
+    const scrollMargin = Number.parseFloat(getComputedStyle(sections[0]).scrollMarginTop) || 0;
+    return Math.min(scrollMargin + 1, window.innerHeight * 0.55);
+  };
+
+  const updateActive = () => {
+    ticking = false;
+    const activationLine = getActivationLine();
+    let nextId = sections[0].id;
+
+    sections.forEach((section) => {
+      if (section.getBoundingClientRect().top <= activationLine) {
+        nextId = section.id;
+      }
+    });
+
+    if (nextId !== activeId) setActive(nextId);
+  };
+
+  const requestUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateActive);
+  };
+
+  const initialHash = window.location.hash.slice(1);
+  setActive(links.has(initialHash) ? initialHash : sections[0].id);
+  requestUpdate();
+
+  window.addEventListener("load", requestUpdate);
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
+  window.addEventListener("hashchange", requestUpdate);
+})();
