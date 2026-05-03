@@ -1,0 +1,344 @@
+/* /widgets/chainsaws — scrollable showcase of "neutral" tools and the
+   wrong-on-purpose use that made each one matter. Mirrors the lineage
+   pattern: hero with anchor quote, scroll-revealed cards, refrain bands
+   between, an accent-block close. Theme tokens only. */
+
+.chainsaws {
+  --card-bg-on: rgba(225, 29, 46, 0.08);
+}
+
+/* ------------------------------------------------------------------
+   HERO — Anthony Joseph anchor quote + thesis
+   ------------------------------------------------------------------ */
+
+.chainsaws-hero {
+  padding-block: var(--space-7) var(--space-6);
+  border-bottom: 3px solid var(--accent);
+  position: relative;
+}
+
+.chainsaws-hero__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  margin-bottom: var(--space-3);
+}
+
+.chainsaws-hero__quote {
+  margin: 0 0 var(--space-5);
+  padding: var(--space-3) var(--space-4);
+  border-left: 3px solid var(--accent);
+  background: var(--bg-elevated);
+  max-width: 60ch;
+}
+
+.chainsaws-hero__quote-text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.4rem, 3.6vw, 2rem);
+  line-height: 1.2;
+  margin: 0 0 var(--space-3);
+  color: var(--fg);
+}
+
+.chainsaws-hero__quote-text::before {
+  content: "\201C";
+  color: var(--accent);
+  margin-right: 0.1em;
+}
+
+.chainsaws-hero__quote-text::after {
+  content: "\201D";
+  color: var(--accent);
+  margin-left: 0.05em;
+}
+
+.chainsaws-hero__quote-cite {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.chainsaws-hero__quote-cite cite {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-style: normal;
+}
+
+.chainsaws-hero__quote-source {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+.chainsaws-hero h1 {
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--space-3);
+  max-width: 22ch;
+}
+
+.chainsaws-hero__sub {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 56ch;
+  color: var(--fg-soft);
+}
+
+.chainsaws-trail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.chainsaws-trail a {
+  color: var(--muted);
+  text-decoration: none;
+  border: 1px solid var(--border-strong);
+  padding: 0.25rem 0.6rem;
+}
+
+.chainsaws-trail a:hover,
+.chainsaws-trail a:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* ------------------------------------------------------------------
+   LIST — six tool cards stacked vertically
+   ------------------------------------------------------------------ */
+
+.chainsaws-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tool-card {
+  padding-block: var(--space-7);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  scroll-margin-top: var(--space-6);
+  transition: background 600ms var(--ease-snap);
+}
+
+.tool-card[data-on="true"] {
+  background: var(--card-bg-on);
+}
+
+.tool-card__inner {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 700ms var(--ease-snap), transform 700ms var(--ease-snap);
+}
+
+.tool-card[data-on="true"] .tool-card__inner {
+  opacity: 1;
+  transform: none;
+}
+
+.tool-card__head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-4);
+  align-items: baseline;
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px dashed var(--border-strong);
+}
+
+.tool-card__index {
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+.tool-card__name {
+  font-size: var(--fs-2xl);
+  margin: 0 0 var(--space-1);
+  line-height: 1.05;
+}
+
+.tool-card__era {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--fg-soft);
+  margin: 0;
+}
+
+.tool-card__split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.tool-card__side {
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+}
+
+.tool-card__side--wrong {
+  border-color: var(--accent);
+  border-left-width: 3px;
+}
+
+.tool-card__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+  margin: 0 0 var(--space-3);
+}
+
+.tool-card__label--accent {
+  color: var(--accent);
+}
+
+.tool-card__prose {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  line-height: 1.45;
+  color: var(--fg-soft);
+  max-width: 56ch;
+  margin: 0 0 var(--space-3);
+}
+
+.tool-card__side--wrong .tool-card__prose {
+  color: var(--fg);
+}
+
+.tool-card__source {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.tool-card__echo {
+  margin: var(--space-4) 0 0;
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--border-strong);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+@media (max-width: 720px) {
+  .tool-card {
+    padding-block: var(--space-6);
+  }
+  .tool-card__head {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+  .tool-card__split {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+  .tool-card__name {
+    font-size: var(--fs-xl);
+  }
+}
+
+/* ------------------------------------------------------------------
+   REFRAIN — visible band of "the tool is never neutral" between cards
+   ------------------------------------------------------------------ */
+
+.chainsaws-refrain {
+  list-style: none;
+  padding-block: var(--space-5);
+  text-align: center;
+  border-top: 1px dashed var(--accent);
+  border-bottom: 1px dashed var(--accent);
+  background: var(--bg-elevated);
+}
+
+.chainsaws-refrain__text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  margin: 0;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+}
+
+/* ------------------------------------------------------------------
+   FINAL — the turn from history to your problem
+   ------------------------------------------------------------------ */
+
+.chainsaws-final {
+  padding-block: var(--space-7);
+  text-align: center;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.chainsaws-final h2 {
+  font-size: var(--fs-2xl);
+  margin: 0 auto var(--space-3);
+  max-width: 26ch;
+  color: var(--accent-ink);
+}
+
+.chainsaws-final p {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 48ch;
+  margin: 0 auto var(--space-4);
+}
+
+.chainsaws-final .btn {
+  background: var(--accent-ink);
+  color: var(--accent);
+  border-color: var(--accent-ink);
+}
+
+.chainsaws-final .btn + .btn {
+  margin-left: var(--space-2);
+}
+
+.chainsaws-final .btn:hover,
+.chainsaws-final .btn:focus-visible {
+  background: var(--bg);
+  color: var(--accent);
+  border-color: var(--bg);
+  box-shadow: 3px 3px 0 var(--accent-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tool-card__inner {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .tool-card[data-on="true"] {
+    background: transparent;
+  }
+}
