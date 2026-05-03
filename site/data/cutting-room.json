@@ -1,0 +1,140 @@
+{
+  "source": "SESSION-HANDOFF.md, git log 2026-04-20..2026-05-01, script/talk-framework-v4.md → v6.md diffs",
+  "generated": "hand-curated from real cut commits + handoff notes",
+  "intro": {
+    "kicker": "Slides 6-9 · cutting room floor",
+    "title": "What got cut from the talk.",
+    "lede": "Every keynote is the keep pile sitting on top of the refuse pile. Below: the slides, lines, and whole story arcs that didn't make it into the May 1 talk — and why each one was thrown out. Filter by reason to see the pattern.",
+    "pull": "What you call artistic instinct? That's encoded choice. Decades on the cutting room floor, compressed into a sensibility."
+  },
+  "reasons": [
+    { "id": "biographical-padding", "label": "Biographical padding", "blurb": "True about Kris but doesn't earn its 90 seconds in a 20-minute room." },
+    { "id": "doesnt-fit-theme", "label": "Doesn't fit theme", "blurb": "A real story that bends the spine of the talk in the wrong direction." },
+    { "id": "too-long", "label": "Too long", "blurb": "Trim for pacing — the point survives compressed or implied." },
+    { "id": "save-for-later", "label": "Save for later", "blurb": "Held back for the book, the workshop, the next talk." },
+    { "id": "duplicate-beat", "label": "Duplicate beat", "blurb": "Same idea already lands earlier or later — kill the second pass." },
+    { "id": "wrong-frame", "label": "Wrong frame", "blurb": "The argument was right; the framing reinforced what we wanted to refuse." }
+  ],
+  "cuts": [
+    {
+      "id": "open-everything",
+      "title": "Open Everything (Bryght / Rain City / Dead.net)",
+      "body": "Standalone slide on Kris's open-source years — Drupal, Rain City Studios, building the Grateful Dead community site. The thesis was \"value lives in relationship, not locked files.\" Strong line, strong era, but a full slide of late-90s / early-00s biography on its own arc.",
+      "reason": "biographical-padding",
+      "cut_date": "2026-04-30",
+      "from": "Slide 6 of v7 (25-slide cut)",
+      "rescued_to": "Thesis line preserved verbatim in the AI Chapter section; \"this story is not new\" transition folded into the Dada opener.",
+      "source": "SESSION-HANDOFF.md › Cut 1; commit bd5323e"
+    },
+    {
+      "id": "spark-online",
+      "title": "Spark Online (1998 web magazine)",
+      "body": "Slide on the 1998 web publication Kris ran — Columbia interviews, \"exploring electronic consciousness,\" the early web as a site of genuine intellectual experiment before the platforms ate it.",
+      "reason": "doesnt-fit-theme",
+      "cut_date": "2026-04-30",
+      "from": "Slide 7 of v7 (25-slide cut)",
+      "rescued_to": "Nothing structural lost. The biographical thread now moves Cult Baby → Camera → 145K straight into the pattern section.",
+      "source": "SESSION-HANDOFF.md › Cut 2; commit bd5323e"
+    },
+    {
+      "id": "junior-pipeline-slide",
+      "title": "The Junior Pipeline (talk slide)",
+      "body": "Standalone slide voicing the honest discomfort: \"the answer isn't 'don't use the tools.' And the junior pipeline is a generation of creative people trying to figure out if there's a rung on the ladder for them. We owe them honesty, not reassurance.\"",
+      "reason": "save-for-later",
+      "cut_date": "2026-04-29",
+      "from": "Slide 14 of v5",
+      "rescued_to": "Lives on as the /widgets/junior-pipeline diagram — full diagnosis with more room than the stage allows.",
+      "source": "script/talk-framework-v5.md slide 14; v7 plan removal"
+    },
+    {
+      "id": "true-north-olympics",
+      "title": "True North (2010 Olympics warehouse)",
+      "body": "The 2010 Vancouver Olympics moment: no press credentials, made our own, bloggers and veteran photojournalists in the same warehouse, nimble while mainstream media drowned in bureaucracy. \"That's the move. Not waiting for permission.\"",
+      "reason": "duplicate-beat",
+      "cut_date": "2026-04-29",
+      "from": "Slide 21 of v5",
+      "rescued_to": "The \"don't wait for permission\" beat is already carried by Dada / détournement / Anthony Joseph's chainsaw line. The Olympics anecdote moves to /lineage as a node on the punk timeline.",
+      "source": "script/talk-framework-v5.md slide 21; v7 plan removal"
+    },
+    {
+      "id": "best-tool-iphone",
+      "title": "The Best Tool (Killer Photos book)",
+      "body": "The riff on Kris's iPhone book: \"The best camera is the one you have with you. The perfect tool you don't use has produced exactly zero work. Same principle. Don't wait for the ethical perfect AI.\"",
+      "reason": "duplicate-beat",
+      "cut_date": "2026-04-29",
+      "from": "Slide 23 of v5",
+      "rescued_to": "Echoed implicitly in Both Hands Full and the Boosters/Doomers slide — the \"both statements are true\" frame does the same job in fewer beats.",
+      "source": "script/talk-framework-v5.md slide 23; v7 plan removal"
+    },
+    {
+      "id": "what-did-you-throw-away",
+      "title": "What Did You Throw Away (standalone slide)",
+      "body": "A whole slide built around the question \"what did you throw away this week?\" with audience reflection time. Powerful prompt, asks for a beat the room may not give a stranger 14 minutes in.",
+      "reason": "too-long",
+      "cut_date": "2026-04-29",
+      "from": "Slide of v7 plan",
+      "rescued_to": "Lives full-strength as the /widgets/taste-audit interactive — the question stays in the talk as a single line inside the cutting-room beat.",
+      "source": "v7 plan removal; commit 4cee416 (taste-audit widget)"
+    },
+    {
+      "id": "cluster-f-friel",
+      "title": "Cluster F — Kevin Friel full story",
+      "body": "Extended Kevin Friel block: the pixel-wizard origin, the friendship arc, the late-night DM that became the closing line. A full story cluster, not just the closer quote.",
+      "reason": "save-for-later",
+      "cut_date": "2026-04-27",
+      "from": "script/talk-framework-v4.md Cluster F",
+      "rescued_to": "Kevin's closing line — \"Let's use these tools to f*** it up, y'all\" — stays in the Close. The full story moves to source-material/kevin-friel-pixel-wizard for the book.",
+      "source": "commit 3f771bf"
+    },
+    {
+      "id": "matlock-opener",
+      "title": "Matlock as the opening hook",
+      "body": "Earlier draft opened with the Matlock anecdote — a measured, narrative-led entry into the AI argument. Linear four-act structure built on top of it.",
+      "reason": "wrong-frame",
+      "cut_date": "2026-04-25",
+      "from": "Pre-v5 draft",
+      "rescued_to": "Replaced by \"1,800 photos\" — a punk-tempo open that puts Kris's body of work on the table in the first ten seconds. The frame matches the talk's argument.",
+      "source": "script/talk-framework-v5.md vs v4 comparison block"
+    },
+    {
+      "id": "linear-four-act",
+      "title": "Linear four-act structure",
+      "body": "The whole talk used to be Setup → Inciting Incident → Crisis → Resolution. Tidy, screenwriter-friendly, easy to outline.",
+      "reason": "wrong-frame",
+      "cut_date": "2026-04-25",
+      "from": "Pre-v5 architecture",
+      "rescued_to": "Replaced by modular truth-bomb clusters. The form should match the argument: punk doesn't run in three acts.",
+      "source": "script/talk-framework-v5.md architecture comparison"
+    },
+    {
+      "id": "pattern-corpus-slide-9",
+      "title": "Pattern / corpus story (slide 9)",
+      "body": "A standalone slide unpacking the \"the model is your corpus\" beat with a worked example — what the prompt gets wrong, what the dataset gets wrong, where taste enters.",
+      "reason": "duplicate-beat",
+      "cut_date": "2026-05-01",
+      "from": "Slide 9, v8",
+      "rescued_to": "Moved to the Three Documents slide — the corpus argument is the reason to write the documents in the first place.",
+      "source": "commit 6ca6ab9"
+    },
+    {
+      "id": "bhf-single-slide",
+      "title": "Both Hands Full as a single climax slide",
+      "body": "Earlier deck had Both Hands Full as one slide doing two jobs at once — the cultural frame and the personal testimony jammed into the same beat.",
+      "reason": "too-long",
+      "cut_date": "2026-04-30",
+      "from": "Slide 13, v7",
+      "rescued_to": "Split into two: Both Hands Full (frame) and More Creative Than Ever (personal testimony). Each gets to land.",
+      "source": "commit 8c1b569"
+    },
+    {
+      "id": "open-questions-monologue",
+      "title": "Open-questions monologue (closing)",
+      "body": "Two-minute closing block walking the audience through the things Kris doesn't have answers for — pipeline, consent, climate, attribution. Honest, uncomfortable, slow.",
+      "reason": "too-long",
+      "cut_date": "2026-04-28",
+      "from": "Pre-v6 close",
+      "rescued_to": "Lives as the /decisions page on the companion site — full text, sourced, browsable. The talk closes faster.",
+      "source": "OPEN-QUESTIONS.md; commit 8d0ea67"
+    }
+  ]
+}
