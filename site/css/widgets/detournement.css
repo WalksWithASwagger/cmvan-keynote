@@ -1,0 +1,358 @@
+/* /widgets/detournement.html — image annotator, zine-style overlay tools */
+
+.det-intro {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.det-intro h1 {
+  margin: 0 0 var(--space-3);
+}
+
+.det-intro__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 52ch;
+  color: var(--fg-soft);
+}
+
+.det-intro__hint {
+  margin-top: var(--space-3);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.det-intro__hint kbd {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  border: 1px solid var(--border-strong);
+  padding: 0 0.35rem;
+  border-radius: 2px;
+  background: var(--bg-elevated);
+  color: var(--fg);
+}
+
+/* ------------------------------------------------------------------
+   LOAD ROW — file upload + URL paste
+   ------------------------------------------------------------------ */
+
+.det-load {
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.det-load__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: var(--space-3);
+  align-items: end;
+}
+
+@media (max-width: 640px) {
+  .det-load__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.det-load__field {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.det-load__field input {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  background: var(--bg-elevated);
+  color: var(--fg);
+  border: 1px solid var(--border-strong);
+  padding: 0.55rem 0.7rem;
+  width: 100%;
+}
+
+.det-load__field input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
+
+.det-load__field input[type="file"] {
+  padding: 0.4rem 0.5rem;
+}
+
+.det-load__note {
+  margin-top: var(--space-3);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  max-width: 70ch;
+  font-family: var(--font-mono);
+  line-height: 1.5;
+}
+
+.det-load__note code {
+  color: var(--fg-soft);
+}
+
+/* ------------------------------------------------------------------
+   TOOLBAR — pick which annotation type the next click adds
+   ------------------------------------------------------------------ */
+
+.det-toolbar-wrap {
+  padding-block: var(--space-3);
+}
+
+.det-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.det-tool {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: var(--bg-elevated);
+  color: var(--fg);
+  border: 1px solid var(--border-strong);
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+  transition: background 120ms var(--ease-snap),
+    color 120ms var(--ease-snap),
+    border-color 120ms var(--ease-snap);
+}
+
+.det-tool:hover,
+.det-tool:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.det-tool.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.det-tool--ghost {
+  margin-inline-start: auto;
+  color: var(--fg-soft);
+}
+
+/* ------------------------------------------------------------------
+   CANVAS — exported as PNG. The image plus the layer share a
+   stacking context so positions match the export.
+   ------------------------------------------------------------------ */
+
+.det-canvas-wrap {
+  padding-block: var(--space-4);
+}
+
+.det-canvas {
+  position: relative;
+  border: 4px solid var(--fg);
+  background: var(--bg-elevated);
+  margin-inline: auto;
+  max-width: 64rem;
+  width: 100%;
+  min-height: 18rem;
+  overflow: hidden;
+  user-select: none;
+  touch-action: none;
+}
+
+.det-canvas[data-tool="text"] {
+  cursor: text;
+}
+
+.det-canvas[data-tool="redaction"],
+.det-canvas[data-tool="halftone"],
+.det-canvas[data-tool="splash"] {
+  cursor: crosshair;
+}
+
+.det-canvas__empty {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: var(--space-6) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  gap: var(--space-2);
+  min-height: 18rem;
+}
+
+.det-canvas__empty p {
+  margin: 0;
+}
+
+.det-canvas__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  pointer-events: none;
+}
+
+.det-canvas__layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* annotations re-enable themselves */
+}
+
+/* ------------------------------------------------------------------
+   ANNOTATIONS — absolutely positioned children of .det-canvas__layer
+   ------------------------------------------------------------------ */
+
+.det-anno {
+  position: absolute;
+  pointer-events: auto;
+  cursor: grab;
+  outline: 1px dashed transparent;
+  outline-offset: 2px;
+  min-width: 2rem;
+  min-height: 1.5rem;
+  box-sizing: border-box;
+}
+
+.det-anno:focus-visible,
+.det-anno.is-selected {
+  outline-color: var(--accent);
+  z-index: 5;
+}
+
+.det-anno.is-dragging {
+  cursor: grabbing;
+}
+
+.det-anno__remove {
+  position: absolute;
+  top: -0.65rem;
+  right: -0.65rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 2px solid var(--bg);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  line-height: 1;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  z-index: 6;
+}
+
+.det-anno:hover .det-anno__remove,
+.det-anno:focus-within .det-anno__remove,
+.det-anno.is-selected .det-anno__remove {
+  display: flex;
+}
+
+/* TEXT annotation */
+.det-anno--text {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 3vw, 1.8rem);
+  line-height: 1.1;
+  color: var(--accent-ink);
+  background: var(--fg);
+  padding: 0.25rem 0.6rem;
+  letter-spacing: 0.02em;
+  max-width: 80%;
+}
+
+.det-anno--text .det-anno__text {
+  outline: none;
+  white-space: pre-wrap;
+  word-break: break-word;
+  cursor: text;
+  min-width: 1ch;
+  min-height: 1em;
+}
+
+.det-anno--text .det-anno__text:empty::before {
+  content: attr(data-placeholder);
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* REDACTION — black bar */
+.det-anno--redaction {
+  background: var(--fg);
+  width: 12rem;
+  height: 1.5rem;
+  border: 0;
+}
+
+/* HALFTONE — radial-stipple fill, draggable rectangle */
+.det-anno--halftone {
+  width: 10rem;
+  height: 6rem;
+  background-color: var(--bg);
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.45) 1px,
+    transparent 1.5px
+  );
+  background-size: 6px 6px;
+  border: 1px solid var(--fg);
+}
+
+/* ACCENT SPLASH — solid accent rectangle */
+.det-anno--splash {
+  width: 8rem;
+  height: 3rem;
+  background: var(--accent);
+  transform: rotate(-3deg);
+  box-shadow: 4px 4px 0 var(--fg);
+}
+
+/* ------------------------------------------------------------------
+   ACTIONS
+   ------------------------------------------------------------------ */
+
+.det-actions {
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--border);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.det-actions__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.det-actions__hint {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.det-actions__status {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  min-height: 1em;
+}
+
+.det-actions__status.is-error {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .det-tool {
+    transition: none;
+  }
+}
