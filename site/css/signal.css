@@ -1,0 +1,93 @@
+/* Signal — slide of the day. Single-purpose hero page. Tokens only. */
+
+.signal main {
+  display: block;
+}
+
+.signal-hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-8) var(--space-7);
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.signal__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.signal__tag {
+  color: var(--accent);
+}
+
+.signal__date {
+  color: var(--fg-soft);
+}
+
+.signal__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-4);
+  text-wrap: balance;
+}
+
+.signal__act {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--space-3);
+}
+
+.signal__note {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--fg-soft);
+  margin: 0 0 var(--space-5);
+}
+
+.signal__meta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 var(--space-6);
+}
+
+.signal__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.signal[data-state="loading"] .signal__act,
+.signal[data-state="loading"] .signal__meta {
+  opacity: 0.4;
+}
+
+.signal[data-state="error"] .signal__act,
+.signal[data-state="error"] .signal__note,
+.signal[data-state="error"] .signal__meta {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  .signal-hero {
+    min-height: 60vh;
+    padding-block: var(--space-6) var(--space-5);
+  }
+}
