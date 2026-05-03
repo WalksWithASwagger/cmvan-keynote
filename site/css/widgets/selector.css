@@ -280,6 +280,22 @@
   margin-inline: auto;
 }
 
+.sel__player-word {
+  opacity: 0;
+  transition: opacity 180ms ease-out;
+}
+
+.sel__player-word[data-shown="true"] {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sel__player-word {
+    opacity: 1;
+    transition: none;
+  }
+}
+
 .sel__player-meta {
   font-family: var(--font-mono);
   font-size: var(--fs-xs);

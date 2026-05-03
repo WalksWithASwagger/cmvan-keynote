@@ -21,7 +21,19 @@ const playerBar = document.getElementById("sel-player-bar");
 let allRecords = [];
 let activeFilter = "all";
 let queue = []; // array of record ids
-let player = { idx: -1, timer: null, raf: null, started: 0, duration: 0, remaining: 0, paused: false };
+let player = {
+  idx: -1,
+  timer: null,
+  raf: null,
+  revealRaf: null,
+  started: 0,
+  duration: 0,
+  remaining: 0,
+  paused: false,
+  wordSpans: [],
+};
+
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 const debouncedSave = debounceSave(STORAGE_KEY, 250);
 
@@ -215,6 +227,18 @@ function bindActions() {
   document.querySelector('[data-action="share"]').addEventListener("click", copyShareLink);
   document.querySelector('[data-action="export"]').addEventListener("click", exportSet);
   document.querySelector('[data-action="reset"]').addEventListener("click", resetSet);
+
+  playerEl.addEventListener("click", () => {
+    if (playerEl.dataset.state === "playing") revealAllWords();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.code !== "Space") return;
+    if (playerEl.dataset.state !== "playing") return;
+    const t = e.target;
+    if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) return;
+    e.preventDefault();
+    revealAllWords();
+  });
 }
 
 function bindShortcuts() {
@@ -270,7 +294,6 @@ function playRecord(idx) {
   }
   playerEl.dataset.state = "playing";
   playerTag.textContent = `${idx + 1}/${queue.length} · ${r.tag}`;
-  playerBody.textContent = r.body;
   playerMeta.textContent = r.title;
 
   const duration = Math.min(12000, READ_BASE_MS + READ_PER_CHAR_MS * (r.body || "").length);
@@ -278,7 +301,9 @@ function playRecord(idx) {
   player.duration = duration;
   player.remaining = duration;
   player.paused = false;
+  renderRevealBody(r.body || "");
   tickBar();
+  startReveal(duration);
   player.timer = setTimeout(() => playRecord(idx + 1), duration);
 
   // re-render queue to highlight active row
@@ -289,8 +314,10 @@ function pausePlayback() {
   if (player.idx < 0 || player.paused) return;
   clearTimeout(player.timer);
   cancelAnimationFrame(player.raf);
+  cancelAnimationFrame(player.revealRaf);
   player.timer = null;
   player.raf = null;
+  player.revealRaf = null;
   const elapsed = performance.now() - player.started;
   player.remaining = Math.max(0, player.duration - elapsed);
   player.paused = true;
@@ -304,6 +331,7 @@ function resumePlayback() {
   player.started = performance.now() - (player.duration - player.remaining);
   playerEl.dataset.state = "playing";
   tickBar();
+  startReveal(player.remaining);
   const idx = player.idx;
   player.timer = setTimeout(() => playRecord(idx + 1), player.remaining);
   flash("resumed");
@@ -322,6 +350,7 @@ function nextRecord() {
   if (player.idx < 0) return;
   clearTimeout(player.timer);
   cancelAnimationFrame(player.raf);
+  cancelAnimationFrame(player.revealRaf);
   playRecord(player.idx + 1);
 }
 
@@ -329,7 +358,60 @@ function prevRecord() {
   if (player.idx <= 0) return;
   clearTimeout(player.timer);
   cancelAnimationFrame(player.raf);
+  cancelAnimationFrame(player.revealRaf);
   playRecord(player.idx - 1);
+}
+
+function renderRevealBody(text) {
+  playerBody.innerHTML = "";
+  player.wordSpans = [];
+  // Split on whitespace runs while preserving them, so layout matches final text.
+  const tokens = text.match(/\S+|\s+/g) || [];
+  for (const tok of tokens) {
+    if (/^\s+$/.test(tok)) {
+      playerBody.appendChild(document.createTextNode(tok));
+      continue;
+    }
+    const span = document.createElement("span");
+    span.className = "sel__player-word";
+    span.textContent = tok;
+    playerBody.appendChild(span);
+    player.wordSpans.push(span);
+  }
+  if (reduceMotion.matches) {
+    revealAllWords();
+  }
+}
+
+function startReveal(duration) {
+  cancelAnimationFrame(player.revealRaf);
+  if (reduceMotion.matches || !player.wordSpans.length) {
+    revealAllWords();
+    return;
+  }
+  // Reveal words across ~85% of the window so the last word lands before the next record.
+  const revealWindow = Math.max(1, duration * 0.85);
+  const total = player.wordSpans.length;
+  const startedAt = player.started;
+  let revealed = 0;
+  const step = () => {
+    const elapsed = performance.now() - startedAt;
+    const target = Math.min(total, Math.ceil((elapsed / revealWindow) * total));
+    while (revealed < target) {
+      player.wordSpans[revealed].dataset.shown = "true";
+      revealed++;
+    }
+    if (revealed < total) {
+      player.revealRaf = requestAnimationFrame(step);
+    }
+  };
+  player.revealRaf = requestAnimationFrame(step);
+}
+
+function revealAllWords() {
+  cancelAnimationFrame(player.revealRaf);
+  player.revealRaf = null;
+  for (const span of player.wordSpans) span.dataset.shown = "true";
 }
 
 function tickBar() {
@@ -349,12 +431,15 @@ function tickBar() {
 function stopPlayback() {
   clearTimeout(player.timer);
   cancelAnimationFrame(player.raf);
+  cancelAnimationFrame(player.revealRaf);
   player.idx = -1;
   player.timer = null;
   player.raf = null;
   player.paused = false;
   player.remaining = 0;
   player.duration = 0;
+  player.revealRaf = null;
+  player.wordSpans = [];
   playerEl.dataset.state = "idle";
   playerTag.textContent = "";
   playerBody.textContent = "";
