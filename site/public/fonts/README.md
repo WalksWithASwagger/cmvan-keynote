@@ -1,16 +1,17 @@
 # Self-hosted fonts
 
-Drop the woff2 files here to activate the self-hosted stack. The system fallbacks
-in `css/theme.css` already render cleanly without these — this directory is the
-hook, not a hard dependency.
+These woff2s back the typography stack in `site/css/theme.css`. Served at
+`/public/fonts/*.woff2` by Cloudflare Pages. CSP `font-src 'self'` (in
+`site/_headers`) already permits them.
 
-Expected files (deferred until ready):
+Files:
 
-- `JetBrainsMono-Variable.woff2` — variable axis 100–800. From
-  https://github.com/JetBrains/JetBrainsMono/releases (latest, `webfonts/` dir).
-- `GTMaru-Bold.woff2` — brutalist serif counterpart for display type. License
-  pending; substitute any single brutalist serif woff2 you have rights to and
-  update the `--font-display` token in `theme.css` to match.
+- `JetBrainsMono-Regular.woff2`, `JetBrainsMono-Italic.woff2`,
+  `JetBrainsMono-Bold.woff2` — from
+  https://github.com/JetBrains/JetBrainsMono (`fonts/webfonts/`).
+- `Newsreader-Regular.woff2`, `Newsreader-Bold.woff2` — latin subset
+  pulled from Google Fonts (https://fonts.google.com/specimen/Newsreader).
+  Open Font License.
 
-Once the files land, uncomment the `@font-face` blocks at the top of
-`site/css/theme.css`.
+System fallbacks in `--font-mono` and `--font-display` keep the page legible
+if any of these 404.

@@ -17,12 +17,12 @@
   --border-strong: #3f3f3f;
   --rule: #5a0a13;
 
-  /* type — JetBrains Mono + a brutalist serif. Drop woff2 files into
-     site/public/fonts/ to activate self-hosting; system stack is the
-     fallback so the site never ships empty 404s. */
+  /* type — JetBrains Mono + Newsreader (brutalist serif). Self-hosted
+     woff2 files live in site/public/fonts/; system stack is the fallback
+     so the site still renders if the woff2s 404. */
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", "SFMono-Regular",
     Menlo, Consolas, "Liberation Mono", "Courier New", monospace;
-  --font-display: "GT Maru", "Times New Roman", "Hoefler Text", Georgia,
+  --font-display: "Newsreader", "Times New Roman", "Hoefler Text", Georgia,
     ui-serif, serif;
   --font-body: var(--font-mono);
 
@@ -53,21 +53,43 @@
   --ease-snap: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Self-host hooks — fill site/public/fonts/ with woff2s to enable.
-   Until then the system stack above renders cleanly.
+/* Self-hosted faces. System stack in --font-mono / --font-display is the
+   fallback if any woff2 fails to load. */
 @font-face {
   font-family: "JetBrains Mono";
-  src: url("/public/fonts/JetBrainsMono-Variable.woff2") format("woff2-variations");
-  font-weight: 100 800;
+  src: url("/public/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "GT Maru";
-  src: url("/public/fonts/GTMaru-Bold.woff2") format("woff2");
-  font-weight: 700;
+  font-family: "JetBrains Mono";
+  src: url("/public/fonts/JetBrainsMono-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
   font-display: swap;
 }
-*/
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/public/fonts/JetBrainsMono-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Newsreader";
+  src: url("/public/fonts/Newsreader-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Newsreader";
+  src: url("/public/fonts/Newsreader-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 *,
 *::before,
