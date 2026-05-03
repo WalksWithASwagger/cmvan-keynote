@@ -115,6 +115,24 @@ python3 -m http.server 7772 --directory assets/generated/slides
 
 ---
 
+## Build scripts
+
+Static site, no bundler. Each script reads source files in the repo and writes JSON/XML into `site/`. Re-run after editing the relevant inputs.
+
+| Command | Output | Inputs |
+|---------|--------|--------|
+| `node scripts/build-rss.mjs` | `site/feed.xml` | `site/recap.html`, `site/notes/*.html` |
+| `node scripts/build-decisions.mjs` | `site/data/decisions.json` | `OPEN-QUESTIONS.md`, `SESSION-HANDOFF.md` |
+| `node scripts/build-quotes.mjs` | `site/data/quotes.json` | script + biography sources |
+| `node scripts/build-lineage.mjs` | `site/data/lineage.json` | lineage sources |
+| `node scripts/build-library-index.mjs` | `site/data/library.json` | library sources |
+| `node scripts/build-audio-cues.mjs` | `site/data/audio-cues.json` | dress-rehearsal script |
+| `node scripts/ingest-slides.mjs` | `site/data/slides.json` | slide manifest |
+
+To add a future field note: drop `site/notes/<slug>.html` with `<title>` + `<meta name="pubDate" content="YYYY-MM-DD">` + a `<meta name="description">` (or first `<p>` inside `<main>`), then re-run `node scripts/build-rss.mjs`.
+
+---
+
 ## Archive
 
 Everything pre-v2 lives in `archive/` — original monologue (v3), v1 image prompts, old slide outlines, pitch deck. It's there if you need it. Don't use it for May 1.
