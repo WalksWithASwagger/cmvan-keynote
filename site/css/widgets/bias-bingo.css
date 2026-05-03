@@ -329,3 +329,98 @@
   border-top: 1px solid var(--border);
   background: var(--bg-elevated);
 }
+
+/* line-cleared sweep — fires when a row/col/diag of 5 is fully marked */
+
+.bbingo-cell[data-line-cleared] {
+  overflow: hidden;
+}
+
+.bbingo-cell[data-line-cleared]::before {
+  content: "";
+  position: absolute;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(225, 29, 46, 0.7);
+  pointer-events: none;
+  z-index: 2;
+  transform-origin: left center;
+  animation: bbingo-strike 360ms var(--ease-snap) forwards;
+  animation-delay: calc(var(--line-pos, 0) * 80ms);
+}
+
+.bbingo-cell[data-line-cleared="row"]::before {
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 4px;
+  margin-top: -2px;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.bbingo-cell[data-line-cleared="col"]::before {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  margin-left: -2px;
+  transform: scaleY(0);
+  transform-origin: top center;
+  animation-name: bbingo-strike-vertical;
+}
+
+.bbingo-cell[data-line-cleared="diag1"]::before,
+.bbingo-cell[data-line-cleared="diag2"]::before {
+  top: 50%;
+  left: 50%;
+  width: 142%;
+  height: 4px;
+  margin-top: -2px;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center center;
+  animation-name: bbingo-strike-diagonal;
+}
+
+.bbingo-cell[data-line-cleared="diag1"]::before {
+  rotate: 45deg;
+}
+
+.bbingo-cell[data-line-cleared="diag2"]::before {
+  rotate: -45deg;
+}
+
+@keyframes bbingo-strike {
+  0% { transform: scaleX(0); opacity: 0.9; }
+  60% { transform: scaleX(1); opacity: 1; }
+  100% { transform: scaleX(1); opacity: 0; }
+}
+
+@keyframes bbingo-strike-vertical {
+  0% { transform: scaleY(0); opacity: 0.9; }
+  60% { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+@keyframes bbingo-strike-diagonal {
+  0% { transform: translateX(-50%) scaleX(0); opacity: 0.9; }
+  60% { transform: translateX(-50%) scaleX(1); opacity: 1; }
+  100% { transform: translateX(-50%) scaleX(1); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* global rule collapses animation-duration; show a static strike instead */
+  .bbingo-cell[data-line-cleared]::before {
+    opacity: 1;
+    animation: none !important;
+  }
+  .bbingo-cell[data-line-cleared="row"]::before {
+    transform: scaleX(1);
+  }
+  .bbingo-cell[data-line-cleared="diag1"]::before,
+  .bbingo-cell[data-line-cleared="diag2"]::before {
+    transform: translateX(-50%) scaleX(1);
+  }
+  .bbingo-cell[data-line-cleared="col"]::before {
+    transform: scaleY(1);
+  }
+}
