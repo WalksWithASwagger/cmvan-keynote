@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "note": "Token slots: {{craft}} = what they make, {{served}} = who it serves, {{refusals}} = comma-joined refuse list, {{firstRefusal}} = first refuse item, {{name}} = optional signer. Each template = array of paragraphs. JS picks one at random and walks through.",
+  "templates": [
+    {
+      "id": "no-permission",
+      "title": "No permission needed",
+      "paragraphs": [
+        "I make {{craft}}. I do not need permission to make {{craft}}. I never did.",
+        "It is for {{served}}. Not for the algorithm. Not for the brand deck. Not for the people who confused engagement with meaning. {{served}} — the actual humans, with names, with rooms they sit in, with mornings.",
+        "I refuse {{firstRefusal}}. I refuse {{refusals}}. I refuse the soft, smooth, helpful voice that makes everything sound like an apology to a manager who doesn't exist.",
+        "The tools change. The work doesn't. You make the thing. You sign the thing. You stand behind the thing. That is the whole job.",
+        "Punk rock AI: keep your hands on it. Keep your name on it. Keep going."
+      ]
+    },
+    {
+      "id": "three-rules",
+      "title": "Three rules",
+      "paragraphs": [
+        "Rule one: I make {{craft}}, and I make it on purpose. Not because the feed asked. Not because the model suggested. Because I decided.",
+        "Rule two: it serves {{served}}. If the work stops serving {{served}}, I stop making it. That is the only metric that matters here.",
+        "Rule three: I refuse {{refusals}}. The refusals are not a vibe. They are the load-bearing wall. Take them out and the whole thing collapses into beige.",
+        "I will use every tool that helps. I will reject every tool that flattens. The difference is whether the work still sounds like me when I read it back at 2am.",
+        "This is the manifesto. It fits on one page. That is the point."
+      ]
+    },
+    {
+      "id": "letter-from-the-shop",
+      "title": "Letter from the shop",
+      "paragraphs": [
+        "Hello from the shop. We make {{craft}} here. We have for a while. We will keep making it.",
+        "We make it for {{served}}. Not for trend reports. Not for whoever is loudest on the timeline this week. {{served}} — the people we can actually picture.",
+        "Some things we will not do. We will not {{firstRefusal}}. We will not slide into {{refusals}}. We will not sand the edges off until the work could have come from anywhere.",
+        "The machines are welcome in the shop. They sweep up. They run the lathe. They do not sign the work. We do.",
+        "Yours, from the shop floor — with grease on it."
+      ]
+    },
+    {
+      "id": "field-report",
+      "title": "Field report",
+      "paragraphs": [
+        "Field report. The craft: {{craft}}. The audience: {{served}}. The conditions: a flood of generated nothing, and a quiet hunger underneath it for anything real.",
+        "What I am building: {{craft}} that {{served}} can actually use. Not impress. Not scroll past. Use.",
+        "What I am refusing: {{refusals}}. These are non-negotiable. They are the shape of my taste, and taste is the only thing the machine cannot copy without me.",
+        "The plan is simple. Make the work. Sign the work. Show the work. Repeat until somebody is glad I did.",
+        "End of report. Back to it."
+      ]
+    },
+    {
+      "id": "confession",
+      "title": "Confession",
+      "paragraphs": [
+        "Here is what I actually do: I make {{craft}}. That is the answer to the question at the dinner table I keep dodging.",
+        "Here is who it is for: {{served}}. Not everyone. Not the largest possible market. {{served}}. A small, real, specific group of humans I can name.",
+        "Here is what I will not do, no matter how easy it gets: {{refusals}}. The model can make those things instantly. That is not a reason to make them. That is a reason to refuse them harder.",
+        "I will use AI like I use a kitchen knife. With both hands on it. With my full attention. With the understanding that the cut is mine.",
+        "If the work is good, it is because I made it. If it is bad, that is also mine. Either way — mine."
+      ]
+    },
+    {
+      "id": "anti-pitch",
+      "title": "Anti-pitch",
+      "paragraphs": [
+        "This is not a pitch. I am not raising. I am not scaling. I am making {{craft}}.",
+        "I am making it for {{served}}, and I am making it the way it should be made — slowly enough that I can still feel my hands, fast enough that it actually ships.",
+        "I am refusing {{refusals}}. Not as a brand position. As a working condition. A house I can stand to live inside.",
+        "AI does not change this. AI is a louder version of the same question I have always had to answer: do you actually mean it, or are you just performing it?",
+        "I mean it. That is the whole pitch. There is no slide two."
+      ]
+    }
+  ]
+}

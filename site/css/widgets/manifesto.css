@@ -1,0 +1,140 @@
+/* /widgets/manifesto — three prompts in, one-page punk manifesto out */
+
+.mfst-intro {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.mfst-intro h1 {
+  margin: 0 0 var(--space-3);
+}
+
+.mfst-intro__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 52ch;
+  color: var(--fg-soft);
+}
+
+.mfst {
+  padding-block: var(--space-5);
+}
+
+.mfst__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 880px) {
+  .mfst__layout {
+    grid-template-columns: minmax(20rem, 26rem) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.mfst__form h2 {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin: 0 0 var(--space-3);
+}
+
+.mfst__field {
+  display: block;
+  margin-bottom: var(--space-3);
+}
+
+.mfst__field > span {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--fg-soft);
+  margin-bottom: var(--space-1);
+}
+
+.mfst__field input,
+.mfst__field textarea {
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: var(--fs-md);
+  line-height: 1.5;
+}
+
+.mfst__field textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.mfst__field small {
+  display: block;
+  margin-top: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.mfst__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.mfst__status {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  min-height: 1em;
+  margin-top: var(--space-2);
+}
+
+.mfst__output {
+  background: var(--bg-elevated);
+  border: 2px solid var(--accent);
+  padding: var(--space-5) var(--space-4);
+  min-height: 24rem;
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.5;
+  color: var(--fg);
+}
+
+.mfst__output h2 {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin: 0 0 var(--space-3);
+}
+
+.mfst__output p {
+  margin: 0 0 var(--space-3);
+}
+
+.mfst__output p:last-child {
+  margin-bottom: 0;
+}
+
+.mfst__output .mfst__signoff {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-top: var(--space-4);
+}
+
+.mfst__placeholder {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--muted);
+}
