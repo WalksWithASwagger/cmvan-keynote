@@ -15,6 +15,9 @@
 /widgets/junior-pipeline     /widgets/junior-pipeline.html     200
 /widgets/pattern-graph       /widgets/pattern-graph.html       200
 /widgets/chainsaws           /widgets/chainsaws.html           200
+/widgets/mastery-gym         /widgets/mastery-gym.html         200
+/widgets/receipt             /widgets/receipt.html             200
+/widgets/detournement        /widgets/detournement.html        200
 
 # If an old companion-site path leaks, route home.
 /companion-site/*           /                                  301

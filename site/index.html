@@ -16,11 +16,20 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="/css/theme.css" />
     <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/widgets/daily-refrain.css" />
   </head>
   <body class="shell">
     <header class="site-header" data-include="header"></header>
 
     <main>
+      <aside class="daily-refrain" id="daily-refrain" aria-label="Daily refrain" data-state="loading">
+        <div class="daily-refrain__inner">
+          <span class="daily-refrain__tag">Refrain &middot; today</span>
+          <a class="daily-refrain__link" data-refrain-link href="/talk.html">&hellip;</a>
+          <span class="daily-refrain__cite" data-refrain-cite></span>
+        </div>
+      </aside>
+
       <section class="hero grain scanlines">
         <div class="wrap">
           <p class="hero__date">Creative Mornings Vancouver &middot; 01 . 05 . 2026</p>
@@ -286,6 +295,42 @@
                 <span class="card__cta">Pick up the tool &rarr;</span>
               </a>
             </li>
+            <li>
+              <a class="card" href="/widgets/mastery-gym.html">
+                <span class="card__num">18</span>
+                <h3 class="card__title">Mastery Gym tracker</h3>
+                <p class="card__body">
+                  Daily check-in. One cycle a day &mdash; try, feedback,
+                  iterate &mdash; with a streak counter, a sixteen-week
+                  heatmap, and a Markdown export of your last thirty cycles.
+                </p>
+                <span class="card__cta">Log a cycle &rarr;</span>
+              </a>
+            </li>
+            <li>
+              <a class="card" href="/widgets/receipt.html">
+                <span class="card__num">19</span>
+                <h3 class="card__title">Open Source Receipt</h3>
+                <p class="card__body">
+                  Toy estimator: how much of you is in the training data?
+                  A short questionnaire prints a paper-receipt-style
+                  heuristic. Heavily caveated &mdash; a feeling, not a fact.
+                </p>
+                <span class="card__cta">Print the receipt &rarr;</span>
+              </a>
+            </li>
+            <li>
+              <a class="card" href="/widgets/detournement.html">
+                <span class="card__num">20</span>
+                <h3 class="card__title">D&eacute;tournement maker</h3>
+                <p class="card__body">
+                  Drop in an ad. Mark it up zine-style with text, redactions,
+                  halftone fills, accent splashes. Export the rebuttal as a
+                  PNG. The tools of spectacle, turned against the spectacle.
+                </p>
+                <span class="card__cta">Mark it up &rarr;</span>
+              </a>
+            </li>
           </ul>
         </div>
       </section>
@@ -309,5 +354,6 @@
     <footer class="site-footer" data-include="footer"></footer>
 
     <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/daily-refrain.js" defer></script>
   </body>
 </html>
