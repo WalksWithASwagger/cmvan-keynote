@@ -7,7 +7,7 @@
 //   kept simple for fallback use.)
 //
 // Required wrangler bindings (see wrangler.toml):
-//   secret  NOTION_API_KEY     Notion integration token
+//   secret  NOTION_TOKEN       Notion integration token
 //   var     NOTION_DB_ID       database id (from Notion DB share URL)
 //   var     ALLOWED_ORIGIN     default https://punkrockai.com
 //   kv      RATE_LIMIT         optional, 5 submits/IP/hour
@@ -61,8 +61,12 @@ async function handlePost(request, env) {
   if (!submission.what) return jsonError(400, "what is required", env);
   if (!isValidUrl(submission.url)) return jsonError(400, "url must be a valid http(s) URL", env);
 
-  if (!env.NOTION_API_KEY || !env.NOTION_DB_ID) {
-    return jsonError(503, "submission portal not connected — try again later", env);
+  if (!env.NOTION_TOKEN || !env.NOTION_DB_ID) {
+    console.warn(
+      "submissions: NOTION_TOKEN or NOTION_DB_ID missing — accepting submission without persistence",
+      { name: submission.name, url: submission.url, hasToken: !!env.NOTION_TOKEN, hasDbId: !!env.NOTION_DB_ID },
+    );
+    return jsonResponse({ id: null, status: "queued-no-backend" }, 202, env);
   }
 
   try {
@@ -74,7 +78,7 @@ async function handlePost(request, env) {
 }
 
 async function handleGet(request, env) {
-  if (!env.NOTION_API_KEY || !env.NOTION_DB_ID) {
+  if (!env.NOTION_TOKEN || !env.NOTION_DB_ID) {
     return jsonResponse({ submissions: [] }, 200, env);
   }
   try {
@@ -177,7 +181,7 @@ function textOf(arr) {
 function notionHeaders(env) {
   return {
     "content-type": "application/json",
-    "authorization": `Bearer ${env.NOTION_API_KEY}`,
+    "authorization": `Bearer ${env.NOTION_TOKEN}`,
     "notion-version": "2022-06-28",
   };
 }

@@ -31,10 +31,13 @@ The 32-char hex id from the Notion DB share URL is your `NOTION_DB_ID`.
 ```sh
 cd worker/submissions
 wrangler kv namespace create RATE_LIMIT       # optional but recommended
-wrangler secret put NOTION_API_KEY            # paste integration secret
+wrangler secret put NOTION_TOKEN              # paste integration secret
 # edit wrangler.toml: paste NOTION_DB_ID under [vars] (or wrangler secret put)
 wrangler deploy
 ```
+
+See `NOTION-SETUP.md` for end-to-end integration setup (creating the
+integration, sharing the DB, schema, secrets).
 
 After deploy, update `site/_redirects` so `/api/submissions` routes to the
 deployed worker URL. The release-day page already POSTs to that path; no
@@ -63,8 +66,10 @@ or any scripted pull.
 ## Local dev
 
 ```sh
-NOTION_API_KEY=secret_... NOTION_DB_ID=... wrangler dev
+NOTION_TOKEN=secret_... NOTION_DB_ID=... wrangler dev
 ```
 
-The release-day page tolerates a missing worker — submissions queue locally
-and the user gets a copy-paste-by-email fallback.
+If `NOTION_TOKEN` or `NOTION_DB_ID` is unset the worker still boots:
+POST returns `202 { status: "queued-no-backend" }` and logs a warning —
+the request is acknowledged but not persisted. The release-day page
+tolerates this and falls back to a copy-paste-by-email handoff.
