@@ -1,0 +1,254 @@
+/* /widgets/voice-clone-booth — record yourself, hear how cheap your voice is */
+
+.vcb-intro {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.vcb-intro h1 {
+  margin: 0 0 var(--space-3);
+}
+
+.vcb-intro__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 55ch;
+  color: var(--fg-soft);
+}
+
+.vcb-intro__privacy {
+  margin-top: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border: 1px dashed var(--accent);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  line-height: 1.5;
+  color: var(--fg);
+  max-width: 60ch;
+}
+
+.vcb {
+  padding-block: var(--space-5);
+}
+
+.vcb__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 880px) {
+  .vcb__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 22rem);
+    align-items: start;
+  }
+}
+
+.vcb__panel h2,
+.vcb__aside h2 {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin: var(--space-4) 0 var(--space-2);
+}
+
+.vcb__panel h2:first-child {
+  margin-top: 0;
+}
+
+.vcb__scripts {
+  display: grid;
+  gap: var(--space-2);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+  .vcb__scripts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.vcb__script-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  transition: border-color 120ms ease, background 120ms ease;
+}
+
+.vcb__script-btn:hover {
+  border-color: var(--accent);
+}
+
+.vcb__script-btn.is-active {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--bg-elevated));
+}
+
+.vcb__script-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+}
+
+.vcb__script-len {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--fg-soft);
+}
+
+.vcb__script-body {
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  background: var(--bg-elevated);
+  border-left: 3px solid var(--accent);
+}
+
+.vcb__script-blurb {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--fg-soft);
+}
+
+.vcb__script-text {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  line-height: 1.55;
+}
+
+.vcb__durations {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.vcb__duration[aria-pressed="true"],
+.vcb__duration.is-active {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.vcb__duration-note {
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--fg-soft);
+}
+
+.vcb__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.vcb__rec-dot {
+  display: inline-block;
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  background: currentColor;
+  margin-right: 0.4em;
+  vertical-align: baseline;
+  opacity: 0.6;
+}
+
+#vcb-record[data-state="recording"] .vcb__rec-dot {
+  background: #ff3b3b;
+  opacity: 1;
+  animation: vcb-pulse 1s ease-in-out infinite;
+}
+
+@keyframes vcb-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+.vcb__timer {
+  font-family: var(--font-mono);
+  font-size: var(--fs-lg);
+  color: var(--fg);
+  min-width: 4ch;
+}
+
+.vcb__status {
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--fg-soft);
+  min-height: 1.5em;
+}
+
+.vcb__playback {
+  margin-top: var(--space-2);
+  padding: var(--space-3);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+}
+
+.vcb__playback audio {
+  width: 100%;
+  margin-bottom: var(--space-2);
+}
+
+.vcb__row {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.vcb__playback-meta {
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--fg-soft);
+}
+
+.vcb__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.vcb__aside {
+  padding: var(--space-3);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+}
+
+.vcb__aside h2 {
+  margin-top: 0;
+}
+
+.vcb__aside p,
+.vcb__aside ul {
+  margin: 0 0 var(--space-2);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+}
+
+.vcb__aside ul {
+  padding-left: 1.2em;
+}
+
+.vcb__aside--fallback {
+  border-color: #ff3b3b;
+}
+
+.vcb__aside code {
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  padding: 0.05em 0.3em;
+}

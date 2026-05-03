@@ -1,0 +1,34 @@
+{
+  "scripts": [
+    {
+      "id": "rainbow",
+      "title": "The Rainbow Passage",
+      "blurb": "Phonetically balanced. Used by speech labs since 1940. Hits every English vowel and most consonants in roughly thirty seconds.",
+      "text": "When the sunlight strikes raindrops in the air, they act as a prism and form a rainbow. The rainbow is a division of white light into many beautiful colors. These take the shape of a long round arch, with its path high above, and its two ends apparently beyond the horizon. There is, according to legend, a boiling pot of gold at one end."
+    },
+    {
+      "id": "harvard",
+      "title": "Harvard Sentences",
+      "blurb": "Designed for telephone-quality speech testing. Short, varied, hard to mumble through.",
+      "text": "The birch canoe slid on the smooth planks. Glue the sheet to the dark blue background. It's easy to tell the depth of a well. These days a chicken leg is a rare dish. Rice is often served in round bowls. The juice of lemons makes fine punch."
+    },
+    {
+      "id": "punk",
+      "title": "Punk Rock AI manifesto",
+      "blurb": "From the talk. Read it like you mean it. The cloning model will pick up your cadence, not just your timbre.",
+      "text": "I am not a prompt engineer. I am a person with taste. I borrow the loudest amplifier in the room and I aim it at the work I already care about. The tools are cheap. The judgment is not. If the machine can do it in thirty seconds, the question is no longer can you do it. The question is should you, and what comes after."
+    },
+    {
+      "id": "neutral",
+      "title": "Neutral conversational",
+      "blurb": "What most cloning services actually want: relaxed, mid-energy, no performance. Sixty seconds of this and a model can fake your voicemail.",
+      "text": "Hey, it's me. I wanted to walk you through what I've been thinking about this week. I don't have a clean answer yet, but I've got a few threads I want to pull on. I'll send the longer notes later tonight. If anything in here doesn't track, just tell me and I'll come back at it from a different angle. Talk soon."
+    },
+    {
+      "id": "consent",
+      "title": "Informed-consent script",
+      "blurb": "Some services require you read this exact-style sentence so they can prove you authorized the clone. Read it once and notice how little protection it really is.",
+      "text": "I am the speaker recorded in this audio file. I consent to the use of my voice for the creation of a synthetic voice model. I understand that this model can be used to generate speech in my voice that I did not personally say. I am providing this consent freely on today's date."
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Voice-clone booth &mdash; Punk Rock AI</title>
+    <meta
+      name="description"
+      content="Record yourself reading a sample script and feel how little audio a cloning service actually needs. Stays on your device. Nothing is uploaded."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/widgets/voice-clone-booth.css" />
+  </head>
+  <body class="shell">
+    <header class="site-header" data-include="header"></header>
+
+    <main>
+      <section class="vcb-intro grain scanlines">
+        <div class="wrap wrap--narrow">
+          <p class="kicker kicker--accent">Phase 4 &middot; how cheap your voice has become</p>
+          <h1>Voice-clone booth.</h1>
+          <p class="vcb-intro__lede">
+            Pick a script. Pick a duration. Read it out loud. The page records
+            you with your microphone, plays it back, and lets you download the
+            file. That&rsquo;s it. <strong>Nothing is uploaded.</strong> No
+            cloning happens here. The point is to feel, in your own throat,
+            how few seconds of audio a cloning service actually needs.
+          </p>
+          <p class="vcb-intro__privacy">
+            <span aria-hidden="true">&#9888;</span>
+            Privacy: this widget uses the browser&rsquo;s MediaRecorder API.
+            Audio stays in this tab&rsquo;s memory until you download it or
+            close the page. There is no server. There is no network call.
+            View source if you don&rsquo;t believe me.
+          </p>
+        </div>
+      </section>
+
+      <section class="vcb">
+        <div class="wrap">
+          <div class="vcb__layout">
+            <div class="vcb__panel">
+              <h2>1. Pick a script</h2>
+              <div class="vcb__scripts" id="vcb-scripts" role="radiogroup" aria-label="Sample scripts"></div>
+
+              <div class="vcb__script-body" id="vcb-script-body" aria-live="polite">
+                <p class="vcb__script-blurb" id="vcb-script-blurb"></p>
+                <blockquote class="vcb__script-text" id="vcb-script-text"></blockquote>
+              </div>
+
+              <h2>2. Pick a duration</h2>
+              <div class="vcb__durations" role="radiogroup" aria-label="Recording duration">
+                <button class="btn vcb__duration" type="button" data-duration="15" aria-pressed="false">15 sec</button>
+                <button class="btn vcb__duration" type="button" data-duration="30" aria-pressed="true">30 sec</button>
+                <button class="btn vcb__duration" type="button" data-duration="60" aria-pressed="false">60 sec</button>
+              </div>
+              <p class="vcb__duration-note">
+                Most consumer cloning services want 30 to 60 seconds.
+                A few claim usable results from 10.
+              </p>
+
+              <h2>3. Record</h2>
+              <div class="vcb__controls">
+                <button class="btn btn--primary" type="button" id="vcb-record" data-state="idle">
+                  <span class="vcb__rec-dot" aria-hidden="true"></span>
+                  <span data-label>Start recording</span>
+                </button>
+                <button class="btn" type="button" id="vcb-stop" disabled>Stop</button>
+                <span class="vcb__timer" id="vcb-timer" aria-live="polite">0:00</span>
+              </div>
+
+              <p class="vcb__status" id="vcb-status" aria-live="polite" role="status"></p>
+
+              <h2>4. Listen back &amp; download</h2>
+              <div class="vcb__playback" id="vcb-playback" hidden>
+                <audio id="vcb-audio" controls preload="metadata"></audio>
+                <div class="vcb__row">
+                  <a class="btn" id="vcb-download" download="voice-sample.webm">Download .webm</a>
+                  <button class="btn" type="button" id="vcb-discard">Discard &amp; record again</button>
+                </div>
+                <p class="vcb__playback-meta" id="vcb-playback-meta"></p>
+              </div>
+            </div>
+
+            <aside class="vcb__sidebar">
+              <div class="vcb__aside">
+                <h2>What just happened</h2>
+                <p>
+                  Your browser captured raw audio with
+                  <code>navigator.mediaDevices.getUserMedia</code> and encoded
+                  it with <code>MediaRecorder</code>. That same blob, sent to
+                  ElevenLabs or Resemble or any of a dozen providers, would be
+                  enough to clone your voice well enough to fool your mother
+                  on a phone call.
+                </p>
+              </div>
+
+              <div class="vcb__aside">
+                <h2>What this booth doesn&rsquo;t do</h2>
+                <ul>
+                  <li>No upload. No fetch. No server.</li>
+                  <li>No actual cloning. The download is just your raw recording.</li>
+                  <li>No analytics on the audio. The page can&rsquo;t hear you after the recording stops.</li>
+                </ul>
+              </div>
+
+              <div class="vcb__aside">
+                <h2>The point</h2>
+                <p>
+                  Fifteen seconds is a voicemail greeting. Sixty seconds is a
+                  podcast intro. You leak more than that every week. The
+                  defense isn&rsquo;t silence. It&rsquo;s knowing the floor is
+                  this low and acting accordingly.
+                </p>
+              </div>
+
+              <div class="vcb__aside vcb__aside--fallback" id="vcb-fallback" hidden>
+                <h2>Your browser can&rsquo;t do this</h2>
+                <p id="vcb-fallback-msg"></p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/voice-clone-booth.js"></script>
+  </body>
+</html>
