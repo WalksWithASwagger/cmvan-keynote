@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>D&eacute;tournement maker &mdash; Punk Rock AI</title>
+    <meta
+      name="description"
+      content="Drop an ad image, then overlay zine-style annotations: text, redactions, halftone fills, accent splashes. Export PNG. The original is the spectacle; the export is the d&eacute;tournement."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta property="og:title" content="D&eacute;tournement maker — Punk Rock AI" />
+    <meta property="og:description" content="Take the tools of the spectacle and turn them against the spectacle. Annotate any image, export a zine." />
+    <meta property="og:url" content="https://punkrockai.com/widgets/detournement.html" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/widgets/detournement.css" />
+  </head>
+  <body class="shell">
+    <header class="site-header" data-include="header"></header>
+
+    <main>
+      <section class="det-intro grain scanlines">
+        <div class="wrap wrap--narrow">
+          <p class="kicker kicker--accent">Slide 5 &middot; turn the tools against the spectacle</p>
+          <h1>D&eacute;tournement maker.</h1>
+          <p class="det-intro__lede">
+            The Situationists called it <em>d&eacute;tournement</em> &mdash; taking
+            the tools of corporate spectacle and turning them against the spectacle.
+            Drop in an ad. Mark it up. The original is the message; your export
+            is the rebuttal.
+          </p>
+          <p class="det-intro__hint">
+            Upload a file or paste an image URL. Pick a tool. Click on the canvas
+            to drop an annotation. Drag to reposition. Press <kbd>Delete</kbd>
+            (or hit the <span aria-hidden="true">&times;</span>) to remove.
+          </p>
+        </div>
+      </section>
+
+      <section class="det-load">
+        <div class="wrap wrap--narrow">
+          <div class="det-load__row">
+            <label class="det-load__field">
+              <span class="kicker">Upload image</span>
+              <input id="det-file" type="file" accept="image/*" />
+            </label>
+            <label class="det-load__field">
+              <span class="kicker">&hellip; or paste URL</span>
+              <input id="det-url" type="url" placeholder="https://example.com/ad.jpg" inputmode="url" autocomplete="off" />
+            </label>
+            <button class="btn" type="button" data-action="load-url">Load URL</button>
+          </div>
+          <p class="det-load__note">
+            URL paste sets <code>crossorigin=&quot;anonymous&quot;</code>. If the
+            remote server doesn&rsquo;t send CORS headers, the browser taints the
+            canvas and PNG export fails &mdash; download the image and upload it
+            instead.
+          </p>
+        </div>
+      </section>
+
+      <section class="det-toolbar-wrap">
+        <div class="wrap wrap--narrow">
+          <div class="det-toolbar" role="toolbar" aria-label="Annotation tools">
+            <button class="det-tool is-active" type="button" data-tool="text" aria-pressed="true">Text</button>
+            <button class="det-tool" type="button" data-tool="redaction" aria-pressed="false">Redaction</button>
+            <button class="det-tool" type="button" data-tool="halftone" aria-pressed="false">Halftone</button>
+            <button class="det-tool" type="button" data-tool="splash" aria-pressed="false">Accent splash</button>
+            <button class="det-tool det-tool--ghost" type="button" data-action="clear-overlays">Clear overlays</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="det-canvas-wrap">
+        <div class="wrap">
+          <div class="det-canvas" id="det-canvas" data-tool="text">
+            <div class="det-canvas__empty" id="det-empty">
+              <p>No image yet.</p>
+              <p>Upload a file or paste a URL above to begin.</p>
+            </div>
+            <img class="det-canvas__img" id="det-img" alt="" hidden />
+            <div class="det-canvas__layer" id="det-layer" aria-label="Annotation layer"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="det-actions">
+        <div class="wrap wrap--narrow">
+          <p class="det-actions__hint">
+            Export flattens the image plus your annotations into a single PNG at
+            2&times; resolution. No server, no upload &mdash; the file is built
+            in your browser.
+          </p>
+          <div class="det-actions__row">
+            <button class="btn btn--primary" type="button" data-action="png">Export PNG</button>
+            <button class="btn" type="button" data-action="reset">Reset everything</button>
+          </div>
+          <p class="det-actions__status" id="det-status" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.13/dist/html-to-image.min.js" defer></script>
+    <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/detournement.js"></script>
+  </body>
+</html>
