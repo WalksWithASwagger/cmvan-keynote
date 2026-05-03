@@ -2,6 +2,14 @@
 // cell to open a modal with the case study (when linked) or the look-for
 // hint (when not). Mark cells "seen". Row/column complete unlocks a markdown
 // framework checklist download.
+//
+// Share hash format (#s=<base64url>):
+//   25 bits — one per cell, in the order cells appear in bingo.json.
+//   Bit i is 1 when bingo.cells[i] is marked seen. Bits are packed
+//   most-significant-first into 4 bytes (only 25 bits used; trailing 7
+//   bits are zero) and base64url-encoded. Decoder is tolerant of any
+//   length so the format can grow without breaking old links.
+//   Hash state is merged with localStorage on load (union, never wipe).
 
 import { load, save } from "/js/common/storage.js";
 
@@ -40,9 +48,17 @@ async function main() {
 
   const stored = load(STORAGE_KEY, []);
   seen = new Set(Array.isArray(stored.value) ? stored.value : []);
+
+  const fromHash = seenFromHash();
+  if (fromHash) {
+    for (const id of fromHash) seen.add(id);
+    save(STORAGE_KEY, [...seen]);
+  }
+
   renderBoard();
   bindModal();
   paintStats();
+  syncShareUrl();
 }
 
 function renderBoard() {
@@ -135,6 +151,7 @@ function bindModal() {
     save(STORAGE_KEY, [...seen]);
     syncCellState(activeCellId);
     paintStats();
+    syncShareUrl();
     toggleBtn.textContent = seen.has(activeCellId) ? "Mark as not seen" : "Mark as seen";
   });
 
@@ -142,6 +159,8 @@ function bindModal() {
     e.preventDefault();
     downloadChecklist();
   });
+
+  document.querySelector('[data-action="share"]')?.addEventListener("click", copyShareLink);
 }
 
 function syncCellState(id) {
@@ -230,6 +249,75 @@ function downloadChecklist() {
   a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 0);
 }
+
+// ---------------------------------------------------------------------------
+
+function buildShareUrl() {
+  const encoded = encodeSeen(seen);
+  const base = `${window.location.origin}${window.location.pathname}`;
+  return encoded ? `${base}#s=${encoded}` : base;
+}
+
+function syncShareUrl() {
+  const hash = encodeSeen(seen);
+  const next = hash ? `${window.location.pathname}#s=${hash}` : window.location.pathname;
+  history.replaceState(null, "", next);
+}
+
+async function copyShareLink() {
+  const url = buildShareUrl();
+  try {
+    await navigator.clipboard.writeText(url);
+    flashShare("share link copied to clipboard");
+  } catch {
+    flashShare("copy failed — link in console");
+    console.log(url);
+  }
+}
+
+function flashShare(msg) {
+  const status = document.getElementById("bbingo-share-status");
+  if (!status) return;
+  status.textContent = msg;
+  clearTimeout(flashShare._t);
+  flashShare._t = setTimeout(() => {
+    status.textContent = "";
+  }, 3000);
+}
+
+function encodeSeen(set) {
+  if (!bingo || !set.size) return "";
+  const bits = bingo.cells.map((c) => (set.has(c.id) ? 1 : 0));
+  const byteCount = Math.ceil(bits.length / 8);
+  const bytes = new Uint8Array(byteCount);
+  for (let i = 0; i < bits.length; i++) {
+    if (bits[i]) bytes[i >> 3] |= 1 << (7 - (i & 7));
+  }
+  let bin = "";
+  for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+  return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+
+function seenFromHash() {
+  const match = (window.location.hash || "").match(/^#s=([A-Za-z0-9_-]+)$/);
+  if (!match) return null;
+  try {
+    const b64 = match[1].replace(/-/g, "+").replace(/_/g, "/");
+    const padded = b64 + "===".slice((b64.length + 3) % 4);
+    const bin = atob(padded);
+    const ids = [];
+    for (let i = 0; i < bingo.cells.length; i++) {
+      const byte = bin.charCodeAt(i >> 3);
+      if (Number.isNaN(byte)) break;
+      if (byte & (1 << (7 - (i & 7)))) ids.push(bingo.cells[i].id);
+    }
+    return ids;
+  } catch {
+    return null;
+  }
+}
+
+// ---------------------------------------------------------------------------
 
 function escapeHTML(s) {
   return String(s ?? "")

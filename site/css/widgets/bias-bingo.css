@@ -193,6 +193,23 @@
   margin: 0;
 }
 
+.bbingo-share {
+  margin-top: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.bbingo-share__status {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
 /* dialog */
 
 .bbingo-modal {
