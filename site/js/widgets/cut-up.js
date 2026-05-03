@@ -3,6 +3,14 @@
 // fragments → render into a zine-style output canvas. Export as PNG via
 // html-to-image (CDN <script>, same dep as Both Hands).
 
+import { load } from "/js/common/storage.js";
+
+const TDOC_DOCS = [
+  { id: "policy", title: "Personal AI policy" },
+  { id: "style", title: "Style and voice guide" },
+  { id: "worldview", title: "Worldview" },
+];
+
 const inputEl = document.getElementById("cutup-input");
 const outputEl = document.getElementById("cutup-output");
 const bodyEl = document.getElementById("cutup-body");
@@ -19,6 +27,7 @@ let lastFragments = null;
 bindToggles();
 bindActions();
 bindSeeds();
+refreshTdocSeed();
 stamp();
 
 // ---------------------------------------------------------------------------
@@ -133,6 +142,16 @@ function stamp() {
 
 async function seedFrom(kind) {
   try {
+    if (kind === "tdoc") {
+      const sections = readTdocSections();
+      if (!sections.length) {
+        flash("no Three Documents drafts found in this browser");
+        return;
+      }
+      inputEl.value = sections.map((s) => `${s.title}\n${s.body}`).join("\n\n");
+      flash(`seeded with your ${sections.length} Three Document${sections.length === 1 ? "" : "s"}`);
+      return;
+    }
     if (kind === "quotes") {
       const r = await fetch("/data/quotes.json");
       const j = await r.json();
@@ -201,6 +220,28 @@ async function copyText() {
   } catch {
     flash("copy failed — select manually");
   }
+}
+
+// ---------------------------------------------------------------------------
+
+function readTdocSections() {
+  return TDOC_DOCS
+    .map((d) => {
+      const { value } = load(`tdoc:${d.id}`, "");
+      const body = typeof value === "string" ? value.trim() : "";
+      return body ? { title: d.title, body } : null;
+    })
+    .filter(Boolean);
+}
+
+function refreshTdocSeed() {
+  const btn = document.querySelector('[data-seed="tdoc"]');
+  if (!btn) return;
+  const has = readTdocSections().length > 0;
+  btn.disabled = !has;
+  btn.title = has
+    ? "Seed the cut-up with your saved Three Documents drafts."
+    : "Draft your Three Documents first to unlock this seed.";
 }
 
 // ---------------------------------------------------------------------------
