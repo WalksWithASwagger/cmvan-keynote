@@ -62,3 +62,52 @@ function escapeHTML(s) {
 function escapeAttr(s) {
   return escapeHTML(s).replaceAll('"', "&quot;").replaceAll("'", "&#39;");
 }
+
+// Sticky TOC progress indicator. Watches each <section[id]> via
+// IntersectionObserver and toggles `.is-active` on the matching TOC link.
+// Activation band sits in the upper third of the viewport so exactly one
+// section is "current" at a time.
+(function initRecapToc() {
+  const toc = document.querySelector("[data-recap-toc]");
+  if (!toc || typeof IntersectionObserver === "undefined") return;
+
+  const links = new Map();
+  toc.querySelectorAll('a[href^="#"]').forEach((a) => {
+    const id = a.getAttribute("href").slice(1);
+    if (id) links.set(id, a);
+  });
+  if (!links.size) return;
+
+  const sections = [];
+  links.forEach((_link, id) => {
+    const section = document.getElementById(id);
+    if (section) sections.push(section);
+  });
+  if (!sections.length) return;
+
+  const visible = new Set();
+
+  const setActive = (id) => {
+    links.forEach((link, key) => {
+      link.classList.toggle("is-active", key === id);
+    });
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) visible.add(entry.target.id);
+        else visible.delete(entry.target.id);
+      });
+      if (!visible.size) return;
+      // Pick the section whose id appears earliest in document order.
+      const activeId = sections
+        .map((s) => s.id)
+        .find((id) => visible.has(id));
+      if (activeId) setActive(activeId);
+    },
+    { rootMargin: "-20% 0px -70% 0px", threshold: 0 }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+})();

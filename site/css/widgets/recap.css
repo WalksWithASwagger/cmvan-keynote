@@ -63,6 +63,9 @@
   padding-block: var(--space-5);
   border-bottom: 1px solid var(--border);
   background: var(--bg-elevated);
+  position: sticky;
+  top: 4.5rem;
+  z-index: 20;
 }
 
 .recap-toc h2 {
@@ -74,18 +77,21 @@
   margin: 0 0 var(--space-3);
 }
 
-.recap-toc ol {
+.recap-toc__list {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
-  gap: var(--space-2) var(--space-4);
   counter-reset: recap-toc;
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 }
 
-.recap-toc li {
+.recap-toc__list li {
   counter-increment: recap-toc;
+  flex: 0 0 auto;
 }
 
 .recap-toc a {
@@ -98,6 +104,8 @@
   text-decoration: none;
   padding: 0.3rem 0;
   border-bottom: 1px solid transparent;
+  transition: color 120ms ease, border-bottom-color 120ms ease;
+  white-space: nowrap;
 }
 
 .recap-toc a::before {
@@ -114,6 +122,69 @@
   color: var(--accent);
   border-bottom-color: var(--accent);
   outline: none;
+}
+
+.recap-toc a.is-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recap-toc a {
+    transition: none;
+  }
+}
+
+/* Sidebar mode at >=1024px */
+
+@media (min-width: 1024px) {
+  .recap-toc {
+    position: fixed;
+    top: 4.5rem;
+    left: 0;
+    bottom: 0;
+    width: 16rem;
+    padding: var(--space-5) var(--space-4);
+    border-bottom: 0;
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    z-index: 30;
+  }
+
+  .recap-toc .wrap {
+    padding-inline: 0;
+    max-width: none;
+  }
+
+  .recap-toc__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    overflow-x: visible;
+  }
+
+  .recap-toc a {
+    white-space: normal;
+    padding-left: var(--space-2);
+    border-left: 2px solid transparent;
+    border-bottom: 0;
+  }
+
+  .recap-toc a:hover,
+  .recap-toc a:focus-visible {
+    border-bottom-color: transparent;
+    border-left-color: var(--accent);
+  }
+
+  .recap-toc a.is-active {
+    border-bottom-color: transparent;
+    border-left-color: var(--accent);
+  }
+
+  /* Reserve space for the fixed sidebar so article content doesn't sit under it. */
+  .shell.recap > main {
+    padding-left: 16rem;
+  }
 }
 
 /* Section */
