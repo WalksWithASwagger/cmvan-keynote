@@ -29,6 +29,9 @@ build/
 .env
 .env.local
 
+# Claude Code harness internals (worktrees, agent transcripts)
+.claude/
+
 # Generated assets bigger than git wants — drop in assets/generated/ to ignore
 assets/generated/
 assets/slides/
