@@ -180,3 +180,49 @@ All existing images live at: `assets/slides/cmvan-v6-gpt2-16x9/run-20260430-1506
 13. "If your values aren't in text, to AI they basically don't exist."
 14. "The tool is never neutral. But neither are we."
 15. "You coming?"
+
+---
+
+## Portal Build — May 2 Session
+
+### Branch + scope
+
+`claude/write-talk-social-posts-RZsOA` — interactive learning portal at `site/` that
+turns the talk into a working set of widgets. Phase 1 shipped end-to-end. Phase 2 +
+Phase 3 land in this same session as a long, single-direction push (per Kris: "let's
+go ahead and build the rest of the phases").
+
+### Phase 1 final state (six commits)
+
+| SHA | Issue | What landed |
+|------|-------|-------------|
+| `ab545e5` | [#2](https://github.com/WalksWithASwagger/cmvan-keynote/issues/2) | Foundation: site/ tree, punk theme tokens, .grain + .halftone primitives, header/footer include helper, storage helpers, landing page |
+| `3ef0890` | [#4](https://github.com/WalksWithASwagger/cmvan-keynote/issues/4) | `scripts/build-quotes.mjs` parses talk-framework-v6.md → 19 quotes mapped to slides + 22 slide stubs. /talk reel + quote wall + native `<dialog>` lightbox |
+| `0397049` | [#5](https://github.com/WalksWithASwagger/cmvan-keynote/issues/5) | Three Documents builder with autosave, MD + bot-prompt export, no LLM call |
+| `e0ec5a7` | [#6](https://github.com/WalksWithASwagger/cmvan-keynote/issues/6) | Both Hands Full diptych canvas, html-to-image PNG, share via base64-hash |
+| `8c9d3ab` | [#7](https://github.com/WalksWithASwagger/cmvan-keynote/issues/7) | Lineage timeline (Dada → AI), 6 hand-curated beats, IntersectionObserver scroll reveal |
+| `ab5dedf` | [#3](https://github.com/WalksWithASwagger/cmvan-keynote/issues/3) | R2 ingest script + `.env.example` + sharp/aws-sdk deps. Code lands; running blocked on R2 creds |
+
+### Verification (Phase 1)
+
+- `npx serve site` boots clean. 22/22 routes return HTTP 200.
+- All JS modules pass `node --check`. All build scripts run without arguments or fail loud with a useful message.
+- Every Phase 1 issue has a status comment with acceptance criteria + remaining blockers (per the v9 issue template).
+
+### Open blockers (carried forward)
+
+1. **R2 credentials + `SLIDES_SRC` path** — needed to actually thread slide imagery through `/talk` reel, lightbox, lineage thumbs, quote-wall thumbs.
+2. **ElevenLabs run** — generate per-slide mp3s, upload to R2, re-run `build-audio-cues` to populate `audio-cues.json`.
+3. **Anthropic API key + Cloudflare Workers** — to deploy Pattern Finder (#13).
+4. **Notion DB + integration token** — to wire Release Day submission portal (#14).
+5. **Cloudflare Pages project + repo connect** — for staging URL (#8).
+
+The site renders cleanly without any of these. Placeholders are zine-style and intentional.
+
+### Phase 2 + Phase 3 in this session
+
+Continuing from these commits. Documentation lands first (this entry +
+[`site/README.md`](./site/README.md) + portal phase appended to
+[`docs/PROJECT-ROADMAP.md`](./docs/PROJECT-ROADMAP.md)). Then the eight remaining
+issues — see `docs/PROJECT-ROADMAP.md#portal-phase` for the running ledger of what
+shipped and what's still blocked.

@@ -1,0 +1,72 @@
+{
+  "source": "script/talk-framework-v6.md slide 14 + primary source research",
+  "generated": "hand-curated",
+  "thesis": "Stop saying bias. Name what you're seeing.",
+  "cases": [
+    {
+      "id": "gender-shades",
+      "headline": "Facial recognition fails on darker-skinned women at thirty-four point seven percent error rate.",
+      "context": "Dr. Joy Buolamwini's Gender Shades study tested commercial facial-analysis systems from IBM, Microsoft, and Face++ on a balanced dataset of 1,270 faces.",
+      "observation": "Error rate for lighter-skinned men: 0.8%. Error rate for darker-skinned women: 34.7%. A forty-fold gap.",
+      "harm": "racism and sexism embedded in code",
+      "lazyName": "bias",
+      "preciseName": "compounded racial and gender discrimination, with darker-skinned women carrying the worst error rate by orders of magnitude",
+      "prompt": "Don't say 'the system has bias.' Say 'the system mis-identifies darker-skinned women forty times more often than lighter-skinned men, and the people building it shipped it anyway.'",
+      "citation": "Buolamwini, J. & Gebru, T. (2018). Gender Shades. Proceedings of Machine Learning Research 81.",
+      "citationUrl": "https://gendershades.org",
+      "talkRef": "script/talk-framework-v6.md slide 14"
+    },
+    {
+      "id": "marketing-professor",
+      "headline": "Asked for 'a marketing professor.' Got Harvard authority. Asked for 'a female marketing professor.' Got a timid school teacher.",
+      "context": "Anecdote from Slide 14: a colleague ran the same prompt with and without a gender qualifier on a generic image generator.",
+      "observation": "Default prompt produced a man in a power pose, blazer, gravitas. Female-qualified prompt required multiple rounds of prompting to surface the same authority the system gave a man by default.",
+      "harm": "misogyny, not bias",
+      "lazyName": "gender bias",
+      "preciseName": "the system encodes the default professor as masculine and downgrades authority signals when 'female' is added",
+      "prompt": "Don't say 'the model is biased.' Say 'the model defaults masculine for professor and downgrades authority when forced toward feminine.' Then describe the specific image.",
+      "citation": "Anecdote from Kris Krüg, Punk Rock AI / Both Hands Full, May 2026.",
+      "citationUrl": null,
+      "talkRef": "script/talk-framework-v6.md slide 14"
+    },
+    {
+      "id": "amazon-resume",
+      "headline": "Amazon's hiring model penalized resumes containing the word 'women's.'",
+      "context": "Amazon trained a resume-screening model on 10 years of internal hiring data. Internal reporting (Reuters 2018) revealed the model down-ranked candidates for words like 'women's' (e.g., 'women's chess club captain') and graduates of all-women's colleges.",
+      "observation": "The model didn't invent the discrimination — it learned it from the historical hiring patterns it was trained on. Amazon abandoned the project before deploying it externally.",
+      "harm": "automated devaluation of women's resumes — a feedback loop that would have made the historical pattern self-reinforcing",
+      "lazyName": "biased AI",
+      "preciseName": "encoded historical hiring discrimination, automated and scaled, with the side effect of laundering the discrimination as 'objective' machine output",
+      "prompt": "Don't say 'the model was biased against women.' Say 'the model learned from a decade of hiring decisions that under-hired women, and was about to apply that pattern to every future applicant.'",
+      "citation": "Dastin, J. (2018). 'Amazon scraps secret AI recruiting tool that showed bias against women.' Reuters.",
+      "citationUrl": "https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/idUSKCN1MK08G",
+      "talkRef": null
+    },
+    {
+      "id": "compas",
+      "headline": "COMPAS predicted Black defendants would re-offend at twice the false-positive rate of white defendants.",
+      "context": "ProPublica's 2016 investigation analyzed 7,000+ COMPAS risk scores against actual recidivism over two years.",
+      "observation": "Black defendants who didn't re-offend were labeled high-risk at 45% rates. White defendants who didn't re-offend were labeled high-risk at 23%. White defendants who DID re-offend were labeled low-risk at 47% rates. Black defendants who re-offended: 28%.",
+      "harm": "racially disparate over-policing dressed up as actuarial science",
+      "lazyName": "algorithmic bias",
+      "preciseName": "the system mislabels Black defendants as high-risk at twice the false-positive rate of white defendants, and the courts use those scores to set bail and sentencing",
+      "prompt": "Don't say 'the algorithm is biased.' Say 'the algorithm sends Black people to jail at twice the false-positive rate of white people, and the people deploying it know.'",
+      "citation": "Angwin, J., Larson, J., Mattu, S., & Kirchner, L. (2016). 'Machine Bias.' ProPublica.",
+      "citationUrl": "https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing",
+      "talkRef": null
+    },
+    {
+      "id": "aave-moderation",
+      "headline": "Hate-speech models flagged tweets in African American English at twice the rate of standard American English.",
+      "context": "Sap et al. (2019) analyzed two widely-used hate-speech classifiers across a labeled dataset of 100,000+ tweets.",
+      "observation": "Tweets containing markers of African American English were flagged as toxic at rates 1.5–2.2x higher than equivalent standard-English tweets. The classifiers were sold to platforms as 'neutral' content moderation tools.",
+      "harm": "differential censorship of Black users' speech, embedded in the moderation infrastructure of every platform that licensed those classifiers",
+      "lazyName": "biased moderation",
+      "preciseName": "platforms silence Black users' speech at twice the rate of equivalent white speech, while branding the system as objective",
+      "prompt": "Don't say 'the moderation system is biased.' Say 'the moderation system silences AAVE at twice the rate of standard English, and that's the censorship dataset every platform you use is built on.'",
+      "citation": "Sap, M., Card, D., Gabriel, S., Choi, Y., & Smith, N. A. (2019). 'The Risk of Racial Bias in Hate Speech Detection.' ACL 2019.",
+      "citationUrl": "https://aclanthology.org/P19-1163/",
+      "talkRef": null
+    }
+  ]
+}

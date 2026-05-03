@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Three Documents &mdash; Punk Rock AI</title>
+    <meta
+      name="description"
+      content="Externalize your taste so the machine stops giving you the average of the internet. Personal AI policy, style guide, worldview. Builder + export."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta property="og:title" content="Three Documents — Punk Rock AI" />
+    <meta property="og:description" content="Externalize your taste so the machine stops giving you the average of the internet." />
+    <meta property="og:url" content="https://punkrockai.com/widgets/three-documents.html" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/widgets/three-documents.css" />
+  </head>
+  <body class="shell">
+    <header class="site-header" data-include="header"></header>
+
+    <main>
+      <section class="tdoc-intro grain scanlines">
+        <div class="wrap wrap--narrow">
+          <p class="kicker kicker--accent">Slide 18 &middot; the most practical punk move</p>
+          <h1>Three documents.</h1>
+          <p class="tdoc-intro__lede">
+            One &mdash; a personal AI policy. Two &mdash; a style and voice guide.
+            Three &mdash; a worldview. Five sentences each is plenty for a first
+            draft. Your values aren&rsquo;t in text, to AI they basically don&rsquo;t exist.
+          </p>
+          <ul class="tdoc-progress" id="tdoc-progress" aria-live="polite">
+            <li class="tdoc-progress__pill" data-progress="policy">Policy &middot; <span data-progress-words>0</span></li>
+            <li class="tdoc-progress__pill" data-progress="style">Style &middot; <span data-progress-words>0</span></li>
+            <li class="tdoc-progress__pill" data-progress="worldview">Worldview &middot; <span data-progress-words>0</span></li>
+          </ul>
+          <p class="kicker">Drafts autosave to this browser only. Export to take them with you.</p>
+        </div>
+      </section>
+
+      <section class="wrap wrap--narrow">
+        <article class="tdoc" id="doc-policy">
+          <div class="tdoc__head">
+            <span class="tdoc__num">DOC 01</span>
+            <h2>Personal AI policy</h2>
+          </div>
+          <p class="tdoc__lede">
+            What will you use these tools for? What will you refuse?
+          </p>
+          <ul class="tdoc__prompts">
+            <li>What will I never use AI for?</li>
+            <li>What will I always use AI for?</li>
+            <li>What conditions does AI need to meet for me to use it?</li>
+            <li>Who do I owe attribution, money, or consent to?</li>
+            <li>What&rsquo;s the smallest, most honest version of this policy?</li>
+          </ul>
+          <div class="tdoc__io">
+            <label class="sr-only" for="ta-policy">Personal AI policy draft</label>
+            <textarea
+              id="ta-policy"
+              data-doc-input="policy"
+              placeholder="I will use AI for…&#10;I will never use AI for…&#10;Conditions: consent, attribution, transparency…"
+            ></textarea>
+            <div class="tdoc__meta">
+              <span><strong data-doc-words="policy">0</strong> words</span>
+              <span><strong data-doc-chars="policy">0</strong> chars</span>
+              <span data-doc-state="policy">draft</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="tdoc" id="doc-style">
+          <div class="tdoc__head">
+            <span class="tdoc__num">DOC 02</span>
+            <h2>Style and voice guide</h2>
+          </div>
+          <p class="tdoc__lede">
+            What are the ten words you refuse to say? What does your work sound
+            like when it&rsquo;s really you? Ban the word <em>delve</em>.
+          </p>
+          <ul class="tdoc__prompts">
+            <li>Ten words I refuse to use.</li>
+            <li>Five references I love &mdash; books, films, voices, places.</li>
+            <li>&ldquo;It never sounds like me when&hellip;&rdquo; (3 examples).</li>
+            <li>Sentence rhythm I gravitate toward (short / long / fragmented).</li>
+            <li>What I want a reader to feel after the first paragraph.</li>
+          </ul>
+          <div class="tdoc__io">
+            <label class="sr-only" for="ta-style">Style and voice guide draft</label>
+            <textarea
+              id="ta-style"
+              data-doc-input="style"
+              placeholder="Refuse: delve, leverage, optimize…&#10;Love: Ursula K. Le Guin, dub reggae, Joan Didion…&#10;It never sounds like me when…"
+            ></textarea>
+            <div class="tdoc__meta">
+              <span><strong data-doc-words="style">0</strong> words</span>
+              <span><strong data-doc-chars="style">0</strong> chars</span>
+              <span data-doc-state="style">draft</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="tdoc" id="doc-worldview">
+          <div class="tdoc__head">
+            <span class="tdoc__num">DOC 03</span>
+            <h2>Worldview document</h2>
+          </div>
+          <p class="tdoc__lede">
+            Your values, your politics, your perspective. Are you a feminist?
+            An anarchist? A punk? Five sentences is plenty.
+          </p>
+          <ul class="tdoc__prompts">
+            <li>What I believe about people.</li>
+            <li>What I believe about craft.</li>
+            <li>What I believe about justice and power.</li>
+            <li>What I will never outsource &mdash; even if I could.</li>
+            <li>One line that summarizes the rest.</li>
+          </ul>
+          <div class="tdoc__io">
+            <label class="sr-only" for="ta-worldview">Worldview document draft</label>
+            <textarea
+              id="ta-worldview"
+              data-doc-input="worldview"
+              placeholder="I believe…&#10;I make because…&#10;I will never outsource…"
+            ></textarea>
+            <div class="tdoc__meta">
+              <span><strong data-doc-words="worldview">0</strong> words</span>
+              <span><strong data-doc-chars="worldview">0</strong> chars</span>
+              <span data-doc-state="worldview">draft</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="tdoc-export">
+        <div class="wrap wrap--narrow">
+          <h2>Take it with you.</h2>
+          <p class="tdoc-export__hint">
+            Two formats. <strong>Markdown</strong> &mdash; for your repo, your
+            wiki, your fridge. <strong>Bot prompt</strong> &mdash; preformatted
+            block ready to paste into Claude, ChatGPT, or whichever model you
+            feed every day. Feed it once and the machine stops handing you the
+            average of the internet.
+          </p>
+          <div class="tdoc-export__tabs" role="tablist" aria-label="Export format">
+            <button type="button" data-tab="md" aria-pressed="true">Markdown</button>
+            <button type="button" data-tab="prompt" aria-pressed="false">Bot prompt</button>
+          </div>
+          <div class="tdoc-export__actions">
+            <button class="btn btn--primary" type="button" data-export="download">Download .md</button>
+            <button class="btn" type="button" data-export="copy">Copy</button>
+            <button class="btn" type="button" data-export="reset">Reset all (drafts only)</button>
+          </div>
+          <pre class="tdoc-export__preview" id="tdoc-preview" aria-live="polite"></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/three-documents.js"></script>
+  </body>
+</html>

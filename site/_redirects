@@ -1,0 +1,24 @@
+# Cloudflare Pages redirects — applied before the static handler.
+
+# Clean URL aliases (so /talk and /talk.html both work).
+/talk             /talk.html             200
+/lineage          /lineage.html          200
+/library          /library.html          200
+/posse            /posse.html            200
+/release-day      /release-day.html      200
+/decisions        /decisions.html        200
+/widgets/three-documents     /widgets/three-documents.html     200
+/widgets/both-hands          /widgets/both-hands.html          200
+/widgets/name-what-you-see   /widgets/name-what-you-see.html   200
+/widgets/taste-audit         /widgets/taste-audit.html         200
+/widgets/pattern-finder      /widgets/pattern-finder.html      200
+
+# If an old companion-site path leaks, route home.
+/companion-site/*           /                                  301
+
+# Worker proxies (deferred deploy — see worker/).
+/api/pattern-finder         https://pattern-finder.YOUR-WORKERS.workers.dev/  200
+/api/submissions            https://submissions.YOUR-WORKERS.workers.dev/     200
+
+# Catchall 404
+/*                          /404.html                          404

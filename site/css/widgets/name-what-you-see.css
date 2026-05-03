@@ -1,0 +1,257 @@
+/* /widgets/name-what-you-see.html — bias-naming walkthrough */
+
+.nwys-intro {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.nwys-intro h1 {
+  font-size: var(--fs-2xl);
+  margin: 0 0 var(--space-3);
+  max-width: 22ch;
+}
+
+.nwys-intro__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 50ch;
+  color: var(--fg-soft);
+}
+
+.nwys-intro__pull {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  margin: var(--space-4) 0 0;
+  border-left: 3px solid var(--accent);
+  padding: var(--space-2) 0 var(--space-2) var(--space-3);
+  color: var(--accent);
+  max-width: 40ch;
+}
+
+/* ------------------------------------------------------------------
+   CASE BROWSER — one case at a time, prev/next, keyboard nav
+   ------------------------------------------------------------------ */
+
+.nwys {
+  padding-block: var(--space-5);
+}
+
+.nwys__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: var(--space-2);
+}
+
+.nwys__progress {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.nwys__nav {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.nwys__nav button {
+  font: inherit;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 0.4rem 0.8rem;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--fg);
+  cursor: pointer;
+}
+
+.nwys__nav button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.nwys__nav button:not(:disabled):hover,
+.nwys__nav button:not(:disabled):focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  outline: none;
+}
+
+.nwys__case {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.nwys__headline {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  line-height: 1.05;
+  margin: 0;
+  max-width: 40ch;
+}
+
+.nwys__context {
+  font-size: var(--fs-md);
+  color: var(--fg-soft);
+  max-width: 60ch;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.nwys__observation {
+  background: var(--bg-elevated);
+  border-left: 3px solid var(--accent);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.nwys__split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+@media (max-width: 720px) {
+  .nwys__split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.nwys__col h3 {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+  margin: 0 0 var(--space-2);
+}
+
+.nwys__lazy,
+.nwys__precise {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  line-height: 1.4;
+  margin: 0;
+  padding: var(--space-3);
+  border: 1px dashed var(--border-strong);
+}
+
+.nwys__lazy {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+}
+
+.nwys__precise {
+  color: var(--fg);
+  border-color: var(--accent);
+  border-style: solid;
+  background: rgba(225, 29, 46, 0.05);
+}
+
+.nwys__precise::before {
+  content: "↳ ";
+  color: var(--accent);
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.nwys__prompt {
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-md);
+  line-height: 1.5;
+}
+
+.nwys__prompt strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  margin-bottom: var(--space-2);
+}
+
+.nwys__citation {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.nwys__citation a {
+  color: var(--fg-soft);
+}
+
+.nwys__citation a:hover {
+  color: var(--accent);
+}
+
+/* ------------------------------------------------------------------
+   USER WORKBENCH — paste your own AI output, get the framework
+   ------------------------------------------------------------------ */
+
+.nwys-bench {
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--border);
+  background: var(--bg-elevated);
+}
+
+.nwys-bench h2 {
+  margin: 0 0 var(--space-3);
+}
+
+.nwys-bench__lede {
+  color: var(--fg-soft);
+  max-width: 60ch;
+}
+
+.nwys-bench__io {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 52rem;
+}
+
+.nwys-bench textarea {
+  min-height: 12rem;
+}
+
+.nwys-bench__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.nwys-bench__output {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  white-space: pre-wrap;
+  line-height: 1.5;
+  color: var(--fg-soft);
+  max-height: 30rem;
+  overflow: auto;
+}
+
+.nwys-bench__output:empty::before {
+  content: "Paste an AI output above and hit 'Generate framework'.";
+  color: var(--muted);
+  font-style: italic;
+}

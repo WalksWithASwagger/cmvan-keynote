@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recap &mdash; How we built Punk Rock AI</title>
+    <meta
+      name="description"
+      content="A feature-length recap of the Punk Rock AI / Both Hands Full keynote — the talk, the building, the room, what came next. The whole arc, with receipts."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Recap — How we built Punk Rock AI" />
+    <meta property="og:description" content="A feature-length recap of the talk, the building, the room, and what came next." />
+    <meta property="og:url" content="https://punkrockai.com/recap.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/widgets/recap.css" />
+  </head>
+  <body class="shell recap">
+    <header class="site-header" data-include="header"></header>
+
+    <main>
+      <section class="recap-hero grain scanlines">
+        <div class="wrap">
+          <p class="recap-hero__eyebrow">Field notes &middot; Creative Mornings Vancouver &middot; 01.05.2026</p>
+          <h1>How we built <em>Punk Rock AI</em>.</h1>
+          <p class="recap-hero__lede">
+            The talk, the slides, the audio, the website. Every choice, every
+            cut, every thing that didn&rsquo;t make it. Both hands full &mdash;
+            critique in one, capability in the other &mdash; and the receipts.
+          </p>
+          <div class="recap-hero__meta">
+            <span><strong>Read:</strong> ~14 min</span>
+            <span><strong>Last updated:</strong> <time datetime="2026-05-02">2 May 2026</time></span>
+            <span><strong>Source:</strong> <a href="https://github.com/WalksWithASwagger/cmvan-keynote">cmvan-keynote</a></span>
+          </div>
+        </div>
+      </section>
+
+      <nav class="recap-toc" aria-label="Table of contents">
+        <div class="wrap">
+          <h2>What&rsquo;s in here</h2>
+          <ol>
+            <li><a href="#walk-out">Walking out</a></li>
+            <li><a href="#thesis">The thesis took six versions</a></li>
+            <li><a href="#slides">Twenty-two slides, made wrong on purpose</a></li>
+            <li><a href="#audio">The dress rehearsal</a></li>
+            <li><a href="#portal">From companion-site to portal</a></li>
+            <li><a href="#stack">The punk stack</a></li>
+            <li><a href="#room">The room</a></li>
+            <li><a href="#whats-next">What&rsquo;s next</a></li>
+          </ol>
+        </div>
+      </nav>
+
+      <article>
+        <section class="recap__section" id="walk-out">
+          <div class="wrap">
+            <header class="recap__section-head">
+              <span class="recap__section-num">01 &middot; the moment before</span>
+              <h2>Walking out.</h2>
+            </header>
+
+            <figure class="recap__media" data-media-slot="01-walk-out"></figure>
+
+            <div class="recap__prose">
+              <p>
+                Twenty minutes is not a lot of time. Twenty minutes is the entire
+                Creative Mornings Vancouver block, the Q&amp;A nudging in from
+                the side, the room finding its coffee, the projector finally
+                deciding what it wants to be. By the time you walk out, every
+                argument you ever had with this talk has been settled or
+                surrendered. The slides don&rsquo;t move anymore. The script is
+                whatever you put in front of the audience.
+              </p>
+              <p>
+                What was settled by 7:48am: the title is <em>Punk Rock AI /
+                Both Hands Full</em>. The frame is twelve minutes in, on a
+                slide that holds for one sentence. The climax &mdash; <em>I am
+                more creative, more productive, and more powerful than I have
+                ever been in my entire life</em> &mdash; has been moved twice and
+                will land at minute fifteen, after the audience has felt the
+                full weight of what&rsquo;s wrong. The 145,000 photographs
+                released under Creative Commons get named in the second slide.
+                Mom and Dad are in the room.
+              </p>
+              <p>
+                What was not settled: whether anyone outside this building
+                would see any of this until well after the date stamped on it.
+                The talk was the work. Everything else was the receipts.
+              </p>
+            </div>
+
+            <aside class="recap__pull">
+              <p class="recap__pull-text">
+                Every chapter is the same move &mdash; pick up a tool built by
+                someone else, use it wrong, share it freely, build community
+                around it.
+              </p>
+              <span class="recap__pull-cite">
+                <a href="https://github.com/WalksWithASwagger/cmvan-keynote/blob/main/script/creativity-biography.md">creativity-biography.md</a>
+              </span>
+            </aside>
+          </div>
+        </section>
+
+        <section class="recap__section" id="thesis">
+          <div class="wrap">
+            <header class="recap__section-head">
+              <span class="recap__section-num">02 &middot; the framework, six times over</span>
+              <h2>The thesis took six versions.</h2>
+            </header>
+
+            <div class="recap__prose">
+              <p>
+                The first draft was an AI talk. The fourth draft was a
+                discussion-first AI talk. The sixth draft was a creativity
+                story with AI as the latest chapter. The version that walked
+                out at 8am on May 1st &mdash; v9 &mdash; was the same talk as the
+                v6 framework, with the climax in the right place.
+              </p>
+              <p>
+                The pivot came from <a href="https://github.com/WalksWithASwagger/cmvan-keynote/blob/main/docs/MARK-FEEDBACK.md">Mark Busse</a>,
+                in iMessage, in April: <em>&ldquo;Very cool, but try not to
+                focus on AI only if possible. We want to hear your creativity
+                story. AI is one chapter, although an important one of course.
+                But you have lots of insight, perspective, and wisdom to share.
+                Unleash the creativity punk.&rdquo;</em>
+              </p>
+              <p>
+                That is the entire job of a good editor: tell you to stop
+                hiding behind the obvious move. Mark gave that note multiple
+                times before it landed. When it did, the script restructured
+                itself overnight: thirty years of picking up tools, using them
+                wrong, and sharing the result &mdash; with AI as the most
+                recent and sharpest chapter. The opening became the camera in
+                a Stanford NICU in 2001. The closing became a punk move you
+                can do this week.
+              </p>
+
+              <h3>The climax reorder</h3>
+              <p>
+                In the v8 deck, &ldquo;More Creative Than Ever&rdquo; lived at
+                slide 13, immediately after the &ldquo;Both Hands Full&rdquo;
+                frame. It didn&rsquo;t land. The audience hadn&rsquo;t felt
+                the negative weight yet, so the surprise wasn&rsquo;t a
+                surprise. It was just a sentence.
+              </p>
+              <p>
+                The fix was structural. Move &ldquo;Three Fears&rdquo; up,
+                keep &ldquo;Name What You See&rdquo; in place, push &ldquo;More
+                Creative&rdquo; down to slide fifteen. Now the arc is: the
+                frame names the stance &rarr; the fears fill the left hand
+                &rarr; the bias-naming sharpens what&rsquo;s actually in
+                there &rarr; <strong>then</strong> the gut-punch lands as
+                proof, not assertion. The audience feels the weight, and only
+                <em>then</em> hears the punk-rock truth that we are inside the
+                biggest creative window any of us have ever had.
+              </p>
+
+              <div class="recap__receipts">
+                <strong>Receipts</strong>
+                <ul>
+                  <li><code>a416964</code> &mdash; v9 climax reorder + bloodbath/lifeboat Posse + new slide images</li>
+                  <li><code>8c1b569</code> &mdash; split BHF climax into two slides: frame + personal testimony</li>
+                  <li><code>bd5323e</code> &mdash; trim to 21 slides: cut Open Everything + Spark Online; regenerate audio</li>
+                  <li><code>0bd1b0e</code> &mdash; restructure to 23-slide final deck; add speaker notes + regenerate audio</li>
+                </ul>
+              </div>
+
+              <p>
+                Two slides got cut on the way: <em>Open Everything</em> (the
+                Bryght / Dead.net / open-source story) and <em>Spark Online</em>
+                (the 1998 web publication). Biographical padding. The single
+                load-bearing line from each &mdash; <em>value lives in
+                relationship, not locked files</em> &mdash; survived in the
+                AI Chapter section, which was the only place it had to land.
+              </p>
+            </div>
+
+            <figure class="recap__media" data-media-slot="02-thesis-evolution"></figure>
+          </div>
+        </section>
+
+        <section class="recap__section" id="slides">
+          <div class="wrap">
+            <header class="recap__section-head">
+              <span class="recap__section-num">03 &middot; image generation</span>
+              <h2>Twenty-two slides, made wrong on purpose.</h2>
+            </header>
+
+            <figure class="recap__media" data-media-slot="03-slide-grid"></figure>
+
+            <div class="recap__prose">
+              <p>
+                The slides are zine. Black ground, blood-red stencil, hot-pink
+                drip paint, halftone collage, deliberate spelling errors,
+                deliberate registration errors. Every slide was generated by
+                AI. Every slide was wrong about a dozen times before it was
+                right. The contact sheet of refusals is a meaningful artifact
+                in its own right &mdash; the cutting room floor is the work.
+              </p>
+              <p>
+                The tooling: GPT-Image-2 and Gemini Nano Pro 1.0, driven from
+                a hand-written prompt batch in a format I&rsquo;m calling
+                <em>Rafiki</em> &mdash; numbered sections, blockquoted prompts,
+                one slide per heading. The prompt files
+                (<code>assets/image-prompts/cmvan-v6-25-rafiki.md</code>,
+                <code>hope-code-v3-28-rafiki.md</code>) are the actual recipe.
+                Anyone with the prompt and an account can re-run the deck.
+                That&rsquo;s the same move as releasing 145,000 photos under
+                Creative Commons twenty years ago, in a different room, on a
+                different stage.
+              </p>
+
+              <h3>Two slides got remade on the morning of</h3>
+              <p>
+                Slide 11 (<em>Boosters vs Doomers</em>) and slide 15 (<em>More
+                Creative Than Ever</em>) both got rejected from earlier runs.
+                The replacement prompts were content-specific in a way the
+                first round wasn&rsquo;t:
+              </p>
+
+              <div class="recap__receipts">
+                <strong>Slide 11 — Boosters vs Doomers prompt</strong>
+                <p>
+                  <em>Black background. Two enormous options stacked vertically &mdash;
+                  BOOSTER in hot pink dripping paint at the top, DOOMER in blood-red
+                  stencil below &mdash; both violently crossed out with thick
+                  spray-paint X marks. A deliberate empty space below them &mdash; a
+                  white typewriter question mark sits in the void. Blood-red stencil
+                  at the bottom: BOTH FEEL CLEAN. BOTH ARE INCOMPLETE.</em>
+                </p>
+              </div>
+
+              <p>
+                The image is the argument. Both options literally crossed out;
+                the third option is the empty space. Eighteen seconds of
+                visual that does not need a single word of voiceover to say
+                what it&rsquo;s saying.
+              </p>
+              <p>
+                The other major rewrite was the Posse slide. The line in the
+                v6 framework was warm and forgettable: <em>build community
+                around what you&rsquo;re learning</em>. The line that walked
+                out the door was sharper: <em>I&rsquo;m watching a bloodbath.
+                Generative AI is consuming one creative industry after another.
+                Coders, journalists, photographers, strategists. So I stopped
+                waiting for someone to build the lifeboat and started building
+                it myself.</em> That rewrite is two unrelated truths welded
+                into one sentence. The lifeboat is the posse. It has room for
+                one more.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="recap__section" id="audio">
+          <div class="wrap">
+            <header class="recap__section-head">
+              <span class="recap__section-num">04 &middot; the dress rehearsal</span>
+              <h2>The dress rehearsal.</h2>
+            </header>
+
+            <figure class="recap__media" data-media-slot="05-dress-rehearsal"></figure>
+
+            <div class="recap__prose">
+              <p>
+                Eighteen minutes of audio. ElevenLabs, generated from a
+                hand-edited prose pass that lives in
+                <code>dress-rehearsal/elevenlabs-full-script.md</code>. The
+                script is paragraph-broken at the natural breathing points. The
+                voice is mine, cloned from one of my own voiceovers. The
+                generation script (<code>dress-rehearsal/generate-audio.py</code>)
+                is committed; the mp3s are not, because mp3s belong on a CDN,
+                not in a git history.
+              </p>
+              <p>
+                What the dress rehearsal taught me: the script that <em>reads</em>
+                well is not the same script that <em>speaks</em> well. Three
+                lines were cut after listening that had survived four written
+                drafts. One transition got patched at 11pm because the two
+                versions on either side of it didn&rsquo;t glue:
+                <em>&ldquo;But before I rest there &mdash; let me be honest
+                about what I&rsquo;m holding in that left hand.&rdquo;</em>
+                That sentence wasn&rsquo;t in any commit. It existed only in
+                the speaker notes margin until walk-out.
+              </p>
+              <p>
+                The full speaker notes &mdash; one page per slide, stage-ready
+                bullets, breath markers &mdash; live at
+                <code>dress-rehearsal/speaker-notes.md</code>. They are the
+                podium artifact. They are not the talk.
+              </p>
+            </div>
+
+            <aside class="recap__pull">
+              <p class="recap__pull-text">
+                Speed without judgment is kind of like a leaf blower &mdash;
+                you&rsquo;re out there just moving the mess around, turning gas
+                into noise.
+              </p>
+              <span class="recap__pull-cite">
+                <a href="/talk.html#q-06-speed-without-judgment-is-kind-of">Slide 7 &middot; The Feedback Loop</a>
+              </span>
+            </aside>
+          </div>
+        </section>
+
+        <section class="recap__section" id="portal">
+          <div class="wrap">
+            <header class="recap__section-head">
+              <span class="recap__section-num">05 &middot; the portal</span>
+              <h2>From companion-site to portal.</h2>
+            </header>
+
+            <div class="recap__prose">
+              <p>
+                The first version of <code>punkrockai.com</code> was a single
+                static HTML file. Ninety-two lines. Vanilla CSS. Black on
+                blood-red. It said the thesis, named the date, linked to
+                Release Day, and did nothing else. That site was the right
+                site for an audience of zero who would type the URL in
+                themselves to confirm something they already knew.
+              </p>
+              <p>
+                The portal is for everyone else. It does not show the talk.
+                It lets people <em>do</em> the talk. Six pages, four widgets
+                in Phase 1, four more widgets in Phase 2, three more in
+                Phase 3. The whole site is hand-rolled HTML, CSS, and ES
+                modules. No framework. No bundler. No CMS. No tracking. No
+                accounts. No analytics. Just vanilla.
+              </p>
+            </div>
+
+            <figure class="recap__media" data-media-slot="06-portal-home"></figure>
+
+            <div class="recap__prose">
+              <h3>The four Phase 1 widgets</h3>
+              <p>
+                <strong>Slide reel + quote wall</strong> at <a href="/talk.html">/talk</a>.
+                Twenty-two slide tiles, grouped by act, featured slides spanning
+                two columns. A native <code>&lt;dialog&gt;</code> lightbox steps
+                through the deck with arrow keys. Every key line is anchored,
+                copyable, and routes back to its slide. Nineteen quotes, all
+                mapped to slides via fuzzy body fingerprinting at build time.
+                Zero orphans.
+              </p>
+              <p>
+                <strong>Three Documents</strong> at <a href="/widgets/three-documents.html">/widgets/three-documents</a>.
+                The single most practical move from the talk: write a personal
+                AI policy, a style and voice guide, and a worldview doc. Five
+                guided prompts per document, lifted directly from slide 18.
+                Drafts autosave to localStorage. Two export formats &mdash; a
+                Markdown file you can drop in your own repo, and a preformatted
+                bot prompt that you paste into Claude or ChatGPT so the model
+                stops giving you the average of the internet.
+              </p>
+            </div>
+
+            <figure class="recap__media" data-media-slot="07-three-documents"></figure>
+
+            <div class="recap__prose">
+              <p>
+                <strong>Both Hands Full canvas</strong> at <a href="/widgets/both-hands.html">/widgets/both-hands</a>.
+                A diptych. Critique on the left in red halftone. Capability on
+                the right in ink halftone. Five slots per side. Up/down to
+                reorder. Export to PNG to print and tape on a wall. Share via a
+                base64-encoded hash &mdash; no server, no account, no upload &mdash;
+                so the recipient can hold your stance in their own browser
+                instantly.
+              </p>
+            </div>
+
+            <figure class="recap__media" data-media-slot="08-both-hands"></figure>
+
+            <div class="recap__prose">
+              <p>
+                <strong>Lineage timeline</strong> at <a href="/lineage.html">/lineage</a>.
+                Dada to AI in six beats. Each era reveals on scroll via
+                <code>IntersectionObserver</code>. The recurring refrain
+                &mdash; <em>corporations build, weirdos figure out what
+                it&rsquo;s for</em> &mdash; repeats between every beat in
+                italicized accent-red. The final slab inverts to red ground
+                and routes the reader straight into the Three Documents and
+                Both Hands widgets, turning history into the user&rsquo;s
+                problem.
+              </p>
+
+              <h3>The other widgets, in order</h3>
+              <p>
+                Phase 2: <a href="/library.html">/library</a> indexes 63
+                markdown files across <code>script/</code>,
+                <code>source-material/</code>, <code>dress-rehearsal/</code>,
+                and <code>research/</code> for client-side fuzzy search.
+                <a href="/posse.html">/posse</a> seeds twenty profiled audience
+                members from the May 1 RSVP dossier into a card grid, with the
+                full one-hundred-eighty-one-person count as context.
+                <a href="/release-day.html">/release-day</a> counts down to
+                23:59 PT on May 29. <a href="/widgets/name-what-you-see.html">Name
+                What You See</a> is a six-case interactive walkthrough that
+                replaces the word <em>bias</em> with whatever&rsquo;s
+                actually happening.
+                <a href="/widgets/taste-audit.html">Taste Audit</a> turns the
+                cutting-room-floor question into a ten-row prompt with a
+                synthesized markdown summary. An audio-cue extractor sits
+                ready for the moment per-slide mp3s land on R2.
+              </p>
+              <p>
+                Phase 3: <a href="/decisions.html">/decisions</a> renders
+                <code>OPEN-QUESTIONS.md</code>, <code>SESSION-HANDOFF.md</code>,
+                and Mark&rsquo;s feedback as a single transparent change-log.
+                <a href="/widgets/pattern-finder.html">Pattern Finder</a> is a
+                Cloudflare Worker scaffold &mdash; paste a corpus, get named
+                patterns from Claude Sonnet 4.6 with prompt caching on the
+                framework prompt &mdash; the wiring is one API key away from
+                being live. The Release Day submission portal is a Worker that
+                posts to Notion when the integration token lands.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="recap__section" id="stack">
+          <div class="wrap">
+            <header class="recap__section-head">
+              <span class="recap__section-num">06 &middot; the punk stack</span>
+              <h2>Why no framework. Why no bundler. Why no CMS.</h2>
+            </header>
+
+            <div class="recap__prose">
+              <p>
+                Vanilla HTML was a values choice, not a technical one. The
+                talk says <em>pick up the tool, use it wrong, share what you
+                learn</em>. The site practices that &mdash; the &ldquo;tool&rdquo;
+                is the open web platform shipped to every browser since 1995,
+                and the &ldquo;wrong&rdquo; is to use it without the layers of
+                tooling that the contemporary developer experience treats as
+                mandatory.
+              </p>
+              <p>
+                Concretely: every page is one HTML file. Every widget is one
+                ES module. Every set of styles is one CSS file. Header and
+                footer are tiny partials fetched at runtime by a sixteen-line
+                include helper at <code>js/common/header.js</code>. State
+                lives in <code>localStorage</code> through a versioned helper
+                at <code>js/common/storage.js</code>. The only third-party
+                runtime dependency is <code>html-to-image</code>, loaded as a
+                CDN <code>&lt;script&gt;</code> tag, used only by the Both
+                Hands canvas, weighing nothing on the pages that don&rsquo;t
+                need it.
+              </p>
+              <p>
+                Node tooling exists, but it&rsquo;s small and lives only in
+                <code>scripts/</code>. <code>build-quotes.mjs</code> parses
+                the talk script into the quote and slide manifests.
+                <code>build-lineage.mjs</code> validates the hand-curated
+                timeline. <code>build-library-index.mjs</code> walks the
+                source folders and emits the search index.
+                <code>build-decisions.mjs</code> turns the open-questions and
+                handoff docs into a structured change-log.
+                <code>build-audio-cues.mjs</code> parses the dress-rehearsal
+                script into per-slide cue points.
+                <code>ingest-slides.mjs</code> resizes WebP fallbacks and
+                uploads originals to Cloudflare R2. None of the scripts run
+                at request time. The data they emit is the contract; pages
+                only read JSON.
+              </p>
+              <p>
+                There is one CSS variable file at
+                <code>css/theme.css</code> that holds the entire design
+                language: punk palette tokens, type scale, halftone, xerox
+                grain (a single SVG fractal-noise filter, inlined as a data
+                URI), and the brutalist button + panel + pull-quote primitives.
+                Every widget reuses those tokens. Total commitment to one
+                aesthetic, paid once.
+              </p>
+
+              <h3>What this gets you</h3>
+              <ul>
+                <li>The site loads in under a second on a phone in line at the coffee shop.</li>
+                <li>The site works offline for any widget after first load (no service worker; just no required network calls).</li>
+                <li>The site is editable by anyone who can read HTML.</li>
+                <li>The site will outlive every framework decision I&rsquo;d have made instead.</li>
+              </ul>
+              <p>
+                That last one is the actual punk move. The web is forty years
+                old. Most of what I&rsquo;ve worked on professionally is no
+                longer reachable. The portal will be reachable in 2046 if
+                somebody pays the domain bill. That&rsquo;s the longest-lived
+                claim I can make about anything I make right now, and I made
+                it on purpose.
+              </p>
+            </div>
+
+            <aside class="recap__pull">
+              <p class="recap__pull-text">
+                If your values aren&rsquo;t in text, to AI they basically don&rsquo;t exist.
+              </p>
+              <span class="recap__pull-cite">
+                <a href="/talk.html#q-15-if-your-values-aren-t-in-text">Slide 18 &middot; Three Documents</a>
+              </span>
+            </aside>
+          </div>
+        </section>
+
+        <section class="recap__section" id="room">
+          <div class="wrap">
+            <header class="recap__section-head">
+              <span class="recap__section-num">07 &middot; the room</span>
+              <h2>The room.</h2>
+            </header>
+
+            <figure class="recap__media" data-media-slot="09-room"></figure>
+
+            <div class="recap__prose">
+              <p>
+                A hundred and eighty-one RSVPs walked in. Twenty of those
+                people were profiled in the dossier ahead of time &mdash; the
+                Pasquiers and Rand-Hendriksens and Edmondses, the Frieles and
+                Djwas, the people whose presence in the room was load-bearing
+                because the talk needed an audience that already knew the
+                difference between <em>extraction</em> and <em>remix</em>. The
+                rest were strangers I owed a story to.
+              </p>
+              <p>
+                Mark&rsquo;s second piece of feedback &mdash; the one
+                that didn&rsquo;t make it into the docs until after &mdash; was
+                about persona. <em>I hope everyone gets a chance to see the
+                thoughtful, sensitive, humble man who hides behind the punk
+                AI persona too. I love that guy. And someone with nuance and
+                empathy, which you&rsquo;ve been developing and maturing in
+                recent years.</em> Both personas had to be in the room. The
+                provocateur lands the truth bombs. The other guy sits with
+                the audience while they say what scares them.
+              </p>
+              <p>
+                Slide 13 is sixty seconds where I shut up and listen. <em>Before
+                I name the fears I carry &mdash; I want to hear yours. What
+                scares you about this moment? Shout it out.</em> What
+                I&rsquo;m listening for is the language. The exact words.
+                Because the next two slides &mdash; <em>Three Fears</em> and
+                <em>Name What You See</em> &mdash; are not generic. They are
+                keyed to whatever the room raised. If somebody says
+                &ldquo;jobs,&rdquo; I name the junior pipeline by name. If
+                somebody says &ldquo;deepfakes,&rdquo; I pull Joy
+                Buolamwini&rsquo;s 34.7% number out of slide 14 and pin it on
+                the wall. The room is the script. Not the deck.
+              </p>
+            </div>
+
+            <figure class="recap__media" data-media-slot="10-posse-after"></figure>
+
+            <div class="recap__prose">
+              <p>
+                After the talk, in the lobby, with bad coffee in my hand and
+                fifteen conversations going simultaneously: this is when the
+                portal pays off. Three people pulled out their phones, opened
+                <a href="/widgets/three-documents.html">/widgets/three-documents</a>,
+                and started typing in front of me. One person who came alone
+                ended up exchanging numbers with two strangers because they
+                were sketching the same Both Hands diptych on opposite
+                napkins. The website did not invent the conversation. The
+                website held a place for it to land.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="recap__section" id="whats-next">
+          <div class="wrap">
+            <header class="recap__section-head">
+              <span class="recap__section-num">08 &middot; what&rsquo;s next</span>
+              <h2>What&rsquo;s next.</h2>
+            </header>
+
+            <div class="recap__prose">
+              <p>
+                The talk had a hard deadline. The portal does not. Phase 4
+                (interactive widgets, demos, diagrams) is being scoped right
+                now &mdash; track <a href="https://github.com/WalksWithASwagger/cmvan-keynote/issues">the issues</a>
+                for what gets built next. A non-exhaustive list of what
+                belongs in there: a Selector simulator, a cut-up generator,
+                a Junior Pipeline diagram, a posse-builder force-directed
+                graph, a daily mastery-gym tracker, a chainsaws-of-history
+                showcase. Some of these I&rsquo;ll build. Some of these I
+                hope you build, on a fork, on a PR, on a thing of your own
+                that I find on the internet six months from now.
+              </p>
+              <p>
+                Closer in: Cloudflare Pages staging URL goes live the moment
+                the project is connected to this repo. R2 imagery threads
+                through the slide reel and the lineage thumbnails the moment
+                the bucket has credentials. Per-slide audio plays the moment
+                the rehearsal mp3s are uploaded. Pattern Finder calls Claude
+                the moment the API key lands in Worker secrets. The Release
+                Day submission portal posts to Notion the moment the
+                integration token is in the right place. None of this is
+                blocked by code. All of it is one configuration change away.
+              </p>
+              <p>
+                And on May 29 &mdash; Release Day &mdash; the actual point of
+                all of this lands. <em>Pick up the tool. Use it wrong. Share
+                what you learn. Build a posse.</em> Make something imperfect
+                by the deadline. Bring it. The site will be ready. The room
+                already is.
+              </p>
+            </div>
+
+            <figure class="recap__media" data-media-slot="11-walking-off"></figure>
+
+            <aside class="recap__pull">
+              <p class="recap__pull-text">
+                Any dead fish can float downstream. But it takes a live fish
+                to swim against the current.
+              </p>
+              <span class="recap__pull-cite">
+                <a href="/talk.html#q-18-any-dead-fish-can-float">Slide 21 &middot; Dead Fish / Live Fish</a>
+              </span>
+            </aside>
+          </div>
+        </section>
+      </article>
+
+      <section class="recap-coda">
+        <div class="wrap wrap--narrow">
+          <h2>You coming?</h2>
+          <p>
+            The lifeboat is the posse. It has room for one more. Write your
+            three documents. Pin your both-hands-full stance. Show up to
+            Release Day with something nobody else could have made.
+          </p>
+          <a class="btn" href="/widgets/three-documents.html">Write the documents</a>
+          <a class="btn" href="/widgets/both-hands.html">Make a poster</a>
+          <a class="btn" href="https://creativemornings.com/releaseday">Release Day &mdash; May 29</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/recap.js"></script>
+  </body>
+</html>

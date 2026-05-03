@@ -1,0 +1,104 @@
+{
+  "source": "punkrockai.com / recap",
+  "lastUpdated": "2026-05-02",
+  "note": "Add a real photo or video by setting the `src` field on any slot. Empty src renders a zine-style placeholder. Captions and credits are optional.",
+  "slots": [
+    {
+      "id": "hero",
+      "kind": "photo",
+      "caption": "Just before walking out — Creative Mornings Vancouver, May 1 2026.",
+      "credit": "",
+      "src": null,
+      "alt": "Stage at Creative Mornings Vancouver, set up for Punk Rock AI."
+    },
+    {
+      "id": "01-walk-out",
+      "kind": "photo",
+      "caption": "The room settling. Coffee in everyone's hands. The slides waiting.",
+      "credit": "",
+      "src": null,
+      "alt": "The audience finding seats before the talk begins."
+    },
+    {
+      "id": "02-thesis-evolution",
+      "kind": "photo",
+      "caption": "Notebook side-by-side with talk-framework-v4 and -v6 in tmux. Six versions before the climax reordered itself.",
+      "credit": "",
+      "src": null,
+      "alt": "Notebook next to a laptop showing two versions of the talk framework."
+    },
+    {
+      "id": "03-slide-grid",
+      "kind": "photo",
+      "caption": "Twenty-two slides as a contact sheet. The same image regenerated dozens of times before it was the right one.",
+      "credit": "",
+      "src": null,
+      "alt": "Contact sheet of the 22 finished slides."
+    },
+    {
+      "id": "04-image-generation",
+      "kind": "video",
+      "caption": "A slide that didn't make it. The cutting room floor is the work.",
+      "credit": "",
+      "src": null,
+      "poster": null,
+      "alt": "Time-lapse of slide image generation runs."
+    },
+    {
+      "id": "05-dress-rehearsal",
+      "kind": "photo",
+      "caption": "ElevenLabs dress rehearsal — eighteen minutes of audio cut from one prose pass.",
+      "credit": "",
+      "src": null,
+      "alt": "Headphones on a desk next to printed speaker notes."
+    },
+    {
+      "id": "06-portal-home",
+      "kind": "photo",
+      "caption": "punkrockai.com homepage — the four Phase 1 widgets, no framework, no bundler.",
+      "credit": "",
+      "src": null,
+      "alt": "The Punk Rock AI portal homepage."
+    },
+    {
+      "id": "07-three-documents",
+      "kind": "photo",
+      "caption": "The Three Documents builder. Type. Reload. Drafts persist. Export to take with you.",
+      "credit": "",
+      "src": null,
+      "alt": "The Three Documents widget in use."
+    },
+    {
+      "id": "08-both-hands",
+      "kind": "photo",
+      "caption": "Both Hands Full canvas — critique on the left, capability on the right. Export the stance.",
+      "credit": "",
+      "src": null,
+      "alt": "The Both Hands Full diptych canvas."
+    },
+    {
+      "id": "09-room",
+      "kind": "photo",
+      "caption": "The room during the discussion beat. Three minutes of strangers naming what they were carrying.",
+      "credit": "",
+      "src": null,
+      "alt": "The audience mid-discussion."
+    },
+    {
+      "id": "10-posse-after",
+      "kind": "photo",
+      "caption": "Coffee after the talk. The lifeboat had room for one more.",
+      "credit": "",
+      "src": null,
+      "alt": "Audience members talking after the talk."
+    },
+    {
+      "id": "11-walking-off",
+      "kind": "photo",
+      "caption": "Leaving the stage. \"You coming?\"",
+      "credit": "",
+      "src": null,
+      "alt": "Kris walking off stage at the end of the talk."
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "source": "script/talk-framework-v6.md slide 5 + source-material/punk-rock-ai/",
+  "generated": "hand-curated",
+  "thesis": "Every generation: the corporations build the infrastructure. The weirdos figure out what it's actually for.",
+  "subThesis": "The Dadaists had newspapers. The Situationists had advertising. The Xerox punks had copy machines. The Selectors had vinyl. Hip Hop had two turntables and a microphone. We have AI.",
+  "refrain": "Corporations build. Weirdos figure out what it's for.",
+  "beats": [
+    {
+      "id": "dada",
+      "era": "Dada",
+      "year": "~1916",
+      "place": "Cabaret Voltaire, Zurich",
+      "title": "Tear the newspaper into a poem.",
+      "body": "The Dadaists picked up the newspaper — a corporate mass-production technology — and tore it into collage. They put the cut pieces in a hat and pulled them out at random. The point wasn't the image. The point was: what you choose to keep, and what you choose to throw away, is the work.",
+      "tool": "Newspaper, mass-printed text",
+      "refusal": "Cut-up. Collage. Refusal of authored coherence.",
+      "voices": [
+        "Tristan Tzara",
+        "Hugo Ball",
+        "Hannah Höch"
+      ],
+      "citation": "script/talk-framework-v6.md slide 5",
+      "slideRefs": [
+        5
+      ]
+    },
+    {
+      "id": "situationists",
+      "era": "Situationists / Burroughs",
+      "year": "~1957",
+      "place": "Paris · Tangier",
+      "title": "Détournement — turn the spectacle against itself.",
+      "body": "Guy Debord and the Situationists named the move: détournement. Take the tools of corporate spectacle — the ad, the slogan, the propaganda image — and hijack them so they say something else. Burroughs cut up his own typed pages, dropped them on the floor, and rearranged them. Arrangement and selection is the medium.",
+      "tool": "Advertising, propaganda, the typewriter",
+      "refusal": "Détournement. Cut-up technique. Authorship as editing.",
+      "voices": [
+        "Guy Debord",
+        "William S. Burroughs",
+        "Brion Gysin"
+      ],
+      "citation": "script/talk-framework-v6.md slide 5",
+      "slideRefs": [
+        5
+      ]
+    },
+    {
+      "id": "xerox-punks",
+      "era": "Xerox punks",
+      "year": "~1976",
+      "place": "London · New York · San Francisco",
+      "title": "The copy machine becomes a printing press.",
+      "body": "When the Xerox machine showed up in offices, it was a corporate productivity tool. The punks saw a printing press they didn't have to ask permission to use. Sniffin' Glue. Search & Destroy. Cut-and-paste headlines, smudged toner, the broken-rule letter spacing. Anyone could publish. Most people didn't. The ones who did changed the culture.",
+      "tool": "Photocopier, glue stick, scissors",
+      "refusal": "DIY zines. Self-publishing. Aesthetic of broken rules.",
+      "voices": [
+        "Mark Perry",
+        "Penelope Houston",
+        "V. Vale"
+      ],
+      "citation": "script/talk-framework-v6.md slide 5",
+      "slideRefs": [
+        5
+      ]
+    },
+    {
+      "id": "selectors",
+      "era": "The Selectors",
+      "year": "~1968",
+      "place": "Kingston, Jamaica",
+      "title": "The hero of the dancehall is the one with taste.",
+      "body": "In Kingston, the sound systems carried the music. But the hero of the dancehall wasn't the musician — it was the Selector. The one who knew which record the room needed at that exact moment. Generation was already cheap. Taste was the scarce thing. The Selector was listening before the first record dropped.",
+      "tool": "Sound systems, vinyl 7″s, dub plates",
+      "refusal": "Curation as authorship. Taste as the scarce skill.",
+      "voices": [
+        "Coxsone Dodd",
+        "Lee 'Scratch' Perry",
+        "King Tubby"
+      ],
+      "citation": "script/talk-framework-v6.md slide 6",
+      "slideRefs": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "hip-hop",
+      "era": "Hip Hop",
+      "year": "~1973",
+      "place": "The Bronx, New York",
+      "title": "Two turntables and a microphone — built from somebody else's records.",
+      "body": "The Selector idea took a boat to the Bronx. Kool Herc looped the breakbeat — the ten seconds of drums in the middle of someone else's record — and a whole genre emerged from refusing the song as it was sold to you. Sampling was theft and homage at the same time. The lawyers caught up later.",
+      "tool": "Turntables, mixers, other people's records",
+      "refusal": "Sampling. Looping. The break as the song.",
+      "voices": [
+        "DJ Kool Herc",
+        "Grandmaster Flash",
+        "Afrika Bambaataa"
+      ],
+      "citation": "script/talk-framework-v6.md slide 5",
+      "slideRefs": [
+        5
+      ]
+    },
+    {
+      "id": "ai",
+      "era": "AI",
+      "year": "~2026",
+      "place": "Vancouver · Everywhere",
+      "title": "Models trained on stolen work, used by punks anyway.",
+      "body": "The infrastructure was built without our consent. A hundred and forty-five thousand of my photographs are in there somewhere. The covenant of the open internet held for twenty years. AI broke it. And here we are — more creative, more productive, more powerful than ever, holding the critique in one hand and the capability in the other. The next generation of punks is already in this room.",
+      "tool": "Foundation models, diffusion, generation at zero marginal cost",
+      "refusal": "Use it wrong on purpose. Externalize your taste. Build a posse.",
+      "voices": [
+        "You",
+        "Dr. Joy Buolamwini",
+        "the BC AI Community",
+        "every weirdo with a laptop"
+      ],
+      "citation": "script/talk-framework-v6.md slides 10, 12, 15",
+      "slideRefs": [
+        10,
+        12,
+        15,
+        17,
+        18,
+        19
+      ]
+    }
+  ]
+}

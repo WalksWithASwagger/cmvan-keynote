@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bias Bingo &mdash; Punk Rock AI</title>
+    <meta
+      name="description"
+      content="A 5x5 grid of categories that bias laundering hides under. Click any cell to learn what to look for. Mark a cell when you've seen it ship."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/widgets/bias-bingo.css" />
+  </head>
+  <body class="shell">
+    <header class="site-header" data-include="header"></header>
+
+    <main>
+      <section class="bbingo-intro grain scanlines">
+        <div class="wrap wrap--narrow">
+          <p class="kicker kicker--accent">Slide 14 &middot; stop saying bias</p>
+          <h1>Bias Bingo.</h1>
+          <p class="bbingo-intro__lede">
+            Twenty-five categories that bias laundering hides under. Click any
+            cell to learn what to look for &mdash; with citations to the
+            primary research. Mark a cell when you&rsquo;ve seen it ship in
+            production. Complete a row or column and the framework unlocks as
+            a checklist you can take to your next stand-up.
+          </p>
+          <p class="bbingo-intro__hint">
+            State saves to this browser only. No accounts, no analytics. The
+            point is the act of naming &mdash; not the score.
+          </p>
+          <ul class="bbingo-stats" id="bbingo-stats" aria-live="polite">
+            <li data-stat="seen"><strong>0</strong>/25 seen</li>
+            <li data-stat="lines"><strong>0</strong> rows / cols cleared</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="bbingo-board-wrap">
+        <div class="wrap">
+          <div class="bbingo-board" id="bbingo-board" role="grid" aria-label="Bias Bingo grid"></div>
+          <div class="bbingo-unlock" id="bbingo-unlock" data-unlocked="false">
+            <div>
+              <p class="bbingo-unlock__sub">unlocked</p>
+              <p class="bbingo-unlock__title">Framework checklist available.</p>
+            </div>
+            <a class="btn btn--primary" href="#" data-action="download-checklist">Download .md</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <dialog id="bbingo-modal" class="bbingo-modal" aria-label="Bias category">
+      <div class="bbingo-modal__inner">
+        <header class="bbingo-modal__head">
+          <span data-modal-tag class="accent"></span>
+          <span data-modal-cell></span>
+          <button type="button" class="bbingo-modal__close" data-modal-close>Close (esc)</button>
+        </header>
+        <div class="bbingo-modal__body" data-modal-body></div>
+        <footer class="bbingo-modal__foot">
+          <button class="btn btn--primary" type="button" data-action="toggle-seen">Mark as seen</button>
+          <a class="btn" href="/widgets/name-what-you-see.html">Name What You See &rarr;</a>
+        </footer>
+      </div>
+    </dialog>
+
+    <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/bias-bingo.js"></script>
+  </body>
+</html>

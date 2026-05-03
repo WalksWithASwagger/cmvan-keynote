@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 &mdash; Punk Rock AI</title>
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <style>
+      .err {
+        padding-block: var(--space-7);
+        text-align: center;
+      }
+      .err__num {
+        font-family: var(--font-display);
+        font-size: clamp(6rem, 22vw, 14rem);
+        line-height: 0.85;
+        color: var(--accent);
+        margin: 0 0 var(--space-3);
+        letter-spacing: -0.05em;
+      }
+      .err h1 {
+        font-size: var(--fs-2xl);
+        margin: 0 auto var(--space-3);
+        max-width: 22ch;
+      }
+      .err p {
+        max-width: 44ch;
+        margin: 0 auto var(--space-4);
+        color: var(--fg-soft);
+        font-family: var(--font-display);
+        font-size: var(--fs-lg);
+        line-height: 1.3;
+      }
+      .err__cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-2);
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body class="shell">
+    <header class="site-header" data-include="header"></header>
+
+    <main class="grain">
+      <section class="err wrap wrap--narrow">
+        <p class="err__num">404</p>
+        <h1>This isn't the slide you're looking for.</h1>
+        <p>
+          Pick up a different tool. Use it wrong on purpose. Build a posse.
+          Try one of these instead.
+        </p>
+        <div class="err__cta">
+          <a class="btn btn--primary" href="/">Home</a>
+          <a class="btn" href="/talk.html">The talk</a>
+          <a class="btn" href="/lineage.html">Lineage</a>
+          <a class="btn" href="/library.html">Library</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <script type="module" src="/js/common/header.js"></script>
+  </body>
+</html>

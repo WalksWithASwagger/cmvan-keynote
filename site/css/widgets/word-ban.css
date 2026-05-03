@@ -1,0 +1,220 @@
+/* /widgets/word-ban — paste any AI output, see your refusals lit up */
+
+.wban-intro {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.wban-intro h1 {
+  margin: 0 0 var(--space-3);
+}
+
+.wban-intro__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 50ch;
+  color: var(--fg-soft);
+}
+
+.wban {
+  padding-block: var(--space-5);
+}
+
+.wban__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 880px) {
+  .wban__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 22rem);
+    align-items: start;
+  }
+}
+
+.wban__panel h2 {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin: 0 0 var(--space-2);
+}
+
+.wban__textarea {
+  min-height: 18rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-md);
+  line-height: 1.55;
+}
+
+.wban__output {
+  position: relative;
+  min-height: 18rem;
+  background: var(--bg-elevated);
+  border: 2px solid var(--accent);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-md);
+  line-height: 1.65;
+  color: var(--fg-soft);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.wban__output:empty::before {
+  content: "Paste anything. Hit scan. Watch your style guide light up the cliché.";
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--muted);
+}
+
+.wban__output mark {
+  background: rgba(225, 29, 46, 0.18);
+  color: var(--fg);
+  padding: 0 0.2em;
+  border-bottom: 2px solid var(--accent);
+  border-radius: 0;
+}
+
+.wban__output mark[data-source="custom"] {
+  background: rgba(225, 29, 46, 0.32);
+  border-bottom-style: dashed;
+}
+
+.wban__counts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  gap: var(--space-2);
+  margin: var(--space-3) 0;
+}
+
+.wban__count {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  padding: var(--space-2) var(--space-3);
+}
+
+.wban__count strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  color: var(--accent);
+  line-height: 1;
+}
+
+.wban__count span {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+.wban__hits {
+  margin-top: var(--space-3);
+}
+
+.wban__hits h3 {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin: 0 0 var(--space-2);
+}
+
+.wban__hit-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.wban__hit {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.5rem;
+  background: rgba(225, 29, 46, 0.12);
+  border: 1px solid var(--accent);
+  color: var(--fg);
+}
+
+.wban__hit-count {
+  color: var(--accent);
+  margin-left: 0.4rem;
+}
+
+/* SIDEBAR — ban list editor */
+
+.wban__sidebar {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.wban__list {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: var(--space-3);
+}
+
+.wban__list h2 {
+  margin-bottom: var(--space-2);
+}
+
+.wban__list textarea {
+  min-height: 9rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+}
+
+.wban__list-meta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  margin-top: var(--space-2);
+}
+
+.wban__defaults {
+  border: 1px dashed var(--border-strong);
+  padding: var(--space-3);
+  font-size: var(--fs-sm);
+  color: var(--fg-soft);
+}
+
+.wban__defaults h2 {
+  margin-bottom: var(--space-2);
+}
+
+.wban__defaults code {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  font-size: 0.92em;
+  padding: 0 0.25em;
+  color: var(--accent);
+}
+
+.wban__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.wban__status {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  min-height: 1em;
+}

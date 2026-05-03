@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cut-up generator &mdash; Punk Rock AI</title>
+    <meta
+      name="description"
+      content="Burroughs / Dada cut-up generator. Paste any text. Cut by word, phrase, or line. Shuffle. Export as a zine poster. The arrangement and selection is the medium."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/widgets/cut-up.css" />
+  </head>
+  <body class="shell">
+    <header class="site-header" data-include="header"></header>
+
+    <main>
+      <section class="cutup-intro grain scanlines">
+        <div class="wrap wrap--narrow">
+          <p class="kicker kicker--accent">Slide 5 &middot; arrangement is the medium</p>
+          <h1>Cut-up generator.</h1>
+          <p class="cutup-intro__lede">
+            Paste any text. Cut it. Shuffle the pieces. The Dadaists pulled
+            words out of a hat. Burroughs dropped his typed pages on the floor
+            and rearranged them. <em>Arrangement and selection is the medium.</em>
+          </p>
+        </div>
+      </section>
+
+      <section class="cutup">
+        <div class="wrap">
+          <div class="cutup__io">
+            <div class="cutup__panel">
+              <h2>Source text</h2>
+              <label class="sr-only" for="cutup-input">Paste source text</label>
+              <textarea
+                id="cutup-input"
+                class="cutup__textarea"
+                placeholder="Paste anything. A press release. A blog post. A poem. The bot's reply. Your own essay. The cut respects what you give it."
+              ></textarea>
+
+              <div class="cutup__seed">
+                <span>Or seed it with:</span>
+                <button type="button" data-seed="quotes">19 key talk quotes</button>
+                <button type="button" data-seed="lineage">Lineage prose</button>
+                <button type="button" data-seed="manifesto">Punk Rock AI manifesto</button>
+              </div>
+
+              <div class="cutup__controls">
+                <div class="cutup__row" role="group" aria-label="Cut size">
+                  <strong>Cut by</strong>
+                  <button type="button" class="cutup__chip" data-cut="word" aria-pressed="false">Word</button>
+                  <button type="button" class="cutup__chip" data-cut="phrase" aria-pressed="true">Phrase</button>
+                  <button type="button" class="cutup__chip" data-cut="line" aria-pressed="false">Line</button>
+                </div>
+                <div class="cutup__row" role="group" aria-label="Punctuation">
+                  <strong>Punctuation</strong>
+                  <button type="button" class="cutup__chip" data-punct="keep" aria-pressed="true">Keep</button>
+                  <button type="button" class="cutup__chip" data-punct="strip" aria-pressed="false">Strip</button>
+                </div>
+                <div class="cutup__row" role="group" aria-label="Visualize cuts">
+                  <strong>Show cuts</strong>
+                  <button type="button" class="cutup__chip" data-marks="off" aria-pressed="true">Off</button>
+                  <button type="button" class="cutup__chip" data-marks="on" aria-pressed="false">On</button>
+                </div>
+                <div class="cutup__row">
+                  <button class="btn btn--primary" type="button" data-action="cut">Cut + shuffle</button>
+                  <button class="btn" type="button" data-action="recut">Re-shuffle</button>
+                  <button class="btn" type="button" data-action="png">Export poster</button>
+                  <button class="btn" type="button" data-action="copy">Copy text</button>
+                </div>
+                <p class="cutup__status" id="cutup-status" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="cutup__panel">
+              <h2>Cut-up</h2>
+              <div class="cutup__output" id="cutup-output" aria-live="polite">
+                <div class="cutup__output-meta">
+                  <span data-meta-mode>cut by phrase</span>
+                  <span data-meta-count>0 fragments</span>
+                </div>
+                <div class="cutup__output-body" id="cutup-body">
+                  <span class="cutup__output-empty">Paste something. Hit cut. Watch the room rearrange.</span>
+                </div>
+                <div class="cutup__output-footer">
+                  <span>punkrockai.com / cut-up</span>
+                  <span data-meta-stamp></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.13/dist/html-to-image.min.js" defer></script>
+    <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/cut-up.js"></script>
+  </body>
+</html>

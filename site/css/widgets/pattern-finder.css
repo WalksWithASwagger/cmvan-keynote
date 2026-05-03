@@ -1,0 +1,227 @@
+/* /widgets/pattern-finder.html — LLM-backed pattern discovery */
+
+.pf-intro {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.pf-intro h1 {
+  font-size: var(--fs-2xl);
+  margin: 0 0 var(--space-3);
+  max-width: 22ch;
+}
+
+.pf-intro__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 50ch;
+  color: var(--fg-soft);
+}
+
+.pf-intro__pull {
+  margin-top: var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  line-height: 1.2;
+  border-left: 3px solid var(--accent);
+  padding: var(--space-2) 0 var(--space-2) var(--space-3);
+  color: var(--accent);
+  max-width: 44ch;
+}
+
+/* ------------------------------------------------------------------
+   IO
+   ------------------------------------------------------------------ */
+
+.pf {
+  padding-block: var(--space-5);
+}
+
+.pf__io {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 880px) {
+  .pf__io {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pf__col h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  margin: 0 0 var(--space-3);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: var(--space-2);
+}
+
+.pf__col p {
+  margin: 0 0 var(--space-3);
+  color: var(--fg-soft);
+  font-size: var(--fs-sm);
+}
+
+.pf__io textarea {
+  min-height: 22rem;
+  font-size: var(--fs-md);
+}
+
+.pf__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.pf__meta strong {
+  color: var(--fg);
+}
+
+.pf__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.pf__status {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  min-height: 1em;
+  margin: var(--space-2) 0 0;
+}
+
+/* ------------------------------------------------------------------
+   RESULTS
+   ------------------------------------------------------------------ */
+
+.pf__results {
+  display: grid;
+  gap: var(--space-3);
+  min-height: 22rem;
+}
+
+.pf__results:empty::before {
+  content: "Patterns will appear here once you submit your corpus.";
+  display: block;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--muted);
+  padding: var(--space-3);
+  border: 1px dashed var(--border-strong);
+}
+
+.pf__pattern {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  padding: var(--space-3) var(--space-4);
+  display: grid;
+  gap: var(--space-2);
+}
+
+.pf__pattern h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  margin: 0;
+}
+
+.pf__pattern__evidence {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.pf__pattern__evidence li {
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-style: italic;
+  color: var(--fg-soft);
+  border-left: 2px solid var(--border-strong);
+  padding-left: var(--space-2);
+  line-height: 1.4;
+}
+
+.pf__pattern__note {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  border-top: 1px dashed var(--border);
+  padding-top: var(--space-2);
+}
+
+.pf__pattern__note::before {
+  content: "↳ ";
+  color: var(--accent);
+}
+
+.pf__summary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  line-height: 1.45;
+}
+
+.pf__summary strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  margin-bottom: var(--space-2);
+}
+
+/* ------------------------------------------------------------------
+   FALLBACK PANEL — when the worker isn't reachable
+   ------------------------------------------------------------------ */
+
+.pf__fallback {
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border: 1px dashed var(--accent);
+  background: rgba(225, 29, 46, 0.05);
+}
+
+.pf__fallback h3 {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+}
+
+.pf__fallback p {
+  font-size: var(--fs-sm);
+  color: var(--fg-soft);
+  margin: 0 0 var(--space-2);
+}
+
+.pf__fallback pre {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  background: var(--bg);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border);
+  white-space: pre-wrap;
+  max-height: 18rem;
+  overflow: auto;
+  color: var(--fg-soft);
+  line-height: 1.5;
+}

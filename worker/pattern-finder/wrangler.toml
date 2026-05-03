@@ -1,0 +1,22 @@
+name = "pattern-finder"
+main = "index.js"
+compatibility_date = "2026-04-01"
+
+# Bindings:
+#   ANTHROPIC_API_KEY  →  wrangler secret put ANTHROPIC_API_KEY
+#   RATE_LIMIT         →  KV namespace, see below
+#
+# To create the KV namespace and bind it:
+#   wrangler kv namespace create RATE_LIMIT
+# Then paste the returned id into [[kv_namespaces]] below.
+#
+# To deploy:
+#   wrangler deploy
+
+[vars]
+ALLOWED_ORIGIN = "https://punkrockai.com"
+
+# Uncomment after creating the KV namespace via wrangler.
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT"
+# id = "<paste id here>"

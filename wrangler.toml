@@ -1,0 +1,15 @@
+# Cloudflare Pages project config for punkrockai.com.
+# Lives at the repo root so a fresh deploy can mirror the production setup
+# without guessing. Pages reads this on its own; no extra wiring required.
+
+name = "punkrockai"
+compatibility_date = "2026-04-01"
+pages_build_output_dir = "site"
+
+[vars]
+# Ships into pages_functions if/when we add any. Not currently consumed.
+SITE_NAME = "Punk Rock AI"
+RELEASE_DAY = "2026-05-29"
+
+# Worker projects under worker/* have their own wrangler.toml files.
+# See worker/pattern-finder/wrangler.toml and worker/submissions/wrangler.toml.
