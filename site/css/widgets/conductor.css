@@ -1,0 +1,304 @@
+/* /widgets/conductor — N AI instruments laid out as parallel rows. The user
+   plays/pauses each. Each row is a tempo bar that fills, then reveals its
+   sample output. Visual metaphor: parallel parts, one baton, taste owned.
+   ------------------------------------------------------------------ */
+
+.conductor-hero {
+  padding-block: var(--space-7) var(--space-5);
+  border-bottom: 3px solid var(--accent);
+}
+
+.conductor-hero__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  margin-bottom: var(--space-3);
+}
+
+.conductor-hero h1 {
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--space-3);
+  max-width: 28ch;
+}
+
+.conductor-hero__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 56ch;
+  color: var(--fg-soft);
+  margin-bottom: var(--space-3);
+}
+
+.conductor-hero__frame {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--muted);
+  border-left: 2px solid var(--accent);
+  padding-left: var(--space-3);
+  max-width: 56ch;
+}
+
+/* ------------------------------------------------------------------
+   PODIUM — global controls. The conductor's baton at the top of the room.
+   ------------------------------------------------------------------ */
+
+.conductor-controls {
+  padding-block: var(--space-4);
+  border-bottom: 1px dashed var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--bg);
+}
+
+.conductor-podium {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.conductor-podium__status {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  margin-left: auto;
+}
+
+/* ------------------------------------------------------------------
+   ORCHESTRA — list of instrument rows. Each row is one part.
+   ------------------------------------------------------------------ */
+
+.conductor-orchestra {
+  padding-block: var(--space-5) var(--space-7);
+}
+
+.instruments {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.instrument {
+  border: 1px solid var(--border);
+  background: var(--bg-soft, #111);
+  padding: var(--space-3);
+  display: grid;
+  gap: var(--space-2);
+  position: relative;
+  transition: border-color 0.18s ease;
+}
+
+.instrument[data-state="playing"] {
+  border-color: var(--accent);
+}
+
+.instrument[data-state="done"] {
+  border-color: var(--fg-soft);
+}
+
+.instrument[data-state="paused"] {
+  border-color: var(--muted);
+  border-style: dashed;
+}
+
+.instrument__head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-3);
+  align-items: start;
+}
+
+.instrument__role {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.instrument__name {
+  font-size: var(--fs-lg);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.instrument__stack {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  margin: 0;
+}
+
+.instrument__controls {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.instrument__btn {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--border);
+  padding: var(--space-2) var(--space-3);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  transition: border-color 0.12s ease, color 0.12s ease;
+}
+
+.instrument__btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.instrument__btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.instrument__btn-glyph {
+  font-size: 0.9em;
+  letter-spacing: 0;
+}
+
+.instrument__task-label,
+.instrument__output-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.instrument__task-text {
+  margin: 0;
+  font-size: var(--fs-base);
+  line-height: 1.45;
+}
+
+/* ------------------------------------------------------------------
+   TEMPO BAR — fills as the instrument "plays". Pulse ticks on top.
+   ------------------------------------------------------------------ */
+
+.instrument__bar {
+  position: relative;
+  height: 8px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.instrument__bar-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0%;
+  background: var(--accent);
+  transition: width 60ms linear;
+}
+
+.instrument[data-state="done"] .instrument__bar-fill {
+  background: var(--fg-soft);
+}
+
+.instrument__bar-pulse {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 24px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  pointer-events: none;
+  display: none;
+}
+
+.instrument[data-state="playing"] .instrument__bar-pulse {
+  display: block;
+  animation: conductor-pulse 1.6s linear infinite;
+}
+
+@keyframes conductor-pulse {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(2000%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .instrument__bar-pulse { display: none !important; }
+  .instrument__bar-fill { transition: none; }
+}
+
+/* ------------------------------------------------------------------
+   OUTPUT — revealed when the bar finishes. The instrument's reply.
+   ------------------------------------------------------------------ */
+
+.instrument__output {
+  border-top: 1px dashed var(--border);
+  padding-top: var(--space-2);
+}
+
+.instrument__output-text {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--fg-soft);
+  border-left: 2px solid var(--accent);
+  padding-left: var(--space-3);
+}
+
+/* ------------------------------------------------------------------
+   FINAL — the moral of the orchestra.
+   ------------------------------------------------------------------ */
+
+.conductor-final {
+  padding-block: var(--space-6) var(--space-7);
+  border-top: 3px solid var(--accent);
+}
+
+.conductor-final h2 {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-3);
+}
+
+.conductor-final__cite {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  margin-block: var(--space-3);
+}
+
+.conductor-final__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+@media (max-width: 640px) {
+  .instrument__head {
+    grid-template-columns: 1fr;
+  }
+  .instrument__controls {
+    justify-self: start;
+  }
+  .conductor-podium__status {
+    margin-left: 0;
+    flex-basis: 100%;
+  }
+}

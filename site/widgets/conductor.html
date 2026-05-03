@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Conductor&rsquo;s Orchestra &mdash; Punk Rock AI</title>
+    <meta
+      name="description"
+      content="You're not a player anymore. You're the conductor. Hand each AI instrument a part, set the tempo, listen for the wrong notes. The taste is yours. The hands are theirs."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="The Conductor's Orchestra — Punk Rock AI" />
+    <meta property="og:description" content="Visualize directing N AI agents in parallel. Frame Painter, Motion Director, Voice Actor, Scribe, Compositor, Polisher. The taste stays with you." />
+    <meta property="og:url" content="https://punkrockai.com/widgets/conductor.html" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/widgets/conductor.css" />
+  </head>
+  <body class="shell">
+    <header class="site-header" data-include="header"></header>
+
+    <main class="conductor">
+      <section class="conductor-hero grain scanlines">
+        <div class="wrap wrap--narrow">
+          <p class="conductor-hero__eyebrow">Slide 17 &middot; the orchestra</p>
+          <h1 id="conductor-title">The Conductor&rsquo;s Orchestra.</h1>
+          <p class="conductor-hero__lede" id="conductor-lede"></p>
+          <p class="conductor-hero__frame" id="conductor-frame"></p>
+        </div>
+      </section>
+
+      <section class="conductor-controls" aria-label="Conductor controls">
+        <div class="wrap">
+          <div class="conductor-podium">
+            <button type="button" class="btn btn--primary" data-action="play-all">Play all</button>
+            <button type="button" class="btn" data-action="pause-all">Pause all</button>
+            <button type="button" class="btn" data-action="reset">Reset</button>
+            <span class="conductor-podium__status" id="conductor-status" aria-live="polite">Stand by.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="conductor-orchestra" aria-labelledby="orchestra-heading">
+        <div class="wrap">
+          <h2 id="orchestra-heading" class="sr-only">Instruments</h2>
+          <ol class="instruments" id="instruments"></ol>
+        </div>
+      </section>
+
+      <section class="conductor-final">
+        <div class="wrap wrap--narrow">
+          <h2 id="closing-title"></h2>
+          <p id="closing-body"></p>
+          <p class="conductor-final__cite" id="closing-cite"></p>
+          <div class="conductor-final__actions">
+            <a class="btn" href="/widgets/three-documents.html">Write your three documents</a>
+            <a class="btn" href="/widgets/junior-pipeline.html">See the missing staircase</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/conductor.js"></script>
+  </body>
+</html>

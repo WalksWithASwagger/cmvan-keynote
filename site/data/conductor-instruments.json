@@ -1,0 +1,68 @@
+{
+  "source": "source-material/kevin-friel-pixel-wizard/kevin-friel-full-feature-kk.md + script/talk-framework-v6.md slide 17",
+  "generated": "hand-curated",
+  "title": "The Conductor's Orchestra",
+  "lede": "You're not a player anymore. You're the conductor. Hand each instrument a part, set the tempo, listen for the wrong notes. The taste is yours. The hands are theirs.",
+  "frame": "Kevin Friel's stack is chain thinking — Midjourney for frames, Runway for motion, ElevenLabs for audio, ComfyUI to glue, Topaz for polish. None of those play themselves into a finished piece. You do.",
+  "instruments": [
+    {
+      "id": "frame-painter",
+      "name": "Frame Painter",
+      "role": "Stills, look-dev, key art",
+      "stack": "Midjourney, SDXL",
+      "task": "Paint a moody establishing frame: rain-soaked Vancouver alley, sodium light, 35mm.",
+      "output": "Generated 8 frames. Picked the third — soft blue cast, broken neon, puddle reflection lines up on the rule of thirds.",
+      "tempo": 1700
+    },
+    {
+      "id": "motion-director",
+      "name": "Motion Director",
+      "role": "Camera moves, body performance",
+      "stack": "Runway Gen-3, Act 2",
+      "task": "Push in 4 seconds on the alley. Subtle handheld, slight rain parallax.",
+      "output": "Rendered 4s clip @ 24fps. Push-in feels intentional. Rain reads. Re-roll if you want stronger lens breathing.",
+      "tempo": 2300
+    },
+    {
+      "id": "voice-actor",
+      "name": "Voice Actor",
+      "role": "VO, dialogue, ADR",
+      "stack": "ElevenLabs",
+      "task": "Read the line: \"You don't need permission. You need a posse.\" Tired, intimate, no swagger.",
+      "output": "Take 2 lands. Breath at the comma is a bit hot — would EQ a notch at 4k.",
+      "tempo": 1900
+    },
+    {
+      "id": "scribe",
+      "name": "Scribe",
+      "role": "Script, captions, beats",
+      "stack": "Claude, GPT",
+      "task": "Tighten the cold open from 90s to 60s. Keep the joke at 0:14. Cut all hedge words.",
+      "output": "60s draft attached. Cut 4 hedges, kept the joke, moved the thesis to 0:42. Reads cleaner.",
+      "tempo": 1500
+    },
+    {
+      "id": "compositor",
+      "name": "Compositor",
+      "role": "Glue, layers, finish",
+      "stack": "ComfyUI, Nuke",
+      "task": "Comp the rain plate over the alley. Match black levels. Soft vignette, no halation.",
+      "output": "Plate sits. Black levels match within 2%. Suggest a subtle grain pass at 50% to bind layers.",
+      "tempo": 2100
+    },
+    {
+      "id": "polisher",
+      "name": "Polisher",
+      "role": "Upres, denoise, restore",
+      "stack": "Topaz Video AI",
+      "task": "Upres to 4K. Hold the grain. Don't smooth the wet brick texture.",
+      "output": "4K out. Grain preserved. Brick reads sharper than the source — the model hallucinated detail; flag for taste check.",
+      "tempo": 2500
+    }
+  ],
+  "closing": {
+    "title": "Same quality. Two hundred bucks. Two and a half days.",
+    "body": "Kevin Friel's line, not mine. The orchestra plays. The conductor decides what's worth keeping.",
+    "cite": "source-material/kevin-friel-pixel-wizard/kevin-friel-full-feature-kk.md"
+  }
+}
