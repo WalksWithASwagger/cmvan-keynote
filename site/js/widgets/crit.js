@@ -133,7 +133,8 @@ function paintImage() {
     imageEl.removeAttribute("src");
     return;
   }
-  imageBoxEl.hidden = false;
+  imageEl.onerror = () => { imageBoxEl.hidden = true; };
+  imageEl.onload = () => { imageBoxEl.hidden = false; };
   imageEl.src = url;
 }
 
