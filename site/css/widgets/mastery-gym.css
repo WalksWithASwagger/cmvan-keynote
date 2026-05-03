@@ -1,0 +1,356 @@
+/* /widgets/mastery-gym.html — daily cycle log, streak, heatmap, .md export */
+
+.gym-intro {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.gym-intro h1 {
+  margin: 0 0 var(--space-3);
+}
+
+.gym-intro__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 50ch;
+  color: var(--fg-soft);
+}
+
+.gym-intro__hint {
+  margin-top: var(--space-3);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+/* ------------------------------------------------------------------
+   STATS — streak, total, last
+   ------------------------------------------------------------------ */
+
+.gym-stats {
+  padding-block: var(--space-5);
+  border-bottom: 1px solid var(--border);
+}
+
+.gym-stats__row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.gym-stat {
+  display: grid;
+  gap: var(--space-1);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  padding: var(--space-3);
+}
+
+.gym-stat__num {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+.gym-stat__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@media (max-width: 540px) {
+  .gym-stats__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------------------------------------------------------
+   CHECK-IN FORM
+   ------------------------------------------------------------------ */
+
+.gym-checkin {
+  padding-block: var(--space-5);
+}
+
+.gym-checkin__head {
+  margin-bottom: var(--space-4);
+}
+
+.gym-checkin__head h2 {
+  margin: var(--space-2) 0;
+}
+
+.gym-checkin__hint {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  max-width: 60ch;
+  margin: 0;
+}
+
+.gym-form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.gym-field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.gym-field__label {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  grid-template-rows: auto auto;
+  column-gap: var(--space-2);
+  align-items: baseline;
+}
+
+.gym-field__num {
+  grid-row: 1 / span 2;
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  color: var(--accent);
+  font-weight: 700;
+  text-align: right;
+  line-height: 1;
+}
+
+.gym-field__title {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: var(--fs-sm);
+  color: var(--fg);
+}
+
+.gym-field__hint {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.gym-field textarea,
+.gym-field input[type="text"] {
+  font-family: var(--font-mono);
+}
+
+.gym-tags {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.gym-field--keep .gym-field__num {
+  color: var(--accent);
+}
+
+.gym-field--refuse .gym-field__num {
+  color: var(--fg);
+}
+
+@media (max-width: 640px) {
+  .gym-tags {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gym-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.gym-form__status {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  min-height: 1em;
+  margin: 0;
+}
+
+/* ------------------------------------------------------------------
+   HEATMAP — 16 weeks of cycles, today bottom-right
+   ------------------------------------------------------------------ */
+
+.gym-heatmap {
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.gym-heatmap__head {
+  margin-bottom: var(--space-4);
+}
+
+.gym-heatmap__head h2 {
+  margin: var(--space-2) 0;
+}
+
+.gym-heatmap__hint {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  max-width: 60ch;
+  margin: 0;
+}
+
+.gym-heatmap__grid {
+  --cell: clamp(0.7rem, 2.4vw, 1.1rem);
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(7, var(--cell));
+  grid-auto-columns: var(--cell);
+  gap: 3px;
+  padding: var(--space-2);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.gym-cell {
+  width: var(--cell, 1rem);
+  height: var(--cell, 1rem);
+  display: inline-block;
+  background: #161616;
+  border: 1px solid var(--border);
+  padding: 0;
+  cursor: pointer;
+  transition: transform 120ms var(--ease-snap), outline 120ms var(--ease-snap);
+}
+
+.gym-cell:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  z-index: 2;
+}
+
+.gym-cell:hover {
+  transform: translate(-1px, -1px);
+}
+
+.gym-cell--empty {
+  cursor: default;
+  opacity: 0.35;
+}
+
+.gym-cell--future {
+  background: transparent;
+  border-color: transparent;
+  cursor: default;
+}
+
+.gym-cell--today {
+  outline: 1px dashed var(--accent);
+  outline-offset: 1px;
+}
+
+.gym-cell--l0 {
+  background: #161616;
+  border-color: var(--border);
+}
+
+.gym-cell--l1 {
+  background: color-mix(in srgb, var(--accent) 22%, #161616);
+  border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+}
+
+.gym-cell--l2 {
+  background: color-mix(in srgb, var(--accent) 55%, #161616);
+  border-color: color-mix(in srgb, var(--accent) 60%, var(--border));
+}
+
+.gym-cell--l3 {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.gym-heatmap__legend {
+  list-style: none;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.gym-heatmap__legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.gym-heatmap__legend .gym-cell {
+  cursor: default;
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+/* ------------------------------------------------------------------
+   EXPORT
+   ------------------------------------------------------------------ */
+
+.gym-export {
+  padding-block: var(--space-5);
+}
+
+.gym-export h2 {
+  margin: 0 0 var(--space-3);
+}
+
+.gym-export__hint {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  max-width: 60ch;
+  margin: 0 0 var(--space-3);
+}
+
+.gym-export__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.gym-export__preview {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: var(--space-3);
+  max-height: 22rem;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--fg-soft);
+  margin: 0;
+}
+
+.gym-export__preview:empty {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gym-cell {
+    transition: none;
+  }
+  .gym-cell:hover {
+    transform: none;
+  }
+}
