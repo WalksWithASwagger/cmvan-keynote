@@ -3,9 +3,13 @@ main = "index.js"
 compatibility_date = "2026-04-01"
 
 # Bindings:
-#   NOTION_API_KEY  → wrangler secret put NOTION_API_KEY
+#   NOTION_TOKEN    → wrangler secret put NOTION_TOKEN  (Notion integration token)
 #   NOTION_DB_ID    → set via [vars] below or wrangler secret
 #   RATE_LIMIT      → optional KV namespace
+#
+# Graceful degradation: if NOTION_TOKEN or NOTION_DB_ID is unset, POST
+# returns 202 with status "queued-no-backend" and the worker logs a warning
+# instead of failing — see worker/submissions/NOTION-SETUP.md.
 #
 # To create the KV namespace:
 #   wrangler kv namespace create RATE_LIMIT
