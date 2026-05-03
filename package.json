@@ -10,6 +10,7 @@
     "build:lineage": "node scripts/build-lineage.mjs",
     "build:library": "node scripts/build-library-index.mjs",
     "build:audio": "node scripts/build-audio-cues.mjs",
+    "generate:cues": "node scripts/generate-cues.mjs",
     "build:decisions": "node scripts/build-decisions.mjs",
     "ingest:slides": "node scripts/ingest-slides.mjs"
   },
