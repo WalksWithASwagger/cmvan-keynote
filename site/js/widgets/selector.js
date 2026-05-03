@@ -4,6 +4,7 @@
 // to localStorage and serializes to the URL hash for sharing.
 
 import { load, save, debounceSave } from "/js/common/storage.js";
+import { audioPlayer } from "/js/common/audio-player.js";
 
 const STORAGE_KEY = "selector:queue";
 const READ_BASE_MS = 1800;
@@ -31,6 +32,7 @@ let player = {
   remaining: 0,
   paused: false,
   wordSpans: [],
+  audioListener: null,
 };
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -61,6 +63,8 @@ async function main() {
   bindFilters();
   bindActions();
   bindShortcuts();
+  // fire-and-forget; selector keeps working if cues fail to load
+  audioPlayer.ensureLoaded();
 }
 
 function buildRecords(quotes, lineage, slides) {
@@ -72,6 +76,7 @@ function buildRecords(quotes, lineage, slides) {
       tag: `Slide ${q.slide ?? "?"} · ${q.act || ""}`,
       title: q.slideTitle || `Slide ${q.slide}`,
       body: q.text,
+      slideId: q.slideId || null,
     });
   });
   (lineage.beats || []).forEach((b) => {
@@ -81,6 +86,7 @@ function buildRecords(quotes, lineage, slides) {
       tag: `${b.year} · ${b.era}`,
       title: b.title,
       body: b.body,
+      slideId: null,
     });
   });
   (slides.slides || []).forEach((s) => {
@@ -91,6 +97,7 @@ function buildRecords(quotes, lineage, slides) {
       tag: `Slide ${s.n} · ${s.act || ""}`,
       title: s.title,
       body: s.note ? `${s.title} — ${s.note}` : s.title,
+      slideId: s.id,
     });
   });
   return out;
@@ -293,9 +300,43 @@ function playRecord(idx) {
     return;
   }
   playerEl.dataset.state = "playing";
+  delete playerEl.dataset.audio;
   playerTag.textContent = `${idx + 1}/${queue.length} · ${r.tag}`;
   playerMeta.textContent = r.title;
 
+  // re-render queue to highlight active row
+  renderQueue();
+
+  tryAudioFor(r, idx);
+}
+
+function tryAudioFor(r, idx) {
+  // detach any prior advance-listener before stopping the previous track
+  detachAudioListener();
+  audioPlayer.stop();
+
+  const slideId = r.slideId;
+  const hasCue = slideId && audioPlayer.hasAudio(slideId);
+
+  if (!hasCue) {
+    startTextTimer(r, idx);
+    return;
+  }
+
+  audioPlayer.play(slideId).then((ok) => {
+    // Only act if we're still on the same record
+    if (player.idx !== idx) return;
+    if (!ok) {
+      startTextTimer(r, idx);
+      return;
+    }
+    playerEl.dataset.audio = "true";
+    bindAudioAdvance(idx);
+    tickAudioBar();
+  });
+}
+
+function startTextTimer(r, idx) {
   const duration = Math.min(12000, READ_BASE_MS + READ_PER_CHAR_MS * (r.body || "").length);
   player.started = performance.now();
   player.duration = duration;
@@ -305,9 +346,55 @@ function playRecord(idx) {
   tickBar();
   startReveal(duration);
   player.timer = setTimeout(() => playRecord(idx + 1), duration);
+}
 
-  // re-render queue to highlight active row
-  renderQueue();
+function bindAudioAdvance(idx) {
+  const onChange = (ev) => {
+    if (player.idx !== idx) return;
+    const state = ev.detail && ev.detail.state;
+    // statechange fires "idle" on ended; "error" on failure — both advance
+    if (state === "idle" || state === "error") {
+      detachAudioListener();
+      playRecord(idx + 1);
+    }
+  };
+  player.audioListener = onChange;
+  audioPlayer.addEventListener("statechange", onChange);
+  // Fallback: if audio stalls, advance after the cue's known length + buffer.
+  const r = allRecords.find((x) => x.id === queue[idx]);
+  const cue = r && r.slideId ? audioPlayer.cueFor(r.slideId) : null;
+  const cap = cue && cue.length ? Math.min(120000, cue.length + 2000) : 60000;
+  player.timer = setTimeout(() => {
+    if (player.idx !== idx) return;
+    detachAudioListener();
+    playRecord(idx + 1);
+  }, cap);
+}
+
+function detachAudioListener() {
+  if (player.audioListener) {
+    audioPlayer.removeEventListener("statechange", player.audioListener);
+    player.audioListener = null;
+  }
+}
+
+function tickAudioBar() {
+  cancelAnimationFrame(player.raf);
+  const r = allRecords.find((x) => x.id === queue[player.idx]);
+  const cue = r && r.slideId ? audioPlayer.cueFor(r.slideId) : null;
+  const total = cue && cue.length ? cue.length : 0;
+  if (!total) return;
+  player.started = performance.now();
+  const step = () => {
+    if (audioPlayer.state !== "playing") return;
+    const elapsed = performance.now() - player.started;
+    const pct = Math.min(100, (elapsed / total) * 100);
+    playerBar.style.width = `${pct}%`;
+    if (elapsed < total) {
+      player.raf = requestAnimationFrame(step);
+    }
+  };
+  player.raf = requestAnimationFrame(step);
 }
 
 function pausePlayback() {
@@ -432,6 +519,8 @@ function stopPlayback() {
   clearTimeout(player.timer);
   cancelAnimationFrame(player.raf);
   cancelAnimationFrame(player.revealRaf);
+  detachAudioListener();
+  audioPlayer.stop();
   player.idx = -1;
   player.timer = null;
   player.raf = null;
@@ -441,6 +530,7 @@ function stopPlayback() {
   player.revealRaf = null;
   player.wordSpans = [];
   playerEl.dataset.state = "idle";
+  delete playerEl.dataset.audio;
   playerTag.textContent = "";
   playerBody.textContent = "";
   playerMeta.textContent = "";
