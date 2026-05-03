@@ -1,0 +1,93 @@
+{
+  "kinds": [
+    {
+      "id": "essay",
+      "label": "Essay / prose",
+      "hint": "A piece of writing — post, chapter, newsletter, argument."
+    },
+    {
+      "id": "image",
+      "label": "Image / photograph",
+      "hint": "A still image. Photo, render, illustration, frame."
+    },
+    {
+      "id": "pitch",
+      "label": "Pitch / proposal",
+      "hint": "A pitch deck, project proposal, funding ask."
+    },
+    {
+      "id": "code",
+      "label": "Code / system",
+      "hint": "A working program, script, or product feature."
+    },
+    {
+      "id": "song",
+      "label": "Song / audio",
+      "hint": "A recording, demo, mix, or score."
+    }
+  ],
+  "angles": [
+    {
+      "id": "taste",
+      "label": "Taste",
+      "tagline": "What would you refuse from this?",
+      "questions": [
+        "Where does this default to the median? Name three lines/frames/moves that any competent maker would have produced.",
+        "What did the author decline to include? If you can't tell, that means nothing was refused — and that's the problem.",
+        "If you had to remove 30%, which 30% goes? What's left after the cut is the actual work.",
+        "Where is the choice visible? Where is it absent?"
+      ]
+    },
+    {
+      "id": "posse",
+      "label": "Posse",
+      "tagline": "Who is this for, and who is it from?",
+      "questions": [
+        "Who, by name, is this work in conversation with? If 'everyone,' the answer is no one.",
+        "Whose taste shaped this? Whose absence is felt?",
+        "Where is the author's specific community visible in the choices made?",
+        "If three people the author respects read this, what would each one push back on?"
+      ]
+    },
+    {
+      "id": "cutting-room",
+      "label": "Cutting room",
+      "tagline": "Where did you let yourself off easy?",
+      "questions": [
+        "What's the strongest version of the counter-argument? Is it engaged, or strawmanned, or absent?",
+        "Which sentence/frame/section is doing the least work? Cut it. Does the whole get stronger?",
+        "Where did the author repeat themselves to feel safe? What gets lost if those repeats go?",
+        "What was almost in here, and got cut? Why? Was it cowardice, or craft?"
+      ]
+    },
+    {
+      "id": "both-hands",
+      "label": "Both hands",
+      "tagline": "Is the human pressure visible?",
+      "questions": [
+        "Where is the maker's hand visible — texture, friction, idiosyncrasy, voice?",
+        "Where does this read like the median model output? Same cadence, same hedges, same shape.",
+        "What does the author know that no one else in the room knows? Is that knowledge load-bearing here, or decorative?",
+        "If you stripped the byline, could you guess the author from the work alone?"
+      ]
+    },
+    {
+      "id": "tool-not-neutral",
+      "label": "Tool-not-neutral",
+      "tagline": "What did the tool decide for you?",
+      "questions": [
+        "Which choices in this work were made by the maker, and which by a tool's defaults?",
+        "What shape did the tool push toward? Listicle, three-act, hero shot, four-on-the-floor — what's the gravity well?",
+        "Where did the tool round off something interesting into something average?",
+        "If you'd built the same piece with a different tool — pen, film, band, raw text editor — what changes?"
+      ]
+    }
+  ],
+  "exemplars": {
+    "essay__taste": "EXEMPLAR — Essay / Taste\n\nThe piece reads like a competent newsletter post: opens with a hook, three numbered sections, ends on a soft call-to-action. That structure is the tool's default, not a choice. Cutting room: the second section is a longer restatement of the first; remove it and the argument sharpens. The author's strongest claim ('the median is a trap') is buried under hedges — 'sometimes,' 'in many cases,' 'arguably.' Strip the hedges and the line either holds or doesn't. If it doesn't hold, the piece doesn't have an argument; it has a vibe.\n\nRefusal-test: what's missing? No counter-example. No moment where the author concedes something. Taste shows up as the courage to leave things out — and as the courage to put a stake down. This piece does neither.",
+    "image__taste": "EXEMPLAR — Image / Taste\n\nThe frame is centered, golden-hour, shallow depth — a competent stock-photography composition. The eye has nowhere to land that wasn't pre-decided by the camera/model. Refusal-test: what did the maker decline? Hard to tell. Centered + golden-hour + bokeh is the default gravity well of the medium right now; the choice was not to push against it.\n\nWhere it could go: an off-center subject. A frame that excludes the obvious 'main thing.' A flatter light that asks the viewer to do work. Taste in image-making is mostly subtraction — what's not in the frame, what light wasn't used, what hour wasn't waited for.",
+    "pitch__posse": "EXEMPLAR — Pitch / Posse\n\nWho is this pitch for, by name? The deck addresses 'investors' and 'the market' — abstractions. The strongest pitches name three to five specific funds or partners and shape the argument around their stated theses.\n\nWho is this pitch from? The 'team' slide lists titles and logos. It does not show the trio's specific lineage — what they made before, who they trained under, what scar tissue they bring. A posse is not a team; a posse is a small group of people whose taste you trust enough to be embarrassed in front of. This pitch lacks that specificity, and reads as anyone-could-have-built-this.",
+    "code__cutting-room": "EXEMPLAR — Code / Cutting room\n\nThe module is 340 lines. It exposes 11 public functions. Of those, four are wrappers around three; two are unused outside tests; one duplicates a stdlib helper.\n\nCutting-room pass: collapse the wrappers, delete the unused, drop the duplicate. The module is now ~180 lines and exposes 5 functions. Did anything outside this module break? No. Then those 160 lines were cowardice — kept around 'just in case,' not because anything called them.\n\nThe rule of the cutting room: you don't ship the whole shoot. You ship the cut.",
+    "song__both-hands": "EXEMPLAR — Song / Both hands\n\nThe track is on the grid. Vocals are tuned. Drums are quantized. Reverb tail is the preset. None of this is wrong; all of it is the tool's default.\n\nWhere is the maker's hand? Hard to find. The breath at the top of verse two is gated out. The room sound is replaced. The slight flat note on the chorus is corrected. Each fix made the track 2% more 'professional' and 5% less specifically itself.\n\nA both-hands pass: leave the breath. Leave one wrong note. Mic the room. The artifacts of a body in a space are the difference between this song and ten thousand others on the grid this week."
+  }
+}
