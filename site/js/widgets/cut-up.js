@@ -30,6 +30,10 @@ let marksMode = "off";
 let layoutMode = "flow";
 let lastFragments = null;
 let currentSeed = null;
+// True when restoreFromHash() pulled a seed from the URL and no shuffle has
+// consumed it yet. The first cut() reuses that seed (share-link rehydrates
+// identically); subsequent cuts generate a fresh seed.
+let pendingRestoredSeed = false;
 
 const SCATTER_MIN_WIDTH = 480;
 
@@ -110,7 +114,11 @@ function cut() {
     flash("paste something first");
     return;
   }
-  currentSeed = makeSeed();
+  if (pendingRestoredSeed && currentSeed != null) {
+    pendingRestoredSeed = false;
+  } else {
+    currentSeed = makeSeed();
+  }
   const fragments = seededShuffle(splitText(text, cutMode, punctMode), currentSeed);
   if (!fragments.length) {
     flash("nothing to cut");
@@ -282,6 +290,7 @@ function restoreFromHash() {
   }
   if (seed && /^\d+$/.test(seed)) {
     currentSeed = Number(seed) >>> 0;
+    pendingRestoredSeed = true;
   }
 }
 

@@ -286,3 +286,12 @@
     min-height: 7rem;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .cutup__output-body--scatter,
+  .cutup__strip {
+    /* override inline rotate() applied by renderScatter() */
+    transform: none !important;
+    transition: none;
+  }
+}
