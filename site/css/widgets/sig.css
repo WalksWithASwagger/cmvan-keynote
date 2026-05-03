@@ -1,0 +1,210 @@
+/* /widgets/sig.html — Email signature generator
+   Page chrome only. The signature itself is rendered with inline styles
+   so it survives Gmail/Outlook pasteboards untouched.
+   ------------------------------------------------------------------ */
+
+.sig-intro {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.sig-intro h1 {
+  margin: 0 0 var(--space-3);
+}
+
+.sig-intro__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 50ch;
+  color: var(--fg-soft);
+}
+
+/* ------------------------------------------------------------------
+   FORM
+   ------------------------------------------------------------------ */
+
+.sig-form-wrap {
+  padding-block: var(--space-5);
+  border-bottom: 1px solid var(--border);
+}
+
+.sig-form {
+  font-family: var(--font-mono);
+}
+
+.sig-fieldset {
+  border: 1px solid var(--border-strong);
+  padding: var(--space-4);
+  margin: 0;
+}
+
+.sig-legend {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: var(--fs-sm);
+  padding: 0 var(--space-2);
+}
+
+.sig-field {
+  display: block;
+  margin-bottom: var(--space-3);
+}
+
+.sig-field__label {
+  display: block;
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.sig-field input[type="text"],
+.sig-field input[type="email"],
+.sig-field select {
+  width: 100%;
+  font: inherit;
+  padding: 8px 10px;
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--border-strong);
+}
+
+.sig-field input:focus,
+.sig-field select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.sig-field__hint {
+  display: block;
+  margin-top: 4px;
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.sig-field__row {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.sig-field--check {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.sig-field--check input {
+  width: auto;
+}
+
+.sig-form__row {
+  margin-top: var(--space-3);
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* ------------------------------------------------------------------
+   PREVIEW + ACTIONS
+   ------------------------------------------------------------------ */
+
+.sig-preview-wrap {
+  padding-block: var(--space-5);
+}
+
+.sig-h2 {
+  margin: 0 0 var(--space-2);
+}
+
+.sig-hint {
+  margin: 0 0 var(--space-3);
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+
+.sig-preview {
+  background: #fff;
+  color: #0a0a0a;
+  padding: var(--space-4);
+  border: 1px solid var(--border-strong);
+  min-height: 6em;
+}
+
+/* The preview rebrands to a light surface to mimic an email client
+   compose window. Anything inside is an inline-styled inert HTML island. */
+
+.sig-actions {
+  margin-top: var(--space-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.sig-status {
+  margin-top: var(--space-2);
+  min-height: 1.25em;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--accent);
+}
+
+.sig-source {
+  margin-top: var(--space-3);
+  border: 1px dashed var(--border);
+  padding: var(--space-2) var(--space-3);
+}
+
+.sig-source > summary {
+  cursor: pointer;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: var(--fs-sm);
+}
+
+.sig-source__pre {
+  margin: var(--space-2) 0 0;
+  padding: var(--space-2);
+  background: var(--bg-soft, #1a1a1a);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow: auto;
+  max-height: 22em;
+}
+
+.sig-howto {
+  margin-top: var(--space-4);
+  border: 1px dashed var(--border);
+  padding: var(--space-2) var(--space-3);
+}
+
+.sig-howto > summary {
+  cursor: pointer;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: var(--fs-sm);
+}
+
+.sig-howto__list {
+  margin: var(--space-2) 0 0;
+  padding-left: var(--space-4);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+}
+
+.sig-howto__list li {
+  margin-bottom: 6px;
+}
+
+.btn--small {
+  padding: 4px 10px;
+  font-size: var(--fs-xs);
+}

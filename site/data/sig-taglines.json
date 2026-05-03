@@ -1,0 +1,77 @@
+{
+  "source": "script/talk-framework-v6.md",
+  "note": "Tagline options for the email signature widget. Pulled from the talk's load-bearing lines.",
+  "count": 14,
+  "taglines": [
+    {
+      "id": "tag-both-hands",
+      "text": "Both hands full. That's the only honest place to stand.",
+      "act": "Act III"
+    },
+    {
+      "id": "tag-tool-neutral",
+      "text": "The tool is never neutral. But neither are we.",
+      "act": "Act VI"
+    },
+    {
+      "id": "tag-pickup",
+      "text": "Pick up the tool. Use it wrong. Share what you learn.",
+      "act": "Act VII"
+    },
+    {
+      "id": "tag-live-fish",
+      "text": "Any dead fish can float downstream. It takes a live fish to swim.",
+      "act": "Act VII"
+    },
+    {
+      "id": "tag-taste",
+      "text": "Generation is free now. Taste is what's scarce.",
+      "act": "Act II"
+    },
+    {
+      "id": "tag-leaf-blower",
+      "text": "Speed without judgment is a leaf blower.",
+      "act": "Act II"
+    },
+    {
+      "id": "tag-name-it",
+      "text": "Stop saying bias. Name what you're seeing.",
+      "act": "Act IV"
+    },
+    {
+      "id": "tag-remix",
+      "text": "Remix has culture. Extraction has appetite.",
+      "act": "Act IV"
+    },
+    {
+      "id": "tag-values-text",
+      "text": "If your values aren't in text, to AI they don't exist.",
+      "act": "Act VI"
+    },
+    {
+      "id": "tag-stay-table",
+      "text": "We need the most critical voices at the table.",
+      "act": "Act VI"
+    },
+    {
+      "id": "tag-camera",
+      "text": "The camera interrupted the despair.",
+      "act": "Act I"
+    },
+    {
+      "id": "tag-give-away",
+      "text": "Giving away made me invaluable.",
+      "act": "Act I"
+    },
+    {
+      "id": "tag-both-true",
+      "text": "Both statements are true. At the exact same time.",
+      "act": "Act V"
+    },
+    {
+      "id": "tag-coming",
+      "text": "You coming?",
+      "act": "Act VII"
+    }
+  ]
+}
