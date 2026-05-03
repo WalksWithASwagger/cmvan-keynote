@@ -1,0 +1,93 @@
+{
+  "source": "script/talk-framework-v6.md slide 13 + source-material/kevin-friel-pixel-wizard/kevin-friel-full-feature-kk.md",
+  "generated": "hand-curated",
+  "thesis": "How does a young creative learn if there's no market for the entry-level work that teaches you?",
+  "subThesis": "The old career path was a ladder. Each rung paid you to get better at the next one. AI is eating the bottom three. The top still exists — but the staircase to it doesn't.",
+  "warning": "The people who say they have this solved are not being honest with you.",
+  "rungs": [
+    {
+      "id": "shoot-for-free",
+      "label": "Shoot for free",
+      "order": 1,
+      "old": {
+        "summary": "You worked for credit, gas money, exposure. You learned by doing the work nobody would pay for yet.",
+        "example": "Kevin Friel spent years on the wrong side of the gate — long before anyone paid for his shots — earning the heavy version of the job in rooms where 'no' came from producers, legal, and physics, in about that order.",
+        "source": "source-material/kevin-friel-pixel-wizard/kevin-friel-full-feature-kk.md"
+      },
+      "new": {
+        "summary": "AI generates the speculative reel for free. The cost of 'making something to show' is a prompt and ten minutes.",
+        "eaten": true,
+        "example": "Same quality bar that used to ride a $100K budget now ships for $200 in 2.5 days. Who pays an unknown to shoot speculatively when the model does it before lunch?",
+        "source": "source-material/kevin-friel-pixel-wizard/kevin-friel-full-feature-kk.md"
+      }
+    },
+    {
+      "id": "assist",
+      "label": "Assist",
+      "order": 2,
+      "old": {
+        "summary": "You carried cable, loaded mags, ran the second monitor, watched the master work, took notes you didn't know were lessons.",
+        "example": "Kevin describes 'years inside facilities where real-time generative work meant $25K rigs and teams of specialists.' That's where assistants learned — not in classrooms, but in the rooms where the rigs ran.",
+        "source": "source-material/kevin-friel-pixel-wizard/kevin-friel-full-feature-kk.md"
+      },
+      "new": {
+        "summary": "The assistant role is the AI's first job. Roto, cleanup, slate logging, transcription, first-pass comp — gone.",
+        "eaten": true,
+        "example": "ComfyUI graphs, Runway Act 2 body performance, ElevenLabs voice cleanup, Topaz polish — Kevin's actual stack does the work an assistant used to do, with no one apprenticing in the room.",
+        "source": "source-material/kevin-friel-pixel-wizard/kevin-friel-full-feature-kk.md"
+      }
+    },
+    {
+      "id": "junior",
+      "label": "Junior",
+      "order": 3,
+      "old": {
+        "summary": "Your first credited shot. Your first real check. The rate was low, but the rung was real — and you climbed it on the back of the work.",
+        "example": "Twenty-five years deep — DNEG, BRON, MPC. The names on the back of your ticket stub. Kevin earned each rung the long way; that's what 'twenty-five years deep in the machine' actually buys you.",
+        "source": "source-material/kevin-friel-pixel-wizard/kevin-friel-full-feature-kk.md"
+      },
+      "new": {
+        "summary": "The junior tier is where the bottom collapses. The work that taught you, that paid you while you got better — that market is gone.",
+        "eaten": true,
+        "example": "'I spent 25 years learning the Hollywood way. Now I teach people to skip all that and just make things.' Skip the rungs. But the rungs were the school.",
+        "source": "source-material/kevin-friel-pixel-wizard/kevin-friel-full-feature-kk.md"
+      }
+    },
+    {
+      "id": "senior",
+      "label": "Senior",
+      "order": 4,
+      "old": {
+        "summary": "You owned shots, ran the room, mentored juniors, made the call when the model didn't render. Taste forged by ten thousand failed frames.",
+        "example": "Kevin's production brain — chain thinking across Midjourney, Runway, ElevenLabs, ComfyUI, Topaz — only matters because he learned comp on rigs that cost more than a house. Taste is the residue of the climb.",
+        "source": "source-material/kevin-friel-pixel-wizard/kevin-friel-full-feature-kk.md"
+      },
+      "new": {
+        "summary": "Senior survives — but only if you already have it. The path to becoming senior, for a 22-year-old today, is structurally missing.",
+        "eaten": false,
+        "example": "Kevin can teach 1,500+ Curious Refuge students the stack. He can't hand them the twenty-five years that taught him what a finished shot looks like.",
+        "source": "source-material/kevin-friel-pixel-wizard/kevin-friel-full-feature-kk.md"
+      }
+    },
+    {
+      "id": "master",
+      "label": "Master",
+      "order": 5,
+      "old": {
+        "summary": "Decades in. You've seen every tool come and go. Your taste is the work. Your name is on the back of the ticket.",
+        "example": "DNEG. BRON. MPC. The names on the back of your ticket stub. Mr. Pixel Wizard. Twenty-five years of VFX knowledge — 'and I'll tell you everything. That's the Film Club way.'",
+        "source": "source-material/kevin-friel-pixel-wizard/kevin-friel-full-feature-kk.md"
+      },
+      "new": {
+        "summary": "Masters still exist — but the pipeline that produced them is broken. Where the next Kevin comes from is the open question of this decade.",
+        "eaten": false,
+        "example": "'How does a young creative learn if there's no market for the entry-level work that teaches you? The people who say they have this solved are not being honest with you.'",
+        "source": "script/talk-framework-v6.md"
+      }
+    }
+  ],
+  "closing": {
+    "title": "The gap is the problem.",
+    "body": "Three rungs eaten. The senior and master tiers stand on air. The honest answer is: we don't know yet who pays to teach the next generation. Don't trust anyone who says they do."
+  }
+}

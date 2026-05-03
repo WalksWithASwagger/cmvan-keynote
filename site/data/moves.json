@@ -1,0 +1,141 @@
+{
+  "source": "hand-curated from script/talk-framework-v6.md slide 5 + source-material/punk-rock-ai/",
+  "generated": "hand-curated",
+  "thesis": "Six moves keep recurring across the lineage. Different tools, same gestures.",
+  "moves": [
+    {
+      "id": "cut-up",
+      "label": "Cut-up",
+      "description": "Sever a continuous text or image stream into fragments and recombine. The break is the meaning. Authored coherence is what you refuse.",
+      "manifestations": [
+        {
+          "era": "dada",
+          "note": "Tristan Tzara cut newspaper articles into single words, dropped them in a hat, drew them out at random — and called the resulting jumble a poem."
+        },
+        {
+          "era": "situationists",
+          "note": "Burroughs and Gysin cut typed pages into quarters on a hotel-room floor in Tangier, then taped the rearranged strips back into prose."
+        },
+        {
+          "era": "xerox-punks",
+          "note": "Sniffin' Glue and Search & Destroy cut letters from magazine headlines and pasted them ransom-note style — the cut visible, not hidden."
+        },
+        {
+          "era": "ai",
+          "note": "Prompts that splice voices, eras, registers; outputs reassembled by a human hand. The model is the new pair of scissors."
+        }
+      ]
+    },
+    {
+      "id": "sampling",
+      "label": "Sampling",
+      "description": "Lift a fragment of someone else's recording — a drum break, a vocal, an ad — and loop or recontextualize it. Theft and homage in the same gesture.",
+      "manifestations": [
+        {
+          "era": "situationists",
+          "note": "Détourned advertising lifts the slogan whole and bends it. The image is sampled; only the meaning is rewritten."
+        },
+        {
+          "era": "hip-hop",
+          "note": "Kool Herc looped the ten-second drum break out of someone else's record. A whole genre emerged from that ten seconds."
+        },
+        {
+          "era": "selectors",
+          "note": "Dub plates were sampling-by-tape: King Tubby pulled the rhythm off the master, stripped the vocal, cut his own version."
+        },
+        {
+          "era": "ai",
+          "note": "Foundation models trained on a hundred and forty-five thousand of someone's photographs without consent. Sampling at planetary scale."
+        }
+      ]
+    },
+    {
+      "id": "detournement",
+      "label": "Détournement",
+      "description": "Hijack the corporate spectacle so it speaks against itself. Keep the form. Replace the meaning.",
+      "manifestations": [
+        {
+          "era": "situationists",
+          "note": "Debord and the SI named the move: take the ad, the slogan, the propaganda image, and turn its own grammar against it."
+        },
+        {
+          "era": "xerox-punks",
+          "note": "Punks hijacked the office Xerox — a productivity tool — and turned it into a samizdat printing press the boss didn't authorize."
+        },
+        {
+          "era": "ai",
+          "note": "Use the corporate model wrong on purpose. Run their alignment against them. Make it tell on its training data."
+        }
+      ]
+    },
+    {
+      "id": "selection",
+      "label": "Selection",
+      "description": "When generation is cheap, taste is the scarce skill. Choose what stays, what goes, what gets played at 1:42 a.m. The selector is the author.",
+      "manifestations": [
+        {
+          "era": "dada",
+          "note": "The point wasn't the cut. The point was what you chose to keep from the hat and what you threw away."
+        },
+        {
+          "era": "selectors",
+          "note": "Coxsone Dodd, Lee Perry, King Tubby — the hero of the dancehall was the one who knew which dub plate the room needed at exactly that moment."
+        },
+        {
+          "era": "hip-hop",
+          "note": "Crate-digging is curation as authorship. The break you pick is the song you make."
+        },
+        {
+          "era": "ai",
+          "note": "Generation is free. The work is the prompt, the cull, the second pass, the no. Externalize your taste."
+        }
+      ]
+    },
+    {
+      "id": "reuse",
+      "label": "Reuse",
+      "description": "Pick up the corporate tool — newspaper, photocopier, turntable, foundation model — and use it for what it wasn't sold for. The infrastructure was paid for. The use is yours.",
+      "manifestations": [
+        {
+          "era": "dada",
+          "note": "The newspaper was a mass-production technology of the war state. The Dadaists tore it up and used the scraps."
+        },
+        {
+          "era": "xerox-punks",
+          "note": "The photocopier was an office productivity tool. The punks saw a printing press they didn't have to ask permission to use."
+        },
+        {
+          "era": "hip-hop",
+          "note": "Two turntables — designed to play one record at a time — repurposed to loop, blend, and scratch other people's records into a new song."
+        },
+        {
+          "era": "ai",
+          "note": "Foundation models built for enterprise productivity, used by weirdos with a laptop to make zines, posters, manifestos, and ghosts."
+        }
+      ]
+    },
+    {
+      "id": "refusal",
+      "label": "Refusal",
+      "description": "Say no to the form as it was sold. The song as it was released. The image as it was framed. The model as it was aligned. The refusal is the creative act.",
+      "manifestations": [
+        {
+          "era": "dada",
+          "note": "Refusal of authored coherence. Refusal of the war-state's claim on meaning. The cabaret as the picket line."
+        },
+        {
+          "era": "xerox-punks",
+          "note": "DIY zines refused the gatekeepers — no editor, no publisher, no permission. Smudged toner as a moral position."
+        },
+        {
+          "era": "hip-hop",
+          "note": "Refusing the song as it was sold to you. The break — not the chorus — is the part that matters."
+        },
+        {
+          "era": "ai",
+          "note": "Use it wrong on purpose. Refuse the optimized output. Build a posse. Hold the critique and the capability in both hands."
+        }
+      ]
+    }
+  ]
+}

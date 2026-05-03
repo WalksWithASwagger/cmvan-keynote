@@ -1,0 +1,76 @@
+{
+  "source": "script/talk-framework-v6.md slide 19 + source-material/punk-rock-ai/vancouver-ai-meetup-23-transcript.md",
+  "generated": "hand-curated",
+  "anchor": {
+    "quote": "My ancestors didn't have chainsaws. But they would've used them if they were there.",
+    "speaker": "Anthony Joseph (Isiléyu)",
+    "context": "Squamish Nation Counselor, Indigenous welcome at Vancouver AI Community Meetup #23. The chainsaw is not the betrayal of the carving — it's the next chapter of it. The creative impulse is continuous; the tools change.",
+    "source_path": "source-material/punk-rock-ai/vancouver-ai-meetup-23-transcript.md",
+    "echo": "script/talk-framework-v6.md slide 19"
+  },
+  "thesis": "Every \"neutral\" tool was a corporate spectacle until somebody used it wrong on purpose.",
+  "subThesis": "The pamphlet, the camera, the transmitter, the photocopier, the timeline, the prompt. Each one shipped as a productivity machine. Each one became a weapon for the people who refused to ask permission.",
+  "refrain": "The tool is never neutral. But neither are we.",
+  "tools": [
+    {
+      "id": "printing-press",
+      "name": "Printing press",
+      "era": "1440s — 1500s",
+      "neutral_framing": "A faster scribe. Gutenberg's movable type was sold to the Church and to wealthy patrons as a way to mass-produce indulgences and Latin Bibles — a productivity upgrade for the existing clerical monopoly on the written word.",
+      "neutral_source": "Eisenstein, The Printing Press as an Agent of Change (1979); Wikipedia: Printing press / Gutenberg Bible",
+      "wrong_on_purpose": "Luther translated the Bible into German and printed it cheap. Pamphleteers cranked out vernacular tracts that ordinary people could actually read. Within a generation the Reformation, the scientific revolution, and the modern public sphere all rode on broken-rule presswork the licensors could not contain.",
+      "wrong_source": "Pettegree, Brand Luther (2015); Wikipedia: Reformation, Pamphlet wars",
+      "echo": "script/talk-framework-v6.md slide 5 — Dada lineage"
+    },
+    {
+      "id": "photography",
+      "name": "Photography",
+      "era": "1839 — 1910s",
+      "neutral_framing": "A society portrait machine. Daguerreotype studios sold the camera as a polite mirror for the merchant class — a way to keep a likeness, decorate a parlor, document a pose.",
+      "neutral_source": "Sontag, On Photography (1977); Wikipedia: History of photography",
+      "wrong_on_purpose": "Jacob Riis dragged a flash powder rig into the tenements of the Lower East Side and published How the Other Half Lives (1890). Lewis Hine put child laborers in front of his lens. The same camera that flattered the rich was used wrong on purpose to indict them — muckraking journalism is a photographic invention.",
+      "wrong_source": "Riis, How the Other Half Lives (1890); Hine, NCLC archives, Library of Congress; Wikipedia: Muckraker",
+      "echo": "script/talk-framework-v6.md (Cris's own photography origin, slide 3)"
+    },
+    {
+      "id": "radio",
+      "name": "Radio",
+      "era": "1920s — 1970s",
+      "neutral_framing": "A licensed broadcast utility. National regulators (FCC in the US, Marine Broadcasting Offences Act in the UK) carved the spectrum into commercial and state-run channels. Radio was sold as a one-to-many household appliance for sponsored music and the evening news.",
+      "neutral_source": "Hilmes, Radio Voices (1997); Wikipedia: History of radio, FCC",
+      "wrong_on_purpose": "Pirate stations like Radio Caroline broadcast rock 'n' roll from a ship in the North Sea in 1964. Free Radio Berkeley, Radio Alice in Bologna, the FM punk stations of the 1970s — operators jammed transmitters into attics and boats so the music the licensors wouldn't play could find an audience anyway.",
+      "wrong_source": "Chapman, Selling the Sixties: The Pirates and Pop Music Radio (1992); Wikipedia: Radio Caroline, Pirate radio",
+      "echo": "script/talk-framework-v6.md slide 5 — corporations build, weirdos figure out what it's for"
+    },
+    {
+      "id": "copy-machine",
+      "name": "Copy machine (Xerox)",
+      "era": "1959 — 1980s",
+      "neutral_framing": "An office productivity tool. Xerox sold the 914 as a way to duplicate memos faster — a corporate efficiency upgrade slotted in next to the typewriter and the filing cabinet.",
+      "neutral_source": "Owen, Copies in Seconds (2004); Wikipedia: Xerox 914",
+      "wrong_on_purpose": "Soviet dissidents passed banned literature hand-typed and photocopied as samizdat. Punks in London, New York, and San Francisco — Sniffin' Glue, Search & Destroy, Maximum Rocknroll — turned the office copier into a printing press they didn't have to ask permission to use. Cut-and-paste headlines, smudged toner, anyone could publish.",
+      "wrong_source": "Komaromi, Uncensored: Samizdat Novels and the Quest for Autonomy in Soviet Dissidence (2015); Triggs, Fanzines (2010); Wikipedia: Samizdat, Sniffin' Glue",
+      "echo": "script/talk-framework-v6.md slide 5 — Xerox punks beat"
+    },
+    {
+      "id": "social-media",
+      "name": "Social media",
+      "era": "2004 — present",
+      "neutral_framing": "A neutral connection layer. Facebook, Twitter, Instagram pitched themselves as productivity utilities for friendship and \"giving people the power to build community\" — engagement-optimized newsfeeds dressed up as civic infrastructure.",
+      "neutral_source": "Zuckerberg, Founder's Letter (2012); Zuboff, The Age of Surveillance Capitalism (2019); Wikipedia: Facebook, Twitter",
+      "wrong_on_purpose": "Tunisian and Egyptian organizers used Facebook events and Twitter hashtags to coordinate the 2010–2011 Arab Spring uprisings. Alicia Garza, Patrisse Cullors, and Opal Tometi turned #BlackLivesMatter from a Facebook post into a global movement. Hong Kong protesters used Telegram and AirDrop. The platform optimized for ad clicks; the weirdos used it to organize on the street.",
+      "wrong_source": "Tufekci, Twitter and Tear Gas (2017); Garza, The Purpose of Power (2020); Wikipedia: Arab Spring, Black Lives Matter",
+      "echo": "script/talk-framework-v6.md — \"corporations build the infrastructure, weirdos figure out what it's actually for\""
+    },
+    {
+      "id": "ai",
+      "name": "Generative AI",
+      "era": "2022 — present",
+      "neutral_framing": "An enterprise productivity tool. The model labs sell ChatGPT, Claude, Gemini as average-of-the-internet assistants — write the email faster, summarize the meeting, generate the marketing copy. Speed without judgment is a leaf blower.",
+      "neutral_source": "OpenAI / Anthropic / Google product marketing, 2022–2026; script/talk-framework-v6.md slide 9",
+      "wrong_on_purpose": "Use it wrong on purpose. Feed it your own corpus and ask what you sound like. Train tiny LoRAs on banned styles. Cut up your transcripts and generate against the grain. Pair AI with your three documents — policy, style, worldview — so the machine stops giving you the average of the internet and starts amplifying what makes you you. Build a posse. Pick up the tool. Use it wrong. Share what you learn.",
+      "wrong_source": "script/talk-framework-v6.md slides 17–20 (Three Documents, Posse, Release Day, Slide 19)",
+      "echo": "Slide 19 — Anthony Joseph: they would've used it if it were there"
+    }
+  ]
+}
