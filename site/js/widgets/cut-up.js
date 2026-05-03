@@ -2,6 +2,11 @@
 // Paste any text → choose a cut size (word / phrase / line) → shuffle the
 // fragments → render into a zine-style output canvas. Export as PNG via
 // html-to-image (CDN <script>, same dep as Both Hands).
+//
+// Layouts: "flow" (default) joins fragments inline; "scatter" is the Burroughs
+// floor arrangement — strips absolutely-positioned with a deterministic random
+// rotation/offset seeded by `currentSeed` so a share-link rehydrates the same
+// layout. Falls back to flow under 480px.
 
 import { load } from "/js/common/storage.js";
 
@@ -22,12 +27,18 @@ const metaStamp = document.querySelector("[data-meta-stamp]");
 let cutMode = "phrase";
 let punctMode = "keep";
 let marksMode = "off";
+let layoutMode = "flow";
 let lastFragments = null;
+let currentSeed = null;
 
+const SCATTER_MIN_WIDTH = 480;
+
+restoreFromHash();
 bindToggles();
 bindActions();
 bindSeeds();
 refreshTdocSeed();
+bindResize();
 stamp();
 
 // ---------------------------------------------------------------------------
@@ -45,6 +56,13 @@ function bindToggles() {
       if (lastFragments) renderFragments(lastFragments);
     });
   });
+  document.querySelectorAll("[data-layout]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      setMode("data-layout", btn.dataset.layout, (v) => (layoutMode = v));
+      if (lastFragments) renderFragments(lastFragments);
+      writeHash();
+    });
+  });
 }
 
 function setMode(attr, value, apply) {
@@ -58,9 +76,11 @@ function bindActions() {
   document.querySelector('[data-action="cut"]').addEventListener("click", cut);
   document.querySelector('[data-action="recut"]').addEventListener("click", () => {
     if (!lastFragments) return cut();
-    const shuffled = shuffle([...lastFragments]);
+    currentSeed = makeSeed();
+    const shuffled = seededShuffle([...lastFragments], currentSeed);
     lastFragments = shuffled;
     renderFragments(shuffled);
+    writeHash();
     flash("re-shuffled");
   });
   document.querySelector('[data-action="png"]').addEventListener("click", exportPng);
@@ -73,6 +93,15 @@ function bindSeeds() {
   });
 }
 
+function bindResize() {
+  let t;
+  window.addEventListener("resize", () => {
+    if (layoutMode !== "scatter" || !lastFragments) return;
+    clearTimeout(t);
+    t = setTimeout(() => renderFragments(lastFragments), 120);
+  });
+}
+
 // ---------------------------------------------------------------------------
 
 function cut() {
@@ -81,13 +110,15 @@ function cut() {
     flash("paste something first");
     return;
   }
-  const fragments = shuffle(splitText(text, cutMode, punctMode));
+  currentSeed = makeSeed();
+  const fragments = seededShuffle(splitText(text, cutMode, punctMode), currentSeed);
   if (!fragments.length) {
     flash("nothing to cut");
     return;
   }
   lastFragments = fragments;
   renderFragments(fragments);
+  writeHash();
   flash(`cut into ${fragments.length} fragment${fragments.length === 1 ? "" : "s"}`);
 }
 
@@ -109,10 +140,28 @@ function splitText(text, mode, punct) {
     .filter(Boolean);
 }
 
-function shuffle(arr) {
+// mulberry32 — small deterministic PRNG so the same seed yields the same
+// shuffle + scatter layout (acceptance: share-link rehydrates identically).
+function makeRng(seed) {
+  let s = seed >>> 0;
+  return function () {
+    s = (s + 0x6d2b79f5) >>> 0;
+    let t = s;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function makeSeed() {
+  return (Math.random() * 2 ** 32) >>> 0;
+}
+
+function seededShuffle(arr, seed) {
+  const rng = makeRng(seed);
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(rng() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
@@ -123,19 +172,117 @@ function shuffle(arr) {
 function renderFragments(fragments) {
   metaMode.textContent = `cut by ${cutMode}`;
   metaCount.textContent = `${fragments.length} fragment${fragments.length === 1 ? "" : "s"}`;
-  if (marksMode === "on") {
+
+  const useScatter =
+    layoutMode === "scatter" && window.innerWidth >= SCATTER_MIN_WIDTH;
+
+  if (useScatter) {
+    renderScatter(fragments);
+  } else if (marksMode === "on") {
+    bodyEl.classList.remove("cutup__output-body--scatter");
+    bodyEl.style.height = "";
     bodyEl.innerHTML = fragments
       .map((f) => `<span class="cut">${escapeHTML(f)}</span>`)
       .join(" ");
   } else {
+    bodyEl.classList.remove("cutup__output-body--scatter");
+    bodyEl.style.height = "";
     const sep = cutMode === "line" ? "\n" : " ";
     bodyEl.textContent = fragments.join(sep);
   }
   stamp();
 }
 
+// Burroughs floor arrangement: strips scattered across a bounded canvas with
+// per-fragment rotation (-8°..+8°) and offset. Layout is deterministic from
+// `currentSeed` so a share-link rehydrates the same arrangement.
+function renderScatter(fragments) {
+  bodyEl.classList.add("cutup__output-body--scatter");
+  bodyEl.innerHTML = "";
+
+  const rng = makeRng((currentSeed ?? 0) ^ 0x5cabbed);
+  const width = bodyEl.clientWidth || outputEl.clientWidth || 600;
+  const colCount = Math.max(2, Math.min(4, Math.round(width / 220)));
+  const colWidth = width / colCount;
+  const rowHeight = 56;
+  const jitterX = colWidth * 0.18;
+  const jitterY = rowHeight * 0.45;
+
+  let maxBottom = 0;
+  fragments.forEach((text, i) => {
+    const col = i % colCount;
+    const row = Math.floor(i / colCount);
+    const x = col * colWidth + (rng() * 2 - 1) * jitterX;
+    const y = row * rowHeight + (rng() * 2 - 1) * jitterY;
+    const rot = (rng() * 2 - 1) * 8; // -8°..+8°
+    const w = colWidth - 12;
+
+    const strip = document.createElement("span");
+    strip.className = "cutup__strip" + (marksMode === "on" ? " cut" : "");
+    strip.textContent = text;
+    strip.style.left = `${Math.max(0, x)}px`;
+    strip.style.top = `${Math.max(0, y)}px`;
+    strip.style.width = `${w}px`;
+    strip.style.transform = `rotate(${rot.toFixed(2)}deg)`;
+    bodyEl.appendChild(strip);
+
+    const bottom = Math.max(0, y) + rowHeight;
+    if (bottom > maxBottom) maxBottom = bottom;
+  });
+
+  bodyEl.style.height = `${maxBottom + 16}px`;
+}
+
 function stamp() {
   if (metaStamp) metaStamp.textContent = new Date().toISOString().slice(0, 10);
+}
+
+// ---------------------------------------------------------------------------
+// share-link rehydration: hash carries cut/punct/marks/layout/seed so the
+// same URL produces the same arrangement after the user re-seeds the text.
+
+function writeHash() {
+  const params = new URLSearchParams({
+    cut: cutMode,
+    punct: punctMode,
+    marks: marksMode,
+    layout: layoutMode,
+  });
+  if (currentSeed != null) params.set("seed", String(currentSeed));
+  const next = `#${params.toString()}`;
+  if (window.location.hash !== next) {
+    history.replaceState(null, "", next);
+  }
+}
+
+function restoreFromHash() {
+  const hash = (window.location.hash || "").replace(/^#/, "");
+  if (!hash) return;
+  const params = new URLSearchParams(hash);
+  const cut = params.get("cut");
+  const punct = params.get("punct");
+  const marks = params.get("marks");
+  const layout = params.get("layout");
+  const seed = params.get("seed");
+  if (cut === "word" || cut === "phrase" || cut === "line") {
+    cutMode = cut;
+    setMode("data-cut", cut, () => {});
+  }
+  if (punct === "keep" || punct === "strip") {
+    punctMode = punct;
+    setMode("data-punct", punct, () => {});
+  }
+  if (marks === "on" || marks === "off") {
+    marksMode = marks;
+    setMode("data-marks", marks, () => {});
+  }
+  if (layout === "flow" || layout === "scatter") {
+    layoutMode = layout;
+    setMode("data-layout", layout, () => {});
+  }
+  if (seed && /^\d+$/.test(seed)) {
+    currentSeed = Number(seed) >>> 0;
+  }
 }
 
 // ---------------------------------------------------------------------------
