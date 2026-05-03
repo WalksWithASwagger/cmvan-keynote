@@ -1,0 +1,129 @@
+/* /widgets/both-hands-gallery.html — read-only wall of decoded canvases.
+   Reuses .bhf-* classes from both-hands.css for the diptych itself; this
+   file only adds the wall layout and read-only adjustments. */
+
+.bhg-intro {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.bhg-intro h1 {
+  margin: 0 0 var(--space-3);
+}
+
+.bhg-intro__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 50ch;
+  color: var(--fg-soft);
+}
+
+.bhg-intro__hint {
+  margin-top: var(--space-3);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.bhg-wall {
+  padding-block: var(--space-5);
+}
+
+.bhg-wall__status {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: var(--space-4);
+}
+
+.bhg-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1100px) {
+  .bhg-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.bhg-card {
+  display: block;
+}
+
+.bhg-card__inner {
+  display: grid;
+  gap: var(--space-3);
+}
+
+/* Tighten the diptych for card-density display. The base .bhf-canvas keeps
+   its frame, but we drop min-heights and shrink internal scale. */
+.bhg-canvas {
+  max-width: 100%;
+}
+
+.bhg-canvas .bhf-side {
+  min-height: 0;
+  padding: var(--space-3);
+}
+
+.bhg-canvas .bhf-side h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+  line-height: 1.1;
+  margin: 0 0 var(--space-3);
+}
+
+.bhg-canvas .bhf-side--critique h3 {
+  color: var(--fg);
+}
+
+.bhg-canvas .bhf-side--capability h3 {
+  color: var(--paper-ink);
+}
+
+.bhg-list {
+  gap: var(--space-1);
+}
+
+.bhg-item {
+  grid-template-columns: 1.6rem 1fr;
+}
+
+.bhg-item__text {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 1.35;
+  border-bottom: 1px solid currentColor;
+  padding: 0.25rem 0;
+  word-break: break-word;
+}
+
+.bhf-side--critique .bhg-item__text {
+  color: var(--fg);
+  border-color: var(--accent);
+}
+
+.bhf-side--capability .bhg-item__text {
+  color: var(--paper-ink);
+  border-color: var(--paper-ink);
+}
+
+.bhg-card__note {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--fg-soft);
+  margin: 0;
+  max-width: 60ch;
+}
+
+.bhg-card__actions {
+  margin: 0;
+}

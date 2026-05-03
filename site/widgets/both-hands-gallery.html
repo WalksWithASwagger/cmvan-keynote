@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Both Hands Gallery &mdash; Punk Rock AI</title>
+    <meta
+      name="description"
+      content="A public wall of submitted Both Hands canvases. Each card decodes a shared #s= hash into the same diptych — critique in one hand, capability in the other."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta property="og:title" content="Both Hands Gallery — Punk Rock AI" />
+    <meta property="og:description" content="A public wall of opt-in Both Hands canvases. Critique in one hand, capability in the other." />
+    <meta property="og:url" content="https://punkrockai.com/widgets/both-hands-gallery.html" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/widgets/both-hands.css" />
+    <link rel="stylesheet" href="/css/widgets/both-hands-gallery.css" />
+  </head>
+  <body class="shell">
+    <header class="site-header" data-include="header"></header>
+
+    <main>
+      <section class="bhg-intro grain scanlines">
+        <div class="wrap wrap--narrow">
+          <p class="kicker kicker--accent">Slide 12 &middot; the wall</p>
+          <h1>Both hands full &mdash; the gallery.</h1>
+          <p class="bhg-intro__lede">
+            Other people&rsquo;s stances. Critique in one hand, capability in
+            the other. Each card is a shared canvas decoded from a hash &mdash;
+            no server, no account, just the diptych.
+          </p>
+          <p class="bhg-intro__hint">
+            Want yours up here? Build one on the
+            <a href="/widgets/both-hands.html">canvas</a>, copy the share link,
+            and open a PR or issue at
+            <a href="https://github.com/WalksWithASwagger/cmvan-keynote" target="_blank" rel="noopener">github.com/WalksWithASwagger/cmvan-keynote</a>.
+          </p>
+        </div>
+      </section>
+
+      <section class="bhg-wall">
+        <div class="wrap">
+          <p class="bhg-wall__status" id="bhg-status" aria-live="polite">Loading the wall&hellip;</p>
+          <ul class="bhg-grid" id="bhg-grid"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/both-hands-gallery.js"></script>
+  </body>
+</html>
