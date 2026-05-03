@@ -205,6 +205,14 @@
   outline: none;
 }
 
+.cutup__seed button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  border-color: var(--border-strong);
+  color: var(--fg-soft);
+  border-style: dashed;
+}
+
 .cutup__status {
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
