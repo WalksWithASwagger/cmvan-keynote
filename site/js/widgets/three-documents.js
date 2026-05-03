@@ -279,7 +279,7 @@ function resolveToken(token, ctx) {
   const lines = ctx.lines[docId] ?? [];
   if (op === "first") return lines[0] ?? "";
   if (op === "last") return lines[lines.length - 1] ?? "";
-  if (op === "refusals") return ctx.refusals[docId] ?? lines[0] ?? "";
+  if (op === "refusals") return ctx.refusals[docId] ?? "";
   const lineMatch = op && op.match(/^line:(\d+)$/);
   if (lineMatch) {
     const idx = Number(lineMatch[1]) - 1;
