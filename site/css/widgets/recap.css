@@ -148,6 +148,28 @@
   letter-spacing: -0.02em;
 }
 
+.section-source-link {
+  display: inline-block;
+  margin-top: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--border-strong);
+  padding-bottom: 1px;
+  width: max-content;
+  max-width: 100%;
+  word-break: break-all;
+}
+
+.section-source-link:hover,
+.section-source-link:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  outline: none;
+}
+
 .recap__section h3 {
   font-family: var(--font-display);
   font-size: var(--fs-lg);
