@@ -10,6 +10,30 @@ const STATE_KEY = "posse-builder";
 const SEEDS_URL = "/data/posse-seeds.json";
 const VIEW_W = 800;
 const VIEW_H = 560;
+const SVG_NS = "http://www.w3.org/2000/svg";
+const SVG_EXPORT_STYLE_PROPS = [
+  "color",
+  "display",
+  "fill",
+  "fill-opacity",
+  "font-family",
+  "font-size",
+  "font-style",
+  "font-weight",
+  "letter-spacing",
+  "line-height",
+  "opacity",
+  "paint-order",
+  "stroke",
+  "stroke-dasharray",
+  "stroke-linecap",
+  "stroke-linejoin",
+  "stroke-miterlimit",
+  "stroke-opacity",
+  "stroke-width",
+  "text-anchor",
+  "visibility",
+];
 
 const svgEl = document.getElementById("pb-svg");
 const legendEl = document.getElementById("pb-legend");
@@ -298,38 +322,7 @@ function removeNode(id) {
 // ---------------- export PNG ----------------
 
 function exportPNG() {
-  // External stylesheets and CSS custom properties (var(--font-mono),
-  // var(--bg)) do NOT apply when an SVG is loaded into an <Image> for
-  // canvas rasterization. Clone the live SVG and embed a <style> block
-  // with literal resolved values so labels render correctly.
-  const root = getComputedStyle(document.documentElement);
-  const fontMono = root.getPropertyValue("--font-mono").trim() || "monospace";
-  const bg = root.getPropertyValue("--bg").trim() || "#0a0a0a";
-  const fg = root.getPropertyValue("--fg").trim() || "#ffffff";
-  const accent = root.getPropertyValue("--accent").trim() || "#e11d2e";
-  const accentInk = root.getPropertyValue("--accent-ink").trim() || "#ffffff";
-
-  const svg = svgEl.cloneNode(true);
-  if (!svg.getAttribute("xmlns")) {
-    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-  }
-  const styleEl = document.createElementNS("http://www.w3.org/2000/svg", "style");
-  styleEl.textContent = `
-    .pb-link { stroke-opacity: 0.85; stroke-width: 1.6px; fill: none; }
-    .pb-node circle { fill: ${bg}; stroke: ${fg}; stroke-width: 1.6px; }
-    .pb-node--self circle { fill: ${accent}; stroke: ${accent}; }
-    .pb-node text {
-      font-family: ${fontMono};
-      font-size: 11px;
-      letter-spacing: 0.06em;
-      fill: ${fg};
-      paint-order: stroke;
-      stroke: ${bg};
-      stroke-width: 3px;
-    }
-    .pb-node--self text { fill: ${accentInk}; stroke: ${accent}; }
-  `;
-  svg.insertBefore(styleEl, svg.firstChild);
+  const svg = cloneSvgForExport();
 
   const xml = new XMLSerializer().serializeToString(svg);
   const svgBlob = new Blob([xml], { type: "image/svg+xml;charset=utf-8" });
@@ -341,7 +334,7 @@ function exportPNG() {
     canvas.width = VIEW_W * scale;
     canvas.height = VIEW_H * scale;
     const ctx = canvas.getContext("2d");
-    ctx.fillStyle = getComputedStyle(document.body).backgroundColor || "#0a0a0a";
+    ctx.fillStyle = svg.style.backgroundColor || "#0a0a0a";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     URL.revokeObjectURL(url);
@@ -360,6 +353,39 @@ function exportPNG() {
     console.warn("[posse-builder] PNG export failed: SVG load error");
   };
   img.src = url;
+}
+
+function cloneSvgForExport() {
+  const clone = svgEl.cloneNode(true);
+  const bg = getComputedStyle(svgEl).backgroundColor || "#0a0a0a";
+
+  clone.setAttribute("xmlns", SVG_NS);
+  clone.setAttribute("width", VIEW_W);
+  clone.setAttribute("height", VIEW_H);
+  clone.style.backgroundColor = bg;
+
+  inlineComputedSvgStyles(svgEl, clone);
+
+  const background = document.createElementNS(SVG_NS, "rect");
+  background.setAttribute("width", "100%");
+  background.setAttribute("height", "100%");
+  background.setAttribute("fill", bg);
+  clone.insertBefore(background, clone.firstChild);
+  return clone;
+}
+
+function inlineComputedSvgStyles(sourceRoot, cloneRoot) {
+  const sourceEls = [sourceRoot, ...sourceRoot.querySelectorAll("*")];
+  const cloneEls = [cloneRoot, ...cloneRoot.querySelectorAll("*")];
+
+  sourceEls.forEach((sourceEl, index) => {
+    const cloneEl = cloneEls[index];
+    if (!cloneEl) return;
+    const computed = getComputedStyle(sourceEl);
+    SVG_EXPORT_STYLE_PROPS.forEach((prop) => {
+      cloneEl.style.setProperty(prop, computed.getPropertyValue(prop));
+    });
+  });
 }
 
 // ---------------- opt-in submission stub ----------------
