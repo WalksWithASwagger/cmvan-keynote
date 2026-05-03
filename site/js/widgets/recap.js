@@ -85,7 +85,7 @@ function escapeAttr(s) {
   });
   if (!sections.length) return;
 
-  const visible = new Set();
+  const visible = new Map();
 
   const setActive = (id) => {
     links.forEach((link, key) => {
@@ -96,14 +96,23 @@ function escapeAttr(s) {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) visible.add(entry.target.id);
-        else visible.delete(entry.target.id);
+        if (entry.isIntersecting) {
+          visible.set(entry.target.id, entry.boundingClientRect.top);
+        } else {
+          visible.delete(entry.target.id);
+        }
       });
       if (!visible.size) return;
-      // Pick the section whose id appears earliest in document order.
-      const activeId = sections
-        .map((s) => s.id)
-        .find((id) => visible.has(id));
+      // Pick the visible section with the smallest non-negative top — i.e.
+      // the one whose top edge is closest to (but not above) the viewport top.
+      let activeId = null;
+      let bestTop = Infinity;
+      visible.forEach((top, id) => {
+        if (top >= 0 && top < bestTop) {
+          bestTop = top;
+          activeId = id;
+        }
+      });
       if (activeId) setActive(activeId);
     },
     { rootMargin: "-20% 0px -70% 0px", threshold: 0 }

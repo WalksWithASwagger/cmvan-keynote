@@ -64,7 +64,7 @@
   border-bottom: 1px solid var(--border);
   background: var(--bg-elevated);
   position: sticky;
-  top: 4.5rem;
+  top: var(--site-header-height, 4.5rem);
   z-index: 20;
 }
 
@@ -140,7 +140,7 @@
 @media (min-width: 1024px) {
   .recap-toc {
     position: fixed;
-    top: 4.5rem;
+    top: var(--site-header-height, 4.5rem);
     left: 0;
     bottom: 0;
     width: 16rem;
@@ -467,8 +467,5 @@
 @media (max-width: 720px) {
   .recap-hero h1 {
     font-size: var(--fs-2xl);
-  }
-  .recap-toc ol {
-    grid-template-columns: 1fr;
   }
 }

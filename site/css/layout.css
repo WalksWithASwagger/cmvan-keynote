@@ -28,6 +28,18 @@
    js/common/header.js. Two stripes: brand row + nav row.
    ------------------------------------------------------------------ */
 
+:root {
+  /* Approximate height of .site-header (sticky). Mobile = two stacked rows;
+     desktop = single row. Used by sticky elements like /recap TOC. */
+  --site-header-height: 5rem;
+}
+
+@media (min-width: 721px) {
+  :root {
+    --site-header-height: 3.6rem;
+  }
+}
+
 .site-header {
   position: sticky;
   top: 0;
