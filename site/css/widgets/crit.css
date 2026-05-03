@@ -1,0 +1,211 @@
+/* /widgets/crit — pick a kind, pick an angle, build a structured crit. */
+
+.crit-intro {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.crit-intro h1 {
+  margin: 0 0 var(--space-3);
+}
+
+.crit-intro__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 56ch;
+  color: var(--fg-soft);
+}
+
+.crit-intro__pull {
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+}
+
+.crit {
+  padding-block: var(--space-5);
+}
+
+.crit__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 880px) {
+  .crit__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 22rem);
+    align-items: start;
+  }
+}
+
+.crit__panel h2,
+.crit__sidebar h3 {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin: var(--space-3) 0 var(--space-2);
+}
+
+.crit__panel h2:first-child {
+  margin-top: 0;
+}
+
+.crit__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-bottom: var(--space-2);
+}
+
+.crit__chip {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.45rem 0.8rem;
+  background: var(--bg-elevated);
+  color: var(--fg-soft);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 120ms, color 120ms, border-color 120ms;
+}
+
+.crit__chip:hover {
+  border-color: var(--accent);
+  color: var(--fg);
+}
+
+.crit__chip[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+.crit__chip-hint {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+
+.crit__chip[aria-pressed="true"] .crit__chip-hint {
+  color: var(--bg);
+  opacity: 0.85;
+}
+
+.crit__textarea {
+  min-height: 11rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+}
+
+.crit__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.crit__status {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  min-height: 1em;
+  margin-top: var(--space-2);
+}
+
+.crit__sidebar {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.crit__lens {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  padding: var(--space-3);
+}
+
+.crit__lens-title {
+  margin: 0;
+}
+
+.crit__lens-tag {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  line-height: 1.3;
+  color: var(--fg);
+  margin: var(--space-2) 0;
+}
+
+.crit__lens-q {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--fg-soft);
+}
+
+.crit__lens-q li + li {
+  margin-top: var(--space-2);
+}
+
+.crit__output-wrap {
+  margin-top: var(--space-5);
+}
+
+.crit__output-wrap h2 {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin: 0 0 var(--space-2);
+}
+
+.crit__output {
+  background: var(--bg-elevated);
+  border: 2px solid var(--accent);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  color: var(--fg-soft);
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 12rem;
+  margin: 0;
+}
+
+.crit__output:empty::before {
+  content: "Pick a kind and an angle, then hit build. The template appears here.";
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--muted);
+}
+
+.crit__image {
+  margin-bottom: var(--space-3);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  padding: var(--space-2);
+}
+
+.crit__image img {
+  display: block;
+  max-width: 100%;
+  max-height: 24rem;
+  margin: 0 auto;
+}
