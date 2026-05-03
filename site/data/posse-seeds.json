@@ -1,0 +1,21 @@
+{
+  "self": { "id": "self", "label": "You", "kind": "self" },
+  "nodes": [
+    { "id": "seed-collab", "label": "A trusted collaborator", "kind": "person" },
+    { "id": "seed-mentor", "label": "A mentor", "kind": "person" },
+    { "id": "seed-foil", "label": "A loving foil", "kind": "person" },
+    { "id": "seed-audience", "label": "Your real audience", "kind": "audience" }
+  ],
+  "links": [
+    { "source": "self", "target": "seed-collab", "kind": "collaborator" },
+    { "source": "self", "target": "seed-mentor", "kind": "mentor" },
+    { "source": "self", "target": "seed-foil", "kind": "foil" },
+    { "source": "self", "target": "seed-audience", "kind": "audience" }
+  ],
+  "relationships": [
+    { "id": "collaborator", "label": "Collaborator", "color": "#e11d2e" },
+    { "id": "mentor", "label": "Mentor", "color": "#f4c542" },
+    { "id": "foil", "label": "Foil", "color": "#7bbf6a" },
+    { "id": "audience", "label": "Audience", "color": "#4ea3c4" }
+  ]
+}

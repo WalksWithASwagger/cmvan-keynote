@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Posse builder &mdash; Punk Rock AI</title>
+    <meta
+      name="description"
+      content="Drag-drop your posse into a network. You in the centre, collaborators, mentors, foils, and audience around you. Saves locally. Export as PNG."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta property="og:title" content="Posse builder — Punk Rock AI" />
+    <meta property="og:description" content="A force-directed graph of your posse. You in the centre. Edges coloured by relationship." />
+    <meta property="og:url" content="https://punkrockai.com/widgets/posse-builder.html" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/widgets/posse-builder.css" />
+  </head>
+  <body class="shell">
+    <header class="site-header" data-include="header"></header>
+
+    <main>
+      <section class="pb-intro grain scanlines">
+        <div class="wrap wrap--narrow">
+          <p class="kicker kicker--accent">Slide 17 &middot; build your posse</p>
+          <h1>Posse builder.</h1>
+          <p class="pb-intro__lede">
+            You in the centre. Collaborators, mentors, foils, audience around
+            you. Add a name, pick a relationship, drag the nodes wherever they
+            sit in your head. Saves to this browser. Export as PNG to take it
+            with you.
+          </p>
+        </div>
+      </section>
+
+      <section class="pb">
+        <div class="wrap">
+          <div class="pb__layout">
+            <div class="pb__stage">
+              <div class="pb__legend" id="pb-legend" aria-label="Relationship legend"></div>
+              <div class="pb__canvas-wrap">
+                <svg
+                  id="pb-svg"
+                  class="pb__svg"
+                  viewBox="0 0 800 560"
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  aria-label="Force-directed posse graph"
+                ></svg>
+                <div class="pb__hint" id="pb-hint" aria-live="polite">
+                  Drag a node. Click to remove. Self node is fixed.
+                </div>
+              </div>
+            </div>
+
+            <aside class="pb__panel" aria-label="Posse controls">
+              <form class="pb__form" id="pb-form">
+                <label class="pb__field">
+                  <span>Name</span>
+                  <input
+                    type="text"
+                    id="pb-name"
+                    name="name"
+                    maxlength="48"
+                    autocomplete="off"
+                    placeholder="e.g. Maya, your editor"
+                    required
+                  />
+                </label>
+                <label class="pb__field">
+                  <span>Relationship</span>
+                  <select id="pb-kind" name="kind">
+                    <option value="collaborator">Collaborator</option>
+                    <option value="mentor">Mentor</option>
+                    <option value="foil">Foil</option>
+                    <option value="audience">Audience</option>
+                  </select>
+                </label>
+                <button type="submit" class="pb__btn pb__btn--primary">
+                  Add to posse
+                </button>
+              </form>
+
+              <ul class="pb__list" id="pb-list" aria-label="Posse list"></ul>
+
+              <div class="pb__actions">
+                <button
+                  type="button"
+                  class="pb__btn"
+                  id="pb-export"
+                  aria-label="Export graph as PNG"
+                >
+                  Export PNG
+                </button>
+                <button
+                  type="button"
+                  class="pb__btn"
+                  id="pb-reset"
+                  aria-label="Reset graph to seeds"
+                >
+                  Reset
+                </button>
+              </div>
+
+              <label class="pb__optin">
+                <input type="checkbox" id="pb-optin" />
+                <span>
+                  Submit anonymized topology to the public gallery (stub).
+                </span>
+              </label>
+              <p class="pb__optin-note" id="pb-optin-note" aria-live="polite"></p>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" defer></script>
+    <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/posse-builder.js"></script>
+  </body>
+</html>
