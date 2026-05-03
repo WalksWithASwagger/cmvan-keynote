@@ -295,7 +295,7 @@ function renderHTML(p) {
     );
   }
   if (p.handle) {
-    if (p.handleLink) {
+    if (p.handleLink && isHttpUrl(p.handleLink)) {
       contactBits.push(
         `<a href="${escapeAttr(p.handleLink)}" style="color:${soft};text-decoration:none;">${escapeHTML(p.handle)}</a>`,
       );
@@ -440,4 +440,17 @@ function escapeHTML(str) {
 
 function escapeAttr(str) {
   return escapeHTML(str);
+}
+
+// Protocol whitelist for user-supplied URLs. Defense-in-depth: keeps
+// javascript:/data:/vbscript: out of href= even if upstream resolution
+// changes. URL parsing (not prefix match) handles whitespace/case tricks
+// like " javascript:..." or "JaVaScRiPt:".
+function isHttpUrl(str) {
+  try {
+    const u = new URL(String(str));
+    return u.protocol === "http:" || u.protocol === "https:";
+  } catch {
+    return false;
+  }
 }
