@@ -36,6 +36,7 @@ let currentSeed = null;
 let pendingRestoredSeed = false;
 
 const SCATTER_MIN_WIDTH = 480;
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 restoreFromHash();
 bindToggles();
@@ -43,6 +44,7 @@ bindActions();
 bindSeeds();
 refreshTdocSeed();
 bindResize();
+bindReducedMotion();
 stamp();
 
 // ---------------------------------------------------------------------------
@@ -106,6 +108,12 @@ function bindResize() {
   });
 }
 
+function bindReducedMotion() {
+  reducedMotionQuery.addEventListener("change", () => {
+    if (layoutMode === "scatter" && lastFragments) renderFragments(lastFragments);
+  });
+}
+
 // ---------------------------------------------------------------------------
 
 function cut() {
@@ -114,20 +122,25 @@ function cut() {
     flash("paste something first");
     return;
   }
-  if (pendingRestoredSeed && currentSeed != null) {
-    pendingRestoredSeed = false;
-  } else {
-    currentSeed = makeSeed();
-  }
-  const fragments = seededShuffle(splitText(text, cutMode, punctMode), currentSeed);
-  if (!fragments.length) {
+  const sourceFragments = splitText(text, cutMode, punctMode);
+  if (!sourceFragments.length) {
     flash("nothing to cut");
     return;
   }
+  const fragments = seededShuffle(sourceFragments, nextCutSeed());
   lastFragments = fragments;
   renderFragments(fragments);
   writeHash();
   flash(`cut into ${fragments.length} fragment${fragments.length === 1 ? "" : "s"}`);
+}
+
+function nextCutSeed() {
+  if (pendingRestoredSeed && currentSeed != null) {
+    pendingRestoredSeed = false;
+    return currentSeed;
+  }
+  currentSeed = makeSeed();
+  return currentSeed;
 }
 
 function splitText(text, mode, punct) {
@@ -222,7 +235,7 @@ function renderScatter(fragments) {
     const row = Math.floor(i / colCount);
     const x = col * colWidth + (rng() * 2 - 1) * jitterX;
     const y = row * rowHeight + (rng() * 2 - 1) * jitterY;
-    const rot = (rng() * 2 - 1) * 8; // -8°..+8°
+    const rot = (rng() * 2 - 1) * (reducedMotionQuery.matches ? 0 : 8);
     const w = colWidth - 12;
 
     const strip = document.createElement("span");
@@ -288,7 +301,7 @@ function restoreFromHash() {
     layoutMode = layout;
     setMode("data-layout", layout, () => {});
   }
-  if (seed && /^\d+$/.test(seed)) {
+  if (seed !== null && /^\d+$/.test(seed)) {
     currentSeed = Number(seed) >>> 0;
     pendingRestoredSeed = true;
   }
