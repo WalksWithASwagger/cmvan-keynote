@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Word-ban tester &mdash; Punk Rock AI</title>
+    <meta
+      name="description"
+      content="Paste any AI output. The widget highlights every word from your style guide's refuse list. Stop letting the bot put delve in your mouth."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/widgets/word-ban.css" />
+  </head>
+  <body class="shell">
+    <header class="site-header" data-include="header"></header>
+
+    <main>
+      <section class="wban-intro grain scanlines">
+        <div class="wrap wrap--narrow">
+          <p class="kicker kicker--accent">Slide 18 &middot; the bot keeps trying to put delve in your mouth</p>
+          <h1>Word-ban tester.</h1>
+          <p class="wban-intro__lede">
+            Paste anything the model wrote. Hit scan. Every word from your
+            style guide&rsquo;s refuse list lights up. Edit the list. Save it
+            with the rest of your <a href="/widgets/three-documents.html">Three
+            Documents</a>. Run it again next week.
+          </p>
+        </div>
+      </section>
+
+      <section class="wban">
+        <div class="wrap">
+          <div class="wban__layout">
+            <div class="wban__panel">
+              <h2>Source text</h2>
+              <label class="sr-only" for="wban-input">Paste text to scan</label>
+              <textarea id="wban-input" class="wban__textarea" placeholder="Paste a draft. A bot reply. Your own essay. Anything."></textarea>
+
+              <div class="wban__row">
+                <button class="btn btn--primary" type="button" data-action="scan">Scan</button>
+                <button class="btn" type="button" data-action="clear">Clear</button>
+                <button class="btn" type="button" data-action="copy-clean">Copy clean</button>
+                <button class="btn" type="button" data-action="load-style">Load from /three-documents</button>
+              </div>
+              <p class="wban__status" id="wban-status" aria-live="polite"></p>
+
+              <div class="wban__counts" id="wban-counts" hidden>
+                <div class="wban__count"><strong data-count="hits">0</strong><span>hits</span></div>
+                <div class="wban__count"><strong data-count="unique">0</strong><span>unique words</span></div>
+                <div class="wban__count"><strong data-count="words">0</strong><span>total words</span></div>
+                <div class="wban__count"><strong data-count="rate">0%</strong><span>cliche rate</span></div>
+              </div>
+
+              <h2 style="margin-top: var(--space-4);">Highlighted</h2>
+              <div class="wban__output" id="wban-output" aria-live="polite"></div>
+
+              <div class="wban__hits" id="wban-hits" hidden>
+                <h3>Top offenders</h3>
+                <ul class="wban__hit-list" id="wban-hit-list"></ul>
+              </div>
+            </div>
+
+            <aside class="wban__sidebar">
+              <div class="wban__list">
+                <h2>Your refuse list</h2>
+                <label class="sr-only" for="wban-list">Refuse list, one word or phrase per line</label>
+                <textarea id="wban-list" placeholder="One word or phrase per line"></textarea>
+                <p class="wban__list-meta"><span data-list-count>0</span> entries &middot; saved here in your browser</p>
+                <div class="wban__row">
+                  <button class="btn" type="button" data-action="reset-list">Reset to defaults</button>
+                </div>
+              </div>
+
+              <div class="wban__defaults">
+                <h2>Defaults</h2>
+                <p>
+                  Common AI tells: <code>delve</code>, <code>leverage</code>,
+                  <code>robust</code>, <code>seamless</code>, <code>navigate</code>,
+                  <code>tapestry</code>, <code>journey</code>,
+                  <code>realm</code>, <code>landscape</code>, <code>foster</code>,
+                  <code>cultivate</code>, <code>elevate</code>,
+                  <code>furthermore</code>, <code>moreover</code>,
+                  <code>in conclusion</code>, plus a few zombie business
+                  cliches. Edit freely &mdash; this list is yours.
+                </p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/word-ban.js"></script>
+  </body>
+</html>

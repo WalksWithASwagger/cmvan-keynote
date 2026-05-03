@@ -1,0 +1,314 @@
+/* /widgets/bias-bingo — 5x5 grid */
+
+.bbingo-intro {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.bbingo-intro h1 {
+  margin: 0 0 var(--space-3);
+}
+
+.bbingo-intro__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  max-width: 50ch;
+  color: var(--fg-soft);
+}
+
+.bbingo-intro__hint {
+  margin-top: var(--space-3);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.bbingo-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+.bbingo-stats span {
+  border: 1px solid var(--border-strong);
+  padding: 0.25rem 0.6rem;
+}
+
+.bbingo-stats [data-stat="seen"] strong,
+.bbingo-stats [data-stat="lines"] strong {
+  color: var(--accent);
+}
+
+.bbingo-board-wrap {
+  padding-block: var(--space-5);
+}
+
+.bbingo-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  border: 4px solid var(--fg);
+  background: var(--fg);
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+@media (max-width: 720px) {
+  .bbingo-board {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+    border-width: 3px;
+  }
+}
+
+.bbingo-cell {
+  background: var(--bg-elevated);
+  color: var(--fg);
+  text-align: left;
+  font: inherit;
+  font-family: var(--font-mono);
+  border: 0;
+  padding: var(--space-3);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-height: 9rem;
+  position: relative;
+  transition: transform 120ms var(--ease-snap), background 120ms var(--ease-snap);
+}
+
+.bbingo-cell:hover,
+.bbingo-cell:focus-visible {
+  background: #181818;
+  outline: none;
+  transform: translate(-1px, -1px);
+}
+
+.bbingo-cell[data-free="true"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.bbingo-cell[data-seen="true"] {
+  background: var(--bg);
+  color: var(--accent);
+  position: relative;
+  overflow: hidden;
+}
+
+.bbingo-cell[data-seen="true"]::after {
+  content: "SEEN IT";
+  position: absolute;
+  inset: auto var(--space-2) var(--space-2) auto;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.15rem 0.5rem;
+  transform: rotate(-4deg);
+  background: rgba(225, 29, 46, 0.08);
+}
+
+.bbingo-cell[data-seen="true"][data-free="true"]::after {
+  display: none;
+}
+
+.bbingo-cell__label {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+.bbingo-cell__look {
+  font-size: var(--fs-xs);
+  line-height: 1.45;
+  color: var(--fg-soft);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.bbingo-cell[data-free="true"] .bbingo-cell__look {
+  color: var(--accent-ink);
+  opacity: 0.85;
+}
+
+.bbingo-cell__case {
+  margin-top: auto;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+
+.bbingo-cell[data-seen="true"] .bbingo-cell__case {
+  color: var(--fg-soft);
+}
+
+/* progress / unlock */
+
+.bbingo-unlock {
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border: 2px dashed var(--border-strong);
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.bbingo-unlock[data-unlocked="true"] {
+  display: flex;
+  border-style: solid;
+  border-color: var(--accent);
+  background: rgba(225, 29, 46, 0.06);
+}
+
+.bbingo-unlock__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  margin: 0;
+}
+
+.bbingo-unlock__sub {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  margin: 0;
+}
+
+/* dialog */
+
+.bbingo-modal {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: min(92vw, 48rem);
+  width: 100%;
+}
+
+.bbingo-modal::backdrop {
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(2px);
+}
+
+.bbingo-modal__inner {
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  max-height: 92vh;
+  overflow: auto;
+}
+
+.bbingo-modal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.bbingo-modal__head .accent {
+  color: var(--accent);
+}
+
+.bbingo-modal__close {
+  font: inherit;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--fg);
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+.bbingo-modal__close:hover,
+.bbingo-modal__close:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  outline: none;
+}
+
+.bbingo-modal__body {
+  padding: var(--space-4);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.bbingo-modal__body h2 {
+  font-size: var(--fs-xl);
+  margin: 0;
+}
+
+.bbingo-modal__body p {
+  font-family: var(--font-mono);
+  font-size: var(--fs-md);
+  line-height: 1.6;
+  color: var(--fg-soft);
+  margin: 0;
+}
+
+.bbingo-modal__body .pull {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.25;
+  color: var(--fg);
+  border-left: 3px solid var(--accent);
+  padding: var(--space-2) 0 var(--space-2) var(--space-3);
+  margin: 0;
+}
+
+.bbingo-modal__body dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-1) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+}
+
+.bbingo-modal__body dt {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: var(--fs-xs);
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.bbingo-modal__body dd {
+  margin: 0;
+  color: var(--fg-soft);
+}
+
+.bbingo-modal__foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border-top: 1px solid var(--border);
+  background: var(--bg-elevated);
+}

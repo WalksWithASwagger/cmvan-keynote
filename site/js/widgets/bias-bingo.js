@@ -1,0 +1,243 @@
+// /widgets/bias-bingo — 5x5 grid wired to bingo.json + cases.json. Click a
+// cell to open a modal with the case study (when linked) or the look-for
+// hint (when not). Mark cells "seen". Row/column complete unlocks a markdown
+// framework checklist download.
+
+import { load, save } from "/js/common/storage.js";
+
+const STORAGE_KEY = "bingo:seen";
+
+const boardEl = document.getElementById("bbingo-board");
+const statsEl = document.getElementById("bbingo-stats");
+const unlockEl = document.getElementById("bbingo-unlock");
+const modalEl = document.getElementById("bbingo-modal");
+const modalTag = modalEl.querySelector("[data-modal-tag]");
+const modalCell = modalEl.querySelector("[data-modal-cell]");
+const modalBody = modalEl.querySelector("[data-modal-body]");
+const modalClose = modalEl.querySelector("[data-modal-close]");
+const toggleBtn = modalEl.querySelector('[data-action="toggle-seen"]');
+
+let bingo = null;
+let cases = null;
+let seen = new Set();
+let activeCellId = null;
+
+main();
+
+async function main() {
+  try {
+    const [bRes, cRes] = await Promise.all([
+      fetch("/data/bingo.json"),
+      fetch("/data/cases.json"),
+    ]);
+    if (!bRes.ok) throw new Error("bingo.json fetch failed");
+    bingo = await bRes.json();
+    cases = cRes.ok ? await cRes.json() : { cases: [] };
+  } catch (err) {
+    boardEl.innerHTML = `<p class="kicker">data unavailable: ${escapeHTML(err.message || err)}</p>`;
+    return;
+  }
+
+  const stored = load(STORAGE_KEY, []);
+  seen = new Set(Array.isArray(stored.value) ? stored.value : []);
+  renderBoard();
+  bindModal();
+  paintStats();
+}
+
+function renderBoard() {
+  boardEl.innerHTML = "";
+  for (const cell of bingo.cells) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "bbingo-cell";
+    btn.dataset.cell = cell.id;
+    btn.dataset.row = String(cell.row);
+    btn.dataset.col = String(cell.col);
+    if (cell.free) btn.dataset.free = "true";
+    if (seen.has(cell.id)) btn.dataset.seen = "true";
+    btn.innerHTML = `
+      <span class="bbingo-cell__label">${escapeHTML(cell.label)}</span>
+      <span class="bbingo-cell__look">${escapeHTML(cell.look)}</span>
+      ${cell.caseId ? `<span class="bbingo-cell__case">↳ case study</span>` : ""}
+    `;
+    btn.addEventListener("click", () => openCell(cell.id));
+    boardEl.appendChild(btn);
+  }
+}
+
+// ---------------------------------------------------------------------------
+
+function openCell(id) {
+  const cell = bingo.cells.find((c) => c.id === id);
+  if (!cell) return;
+  activeCellId = id;
+
+  const linkedCase = cell.caseId
+    ? cases.cases.find((c) => c.id === cell.caseId)
+    : null;
+
+  modalTag.textContent = `cell ${cell.id.toUpperCase()}`;
+  modalCell.textContent = cell.label.toUpperCase();
+  modalBody.innerHTML = renderModalBody(cell, linkedCase);
+  toggleBtn.textContent = seen.has(id) ? "Mark as not seen" : "Mark as seen";
+
+  if (typeof modalEl.showModal === "function" && !modalEl.open) {
+    modalEl.showModal();
+  }
+}
+
+function renderModalBody(cell, c) {
+  if (cell.free) {
+    return `
+      <h2>${escapeHTML(cell.label)}</h2>
+      <p class="pull">Whoever's missing from the room you build is the bias you ship.</p>
+      <p>The center cell is free. Mark it any time you remember to ask the question. Then ask the question.</p>
+    `;
+  }
+  if (c) {
+    return `
+      <h2>${escapeHTML(c.headline)}</h2>
+      <p>${escapeHTML(c.context)}</p>
+      <p class="pull">${escapeHTML(c.observation)}</p>
+      <dl>
+        <dt>Lazy name</dt><dd>${escapeHTML(c.lazyName)}</dd>
+        <dt>What it is</dt><dd>${escapeHTML(c.preciseName)}</dd>
+        <dt>Prompt</dt><dd>${escapeHTML(c.prompt)}</dd>
+        <dt>Citation</dt><dd>${
+          c.citationUrl
+            ? `<a href="${escapeAttr(c.citationUrl)}">${escapeHTML(c.citation)}</a>`
+            : escapeHTML(c.citation)
+        }</dd>
+        <dt>Talk ref</dt><dd>${escapeHTML(c.talkRef || "")}</dd>
+      </dl>
+    `;
+  }
+  return `
+    <h2>${escapeHTML(cell.label)}</h2>
+    <p class="pull">${escapeHTML(cell.look)}</p>
+    <p>This category doesn&rsquo;t have a case study yet. Find one in the wild, open a PR, or use the prompt above as a checklist.</p>
+  `;
+}
+
+function bindModal() {
+  modalClose.addEventListener("click", () => modalEl.close());
+  modalEl.addEventListener("click", (e) => {
+    if (e.target === modalEl) modalEl.close();
+  });
+  toggleBtn.addEventListener("click", () => {
+    if (!activeCellId) return;
+    if (seen.has(activeCellId)) {
+      seen.delete(activeCellId);
+    } else {
+      seen.add(activeCellId);
+    }
+    save(STORAGE_KEY, [...seen]);
+    syncCellState(activeCellId);
+    paintStats();
+    toggleBtn.textContent = seen.has(activeCellId) ? "Mark as not seen" : "Mark as seen";
+  });
+
+  document.querySelector('[data-action="download-checklist"]').addEventListener("click", (e) => {
+    e.preventDefault();
+    downloadChecklist();
+  });
+}
+
+function syncCellState(id) {
+  const btn = boardEl.querySelector(`[data-cell="${id}"]`);
+  if (!btn) return;
+  if (seen.has(id)) btn.dataset.seen = "true";
+  else delete btn.dataset.seen;
+}
+
+// ---------------------------------------------------------------------------
+
+function paintStats() {
+  const seenCount = seen.size;
+  const linesCleared = countLines();
+  setStat("seen", `${seenCount}/${bingo.cells.length}`);
+  setStat("lines", String(linesCleared));
+  unlockEl.dataset.unlocked = linesCleared > 0 ? "true" : "false";
+}
+
+function setStat(name, value) {
+  const el = statsEl.querySelector(`[data-stat="${name}"] strong`);
+  if (el) el.textContent = value;
+}
+
+function countLines() {
+  const rows = bingo.rows;
+  const cols = bingo.cols;
+  const grid = Array.from({ length: rows }, () => Array(cols).fill(false));
+  for (const cell of bingo.cells) {
+    if (seen.has(cell.id)) grid[cell.row][cell.col] = true;
+  }
+  let lines = 0;
+  for (let r = 0; r < rows; r++) {
+    if (grid[r].every(Boolean)) lines++;
+  }
+  for (let c = 0; c < cols; c++) {
+    if (grid.every((row) => row[c])) lines++;
+  }
+  // diagonals
+  if (grid.every((row, i) => row[i])) lines++;
+  if (grid.every((row, i) => row[cols - 1 - i])) lines++;
+  return lines;
+}
+
+// ---------------------------------------------------------------------------
+
+function downloadChecklist() {
+  const seenCells = bingo.cells.filter((c) => seen.has(c.id));
+  const lines = [];
+  lines.push("# Bias-naming checklist");
+  lines.push("");
+  lines.push(`_${seen.size} of ${bingo.cells.length} categories seen — generated ${new Date().toISOString().slice(0, 10)} on punkrockai.com / bias-bingo_`);
+  lines.push("");
+  lines.push(`> ${bingo.thesis}`);
+  lines.push("");
+  if (seenCells.length === 0) {
+    lines.push("No cells marked yet. Mark the categories you've actually seen ship — that's where the audit starts.");
+  } else {
+    for (const cell of seenCells) {
+      lines.push(`## ${cell.label}`);
+      lines.push("");
+      lines.push(`- **Look for:** ${cell.look}`);
+      const c = cell.caseId ? cases.cases.find((cs) => cs.id === cell.caseId) : null;
+      if (c) {
+        lines.push(`- **Lazy name:** ${c.lazyName}`);
+        lines.push(`- **Precise name:** ${c.preciseName}`);
+        lines.push(`- **Prompt:** ${c.prompt}`);
+        lines.push(`- **Citation:** ${c.citation}${c.citationUrl ? ` — ${c.citationUrl}` : ""}`);
+      } else {
+        lines.push(`- **Case study:** open — find one in the wild`);
+      }
+      lines.push("");
+    }
+  }
+  lines.push("---");
+  lines.push("");
+  lines.push("From the talk: *Stop saying bias. Name what you're seeing.*");
+  lines.push("");
+  const blob = new Blob([lines.join("\n")], { type: "text/markdown" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `bias-bingo-${new Date().toISOString().slice(0, 10)}.md`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 0);
+}
+
+function escapeHTML(s) {
+  return String(s ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+}
+
+function escapeAttr(s) {
+  return escapeHTML(s).replaceAll('"', "&quot;").replaceAll("'", "&#39;");
+}
