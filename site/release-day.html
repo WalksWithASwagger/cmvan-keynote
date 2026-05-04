@@ -13,16 +13,20 @@
     <meta property="og:description" content="Ship something imperfect by the deadline." />
     <link rel="stylesheet" href="/css/theme.css" />
     <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/punk-graphics.css" />
     <link rel="stylesheet" href="/css/widgets/release-day.css" />
   </head>
   <body class="shell">
     <header class="site-header" data-include="header"></header>
 
     <main>
-      <section class="rd-hero halftone">
+      <section class="rd-hero halftone punk-tile rd-hero--punk">
         <div class="wrap wrap--narrow">
           <p class="rd-hero__date">29 . 05 . 2026 &middot; 23:59 PT</p>
-          <h1>Ship something imperfect.</h1>
+          <h1 class="rd-hero__bigdate punk-ransom">
+            <span>MAY</span><span>29</span>
+          </h1>
+          <h2 class="rd-hero__sub">Ship something imperfect.</h2>
           <p class="rd-hero__lede">
             The global Release Day is May twenty-ninth. Pick up the tool. Use
             it wrong. Share what you learn. Build a posse.
@@ -89,7 +93,7 @@
         </div>
       </section>
 
-      <section class="rd-portal" id="submit">
+      <section class="rd-portal rd-portal--punk" id="submit">
         <div class="wrap wrap--narrow">
           <p class="kicker kicker--accent">Submit</p>
           <h2>What did you make?</h2>
@@ -98,7 +102,7 @@
             submission portal isn&rsquo;t connected yet &mdash; nothing is lost.
           </p>
 
-          <form class="rd-form" id="rd-form" novalidate>
+          <form class="rd-form rd-form--punk" id="rd-form" novalidate>
             <div class="rd-form__row">
               <label for="rd-name">Name</label>
               <input id="rd-name" name="name" type="text" required maxlength="80" />
@@ -121,7 +125,7 @@
               <textarea id="rd-why" name="why" rows="4" maxlength="600" placeholder="Five sentences max. Tell us what the punk move was."></textarea>
             </div>
             <div class="rd-form__actions">
-              <button class="btn btn--primary" type="submit">Send it</button>
+              <button class="btn btn--primary rd-stamp" type="submit">SEND IT ↗</button>
               <button class="btn" type="button" id="rd-clear">Clear draft</button>
               <p class="rd-form__status" id="rd-status" aria-live="polite"></p>
             </div>

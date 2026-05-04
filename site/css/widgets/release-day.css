@@ -242,3 +242,178 @@
     transition: none;
   }
 }
+
+/* ------------------------------------------------------------------
+   PUNK VARIANT — Phase 5b.2
+   Big MAY 29 ransom hero, cream-paper typewriter form, ink-stamp button.
+   Activates when .rd-hero--punk / .rd-portal--punk / .rd-form--punk are
+   applied via the HTML (release-day.html).
+   ------------------------------------------------------------------ */
+
+.rd-hero--punk {
+  position: relative;
+  overflow: hidden;
+}
+.rd-hero--punk::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--punk-zine-collage, var(--punk-tile));
+  background-size: cover;
+  background-position: center;
+  opacity: 0.22;
+  mix-blend-mode: screen;
+  filter: grayscale(100%) contrast(1.1);
+  pointer-events: none;
+  z-index: -1;
+}
+.rd-hero--punk::after {
+  content: "";
+  position: absolute;
+  top: -2%;
+  right: -5%;
+  width: 38%;
+  height: 50%;
+  background-image: var(--punk-red-circle);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top right;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.rd-hero__bigdate {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(4.5rem, 14vw, 10rem);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  margin: 0 auto var(--space-3);
+  text-transform: uppercase;
+}
+.rd-hero--punk .rd-hero__sub {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--fs-xl);
+  margin: 0 0 var(--space-3);
+  color: var(--fg-soft);
+}
+
+/* Typewriter / cream-paper submission portal */
+.rd-portal--punk {
+  position: relative;
+  background: var(--paper-bright);
+  color: var(--paper-ink);
+  padding: var(--space-6) var(--space-4) var(--space-7);
+  margin-block: var(--space-6);
+  box-shadow: 8px 8px 0 var(--accent),
+    0 1px 0 rgba(0, 0, 0, 0.45) inset;
+  isolation: isolate;
+  overflow: visible;
+}
+.rd-portal--punk::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background-image: var(--punk-torn-corner);
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: top center;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 4;
+}
+.rd-portal--punk::after {
+  /* "SUBMISSION" stamp at top-right */
+  content: "SUBMISSION";
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.32em;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 0.3rem 0.7rem;
+  transform: rotate(-6deg);
+  opacity: 0.9;
+  z-index: 4;
+  pointer-events: none;
+}
+.rd-portal--punk .kicker {
+  color: var(--accent-red-deep);
+}
+.rd-portal--punk h2 {
+  color: var(--ink-marker);
+  font-family: var(--font-display);
+  font-style: italic;
+}
+.rd-portal--punk .rd-portal__lede {
+  color: var(--ink-marker);
+  opacity: 0.78;
+}
+.rd-form--punk label {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: var(--fs-xs);
+  color: var(--accent-red-deep);
+  font-weight: 700;
+}
+.rd-form--punk input,
+.rd-form--punk textarea {
+  background: rgba(255, 255, 255, 0.7) !important;
+  color: var(--ink-marker) !important;
+  border: none !important;
+  border-bottom: 2px dashed var(--accent-red-deep) !important;
+  border-radius: 0 !important;
+  font-family: var(--font-mono) !important;
+}
+.rd-form--punk input:focus,
+.rd-form--punk textarea:focus {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 2px;
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+.rd-form--punk .rd-form__hint {
+  color: var(--ink-marker);
+  opacity: 0.7;
+  font-size: var(--fs-xs);
+}
+
+/* Ink-stamp SEND IT button */
+.rd-stamp {
+  font-family: var(--font-mono) !important;
+  font-weight: 700 !important;
+  font-size: var(--fs-md) !important;
+  letter-spacing: 0.32em !important;
+  padding: 0.7rem 1.3rem !important;
+  border: 3px solid var(--accent) !important;
+  background: var(--accent) !important;
+  color: var(--accent-ink) !important;
+  transform: rotate(-2deg);
+  box-shadow: 4px 4px 0 var(--ink-marker) !important;
+  transition: transform 120ms var(--ease-snap),
+    box-shadow 120ms var(--ease-snap) !important;
+}
+.rd-stamp:hover,
+.rd-stamp:focus-visible {
+  transform: rotate(-2deg) translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink-marker) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rd-portal--punk::after,
+  .rd-stamp,
+  .rd-stamp:hover,
+  .rd-stamp:focus-visible {
+    transform: none !important;
+  }
+}

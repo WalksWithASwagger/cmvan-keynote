@@ -268,3 +268,201 @@
     background: transparent;
   }
 }
+
+/* ------------------------------------------------------------------
+   PUNK VARIANT — Phase 5b.4
+   Each .beat renders as a torn-paper card with rotation; between beats
+   a red hand-drawn slash acts as the "arrow" connecting eras. Final
+   "you are the next beat" section gets film-strip and splotch accents.
+   ------------------------------------------------------------------ */
+
+.beat {
+  position: relative;
+  margin-block: var(--space-5);
+  padding-block: var(--space-5) var(--space-6);
+  background: var(--paper-bright);
+  color: var(--paper-ink);
+  isolation: isolate;
+  overflow: visible;
+  box-shadow: 6px 6px 0 var(--accent),
+    0 1px 0 rgba(0, 0, 0, 0.45) inset;
+  transform-origin: center top;
+}
+.beat::before {
+  /* torn-paper top edge */
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 22px;
+  background-image: var(--punk-torn-corner);
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 4;
+}
+.beat::after {
+  /* low-opacity zine-collage texture beneath the prose */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--punk-newspaper);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.12;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+.beat > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Per-beat rotation — alternate small +/- */
+.beat:nth-of-type(odd) {
+  transform: rotate(-0.5deg);
+}
+.beat:nth-of-type(even) {
+  transform: rotate(0.4deg);
+  box-shadow: 6px 6px 0 var(--accent-pink),
+    0 1px 0 rgba(0, 0, 0, 0.45) inset;
+}
+
+/* Override beat heading colors for cream paper background */
+.beat__year {
+  color: var(--accent-red-deep) !important;
+  font-weight: 700;
+}
+.beat__era {
+  color: var(--ink-marker) !important;
+  background: var(--accent);
+  color: var(--accent-ink) !important;
+  padding: 0.3em 0.6em;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  display: inline-block;
+}
+.beat__place {
+  color: var(--ink-marker) !important;
+  opacity: 0.7;
+}
+.beat h2 {
+  color: var(--ink-marker) !important;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 700;
+}
+.beat__prose,
+.beat__split,
+.beat__voices,
+.beat__citation {
+  color: var(--ink-marker) !important;
+}
+.beat__split dt {
+  color: var(--accent-red-deep) !important;
+  font-family: var(--font-mono);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+}
+.beat__split dd {
+  color: var(--ink-marker) !important;
+}
+
+/* Hand-drawn red arrow / slash between beats. Floats centered between
+   each <article class="beat"> and the next sibling. Clickable feel. */
+.beat + article.beat::before,
+.beat + .lineage-refrain + article.beat::before {
+  /* override the basic torn edge to include the arrow as well */
+}
+/* Standalone arrow: an extra ::after on each .beat that isn't the last,
+   absolutely positioned just below it so it appears between beats. */
+.beat:not(:last-of-type) {
+  margin-bottom: calc(var(--space-7) + var(--space-3));
+}
+.beat:not(:last-of-type) > .wrap::after {
+  content: "";
+  position: absolute;
+  bottom: calc(-1 * var(--space-7));
+  left: 50%;
+  transform: translateX(-50%) rotate(8deg);
+  width: 240px;
+  height: 100px;
+  background-image: var(--punk-red-slash);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.78;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Final "you are the next beat" CTA — pink splatter + film-strip */
+.lineage-final {
+  position: relative;
+  padding-block: var(--space-7);
+  isolation: isolate;
+}
+.lineage-final::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background-image: var(--punk-film-strip);
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.lineage-final::after {
+  content: "";
+  position: absolute;
+  bottom: 6%;
+  right: 4%;
+  width: 200px;
+  height: 200px;
+  background-image: var(--punk-splotch-pink);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  transform: rotate(20deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Lineage hero: keep existing punk-tile, add torn corner detail */
+.lineage-hero {
+  position: relative;
+}
+.lineage-hero::after {
+  content: "";
+  position: absolute;
+  top: 8%;
+  right: 5%;
+  width: 180px;
+  height: 180px;
+  background-image: var(--punk-scissors);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.42;
+  transform: rotate(-20deg);
+  pointer-events: none;
+  z-index: 0;
+  filter: grayscale(100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beat,
+  .beat:not(:last-of-type) > .wrap::after,
+  .lineage-final::after,
+  .lineage-hero::after {
+    transform: none !important;
+  }
+}

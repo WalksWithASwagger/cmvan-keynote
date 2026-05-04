@@ -27,15 +27,19 @@ Do not conflate the two on public copy or slide footers.
 | **punk.ceo** | Short / cheek URL: 301 to `punkrockai.com` **or** single-page manifesto at same deploy | 301 redirect at registrar **or** CNAME + path rule on host |
 | **plump.co** | **TBD** — pick one: (A) editorial / second voice surface, (B) newsletter archive, (C) 301 to punkrockai.com | Document choice here when decided: _________________ |
 
-**Hosting target:** Static deploy from [`companion-site/`](../companion-site/) (`index.html` + `styles.css`). Compatible with **GitHub Pages**, **Netlify**, or **Cloudflare Pages**. Point all apex domains at the same project; use HTTPS everywhere.
+**Hosting target (live):** Vercel — project `punkrockai` on team `walkswithaswaggers-projects`. Output dir = `site/`. `vercel.json` translates Cloudflare-style `_headers` + `_redirects` into Vercel rewrites/redirects/headers. `cleanUrls: true`. Pushes to `main` auto-deploy to production.
 
-**DNS checklist (human):**
+**DNS:** Porkbun ALIAS `punkrockai.com` → `cname.vercel-dns.com`, plus wildcard CNAME `*.punkrockai.com` → `cname.vercel-dns.com`. SSL provisioned by Vercel automatically (Let's Encrypt _acme-challenge TXT records visible on the zone).
 
-- [ ] `punkrockai.com` A/AAAA or CNAME → host
-- [ ] `www.punkrockai.com` → same
-- [ ] `punk.ceo` → redirect or CNAME
+**Visual system:** see [`PUNK-VISUAL-SYSTEM.md`](./PUNK-VISUAL-SYSTEM.md) for the punk decoration layer, color tokens, asset pipeline, and per-page bespoke handcrafts.
+
+**DNS checklist:**
+
+- [x] `punkrockai.com` ALIAS → cname.vercel-dns.com
+- [x] `*.punkrockai.com` CNAME → cname.vercel-dns.com (covers `www`)
+- [x] SSL via Vercel + Porkbun _acme-challenge TXT records
+- [ ] `punk.ceo` → redirect or CNAME (still TBD)
 - [ ] `plump.co` → per decision above
-- [ ] SSL certificates issued (usually automatic on modern hosts)
 
 ---
 

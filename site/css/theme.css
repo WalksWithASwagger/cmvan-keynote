@@ -17,6 +17,39 @@
   --border-strong: #3f3f3f;
   --rule: #5a0a13;
 
+  /* punk extension — pink + deep red + paper-bright + ink-marker.
+     Pink is a real second accent (slides use hot pink alongside red),
+     not a tint of red. ink-marker is the warm-black for hand-drawn feel. */
+  --accent-pink: #ff3d8a;
+  --accent-pink-soft: #ff8db2;
+  --accent-red-deep: #b51624;
+  --paper-bright: #fff8ee;
+  --ink-marker: #1a0e10;
+  --rule-pink: #ff3d8a;
+  --rule-red-soft: rgba(225, 29, 46, 0.4);
+
+  /* punk decoration variables — punk-graphics.css references these.
+     All point at cropped slide assets in /public/punk/. Swappable for
+     Rafiki-generated alternates without touching consuming classes. */
+  --punk-tile: url("/public/punk/zine-collage-bg.webp");
+  --punk-bias-text: url("/public/punk/halftone-bias-text.webp");
+  --punk-film-strip: url("/public/punk/film-strip-edge.webp");
+  --punk-red-slash: url("/public/punk/red-slash.webp");
+  --punk-red-circle: url("/public/punk/red-circle-handdrawn.webp");
+  --punk-red-refuse: url("/public/punk/red-refuse-circle.webp");
+  --punk-torn-corner: url("/public/punk/torn-paper-corner.webp");
+  --punk-staple: url("/public/punk/staple-corner.webp");
+  --punk-splotch-pink: url("/public/punk/splotch-pink-01.webp");
+  --punk-splotch-red: url("/public/punk/splotch-red-01.webp");
+  --punk-halftone-face-1: url("/public/punk/halftone-face-01.webp");
+  --punk-halftone-face-2: url("/public/punk/halftone-face-02.webp");
+  --punk-polaroid-stack: url("/public/punk/polaroid-stack.webp");
+  --punk-polaroid-grid: url("/public/punk/polaroid-grid-detail.webp");
+  --punk-scissors: url("/public/punk/scissors.webp");
+  --punk-newspaper: url("/public/punk/newspaper-page-detail.webp");
+  --punk-title-detail: url("/public/punk/title-detail-01.webp");
+  --punk-ransom-strip: url("/public/punk/ransom-headline-tile.webp");
+
   /* type — JetBrains Mono + Newsreader (brutalist serif). Self-hosted
      woff2 files live in site/public/fonts/; system stack is the fallback
      so the site still renders if the woff2s 404. */

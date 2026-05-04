@@ -25,7 +25,14 @@ if (includes.length) {
         console.warn("[header.js] include failed:", err);
       }
     })
-  ).then(markCurrentNav);
+  ).then(() => {
+    markCurrentNav();
+    // Once the header is in the DOM, layer dropdown behavior on top of
+    // native <details>. Lazy-imported so pages without the header skip it.
+    import("/js/common/nav.js").catch((err) => {
+      console.warn("[header.js] nav.js load failed:", err);
+    });
+  });
 } else {
   markCurrentNav();
 }

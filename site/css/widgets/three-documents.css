@@ -50,6 +50,157 @@
   border-bottom: 1px dashed var(--border-strong);
 }
 
+/* Punk variant — each <article class="tdoc tdoc--punk"> renders as a
+   newspaper-page-style sheet with cream paper bg, low-opacity newspaper
+   detail backdrop, slight rotation, page-badge ribbon. The container
+   stays a normal rectangle structurally; the visual chrome is layered
+   via ::before/::after so layout (textarea + buttons) is untouched. */
+.tdoc--punk {
+  position: relative;
+  background: var(--paper-bright);
+  color: var(--paper-ink);
+  padding: var(--space-5) var(--space-5) var(--space-6);
+  margin-block: var(--space-5);
+  border-bottom: none;
+  box-shadow: 6px 6px 0 var(--accent),
+    0 1px 0 rgba(0, 0, 0, 0.4) inset;
+  overflow: visible;
+  isolation: isolate;
+}
+.tdoc--punk::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--punk-newspaper);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+.tdoc--punk::after {
+  /* page-badge ribbon top-right — content set per :nth-child below */
+  content: var(--tdoc-badge, "DOC");
+  position: absolute;
+  top: -14px;
+  right: var(--space-4);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.22em;
+  padding: 0.4rem 0.8rem;
+  font-weight: 700;
+  transform: rotate(2deg);
+  box-shadow: 2px 2px 0 var(--ink-marker);
+  z-index: 4;
+  pointer-events: none;
+}
+.tdoc--punk > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Per-document rotation + badge content + accent variation. */
+.tdoc--punk:nth-of-type(1) {
+  --tdoc-badge: "PAGE 1 — POLICY";
+  transform: rotate(-0.6deg);
+}
+.tdoc--punk:nth-of-type(2) {
+  --tdoc-badge: "PAGE 2 — STYLE";
+  transform: rotate(0.4deg);
+  box-shadow: 6px 6px 0 var(--accent-pink),
+    0 1px 0 rgba(0, 0, 0, 0.4) inset;
+}
+.tdoc--punk:nth-of-type(2)::after {
+  background: var(--accent-pink);
+  color: var(--ink-marker);
+  transform: rotate(-3deg);
+}
+.tdoc--punk:nth-of-type(3) {
+  --tdoc-badge: "PAGE 3 — WORLDVIEW";
+  transform: rotate(-0.3deg);
+}
+
+/* Override head/heading styles for cream-paper background. */
+.tdoc--punk .tdoc__num {
+  color: var(--accent-red-deep);
+}
+.tdoc--punk h2 {
+  font-family: var(--font-display);
+  color: var(--ink-marker);
+  font-style: italic;
+  font-weight: 700;
+}
+.tdoc--punk .tdoc__lede {
+  color: var(--ink-marker);
+  opacity: 0.82;
+}
+.tdoc--punk .tdoc__prompts {
+  color: var(--ink-marker);
+}
+.tdoc--punk .tdoc__prompts li::before {
+  color: var(--accent);
+}
+.tdoc--punk .tdoc textarea,
+.tdoc--punk textarea {
+  background: rgba(255, 255, 255, 0.6) !important;
+  color: var(--ink-marker) !important;
+  border: 2px dashed var(--accent-red-deep) !important;
+}
+
+/* REFUSE marginalia on DOC 01 (Policy — what you'll refuse). */
+.tdoc--punk:nth-of-type(1) .tdoc__head::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 22%;
+  width: 96px;
+  height: 96px;
+  background-image: var(--punk-red-refuse);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top right;
+  opacity: 0.85;
+  transform: rotate(-12deg);
+  z-index: 3;
+  pointer-events: none;
+}
+.tdoc--punk:nth-of-type(1) .tdoc__head {
+  position: relative;
+}
+
+/* Hand-drawn red underline on each h2 for that "marked up" feel */
+.tdoc--punk h2 {
+  display: inline-block;
+  position: relative;
+}
+.tdoc--punk h2::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  right: -8px;
+  bottom: -6px;
+  height: 8px;
+  background-image: var(--punk-red-slash);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.55;
+  transform: scaleY(0.6) rotate(-1deg);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tdoc--punk,
+  .tdoc--punk::after,
+  .tdoc--punk:nth-of-type(2)::after,
+  .tdoc--punk h2::after,
+  .tdoc--punk:nth-of-type(1) .tdoc__head::after {
+    transform: none !important;
+  }
+}
+
 .tdoc__head {
   display: flex;
   flex-wrap: wrap;

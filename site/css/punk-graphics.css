@@ -1,0 +1,529 @@
+/* Punk Rock AI — decorative graphics layer
+   Reusable visual primitives that build the slide aesthetic into the website.
+   Apply via class names on any element. Tokens come from theme.css.
+
+   Categories:
+   - Section anchors:    .punk-section, .punk-section--make/name/connect/ship
+   - Backgrounds:        .punk-tile, .punk-halftone-bg, .punk-bias-bg
+   - Edges + dividers:   .punk-torn-top, .punk-torn-bottom, .punk-film-strip
+   - Accents:            .punk-slash, .punk-circle, .punk-refuse, .punk-splatter
+   - Corners:            .punk-tape-corner, .punk-staple
+   - Containers:         .punk-card--torn, .punk-card--taped, .punk-card--stapled
+   - Layout:             .collage-stack
+   - Typography:         .punk-ransom (mixed-letter heading transforms)
+   - States:             prefers-reduced-motion handling at the bottom
+   --------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------
+   SECTION ANCHORS — wrap a <section> in one of these to get the
+   category-specific visual identity used on the landing page nav.
+   ------------------------------------------------------------------ */
+
+.punk-section {
+  position: relative;
+  isolation: isolate;
+}
+
+.punk-section--make {
+  --punk-section-accent: var(--accent);
+  --punk-section-bg: rgba(225, 29, 46, 0.04);
+}
+
+.punk-section--name {
+  --punk-section-accent: var(--accent-pink);
+  --punk-section-bg: rgba(255, 61, 138, 0.04);
+}
+
+.punk-section--connect {
+  --punk-section-accent: var(--paper-bright);
+  --punk-section-bg: rgba(255, 248, 238, 0.03);
+}
+
+.punk-section--ship {
+  --punk-section-accent: var(--accent);
+  --punk-section-bg: rgba(225, 29, 46, 0.06);
+}
+
+/* ------------------------------------------------------------------
+   BACKGROUNDS — texture overlays that go on hero/section
+   containers without changing layout. Use with care — never apply
+   more than one per element.
+   ------------------------------------------------------------------ */
+
+.punk-tile {
+  position: relative;
+}
+.punk-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--punk-tile);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 0;
+}
+.punk-tile > * {
+  position: relative;
+  z-index: 1;
+}
+
+.punk-halftone-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--punk-halftone-face-1);
+  background-size: cover;
+  background-position: 30% center;
+  opacity: 0.22;
+  mix-blend-mode: screen;
+  filter: grayscale(100%) contrast(1.1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.punk-bias-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--punk-bias-text);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.12;
+  mix-blend-mode: screen;
+  filter: grayscale(100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ------------------------------------------------------------------
+   EDGES + DIVIDERS — placed as ::before / ::after pseudo-elements
+   on a section container. Use --punk-torn-top on the section that
+   should have a ragged top edge, etc.
+   ------------------------------------------------------------------ */
+
+.punk-torn-top {
+  position: relative;
+}
+.punk-torn-top::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background-image: var(--punk-torn-corner);
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: top center;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.punk-torn-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background-image: var(--punk-torn-corner);
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: bottom center;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 2;
+  transform: scaleY(-1);
+}
+
+.punk-film-strip {
+  position: relative;
+}
+.punk-film-strip::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background-image: var(--punk-film-strip);
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: center;
+  z-index: 2;
+}
+.punk-film-strip--bottom::before {
+  top: auto;
+  bottom: 0;
+}
+
+/* ------------------------------------------------------------------
+   ACCENTS — diagonal slashes, hand-drawn circles, splat dots.
+   Position via container's relative + accent's absolute. Common
+   variables --punk-x, --punk-y, --punk-rotate, --punk-scale tune
+   placement per use site.
+   ------------------------------------------------------------------ */
+
+.punk-slash,
+.punk-circle,
+.punk-refuse,
+.punk-splatter {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: var(--punk-w, 220px);
+  height: var(--punk-h, 220px);
+  left: var(--punk-x, 0);
+  top: var(--punk-y, 0);
+  transform: rotate(var(--punk-rotate, 0deg)) scale(var(--punk-scale, 1));
+  opacity: var(--punk-opacity, 0.9);
+}
+
+.punk-slash {
+  background-image: var(--punk-red-slash);
+}
+.punk-circle {
+  background-image: var(--punk-red-circle);
+}
+.punk-refuse {
+  background-image: var(--punk-red-refuse);
+  --punk-w: 160px;
+  --punk-h: 160px;
+}
+.punk-splatter {
+  background-image: var(--punk-splotch-pink);
+  --punk-w: 140px;
+  --punk-h: 140px;
+}
+.punk-splatter--red {
+  background-image: var(--punk-splotch-red);
+}
+
+/* ------------------------------------------------------------------
+   CORNER DECORATIONS — placed on cards / containers with .position:relative.
+   Default is top-left; --punk-corner-position swap (top-right / bottom-left
+   / bottom-right) handled via additional modifier classes.
+   ------------------------------------------------------------------ */
+
+.punk-tape-corner {
+  position: relative;
+}
+.punk-tape-corner::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 96px;
+  height: 96px;
+  background-image: var(--punk-torn-corner);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top left;
+  z-index: 4;
+  pointer-events: none;
+  transform: rotate(-4deg);
+}
+
+.punk-staple {
+  position: relative;
+}
+.punk-staple::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 24px;
+  width: 56px;
+  height: 56px;
+  background-image: var(--punk-staple);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top left;
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------------
+   CONTAINERS — punk variants of .card. Drop the rectangular border;
+   replace with a torn / taped / stapled treatment. Use these as
+   modifier classes on existing .card elements; layout.css picks up
+   the rest.
+   ------------------------------------------------------------------ */
+
+.punk-card--torn {
+  border: none !important;
+  background: var(--bg-elevated);
+  position: relative;
+  overflow: visible;
+  box-shadow: 0 0 0 1px var(--border);
+}
+.punk-card--torn::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 18px;
+  background-image: var(--punk-torn-corner);
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: top center;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.punk-card--taped {
+  position: relative;
+  overflow: visible;
+}
+.punk-card--taped::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  width: 86px;
+  height: 32px;
+  background: var(--paper-bright);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transform: rotate(8deg);
+  opacity: 0.78;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.punk-card--stapled {
+  position: relative;
+  overflow: visible;
+}
+.punk-card--stapled::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 32px;
+  width: 36px;
+  height: 36px;
+  background-image: var(--punk-staple);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top left;
+  opacity: 0.95;
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------------
+   COLLAGE STACK — flex container that allows children to rotate
+   slightly and overlap. Children with :nth-child(odd) get a slight
+   counter-rotation so cards feel pasted, not gridded.
+   ------------------------------------------------------------------ */
+
+.collage-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: stretch;
+}
+.collage-stack > * {
+  flex: 1 1 16rem;
+  min-width: 14rem;
+  transform-origin: top left;
+  transition: transform 220ms var(--ease-snap, ease-out);
+}
+.collage-stack > :nth-child(3n + 1) {
+  transform: rotate(-1deg);
+}
+.collage-stack > :nth-child(3n + 2) {
+  transform: rotate(0.5deg);
+}
+.collage-stack > :nth-child(3n + 3) {
+  transform: rotate(1.5deg);
+}
+.collage-stack > *:hover,
+.collage-stack > *:focus-within {
+  transform: rotate(0deg) translate(-2px, -2px);
+  z-index: 2;
+}
+
+/* ------------------------------------------------------------------
+   RANSOM-NOTE TYPOGRAPHY — wrap heading text in <span> per word
+   (or per letter for max chaos). punk-graphics.js will auto-wrap
+   any heading inside .punk-ransom; until then, manual <span>s work.
+   The CSS handles the per-span variation.
+   ------------------------------------------------------------------ */
+
+.punk-ransom {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  display: inline-block;
+}
+
+.punk-ransom span {
+  display: inline-block;
+  margin: 0 0.04em;
+  transform-origin: center;
+}
+
+.punk-ransom span:nth-child(5n + 1) {
+  transform: rotate(-2deg) scale(1);
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: 0 0.12em;
+}
+.punk-ransom span:nth-child(5n + 2) {
+  transform: rotate(1deg) scale(1.05);
+  font-style: italic;
+}
+.punk-ransom span:nth-child(5n + 3) {
+  transform: rotate(-0.5deg) scale(0.96);
+  color: var(--accent-pink);
+}
+.punk-ransom span:nth-child(5n + 4) {
+  transform: rotate(2deg) scale(1.02);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+.punk-ransom span:nth-child(5n) {
+  transform: rotate(-1.5deg);
+  text-decoration: underline wavy var(--accent-pink);
+  text-underline-offset: 4px;
+}
+
+/* ------------------------------------------------------------------
+   PINK / RED SHADOW utilities — drop on .btn or .card variants.
+   ------------------------------------------------------------------ */
+
+.punk-shadow-pink {
+  box-shadow: 4px 4px 0 var(--accent-pink) !important;
+}
+.punk-shadow-red {
+  box-shadow: 4px 4px 0 var(--accent) !important;
+}
+.punk-shadow-pink:hover,
+.punk-shadow-red:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 currentColor !important;
+}
+
+/* ------------------------------------------------------------------
+   SECTION HEADER — used on landing-page MAKE / NAME / CONNECT / SHIP.
+   Big ransom-note h2 with section-accent color, splotch on the side.
+   ------------------------------------------------------------------ */
+
+.punk-section-header {
+  position: relative;
+  padding-block: var(--space-5) var(--space-3);
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.punk-section-header__num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--punk-section-accent, var(--accent));
+}
+.punk-section-header__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  font-weight: 700;
+  line-height: 0.9;
+  margin: 0;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.punk-section-header__lede {
+  font-family: var(--font-mono);
+  color: var(--fg-soft);
+  max-width: 32ch;
+  margin: 0;
+  font-size: var(--fs-sm);
+  line-height: 1.4;
+}
+
+/* ------------------------------------------------------------------
+   FLOATING SPLATS — scatter pink/red on a section. Use modifier classes
+   .punk-splat-tl / .punk-splat-tr / .punk-splat-bl / .punk-splat-br
+   for which corner of the parent the splat appears in.
+   ------------------------------------------------------------------ */
+
+.punk-splat-tl {
+  --punk-x: 2%;
+  --punk-y: 8%;
+}
+.punk-splat-tr {
+  --punk-x: auto;
+  --punk-y: 8%;
+  right: 4%;
+  left: auto;
+}
+.punk-splat-bl {
+  --punk-x: 4%;
+  --punk-y: auto;
+  bottom: 6%;
+  top: auto;
+}
+.punk-splat-br {
+  --punk-x: auto;
+  --punk-y: auto;
+  right: 4%;
+  bottom: 6%;
+  left: auto;
+  top: auto;
+}
+
+/* ------------------------------------------------------------------
+   REDUCED MOTION — turn off rotations and transforms.
+   ------------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  .collage-stack > *,
+  .punk-ransom span,
+  .punk-card--taped::before,
+  .punk-tape-corner::before {
+    transform: none !important;
+    transition: none !important;
+  }
+  .punk-shadow-pink:hover,
+  .punk-shadow-red:hover {
+    transform: none !important;
+  }
+}
+
+/* ------------------------------------------------------------------
+   PRINT — hide decoration, keep content readable.
+   ------------------------------------------------------------------ */
+
+@media print {
+  .punk-tile::before,
+  .punk-halftone-bg::before,
+  .punk-bias-bg::before,
+  .punk-torn-top::before,
+  .punk-torn-bottom::after,
+  .punk-film-strip::before,
+  .punk-slash,
+  .punk-circle,
+  .punk-refuse,
+  .punk-splatter,
+  .punk-tape-corner::before,
+  .punk-staple::before,
+  .punk-card--torn::before,
+  .punk-card--taped::before,
+  .punk-card--stapled::before {
+    display: none !important;
+  }
+  .collage-stack > * {
+    transform: none !important;
+  }
+}
