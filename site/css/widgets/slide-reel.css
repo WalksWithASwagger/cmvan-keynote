@@ -610,3 +610,160 @@
     transform: none;
   }
 }
+
+/* ------------------------------------------------------------------
+   PUNK VARIANT — Phase 5b.5
+   /talk hero gets the full title-detail slide as background.
+   Quote wall: each <li> becomes a taped paper card scattered with rotation.
+   Reel: per-slide thumbnails get torn / staple / tape variants.
+   ------------------------------------------------------------------ */
+
+/* Hero — replaces the basic punk-tile overlay with a fuller slide-01 still.
+   The existing punk-tile rule already injects a low-opacity overlay; this
+   bumps it to a more dominant treatment. */
+.talk-intro {
+  position: relative;
+  isolation: isolate;
+}
+.talk-intro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--punk-title-detail);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.32;
+  mix-blend-mode: screen;
+  filter: grayscale(100%) contrast(1.1);
+  pointer-events: none;
+  z-index: -1;
+}
+.talk-intro::before {
+  /* override the default punk-tile to higher contrast */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--punk-title-detail);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.45;
+  mix-blend-mode: lighten;
+  filter: grayscale(100%) contrast(0.9);
+  pointer-events: none;
+  z-index: -2;
+}
+/* Big ransom title transformation on the hero h1 — wrap each word in
+   a span via JS later if desired; for now apply directly */
+.talk-intro__head h1 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(3rem, 9vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+/* Slide reel — each slide thumb gets per-nth treatment for a paste-up feel */
+#slide-reel .reel__slide,
+#slide-reel article {
+  position: relative;
+  transform-origin: top left;
+  transition: transform 200ms var(--ease-snap),
+    box-shadow 200ms var(--ease-snap);
+}
+#slide-reel article:nth-of-type(3n + 1) {
+  transform: rotate(-0.5deg);
+}
+#slide-reel article:nth-of-type(3n + 2) {
+  transform: rotate(0.4deg);
+}
+#slide-reel article:nth-of-type(3n + 3) {
+  transform: rotate(0.8deg);
+}
+#slide-reel article:hover {
+  transform: rotate(0) translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--accent);
+  z-index: 2;
+}
+
+/* Quote wall — each quote becomes a taped card on cream paper */
+#quote-wall {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: stretch;
+}
+#quote-wall > * {
+  flex: 1 1 22rem;
+  position: relative;
+  background: var(--paper-bright);
+  color: var(--paper-ink);
+  padding: var(--space-4);
+  box-shadow: 6px 6px 0 var(--accent),
+    0 1px 0 rgba(0, 0, 0, 0.4) inset;
+  transform-origin: top left;
+  transition: transform 200ms var(--ease-snap),
+    box-shadow 200ms var(--ease-snap);
+}
+#quote-wall > *::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 18px;
+  width: 86px;
+  height: 28px;
+  background: var(--paper-bright);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
+  transform: rotate(7deg);
+  opacity: 0.78;
+  pointer-events: none;
+  z-index: 4;
+}
+#quote-wall > :nth-child(4n + 1) {
+  transform: rotate(-1deg);
+}
+#quote-wall > :nth-child(4n + 2) {
+  transform: rotate(0.5deg);
+  box-shadow: 6px 6px 0 var(--accent-pink),
+    0 1px 0 rgba(0, 0, 0, 0.4) inset;
+}
+#quote-wall > :nth-child(4n + 3) {
+  transform: rotate(1.2deg);
+}
+#quote-wall > :nth-child(4n + 4) {
+  transform: rotate(-0.6deg);
+  box-shadow: 6px 6px 0 var(--accent-pink),
+    0 1px 0 rgba(0, 0, 0, 0.4) inset;
+}
+#quote-wall > *:hover {
+  transform: rotate(0) translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--accent);
+  z-index: 3;
+}
+/* Quote text inside the cream card */
+#quote-wall > * blockquote,
+#quote-wall > * .quote {
+  color: var(--ink-marker) !important;
+  font-family: var(--font-display);
+  font-style: italic;
+}
+#quote-wall > * cite,
+#quote-wall > * .cite,
+#quote-wall > * footer {
+  color: var(--accent-red-deep) !important;
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #slide-reel article,
+  #slide-reel article:hover,
+  #quote-wall > *,
+  #quote-wall > *:hover {
+    transform: none !important;
+  }
+}
