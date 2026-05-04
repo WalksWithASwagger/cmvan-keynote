@@ -91,6 +91,7 @@
 .site-nav {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: var(--space-3);
   font-size: var(--fs-sm);
   font-family: var(--font-mono);
@@ -116,6 +117,133 @@
   border-bottom-color: var(--accent);
 }
 
+/* Site-nav primary persistent links — same as base, but explicit class
+   for selectors and so future restyling stays scoped. */
+.site-nav__primary {
+  color: var(--fg);
+}
+.site-nav__primary[aria-current="page"] {
+  color: var(--accent);
+}
+
+/* Categorized dropdown groups (MAKE / NAME / CONNECT / SHIP).
+   Uses native <details>/<summary> for click-to-open + keyboard a11y;
+   js/common/nav.js layers on hover-open + click-outside-close + ESC.
+   No JS dependency — site is fully usable with JS off. */
+.site-nav__group {
+  position: relative;
+  display: inline-block;
+}
+.site-nav__group > summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  padding: 0.2rem 0;
+  border-bottom: 2px solid transparent;
+  color: var(--fg-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.site-nav__group > summary::-webkit-details-marker {
+  display: none;
+}
+.site-nav__group > summary:hover,
+.site-nav__group[open] > summary,
+.site-nav__group:focus-within > summary {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.site-nav__group[data-nav-group="name"] > summary:hover,
+.site-nav__group[data-nav-group="name"][open] > summary {
+  color: var(--accent-pink);
+  border-bottom-color: var(--accent-pink);
+}
+.site-nav__group[data-active="true"] > summary {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.site-nav__caret {
+  font-size: 0.7em;
+  transition: transform 160ms var(--ease-snap);
+}
+.site-nav__group[open] .site-nav__caret {
+  transform: rotate(180deg);
+}
+
+/* Dropdown menu — desktop floats; mobile stacks inline.
+   Styled like a torn-paper card to match the punk aesthetic. */
+.site-nav__menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 16rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  box-shadow: 4px 4px 0 var(--accent);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  z-index: 60;
+  margin-top: 0.55rem;
+}
+.site-nav__menu::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background-image: var(--punk-torn-corner);
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: top center;
+  opacity: 0.85;
+  pointer-events: none;
+}
+.site-nav__group[data-nav-group="name"] .site-nav__menu {
+  box-shadow: 4px 4px 0 var(--accent-pink);
+}
+.site-nav__menu a {
+  font-size: var(--fs-xs);
+  border-bottom: none;
+  padding: 0.25rem 0;
+  letter-spacing: 0.1em;
+  color: var(--fg);
+  text-transform: none;
+}
+.site-nav__menu a:hover,
+.site-nav__menu a:focus-visible {
+  color: var(--accent);
+  background: rgba(225, 29, 46, 0.08);
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  margin-inline: -0.4rem;
+  border-bottom: none;
+}
+
+/* CTA button on the right side of the nav — Release Day countdown */
+.site-nav__cta {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  background: var(--accent);
+  color: var(--accent-ink) !important;
+  padding: 0.45rem 0.8rem !important;
+  border: none !important;
+  letter-spacing: 0.18em;
+  margin-left: auto;
+  box-shadow: 3px 3px 0 var(--accent-pink);
+  transition: transform 120ms var(--ease-snap), box-shadow 120ms var(--ease-snap);
+}
+.site-nav__cta:hover,
+.site-nav__cta:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--accent-pink) !important;
+  color: var(--accent-ink) !important;
+  border-bottom: none !important;
+}
+
 @media (max-width: 720px) {
   .site-header__inner {
     flex-direction: column;
@@ -126,6 +254,42 @@
   .site-nav {
     gap: var(--space-2);
     font-size: var(--fs-xs);
+    width: 100%;
+  }
+  /* On mobile, dropdowns become stacked accordions (the native <details> behavior).
+     The menu sits inline below the summary, no float, no shadow, no torn edge. */
+  .site-nav__group {
+    display: block;
+    width: 100%;
+  }
+  .site-nav__menu {
+    position: static;
+    margin-top: 0.4rem;
+    box-shadow: none;
+    border-left: 3px solid var(--accent);
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    padding-left: var(--space-3);
+    padding-block: var(--space-2);
+  }
+  .site-nav__menu::before {
+    display: none;
+  }
+  .site-nav__cta {
+    margin-left: 0;
+    align-self: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav__caret,
+  .site-nav__cta {
+    transition: none !important;
+  }
+  .site-nav__cta:hover,
+  .site-nav__cta:focus-visible {
+    transform: none !important;
   }
 }
 
