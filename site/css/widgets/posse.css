@@ -182,3 +182,205 @@
   max-width: 70ch;
   margin: 0 auto;
 }
+
+/* ------------------------------------------------------------------
+   PUNK VARIANT — Phase 5b.3
+   Halftone face mosaic banner across the intro hero. Each attendee card
+   in the grid below gets tape-corner / staple / torn-corner via the global
+   .card-grid cascade (already wired in layout.css). Scattered pink splats.
+   ------------------------------------------------------------------ */
+
+.posse-intro--punk {
+  position: relative;
+  overflow: hidden;
+}
+
+.posse-intro__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-4);
+}
+.posse-intro__title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* Halftone face mosaic — 5 absolutely-positioned face crops scattered
+   behind the heading at low opacity. Faces alternate between halftone-face-01
+   and halftone-face-02 for variety. */
+.posse-mosaic {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.posse-mosaic__face {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%) contrast(1.1);
+  mix-blend-mode: screen;
+  opacity: 0.18;
+  transform-origin: center;
+}
+.posse-mosaic__face--1 {
+  background-image: var(--punk-halftone-face-1);
+  width: 22%;
+  aspect-ratio: 1 / 1.2;
+  top: 8%;
+  left: 6%;
+  transform: rotate(-3deg);
+}
+.posse-mosaic__face--2 {
+  background-image: var(--punk-halftone-face-2);
+  width: 18%;
+  aspect-ratio: 1 / 1.1;
+  top: 4%;
+  right: 12%;
+  transform: rotate(2deg);
+}
+.posse-mosaic__face--3 {
+  background-image: var(--punk-halftone-face-1);
+  width: 14%;
+  aspect-ratio: 1 / 1.2;
+  bottom: 8%;
+  left: 28%;
+  transform: rotate(4deg);
+  opacity: 0.14;
+}
+.posse-mosaic__face--4 {
+  background-image: var(--punk-halftone-face-2);
+  width: 16%;
+  aspect-ratio: 1 / 1.1;
+  bottom: 12%;
+  right: 6%;
+  transform: rotate(-5deg);
+  opacity: 0.16;
+}
+.posse-mosaic__face--5 {
+  background-image: var(--punk-polaroid-stack);
+  width: 18%;
+  aspect-ratio: 1 / 1.2;
+  top: 32%;
+  left: 42%;
+  transform: rotate(-2deg);
+  opacity: 0.14;
+}
+
+.posse-intro--punk .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* Pink splatter scattered on the intro */
+.posse-intro--punk::before {
+  content: "";
+  position: absolute;
+  bottom: -4%;
+  right: 4%;
+  width: 180px;
+  height: 180px;
+  background-image: var(--punk-splotch-pink);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.55;
+  transform: rotate(18deg);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* The .posse-grid cards already inherit torn/taped/staple cycling from the
+   global .card-grid rule, but posse uses its own grid class — wire the same
+   nth-child decorations onto .posse-grid li items. */
+.posse-grid {
+  --posse-card-rotate: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: var(--space-4);
+  align-items: stretch;
+}
+.posse-grid > * {
+  position: relative;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: var(--space-4);
+  transform-origin: top left;
+  transition: transform 200ms var(--ease-snap),
+    box-shadow 200ms var(--ease-snap);
+}
+.posse-grid > :nth-child(3n + 1)::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background-image: var(--punk-torn-corner);
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 2;
+}
+.posse-grid > :nth-child(3n + 2)::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 18px;
+  width: 78px;
+  height: 26px;
+  background: var(--paper-bright);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
+  transform: rotate(7deg);
+  opacity: 0.8;
+  z-index: 4;
+  pointer-events: none;
+}
+.posse-grid > :nth-child(3n + 3)::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 28px;
+  width: 32px;
+  height: 32px;
+  background-image: var(--punk-staple);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.95;
+  z-index: 4;
+  pointer-events: none;
+}
+.posse-grid > :nth-child(3n + 1) {
+  transform: rotate(-0.7deg);
+}
+.posse-grid > :nth-child(3n + 2) {
+  transform: rotate(0.5deg);
+}
+.posse-grid > :nth-child(3n + 3) {
+  transform: rotate(1deg);
+}
+.posse-grid > *:hover,
+.posse-grid > *:focus-within {
+  transform: rotate(0) translate(-2px, -2px);
+  border-color: var(--accent);
+  box-shadow: 4px 4px 0 var(--accent);
+  z-index: 3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .posse-mosaic__face,
+  .posse-grid > *,
+  .posse-grid > *:hover {
+    transform: none !important;
+  }
+  .posse-intro--punk::before {
+    transform: rotate(0) !important;
+  }
+}
