@@ -157,23 +157,53 @@ Conventions worth keeping:
 
 ## Deploy
 
-**Cloudflare Pages.** Project settings:
+**Vercel** (production). The project lives at https://punkrockai.com on the
+team `walkswithaswaggers-projects`. Push to `main` → auto-deploys to
+production. Push to any branch → Vercel preview deploy at
+`punkrockai-git-<branch>-walkswithaswaggers-projects.vercel.app`
+(SSO-protected — open in a logged-in browser).
 
-- **Production branch:** `main` (or whichever lands the canonical build)
-- **Build command:** *(empty)* — site ships as static files
-- **Build output directory:** `site`
+Config:
+
+- **Project name:** `punkrockai`
 - **Root directory:** *(repo root)*
+- **Build command:** *(empty)* — site ships as static files
+- **Output directory:** `site` (set in `vercel.json`)
+- **Framework preset:** Other / static
 
-Auto-builds on push. The `site/_headers` file enables long-cache + a strict
-CSP; `site/_redirects` adds clean-URL aliases. Both are read by Pages on
-deploy without further wiring.
+`vercel.json` at the repo root translates the Cloudflare-style
+`site/_headers` + `site/_redirects` into Vercel's rewrites/redirects/headers
+schema. It also enables `cleanUrls: true` so `/talk` serves `/talk.html`.
 
-The `wrangler.toml` at the repo root documents the Pages project
-configuration so a fresh deployer can mirror it without guessing.
+DNS lives at Porkbun:
 
-For the `worker/` modules (Pattern Finder, Submissions): `cd worker/<name>`
-then `wrangler deploy` — see each worker's `wrangler.toml` for KV/secrets
-bindings.
+```
+ALIAS  punkrockai.com    cname.vercel-dns.com
+CNAME  *.punkrockai.com  cname.vercel-dns.com
+```
+
+The Cloudflare Pages config (`wrangler.toml`, `site/_headers`,
+`site/_redirects`) stays in the repo as reference and as a fallback if we
+ever need to switch hosts.
+
+For the `worker/` modules (Pattern Finder, Submissions): scaffolded for
+Cloudflare Workers — `cd worker/<name>` then `wrangler deploy`. Currently
+deferred. See each worker's `SETUP.md` for KV / secrets bindings.
+
+### Visual system
+
+Punk visual system docs at [`docs/PUNK-VISUAL-SYSTEM.md`](../docs/PUNK-VISUAL-SYSTEM.md).
+The site uses three layered stylesheets:
+
+- `site/css/theme.css` — design tokens (colors, type, spacing, decoration vars)
+- `site/css/layout.css` — page shell, nav, hero, card patterns
+- `site/css/punk-graphics.css` — reusable decoration classes (halftone, torn,
+  ransom-note typography, splatters, collage layout)
+
+Plus 18 cropped slide assets at `site/public/punk/*.webp`, generated via
+`scripts/extract-punk-assets.mjs` from the punk-v2-nano slide deck. Re-run
+`node scripts/extract-punk-assets.mjs` to refresh after adjusting crop
+coordinates in `assets/punk-asset-crops.json`.
 
 ---
 
