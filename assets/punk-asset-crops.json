@@ -1,0 +1,138 @@
+{
+  "_meta": {
+    "source_dir": "assets/generated/slides/run-20260427-083655-punk-v2-nano",
+    "output_dir": "site/public/punk",
+    "slide_dimensions": { "width": 1376, "height": 768 },
+    "default_format": "webp",
+    "default_quality": 82,
+    "comment": "Each crop produces a webp under site/public/punk/<slug>.webp. Coordinates are heuristic on first pass; tune per slide after visual review by adjusting the crop box and re-running scripts/extract-punk-assets.mjs.\n\nFlow: 1. write or adjust this manifest, 2. node scripts/extract-punk-assets.mjs --dry-run, 3. node scripts/extract-punk-assets.mjs."
+  },
+  "crops": [
+    {
+      "slug": "halftone-face-01",
+      "source": "06-dada-punks-djs-ai.png",
+      "crop": { "left": 80, "top": 60, "width": 540, "height": 640 },
+      "max_width": 800,
+      "use": "section bg, card hover detail"
+    },
+    {
+      "slug": "halftone-face-02",
+      "source": "10-the-cutting-room-floor-taste-lives-in-what-you-throw-away.png",
+      "crop": { "left": 180, "top": 130, "width": 520, "height": 520 },
+      "max_width": 800,
+      "use": "rotation pair with face-01"
+    },
+    {
+      "slug": "halftone-bias-text",
+      "source": "15-name-what-you-see-stop-saying-bias.png",
+      "crop": { "left": 30, "top": 80, "width": 1100, "height": 540 },
+      "max_width": 1400,
+      "use": "section divider / NAME section background"
+    },
+    {
+      "slug": "red-slash",
+      "source": "15-name-what-you-see-stop-saying-bias.png",
+      "crop": { "left": 720, "top": 80, "width": 540, "height": 540 },
+      "max_width": 800,
+      "use": "diagonal red accent overlay"
+    },
+    {
+      "slug": "red-circle-handdrawn",
+      "source": "17-the-punk-condition-both-hands-full.png",
+      "crop": { "left": 80, "top": 80, "width": 560, "height": 560 },
+      "max_width": 800,
+      "use": "hand-drawn red box / circle accent"
+    },
+    {
+      "slug": "red-refuse-circle",
+      "source": "24-the-three-documents-policy-style-guide-worldview.png",
+      "crop": { "left": 820, "top": 200, "width": 420, "height": 420 },
+      "max_width": 600,
+      "use": "REFUSE callout marker"
+    },
+    {
+      "slug": "torn-paper-corner",
+      "source": "07-burroughs-situationists-deeper-lineage.png",
+      "crop": { "left": 0, "top": 0, "width": 360, "height": 360 },
+      "max_width": 500,
+      "use": "card corner / section header tape detail"
+    },
+    {
+      "slug": "film-strip-edge",
+      "source": "15-name-what-you-see-stop-saying-bias.png",
+      "crop": { "left": 0, "top": 700, "width": 1376, "height": 68 },
+      "max_width": 1600,
+      "use": "section top/bottom border (sprocket-hole strip)"
+    },
+    {
+      "slug": "splotch-pink-01",
+      "source": "14-the-junior-pipeline-honest-acknowledgment.png",
+      "crop": { "left": 600, "top": 180, "width": 400, "height": 400 },
+      "max_width": 600,
+      "use": "scattered watercolor accent"
+    },
+    {
+      "slug": "splotch-red-01",
+      "source": "14-the-junior-pipeline-honest-acknowledgment.png",
+      "crop": { "left": 180, "top": 360, "width": 400, "height": 400 },
+      "max_width": 600,
+      "use": "callout splatter"
+    },
+    {
+      "slug": "polaroid-stack",
+      "source": "10-the-cutting-room-floor-taste-lives-in-what-you-throw-away.png",
+      "crop": { "left": 50, "top": 100, "width": 500, "height": 600 },
+      "max_width": 700,
+      "use": "gallery decoration / CONNECT section anchor"
+    },
+    {
+      "slug": "scissors",
+      "source": "07-burroughs-situationists-deeper-lineage.png",
+      "crop": { "left": 720, "top": 220, "width": 420, "height": 420 },
+      "max_width": 600,
+      "use": "/widgets/cut-up tool marker"
+    },
+    {
+      "slug": "staple-corner",
+      "source": "24-the-three-documents-policy-style-guide-worldview.png",
+      "crop": { "left": 0, "top": 0, "width": 260, "height": 260 },
+      "max_width": 400,
+      "use": "card corner staple detail"
+    },
+    {
+      "slug": "ransom-headline-tile",
+      "source": "17-the-punk-condition-both-hands-full.png",
+      "crop": { "left": 80, "top": 240, "width": 1180, "height": 220 },
+      "max_width": 1400,
+      "use": "ransom-note text fragment for h1 background"
+    },
+    {
+      "slug": "zine-collage-bg",
+      "source": "06-dada-punks-djs-ai.png",
+      "crop": { "left": 200, "top": 80, "width": 1000, "height": 600 },
+      "max_width": 1400,
+      "use": "wide hero / section background"
+    },
+    {
+      "slug": "title-detail-01",
+      "source": "01-title-punk-rock-ai.png",
+      "crop": { "left": 80, "top": 80, "width": 1216, "height": 608 },
+      "max_width": 1600,
+      "use": "landing hero background"
+    },
+    {
+      "slug": "polaroid-grid-detail",
+      "source": "10-the-cutting-room-floor-taste-lives-in-what-you-throw-away.png",
+      "crop": { "left": 600, "top": 120, "width": 700, "height": 540 },
+      "max_width": 900,
+      "use": "/widgets/cut-up output decoration"
+    },
+    {
+      "slug": "newspaper-page-detail",
+      "source": "24-the-three-documents-policy-style-guide-worldview.png",
+      "crop": { "left": 80, "top": 80, "width": 1200, "height": 600 },
+      "max_width": 1400,
+      "use": "/widgets/three-documents background detail"
+    }
+  ]
+}
