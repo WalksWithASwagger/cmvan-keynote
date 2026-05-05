@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#0d0d0d" rx="8"/>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#ff3d8a" stroke-width="3"/>
+  <circle cx="100" cy="100" r="82" fill="none" stroke="#ff3d8a" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="100" y="60" text-anchor="middle" font-family="monospace,Courier" font-size="9" font-weight="bold" fill="#ff3d8a" letter-spacing="3">CREATIVE MORNINGS</text>
+  <text x="100" y="76" text-anchor="middle" font-family="monospace,Courier" font-size="8" fill="#ff3d8a" letter-spacing="2">VANCOUVER</text>
+  <line x1="40" y1="84" x2="160" y2="84" stroke="#ff3d8a" stroke-width="1" opacity="0.5"/>
+  <text x="100" y="105" text-anchor="middle" font-family="monospace,Courier" font-size="13" font-weight="bold" fill="#ffffff">PUNK</text>
+  <text x="100" y="122" text-anchor="middle" font-family="monospace,Courier" font-size="13" font-weight="bold" fill="#ffffff">ROCK AI</text>
+  <line x1="40" y1="132" x2="160" y2="132" stroke="#ff3d8a" stroke-width="1" opacity="0.5"/>
+  <text x="100" y="148" text-anchor="middle" font-family="monospace,Courier" font-size="9" fill="#aaaaaa" letter-spacing="2">MAY 1 · 2026</text>
+  <text x="100" y="163" text-anchor="middle" font-family="monospace,Courier" font-size="8" fill="#ff3d8a" letter-spacing="1">I WAS THERE</text>
+</svg>

@@ -9,7 +9,7 @@ const STORAGE_KEY = "sig:state";
 const PORTAL_URL = "https://punkrockai.com";
 const UTM_SUFFIX = "?ref=email-sig";
 const BADGE_URL =
-  "https://punkrockai.com/public/images/badge-attended.png";
+  "https://punkrockai.com/public/images/badge-attended.svg";
 
 const DEFAULTS = {
   name: "",
