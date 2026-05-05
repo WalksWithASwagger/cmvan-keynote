@@ -15,13 +15,17 @@
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/punk-graphics.css" />
     <link rel="stylesheet" href="/css/widgets/release-day.css" />
+    <link rel="stylesheet" href="/css/zine-overhaul.css" />
+    <meta property="og:image" content="https://punkrockai.com/public/slides/release-day-full.webp" />
   </head>
   <body class="shell">
     <header class="site-header" data-include="header"></header>
 
     <main>
-      <section class="rd-hero halftone punk-tile rd-hero--punk">
-        <div class="wrap wrap--narrow">
+      <section class="rd-hero halftone punk-tile rd-hero--punk" style="position: relative; overflow: hidden;">
+        <div class="section-slide-bg" style="background-image: url('/public/slides/release-day-full.webp'); opacity: 0.1;" aria-hidden="true"></div>
+        <div class="section-slide-bg" style="background-image: url('/public/slides/may29-text.webp'); opacity: 0.18; background-position: right center; background-size: contain;" aria-hidden="true"></div>
+        <div class="wrap wrap--narrow" style="position: relative; z-index: 1;">
           <p class="rd-hero__date">29 . 05 . 2026 &middot; 23:59 PT</p>
           <h1 class="rd-hero__bigdate punk-ransom">
             <span>MAY</span><span>29</span>

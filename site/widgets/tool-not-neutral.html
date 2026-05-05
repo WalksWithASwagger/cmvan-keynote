@@ -16,13 +16,17 @@
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/punk-graphics.css" />
     <link rel="stylesheet" href="/css/widgets/tool-not-neutral.css" />
+    <link rel="stylesheet" href="/css/zine-overhaul.css" />
+    <meta property="og:image" content="https://punkrockai.com/public/slides/tool-neutral-full.webp" />
   </head>
   <body class="shell">
     <header class="site-header" data-include="header"></header>
 
     <main>
-      <section class="tnn-intro punk-tile">
-        <div class="wrap wrap--narrow">
+      <section class="tnn-intro punk-tile grain scanlines" style="position: relative; overflow: hidden;">
+        <div class="section-slide-bg" style="background-image: url('/public/slides/tool-neutral-full.webp'); opacity: 0.1;" aria-hidden="true"></div>
+        <div class="section-slide-bg" style="background-image: url('/public/slides/neither-are-we.webp'); opacity: 0.2; background-position: right center; background-size: contain;" aria-hidden="true"></div>
+        <div class="wrap wrap--narrow" style="position: relative; z-index: 1;">
           <p class="kicker kicker--accent">Slide 19 &middot; the tool is never neutral</p>
           <h1>Every design choice ships a value.</h1>
           <p class="tnn-intro__lede">
