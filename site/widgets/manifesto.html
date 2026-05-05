@@ -13,15 +13,18 @@
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/punk-graphics.css" />
     <link rel="stylesheet" href="/css/widgets/manifesto.css" />
+    <link rel="stylesheet" href="/css/zine-overhaul.css" />
   </head>
   <body class="shell">
     <header class="site-header" data-include="header"></header>
 
     <main>
-      <section class="mfst-intro grain scanlines punk-tile">
-        <div class="wrap wrap--narrow">
+      <section class="mfst-intro grain scanlines punk-tile punk-section--ship" style="position: relative; overflow: hidden;">
+        <div class="section-slide-bg" aria-hidden="true" style="background-image: url('/public/slides/neither-are-we.webp'); opacity: 0.07; mix-blend-mode: screen;"></div>
+        <span class="punk-splatter--red" style="--punk-x:75%;--punk-y:15%;--punk-scale:1.4;--punk-opacity:0.55;" aria-hidden="true"></span>
+        <div class="wrap wrap--narrow" style="position: relative; z-index: 1;">
           <p class="kicker kicker--accent">Phase 5 &middot; one page, on purpose</p>
-          <h1>Manifesto generator.</h1>
+          <h1 style="color: var(--accent-pink); text-shadow: 4px 4px 0 rgba(0,0,0,.95), 0 0 20px rgba(255,61,138,.35);">Manifesto generator.</h1>
           <p class="mfst-intro__lede">
             Three prompts. One page. Your voice. Answer what you make,
             who it serves, and what you refuse &mdash; the widget assembles a

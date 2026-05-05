@@ -75,5 +75,13 @@ function render({ slide, idx }, total) {
     recapEl.setAttribute("href", "/recap.html#slides");
   }
 
+  const photoLayer = document.getElementById("signal-photo-layer");
+  if (photoLayer && slide.image) {
+    photoLayer.style.backgroundImage = `url('${slide.image}')`;
+    photoLayer.style.backgroundPosition = "center center";
+    photoLayer.style.backgroundSize = "cover";
+    photoLayer.style.backgroundRepeat = "no-repeat";
+  }
+
   root.dataset.state = "ready";
 }

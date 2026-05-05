@@ -15,15 +15,19 @@
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/punk-graphics.css" />
     <link rel="stylesheet" href="/css/widgets/library.css" />
+    <link rel="stylesheet" href="/css/zine-overhaul.css" />
+    <style>:root { --hero-photo: url('/public/photos/michelle-diamond/135.webp'); }</style>
   </head>
   <body class="shell">
     <header class="site-header" data-include="header"></header>
 
     <main>
-      <section class="lib-intro punk-tile">
+      <section class="lib-intro punk-tile grain scanlines hero--photo">
+        <div class="hero__photo-layer" aria-hidden="true"></div>
+        <div class="hero__slide-layer" aria-hidden="true" style="background-image: url('/public/slides/taste-full.webp');"></div>
         <div class="wrap wrap--narrow">
           <p class="kicker kicker--accent">Library</p>
-          <h1>The whole talk is in there.</h1>
+          <h1 style="color: var(--accent-pink); text-shadow: 4px 4px 0 rgba(0,0,0,.95), 0 0 20px rgba(255,61,138,.35);">The whole talk is in there.</h1>
           <p class="lib-intro__lede">
             Every script revision, every source essay, every research note,
             every audio cue. One search box. Client-side fuzzy match &mdash;
@@ -38,7 +42,8 @@
           <div class="lib-search__row">
             <input
               id="lib-search"
-              class="lib-search__input"
+              class="lib-search__input punk-search-input"
+              style="border: 2px solid var(--border-strong);"
               type="search"
               placeholder="search the library&hellip;"
               autocomplete="off"
@@ -60,5 +65,8 @@
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" defer></script>
     <script type="module" src="/js/common/header.js"></script>
     <script type="module" src="/js/widgets/library.js"></script>
+    <script>
+(function(){const els=document.querySelectorAll('.reveal');if(!els.length)return;const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target);}});},{threshold:0.1});els.forEach(el=>io.observe(el));})();
+</script>
   </body>
 </html>

@@ -13,15 +13,18 @@
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/punk-graphics.css" />
     <link rel="stylesheet" href="/css/widgets/action.css" />
+    <link rel="stylesheet" href="/css/zine-overhaul.css" />
   </head>
   <body class="shell">
     <header class="site-header" data-include="header"></header>
 
     <main>
-      <section class="act-intro grain scanlines punk-tile">
-        <div class="wrap wrap--narrow">
+      <section class="act-intro grain scanlines punk-tile punk-section--ship" style="position: relative; overflow: hidden;">
+        <div class="section-slide-bg" aria-hidden="true" style="background-image: url('/public/slides/release-day-full.webp'); opacity: 0.07; mix-blend-mode: screen;"></div>
+        <span class="punk-splatter" style="--punk-x:82%;--punk-y:18%;--punk-scale:1.3;--punk-opacity:0.55;" aria-hidden="true"></span>
+        <div class="wrap wrap--narrow" style="position: relative; z-index: 1;">
           <p class="kicker kicker--accent">Post-talk &middot; pick one move toward Release Day</p>
-          <h1>What now?</h1>
+          <h1 style="color: var(--accent-pink);">What now?</h1>
           <p class="act-intro__lede" id="act-intro-lede">
             The talk ended on a deadline. Five quick questions. One concrete
             next move. No homework, no inbox course, no maybe-later list.

@@ -17,17 +17,20 @@
     <link rel="stylesheet" href="/css/widgets/release-day.css" />
     <link rel="stylesheet" href="/css/zine-overhaul.css" />
     <meta property="og:image" content="https://punkrockai.com/public/slides/release-day-full.webp" />
+    <style>:root { --hero-photo: url('/public/photos/michelle-diamond/109.webp'); }</style>
   </head>
   <body class="shell">
     <header class="site-header" data-include="header"></header>
 
     <main>
-      <section class="rd-hero halftone punk-tile rd-hero--punk" style="position: relative; overflow: hidden;">
+      <section class="rd-hero halftone punk-tile rd-hero--punk hero--photo" style="position: relative; overflow: hidden;">
+        <div class="hero__photo-layer" aria-hidden="true"></div>
         <div class="section-slide-bg" style="background-image: url('/public/slides/release-day-full.webp'); opacity: 0.1;" aria-hidden="true"></div>
         <div class="section-slide-bg" style="background-image: url('/public/slides/may29-text.webp'); opacity: 0.18; background-position: right center; background-size: contain;" aria-hidden="true"></div>
+        <img src="/public/punk/fire-edge-left.webp" aria-hidden="true" style="position:absolute;left:0;top:0;height:100%;width:auto;opacity:0.35;pointer-events:none;z-index:1;">
         <div class="wrap wrap--narrow" style="position: relative; z-index: 1;">
           <p class="rd-hero__date">29 . 05 . 2026 &middot; 23:59 PT</p>
-          <h1 class="rd-hero__bigdate punk-ransom">
+          <h1 class="rd-hero__bigdate punk-ransom" style="color: var(--accent-pink); text-shadow: 4px 4px 0 rgba(0,0,0,.95), 0 0 20px rgba(255,61,138,.35);">
             <span>MAY</span><span>29</span>
           </h1>
           <h2 class="rd-hero__sub">Ship something imperfect.</h2>
@@ -37,6 +40,7 @@
           </p>
 
           <div class="rd-countdown" id="rd-countdown" aria-live="polite" aria-label="Countdown to Release Day">
+            <span class="punk-circle" style="--punk-x:50%;--punk-y:50%;--punk-scale:2.5;--punk-opacity:0.25;" aria-hidden="true"></span>
             <div class="rd-countdown__chunk">
               <span class="rd-countdown__num" data-rd="days">--</span>
               <span class="rd-countdown__label">days</span>
