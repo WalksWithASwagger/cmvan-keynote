@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/css/theme.css" />
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/punk-graphics.css" />
+    <link rel="stylesheet" href="/css/zine-overhaul.css" />
     <link rel="stylesheet" href="/css/widgets/daily-refrain.css" />
     <link rel="alternate" type="application/rss+xml" title="Punk Rock AI — field notes" href="/feed.xml" />
   </head>
@@ -32,7 +33,9 @@
         </div>
       </aside>
 
-      <section class="hero hero--punk grain scanlines">
+      <section class="hero hero--punk hero--photo grain scanlines">
+        <div class="hero__photo-layer" aria-hidden="true"></div>
+        <div class="hero__slide-layer" aria-hidden="true"></div>
         <div class="wrap">
           <p class="hero__date">Creative Mornings Vancouver &middot; 01 . 05 . 2026</p>
           <h1 class="hero__title punk-ransom">
@@ -48,10 +51,45 @@
             <a class="btn btn--primary" href="/talk.html">Watch the talk</a>
             <a class="btn" href="/recap.html">Read the recap</a>
             <a class="btn" href="/widgets/three-documents.html">Write your three documents</a>
-            <a class="btn punk-shadow-pink" href="https://creativemornings.com/releaseday">Release Day &mdash; May 29</a>
+            <a class="btn punk-shadow-pink" href="/release-day.html">Release Day &mdash; May 29</a>
           </div>
+          <p style="margin-top: var(--space-4); font-size: var(--fs-xs); color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase;">
+            Photography &mdash; <a class="photo-credit-link" href="/photos/michelle-diamond.html">Michelle Diamond</a>
+          </p>
         </div>
       </section>
+
+      <!-- ── Photo marquee — Michelle Diamond shots from the talk ─────── -->
+      <div class="photo-marquee" role="img" aria-label="Event photos by Michelle Diamond">
+        <div class="photo-marquee__track">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/109.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/120.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/135.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/247.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/267.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/275.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/228.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/193.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/264.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/276.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/110.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/279.webp" alt="">
+          <!-- duplicate set for seamless loop -->
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/109.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/120.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/135.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/247.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/267.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/275.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/228.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/193.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/264.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/276.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/110.webp" alt="">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/279.webp" alt="">
+        </div>
+        <span class="photo-marquee__label">Photos by Michelle Diamond &mdash; Creative Mornings Vancouver, May 1 2026</span>
+      </div>
 
       <section class="section">
         <div class="wrap wrap--narrow" style="position: relative;">
@@ -91,8 +129,10 @@
            Selector, Voice Booth, Manifesto, Sig, Receipt Printer.
            ============================================================ -->
       <section class="section punk-section punk-section--make punk-torn-top">
+        <div class="section-slide-bg" style="background-image: url('/public/slides/taste-full.webp');" aria-hidden="true"></div>
         <div class="wrap">
-          <header class="punk-section-header">
+          <header class="punk-section-header reveal">
+            <span class="section-header-art" style="background-image: url('/public/slides/taste-drip.webp');" aria-hidden="true"></span>
             <span class="punk-section-header__num">01 — MAKE</span>
             <h2 class="punk-section-header__title">Make<br />something.</h2>
             <p class="punk-section-header__lede">
@@ -213,8 +253,10 @@
            NAME — learn to see. Bingo, Word-ban, Tool Not Neutral, etc.
            ============================================================ -->
       <section class="section punk-section punk-section--name punk-bias-bg punk-torn-top">
+        <div class="section-slide-bg" style="background-image: url('/public/slides/weirdos-lineage-full.webp');" aria-hidden="true"></div>
         <div class="wrap">
-          <header class="punk-section-header">
+          <header class="punk-section-header reveal">
+            <span class="section-header-art" style="background-image: url('/public/slides/lineage-top-strip.webp');" aria-hidden="true"></span>
             <span class="punk-section-header__num">02 — NAME</span>
             <h2 class="punk-section-header__title">Name<br />what you see.</h2>
             <p class="punk-section-header__lede">
@@ -382,8 +424,10 @@
            CONNECT — find your people. Posse, gallery, lineage, library.
            ============================================================ -->
       <section class="section punk-section punk-section--connect punk-film-strip">
+        <div class="section-slide-bg" style="background-image: url('/public/slides/posse-full.webp');" aria-hidden="true"></div>
         <div class="wrap" style="position: relative;">
-          <header class="punk-section-header">
+          <header class="punk-section-header reveal">
+            <span class="section-header-art" style="background-image: url('/public/slides/posse-text.webp');" aria-hidden="true"></span>
             <span class="punk-section-header__num">03 — CONNECT</span>
             <h2 class="punk-section-header__title">Find<br />your posse.</h2>
             <p class="punk-section-header__lede">
@@ -491,8 +535,10 @@
            SHIP — push it out. Action, Workshop, Signal, RSS.
            ============================================================ -->
       <section class="section punk-section punk-section--ship punk-torn-top">
+        <div class="section-slide-bg" style="background-image: url('/public/slides/release-day-full.webp');" aria-hidden="true"></div>
         <div class="wrap">
-          <header class="punk-section-header">
+          <header class="punk-section-header reveal">
+            <span class="section-header-art" style="background-image: url('/public/slides/may29-text.webp');" aria-hidden="true"></span>
             <span class="punk-section-header__num">04 — SHIP</span>
             <h2 class="punk-section-header__title">Ship<br />it.</h2>
             <p class="punk-section-header__lede">
@@ -564,10 +610,11 @@
       <!-- ============================================================
            Release Day mega-CTA
            ============================================================ -->
-      <section class="section halftone punk-tile punk-torn-top" style="position: relative; overflow: hidden;">
+      <section class="section halftone punk-tile punk-torn-top release-cta" style="position: relative; overflow: hidden;">
+        <div class="section-slide-bg" style="background-image: url('/public/slides/release-day-full.webp');" aria-hidden="true"></div>
         <span class="punk-circle" style="--punk-x: -3%; --punk-y: 10%; --punk-rotate: -8deg; --punk-w: 200px; --punk-h: 200px; --punk-opacity: 0.6;"></span>
         <span class="punk-splatter" style="--punk-x: auto; --punk-y: auto; right: 4%; bottom: 8%; --punk-rotate: 18deg; --punk-w: 180px; --punk-h: 180px; --punk-opacity: 0.7;"></span>
-        <div class="wrap wrap--narrow">
+        <div class="wrap wrap--narrow" style="position: relative; z-index: 1;">
           <p class="eyebrow">Release Day &mdash; 29 . 05 . 2026</p>
           <h2 class="punk-ransom"><span>Ship</span><span>something</span><span>imperfect</span></h2>
           <p>
@@ -586,5 +633,22 @@
 
     <script type="module" src="/js/common/header.js"></script>
     <script type="module" src="/js/widgets/daily-refrain.js" defer></script>
+    <script>
+      // Scroll-reveal for section headers
+      if (window.IntersectionObserver) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+      } else {
+        // Fallback: make all visible immediately
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+      }
+    </script>
   </body>
 </html>
