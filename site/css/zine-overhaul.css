@@ -1,0 +1,381 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   ZINE OVERHAUL — index.html visual layer.
+   Brings talk slide aesthetic into the site: photo hero, marquee, pink
+   dominance, slide-crop section backgrounds, animated title, card polish.
+   Layered OVER the existing punk system — never touches base rules.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── 1. Hero — photo backdrop + BHF slide texture ─────────────────────── */
+
+.hero--photo {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  min-height: 92vh;
+  display: flex;
+  align-items: flex-end;
+  padding-block: var(--space-7) var(--space-6);
+}
+
+/* Michelle Diamond photo #109: Kris on stage, BOTH HANDS FULL backdrop */
+.hero__photo-layer {
+  position: absolute;
+  inset: 0;
+  background:
+    url('/public/photos/michelle-diamond/109.webp')
+    center 30% / cover no-repeat;
+  z-index: 0;
+}
+
+/* Dark gradient — heavy top + bottom, open middle so the photo reads */
+.hero__photo-layer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.65)  0%,
+    rgba(0, 0, 0, 0.12)  45%,
+    rgba(0, 0, 0, 0.18)  60%,
+    rgba(0, 0, 0, 0.88) 100%
+  );
+}
+
+/* BHF title slide at low opacity — fuses photo with the punk collage world */
+.hero__slide-layer {
+  position: absolute;
+  inset: 0;
+  background: url('/public/slides/bhf-title-full.webp') center / cover no-repeat;
+  opacity: 0.12;
+  mix-blend-mode: screen;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Content sits above grain (z:1) and both texture layers */
+.hero--photo > .wrap {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Pink title — matches slide drip text color ───────────────────────── */
+
+.hero--photo .hero__title {
+  color: var(--accent-pink);
+  text-shadow:
+    0 0 80px rgba(255, 61, 138, 0.55),
+    0 0 20px rgba(255, 61, 138, 0.3),
+    4px 4px 0 rgba(0, 0, 0, 0.95);
+}
+
+.hero--photo .hero__title em {
+  color: var(--paper-bright);
+  font-style: normal;
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  letter-spacing: -0.02em;
+  display: block;
+  margin-top: var(--space-3);
+}
+
+.hero--photo .hero__date {
+  color: var(--accent-pink);
+  opacity: 0.9;
+}
+
+/* Hero lede — legible on the photo */
+.hero--photo .hero__lede {
+  max-width: 56ch;
+  color: var(--fg);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* ── 2. Title entrance animation ─────────────────────────────────────── */
+
+@keyframes punkDrop {
+  0%   { opacity: 0; transform: translateY(-56px) rotate(-11deg) skewX(-8deg); }
+  62%  { transform: translateY(5px) rotate(2deg) skewX(0.5deg); }
+  100% { opacity: 1; transform: translateY(0) rotate(0) skewX(0); }
+}
+
+@keyframes punkSlide {
+  from { opacity: 0; transform: translateX(32px) skewX(4deg); }
+  to   { opacity: 1; transform: translateX(0) skewX(0); }
+}
+
+@keyframes punkFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__date {
+    animation: punkSlide 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) 0s both;
+  }
+  .hero__title span:nth-child(1) {
+    display: inline-block;
+    animation: punkDrop 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.12s both;
+  }
+  .hero__title span:nth-child(2) {
+    display: inline-block;
+    animation: punkDrop 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s both;
+  }
+  .hero__title span:nth-child(3) {
+    display: inline-block;
+    animation: punkDrop 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.46s both;
+  }
+  .hero__title em {
+    animation: punkSlide 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) 0.7s both;
+  }
+  .hero__lede {
+    animation: punkFade 0.6s ease 0.85s both;
+  }
+  .hero__cta {
+    animation: punkFade 0.6s ease 1s both;
+  }
+}
+
+/* ── 3. Photo marquee strip ──────────────────────────────────────────── */
+
+.photo-marquee {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  border-top: 3px solid var(--accent-pink);
+  border-bottom: 3px solid var(--accent-pink);
+  height: 210px;
+  /* subtle pink glow cast */
+  box-shadow:
+    0 -8px 40px rgba(255, 61, 138, 0.18),
+    0  8px 40px rgba(255, 61, 138, 0.18);
+}
+
+/* Fade edges */
+.photo-marquee::before,
+.photo-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 3;
+  pointer-events: none;
+}
+.photo-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, #000 0%, transparent 100%);
+}
+.photo-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, #000 0%, transparent 100%);
+}
+
+.photo-marquee__track {
+  display: flex;
+  gap: 5px;
+  height: 100%;
+  width: max-content;
+  animation: marqueeScroll 60s linear infinite;
+  will-change: transform;
+}
+.photo-marquee__track:hover {
+  animation-play-state: paused;
+}
+
+.photo-marquee__img {
+  height: 100%;
+  width: auto;
+  display: block;
+  object-fit: cover;
+  filter: grayscale(45%) contrast(1.2) brightness(0.82);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+.photo-marquee__img:hover {
+  filter: grayscale(0%) contrast(1.05) brightness(1.05);
+  transform: scale(1.05);
+  z-index: 4;
+  position: relative;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-marquee__track { animation: none; }
+}
+
+/* ── 4. Marquee caption band ─────────────────────────────────────────── */
+
+.photo-marquee__label {
+  position: absolute;
+  bottom: var(--space-2);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-pink);
+  opacity: 0.7;
+  pointer-events: none;
+  white-space: nowrap;
+  text-shadow: 0 1px 4px #000;
+}
+
+/* ── 5. Section slide texture layer ─────────────────────────────────── */
+
+/* Used as a child div inside each punk-section, not a pseudo-element,
+   so it never conflicts with punk-torn-top/film-strip/bias-bg ::before */
+.section-slide-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.06;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* Slightly stronger on hover */
+.punk-section:hover .section-slide-bg {
+  opacity: 0.09;
+}
+
+/* Ensure the content .wrap sits above the texture */
+.punk-section > .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── 6. Section header — pink dominance + slide crop art ─────────────── */
+
+.punk-section-header {
+  position: relative;
+  padding-bottom: var(--space-4);
+}
+
+/* Pink bottom rule */
+.punk-section-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, var(--accent-pink), transparent);
+}
+
+/* Section h2 titles — hot pink like the slide drip text */
+.punk-section-header__title {
+  color: var(--accent-pink);
+  text-shadow: 0 0 80px rgba(255, 61, 138, 0.18);
+}
+
+/* Section numbers stay red for contrast */
+.punk-section-header__num {
+  color: var(--accent);
+}
+
+/* Decorative slide crop floated at top-right of each section header */
+.section-header-art {
+  position: absolute;
+  right: 0;
+  top: -10px;
+  width: clamp(140px, 22vw, 300px);
+  height: clamp(100px, 16vw, 220px);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right top;
+  opacity: 0.18;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  transition: opacity 0.4s ease;
+}
+.punk-section-header:hover .section-header-art {
+  opacity: 0.28;
+}
+
+/* ── 7. Card polish — stronger pink hover ────────────────────────────── */
+
+.card {
+  transition:
+    transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+.card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 4px 4px 0 var(--accent-pink);
+  border-color: var(--accent-pink);
+}
+.card:hover .card__title {
+  color: var(--accent-pink);
+  transition: color 0.18s ease;
+}
+.card:hover .card__cta {
+  color: var(--accent-pink);
+  transition: color 0.18s ease;
+}
+
+/* ── 8. Release Day mega-CTA — slide texture + pink ──────────────────── */
+
+.release-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.release-cta .section-slide-bg {
+  opacity: 0.13;
+}
+
+.release-cta .punk-ransom {
+  color: var(--accent-pink);
+  text-shadow:
+    0 0 80px rgba(255, 61, 138, 0.4),
+    3px 3px 0 rgba(0, 0, 0, 0.9);
+}
+
+/* ── 9. Scroll-reveal ────────────────────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* Staggered reveal for card grids */
+.card-grid--collage li:nth-child(2) .reveal { transition-delay: 0.08s; }
+.card-grid--collage li:nth-child(3) .reveal { transition-delay: 0.16s; }
+.card-grid--collage li:nth-child(4) .reveal { transition-delay: 0.22s; }
+.card-grid--collage li:nth-child(5) .reveal { transition-delay: 0.28s; }
+.card-grid--collage li:nth-child(6) .reveal { transition-delay: 0.32s; }
+
+/* ── 10. Michelle photos link — in nav + recap ───────────────────────── */
+
+.photo-credit-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  color: var(--accent-pink);
+  text-decoration: none;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(255, 61, 138, 0.4);
+  padding-bottom: 1px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.photo-credit-link:hover {
+  color: var(--fg);
+  border-color: var(--fg);
+}
