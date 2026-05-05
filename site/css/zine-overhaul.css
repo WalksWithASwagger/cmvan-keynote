@@ -17,13 +17,15 @@
   padding-block: var(--space-7) var(--space-6);
 }
 
-/* Michelle Diamond photo #109: Kris on stage, BOTH HANDS FULL backdrop */
+/* Default photo: Michelle Diamond #109 (Kris on stage). Override per-page via:
+   <style>:root { --hero-photo: url('/public/photos/...'); }</style> */
 .hero__photo-layer {
   position: absolute;
   inset: 0;
-  background:
-    url('/public/photos/michelle-diamond/109.webp')
-    center 30% / cover no-repeat;
+  background-image: var(--hero-photo, url('/public/photos/michelle-diamond/109.webp'));
+  background-position: center 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
   z-index: 0;
 }
 

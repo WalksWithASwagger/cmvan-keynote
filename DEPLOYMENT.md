@@ -1,8 +1,12 @@
 # Deployment Runbook — punkrockai.com
 
-This repo ships to Cloudflare Pages. The static site lives in `site/`; two
-Cloudflare Workers under `worker/` back the interactive widgets. This document
-is the field-by-field runbook for the human with Cloudflare access.
+> **Live host: Vercel.** The site runs at punkrockai.com on the `punkrockai` project under `walkswithaswaggers-projects`. Push to `main` → auto-deploys to production. See `docs/PROJECT-ROADMAP.md` for DNS details and `vercel.json` for routing config.
+>
+> This document is the **Cloudflare Pages fallback runbook** — kept as reference if the host ever needs to switch. The `wrangler.toml`, `site/_headers`, and `site/_redirects` files remain in the repo for this reason.
+
+The static site lives in `site/`; two Cloudflare Workers under `worker/` back
+the interactive widgets. This document is the field-by-field runbook for the
+human with Cloudflare access.
 
 Estimated time end-to-end: ~30 min (Pages project + DNS + TLS) plus 5 min per
 worker. Most of that is waiting for DNS/TLS to provision.

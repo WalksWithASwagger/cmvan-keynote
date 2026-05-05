@@ -297,8 +297,101 @@
    SITE FOOTER
    ------------------------------------------------------------------ */
 
+/* Newsletter signup band — sits inside .site-footer before the footer links */
+.newsletter-band {
+  background: var(--bg-elevated);
+  border-top: 2px solid var(--accent-pink);
+  border-bottom: 1px solid var(--border);
+  padding-block: var(--space-5);
+}
+
+.newsletter-band__inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-4) var(--space-6);
+  align-items: center;
+}
+
+.newsletter-band__kicker {
+  font-size: var(--fs-sm);
+  color: var(--accent-pink);
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-1);
+}
+
+.newsletter-band__lede {
+  font-size: var(--fs-sm);
+  color: var(--fg-soft);
+}
+
+.newsletter-band__form {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.newsletter-band__input {
+  background: var(--bg);
+  border: 2px solid var(--border-strong);
+  color: var(--fg);
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  min-width: 220px;
+  border-radius: 0;
+  transition: border-color 0.15s;
+}
+
+.newsletter-band__input:focus {
+  outline: none;
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 0 2px rgba(255, 61, 138, 0.2);
+}
+
+.newsletter-band__btn {
+  background: var(--accent-pink);
+  color: #000;
+  border: none;
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  transition: background 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.newsletter-band__btn:hover { background: var(--accent-pink-soft); }
+.newsletter-band__btn:active { transform: translateY(1px); }
+.newsletter-band__btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.newsletter-band__msg {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  width: 100%;
+  margin-top: var(--space-1);
+  min-height: 1.2em;
+}
+
+.newsletter-band__msg--ok { color: var(--accent-pink); }
+.newsletter-band__msg--err { color: var(--accent); }
+
+@media (max-width: 720px) {
+  .newsletter-band__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-band__input {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
 .site-footer {
-  border-top: 1px solid var(--border);
   margin-top: var(--space-7);
   padding-block: var(--space-5);
   font-size: var(--fs-sm);

@@ -18,15 +18,21 @@
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/punk-graphics.css" />
     <link rel="stylesheet" href="/css/widgets/lineage.css" />
+    <link rel="stylesheet" href="/css/zine-overhaul.css" />
+    <meta property="og:image" content="https://punkrockai.com/public/slides/weirdos-lineage-full.webp" />
+    <style>:root { --hero-photo: url('/public/photos/rick/050.webp'); }</style>
   </head>
   <body class="shell">
     <header class="site-header" data-include="header"></header>
 
     <main class="lineage">
-      <section class="lineage-hero grain scanlines punk-tile">
-        <div class="wrap wrap--narrow">
+      <section class="lineage-hero grain scanlines punk-tile hero--photo punk-film-strip" style="position: relative; overflow: hidden;">
+        <div class="hero__photo-layer" aria-hidden="true"></div>
+        <div class="hero__slide-layer" aria-hidden="true" style="background-image: url('/public/slides/weirdos-lineage-full.webp');"></div>
+        <img src="/public/slides/lineage-top-strip.webp" aria-hidden="true" style="position:absolute;top:0;left:0;width:100%;opacity:0.18;pointer-events:none;z-index:1;">
+        <div class="wrap wrap--narrow" style="position: relative; z-index: 1;">
           <p class="lineage-hero__eyebrow">Slides 5 &amp; 6 &middot; the through-line</p>
-          <h1>Dada &rarr; AI in six beats.</h1>
+          <h1 style="color: var(--accent-pink); text-shadow: 4px 4px 0 rgba(0,0,0,.95), 0 0 20px rgba(255,61,138,.35);">Dada &rarr; AI in six beats.</h1>
           <p class="lineage-hero__sub" id="sub-thesis"></p>
           <nav class="lineage-trail" id="trail" aria-label="Beats"></nav>
         </div>

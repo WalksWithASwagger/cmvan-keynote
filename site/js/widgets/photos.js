@@ -53,7 +53,7 @@ function renderGrid() {
   for (let i = 0; i < photos.length; i++) {
     const p = photos[i];
     const li = document.createElement("li");
-    li.className = "pg-card" + (p.featured ? " pg-card--featured" : "");
+    li.className = "pg-card punk-card--taped" + (p.featured ? " pg-card--featured" : "");
     li.innerHTML = `
       <button class="pg-thumb" type="button" data-idx="${i}" aria-label="Open photo ${p.id}">
         <img

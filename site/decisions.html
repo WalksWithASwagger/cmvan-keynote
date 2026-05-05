@@ -15,15 +15,19 @@
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/punk-graphics.css" />
     <link rel="stylesheet" href="/css/widgets/decisions.css" />
+    <link rel="stylesheet" href="/css/zine-overhaul.css" />
+    <style>:root { --hero-photo: url('/public/photos/michelle-diamond/275.webp'); }</style>
   </head>
   <body class="shell">
     <header class="site-header" data-include="header"></header>
 
     <main>
-      <section class="dec-intro punk-tile">
+      <section class="dec-intro punk-tile grain scanlines hero--photo">
+        <div class="hero__photo-layer" aria-hidden="true"></div>
+        <div class="hero__slide-layer" aria-hidden="true" style="background-image: url('/public/slides/tool-neutral-full.webp');"></div>
         <div class="wrap wrap--narrow">
           <p class="kicker kicker--accent">Decisions</p>
-          <h1>The talk&rsquo;s own decision log, in public.</h1>
+          <h1 style="color: var(--accent-pink); text-shadow: 4px 4px 0 rgba(0,0,0,.95), 0 0 20px rgba(255,61,138,.35);">The talk&rsquo;s own decision log, in public.</h1>
           <p class="dec-intro__lede">
             Open questions, decisions made, and the running session log
             &mdash; pulled directly from
@@ -45,6 +49,7 @@
             </li>
           </ul>
         </div>
+        <span class="punk-slash" style="--punk-x:75%;--punk-y:15%;--punk-rotate:-20deg;--punk-scale:0.9;--punk-opacity:0.45;" aria-hidden="true"></span>
       </section>
 
       <section>
@@ -53,9 +58,9 @@
             <section class="dec-col">
               <h2>Open questions</h2>
               <div class="dec-filter" id="dec-filter" role="group" aria-label="Filter by status">
-                <button type="button" data-filter="all" aria-pressed="true">All</button>
-                <button type="button" data-filter="open" aria-pressed="false">Open only</button>
-                <button type="button" data-filter="resolved" aria-pressed="false">Resolved only</button>
+                <button type="button" data-filter="all" aria-pressed="true" style="border: 2px solid var(--accent); transform: rotate(-1deg);">All</button>
+                <button type="button" data-filter="open" aria-pressed="false" style="border: 2px solid var(--accent); transform: rotate(-1deg);">Open only</button>
+                <button type="button" data-filter="resolved" aria-pressed="false" style="border: 2px solid var(--accent); transform: rotate(-1deg);">Resolved only</button>
               </div>
               <div id="dec-questions" aria-live="polite"></div>
             </section>

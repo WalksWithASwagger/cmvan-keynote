@@ -18,13 +18,16 @@
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/punk-graphics.css" />
     <link rel="stylesheet" href="/css/widgets/chainsaws.css" />
+    <link rel="stylesheet" href="/css/zine-overhaul.css" />
   </head>
   <body class="shell">
     <header class="site-header" data-include="header"></header>
 
     <main class="chainsaws">
-      <section class="chainsaws-hero grain scanlines punk-tile">
-        <div class="wrap wrap--narrow">
+      <section class="chainsaws-hero grain scanlines punk-tile punk-section--name" style="position: relative; overflow: hidden;">
+        <div class="section-slide-bg" aria-hidden="true" style="background-image: url('/public/slides/weirdos-lineage-full.webp'); opacity: 0.07; mix-blend-mode: screen;"></div>
+        <span class="punk-refuse" style="--punk-x:75%;--punk-y:15%;--punk-scale:1.2;--punk-opacity:0.5;" aria-hidden="true"></span>
+        <div class="wrap wrap--narrow" style="position: relative; z-index: 1;">
           <p class="chainsaws-hero__eyebrow">Slide 19 &middot; the tool is never neutral</p>
           <blockquote class="chainsaws-hero__quote" id="anchor-quote">
             <p class="chainsaws-hero__quote-text" id="anchor-quote-text"></p>
@@ -34,7 +37,7 @@
               <span class="chainsaws-hero__quote-source" id="anchor-quote-source"></span>
             </footer>
           </blockquote>
-          <h1 id="chainsaws-thesis"></h1>
+          <h1 id="chainsaws-thesis" style="color: var(--accent);"></h1>
           <p class="chainsaws-hero__sub" id="chainsaws-sub"></p>
           <nav class="chainsaws-trail" id="chainsaws-trail" aria-label="Tools"></nav>
         </div>

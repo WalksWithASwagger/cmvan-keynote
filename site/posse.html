@@ -15,12 +15,17 @@
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/punk-graphics.css" />
     <link rel="stylesheet" href="/css/widgets/posse.css" />
+    <link rel="stylesheet" href="/css/zine-overhaul.css" />
+    <meta property="og:image" content="https://punkrockai.com/public/slides/posse-full.webp" />
+    <style>:root { --hero-photo: url('/public/photos/rick/100.webp'); }</style>
   </head>
   <body class="shell">
     <header class="site-header" data-include="header"></header>
 
     <main>
-      <section class="posse-intro grain scanlines punk-tile posse-intro--punk">
+      <section class="posse-intro grain scanlines punk-tile posse-intro--punk hero--photo" style="position: relative; overflow: hidden;">
+        <div class="hero__photo-layer" aria-hidden="true"></div>
+        <div class="hero__slide-layer" aria-hidden="true" style="background-image: url('/public/slides/posse-full.webp');"></div>
         <div class="posse-mosaic" aria-hidden="true">
           <span class="posse-mosaic__face posse-mosaic__face--1"></span>
           <span class="posse-mosaic__face posse-mosaic__face--2"></span>
@@ -30,7 +35,8 @@
         </div>
         <div class="wrap wrap--narrow">
           <p class="kicker kicker--accent">Slide 17 &middot; build a posse</p>
-          <h1 class="posse-intro__title">The lifeboat<br />has room<br /><em>for one more.</em></h1>
+          <h1 class="posse-intro__title" style="color: var(--accent-pink); text-shadow: 4px 4px 0 rgba(0,0,0,.95), 0 0 20px rgba(255,61,138,.35);">The lifeboat<br />has room<br /><em>for one more.</em></h1>
+          <span class="punk-splatter" style="--punk-x:80%;--punk-y:20%;--punk-scale:1.2;--punk-opacity:0.55;" aria-hidden="true"></span>
           <p class="posse-intro__lede">
             One hundred and eighty-one RSVPs for the room on May 1. These are
             the eleven people whose public work maps most directly onto the

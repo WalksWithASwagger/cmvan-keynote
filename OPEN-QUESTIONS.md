@@ -1,6 +1,6 @@
 # Open Questions
 
-Contradictions found across the source documents. Resolve before locking the script.
+Pre-talk contradictions and open items. Updated May 5 post-talk — questions answered by events are marked RESOLVED.
 
 ---
 
@@ -32,62 +32,32 @@ See `docs/MARK-FEEDBACK.md` for full context.
 
 ---
 
-## 3. How many slides? — **RESOLVED (28 slides)**
+## 3. How many slides? — **RESOLVED (22 slides, punk/zine style)**
 
-**Canon (as of 2026-04-27):** **28 slides** — full narrative arc from Permission Gap through Close.
-
-Two complete image prompt batches in Rafiki format:
-- `assets/image-prompts/hope-code-v3-28-rafiki.md` — solar punk / Aurora Borealis / mycelial (HOPECODE style)
-- `assets/image-prompts/punk-v2-28-rafiki.md` — xerox grain / cut-and-paste / blood red (zine style)
-
-Both styles generated via Nano Pro (gemini-3-pro-image-preview) — 28 images each. gpt-image-2 runs blocked by OpenAI billing limit (add credit at platform.openai.com to unlock).
-
-View in browser: `python3 -m http.server 7772 --directory assets/generated/slides` → `http://127.0.0.1:7772/viewer.html`
-
-**Action still needed:** pick one style (or mixed) for the actual Canva/Keynote deck build.
+Final deck: 22 slides, punk-v2 zine aesthetic. See `SESSION-HANDOFF.md` for the complete final slide order and image sources.
 
 ---
 
-## 4. What's the closing CTA — Release Day or FPC cohort?
+## 4. What's the closing CTA — Release Day or FPC cohort? — **RESOLVED (Release Day)**
 
-Two different soft-launches are documented for the same talk:
+The load-bearing close was **Release Day / May 29** — ship something, punkrockai.com/release-day as the landing. FPC was available as a quieter "if you want more" but not the primary CTA on stage.
 
-- **[pitch/pitch-for-mark-busse.md](./pitch/pitch-for-mark-busse.md)** + issue #1570: closing CTA is the **Release Day Challenge** — ship something by May 29, possibly compiled into a punk-style zine/broadsheet.
-- **[source-material/cmvan-context/fpc-relaunch-readme-FOR-REFERENCE.md](./source-material/cmvan-context/fpc-relaunch-readme-FOR-REFERENCE.md)**: closing beat is a **soft launch of Future Proof Creatives** with founding-member pricing for CMVan attendees.
-
-**Action:** these aren't necessarily mutually exclusive (Release Day is the room-wide call; FPC is a quieter "if you want more, here's where to find me"). But pick one as the load-bearing close.
+**Post-talk:** Update this with the actual room response if different.
 
 ---
 
-## 5. What's the companion site for?
+## 5. What's the companion site for? — **RESOLVED (interactive portal)**
 
-The user mentioned "maybe even a companion website or something." Open scope. Possibilities:
-
-- **Release Day landing page** — submission portal for audience projects, public gallery
-- **Three Documents toolkit** — interactive prompts that walk a creative through writing their personal AI policy / style guide / worldview
-- **Talk recap + clip library** — post-event home for video, transcript, frameworks
-- **Punk-zine generator** — turn submitted Release Day projects into a digital broadsheet (the "full circle to Xerox culture" idea from the pitch notes)
-
-**Action:** decide scope before writing code. Punkest answer is probably a single fast-loading page that serves the Release Day challenge.
+**punkrockai.com** is live — an interactive learning portal with 25+ widgets turning the talk into tools people can actually use. See `site/README.md` for the full layout and `docs/PROJECT-ROADMAP.md` for the phase ledger.
 
 ---
 
-## 6. Adobe involvement?
+## 6. Adobe involvement? — **NEEDS POST-TALK UPDATE**
 
-The CREATE theme was co-created with Adobe globally. Are they:
-- A passive theme partner only (most likely)
-- Sponsoring the chapter event
-- Wanting product mentions / placement in slides
-- Open to a Release Day partnership
-
-**Action:** ask Mark.
+Talk happened May 1. Fill in what actually played out with Mark re: Adobe's role.
 
 ---
 
-## 7. Recording rights
+## 7. Recording rights — **NEEDS POST-TALK UPDATE**
 
-CreativeMornings traditionally records and posts talks publicly. Confirm:
-- Will this be recorded?
-- Who owns the footage?
-- When will it be released?
-- Can clips be used pre-release for promo?
+Talk happened May 1. Fill in: Was it recorded? Who owns it? Release timeline? Can you use clips now?

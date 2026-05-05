@@ -18,12 +18,16 @@
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/punk-graphics.css" />
     <link rel="stylesheet" href="/css/signal.css" />
+    <link rel="stylesheet" href="/css/zine-overhaul.css" />
   </head>
   <body class="shell signal">
     <header class="site-header" data-include="header"></header>
 
     <main>
-      <section class="signal-hero grain scanlines punk-tile" id="signal" data-state="loading">
+      <section class="signal-hero grain scanlines punk-tile hero--photo" id="signal" data-state="loading">
+        <div class="hero__photo-layer" id="signal-photo-layer" aria-hidden="true"></div>
+        <div class="hero__slide-layer" aria-hidden="true" style="background-image: url('/public/slides/bhf-bg-texture.webp');"></div>
+        <span class="punk-splatter--red" style="--punk-x:82%;--punk-y:12%;--punk-scale:1.0;--punk-opacity:0.45;" aria-hidden="true"></span>
         <div class="wrap wrap--narrow">
           <p class="signal__eyebrow">
             <span class="signal__tag">Signal</span>

@@ -1,3 +1,16 @@
+// Google Analytics 4
+(function () {
+  var s = document.createElement('script');
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-NZ9H74R399';
+  s.async = true;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-NZ9H74R399');
+})();
+
 // Tiny include helper. Fetches partials/header.html + footer.html and inserts
 // them into elements with [data-include="header"] / [data-include="footer"].
 // Marks the matching nav link with aria-current="page" so layout.css can
@@ -27,6 +40,7 @@ if (includes.length) {
     })
   ).then(() => {
     markCurrentNav();
+    initSubscribe();
     // Once the header is in the DOM, layer dropdown behavior on top of
     // native <details>. Lazy-imported so pages without the header skip it.
     import("/js/common/nav.js").catch((err) => {
@@ -35,6 +49,44 @@ if (includes.length) {
   });
 } else {
   markCurrentNav();
+}
+
+function initSubscribe() {
+  const form = document.querySelector('.newsletter-band__form');
+  if (!form) return;
+  const input = form.querySelector('input[type="email"]');
+  const btn = form.querySelector('button[type="submit"]');
+  const msg = form.querySelector('.newsletter-band__msg');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = (input.value || '').trim();
+    if (!email) return;
+    btn.disabled = true;
+    btn.textContent = 'sending…';
+    msg.textContent = '';
+    msg.className = 'newsletter-band__msg';
+    try {
+      const r = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await r.json();
+      if (data.ok) {
+        msg.textContent = "you're in. check your inbox.";
+        msg.className = 'newsletter-band__msg newsletter-band__msg--ok';
+        form.reset();
+      } else {
+        msg.textContent = data.error || 'something went wrong.';
+        msg.className = 'newsletter-band__msg newsletter-band__msg--err';
+      }
+    } catch {
+      msg.textContent = 'network error. try again.';
+      msg.className = 'newsletter-band__msg newsletter-band__msg--err';
+    }
+    btn.disabled = false;
+    btn.textContent = 'subscribe';
+  });
 }
 
 function markCurrentNav() {

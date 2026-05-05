@@ -47,3 +47,4 @@ assets/image-prompts/images/
 
 # Whitelist a few small video formats if you ever want to commit them
 !assets/image-prompts/*.mp4
+.vercel
