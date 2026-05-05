@@ -61,20 +61,19 @@ Do not conflate the two on public copy or slide footers.
 | **A2 — Script refactor** | Apr 25 | ✅ | Mark's feedback formalized ([MARK-FEEDBACK.md](./MARK-FEEDBACK.md)); book draft ingested ([source-material/life-love-internet/](../source-material/life-love-internet/)); creativity biography doc written; talk framework v4 (discussion-first) written |
 | **A3 — Visual + audio draft** | Apr 25 | ✅ | 10 zine prompts in Rafiki format; gpt-image-2 + Nano Pro full-deck runs; ElevenLabs dress rehearsal audio generated (`dress-rehearsal/punk-rock-ai-full-talk.mp3`, gitignored); generation script committed |
 | **A4 — 28-slide expansion** | Apr 27 | ✅ | 8 new content sections (Bryght/Dead.net, Burroughs/Situationists, Vicki, Junior Pipeline, Galiano, True North, Anthony Joseph, Best Tool); HOPECODE v3 + punk v2 prompt files; Nano Pro runs complete (28 slides each); audio script v3 (~28 min); audio regenerated |
-| **B — Ship public minimum** | Before May 1 | 🔲 | `punkrockai.com` live: hero, dates, `#ReleaseDay2026` CTA; QR → companion site |
-| **C — Talk week** | May 1 | 🔲 | Final slide deck built from chosen images; talk framework v4 rehearsed in discussion-first format; confirm recording rights with Mark |
-| **D — Release month** | May 1–29 | 🔲 | Social cadence; Release Day submissions; optional CM virtual FieldTrips alignment |
+| **B — Ship public minimum** | Before May 1 | ✅ | `punkrockai.com` live; hero, dates, `#ReleaseDay2026` CTA; QR → companion site |
+| **C — Talk week** | May 1 | ✅ | Talk delivered May 1, 2026. 22-slide zine deck. Discussion-first format. |
+| **D — Release month** | May 1–29 | 🟡 | Social cadence; Release Day submissions open; recording rights TBD with Mark |
 | **E — Post-publish** | After May 29 | 🔲 | Long article (Banff + BHF + CMVan arc); optional zine/PDF; talk recording posted |
 | **P — punkrockai.com portal** | May 1 → ongoing | 🟡 in progress | Interactive learning portal at `site/`; see "Portal phase" below |
 
-### Before May 1 — remaining blockers (4 days out, as of Apr 27)
+### Phase D — Release month blockers (May 5, 2026)
 
-1. **Final slide deck** — open viewer, pick style (HOPECODE vs punk/zine or mixed), build Keynote/Canva from chosen images
-2. **Timed run-through** — say the v4 discussion-first framework out loud; clock it at 22 min; adjust which truth bombs to deploy
-3. **Close OPEN-QUESTIONS #4** — Release Day CTA vs FPC soft-launch: pick one as the load-bearing close
-4. **Confirm with Mark** — recording rights (Q#7); Adobe involvement level (Q#6); any last format notes
-5. **punkrockai.com DNS** — apex + www should resolve before May 1 (QR points here)
-6. **OpenAI billing** (optional) — raise spending cap at platform.openai.com if gpt-image-2 comparison images are wanted
+1. **Recording rights** — confirm with Mark: recorded? owner? release date? clips OK now?
+2. **Adobe involvement** — note what role they actually played on May 1
+3. **Release Day submissions** — monitor punkrockai.com/release-day through May 29
+4. **Social cadence** — #ReleaseDay2026 posts through May 29
+5. **punk.ceo / plump.co routing** — still TBD (see domains table above)
 
 ---
 

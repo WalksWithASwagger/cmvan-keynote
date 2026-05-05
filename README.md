@@ -3,7 +3,7 @@
 
 Talk by **Kris Krüg**. Hosted by **Mark Busse**.
 
-**5 days out. This is the live repo.**
+**Talk delivered May 1, 2026. Now in Release Month — ship something by May 29.**
 
 ---
 
@@ -95,13 +95,13 @@ python3 -m http.server 7772 --directory assets/generated/slides
 
 ---
 
-## What's Still Open (5 days out)
+## Post-Talk (May 1 → May 29)
 
-- [ ] Pick which image run to use for the actual deck (GPT vs Nano — compare in viewer)
-- [ ] Build the actual Canva/Keynote slide deck from chosen images
-- [ ] Timed run-through (target: 22 min)
-- [ ] Confirm Release Day / May 29 framing with Mark
-- [ ] Companion site update (optional before May 1)
+- [ ] Release Day submissions open at punkrockai.com/release-day — closes May 29
+- [ ] Social cadence through May 29 (#ReleaseDay2026)
+- [ ] Recording rights / clip usage (confirm with Mark)
+- [ ] Long article: Banff + Both Hands Full + CMVan arc
+- [ ] Optional: zine/PDF broadsheet from submissions
 
 ---
 
@@ -135,7 +135,7 @@ To add a future field note: drop `site/notes/<slug>.html` with `<title>` + `<met
 
 ## Archive
 
-Everything pre-v2 lives in `archive/` — original monologue (v3), v1 image prompts, old slide outlines, pitch deck. It's there if you need it. Don't use it for May 1.
+Everything pre-v2 lives in `archive/` — original monologue (v3), v1 image prompts, old slide outlines, pitch deck.
 
 ---
 
