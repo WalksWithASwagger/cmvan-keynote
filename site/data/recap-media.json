@@ -8,7 +8,7 @@
       "kind": "photo",
       "caption": "Just before walking out — Creative Mornings Vancouver, May 1 2026.",
       "credit": "Concept slide stand-in — replace with talk-day photo of the stage.",
-      "src": "/media/recap/hero.jpg",
+      "src": "/public/media/recap/hero.jpg",
       "alt": "Punk Rock AI title card: bold red and black collage with the talk title across the frame."
     },
     {
@@ -16,7 +16,7 @@
       "kind": "photo",
       "caption": "The room settling. Coffee in everyone's hands. The slides waiting.",
       "credit": "Concept slide stand-in — replace with photo of the audience filing in.",
-      "src": "/media/recap/01-walk-out.jpg",
+      "src": "/public/media/recap/01-walk-out.jpg",
       "alt": "Concept slide: a hand cradling a phone-as-camera with the line 'the best tool you have with you'."
     },
     {
@@ -24,7 +24,7 @@
       "kind": "photo",
       "caption": "Notebook side-by-side with talk-framework-v4 and -v6 in tmux. Six versions before the climax reordered itself.",
       "credit": "Concept slide stand-in — replace with screenshot of the v4 vs v9 framework diff.",
-      "src": "/media/recap/02-thesis-evolution.jpg",
+      "src": "/public/media/recap/02-thesis-evolution.jpg",
       "alt": "Both Hands Full diptych: critique on one side, capability on the other, framed as the punk condition."
     },
     {
@@ -32,7 +32,7 @@
       "kind": "photo",
       "caption": "Twenty-two slides as a contact sheet. The same image regenerated dozens of times before it was the right one.",
       "credit": "Concept slide stand-in — replace with a contact-sheet collage of the final slide deck.",
-      "src": "/media/recap/03-slide-grid.jpg",
+      "src": "/public/media/recap/03-slide-grid.jpg",
       "alt": "Concept slide titled 'the cutting room floor' — taste lives in what you throw away."
     },
     {
@@ -40,7 +40,7 @@
       "kind": "video",
       "caption": "A slide that didn't make it. The cutting room floor is the work.",
       "credit": "Placeholder — replace with the time-lapse video of slide image generation runs.",
-      "src": "/media/recap/04-image-generation-placeholder.svg",
+      "src": "/public/media/recap/04-image-generation-placeholder.svg",
       "poster": null,
       "alt": "Placeholder card reading 'video coming' for the slide-image-generation time-lapse."
     },
@@ -49,7 +49,7 @@
       "kind": "photo",
       "caption": "ElevenLabs dress rehearsal — eighteen minutes of audio cut from one prose pass.",
       "credit": "Concept slide stand-in — replace with photo of headphones and printed speaker notes.",
-      "src": "/media/recap/05-dress-rehearsal.jpg",
+      "src": "/public/media/recap/05-dress-rehearsal.jpg",
       "alt": "Concept slide: the feedback loop — generation, taste, compression, mastery."
     },
     {
@@ -57,7 +57,7 @@
       "kind": "photo",
       "caption": "punkrockai.com homepage — the four Phase 1 widgets, no framework, no bundler.",
       "credit": "Concept slide stand-in — replace with screenshot of the punkrockai.com homepage.",
-      "src": "/media/recap/06-portal-home.jpg",
+      "src": "/public/media/recap/06-portal-home.jpg",
       "alt": "Concept slide: dada, punks, DJs, AI — the cut-and-paste lineage of the talk."
     },
     {
@@ -65,7 +65,7 @@
       "kind": "photo",
       "caption": "The Three Documents builder. Type. Reload. Drafts persist. Export to take with you.",
       "credit": "Concept slide stand-in — replace with screenshot of the Three Documents widget in use.",
-      "src": "/media/recap/07-three-documents.jpg",
+      "src": "/public/media/recap/07-three-documents.jpg",
       "alt": "Concept slide: The Three Documents — policy, style guide, worldview."
     },
     {
@@ -73,7 +73,7 @@
       "kind": "photo",
       "caption": "Both Hands Full canvas — critique on the left, capability on the right. Export the stance.",
       "credit": "Concept slide stand-in — replace with screenshot of the Both Hands Full canvas.",
-      "src": "/media/recap/08-both-hands.jpg",
+      "src": "/public/media/recap/08-both-hands.jpg",
       "alt": "Concept slide: the punk condition — both hands full, critique in one, capability in the other."
     },
     {
@@ -81,7 +81,7 @@
       "kind": "photo",
       "caption": "The room during the discussion beat. Three minutes of strangers naming what they were carrying.",
       "credit": "Concept slide stand-in — replace with photo of the audience mid-discussion.",
-      "src": "/media/recap/09-room.jpg",
+      "src": "/public/media/recap/09-room.jpg",
       "alt": "Concept slide: pattern recognition revelation — the moment the picture comes into focus."
     },
     {
@@ -89,7 +89,7 @@
       "kind": "photo",
       "caption": "Coffee after the talk. The lifeboat had room for one more.",
       "credit": "Concept slide stand-in — replace with photo of audience members talking after the talk.",
-      "src": "/media/recap/10-posse-after.jpg",
+      "src": "/public/media/recap/10-posse-after.jpg",
       "alt": "Concept slide: Anthony Joseph — they would have used it. A nod to lineage and permission."
     },
     {
@@ -97,7 +97,7 @@
       "kind": "photo",
       "caption": "Leaving the stage. \"You coming?\"",
       "credit": "Concept slide stand-in — replace with photo of Kris walking off stage at the close.",
-      "src": "/media/recap/11-walking-off.jpg",
+      "src": "/public/media/recap/11-walking-off.jpg",
       "alt": "Concept closing slide: dead fish, live fish — 'you coming?' as the final line."
     }
   ]

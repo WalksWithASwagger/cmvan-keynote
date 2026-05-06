@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-02T15:40:39.705Z",
+  "generated": "2026-05-06T02:33:04.089Z",
   "sources": {
     "openQuestions": "OPEN-QUESTIONS.md",
     "sessionHandoff": "SESSION-HANDOFF.md",
@@ -7,8 +7,8 @@
   },
   "counts": {
     "questions": 7,
-    "resolved": 3,
-    "open": 4,
+    "resolved": 5,
+    "open": 2,
     "sessions": 12
   },
   "openQuestions": [
@@ -35,45 +35,45 @@
       "id": "q-3-how-many-slides",
       "question": "How many slides?",
       "status": "resolved",
-      "statusNote": "28 slides",
-      "body": "**Canon (as of 2026-04-27):** **28 slides** — full narrative arc from Permission Gap through Close.\n\nTwo complete image prompt batches in Rafiki format:\n- `assets/image-prompts/hope-code-v3-28-rafiki.md` — solar punk / Aurora Borealis / mycelial (HOPECODE style)\n- `assets/image-prompts/punk-v2-28-rafiki.md` — xerox grain / cut-and-paste / blood red (zine style)\n\nBoth styles generated via Nano Pro (gemini-3-pro-image-preview) — 28 images each. gpt-image-2 runs blocked by OpenAI billing limit (add credit at platform.openai.com to unlock).\n\nView in browser: `python3 -m http.server 7772 --directory assets/generated/slides` → `http://127.0.0.1:7772/viewer.html`\n\n**Action still needed:** pick one style (or mixed) for the actual Canva/Keynote deck build.",
-      "bodyHtml": "<p><strong>Canon (as of 2026-04-27):</strong> <strong>28 slides</strong> — full narrative arc from Permission Gap through Close.</p>\n<p>Two complete image prompt batches in Rafiki format:<br><ul><li><code>assets/image-prompts/hope-code-v3-28-rafiki.md</code> — solar punk / Aurora Borealis / mycelial (HOPECODE style)</li><li><code>assets/image-prompts/punk-v2-28-rafiki.md</code> — xerox grain / cut-and-paste / blood red (zine style)</li></ul></p>\n<p>Both styles generated via Nano Pro (gemini-3-pro-image-preview) — 28 images each. gpt-image-2 runs blocked by OpenAI billing limit (add credit at platform.openai.com to unlock).</p>\n<p>View in browser: <code>python3 -m http.server 7772 --directory assets/generated/slides</code> → <code>http://127.0.0.1:7772/viewer.html</code></p>\n<p><strong>Action still needed:</strong> pick one style (or mixed) for the actual Canva/Keynote deck build.</p>"
+      "statusNote": "22 slides, punk/zine style",
+      "body": "Final deck: 22 slides, punk-v2 zine aesthetic. See `SESSION-HANDOFF.md` for the complete final slide order and image sources.",
+      "bodyHtml": "<p>Final deck: 22 slides, punk-v2 zine aesthetic. See <code>SESSION-HANDOFF.md</code> for the complete final slide order and image sources.</p>"
     },
     {
       "n": 4,
       "id": "q-4-what-s-the-closing-cta-release-day-or-fpc-cohort",
       "question": "What's the closing CTA — Release Day or FPC cohort?",
-      "status": "open",
-      "statusNote": null,
-      "body": "Two different soft-launches are documented for the same talk:\n\n- **[pitch/pitch-for-mark-busse.md](./pitch/pitch-for-mark-busse.md)** + issue #1570: closing CTA is the **Release Day Challenge** — ship something by May 29, possibly compiled into a punk-style zine/broadsheet.\n- **[source-material/cmvan-context/fpc-relaunch-readme-FOR-REFERENCE.md](./source-material/cmvan-context/fpc-relaunch-readme-FOR-REFERENCE.md)**: closing beat is a **soft launch of Future Proof Creatives** with founding-member pricing for CMVan attendees.\n\n**Action:** these aren't necessarily mutually exclusive (Release Day is the room-wide call; FPC is a quieter \"if you want more, here's where to find me\"). But pick one as the load-bearing close.",
-      "bodyHtml": "<p>Two different soft-launches are documented for the same talk:</p>\n<ul><li><strong><a href=\"./pitch/pitch-for-mark-busse.md\" target=\"_blank\" rel=\"noopener\">pitch/pitch-for-mark-busse.md</a></strong> + issue #1570: closing CTA is the <strong>Release Day Challenge</strong> — ship something by May 29, possibly compiled into a punk-style zine/broadsheet.</li><li><strong><a href=\"./source-material/cmvan-context/fpc-relaunch-readme-FOR-REFERENCE.md\" target=\"_blank\" rel=\"noopener\">source-material/cmvan-context/fpc-relaunch-readme-FOR-REFERENCE.md</a></strong>: closing beat is a <strong>soft launch of Future Proof Creatives</strong> with founding-member pricing for CMVan attendees.</li></ul>\n<p><strong>Action:</strong> these aren't necessarily mutually exclusive (Release Day is the room-wide call; FPC is a quieter \"if you want more, here's where to find me\"). But pick one as the load-bearing close.</p>"
+      "status": "resolved",
+      "statusNote": "Release Day",
+      "body": "The load-bearing close was **Release Day / May 29** — ship something, punkrockai.com/release-day as the landing. FPC was available as a quieter \"if you want more\" but not the primary CTA on stage.\n\n**Post-talk:** Update this with the actual room response if different.",
+      "bodyHtml": "<p>The load-bearing close was <strong>Release Day / May 29</strong> — ship something, punkrockai.com/release-day as the landing. FPC was available as a quieter \"if you want more\" but not the primary CTA on stage.</p>\n<p><strong>Post-talk:</strong> Update this with the actual room response if different.</p>"
     },
     {
       "n": 5,
       "id": "q-5-what-s-the-companion-site-for",
       "question": "What's the companion site for?",
-      "status": "open",
-      "statusNote": null,
-      "body": "The user mentioned \"maybe even a companion website or something.\" Open scope. Possibilities:\n\n- **Release Day landing page** — submission portal for audience projects, public gallery\n- **Three Documents toolkit** — interactive prompts that walk a creative through writing their personal AI policy / style guide / worldview\n- **Talk recap + clip library** — post-event home for video, transcript, frameworks\n- **Punk-zine generator** — turn submitted Release Day projects into a digital broadsheet (the \"full circle to Xerox culture\" idea from the pitch notes)\n\n**Action:** decide scope before writing code. Punkest answer is probably a single fast-loading page that serves the Release Day challenge.",
-      "bodyHtml": "<p>The user mentioned \"maybe even a companion website or something.\" Open scope. Possibilities:</p>\n<ul><li><strong>Release Day landing page</strong> — submission portal for audience projects, public gallery</li><li><strong>Three Documents toolkit</strong> — interactive prompts that walk a creative through writing their personal AI policy / style guide / worldview</li><li><strong>Talk recap + clip library</strong> — post-event home for video, transcript, frameworks</li><li><strong>Punk-zine generator</strong> — turn submitted Release Day projects into a digital broadsheet (the \"full circle to Xerox culture\" idea from the pitch notes)</li></ul>\n<p><strong>Action:</strong> decide scope before writing code. Punkest answer is probably a single fast-loading page that serves the Release Day challenge.</p>"
+      "status": "resolved",
+      "statusNote": "interactive portal",
+      "body": "**punkrockai.com** is live — an interactive learning portal with 25+ widgets turning the talk into tools people can actually use. See `site/README.md` for the full layout and `docs/PROJECT-ROADMAP.md` for the phase ledger.",
+      "bodyHtml": "<p><strong>punkrockai.com</strong> is live — an interactive learning portal with 25+ widgets turning the talk into tools people can actually use. See <code>site/README.md</code> for the full layout and <code>docs/PROJECT-ROADMAP.md</code> for the phase ledger.</p>"
     },
     {
       "n": 6,
-      "id": "q-6-adobe-involvement",
-      "question": "Adobe involvement?",
+      "id": "q-6-adobe-involvement-needs-post-talk-update",
+      "question": "Adobe involvement? — **NEEDS POST-TALK UPDATE**",
       "status": "open",
       "statusNote": null,
-      "body": "The CREATE theme was co-created with Adobe globally. Are they:\n- A passive theme partner only (most likely)\n- Sponsoring the chapter event\n- Wanting product mentions / placement in slides\n- Open to a Release Day partnership\n\n**Action:** ask Mark.",
-      "bodyHtml": "<p>The CREATE theme was co-created with Adobe globally. Are they:<br><ul><li>A passive theme partner only (most likely)</li><li>Sponsoring the chapter event</li><li>Wanting product mentions / placement in slides</li><li>Open to a Release Day partnership</li></ul></p>\n<p><strong>Action:</strong> ask Mark.</p>"
+      "body": "Talk happened May 1. Fill in what actually played out with Mark re: Adobe's role.",
+      "bodyHtml": "<p>Talk happened May 1. Fill in what actually played out with Mark re: Adobe's role.</p>"
     },
     {
       "n": 7,
-      "id": "q-7-recording-rights",
-      "question": "Recording rights",
+      "id": "q-7-recording-rights-needs-post-talk-update",
+      "question": "Recording rights — **NEEDS POST-TALK UPDATE**",
       "status": "open",
       "statusNote": null,
-      "body": "CreativeMornings traditionally records and posts talks publicly. Confirm:\n- Will this be recorded?\n- Who owns the footage?\n- When will it be released?\n- Can clips be used pre-release for promo?",
-      "bodyHtml": "<p>CreativeMornings traditionally records and posts talks publicly. Confirm:<br><ul><li>Will this be recorded?</li><li>Who owns the footage?</li><li>When will it be released?</li><li>Can clips be used pre-release for promo?</li></ul></p>"
+      "body": "Talk happened May 1. Fill in: Was it recorded? Who owns it? Release timeline? Can you use clips now?",
+      "bodyHtml": "<p>Talk happened May 1. Fill in: Was it recorded? Who owns it? Release timeline? Can you use clips now?</p>"
     }
   ],
   "sessions": [

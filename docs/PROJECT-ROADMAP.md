@@ -65,13 +65,13 @@ Do not conflate the two on public copy or slide footers.
 | **C — Talk week** | May 1 | ✅ | Talk delivered May 1, 2026. 22-slide zine deck. Discussion-first format. |
 | **D — Release month** | May 1–29 | 🟡 | Social cadence; Release Day submissions open; recording rights TBD with Mark |
 | **E — Post-publish** | After May 29 | 🔲 | Long article (Banff + BHF + CMVan arc); optional zine/PDF; talk recording posted |
-| **P — punkrockai.com portal** | May 1 → ongoing | 🟡 in progress | Interactive learning portal at `site/`; see "Portal phase" below |
+| **P — punkrockai.com portal** | May 1 → ongoing | 🟡 in progress | Interactive learning portal at `site/`; full visual treatment shipped May 5; see "Portal phase" below |
 
 ### Phase D — Release month blockers (May 5, 2026)
 
 1. **Recording rights** — confirm with Mark: recorded? owner? release date? clips OK now?
 2. **Adobe involvement** — note what role they actually played on May 1
-3. **Release Day submissions** — monitor punkrockai.com/release-day through May 29
+3. **Release Day submissions** — monitor punkrockai.com/release-day through May 29. Backend live: Vercel `/api/submissions` → Notion DB `8b72685121ce499fbd0b4cceee9a0d52`
 4. **Social cadence** — #ReleaseDay2026 posts through May 29
 5. **punk.ceo / plump.co routing** — still TBD (see domains table above)
 
@@ -145,5 +145,13 @@ Phase 1 outputs verified: every route returns 200, every JS module passes `node 
 - **R2 + slide imagery:** Cloudflare account with R2, an Object R/W token, bucket name, public URL prefix. Path to local slide source folder set as `SLIDES_SRC`. Once landed: `npm run ingest:slides`.
 - **ElevenLabs run:** `python3 dress-rehearsal/generate-audio.py` to generate mp3s, upload per-slide clips to R2, re-run `npm run build:audio`. The `/talk` page wires up automatically.
 - **Anthropic API key + Cloudflare Workers account:** for Pattern Finder (#13). `cd worker/pattern-finder && wrangler secret put ANTHROPIC_API_KEY && wrangler deploy`.
-- **Notion DB + integration token:** for Release Day submissions (#14). Schema documented in `worker/submissions/README.md`.
-- **Cloudflare Pages project:** create the project, point at this repo, set output directory to `site/`. The `_headers` + `_redirects` + `wrangler.toml` are already in the tree.
+- **OPEN-QUESTIONS.md Q6 + Q7** — fill in Adobe involvement and recording rights post-talk.
+- **punk.ceo / plump.co** — decide routing per domains table and configure at registrar.
+
+### Shipped May 5, 2026
+
+- GA4 analytics (`G-NZ9H74R399`) via `header.js` — all 40+ pages covered
+- Beehiiv newsletter form in footer — `/api/subscribe` Vercel function, env vars set
+- Release Day submission portal — `/api/submissions` Vercel function → Notion DB `8b72685121ce499fbd0b4cceee9a0d52`
+- Full visual treatment: all 9 main nav pages + all 29 widget pages — unique per-page hero photos, slide textures, punk accents
+- CSS `--hero-photo` variable for per-page hero overrides without touching 40+ HTML files
