@@ -20,6 +20,40 @@
     <link rel="stylesheet" href="/css/zine-overhaul.css" />
     <link rel="stylesheet" href="/css/widgets/daily-refrain.css" />
     <link rel="alternate" type="application/rss+xml" title="Punk Rock AI — field notes" href="/feed.xml" />
+    <style>
+      /* ── Hero photo #195: Kris + "STOP SAYING BIAS" slide ──────────────
+         Photo is landscape (1800×1200). Kris stands right-of-frame (~68% x),
+         the slide dominates left (~0–55% x), audience anchors the bottom.
+         Desktop: show both — position at 58% x, 22% y (favours the slide).
+         Mobile: shift right to keep Kris visible at 72% x. */
+      :root {
+        --hero-photo: url('/public/photos/michelle-diamond/195.webp');
+      }
+      .hero__photo-layer {
+        background-position: 58% 22%;
+        transform-origin: 68% 38%; /* Ken Burns zooms toward Kris */
+      }
+      /* Looser gradient — opens the window onto the red slide text */
+      .hero__photo-layer::after {
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.72)  0%,
+          rgba(0, 0, 0, 0.08) 38%,
+          rgba(0, 0, 0, 0.10) 62%,
+          rgba(0, 0, 0, 0.90) 100%
+        );
+      }
+      /* Slide texture: use neither-are-we for defiant energy to match the photo */
+      .hero__slide-layer {
+        background-image: url('/public/slides/neither-are-we.webp');
+        background-position: right center;
+        background-size: contain;
+        opacity: 0.09;
+      }
+      @media (max-width: 640px) {
+        .hero__photo-layer { background-position: 72% 22%; }
+      }
+    </style>
   </head>
   <body class="shell">
     <header class="site-header" data-include="header"></header>
@@ -62,6 +96,7 @@
       <!-- ── Photo marquee — Michelle Diamond shots from the talk ─────── -->
       <div class="photo-marquee" role="img" aria-label="Event photos by Michelle Diamond">
         <div class="photo-marquee__track">
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/195.webp" alt="">
           <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/109.webp" alt="">
           <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/120.webp" alt="">
           <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/135.webp" alt="">
@@ -75,6 +110,7 @@
           <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/110.webp" alt="">
           <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/279.webp" alt="">
           <!-- duplicate set for seamless loop -->
+          <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/195.webp" alt="">
           <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/109.webp" alt="">
           <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/120.webp" alt="">
           <img class="photo-marquee__img" src="/public/photos/michelle-diamond/thumbs/135.webp" alt="">

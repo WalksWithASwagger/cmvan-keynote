@@ -381,3 +381,66 @@
   color: var(--fg);
   border-color: var(--fg);
 }
+
+/* ── 8. Hero ambient animation system ───────────────────────────────────
+   Ken Burns on the photo + counter-drift on the slide texture creates a
+   subtle layered parallax. Hover reveals the photo from its resting muted
+   state. All gated on prefers-reduced-motion. */
+
+@keyframes heroPanZoom {
+  0%   { transform: scale(1.0)  translate3d(0,     0,    0); }
+  100% { transform: scale(1.06) translate3d(-1.2%, -0.4%, 0); }
+}
+
+@keyframes slideLayerDrift {
+  0%   { transform: translate3d(0,    0,    0); opacity: 0.10; }
+  50%  {                                        opacity: 0.14; }
+  100% { transform: translate3d(1.5%, 0.8%, 0); opacity: 0.10; }
+}
+
+@keyframes pinkGlowPulse {
+  0%, 100% { box-shadow: 0 0 14px rgba(255, 61, 138, 0.45), 0 4px 24px rgba(0,0,0,0.55); }
+  50%       { box-shadow: 0 0 32px rgba(255, 61, 138, 0.80), 0 4px 24px rgba(0,0,0,0.55); }
+}
+
+@keyframes heroTitleGlitch {
+  0%, 89%, 100% { clip-path: inset(0 0 0 0); transform: none; }
+  90%  { clip-path: inset(12% 0 76% 0); transform: translateX(-3px); filter: hue-rotate(20deg); }
+  92%  { clip-path: inset(68% 0 10% 0); transform: translateX( 3px); filter: hue-rotate(-20deg); }
+  94%  { clip-path: inset(35% 0 42% 0); transform: translateX(-2px); filter: none; }
+  96%  { clip-path: inset(0   0 0   0); transform: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Ken Burns — zooms toward Kris's position in the frame */
+  .hero__photo-layer {
+    transform-origin: 68% 38%;
+    animation: heroPanZoom 28s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  /* Slide texture counter-drifts for depth */
+  .hero__slide-layer {
+    animation: slideLayerDrift 22s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  /* Release Day CTA breathes pink */
+  .btn.punk-shadow-pink {
+    animation: pinkGlowPulse 2.8s ease-in-out infinite;
+  }
+
+  /* Title glitch — fires once every ~11s, invisible otherwise */
+  .hero--photo .hero__title:hover span {
+    animation: heroTitleGlitch 0.28s steps(1) 1 forwards;
+  }
+}
+
+/* Photo: resting state slightly muted, reveals on hero hover */
+.hero__photo-layer {
+  filter: brightness(0.92) saturate(0.88);
+  transition: filter 1s ease;
+}
+.hero--photo:hover .hero__photo-layer {
+  filter: brightness(1.0) saturate(1.0);
+}
