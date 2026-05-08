@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Conductor Craft Ratio &mdash; Punk Rock AI</title>
+    <meta
+      name="description"
+      content="A draggable conductor slider for choosing the ratio between AI throughput and human craft, cost, and loss."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Conductor Craft Ratio — Punk Rock AI" />
+    <meta property="og:description" content="Move between 90, 50, and 10 percent machine throughput and see what changes in craft, cost, and loss." />
+    <meta property="og:url" content="https://punkrockai.com/widgets/conductor-ratio.html" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/punk-graphics.css" />
+    <link rel="stylesheet" href="/css/widgets/conductor-ratio.css" />
+    <link rel="stylesheet" href="/css/zine-overhaul.css" />
+  </head>
+  <body class="shell">
+    <header class="site-header" data-include="header"></header>
+
+    <main class="cratio">
+      <section class="cratio-hero grain scanlines punk-tile punk-section--make">
+        <div class="section-slide-bg" aria-hidden="true" style="background-image: url('/public/slides/taste-full.webp');"></div>
+        <span class="punk-slash" style="--punk-x:78%;--punk-y:24%;--punk-rotate:-12deg;--punk-scale:1.1;--punk-opacity:0.38;" aria-hidden="true"></span>
+        <div class="wrap wrap--narrow">
+          <p class="kicker kicker--accent">Conductor &middot; craft ratio</p>
+          <h1 id="cratio-title">Conductor craft ratio.</h1>
+          <p id="cratio-lede"></p>
+        </div>
+      </section>
+
+      <section class="cratio-board" aria-labelledby="cratio-control-title">
+        <div class="wrap">
+          <div class="cratio-board__head">
+            <div>
+              <p class="kicker kicker--accent">Drag, tap, or use arrow keys</p>
+              <h2 id="cratio-control-title">How much of the pipeline do you hand to the machine?</h2>
+            </div>
+            <output class="cratio-board__readout" id="cratio-output" for="cratio-slider">50%</output>
+          </div>
+
+          <div class="cratio-slider" data-slider-shell>
+            <div class="cratio-slider__track" aria-hidden="true">
+              <span class="cratio-slider__fill" data-fill></span>
+            </div>
+            <input
+              id="cratio-slider"
+              class="cratio-slider__input"
+              type="range"
+              min="0"
+              max="100"
+              step="1"
+              value="50"
+              aria-label="Machine throughput ratio"
+              aria-describedby="cratio-slider-help"
+            />
+            <div class="cratio-slider__anchors" id="cratio-anchors"></div>
+          </div>
+          <p class="sr-only" id="cratio-slider-help">
+            Left and right arrow keys move one percent. Page keys move ten percent. Anchor buttons jump to 90, 50, or 10 percent.
+          </p>
+
+          <article class="cratio-card" id="cratio-card" aria-live="polite"></article>
+        </div>
+      </section>
+
+      <section class="cratio-final">
+        <div class="wrap wrap--narrow">
+          <h2 id="cratio-closing-title"></h2>
+          <p id="cratio-closing-body"></p>
+          <p class="cratio-final__cite" id="cratio-closing-cite"></p>
+          <div class="cratio-final__actions">
+            <a class="btn" href="/widgets/conductor.html">Conduct the orchestra</a>
+            <a class="btn" href="/widgets/taste-audit.html">Audit your taste</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/conductor-ratio.js"></script>
+  </body>
+</html>

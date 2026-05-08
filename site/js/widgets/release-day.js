@@ -5,6 +5,7 @@ import { load, save, remove } from "/js/common/storage.js";
 
 const RELEASE_DAY = new Date("2026-05-29T23:59:00-07:00");
 const PORTAL_ENDPOINT = "/api/submissions";
+const STATIC_GALLERY_ENDPOINT = "/data/submissions.json";
 const PENDING_KEY = "rd:pending";
 const DRAFT_KEY = "rd:draft";
 
@@ -110,6 +111,11 @@ async function onSubmit(e) {
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
+    if (data.status === "queued-no-backend") {
+      queueLocally(submission);
+      flash("portal not connected yet — saved locally");
+      return;
+    }
     formEl.reset();
     remove(DRAFT_KEY);
     flash(`submitted — id ${data.id ?? "—"}`);
@@ -143,9 +149,7 @@ function paintPending() {
 async function loadGallery() {
   if (!galleryEl) return;
   try {
-    const res = await fetch("/data/submissions.json");
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
+    const data = await loadGalleryData();
     const list = data.submissions ?? [];
     if (!list.length) {
       galleryEl.hidden = true;
@@ -156,6 +160,24 @@ async function loadGallery() {
     galleryEl.innerHTML = list.map(renderGalleryCard).join("");
   } catch (err) {
     console.warn("[release-day] gallery", err);
+  }
+}
+
+async function loadGalleryData() {
+  const live = await fetchJson(PORTAL_ENDPOINT);
+  if (live?.submissions?.length) return live;
+  const fallback = await fetchJson(STATIC_GALLERY_ENDPOINT);
+  return fallback ?? { submissions: [] };
+}
+
+async function fetchJson(url) {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.json();
+  } catch (err) {
+    console.warn(`[release-day] ${url}`, err);
+    return null;
   }
 }
 

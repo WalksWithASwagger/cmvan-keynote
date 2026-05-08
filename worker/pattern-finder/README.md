@@ -2,10 +2,11 @@
 
 Cloudflare Worker prototype that proxies Claude Sonnet 4.6 calls for the
 Pattern Finder widget at `/widgets/pattern-finder.html`. Production backend
-ownership is still undecided in #139 / BC-56; do not deploy this as the active
-path until that decision is accepted. System prompt marked for ephemeral prompt
-caching so per-call cost stays low under load. Per-IP rate-limit (10 calls /
-hour) via a bound KV namespace.
+ownership decision for #139 / BC-56: keep Pattern Finder fallback-only for the
+Release Day push. Do not deploy this as the active path until the project
+accepts a live LLM budget, privacy notice, and abuse-control plan. System
+prompt marked for ephemeral prompt caching so per-call cost stays low under
+load. Per-IP rate-limit (10 calls / hour) via a bound KV namespace.
 
 ## Deploy
 

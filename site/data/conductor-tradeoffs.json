@@ -1,0 +1,60 @@
+{
+  "source": "source-material/kevin-friel-pixel-wizard/kevin-friel-full-feature-kk.md",
+  "title": "Conductor craft ratio",
+  "lede": "Move the baton between volume and taste. AI can flood the room with takes. The conductor decides how much craft survives the flood.",
+  "anchors": [
+    {
+      "value": 90,
+      "label": "90% machine throughput",
+      "tag": "Flood the room",
+      "throughput": "Maximum generation. More shots, drafts, alternates, and tests arrive before your coffee gets cold.",
+      "craft": "The human work shifts to triage: naming the brief, rejecting cheap-looking frames, and refusing to confuse abundance with finish.",
+      "cost": "Costs collapse toward the Kevin Friel receipt: six-figure video energy pushed toward a $200, 2.5-day experiment.",
+      "loss": "The loss is sameness. If the prompt is vague or the selector is tired, the pile gets bigger while the point gets thinner.",
+      "sourceNote": "Kevin's line: $100,000 budgets to $200 in 2.5 days, same quality, real project."
+    },
+    {
+      "value": 50,
+      "label": "50 / 50 studio",
+      "tag": "Trade passes",
+      "throughput": "The stack does the heavy lift: Midjourney frames, Runway motion, ElevenLabs audio, ComfyUI glue, Topaz polish.",
+      "craft": "The human stays in the loop for taste, timing, continuity, disclosure, and the final no. Tools get parts; you keep direction.",
+      "cost": "Budget and schedule still drop hard, but the savings fund iteration instead of replacing judgment.",
+      "loss": "The risk is workflow theatre: fancy nodes that break momentum, or too many passes that sand the idea flat.",
+      "sourceNote": "Kevin frames the work as chain thinking, not one app and pray."
+    },
+    {
+      "value": 10,
+      "label": "10% machine assist",
+      "tag": "Hands on the work",
+      "throughput": "Fewer outputs arrive, but each one carries more direct human intention and context.",
+      "craft": "Craft is high-touch: story, shot choice, edit rhythm, texture, and meaning are argued by people before tools are asked to help.",
+      "cost": "The budget climbs because human time returns to the center. Use this when the relationship, material, or risk demands it.",
+      "loss": "The loss is access. Some people and projects stay locked out when every step requires old-world time, gear, or specialist labor.",
+      "sourceNote": "Kevin's access argument: the barrier to entry disappeared; now ideas matter more than equipment."
+    }
+  ],
+  "metrics": {
+    "throughput": {
+      "low": "slow",
+      "high": "flood"
+    },
+    "craft": {
+      "low": "thin",
+      "high": "held"
+    },
+    "cost": {
+      "low": "cheap",
+      "high": "expensive"
+    },
+    "loss": {
+      "low": "low",
+      "high": "high"
+    }
+  },
+  "closing": {
+    "title": "The slider is not moral. The conductor is.",
+    "body": "A 90% machine pass can be generous when it gives access. A 10% machine pass can be necessary when the material needs hands. The craft is knowing which room you are in.",
+    "cite": "Kevin Friel material: source-material/kevin-friel-pixel-wizard/kevin-friel-full-feature-kk.md"
+  }
+}
