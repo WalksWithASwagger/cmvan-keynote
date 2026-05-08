@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Deploy site/ to Cloudflare Pages, out-of-band from the Git-driven flow.
+# Deploy site/ to Cloudflare Pages fallback, out-of-band from the Git-driven flow.
 #
 # Defaults to a preview deployment (does NOT touch punkrockai.com).
-# Pass --production to ship a production deploy.
+# Pass --production to ship a Cloudflare fallback production deploy.
 #
 # Requires: wrangler >= 3.x, `wrangler login` once on this machine.
 #
@@ -60,7 +60,7 @@ ARGS=(pages deploy "$SITE_DIR" --project-name="$PROJECT_NAME")
 
 if [[ $PRODUCTION -eq 1 ]]; then
   ARGS+=(--branch=main)
-  echo ">> deploying $SITE_DIR/ to PRODUCTION on project $PROJECT_NAME"
+  echo ">> deploying $SITE_DIR/ to CLOUDFLARE FALLBACK PRODUCTION on project $PROJECT_NAME"
 else
   if [[ -z "$BRANCH" ]]; then
     BRANCH="$(git rev-parse --abbrev-ref HEAD)"

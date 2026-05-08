@@ -1,6 +1,6 @@
-# Cloudflare Pages project config for punkrockai.com.
-# Lives at the repo root so a fresh deploy can mirror the production setup
-# without guessing. Pages reads this on its own; no extra wiring required.
+# Cloudflare Pages fallback config for punkrockai.com.
+# Production runs on Vercel. This stays at the repo root so a deliberate
+# Cloudflare fallback deploy can mirror the static-site setup without guessing.
 
 name = "punkrockai"
 compatibility_date = "2026-04-01"

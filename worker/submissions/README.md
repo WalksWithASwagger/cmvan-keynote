@@ -1,8 +1,9 @@
 # worker/submissions
 
-Cloudflare Worker that backs the Release Day submission portal at
-`/release-day.html`. POSTs land in a Notion database with `Published: false`
-by default — manual moderation gate.
+Cloudflare Worker fallback for the Release Day submission portal at
+`/release-day.html`. Production currently uses the Vercel function
+`api/submissions.js`. In the fallback path, POSTs land in a Notion database
+with `Published: false` by default as a manual moderation gate.
 
 ## Notion DB schema
 

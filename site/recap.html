@@ -425,11 +425,12 @@
                 <code>OPEN-QUESTIONS.md</code>, <code>SESSION-HANDOFF.md</code>,
                 and Mark&rsquo;s feedback as a single transparent change-log.
                 <a href="/widgets/pattern-finder.html">Pattern Finder</a> is a
-                Cloudflare Worker scaffold &mdash; paste a corpus, get named
+                backend scaffold &mdash; paste a corpus, get named
                 patterns from Claude Sonnet 4.6 with prompt caching on the
-                framework prompt &mdash; the wiring is one API key away from
-                being live. The Release Day submission portal is a Worker that
-                posts to Notion when the integration token lands.
+                framework prompt &mdash; the production path still needs a
+                backend decision. The Release Day submission portal is a
+                Vercel function that posts to Notion when the integration
+                token lands.
               </p>
             </div>
           </div>
@@ -620,15 +621,17 @@
                 that I find on the internet six months from now.
               </p>
               <p>
-                Closer in: Cloudflare Pages staging URL goes live the moment
-                the project is connected to this repo. R2 imagery threads
-                through the slide reel and the lineage thumbnails the moment
-                the bucket has credentials. Per-slide audio plays the moment
-                the rehearsal mp3s are uploaded. Pattern Finder calls Claude
-                the moment the API key lands in Worker secrets. The Release
-                Day submission portal posts to Notion the moment the
+                Closer in: Vercel previews go live on each PR, and Cloudflare
+                Pages stays available as a fallback path if the host needs to
+                move. R2 imagery threads through the slide reel and the
+                lineage thumbnails the moment the bucket has credentials.
+                Per-slide audio plays the moment the rehearsal mp3s are
+                uploaded. Pattern Finder calls Claude after the backend path
+                is chosen and configured. The Release Day submission portal
+                posts to Notion through the Vercel function the moment the
                 integration token is in the right place. None of this is
-                blocked by code. All of it is one configuration change away.
+                blocked by page code. The remaining work is configuration,
+                rights, and live smoke testing.
               </p>
               <p>
                 And on May 29 &mdash; Release Day &mdash; the actual point of

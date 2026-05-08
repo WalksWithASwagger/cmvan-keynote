@@ -2,19 +2,35 @@
 
 # Clean URL aliases (so /talk and /talk.html both work).
 /talk             /talk.html             200
+/recap            /recap.html            200
 /lineage          /lineage.html          200
 /library          /library.html          200
 /posse            /posse.html            200
 /release-day      /release-day.html      200
 /decisions        /decisions.html        200
+/signal           /signal.html           200
 /workshop         /workshop.html         200
+/photos/michelle-diamond  /photos/michelle-diamond.html  200
+/photos/rick      /photos/rick.html      200
+/widgets/action              /widgets/action.html              200
+/widgets/bias-bingo          /widgets/bias-bingo.html          200
 /widgets/three-documents     /widgets/three-documents.html     200
 /widgets/both-hands          /widgets/both-hands.html          200
+/widgets/both-hands-gallery  /widgets/both-hands-gallery.html  200
+/widgets/conductor           /widgets/conductor.html           200
+/widgets/crit                /widgets/crit.html                200
+/widgets/cut-up              /widgets/cut-up.html              200
+/widgets/cutting-room        /widgets/cutting-room.html        200
 /widgets/name-what-you-see   /widgets/name-what-you-see.html   200
+/widgets/manifesto           /widgets/manifesto.html           200
+/widgets/receipt-print       /widgets/receipt-print.html       200
 /widgets/taste-audit         /widgets/taste-audit.html         200
 /widgets/pattern-finder      /widgets/pattern-finder.html      200
 /widgets/junior-pipeline     /widgets/junior-pipeline.html     200
 /widgets/pattern-graph       /widgets/pattern-graph.html       200
+/widgets/releases-wall       /widgets/releases-wall.html       200
+/widgets/selector            /widgets/selector.html            200
+/widgets/sig                 /widgets/sig.html                 200
 /widgets/chainsaws           /widgets/chainsaws.html           200
 /widgets/mastery-gym         /widgets/mastery-gym.html         200
 /widgets/receipt             /widgets/receipt.html             200
@@ -22,6 +38,9 @@
 /widgets/posse-builder       /widgets/posse-builder.html       200
 /widgets/posse-graph         /widgets/posse-builder.html       200
 /widgets/posse-graph.html    /widgets/posse-builder.html       200
+/widgets/tool-not-neutral    /widgets/tool-not-neutral.html    200
+/widgets/voice-clone-booth   /widgets/voice-clone-booth.html   200
+/widgets/word-ban            /widgets/word-ban.html            200
 /widgets/in-there            /widgets/in-there.html            200
 
 # If an old companion-site path leaks, route home.
