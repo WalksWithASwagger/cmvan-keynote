@@ -14,6 +14,7 @@ const OPTIONAL_LOCAL_REFS = new Set([
 const CHECKS = [
   ["JavaScript syntax", checkJavaScriptSyntax],
   ["JSON manifests", checkJsonManifests],
+  ["roadmap pipeline", checkRoadmapPipeline],
   ["site references", checkSiteReferences],
   ["header navigation", checkHeaderNavigation],
   ["Vercel static config", checkVercelConfig],
@@ -54,12 +55,69 @@ function checkJavaScriptSyntax() {
 }
 
 function checkJsonManifests() {
-  const files = walk("site/data", [".json"]);
+  const files = [
+    ...walk("site/data", [".json"]),
+    ...walk("ops/roadmap", [".json"]),
+  ];
   for (const file of files) {
     try {
       JSON.parse(readFileSync(abs(file), "utf8"));
     } catch (error) {
       failures.push(`${file}: invalid JSON: ${error.message}`);
+    }
+  }
+}
+
+function checkRoadmapPipeline() {
+  const file = "ops/roadmap/features.json";
+  if (!existsSync(abs(file))) return;
+
+  let roadmap;
+  try {
+    roadmap = JSON.parse(readFileSync(abs(file), "utf8"));
+  } catch {
+    return;
+  }
+
+  if (roadmap.repository?.github !== "WalksWithASwagger/cmvan-keynote") {
+    failures.push(`${file}: expected repository.github to be WalksWithASwagger/cmvan-keynote`);
+  }
+  if (!roadmap.linear?.projectUrl?.startsWith("https://linear.app/")) {
+    failures.push(`${file}: missing Linear project URL`);
+  }
+  if (roadmap.workflow?.localGate !== "npm run eval") {
+    failures.push(`${file}: workflow.localGate must stay npm run eval`);
+  }
+
+  const issues = Array.isArray(roadmap.issues) ? roadmap.issues : [];
+  if (!issues.length) {
+    failures.push(`${file}: expected at least one roadmap issue`);
+    return;
+  }
+
+  const githubNumbers = new Set();
+  const linearIds = new Set();
+
+  for (const issue of issues) {
+    const label = issue.id || issue.github?.title || "unnamed issue";
+    if (!Number.isInteger(issue.github?.number)) {
+      failures.push(`${file}: ${label} missing github.number`);
+    } else if (githubNumbers.has(issue.github.number)) {
+      failures.push(`${file}: duplicate github.number ${issue.github.number}`);
+    } else {
+      githubNumbers.add(issue.github.number);
+    }
+
+    if (!/^BC-\d+$/.test(issue.linear?.identifier || "")) {
+      failures.push(`${file}: ${label} missing Linear BC identifier`);
+    } else if (linearIds.has(issue.linear.identifier)) {
+      failures.push(`${file}: duplicate Linear identifier ${issue.linear.identifier}`);
+    } else {
+      linearIds.add(issue.linear.identifier);
+    }
+
+    if (!Array.isArray(issue.acceptanceChecks) || !issue.acceptanceChecks.length) {
+      failures.push(`${file}: ${label} missing acceptanceChecks`);
     }
   }
 }

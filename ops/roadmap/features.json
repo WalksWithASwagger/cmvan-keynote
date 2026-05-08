@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-05-08",
+  "repository": {
+    "name": "cmvan-keynote",
+    "github": "WalksWithASwagger/cmvan-keynote",
+    "productionSite": "https://punkrockai.com"
+  },
+  "linear": {
+    "team": "Bc-ai",
+    "teamKey": "BC",
+    "project": "Punk Rock AI Release Day Roadmap",
+    "projectId": "bc44353d-33e6-496f-99a1-ffd611f75ce2",
+    "projectUrl": "https://linear.app/bc-ai/project/punk-rock-ai-release-day-roadmap-eeed425b8d78"
+  },
+  "workflow": {
+    "roadmapSource": "docs/ROADMAP-2026-05-07.md",
+    "pipelineDoc": "docs/LINEAR-GITHUB-PIPELINE.md",
+    "localGate": "npm run eval",
+    "branchPattern": "codex/BC-<issue>-<short-slug>",
+    "closingRule": "Use Refs unless the PR satisfies every acceptance criterion."
+  },
+  "milestones": [
+    {
+      "name": "Wave 0 - Repo trust and workflow",
+      "linearId": "18fc34e3-b459-474d-9082-ea02e0ac369e",
+      "targetDate": "2026-05-10"
+    },
+    {
+      "name": "Wave 1 - Release Day operations",
+      "linearId": "e58f4186-e68b-4b28-96a1-ef2b7b3d39ca",
+      "targetDate": "2026-05-17"
+    },
+    {
+      "name": "Wave 2 - Portal hardening",
+      "linearId": "4853a113-9ae0-4939-8c2c-2f219a1389b3",
+      "targetDate": "2026-05-24"
+    },
+    {
+      "name": "Wave 3 - Connected intelligence and media",
+      "linearId": "7dc49f4e-ed56-468f-ba58-c21788535b28",
+      "targetDate": "2026-05-29"
+    }
+  ],
+  "issues": [
+    {
+      "id": "vercel-cloudflare-docs",
+      "priority": "P0",
+      "wave": "Wave 0 - Repo trust and workflow",
+      "status": "todo",
+      "github": {
+        "number": 133,
+        "title": "[Roadmap P0] Reconcile Vercel production and Cloudflare fallback docs",
+        "url": "https://github.com/WalksWithASwagger/cmvan-keynote/issues/133"
+      },
+      "linear": {
+        "identifier": "BC-50",
+        "url": "https://linear.app/bc-ai/issue/BC-50/roadmap-p0-reconcile-vercel-production-and-cloudflare-fallback-docs"
+      },
+      "labels": [
+        "repo:cmvan-keynote",
+        "priority:p0",
+        "kind:docs",
+        "area:infra",
+        "agent:ready",
+        "eval:required"
+      ],
+      "acceptanceChecks": [
+        "README, roadmap docs, and deployment docs agree on the production path.",
+        "Cloudflare fallback is explicitly preserved with an owner or removed from the active flow.",
+        "`npm run eval` passes."
+      ]
+    },
+    {
+      "id": "release-day-submission-smoke",
+      "priority": "P0",
+      "wave": "Wave 1 - Release Day operations",
+      "status": "todo",
+      "github": {
+        "number": 135,
+        "title": "[Roadmap P0] Smoke test Release Day submissions end to end",
+        "url": "https://github.com/WalksWithASwagger/cmvan-keynote/issues/135"
+      },
+      "linear": {
+        "identifier": "BC-51",
+        "url": "https://linear.app/bc-ai/issue/BC-51/roadmap-p0-smoke-test-release-day-submissions-end-to-end"
+      },
+      "labels": [
+        "repo:cmvan-keynote",
+        "priority:p0",
+        "kind:qa",
+        "kind:ops",
+        "area:infra",
+        "agent:needs-human",
+        "eval:required"
+      ],
+      "acceptanceChecks": [
+        "A test submission is traced from entry point to moderation destination, or the exact blocker is documented.",
+        "Smoke-test evidence is linked from the GitHub issue or repo docs.",
+        "Any test data cleanup requirement is explicit.",
+        "`npm run eval` passes after repo changes."
+      ]
+    },
+    {
+      "id": "adobe-recording-rights",
+      "priority": "P0",
+      "wave": "Wave 1 - Release Day operations",
+      "status": "needs-human",
+      "github": {
+        "number": 136,
+        "title": "[Roadmap P0] Resolve Adobe involvement and recording rights",
+        "url": "https://github.com/WalksWithASwagger/cmvan-keynote/issues/136"
+      },
+      "linear": {
+        "identifier": "BC-52",
+        "url": "https://linear.app/bc-ai/issue/BC-52/roadmap-p0-resolve-adobe-involvement-and-recording-rights"
+      },
+      "labels": [
+        "repo:cmvan-keynote",
+        "priority:p0",
+        "kind:ops",
+        "kind:docs",
+        "agent:needs-human"
+      ],
+      "acceptanceChecks": [
+        "Adobe involvement is recorded as approved, rejected, or still blocked with owner/date.",
+        "Recording rights are recorded with permitted uses and restrictions.",
+        "Site/docs copy no longer implies unapproved rights."
+      ]
+    },
+    {
+      "id": "moderation-gallery-loop",
+      "priority": "P1",
+      "wave": "Wave 1 - Release Day operations",
+      "status": "todo",
+      "github": {
+        "number": 134,
+        "title": "[Roadmap P1] Publish moderation-to-gallery loop for Release Day",
+        "url": "https://github.com/WalksWithASwagger/cmvan-keynote/issues/134"
+      },
+      "linear": {
+        "identifier": "BC-53",
+        "url": "https://linear.app/bc-ai/issue/BC-53/roadmap-p1-publish-moderation-to-gallery-loop-for-release-day"
+      },
+      "labels": [
+        "repo:cmvan-keynote",
+        "priority:p1",
+        "kind:feature",
+        "kind:ops",
+        "area:site",
+        "agent:ready",
+        "eval:required"
+      ],
+      "acceptanceChecks": [
+        "Moderation states and gallery publishing states are named.",
+        "An approved submission can be promoted or the exact manual path is documented.",
+        "Operator notes cover fallback and rollback.",
+        "`npm run eval` passes."
+      ]
+    },
+    {
+      "id": "route-nav-widget-contract-checker",
+      "priority": "P1",
+      "wave": "Wave 0 - Repo trust and workflow",
+      "status": "todo",
+      "github": {
+        "number": 137,
+        "title": "[Roadmap P1] Add route nav widget contract checker",
+        "url": "https://github.com/WalksWithASwagger/cmvan-keynote/issues/137"
+      },
+      "linear": {
+        "identifier": "BC-54",
+        "url": "https://linear.app/bc-ai/issue/BC-54/roadmap-p1-add-route-nav-widget-contract-checker"
+      },
+      "labels": [
+        "repo:cmvan-keynote",
+        "priority:p1",
+        "kind:qa",
+        "area:site",
+        "area:infra",
+        "agent:ready",
+        "eval:required"
+      ],
+      "acceptanceChecks": [
+        "Missing widget route/nav/redirect contracts are detected by the gate.",
+        "Check output names the failing route or manifest entry.",
+        "Existing valid routes continue passing.",
+        "`npm run eval` passes."
+      ]
+    },
+    {
+      "id": "browser-qa-lighthouse",
+      "priority": "P1",
+      "wave": "Wave 2 - Portal hardening",
+      "status": "todo",
+      "github": {
+        "number": 138,
+        "title": "[Roadmap P1] Browser QA and Lighthouse pass for core flows",
+        "url": "https://github.com/WalksWithASwagger/cmvan-keynote/issues/138"
+      },
+      "linear": {
+        "identifier": "BC-55",
+        "url": "https://linear.app/bc-ai/issue/BC-55/roadmap-p1-browser-qa-and-lighthouse-pass-for-core-flows"
+      },
+      "labels": [
+        "repo:cmvan-keynote",
+        "priority:p1",
+        "kind:qa",
+        "area:site",
+        "agent:ready",
+        "eval:required"
+      ],
+      "acceptanceChecks": [
+        "Core flows have current browser QA evidence.",
+        "Lighthouse/accessibility findings are summarized with severity.",
+        "Small safe fixes are committed or follow-up issues are linked.",
+        "`npm run eval` passes after repo changes."
+      ]
+    },
+    {
+      "id": "pattern-finder-backend-decision",
+      "priority": "P1",
+      "wave": "Wave 3 - Connected intelligence and media",
+      "status": "needs-human",
+      "github": {
+        "number": 139,
+        "title": "[Roadmap P1] Decide Pattern Finder production backend path",
+        "url": "https://github.com/WalksWithASwagger/cmvan-keynote/issues/139"
+      },
+      "linear": {
+        "identifier": "BC-56",
+        "url": "https://linear.app/bc-ai/issue/BC-56/roadmap-p1-decide-pattern-finder-production-backend-path"
+      },
+      "labels": [
+        "repo:cmvan-keynote",
+        "priority:p1",
+        "kind:ops",
+        "area:workers",
+        "area:infra",
+        "agent:needs-human"
+      ],
+      "acceptanceChecks": [
+        "A recommended backend path is documented with tradeoffs and owner.",
+        "Required env/deploy changes are named.",
+        "Follow-up implementation work is linked if this issue remains decision-only."
+      ]
+    }
+  ]
+}

@@ -2,7 +2,9 @@
 
 **Canonical working repo:** [cmvan-keynote](https://github.com/WalksWithASwagger/cmvan-keynote)  
 **KB mirror:** [creative-mornings-vancouver-may-2026](file:///Users/kk/Code/notion-local/kk-ai-ecosystem/content/projects/02-bc-ai-ecosystem-nonprofit/speaking-engagements/2026/creative-mornings-vancouver-may-2026/) (kk-bb)  
-**Tracking:** [kk-kb#1570](https://github.com/WalksWithASwagger/kk-kb/issues/1570)
+**Tracking:** [kk-kb#1570](https://github.com/WalksWithASwagger/kk-kb/issues/1570)  
+**Linear project:** [Punk Rock AI Release Day Roadmap](https://linear.app/bc-ai/project/punk-rock-ai-release-day-roadmap-eeed425b8d78)  
+**Delivery pipeline:** [LINEAR-GITHUB-PIPELINE.md](./LINEAR-GITHUB-PIPELINE.md) with machine-readable map at [`ops/roadmap/features.json`](../ops/roadmap/features.json)
 
 **Notion (share + staging):** [Punk CEO workspace](https://is.kriskrug.ai/punk-ceo?source=copy_link) — keep in sync with this repo using [NOTION-SYNC.md](./NOTION-SYNC.md).
 

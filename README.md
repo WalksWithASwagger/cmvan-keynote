@@ -112,6 +112,8 @@ python3 -m http.server 7772 --directory assets/generated/slides
 | `docs/MARK-FEEDBACK.md` | Mark Busse's feedback + brain dump, formalized |
 | `docs/PROJECT-ROADMAP.md` | Timeline and milestones |
 | `docs/ROADMAP-2026-05-07.md` | Current post-talk roadmap refresh and prioritized backlog |
+| `docs/LINEAR-GITHUB-PIPELINE.md` | Linear project, GitHub issue map, PR rules, and delivery contract |
+| `ops/roadmap/features.json` | Machine-readable Linear/GitHub roadmap map checked by `npm run eval` |
 | `OPEN-QUESTIONS.md` | Open items |
 
 ---
@@ -120,7 +122,7 @@ python3 -m http.server 7772 --directory assets/generated/slides
 
 Static site, no bundler. Each script reads source files in the repo and writes JSON/XML into `site/`. Re-run after editing the relevant inputs.
 
-Run `npm run eval` before pushing. It checks JavaScript syntax, JSON manifests, local site references, header routes, and static Vercel config without needing credentials or a running server.
+Run `npm run eval` before pushing. It checks JavaScript syntax, JSON manifests, the Linear/GitHub roadmap map, local site references, header routes, and static Vercel config without needing credentials or a running server.
 
 | Command | Output | Inputs |
 |---------|--------|--------|
