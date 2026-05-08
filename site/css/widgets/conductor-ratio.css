@@ -1,0 +1,310 @@
+.cratio-hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--space-7) var(--space-5);
+  border-bottom: 3px solid var(--accent);
+}
+
+.cratio-hero .section-slide-bg {
+  opacity: 0.08;
+  mix-blend-mode: screen;
+}
+
+.cratio-hero .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.cratio-hero h1 {
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--space-3);
+}
+
+.cratio-hero p:not(.kicker) {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.35;
+  max-width: 58ch;
+  color: var(--fg-soft);
+}
+
+.cratio-board {
+  padding-block: var(--space-5) var(--space-7);
+}
+
+.cratio-board__head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-3);
+  align-items: end;
+  margin-bottom: var(--space-5);
+}
+
+.cratio-board__head h2 {
+  font-size: var(--fs-xl);
+  max-width: 20ch;
+}
+
+.cratio-board__readout {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: var(--space-2) var(--space-3);
+  min-width: 25ch;
+  text-align: center;
+}
+
+.cratio-slider {
+  position: relative;
+  padding-block: var(--space-5) var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+.cratio-slider__track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--space-5) + 18px);
+  height: 12px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.cratio-slider__fill {
+  display: block;
+  width: 50%;
+  height: 100%;
+  background: var(--accent);
+  transition: width 80ms linear;
+}
+
+.cratio-slider__input {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 48px;
+  margin: 0;
+  appearance: none;
+  background: transparent;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.cratio-slider__input:active {
+  cursor: grabbing;
+}
+
+.cratio-slider__input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 8px;
+}
+
+.cratio-slider__input::-webkit-slider-runnable-track {
+  height: 12px;
+  background: transparent;
+}
+
+.cratio-slider__input::-moz-range-track {
+  height: 12px;
+  background: transparent;
+}
+
+.cratio-slider__input::-webkit-slider-thumb {
+  appearance: none;
+  width: 36px;
+  height: 36px;
+  margin-top: -12px;
+  border: 3px solid var(--accent);
+  background: var(--bg);
+  box-shadow: 5px 5px 0 var(--fg);
+}
+
+.cratio-slider__input::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  border: 3px solid var(--accent);
+  border-radius: 0;
+  background: var(--bg);
+  box-shadow: 5px 5px 0 var(--fg);
+}
+
+.cratio-slider__anchors {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 46px;
+}
+
+.cratio-anchor {
+  position: absolute;
+  left: var(--x);
+  top: 0;
+  transform: translateX(-50%);
+  display: grid;
+  gap: var(--space-1);
+  justify-items: center;
+  min-width: 56px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.cratio-anchor__tick {
+  width: 2px;
+  height: 18px;
+  background: currentColor;
+}
+
+.cratio-anchor:hover,
+.cratio-anchor:focus-visible,
+.cratio-anchor[aria-current] {
+  color: var(--accent);
+}
+
+.cratio-anchor:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.cratio-card {
+  border: 1px solid var(--border);
+  background: var(--bg-soft, #111);
+  padding: var(--space-4);
+  display: grid;
+  gap: var(--space-4);
+}
+
+.cratio-card__main {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.cratio-card__tag,
+.cratio-card__source {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cratio-card h3 {
+  font-size: var(--fs-xl);
+  margin: 0;
+}
+
+.cratio-card p {
+  margin: 0;
+  max-width: 68ch;
+  line-height: 1.5;
+}
+
+.cratio-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.cratio-metrics div {
+  border-top: 1px dashed var(--border);
+  padding-top: var(--space-2);
+}
+
+.cratio-metrics dt {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cratio-metrics dd {
+  margin: var(--space-1) 0 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+}
+
+.cratio-metrics span {
+  display: block;
+  width: var(--w);
+  height: 6px;
+  margin-bottom: var(--space-1);
+  background: var(--accent);
+}
+
+.cratio-tradeoffs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.cratio-tradeoffs section {
+  border-left: 2px solid var(--accent);
+  padding-left: var(--space-3);
+}
+
+.cratio-tradeoffs h4 {
+  margin: 0 0 var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--accent);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.cratio-final {
+  padding-block: var(--space-6) var(--space-7);
+  border-top: 3px solid var(--accent);
+}
+
+.cratio-final h2 {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-3);
+}
+
+.cratio-final__cite {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  margin-block: var(--space-3);
+}
+
+.cratio-final__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+@media (max-width: 760px) {
+  .cratio-board__head,
+  .cratio-metrics,
+  .cratio-tradeoffs {
+    grid-template-columns: 1fr;
+  }
+
+  .cratio-board__readout {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .cratio-anchor {
+    min-width: 44px;
+    font-size: 0.72rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cratio-slider__fill {
+    transition: none;
+  }
+}

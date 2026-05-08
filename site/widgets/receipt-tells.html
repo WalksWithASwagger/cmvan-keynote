@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Training-corpus receipt &mdash; Punk Rock AI</title>
+    <meta
+      name="description"
+      content="Paste AI-generated text and print a receipt-style heuristic readout: stock phrases, hedging, em-dash density, and a few overused AI-tell verbs. Educational, not definitive."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta property="og:title" content="Training-corpus receipt — Punk Rock AI" />
+    <meta
+      property="og:description"
+      content="A non-definitive receipt of common AI-output tells: phrase matches, hedging, em dashes, and delve/leverage/optimize frequency."
+    />
+    <meta property="og:url" content="https://punkrockai.com/widgets/receipt-tells.html" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/punk-graphics.css" />
+    <link rel="stylesheet" href="/css/widgets/receipt-tells.css" />
+    <link rel="stylesheet" href="/css/zine-overhaul.css" />
+  </head>
+  <body class="shell">
+    <header class="site-header" data-include="header"></header>
+
+    <main>
+      <section class="rctl-intro grain scanlines punk-tile punk-section--name" style="position: relative; overflow: hidden;">
+        <div class="section-slide-bg" aria-hidden="true" style="background-image: url('/public/slides/feed-machine-stamp.webp'); opacity: 0.07; mix-blend-mode: screen;"></div>
+        <span class="punk-refuse" style="--punk-x:80%;--punk-y:22%;--punk-scale:0.9;--punk-opacity:0.34;" aria-hidden="true"></span>
+        <div class="wrap wrap--narrow" style="position: relative; z-index: 1;">
+          <p class="kicker kicker--accent">Slide 10 &middot; the receipt moment</p>
+          <h1>Training-corpus receipt.</h1>
+          <p class="rctl-intro__lede">
+            Paste AI-generated text. The printer marks a few familiar tells:
+            stock phrases, hedging, em-dash density, and the tiny word cloud
+            around delve, leverage, and optimize.
+          </p>
+          <p class="rctl-intro__hint">
+            Heuristic only. This cannot prove authorship, training origin, or
+            model use. It just names visible patterns in the pasted text.
+          </p>
+        </div>
+      </section>
+
+      <section class="rctl-caveat" aria-label="Heuristic caveat">
+        <div class="wrap wrap--narrow">
+          <p class="rctl-caveat__tag">Non-definitive by design</p>
+          <p>
+            These checks are receipts, not verdicts. Human writers can hedge,
+            use em dashes, and say leverage. AI systems can avoid every marker
+            here. Use this as a pattern-naming aid, not an accusation machine.
+          </p>
+        </div>
+      </section>
+
+      <section class="rctl-app">
+        <div class="wrap">
+          <div class="rctl-layout">
+            <form class="rctl-panel" id="rctl-form">
+              <h2 class="rctl-h2">Pastebox</h2>
+              <label class="sr-only" for="rctl-input">AI-generated text to inspect</label>
+              <textarea
+                id="rctl-input"
+                class="rctl-textarea"
+                rows="12"
+                placeholder="Paste AI-generated text here. The receipt prints local heuristics only; nothing leaves your browser."
+              ></textarea>
+              <div class="rctl-row">
+                <button class="btn btn--primary" type="submit">Print tells</button>
+                <button class="btn" type="button" data-action="sample">Load sample</button>
+                <button class="btn" type="reset">Clear</button>
+              </div>
+              <p class="rctl-status" id="rctl-status" aria-live="polite"></p>
+            </form>
+
+            <div class="rctl-stage" aria-label="Receipt-style heuristic report">
+              <div class="rctl-printer" aria-hidden="true">
+                <div class="rctl-printer__slot"></div>
+              </div>
+              <article class="rctl-receipt" id="rctl-receipt" aria-live="polite">
+                <header class="rctl-receipt__head">
+                  <p class="rctl-receipt__brand">PUNK ROCK AI</p>
+                  <p class="rctl-receipt__sub">TRAINING-CORPUS TELLS</p>
+                  <p class="rctl-receipt__rule" aria-hidden="true">================================</p>
+                  <p class="rctl-receipt__meta">
+                    <span data-stamp>0000-00-00</span>
+                    <span data-time>00:00</span>
+                  </p>
+                  <p class="rctl-receipt__rule" aria-hidden="true">--------------------------------</p>
+                </header>
+                <div class="rctl-receipt__body" id="rctl-output">
+                  <p class="rctl-receipt__placeholder">Paste text and print the tells.</p>
+                </div>
+                <footer class="rctl-receipt__foot">
+                  <p class="rctl-receipt__rule" aria-hidden="true">================================</p>
+                  <p>NOT PROOF. JUST PATTERNS.</p>
+                  <p class="rctl-receipt__barcode" aria-hidden="true">|||| || |||| ||| ||||</p>
+                </footer>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/receipt-tells.js"></script>
+  </body>
+</html>

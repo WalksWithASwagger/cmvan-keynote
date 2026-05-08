@@ -47,7 +47,7 @@
       "id": "vercel-cloudflare-docs",
       "priority": "P0",
       "wave": "Wave 0 - Repo trust and workflow",
-      "status": "in-review",
+      "status": "done",
       "github": {
         "number": 133,
         "title": "[Roadmap P0] Reconcile Vercel production and Cloudflare fallback docs",
@@ -60,7 +60,7 @@
       "pullRequest": {
         "number": 140,
         "url": "https://github.com/WalksWithASwagger/cmvan-keynote/pull/140",
-        "draft": true
+        "draft": false
       },
       "labels": [
         "repo:cmvan-keynote",
@@ -80,7 +80,7 @@
       "id": "release-day-submission-smoke",
       "priority": "P0",
       "wave": "Wave 1 - Release Day operations",
-      "status": "todo",
+      "status": "in-review",
       "github": {
         "number": 135,
         "title": "[Roadmap P0] Smoke test Release Day submissions end to end",
@@ -89,6 +89,11 @@
       "linear": {
         "identifier": "BC-51",
         "url": "https://linear.app/bc-ai/issue/BC-51/roadmap-p0-smoke-test-release-day-submissions-end-to-end"
+      },
+      "pullRequest": {
+        "number": 143,
+        "url": "https://github.com/WalksWithASwagger/cmvan-keynote/pull/143",
+        "draft": true
       },
       "labels": [
         "repo:cmvan-keynote",
@@ -137,7 +142,7 @@
       "id": "moderation-gallery-loop",
       "priority": "P1",
       "wave": "Wave 1 - Release Day operations",
-      "status": "todo",
+      "status": "in-review",
       "github": {
         "number": 134,
         "title": "[Roadmap P1] Publish moderation-to-gallery loop for Release Day",
@@ -167,7 +172,7 @@
       "id": "route-nav-widget-contract-checker",
       "priority": "P1",
       "wave": "Wave 0 - Repo trust and workflow",
-      "status": "in-review",
+      "status": "done",
       "github": {
         "number": 137,
         "title": "[Roadmap P1] Add route nav widget contract checker",
@@ -180,7 +185,7 @@
       "pullRequest": {
         "number": 140,
         "url": "https://github.com/WalksWithASwagger/cmvan-keynote/pull/140",
-        "draft": true
+        "draft": false
       },
       "labels": [
         "repo:cmvan-keynote",
@@ -202,7 +207,7 @@
       "id": "browser-qa-lighthouse",
       "priority": "P1",
       "wave": "Wave 2 - Portal hardening",
-      "status": "todo",
+      "status": "in-review",
       "github": {
         "number": 138,
         "title": "[Roadmap P1] Browser QA and Lighthouse pass for core flows",
@@ -211,6 +216,11 @@
       "linear": {
         "identifier": "BC-55",
         "url": "https://linear.app/bc-ai/issue/BC-55/roadmap-p1-browser-qa-and-lighthouse-pass-for-core-flows"
+      },
+      "pullRequest": {
+        "number": 142,
+        "url": "https://github.com/WalksWithASwagger/cmvan-keynote/pull/142",
+        "draft": true
       },
       "labels": [
         "repo:cmvan-keynote",
@@ -231,7 +241,7 @@
       "id": "pattern-finder-backend-decision",
       "priority": "P1",
       "wave": "Wave 3 - Connected intelligence and media",
-      "status": "needs-human",
+      "status": "in-review",
       "github": {
         "number": 139,
         "title": "[Roadmap P1] Decide Pattern Finder production backend path",
@@ -247,12 +257,12 @@
         "kind:ops",
         "area:workers",
         "area:infra",
-        "agent:needs-human"
+        "agent:ready"
       ],
       "acceptanceChecks": [
-        "A recommended backend path is documented with tradeoffs and owner.",
-        "Required env/deploy changes are named.",
-        "Follow-up implementation work is linked if this issue remains decision-only."
+        "Release Day fallback-only path is documented with tradeoffs and owner.",
+        "Future live-backend env/deploy changes are named.",
+        "Follow-up implementation work is linked if live calls become approved."
       ]
     }
   ]

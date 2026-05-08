@@ -46,8 +46,9 @@ roadmap config, static-site contracts, and package/config files.
   human answer before copy can be finalized.
 - `BC-55` / GitHub #138: browser/Lighthouse evidence is still a separate QA
   pass.
-- `BC-56` / GitHub #139: Pattern Finder backend choice needs a hosting/API
-  decision before implementation.
+- `BC-56` / GitHub #139: Pattern Finder is decision-ready as fallback-only
+  for Release Day; a future live backend still needs explicit hosting/API,
+  model-budget, rate-limit, privacy, and abuse-control acceptance.
 
 ## Verification
 

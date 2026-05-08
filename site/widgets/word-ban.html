@@ -96,14 +96,24 @@
             <aside class="wban__sidebar">
               <div class="wban__presets">
                 <h2>Industry presets</h2>
-                <p class="wban__presets-help">Stack any preset onto your list. Custom additions stay.</p>
+                <p class="wban__presets-help">Stack or replace your list with a saved preset.</p>
                 <label class="sr-only" for="wban-preset">Choose an industry preset</label>
                 <div class="wban__row wban__row--tight">
                   <select id="wban-preset" class="wban__select">
                     <option value="">Pick a preset&hellip;</option>
                   </select>
-                  <button class="btn" type="button" data-action="apply-preset">Add to list</button>
+                  <button class="btn" type="button" data-action="apply-preset">Apply preset</button>
                 </div>
+                <fieldset class="wban__preset-mode" aria-label="Preset apply mode">
+                  <label>
+                    <input type="radio" name="wban-preset-mode" value="stack" checked />
+                    <span>Stack</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="wban-preset-mode" value="replace" />
+                    <span>Replace</span>
+                  </label>
+                </fieldset>
                 <p class="wban__preset-blurb" id="wban-preset-blurb"></p>
               </div>
 

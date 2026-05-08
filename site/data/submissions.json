@@ -1,5 +1,5 @@
 {
-  "source": "Notion DB via worker/submissions cron (when wired up)",
+  "source": "Fallback static export; primary gallery source is GET /api/submissions on Vercel",
   "generated": null,
   "moderation": "manual — items must have published=true in Notion",
   "submissions": []

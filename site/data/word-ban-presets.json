@@ -22,7 +22,19 @@
         "low-hanging fruit",
         "circle back",
         "double down",
-        "best practices"
+        "best practices",
+        "conversion",
+        "retention",
+        "awareness",
+        "brand lift",
+        "full-funnel",
+        "performance marketing",
+        "customer journey",
+        "hyper-targeted",
+        "personalization",
+        "storytelling",
+        "content engine",
+        "always-on"
       ]
     },
     {
@@ -48,7 +60,18 @@
         "venture-backed",
         "unfair advantage",
         "flywheel",
-        "go-to-market"
+        "go-to-market",
+        "hockey-stick growth",
+        "blitzscale",
+        "zero to one",
+        "total addressable market",
+        "early traction",
+        "seed stage",
+        "series a",
+        "pre-revenue",
+        "exit strategy",
+        "platform play",
+        "market leader"
       ]
     },
     {
@@ -73,7 +96,19 @@
         "mission-critical",
         "key takeaways",
         "going forward",
-        "at the end of the day"
+        "at the end of the day",
+        "low-hanging fruit",
+        "quick wins",
+        "socialize",
+        "right-size",
+        "change management",
+        "strategic roadmap",
+        "north star",
+        "workstream",
+        "swimlane",
+        "optimize",
+        "touch base",
+        "table stakes"
       ]
     },
     {
@@ -98,7 +133,19 @@
         "stakeholders",
         "robust framework",
         "comprehensive analysis",
-        "in light of the foregoing"
+        "in light of the foregoing",
+        "therefore",
+        "thus",
+        "arguably",
+        "nuanced",
+        "situated",
+        "methodological",
+        "epistemological",
+        "salient",
+        "problematics",
+        "foreground",
+        "unpack",
+        "complexities"
       ]
     },
     {
@@ -123,7 +170,19 @@
         "rug pull",
         "blockchain-powered",
         "smart contract",
-        "ecosystem"
+        "ecosystem",
+        "layer two",
+        "airdrop",
+        "staking",
+        "yield farming",
+        "liquidity",
+        "wallet",
+        "mint",
+        "nft",
+        "metaverse",
+        "zero knowledge",
+        "consensus",
+        "whitepaper"
       ]
     },
     {
@@ -148,7 +207,58 @@
         "sacred",
         "elevate",
         "cultivate",
-        "authentic self"
+        "authentic self",
+        "nourish",
+        "grounded",
+        "aligned",
+        "ritual",
+        "embodied",
+        "holding space",
+        "inner child",
+        "breathwork",
+        "high-vibe",
+        "plant-based",
+        "whole-body",
+        "transformational"
+      ]
+    },
+    {
+      "id": "journalism",
+      "label": "Journalism",
+      "blurb": "Vague attribution, passive voice fog, and news-copy hedges.",
+      "words": [
+        "sources say",
+        "critics say",
+        "observers say",
+        "some say",
+        "many believe",
+        "it is believed",
+        "it is understood",
+        "it was learned",
+        "reportedly",
+        "allegedly",
+        "apparently",
+        "seemingly",
+        "amid",
+        "sparked backlash",
+        "raised questions",
+        "under fire",
+        "controversial",
+        "war of words",
+        "bombshell",
+        "stunning",
+        "shocking",
+        "slammed",
+        "touted",
+        "hailed",
+        "insiders",
+        "according to reports",
+        "could not be reached",
+        "declined to comment",
+        "the move comes as",
+        "at press time",
+        "in a statement",
+        "went viral"
       ]
     }
   ]

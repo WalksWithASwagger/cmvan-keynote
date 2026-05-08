@@ -52,12 +52,20 @@ The load-bearing close was **Release Day / May 29** — ship something, punkrock
 
 ---
 
-## 6. Adobe involvement? — **NEEDS POST-TALK UPDATE**
+## 6. Adobe involvement? — **BLOCKED ON NAMED CONFIRMATION (2026-05-08)**
 
-Talk happened May 1. Fill in what actually played out with Mark re: Adobe's role.
+Talk happened May 1. The repo should not claim Adobe sponsorship, recording
+support, distribution, or approval until Mark Busse or another named Creative
+Mornings Vancouver contact confirms the actual role. Until then, use neutral
+phrasing such as "CreativeMornings Vancouver talk" and avoid Adobe-specific
+public copy.
 
 ---
 
-## 7. Recording rights — **NEEDS POST-TALK UPDATE**
+## 7. Recording rights — **BLOCKED ON NAMED CONFIRMATION (2026-05-08)**
 
-Talk happened May 1. Fill in: Was it recorded? Who owns it? Release timeline? Can you use clips now?
+Talk happened May 1. The repo does not yet have confirmed recording owner,
+release timeline, or clip permissions. Do not publish talk video clips, voice
+audio, or recording-derived transcripts until the owner and permitted uses are
+named. Photo-forward recap and slide/source-backed publishing can continue
+without implying recording rights.

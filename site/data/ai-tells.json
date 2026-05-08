@@ -1,0 +1,79 @@
+{
+  "generated": "hand-curated",
+  "note": "Heuristic marker lists for /widgets/receipt-tells.html. Matches are non-definitive and should never be treated as authorship proof.",
+  "sample": "Certainly! In today's rapidly evolving digital landscape, it is important to leverage innovative strategies that optimize outcomes while ensuring a seamless user experience. This comprehensive guide will delve into the key considerations, explore best practices, and provide actionable insights. It is worth noting that every organization is unique, and results may vary depending on context.",
+  "phraseMatches": [
+    {
+      "id": "rapidly-evolving",
+      "label": "rapidly evolving landscape",
+      "pattern": "\\brapidly evolving (?:digital )?landscape\\b"
+    },
+    {
+      "id": "in-todays",
+      "label": "in today's ... landscape",
+      "pattern": "\\bin today'?s [\\w\\s-]{0,36}?landscape\\b"
+    },
+    {
+      "id": "it-is-important",
+      "label": "it is important to",
+      "pattern": "\\bit is important to\\b"
+    },
+    {
+      "id": "seamless",
+      "label": "seamless experience",
+      "pattern": "\\bseamless (?:user |customer )?experience\\b"
+    },
+    {
+      "id": "comprehensive-guide",
+      "label": "comprehensive guide",
+      "pattern": "\\bcomprehensive guide\\b"
+    },
+    {
+      "id": "key-considerations",
+      "label": "key considerations",
+      "pattern": "\\bkey considerations\\b"
+    },
+    {
+      "id": "actionable-insights",
+      "label": "actionable insights",
+      "pattern": "\\bactionable insights\\b"
+    },
+    {
+      "id": "best-practices",
+      "label": "best practices",
+      "pattern": "\\bbest practices\\b"
+    },
+    {
+      "id": "results-may-vary",
+      "label": "results may vary",
+      "pattern": "\\bresults may vary\\b"
+    },
+    {
+      "id": "worth-noting",
+      "label": "it is worth noting",
+      "pattern": "\\bit'?s? worth noting\\b|\\bit is worth noting\\b"
+    }
+  ],
+  "hedges": [
+    "may",
+    "might",
+    "could",
+    "can help",
+    "often",
+    "generally",
+    "typically",
+    "in many cases",
+    "it depends",
+    "depending on",
+    "worth noting",
+    "important to note",
+    "not necessarily",
+    "potentially",
+    "arguably"
+  ],
+  "watchedTerms": [
+    "delve",
+    "leverage",
+    "optimize"
+  ]
+}

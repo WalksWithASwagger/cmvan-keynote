@@ -141,7 +141,7 @@ Phase 1 outputs verified: every route returns 200, every JS module passes `node 
 
 | Issue | Title | Status | Notes |
 |-------|-------|--------|-------|
-| [#13](https://github.com/WalksWithASwagger/cmvan-keynote/issues/13) | Pattern Finder LLM | 🟡 scaffold | Cloudflare Worker + Anthropic. Blocked on API key + CF account |
+| [#13](https://github.com/WalksWithASwagger/cmvan-keynote/issues/13) | Pattern Finder LLM | 🟡 fallback-only | Release Day path is copy-paste/local-only; Cloudflare Worker remains a later opt-in once model budget, rate limits, privacy copy, and abuse controls are accepted |
 | [#14](https://github.com/WalksWithASwagger/cmvan-keynote/issues/14) | Release Day portal | 🟡 live path, smoke needed | Vercel `/api/submissions` writes to Notion when env vars are configured; end-to-end production smoke test tracked in #135 / BC-51 |
 | [#15](https://github.com/WalksWithASwagger/cmvan-keynote/issues/15) | `/posse` audience map | 🔄 | 20 hand-curated profiles from `research/audience-rsvp-may1.md` |
 | [#16](https://github.com/WalksWithASwagger/cmvan-keynote/issues/16) | Decisions log | 🔄 | Renders `OPEN-QUESTIONS.md` + `SESSION-HANDOFF.md` |
@@ -150,7 +150,7 @@ Phase 1 outputs verified: every route returns 200, every JS module passes `node 
 
 - **R2 + slide imagery:** Cloudflare account with R2, an Object R/W token, bucket name, public URL prefix. Path to local slide source folder set as `SLIDES_SRC`. Once landed: `npm run ingest:slides`.
 - **ElevenLabs run:** `python3 dress-rehearsal/generate-audio.py` to generate mp3s, upload per-slide clips to R2, re-run `npm run build:audio`. The `/talk` page wires up automatically.
-- **Pattern Finder backend decision:** choose Cloudflare Worker, Vercel function, or fallback-only path before deploying live calls (#139 / BC-56).
+- **Pattern Finder backend decision:** fallback-only for the Release Day push; revisit Cloudflare Worker or Vercel function only after accepting model budget, rate limits, privacy copy, and abuse controls (#139 / BC-56).
 - **OPEN-QUESTIONS.md Q6 + Q7** — fill in Adobe involvement and recording rights post-talk.
 - **punk.ceo / plump.co** — decide routing per domains table and configure at registrar.
 

@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Signal &mdash; slide of the day</title>
+    <title>Signal &mdash; daily talk signal</title>
     <meta
       name="description"
-      content="One slide from the Punk Rock AI talk, surfaced for today. Same slide for every visitor on the same day. Cycles through the deck once a year."
+      content="One slide or quote from the Punk Rock AI talk, surfaced for today. Same signal for every visitor on the same UTC day."
     />
     <meta name="theme-color" content="#0a0a0a" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Signal — slide of the day" />
-    <meta property="og:description" content="One slide from the talk, surfaced for today." />
+    <meta property="og:title" content="Signal — daily talk signal" />
+    <meta property="og:description" content="One slide or quote from the talk, surfaced for today." />
     <meta property="og:url" content="https://punkrockai.com/signal.html" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="/css/theme.css" />
@@ -33,12 +33,17 @@
             <span class="signal__tag">Signal</span>
             <time class="signal__date" data-signal-date></time>
           </p>
-          <h1 class="signal__title" data-signal-title>Slide of the day</h1>
+          <h1 class="signal__title" data-signal-title>Signal of the day</h1>
           <p class="signal__act" data-signal-act></p>
           <p class="signal__note" data-signal-note hidden></p>
           <p class="signal__meta">
             <span data-signal-index></span>
           </p>
+          <nav class="signal__nav" aria-label="Signal date navigation">
+            <a class="signal__nav-link" data-signal-prev href="/signal.html">←</a>
+            <a class="signal__nav-link signal__nav-link--today" data-signal-today href="/signal.html">Today</a>
+            <a class="signal__nav-link" data-signal-next href="/signal.html">→</a>
+          </nav>
           <p class="signal__cta">
             <a class="btn" data-signal-recap href="/recap.html#slides">Read the recap</a>
             <a class="btn btn--ghost" data-signal-talk href="/talk.html">See the full talk</a>

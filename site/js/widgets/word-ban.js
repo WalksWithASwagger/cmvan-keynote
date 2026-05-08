@@ -42,6 +42,8 @@ const DEFAULTS = [
 const STORAGE_KEY = "wban:list";
 const LAST_INPUT_KEY = "wban:input";
 const HISTORY_KEY = "wordban:history";
+const LAST_PRESET_KEY = "wban:preset";
+const PRESET_MODE_KEY = "wban:preset-mode";
 const HISTORY_MAX = 10;
 
 const inputEl = document.getElementById("wban-input");
@@ -54,6 +56,7 @@ const statusEl = document.getElementById("wban-status");
 const listCountEl = document.querySelector("[data-list-count]");
 const presetSelectEl = document.getElementById("wban-preset");
 const presetBlurbEl = document.getElementById("wban-preset-blurb");
+const presetModeEls = document.querySelectorAll('input[name="wban-preset-mode"]');
 const historyBox = document.getElementById("wban-history");
 const historyList = document.getElementById("wban-history-list");
 const sparkEl = document.getElementById("wban-sparkline");
@@ -81,6 +84,8 @@ function hydrate() {
   listEl.value = Array.isArray(value) && value.length ? value.join("\n") : DEFAULTS.join("\n");
   const { value: prevInput } = load(LAST_INPUT_KEY, "");
   if (typeof prevInput === "string" && prevInput) inputEl.value = prevInput;
+  const { value: presetMode } = load(PRESET_MODE_KEY, "stack");
+  setPresetMode(presetMode === "replace" ? "replace" : "stack");
 }
 
 function bind() {
@@ -92,8 +97,14 @@ function bind() {
   document.querySelector('[data-action="apply-preset"]').addEventListener("click", applySelectedPreset);
 
   if (presetSelectEl) {
-    presetSelectEl.addEventListener("change", paintPresetBlurb);
+    presetSelectEl.addEventListener("change", () => {
+      save(LAST_PRESET_KEY, presetSelectEl.value);
+      paintPresetBlurb();
+    });
   }
+  presetModeEls.forEach((el) => {
+    el.addEventListener("change", () => save(PRESET_MODE_KEY, getPresetMode()));
+  });
 
   document.querySelector('[data-action="clear-history"]').addEventListener("click", clearHistory);
   historyList.addEventListener("change", onHistoryToggle);
@@ -311,6 +322,9 @@ function paintPresetOptions() {
     opt.textContent = p.label;
     presetSelectEl.appendChild(opt);
   }
+  const { value: lastPresetId } = load(LAST_PRESET_KEY, "");
+  if (presets.some((p) => p.id === lastPresetId)) presetSelectEl.value = lastPresetId;
+  paintPresetBlurb();
 }
 
 function paintPresetBlurb() {
@@ -331,17 +345,32 @@ function applySelectedPreset() {
     flash("preset is empty");
     return;
   }
+  save(LAST_PRESET_KEY, id);
+  const mode = getPresetMode();
   const before = parseList(listEl.value);
-  const merged = parseList([listEl.value, preset.words.join("\n")].join("\n"));
-  const added = merged.length - before.length;
-  listEl.value = merged.join("\n");
-  debouncedSaveList(merged);
+  const next = mode === "replace"
+    ? parseList(preset.words.join("\n"))
+    : parseList([listEl.value, preset.words.join("\n")].join("\n"));
+  listEl.value = next.join("\n");
+  save(STORAGE_KEY, next);
   paintListMeta();
-  flash(
-    added
-      ? `added ${added} from ${preset.label}`
-      : `${preset.label} already in your list`
-  );
+  if (mode === "replace") {
+    flash(`replaced list with ${preset.label}`);
+  } else {
+    const added = next.length - before.length;
+    flash(added ? `added ${added} from ${preset.label}` : `${preset.label} already in your list`);
+  }
+}
+
+function getPresetMode() {
+  const picked = [...presetModeEls].find((el) => el.checked);
+  return picked?.value === "replace" ? "replace" : "stack";
+}
+
+function setPresetMode(mode) {
+  presetModeEls.forEach((el) => {
+    el.checked = el.value === mode;
+  });
 }
 
 // ---------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-08T01:10:57.291Z",
+  "generated": "2026-05-08T04:30:17.153Z",
   "sources": {
     "openQuestions": "OPEN-QUESTIONS.md",
     "sessionHandoff": "SESSION-HANDOFF.md",
@@ -59,21 +59,21 @@
     },
     {
       "n": 6,
-      "id": "q-6-adobe-involvement-needs-post-talk-update",
-      "question": "Adobe involvement? — **NEEDS POST-TALK UPDATE**",
+      "id": "q-6-adobe-involvement-blocked-on-named-confirmation-2026-05-08",
+      "question": "Adobe involvement? — **BLOCKED ON NAMED CONFIRMATION (2026-05-08)**",
       "status": "open",
       "statusNote": null,
-      "body": "Talk happened May 1. Fill in what actually played out with Mark re: Adobe's role.",
-      "bodyHtml": "<p>Talk happened May 1. Fill in what actually played out with Mark re: Adobe's role.</p>"
+      "body": "Talk happened May 1. The repo should not claim Adobe sponsorship, recording\nsupport, distribution, or approval until Mark Busse or another named Creative\nMornings Vancouver contact confirms the actual role. Until then, use neutral\nphrasing such as \"CreativeMornings Vancouver talk\" and avoid Adobe-specific\npublic copy.",
+      "bodyHtml": "<p>Talk happened May 1. The repo should not claim Adobe sponsorship, recording<br>support, distribution, or approval until Mark Busse or another named Creative<br>Mornings Vancouver contact confirms the actual role. Until then, use neutral<br>phrasing such as \"CreativeMornings Vancouver talk\" and avoid Adobe-specific<br>public copy.</p>"
     },
     {
       "n": 7,
-      "id": "q-7-recording-rights-needs-post-talk-update",
-      "question": "Recording rights — **NEEDS POST-TALK UPDATE**",
+      "id": "q-7-recording-rights-blocked-on-named-confirmation-2026-05-08",
+      "question": "Recording rights — **BLOCKED ON NAMED CONFIRMATION (2026-05-08)**",
       "status": "open",
       "statusNote": null,
-      "body": "Talk happened May 1. Fill in: Was it recorded? Who owns it? Release timeline? Can you use clips now?",
-      "bodyHtml": "<p>Talk happened May 1. Fill in: Was it recorded? Who owns it? Release timeline? Can you use clips now?</p>"
+      "body": "Talk happened May 1. The repo does not yet have confirmed recording owner,\nrelease timeline, or clip permissions. Do not publish talk video clips, voice\naudio, or recording-derived transcripts until the owner and permitted uses are\nnamed. Photo-forward recap and slide/source-backed publishing can continue\nwithout implying recording rights.",
+      "bodyHtml": "<p>Talk happened May 1. The repo does not yet have confirmed recording owner,<br>release timeline, or clip permissions. Do not publish talk video clips, voice<br>audio, or recording-derived transcripts until the owner and permitted uses are<br>named. Photo-forward recap and slide/source-backed publishing can continue<br>without implying recording rights.</p>"
     }
   ],
   "sessions": [
