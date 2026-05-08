@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "npx --yes serve site -l 3000",
     "eval": "node scripts/eval.mjs",
+    "smoke:release-day": "node scripts/smoke-release-day.mjs",
     "build:quotes": "node scripts/build-quotes.mjs",
     "build:lineage": "node scripts/build-lineage.mjs",
     "build:library": "node scripts/build-library-index.mjs",
