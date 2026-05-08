@@ -47,7 +47,7 @@
       "id": "vercel-cloudflare-docs",
       "priority": "P0",
       "wave": "Wave 0 - Repo trust and workflow",
-      "status": "todo",
+      "status": "in-review",
       "github": {
         "number": 133,
         "title": "[Roadmap P0] Reconcile Vercel production and Cloudflare fallback docs",
@@ -56,6 +56,11 @@
       "linear": {
         "identifier": "BC-50",
         "url": "https://linear.app/bc-ai/issue/BC-50/roadmap-p0-reconcile-vercel-production-and-cloudflare-fallback-docs"
+      },
+      "pullRequest": {
+        "number": 140,
+        "url": "https://github.com/WalksWithASwagger/cmvan-keynote/pull/140",
+        "draft": true
       },
       "labels": [
         "repo:cmvan-keynote",

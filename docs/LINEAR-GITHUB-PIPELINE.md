@@ -27,7 +27,7 @@ planning. The current execution project is:
 
 | Wave | GitHub | Linear | Priority | Status |
 | --- | --- | --- | --- | --- |
-| Wave 0 | [#133](https://github.com/WalksWithASwagger/cmvan-keynote/issues/133) | [BC-50](https://linear.app/bc-ai/issue/BC-50/roadmap-p0-reconcile-vercel-production-and-cloudflare-fallback-docs) | P0 | Todo |
+| Wave 0 | [#133](https://github.com/WalksWithASwagger/cmvan-keynote/issues/133) | [BC-50](https://linear.app/bc-ai/issue/BC-50/roadmap-p0-reconcile-vercel-production-and-cloudflare-fallback-docs) | P0 | In review |
 | Wave 1 | [#135](https://github.com/WalksWithASwagger/cmvan-keynote/issues/135) | [BC-51](https://linear.app/bc-ai/issue/BC-51/roadmap-p0-smoke-test-release-day-submissions-end-to-end) | P0 | Todo |
 | Wave 1 | [#136](https://github.com/WalksWithASwagger/cmvan-keynote/issues/136) | [BC-52](https://linear.app/bc-ai/issue/BC-52/roadmap-p0-resolve-adobe-involvement-and-recording-rights) | P0 | Needs human |
 | Wave 1 | [#134](https://github.com/WalksWithASwagger/cmvan-keynote/issues/134) | [BC-53](https://linear.app/bc-ai/issue/BC-53/roadmap-p1-publish-moderation-to-gallery-loop-for-release-day) | P1 | Todo |
