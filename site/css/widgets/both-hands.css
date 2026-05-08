@@ -143,18 +143,28 @@
 }
 
 .bhf-side--critique .bhf-item__input {
+  background-color: var(--bg);
   color: var(--fg);
   border-color: var(--accent);
 }
 
 .bhf-side--capability .bhf-item__input {
+  background-color: var(--paper);
   color: var(--paper-ink);
   border-color: var(--paper-ink);
 }
 
 .bhf-item__input::placeholder {
   font-style: italic;
-  opacity: 0.5;
+  opacity: 1;
+}
+
+.bhf-side--critique .bhf-item__input::placeholder {
+  color: var(--fg-soft);
+}
+
+.bhf-side--capability .bhf-item__input::placeholder {
+  color: #4f4540;
 }
 
 .bhf-item__input:focus {
@@ -229,7 +239,7 @@
 }
 
 .bhf-canvas__footer strong {
-  color: var(--accent);
+  color: var(--accent-readable);
 }
 
 .bhf-canvas__sig {

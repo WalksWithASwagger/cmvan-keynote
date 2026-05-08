@@ -10,6 +10,7 @@
   --fg-soft: #cfcfcf;
   --muted: #9a9a9a;
   --accent: #e11d2e;
+  --accent-readable: #ff5665;
   --accent-ink: #ffffff;
   --paper: #f4ede0;
   --paper-ink: #111111;
@@ -230,7 +231,7 @@ strong {
 }
 
 .kicker--accent {
-  color: var(--accent);
+  color: var(--accent-readable);
 }
 
 .eyebrow {

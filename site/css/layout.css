@@ -44,6 +44,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
+  min-height: var(--site-header-height);
   background: var(--bg);
   border-bottom: 3px solid var(--accent);
 }
