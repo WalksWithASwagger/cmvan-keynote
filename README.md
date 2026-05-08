@@ -15,18 +15,19 @@ Theme: CREATE. Format: discussion-first. Duration: 20–25 min.
 
 ---
 
-## The Live Scripts (USE THESE)
+## Talk Sources
 
 | File | What It Is |
 |------|-----------|
-| `script/talk-framework-v4.md` | **PRIMARY** — the live talk. Crowd prompt + modular truth bomb clusters. Deploy based on what the room raises. |
-| `script/creativity-biography.md` | **REFERENCE** — curated scenes, usable lines, 30-year story archive. Pull from here in the room if needed. |
-| `dress-rehearsal/elevenlabs-full-script.md` | **AUDIO SCRIPT v2** — biography-forward, ~2,500 words, ~19 min. For ElevenLabs dress rehearsal. |
+| `script/talk-framework-v6.md` | **CURRENT DATA SOURCE** — parsed by `scripts/build-quotes.mjs` into the 22-slide portal data. |
+| `script/talk-framework-v4.md` | **HISTORICAL LIVE FRAMEWORK** — discussion-first talk framework used during talk prep. |
+| `script/creativity-biography.md` | **REFERENCE** — curated scenes, usable lines, 30-year story archive. |
+| `dress-rehearsal/elevenlabs-full-script.md` | **AUDIO SCRIPT** — biography-forward rehearsal script. |
 | `dress-rehearsal/generate-audio.py` | Generates MP3 from the audio script. Run: `python3 dress-rehearsal/generate-audio.py` |
 
 ---
 
-## Images (v3 — 28 slides)
+## Historical Image Runs (v3 — 28 slides)
 
 All runs in `assets/generated/slides/`. View via local server:
 
@@ -46,7 +47,11 @@ python3 -m http.server 7772 --directory assets/generated/slides
 
 ---
 
-## Slide Map (v3, 28 slides)
+## Historical Slide Map (v3, 28 slides)
+
+The current portal slide data is 22 slides in `site/data/slides.json`,
+generated from `script/talk-framework-v6.md`. The map below is retained as
+historical prompt-planning context.
 
 1. Title — PUNK ROCK AI
 2. The Permission Gap — "worldly"
@@ -112,6 +117,7 @@ python3 -m http.server 7772 --directory assets/generated/slides
 | `docs/MARK-FEEDBACK.md` | Mark Busse's feedback + brain dump, formalized |
 | `docs/PROJECT-ROADMAP.md` | Timeline and milestones |
 | `docs/ROADMAP-2026-05-07.md` | Current post-talk roadmap refresh and prioritized backlog |
+| `docs/PROJECT-AUDIT-2026-05-08.md` | Latest docs/project-file audit and remaining blockers |
 | `docs/LINEAR-GITHUB-PIPELINE.md` | Linear project, GitHub issue map, PR rules, and delivery contract |
 | `ops/roadmap/features.json` | Machine-readable Linear/GitHub roadmap map checked by `npm run eval` |
 | `DEPLOYMENT.md` | Vercel production runbook plus Cloudflare fallback runbook |

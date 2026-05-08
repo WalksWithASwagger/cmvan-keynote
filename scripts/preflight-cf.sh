@@ -108,7 +108,7 @@ check_worker() {
 }
 
 check_worker worker/pattern-finder ANTHROPIC_API_KEY
-check_worker worker/submissions    NOTION_API_KEY
+check_worker worker/submissions    NOTION_TOKEN
 
 # -- 4. summary -------------------------------------------------------------
 section "summary"

@@ -167,7 +167,7 @@
       "id": "route-nav-widget-contract-checker",
       "priority": "P1",
       "wave": "Wave 0 - Repo trust and workflow",
-      "status": "todo",
+      "status": "in-review",
       "github": {
         "number": 137,
         "title": "[Roadmap P1] Add route nav widget contract checker",
@@ -176,6 +176,11 @@
       "linear": {
         "identifier": "BC-54",
         "url": "https://linear.app/bc-ai/issue/BC-54/roadmap-p1-add-route-nav-widget-contract-checker"
+      },
+      "pullRequest": {
+        "number": 140,
+        "url": "https://github.com/WalksWithASwagger/cmvan-keynote/pull/140",
+        "draft": true
       },
       "labels": [
         "repo:cmvan-keynote",

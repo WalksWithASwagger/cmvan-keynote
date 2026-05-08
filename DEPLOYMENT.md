@@ -246,7 +246,7 @@ Bindings expected by `worker/submissions/index.js`:
 
 | Binding | Type | How to set |
 |---|---|---|
-| `NOTION_API_KEY` | Secret | `wrangler secret put NOTION_API_KEY` |
+| `NOTION_TOKEN` | Secret | `wrangler secret put NOTION_TOKEN` |
 | `NOTION_DB_ID` | Var or secret | paste 32-char hex into `wrangler.toml` `[vars]`, or `wrangler secret put NOTION_DB_ID` |
 | `RATE_LIMIT` | KV namespace (optional) | `wrangler kv namespace create RATE_LIMIT`, paste id |
 | `ALLOWED_ORIGIN` | Var | already set in `wrangler.toml` |
@@ -259,7 +259,7 @@ Deploy:
 ```sh
 cd worker/submissions
 wrangler kv namespace create RATE_LIMIT          # optional but recommended
-wrangler secret put NOTION_API_KEY
+wrangler secret put NOTION_TOKEN
 wrangler deploy
 ```
 

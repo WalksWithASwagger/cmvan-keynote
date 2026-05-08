@@ -40,11 +40,9 @@ site/
   decisions.html             open questions + decision log (#16)
   404.html                   branded fallback
   widgets/
-    three-documents.html     externalize your taste (#5)
-    both-hands.html          diptych canvas + PNG export (#6)
-    name-what-you-see.html   bias-naming walkthrough (#10)
-    taste-audit.html         cutting-room-floor reflection (#9)
-    pattern-finder.html      LLM-backed pattern discovery (#13)
+    *.html                   29 widget pages; each real widget pairs with
+                              site/js/widgets/<name>.js and
+                              site/css/widgets/<name>.css
   partials/
     header.html              site nav (single source of truth)
     footer.html              site footer
@@ -171,9 +169,10 @@ Config:
 - **Output directory:** `site` (set in `vercel.json`)
 - **Framework preset:** Other / static
 
-`vercel.json` at the repo root translates the Cloudflare-style
-`site/_headers` + `site/_redirects` into Vercel's rewrites/redirects/headers
-schema. It also enables `cleanUrls: true` so `/talk` serves `/talk.html`.
+`vercel.json` at the repo root carries the active Vercel headers and explicit
+rewrite/redirect exceptions. It also enables `cleanUrls: true` so `/talk`
+serves `/talk.html`. `site/_headers` and `site/_redirects` mirror the static
+contract for the Cloudflare fallback.
 
 DNS lives at Porkbun:
 

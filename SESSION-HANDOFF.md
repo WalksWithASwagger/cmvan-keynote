@@ -1,6 +1,11 @@
 # Session Handoff — May 1, 2026 (Talk Day · v9 Final)
 ## Both Hands Full · Creative Mornings Vancouver
 
+> Historical talk-day handoff. For current repo status use
+> [`README.md`](./README.md), [`docs/PROJECT-ROADMAP.md`](./docs/PROJECT-ROADMAP.md),
+> [`docs/ROADMAP-2026-05-07.md`](./docs/ROADMAP-2026-05-07.md), and
+> [`docs/PROJECT-AUDIT-2026-05-08.md`](./docs/PROJECT-AUDIT-2026-05-08.md).
+
 ---
 
 ## Final State (v9)
@@ -108,9 +113,9 @@ Came in with a 25-slide v7 plan already committed: Boosters vs Doomers added as 
 | 8 | Cutting Room Floor | `10-cutting-room-floor.png` |
 | 9 | Pattern I Couldn't Name | `11-pattern-i-couldn-t-name.png` |
 | 10 | The AI Chapter | `12-the-ai-chapter.png` |
-| 11 | **Boosters vs Doomers** | **NEEDS IMAGE** |
+| 11 | **Boosters vs Doomers** | `cmvan-v6-gpt2/new-slides-20260501/run-20260501-060904/01-boosters-vs-doomers-split-composition.png` |
 | 12 | Both Hands Full (frame) | `15-both-hands-full.png` |
-| 13 | **More Creative Than Ever** | **NEEDS IMAGE** |
+| 13 | **More Creative Than Ever** | `cmvan-v6-gpt2/new-slides-20260501/run-20260501-060904/03-more-creative-than-ever-text-as-artwork.png` |
 | 14 | Name What You See (Dr. Joy) | `16-name-what-you-see.png` |
 | 15 | Three Fears | `13-three-fears.png` |
 | 16 | Stay at the Table | `17-stay-at-the-table.png` |

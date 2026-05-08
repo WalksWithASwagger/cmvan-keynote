@@ -1,9 +1,10 @@
-# Notion integration setup — `worker/submissions`
+# Notion integration setup — submissions
 
-End-to-end steps to wire the Release Day submissions Worker to a Notion
-database. The Worker degrades gracefully without these set (POST returns
-`202 { status: "queued-no-backend" }` and logs a warning), so you can
-deploy first and connect Notion later.
+Production uses the Vercel function at `api/submissions.js`. These notes still
+apply to the Notion database schema and to the Cloudflare Worker fallback in
+`worker/submissions`. Both implementations degrade gracefully without Notion
+env vars; the fallback Worker returns `202 { status: "queued-no-backend" }`
+and logs a warning.
 
 ## 1. Create the Notion integration
 
