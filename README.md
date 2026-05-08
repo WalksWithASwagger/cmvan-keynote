@@ -111,6 +111,7 @@ python3 -m http.server 7772 --directory assets/generated/slides
 |------|-----------|
 | `docs/MARK-FEEDBACK.md` | Mark Busse's feedback + brain dump, formalized |
 | `docs/PROJECT-ROADMAP.md` | Timeline and milestones |
+| `docs/ROADMAP-2026-05-07.md` | Current post-talk roadmap refresh and prioritized backlog |
 | `OPEN-QUESTIONS.md` | Open items |
 
 ---

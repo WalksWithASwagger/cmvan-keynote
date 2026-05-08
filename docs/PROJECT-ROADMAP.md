@@ -6,6 +6,8 @@
 
 **Notion (share + staging):** [Punk CEO workspace](https://is.kriskrug.ai/punk-ceo?source=copy_link) — keep in sync with this repo using [NOTION-SYNC.md](./NOTION-SYNC.md).
 
+**Current roadmap refresh:** [ROADMAP-2026-05-07.md](./ROADMAP-2026-05-07.md) captures the post-talk project/code/doc review, the May 7 status, and the next Release Day / portal hardening waves.
+
 ---
 
 ## Dates (canon)
