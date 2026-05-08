@@ -1,5 +1,9 @@
 # Companion site — Punk Rock AI (CMVan)
 
+> Historical v1 companion site. Production is now the `site/` portal deployed
+> to Vercel; do not point `punkrockai.com` at this folder unless intentionally
+> restoring the early single-page fallback.
+
 Minimal **v1 spec** for a public page you can link from slides (QR) after **May 1, 2026**, and keep live through **Release Day (May 29, 2026)**.
 
 ## Purpose
@@ -37,6 +41,6 @@ Mirror the interactive patterns from the LaSalle delivery — see [`../source-ma
 
 ## Build note
 
-**v1 shipped in repo:** [`index.html`](./index.html) + [`styles.css`](./styles.css). Deploy the **folder root** as the site root (so `styles.css` resolves). Point **punkrockai.com** (and optional redirects) at this static bundle — see [`../docs/PROJECT-ROADMAP.md`](../docs/PROJECT-ROADMAP.md#domains-and-routing-registered).
+**v1 shipped in repo:** [`index.html`](./index.html) + [`styles.css`](./styles.css). This is preserved as historical reference; the active production bundle is `site/`.
 
 Add real URLs for Three Documents templates when ready (kb, Google Doc, or download links).

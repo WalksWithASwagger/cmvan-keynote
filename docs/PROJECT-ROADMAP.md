@@ -31,7 +31,9 @@ Do not conflate the two on public copy or slide footers.
 | **punk.ceo** | Short / cheek URL: 301 to `punkrockai.com` **or** single-page manifesto at same deploy | 301 redirect at registrar **or** CNAME + path rule on host |
 | **plump.co** | **TBD** — pick one: (A) editorial / second voice surface, (B) newsletter archive, (C) 301 to punkrockai.com | Document choice here when decided: _________________ |
 
-**Hosting target (live):** Vercel — project `punkrockai` on team `walkswithaswaggers-projects`. Output dir = `site/`. `vercel.json` translates Cloudflare-style `_headers` + `_redirects` into Vercel rewrites/redirects/headers. `cleanUrls: true`. Pushes to `main` auto-deploy to production.
+**Hosting target (live):** Vercel — project `punkrockai` on team `walkswithaswaggers-projects`. Output dir = `site/`. `vercel.json` carries the active Vercel headers plus explicit rewrite/redirect exceptions; `cleanUrls: true` serves extensionless routes. Pushes to `main` auto-deploy to production.
+
+**Deployment runbook:** [`DEPLOYMENT.md`](../DEPLOYMENT.md) is Vercel-first. Cloudflare Pages and Workers are preserved there as fallback paths, not as the active production host/API layer.
 
 **DNS:** Porkbun ALIAS `punkrockai.com` → `cname.vercel-dns.com`, plus wildcard CNAME `*.punkrockai.com` → `cname.vercel-dns.com`. SSL provisioned by Vercel automatically (Let's Encrypt _acme-challenge TXT records visible on the zone).
 
@@ -85,7 +87,7 @@ Do not conflate the two on public copy or slide footers.
 
 | Asset | Path | Notes |
 |-------|------|-------|
-| **PRIMARY SCRIPT** (discussion-first) | [`script/talk-framework-v4.md`](../script/talk-framework-v4.md) | Modular truth bomb clusters; use this May 1 |
+| **PRIMARY SCRIPT** (discussion-first) | [`script/talk-framework-v4.md`](../script/talk-framework-v4.md) | Delivered May 1; historical primary talk framework |
 | Creativity biography reference | [`script/creativity-biography.md`](../script/creativity-biography.md) | 11 curated scenes; pull from in the room |
 | ElevenLabs audio script v3 | [`dress-rehearsal/elevenlabs-full-script.md`](../dress-rehearsal/elevenlabs-full-script.md) | ~28 min, full 28-section biography-forward prose |
 | HOPECODE v3 image prompts (28 slides) | [`assets/image-prompts/hope-code-v3-28-rafiki.md`](../assets/image-prompts/hope-code-v3-28-rafiki.md) | Solar punk / Aurora Borealis / mycelial |
@@ -95,8 +97,8 @@ Do not conflate the two on public copy or slide footers.
 | Dress rehearsal audio | `dress-rehearsal/punk-rock-ai-full-talk.mp3` | gitignored; ~28 min; regenerate with generator |
 | Book draft (biography source) | [`source-material/life-love-internet/life-love-internet-book-draft.md`](../source-material/life-love-internet/life-love-internet-book-draft.md) | Primary biographical source |
 | Mark's feedback | [`docs/MARK-FEEDBACK.md`](./MARK-FEEDBACK.md) | Discussion-first format direction; brain dump |
-| Companion site v1 | [`companion-site/index.html`](../companion-site/index.html) | Needs DNS before May 1 |
-| Open decisions | [`OPEN-QUESTIONS.md`](../OPEN-QUESTIONS.md) | Q4, Q6, Q7 still open |
+| Companion site v1 | [`companion-site/index.html`](../companion-site/index.html) | Historical pre-portal companion site |
+| Open decisions | [`OPEN-QUESTIONS.md`](../OPEN-QUESTIONS.md) | Q6 and Q7 still need post-talk human answers |
 | External citations | [`PUBLICATION-BIBLIOGRAPHY.md`](./PUBLICATION-BIBLIOGRAPHY.md) | |
 | Notion sync rules | [`NOTION-SYNC.md`](./NOTION-SYNC.md) | |
 
@@ -140,7 +142,7 @@ Phase 1 outputs verified: every route returns 200, every JS module passes `node 
 | Issue | Title | Status | Notes |
 |-------|-------|--------|-------|
 | [#13](https://github.com/WalksWithASwagger/cmvan-keynote/issues/13) | Pattern Finder LLM | 🟡 scaffold | Cloudflare Worker + Anthropic. Blocked on API key + CF account |
-| [#14](https://github.com/WalksWithASwagger/cmvan-keynote/issues/14) | Release Day portal | 🔄 | Countdown lands; submission portal blocked on Notion DB |
+| [#14](https://github.com/WalksWithASwagger/cmvan-keynote/issues/14) | Release Day portal | 🟡 live path, smoke needed | Vercel `/api/submissions` writes to Notion when env vars are configured; end-to-end production smoke test tracked in #135 / BC-51 |
 | [#15](https://github.com/WalksWithASwagger/cmvan-keynote/issues/15) | `/posse` audience map | 🔄 | 20 hand-curated profiles from `research/audience-rsvp-may1.md` |
 | [#16](https://github.com/WalksWithASwagger/cmvan-keynote/issues/16) | Decisions log | 🔄 | Renders `OPEN-QUESTIONS.md` + `SESSION-HANDOFF.md` |
 
@@ -148,7 +150,7 @@ Phase 1 outputs verified: every route returns 200, every JS module passes `node 
 
 - **R2 + slide imagery:** Cloudflare account with R2, an Object R/W token, bucket name, public URL prefix. Path to local slide source folder set as `SLIDES_SRC`. Once landed: `npm run ingest:slides`.
 - **ElevenLabs run:** `python3 dress-rehearsal/generate-audio.py` to generate mp3s, upload per-slide clips to R2, re-run `npm run build:audio`. The `/talk` page wires up automatically.
-- **Anthropic API key + Cloudflare Workers account:** for Pattern Finder (#13). `cd worker/pattern-finder && wrangler secret put ANTHROPIC_API_KEY && wrangler deploy`.
+- **Pattern Finder backend decision:** choose Cloudflare Worker, Vercel function, or fallback-only path before deploying live calls (#139 / BC-56).
 - **OPEN-QUESTIONS.md Q6 + Q7** — fill in Adobe involvement and recording rights post-talk.
 - **punk.ceo / plump.co** — decide routing per domains table and configure at registrar.
 

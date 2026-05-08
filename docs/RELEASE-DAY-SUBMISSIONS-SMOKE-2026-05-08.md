@@ -14,7 +14,7 @@ copy materially.
 | --- | --- |
 | Date | May 8, 2026 |
 | Branch | `codex/issue-135-release-day-smoke` |
-| Base | `origin/main` at `76bd978` |
+| Base | `origin/main` at `d0e682b` |
 | Local site route | `site/release-day.html` |
 | Browser controller | `site/js/widgets/release-day.js` |
 | Production API path | `api/submissions.js` on Vercel |
