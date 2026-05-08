@@ -2,16 +2,23 @@
 
 Build and ingest tooling for the punkrockai.com static site.
 
-| Script | What it does |
-| --- | --- |
-| `build-quotes.mjs` | Seeds `site/data/slides.json` from talk source-of-truth. Run before `ingest-slides`. |
-| `build-lineage.mjs` | Generates lineage graph data. |
-| `build-library-index.mjs` | Indexes the reading-list / library page. |
-| `build-audio-cues.mjs` | Compiles per-slide audio cue manifest. |
-| `build-decisions.mjs` | Generates the decisions log page data. |
-| `ingest-slides.mjs` | Resizes slide imagery, uploads originals to Cloudflare R2, merges URLs into `slides.json`. |
+| Script | What it does | Credentials |
+| --- | --- | --- |
+| `eval.mjs` | Runs the local repo gate: JS syntax, JSON parsing, roadmap map, site refs, header routes, widget contracts, Vercel config. | None |
+| `build-quotes.mjs` | Seeds `site/data/quotes.json` and `site/data/slides.json` from `script/talk-framework-v6.md`. Run before `ingest-slides`. | None |
+| `build-lineage.mjs` | Generates lineage graph data. | None |
+| `build-library-index.mjs` | Indexes the reading-list / library page. | None |
+| `build-rss.mjs` | Generates `site/feed.xml` from field-note HTML pages. | None |
+| `build-decisions.mjs` | Generates the decisions log page data. | None |
+| `build-audio-cues.mjs` | Compiles per-slide audio cue manifest after audio files exist. | None |
+| `generate-cues.mjs` | Calls ElevenLabs to generate per-slide cue audio. | ElevenLabs API key |
+| `ingest-photos.mjs` | Builds photo gallery manifests and thumbnails. | None |
+| `ingest-slides.mjs` | Resizes slide imagery, uploads originals to Cloudflare R2, merges URLs into `slides.json`. | R2 vars for upload |
+| `deploy-preview.sh` | Deploys `site/` to the Cloudflare Pages fallback. | Wrangler auth |
+| `preflight-cf.sh` | Checks Cloudflare fallback project, redirects, Worker secrets, and KV wiring. | Wrangler auth |
 
-The rest of this file documents `ingest-slides.mjs`, which is the only script that talks to a remote service.
+The rest of this file documents `ingest-slides.mjs`, the script with the most
+moving parts.
 
 ---
 

@@ -17,7 +17,11 @@ const CHECKS = [
   ["roadmap pipeline", checkRoadmapPipeline],
   ["site references", checkSiteReferences],
   ["header navigation", checkHeaderNavigation],
+  ["clean URL aliases", checkCleanUrlAliases],
+  ["widget contracts", checkWidgetContracts],
+  ["data references", checkJavaScriptDataReferences],
   ["Vercel static config", checkVercelConfig],
+  ["Release Day submissions smoke", checkReleaseDaySubmissions],
 ];
 
 for (const [label, check] of CHECKS) {
@@ -150,10 +154,84 @@ function checkHeaderNavigation() {
   const source = readFileSync(abs(file), "utf8");
   const links = extractAttributeRefs(source).filter((ref) => ref.startsWith("/"));
 
+  const routePattern = /<a\b[^>]*href=["']([^"']+)["'][^>]*data-route=["']([^"']+)["'][^>]*>/g;
+  let match;
+  while ((match = routePattern.exec(source))) {
+    if (match[1] !== match[2]) {
+      failures.push(`${file}: data-route ${match[2]} does not match href ${match[1]}`);
+    }
+  }
+
   for (const link of links) {
     const target = resolveSiteRef(link, file);
     if (!target || existsSync(abs(target))) continue;
     failures.push(`${file}: nav target missing ${link} -> ${target}`);
+  }
+}
+
+function checkWidgetContracts() {
+  const redirectRules = parseRedirectRules();
+  const widgetFiles = walk("site/widgets", [".html"]);
+
+  for (const file of widgetFiles) {
+    const source = readFileSync(abs(file), "utf8");
+    const slug = path.basename(file, ".html");
+    const cleanRoute = `/widgets/${slug}`;
+
+    if (!redirectRules.has(cleanRoute)) {
+      failures.push(`site/_redirects: missing widget clean URL alias ${cleanRoute}`);
+    }
+    if (isRedirectOnlyWidget(source)) continue;
+
+    const expectedCss = `/css/widgets/${slug}.css`;
+    const expectedJs = `/js/widgets/${slug}.js`;
+    if (!source.includes(`href="${expectedCss}"`) && !source.includes(`href='${expectedCss}'`)) {
+      failures.push(`${file}: missing widget stylesheet ${expectedCss}`);
+    }
+    if (!source.includes(`src="${expectedJs}"`) && !source.includes(`src='${expectedJs}'`)) {
+      failures.push(`${file}: missing widget script ${expectedJs}`);
+    }
+
+  }
+}
+
+function checkCleanUrlAliases() {
+  const redirectRules = parseRedirectRules();
+  const pageFiles = walk("site", [".html"]).filter((file) => {
+    return (
+      file !== "site/index.html" &&
+      file !== "site/404.html" &&
+      !file.startsWith("site/partials/") &&
+      !file.startsWith("site/widgets/")
+    );
+  });
+
+  for (const file of pageFiles) {
+    const route = `/${file.slice("site/".length, -".html".length)}`;
+    if (!redirectRules.has(route)) {
+      failures.push(`site/_redirects: missing clean URL alias ${route}`);
+    }
+  }
+}
+
+function checkJavaScriptDataReferences() {
+  const files = walk("site/js", [".js", ".mjs"]);
+  for (const file of files) {
+    const source = stripComments(readFileSync(abs(file), "utf8"));
+    const pattern = /["'`](\/data\/[^"'`]*?\.json)["'`]/g;
+    let match;
+    while ((match = pattern.exec(source))) {
+      const ref = match[1];
+      if (ref.includes("${")) continue;
+      const target = resolveSiteRef(ref, file);
+      if (target && !existsSync(abs(target))) {
+        failures.push(`${file}: missing data reference ${ref} -> ${target}`);
+      }
+    }
+
+    if (source.includes("/data/photos-${SLUG}.json")) {
+      checkPhotoGalleryDataRefs(file);
+    }
   }
 }
 
@@ -175,6 +253,51 @@ function checkVercelConfig() {
   }
   if (config.buildCommand !== null) {
     failures.push(`${file}: expected buildCommand to stay null for static deploys`);
+  }
+}
+
+function checkReleaseDaySubmissions() {
+  const result = spawnSync(process.execPath, ["scripts/smoke-release-day.mjs"], {
+    cwd: ROOT,
+    encoding: "utf8",
+  });
+  if (result.status !== 0) {
+    failures.push(`scripts/smoke-release-day.mjs: ${firstLine(result.stderr || result.stdout)}`);
+  }
+}
+
+function parseRedirectRules() {
+  const file = "site/_redirects";
+  if (!existsSync(abs(file))) return new Map();
+  const rules = new Map();
+  const lines = readFileSync(abs(file), "utf8").split("\n");
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+    const [from, to] = trimmed.split(/\s+/);
+    if (from && to) rules.set(from, to);
+  }
+  return rules;
+}
+
+function isRedirectOnlyWidget(source) {
+  return /http-equiv=["']refresh["']/i.test(source);
+}
+
+function checkPhotoGalleryDataRefs(controllerFile) {
+  const files = walk("site/photos", [".html"]);
+  for (const file of files) {
+    const source = readFileSync(abs(file), "utf8");
+    const match = source.match(/\bdata-slug=["']([^"']+)["']/);
+    if (!match) {
+      failures.push(`${file}: missing photo gallery data-slug for ${controllerFile}`);
+      continue;
+    }
+    const ref = `/data/photos-${match[1]}.json`;
+    const target = resolveSiteRef(ref, file);
+    if (target && !existsSync(abs(target))) {
+      failures.push(`${file}: missing photo gallery data ${ref} -> ${target}`);
+    }
   }
 }
 

@@ -100,6 +100,9 @@ function markCurrentNav() {
 
 function normalize(path) {
   if (!path) return "/";
-  let p = path.replace(/index\.html$/i, "").replace(/\/+$/g, "");
+  let p = path
+    .replace(/index\.html$/i, "")
+    .replace(/\.html$/i, "")
+    .replace(/\/+$/g, "");
   return p === "" ? "/" : p;
 }

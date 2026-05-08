@@ -1,19 +1,81 @@
 # Deployment Runbook — punkrockai.com
 
-> **Live host: Vercel.** The site runs at punkrockai.com on the `punkrockai` project under `walkswithaswaggers-projects`. Push to `main` → auto-deploys to production. See `docs/PROJECT-ROADMAP.md` for DNS details and `vercel.json` for routing config.
+> **Live host: Vercel.** The site runs at punkrockai.com on the `punkrockai` project under `walkswithaswaggers-projects`. Push to `main` auto-deploys to production. See `docs/PROJECT-ROADMAP.md` for DNS details and `vercel.json` for routing config.
 >
-> This document is the **Cloudflare Pages fallback runbook** — kept as reference if the host ever needs to switch. The `wrangler.toml`, `site/_headers`, and `site/_redirects` files remain in the repo for this reason.
+> **Cloudflare is fallback only.** The `wrangler.toml`, `site/_headers`, `site/_redirects`, and `worker/` files remain in the repo so the host can switch if Vercel becomes unavailable. Do not follow the Cloudflare sections for normal production deploys.
 
-The static site lives in `site/`; two Cloudflare Workers under `worker/` back
-the interactive widgets. This document is the field-by-field runbook for the
-human with Cloudflare access.
+The static site lives in `site/`. Active serverless routes live in `api/` and
+run on Vercel:
 
-Estimated time end-to-end: ~30 min (Pages project + DNS + TLS) plus 5 min per
-worker. Most of that is waiting for DNS/TLS to provision.
+| Route | Active production owner | Required env |
+| --- | --- | --- |
+| `/api/submissions` | `api/submissions.js` on Vercel | `NOTION_TOKEN`, `NOTION_DB_ID` |
+| `/api/subscribe` | `api/subscribe.js` on Vercel | `BEEHIIV_PUB_ID`, `BEEHIIV_API_KEY` |
+
+Cloudflare Workers under `worker/` are scaffolds/fallbacks, not the production
+backend today.
 
 ---
 
-## 0. Prerequisites
+## 0. Active Vercel production
+
+### Project settings
+
+| Field | Value |
+| --- | --- |
+| Project name | `punkrockai` |
+| Team | `walkswithaswaggers-projects` |
+| Root directory | repo root |
+| Build command | empty / `null` |
+| Output directory | `site` |
+| Framework preset | Other / static |
+| Production branch | `main` |
+
+These settings are encoded in `vercel.json` where possible. Vercel dashboard
+env vars are the only required external state.
+
+### DNS
+
+DNS lives at Porkbun:
+
+| Type | Host | Target |
+| --- | --- | --- |
+| ALIAS | `punkrockai.com` | `cname.vercel-dns.com` |
+| CNAME | `*.punkrockai.com` | `cname.vercel-dns.com` |
+
+Vercel provisions SSL automatically.
+
+### Normal deploy
+
+1. Run `npm run eval`.
+2. Commit and push to `main`.
+3. Confirm Vercel creates a production deployment for the pushed SHA.
+4. Smoke-test the public site and active API routes.
+
+Branch pushes create Vercel preview URLs. They may require Vercel SSO in a
+logged-in browser.
+
+### Active production smoke test
+
+- [ ] `npm run eval` passes locally.
+- [ ] `https://punkrockai.com/` returns 200.
+- [ ] `https://www.punkrockai.com/` returns 200 or redirects intentionally.
+- [ ] `/talk`, `/release-day`, `/library`, and `/widgets/three-documents` load with clean URLs.
+- [ ] `POST /api/submissions` creates a Notion row when `NOTION_TOKEN` and `NOTION_DB_ID` are configured.
+- [ ] `POST /api/subscribe` succeeds when Beehiiv env vars are configured.
+
+---
+
+## Cloudflare fallback runbook
+
+Use the rest of this document only if intentionally moving the site off Vercel
+or testing the fallback path. Estimated time end-to-end: ~30 min for Pages +
+DNS + TLS, plus 5 min per worker. Most of that is waiting for DNS/TLS to
+provision.
+
+---
+
+## F0. Prerequisites
 
 - Cloudflare account with access to `punkrockai.com` (registrar OR DNS-only).
 - GitHub access to `WalksWithASwagger/cmvan-keynote`.
@@ -32,10 +94,11 @@ deploy anything.
 
 ---
 
-## 1. Cloudflare Pages — staging project
+## F1. Cloudflare Pages fallback project
 
-This connects the GitHub repo to Pages. Every push to the default branch ships
-a new production build at `<project>.pages.dev`; every PR ships a preview URL.
+This connects the GitHub repo to Pages if the fallback host is needed. Every
+push to the configured production branch ships a new fallback production build
+at `<project>.pages.dev`; every PR ships a preview URL.
 
 ### 1a. Create the project (UI)
 
@@ -83,12 +146,12 @@ If you ever add a build step, update both this table and `package.json`.
 
 ---
 
-## 2. Custom domain — punkrockai.com
+## F2. Cloudflare fallback custom domain
 
-Cloudflare Pages handles TLS automatically once the domain points at the
-project. The recommended setup is to manage DNS for `punkrockai.com` *inside*
-Cloudflare (apex CNAME flattening makes this trivial). If the registrar is
-elsewhere, point its NS records at Cloudflare first.
+Only do this after deciding to move production DNS away from Vercel. Cloudflare
+Pages handles TLS automatically once the domain points at the project. The
+recommended fallback setup is to manage DNS for `punkrockai.com` inside
+Cloudflare.
 
 ### 2a. Add the custom domains in Pages
 
@@ -149,11 +212,12 @@ In Cloudflare dashboard for the zone:
 
 ---
 
-## 3. Workers (deferred — required for Pattern Finder + Submissions)
+## F3. Workers (fallback/deferred)
 
-The static site works without the workers; widgets degrade gracefully (Pattern
-Finder shows the prompt for copy-paste; Release Day shows a mailto fallback).
-Deploy the workers when you want the live versions.
+The active production submissions route is the Vercel function
+`api/submissions.js`. These workers are for a Cloudflare-hosted fallback or a
+future Pattern Finder decision. The static site works without them; widgets
+degrade gracefully.
 
 ### 3a. `worker/pattern-finder`
 
@@ -182,7 +246,7 @@ Bindings expected by `worker/submissions/index.js`:
 
 | Binding | Type | How to set |
 |---|---|---|
-| `NOTION_API_KEY` | Secret | `wrangler secret put NOTION_API_KEY` |
+| `NOTION_TOKEN` | Secret | `wrangler secret put NOTION_TOKEN` |
 | `NOTION_DB_ID` | Var or secret | paste 32-char hex into `wrangler.toml` `[vars]`, or `wrangler secret put NOTION_DB_ID` |
 | `RATE_LIMIT` | KV namespace (optional) | `wrangler kv namespace create RATE_LIMIT`, paste id |
 | `ALLOWED_ORIGIN` | Var | already set in `wrangler.toml` |
@@ -195,7 +259,7 @@ Deploy:
 ```sh
 cd worker/submissions
 wrangler kv namespace create RATE_LIMIT          # optional but recommended
-wrangler secret put NOTION_API_KEY
+wrangler secret put NOTION_TOKEN
 wrangler deploy
 ```
 
@@ -217,11 +281,12 @@ at the custom hostname. Avoids leaking the account-shaped workers.dev URL.
 
 ---
 
-## 4. Promotion: staging → production
+## F4. Cloudflare fallback promotion
 
-Cloudflare Pages does not have an explicit "promote" button; the model is:
+Cloudflare Pages does not have an explicit "promote" button; if this fallback
+is active, the model is:
 
-- Every push to `main` IS production. No manual promotion step.
+- Every push to `main` is Cloudflare fallback production if the fallback is active. No manual promotion step.
 - Every PR / non-main branch gets a **preview** URL like
   `<commit-or-branch>.<project>.pages.dev`.
 
@@ -229,7 +294,7 @@ To "promote" a preview:
 
 1. Open the PR in GitHub.
 2. Verify the preview URL works end-to-end.
-3. Merge the PR. The merge commit triggers a production deploy.
+3. Merge the PR. The merge commit triggers a Cloudflare fallback production deploy.
 4. Confirm the new build appears at `https://punkrockai.com` within ~60s.
 
 If you want a separate staging environment (different domain, different
@@ -239,14 +304,14 @@ data), create a second Pages project (`punkrockai-staging`) pointed at a
 
 ---
 
-## 5. Manual preview deploy (out-of-band)
+## F5. Manual Cloudflare preview deploy (out-of-band)
 
 For pushing a local build to Cloudflare without going through Git
 (useful for hotfixes, content review, demo links):
 
 ```sh
 ./scripts/deploy-preview.sh                 # uploads site/ as a preview
-./scripts/deploy-preview.sh --production    # uploads as production
+./scripts/deploy-preview.sh --production    # uploads as Cloudflare fallback production
 ```
 
 The script wraps `wrangler pages deploy site --project-name=punkrockai`. It
@@ -256,17 +321,17 @@ Requires `wrangler login` to have been run once on the machine.
 
 ---
 
-## 6. Rollback
+## F6. Cloudflare rollback
 
-Cloudflare Pages keeps every prior deployment indefinitely. Rollback is a
-one-click revert in the dashboard, no Git changes required.
+Cloudflare Pages keeps every prior fallback deployment indefinitely. Rollback
+is a one-click revert in the dashboard, no Git changes required.
 
 ### Dashboard rollback
 
 1. Pages project → **Deployments** tab.
 2. Find the last known-good deployment (look at the commit SHA / timestamp).
 3. Click **…** menu → **Rollback to this deployment**.
-4. Cloudflare instantly switches `punkrockai.com` to that build.
+4. Cloudflare instantly switches `punkrockai.com` to that build if the fallback DNS path is active.
 
 ### Git rollback (longer, but rewrites history)
 
@@ -287,7 +352,7 @@ wrangler rollback                # interactive picker of prior versions
 
 ---
 
-## 7. Acceptance checklist (issue #58)
+## F7. Cloudflare fallback acceptance checklist
 
 Run through this list after Pages + DNS are set up:
 
@@ -298,7 +363,7 @@ Run through this list after Pages + DNS are set up:
 - [ ] `curl -s https://punkrockai.com/talk` returns the `talk.html` body
       (proves `_redirects` rewrites work)
 - [ ] `https://<project>.pages.dev/` also serves the same build (staging URL)
-- [ ] Push to `main` triggers a new build within 30s
+- [ ] Push to the configured fallback production branch triggers a new build within 30s
 
 After workers are deployed (separate, non-blocking):
 
@@ -307,11 +372,11 @@ After workers are deployed (separate, non-blocking):
 
 ---
 
-## 8. What's stored where
+## F8. Cloudflare fallback storage map
 
 | Thing | Location |
 |---|---|
-| Static HTML / CSS / JS | repo `site/`, served by CF Pages |
+| Static HTML / CSS / JS | repo `site/`, served by Cloudflare Pages fallback |
 | Slide hi-res originals | R2 bucket `punkrockai-slides` (provisioned separately) |
 | Slide WebP fallbacks | repo `site/public/images/slides/` (committed) |
 | Notion submissions | Notion database (id in `worker/submissions/wrangler.toml` `[vars]`) |
@@ -325,7 +390,7 @@ they live in Cloudflare via `wrangler secret put`.
 
 ---
 
-## 9. Troubleshooting
+## F9. Cloudflare fallback troubleshooting
 
 **Build fails immediately.** There is no build step. If Pages is running one,
 the project was misconfigured — check **Settings → Builds & deployments**,

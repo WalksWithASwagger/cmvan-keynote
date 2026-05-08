@@ -11,11 +11,11 @@
   const isHoverable = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
   // Mark active group based on current path
-  const path = window.location.pathname;
+  const path = normalize(window.location.pathname);
   groups.forEach((g) => {
     const links = g.querySelectorAll("a[data-route]");
     for (const a of links) {
-      if (a.getAttribute("data-route") === path || a.getAttribute("href") === path) {
+      if (normalize(a.getAttribute("data-route")) === path || normalize(a.getAttribute("href")) === path) {
         g.setAttribute("data-active", "true");
         break;
       }
@@ -59,4 +59,13 @@
       if (g.open) g.open = false;
     }
   });
+
+  function normalize(path) {
+    if (!path) return "/";
+    let p = path
+      .replace(/index\.html$/i, "")
+      .replace(/\.html$/i, "")
+      .replace(/\/+$/g, "");
+    return p === "" ? "/" : p;
+  }
 })();
