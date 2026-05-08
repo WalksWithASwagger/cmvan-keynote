@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tool Not Neutral Matrix &mdash; Punk Rock AI</title>
+    <meta
+      name="description"
+      content="A 5 by 5 matrix of tool types, design decisions, and real cases showing how every tool ships values."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta property="og:title" content="Tool Not Neutral Matrix — Punk Rock AI" />
+    <meta property="og:description" content="Hover or tap the matrix to see real cases behind design choices." />
+    <meta property="og:url" content="https://punkrockai.com/widgets/tool-not-neutral-matrix.html" />
+    <meta property="og:image" content="https://punkrockai.com/public/slides/tool-neutral-full.webp" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/punk-graphics.css" />
+    <link rel="stylesheet" href="/css/widgets/tool-not-neutral-matrix.css" />
+    <link rel="stylesheet" href="/css/zine-overhaul.css" />
+  </head>
+  <body class="shell">
+    <header class="site-header" data-include="header"></header>
+
+    <main>
+      <section class="tnnm-hero punk-tile grain scanlines punk-section--name">
+        <div class="section-slide-bg" style="background-image: url('/public/slides/tool-neutral-full.webp');" aria-hidden="true"></div>
+        <div class="wrap wrap--narrow">
+          <p class="kicker kicker--accent">Slide 19 &middot; matrix variant</p>
+          <h1>Tool not neutral: the pattern map.</h1>
+          <p>
+            Five tool families. Five design axes. Every square is a choice someone made,
+            with a real case underneath it.
+          </p>
+        </div>
+      </section>
+
+      <section class="tnnm" aria-labelledby="tnnm-title">
+        <div class="wrap">
+          <div class="tnnm__head">
+            <div>
+              <p class="kicker kicker--accent">Hover, focus, or tap a cell</p>
+              <h2 id="tnnm-title">Where the value gets baked in</h2>
+            </div>
+            <p class="tnnm__hint">Swipe the expanded case on mobile to move between cells.</p>
+          </div>
+
+          <div class="tnnm__status" id="tnnm-status" aria-live="polite">Loading cases...</div>
+          <div class="tnnm__matrix" id="tnnm-matrix" aria-label="Tool type by design axis matrix"></div>
+          <article class="tnnm__detail" id="tnnm-detail" aria-live="polite"></article>
+        </div>
+      </section>
+
+      <section class="tnnm-coda">
+        <div class="wrap wrap--narrow">
+          <p>
+            Same evidence as the <a href="/widgets/tool-not-neutral.html">card-walker</a>,
+            rearranged for pattern recognition instead of sequence.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-include="footer"></footer>
+
+    <script type="module" src="/js/common/header.js"></script>
+    <script type="module" src="/js/widgets/tool-not-neutral-matrix.js"></script>
+  </body>
+</html>
