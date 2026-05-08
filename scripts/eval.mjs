@@ -18,6 +18,7 @@ const CHECKS = [
   ["site references", checkSiteReferences],
   ["header navigation", checkHeaderNavigation],
   ["Vercel static config", checkVercelConfig],
+  ["Release Day submissions smoke", checkReleaseDaySubmissions],
 ];
 
 for (const [label, check] of CHECKS) {
@@ -175,6 +176,16 @@ function checkVercelConfig() {
   }
   if (config.buildCommand !== null) {
     failures.push(`${file}: expected buildCommand to stay null for static deploys`);
+  }
+}
+
+function checkReleaseDaySubmissions() {
+  const result = spawnSync(process.execPath, ["scripts/smoke-release-day.mjs"], {
+    cwd: ROOT,
+    encoding: "utf8",
+  });
+  if (result.status !== 0) {
+    failures.push(`scripts/smoke-release-day.mjs: ${firstLine(result.stderr || result.stdout)}`);
   }
 }
 
