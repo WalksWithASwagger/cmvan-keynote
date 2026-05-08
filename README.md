@@ -114,6 +114,7 @@ python3 -m http.server 7772 --directory assets/generated/slides
 | `docs/ROADMAP-2026-05-07.md` | Current post-talk roadmap refresh and prioritized backlog |
 | `docs/LINEAR-GITHUB-PIPELINE.md` | Linear project, GitHub issue map, PR rules, and delivery contract |
 | `ops/roadmap/features.json` | Machine-readable Linear/GitHub roadmap map checked by `npm run eval` |
+| `DEPLOYMENT.md` | Vercel production runbook plus Cloudflare fallback runbook |
 | `OPEN-QUESTIONS.md` | Open items |
 
 ---

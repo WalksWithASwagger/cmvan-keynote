@@ -33,6 +33,8 @@ Do not conflate the two on public copy or slide footers.
 
 **Hosting target (live):** Vercel — project `punkrockai` on team `walkswithaswaggers-projects`. Output dir = `site/`. `vercel.json` translates Cloudflare-style `_headers` + `_redirects` into Vercel rewrites/redirects/headers. `cleanUrls: true`. Pushes to `main` auto-deploy to production.
 
+**Deployment runbook:** [`DEPLOYMENT.md`](../DEPLOYMENT.md) is Vercel-first. Cloudflare Pages and Workers are preserved there as fallback paths, not as the active production host/API layer.
+
 **DNS:** Porkbun ALIAS `punkrockai.com` → `cname.vercel-dns.com`, plus wildcard CNAME `*.punkrockai.com` → `cname.vercel-dns.com`. SSL provisioned by Vercel automatically (Let's Encrypt _acme-challenge TXT records visible on the zone).
 
 **Visual system:** see [`PUNK-VISUAL-SYSTEM.md`](./PUNK-VISUAL-SYSTEM.md) for the punk decoration layer, color tokens, asset pipeline, and per-page bespoke handcrafts.
