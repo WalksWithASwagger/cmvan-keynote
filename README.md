@@ -120,6 +120,8 @@ python3 -m http.server 7772 --directory assets/generated/slides
 
 Static site, no bundler. Each script reads source files in the repo and writes JSON/XML into `site/`. Re-run after editing the relevant inputs.
 
+Run `npm run eval` before pushing. It checks JavaScript syntax, JSON manifests, local site references, header routes, and static Vercel config without needing credentials or a running server.
+
 | Command | Output | Inputs |
 |---------|--------|--------|
 | `node scripts/build-rss.mjs` | `site/feed.xml` | `site/recap.html`, `site/notes/*.html` |

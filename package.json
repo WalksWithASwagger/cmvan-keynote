@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "npx --yes serve site -l 3000",
+    "eval": "node scripts/eval.mjs",
     "build:quotes": "node scripts/build-quotes.mjs",
     "build:lineage": "node scripts/build-lineage.mjs",
     "build:library": "node scripts/build-library-index.mjs",
