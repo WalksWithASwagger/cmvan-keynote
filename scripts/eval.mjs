@@ -17,6 +17,7 @@ const CHECKS = [
   ["roadmap pipeline", checkRoadmapPipeline],
   ["site references", checkSiteReferences],
   ["header navigation", checkHeaderNavigation],
+  ["route nav widget contracts", checkRouteNavWidgetContracts],
   ["Vercel static config", checkVercelConfig],
 ];
 
@@ -157,6 +158,77 @@ function checkHeaderNavigation() {
   }
 }
 
+function checkRouteNavWidgetContracts() {
+  const homeFile = "site/index.html";
+  const headerFile = "site/partials/header.html";
+  const redirectsFile = "site/_redirects";
+
+  const homeWidgetRoutes = new Set(extractWidgetRoutes(homeFile));
+  const headerAnchors = extractAnchors(readFileSync(abs(headerFile), "utf8"));
+  const headerWidgetRoutes = new Set(
+    headerAnchors
+      .map((anchor) => anchor.href)
+      .filter((href) => isCanonicalWidgetRoute(href)),
+  );
+  const redirectContracts = parseRedirectContracts(redirectsFile);
+
+  for (const anchor of headerAnchors) {
+    if (!anchor.href?.startsWith("/widgets/")) continue;
+    if (anchor.href !== anchor.dataRoute) {
+      failures.push(`${headerFile}: widget nav href ${anchor.href} must match data-route`);
+    }
+  }
+
+  for (const route of homeWidgetRoutes) {
+    const target = resolveSiteRef(route, homeFile);
+    if (!target || !existsSync(abs(target))) {
+      failures.push(`${homeFile}: advertised widget route missing file ${route} -> ${target}`);
+    } else {
+      checkWidgetAssetContract(route, target);
+    }
+    if (!headerWidgetRoutes.has(route)) {
+      failures.push(`${headerFile}: missing widget nav route ${route}`);
+    }
+
+    const cleanRoute = route.replace(/\.html$/, "");
+    const hasCleanRedirect = redirectContracts.some((contract) => (
+      contract.source === cleanRoute &&
+      contract.target === route &&
+      contract.status === "200"
+    ));
+    if (!hasCleanRedirect) {
+      failures.push(`${redirectsFile}: missing clean widget redirect ${cleanRoute} ${route} 200`);
+    }
+  }
+
+  for (const route of headerWidgetRoutes) {
+    if (!homeWidgetRoutes.has(route)) {
+      failures.push(`${homeFile}: widget nav route not advertised ${route}`);
+    }
+  }
+
+  for (const contract of redirectContracts) {
+    const target = resolveSiteRef(contract.target, redirectsFile);
+    if (!target || !existsSync(abs(target))) {
+      failures.push(`${redirectsFile}: widget redirect target missing ${contract.source} -> ${contract.target}`);
+    }
+  }
+}
+
+function checkWidgetAssetContract(route, file) {
+  const refs = extractAttributeRefs(readFileSync(abs(file), "utf8"));
+  const slug = path.basename(route, ".html");
+  const expectedCss = `/css/widgets/${slug}.css`;
+  const expectedJs = `/js/widgets/${slug}.js`;
+
+  if (!refs.includes(expectedCss)) {
+    failures.push(`${file}: missing widget CSS contract ${expectedCss}`);
+  }
+  if (!refs.includes(expectedJs)) {
+    failures.push(`${file}: missing widget JS contract ${expectedJs}`);
+  }
+}
+
 function checkVercelConfig() {
   const file = "vercel.json";
   let config;
@@ -184,6 +256,52 @@ function extractAttributeRefs(source) {
   let match;
   while ((match = pattern.exec(source))) refs.push(match[1]);
   return refs;
+}
+
+function extractAnchors(source) {
+  const anchors = [];
+  const pattern = /<a\b([^>]*)>/g;
+  let match;
+  while ((match = pattern.exec(source))) {
+    const attrs = match[1];
+    anchors.push({
+      href: extractAttribute(attrs, "href"),
+      dataRoute: extractAttribute(attrs, "data-route"),
+    });
+  }
+  return anchors;
+}
+
+function extractAttribute(source, name) {
+  const pattern = new RegExp(`\\b${name}=["']([^"']+)["']`);
+  return pattern.exec(source)?.[1] || "";
+}
+
+function extractWidgetRoutes(file) {
+  return extractAttributeRefs(readFileSync(abs(file), "utf8"))
+    .filter(isCanonicalWidgetRoute)
+    .sort();
+}
+
+function isCanonicalWidgetRoute(ref) {
+  return /^\/widgets\/[a-z0-9-]+\.html$/.test(ref);
+}
+
+function parseRedirectContracts(file) {
+  const source = readFileSync(abs(file), "utf8");
+  const contracts = [];
+
+  for (const line of source.split("\n")) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+
+    const [sourceRoute, target, status] = trimmed.split(/\s+/);
+    if (sourceRoute?.startsWith("/widgets/") && target?.startsWith("/widgets/")) {
+      contracts.push({ source: sourceRoute, target, status });
+    }
+  }
+
+  return contracts;
 }
 
 function extractCssUrlRefs(source) {
