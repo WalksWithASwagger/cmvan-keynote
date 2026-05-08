@@ -1,0 +1,120 @@
+name: Agentic Dev Loop
+
+on:
+  issues:
+    types: [labeled]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: GitHub issue number to attempt
+        required: true
+      provider:
+        description: Provider adapter name
+        required: false
+        default: noop
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  actions: read
+  checks: read
+
+concurrency:
+  group: agentic-dev-loop-${{ github.event.issue.number || inputs.issue_number }}
+  cancel-in-progress: false
+
+jobs:
+  run:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.label.name == 'agent:ready' }}
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      AGENTIC_PROVIDER: ${{ github.event.inputs.provider || vars.AGENTIC_PROVIDER || 'noop' }}
+      AGENTIC_PROVIDER_COMMAND: ${{ secrets.AGENTIC_PROVIDER_COMMAND }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ensure standard labels
+        run: python3 scripts/agentic/ensure_labels.py
+
+      - name: Fetch issue
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
+        run: |
+          gh issue view "$ISSUE_NUMBER" --json title --jq '.title' > "$RUNNER_TEMP/issue-title.txt"
+          gh issue view "$ISSUE_NUMBER" --json body --jq '.body // ""' > "$RUNNER_TEMP/issue.md"
+          gh issue view "$ISSUE_NUMBER" --json labels --jq '[.labels[].name] | join(",")' > "$RUNNER_TEMP/labels.txt"
+          echo "ISSUE_NUMBER=$ISSUE_NUMBER" >> "$GITHUB_ENV"
+          {
+            echo "ISSUE_TITLE<<EOF"
+            cat "$RUNNER_TEMP/issue-title.txt"
+            echo "EOF"
+          } >> "$GITHUB_ENV"
+
+      - name: Create work branch
+        id: branch
+        run: |
+          SLUG=$(python3 -c "import pathlib, sys; sys.path.insert(0, 'scripts/agentic'); from common import slugify; print(slugify(pathlib.Path('$RUNNER_TEMP/issue-title.txt').read_text()))")
+          REF=$(python3 -c "import pathlib, re; text=pathlib.Path('$RUNNER_TEMP/issue-title.txt').read_text()+pathlib.Path('$RUNNER_TEMP/issue.md').read_text(); match=re.search(r'\b[A-Z]{2,}-[0-9]+\b', text); print(match.group(0) if match else 'issue-${ISSUE_NUMBER}')")
+          BRANCH="codex/${REF}-${SLUG}"
+          git switch -c "$BRANCH"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+
+      - name: Mark issue in progress
+        run: |
+          gh issue edit "$ISSUE_NUMBER" --add-label "in-progress"
+          gh issue comment "$ISSUE_NUMBER" --body "Agentic dev loop started on branch \`${{ steps.branch.outputs.branch }}\` with provider \`${AGENTIC_PROVIDER}\`."
+
+      - name: Run provider and verification
+        id: loop
+        run: |
+          set +e
+          python3 scripts/agentic/dev_loop.py \
+            --issue-number "$ISSUE_NUMBER" \
+            --issue-title "$ISSUE_TITLE" \
+            --issue-file "$RUNNER_TEMP/issue.md" \
+            --labels "$(cat "$RUNNER_TEMP/labels.txt")" \
+            --provider "$AGENTIC_PROVIDER" \
+            --json-output "$RUNNER_TEMP/agentic-dev-loop-result.json" \
+            --pr-body-output "$RUNNER_TEMP/agentic-pr-body.md"
+          rc=$?
+          echo "exit_code=$rc" >> "$GITHUB_OUTPUT"
+          python3 -c "import json; print('action=' + json.load(open('$RUNNER_TEMP/agentic-dev-loop-result.json'))['action'])" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Open pull request
+        if: steps.loop.outputs.exit_code == '0' && steps.loop.outputs.action == 'open-pr'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && exit 1
+          git commit -m "fix: ${ISSUE_TITLE}"
+          git push --set-upstream origin "${{ steps.branch.outputs.branch }}"
+          PR_URL=$(gh pr create \
+            --title "$ISSUE_TITLE" \
+            --body-file "$RUNNER_TEMP/agentic-pr-body.md" \
+            --base main \
+            --head "${{ steps.branch.outputs.branch }}")
+          echo "$PR_URL" > "$RUNNER_TEMP/pr-url.txt"
+          gh issue comment "$ISSUE_NUMBER" --body "Agentic dev loop opened PR: ${PR_URL}"
+
+      - name: Comment dry-run or no-change result
+        if: steps.loop.outputs.exit_code == '0' && steps.loop.outputs.action != 'open-pr'
+        run: |
+          python3 -c "import json; data=json.load(open('$RUNNER_TEMP/agentic-dev-loop-result.json')); print('Agentic dev loop finished without opening a PR. Status: ' + data.get('status', 'unknown') + '. Provider: ' + data.get('provider', {}).get('provider', 'unknown') + '.')" > "$RUNNER_TEMP/comment.md"
+          gh issue comment "$ISSUE_NUMBER" --body-file "$RUNNER_TEMP/comment.md"
+
+      - name: Escalate failed run
+        if: steps.loop.outputs.exit_code != '0'
+        run: |
+          gh issue edit "$ISSUE_NUMBER" --add-label "needs-human"
+          python3 -c "import json; data=json.load(open('$RUNNER_TEMP/agentic-dev-loop-result.json')); print('Agentic dev loop failed: ' + data.get('message', data.get('status', 'unknown')))" > "$RUNNER_TEMP/comment.md"
+          gh issue comment "$ISSUE_NUMBER" --body-file "$RUNNER_TEMP/comment.md"
+
+      - name: Clear in-progress label
+        if: always()
+        run: gh issue edit "$ISSUE_NUMBER" --remove-label "in-progress" || true
