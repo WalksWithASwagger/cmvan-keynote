@@ -29,7 +29,7 @@
   font-size: var(--fs-xs);
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-readable);
   white-space: nowrap;
 }
 

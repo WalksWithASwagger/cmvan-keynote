@@ -11,7 +11,7 @@
   font-size: var(--fs-xs);
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  color: var(--accent);
+  color: var(--accent-readable);
   margin-bottom: var(--space-3);
 }
 
@@ -148,7 +148,7 @@
   font-size: var(--fs-xs);
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--accent);
+  color: var(--accent-readable);
   margin-bottom: var(--space-1);
 }
 
@@ -168,7 +168,7 @@
 }
 
 .beat__voices strong {
-  color: var(--accent);
+  color: var(--accent-readable);
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: var(--fs-xs);
@@ -214,7 +214,7 @@
   font-style: italic;
   font-size: clamp(1.4rem, 3.6vw, 2rem);
   margin: 0;
-  color: var(--accent);
+  color: var(--accent-readable);
   letter-spacing: -0.01em;
 }
 

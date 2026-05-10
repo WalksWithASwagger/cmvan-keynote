@@ -156,8 +156,8 @@
   font-size: var(--fs-xs);
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--accent);
-  border: 1px solid var(--accent);
+  color: var(--accent-readable);
+  border: 1px solid var(--accent-readable);
   padding: 0.1rem 0.4rem;
 }
 

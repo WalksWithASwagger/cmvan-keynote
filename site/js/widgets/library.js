@@ -128,7 +128,7 @@ function renderCard(result, q) {
   const summary = highlight(d.summary || d.body.slice(0, 220), q);
   li.innerHTML = `
     <div class="lib-card__head">
-      <h3 class="lib-card__title"><a href="${escapeAttr(d.githubRaw)}" target="_blank" rel="noopener">${escapeHTML(d.title)}</a></h3>
+      <h2 class="lib-card__title"><a href="${escapeAttr(d.githubRaw)}" target="_blank" rel="noopener">${escapeHTML(d.title)}</a></h2>
       <span class="lib-card__collection">${escapeHTML(d.collectionLabel)}</span>
     </div>
     <p class="lib-card__path">${escapeHTML(d.path)}</p>

@@ -80,7 +80,7 @@
       "id": "release-day-submission-smoke",
       "priority": "P0",
       "wave": "Wave 1 - Release Day operations",
-      "status": "in-review",
+      "status": "needs-human",
       "github": {
         "number": 135,
         "title": "[Roadmap P0] Smoke test Release Day submissions end to end",
@@ -93,7 +93,8 @@
       "pullRequest": {
         "number": 143,
         "url": "https://github.com/WalksWithASwagger/cmvan-keynote/pull/143",
-        "draft": true
+        "draft": false,
+        "merged": true
       },
       "labels": [
         "repo:cmvan-keynote",
@@ -142,7 +143,7 @@
       "id": "moderation-gallery-loop",
       "priority": "P1",
       "wave": "Wave 1 - Release Day operations",
-      "status": "in-review",
+      "status": "needs-human",
       "github": {
         "number": 134,
         "title": "[Roadmap P1] Publish moderation-to-gallery loop for Release Day",
@@ -207,7 +208,7 @@
       "id": "browser-qa-lighthouse",
       "priority": "P1",
       "wave": "Wave 2 - Portal hardening",
-      "status": "in-review",
+      "status": "done",
       "github": {
         "number": 138,
         "title": "[Roadmap P1] Browser QA and Lighthouse pass for core flows",
@@ -250,6 +251,12 @@
       "linear": {
         "identifier": "BC-56",
         "url": "https://linear.app/bc-ai/issue/BC-56/roadmap-p1-decide-pattern-finder-production-backend-path"
+      },
+      "pullRequest": {
+        "number": 144,
+        "url": "https://github.com/WalksWithASwagger/cmvan-keynote/pull/144",
+        "draft": false,
+        "merged": true
       },
       "labels": [
         "repo:cmvan-keynote",
