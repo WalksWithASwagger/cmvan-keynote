@@ -151,7 +151,7 @@ Phase 1 outputs verified: every route returns 200, every JS module passes `node 
 - **R2 + slide imagery:** Cloudflare account with R2, an Object R/W token, bucket name, public URL prefix. Path to local slide source folder set as `SLIDES_SRC`. Once landed: `npm run ingest:slides`.
 - **ElevenLabs run:** `python3 dress-rehearsal/generate-audio.py` to generate mp3s, upload per-slide clips to R2, re-run `npm run build:audio`. The `/talk` page wires up automatically.
 - **Pattern Finder backend decision:** fallback-only for the Release Day push; revisit Cloudflare Worker or Vercel function only after accepting model budget, rate limits, privacy copy, and abuse controls (#139 / BC-56).
-- **Browser QA / Lighthouse:** draft PR #142 carries the current QA report and fixes; it still needs authenticated preview/browser evidence before #138 can close.
+- **Browser QA / Lighthouse:** PR #142 merged the current QA report and safe fixes; it still needs authenticated preview/browser evidence before #138 can close.
 - **OPEN-QUESTIONS.md Q6 + Q7** — fill in Adobe involvement and recording rights post-talk.
 - **punk.ceo / plump.co** — decide routing per domains table and configure at registrar.
 

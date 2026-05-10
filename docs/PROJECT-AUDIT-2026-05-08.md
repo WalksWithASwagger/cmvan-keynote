@@ -44,9 +44,9 @@ roadmap config, static-site contracts, and package/config files.
   the right Vercel/Notion environment and permission to send a test payload.
 - `BC-52` / GitHub #136: Adobe involvement and recording rights require a
   human answer before copy can be finalized.
-- `BC-55` / GitHub #138: browser/Lighthouse evidence is in draft PR #142;
-  authenticated preview proof and a fresh `/library` Lighthouse run are still
-  outstanding.
+- `BC-55` / GitHub #138: browser/Lighthouse evidence and safe fixes landed in
+  PR #142; authenticated preview proof and a fresh `/library` Lighthouse run
+  are still outstanding.
 - Future Pattern Finder live-backend work still needs explicit hosting/API,
   model-budget, rate-limit, privacy, and abuse-control acceptance; the
   Release Day decision is fallback-only and #139 is closed.

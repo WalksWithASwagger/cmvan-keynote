@@ -47,7 +47,7 @@
       "id": "vercel-cloudflare-docs",
       "priority": "P0",
       "wave": "Wave 0 - Repo trust and workflow",
-      "status": "done",
+      "status": "needs-preview-qa",
       "github": {
         "number": 133,
         "title": "[Roadmap P0] Reconcile Vercel production and Cloudflare fallback docs",
@@ -221,7 +221,8 @@
       "pullRequest": {
         "number": 142,
         "url": "https://github.com/WalksWithASwagger/cmvan-keynote/pull/142",
-        "draft": true
+        "draft": false,
+        "merged": true
       },
       "labels": [
         "repo:cmvan-keynote",
