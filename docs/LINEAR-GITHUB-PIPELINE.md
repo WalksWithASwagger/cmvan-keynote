@@ -36,7 +36,7 @@ Agentic delivery contract: [`agentic/contract.json`](../agentic/contract.json). 
 | Wave 1 | [#134](https://github.com/WalksWithASwagger/cmvan-keynote/issues/134) | [BC-53](https://linear.app/bc-ai/issue/BC-53/roadmap-p1-publish-moderation-to-gallery-loop-for-release-day) | P1 | In review |
 | Wave 0 | [#137](https://github.com/WalksWithASwagger/cmvan-keynote/issues/137) | [BC-54](https://linear.app/bc-ai/issue/BC-54/roadmap-p1-add-route-nav-widget-contract-checker) | P1 | Done |
 | Wave 2 | [#138](https://github.com/WalksWithASwagger/cmvan-keynote/issues/138) | [BC-55](https://linear.app/bc-ai/issue/BC-55/roadmap-p1-browser-qa-and-lighthouse-pass-for-core-flows) | P1 | In review |
-| Wave 3 | [#139](https://github.com/WalksWithASwagger/cmvan-keynote/issues/139) | [BC-56](https://linear.app/bc-ai/issue/BC-56/roadmap-p1-decide-pattern-finder-production-backend-path) | P1 | In review |
+| Wave 3 | [#139](https://github.com/WalksWithASwagger/cmvan-keynote/issues/139) | [BC-56](https://linear.app/bc-ai/issue/BC-56/roadmap-p1-decide-pattern-finder-production-backend-path) | P1 | Done |
 
 ## Branch and PR rules
 

@@ -69,15 +69,15 @@ Do not conflate the two on public copy or slide footers.
 | **A4 — 28-slide expansion** | Apr 27 | ✅ | 8 new content sections (Bryght/Dead.net, Burroughs/Situationists, Vicki, Junior Pipeline, Galiano, True North, Anthony Joseph, Best Tool); HOPECODE v3 + punk v2 prompt files; Nano Pro runs complete (28 slides each); audio script v3 (~28 min); audio regenerated |
 | **B — Ship public minimum** | Before May 1 | ✅ | `punkrockai.com` live; hero, dates, `#ReleaseDay2026` CTA; QR → companion site |
 | **C — Talk week** | May 1 | ✅ | Talk delivered May 1, 2026. 22-slide zine deck. Discussion-first format. |
-| **D — Release month** | May 1–29 | 🟡 | Social cadence; Release Day submissions open; recording rights TBD with Mark |
+| **D — Release month** | May 1–29 | 🟡 | Social cadence; Release Day submissions open; recording rights and live Notion/gallery proof still need human/account confirmation |
 | **E — Post-publish** | After May 29 | 🔲 | Long article (Banff + BHF + CMVan arc); optional zine/PDF; talk recording posted |
-| **P — punkrockai.com portal** | May 1 → ongoing | 🟡 in progress | Interactive learning portal at `site/`; full visual treatment shipped May 5; see "Portal phase" below |
+| **P — punkrockai.com portal** | May 1 → ongoing | 🟡 hardening | Interactive learning portal at `site/`; full visual treatment, widget rack, release ops scaffolds, and delivery contract are shipped; remaining work is QA/account proof |
 
-### Phase D — Release month blockers (May 5, 2026)
+### Phase D — Release month blockers (updated May 10, 2026)
 
 1. **Recording rights** — confirm with Mark: recorded? owner? release date? clips OK now?
 2. **Adobe involvement** — note what role they actually played on May 1
-3. **Release Day submissions** — monitor punkrockai.com/release-day through May 29. Backend live: Vercel `/api/submissions` → Notion DB `8b72685121ce499fbd0b4cceee9a0d52`
+3. **Release Day submissions** — credential-free smoke harness is merged; still needs a real browser-to-Notion row in preview or production. Backend live: Vercel `/api/submissions` → Notion DB `8b72685121ce499fbd0b4cceee9a0d52`
 4. **Social cadence** — #ReleaseDay2026 posts through May 29
 5. **punk.ceo / plump.co routing** — still TBD (see domains table above)
 
@@ -128,12 +128,12 @@ The interactive learning portal that turns the talk into a working set of widget
 
 Phase 1 outputs verified: every route returns 200, every JS module passes `node --check`, every Phase 1 issue has a status comment with acceptance criteria.
 
-### Phase 2 — Widget rack expansion (in progress)
+### Phase 2 — Widget rack expansion (shipped)
 
 | Issue | Title | Status | Notes |
 |-------|-------|--------|-------|
-| [#9](https://github.com/WalksWithASwagger/cmvan-keynote/issues/9) | Taste Audit / Cutting Room Floor | 🔄 | Text-first; image upload deferred to a follow-up |
-| [#10](https://github.com/WalksWithASwagger/cmvan-keynote/issues/10) | Name What You See | 🔄 | Five hand-curated bias case studies |
+| [#9](https://github.com/WalksWithASwagger/cmvan-keynote/issues/9) | Taste Audit / Cutting Room Floor | ✅ | Text-first; image upload deferred to a future follow-up if needed |
+| [#10](https://github.com/WalksWithASwagger/cmvan-keynote/issues/10) | Name What You See | ✅ | Five hand-curated bias case studies |
 | [#11](https://github.com/WalksWithASwagger/cmvan-keynote/issues/11) | Audio sync | 🟡 scaffold | Cue extractor + player; mp3 hosting blocked on ElevenLabs run + R2 |
 | [#12](https://github.com/WalksWithASwagger/cmvan-keynote/issues/12) | `/library` searchable | 🔄 | 63 markdown files indexed; Fuse.js client-side fuzzy search |
 
@@ -141,7 +141,7 @@ Phase 1 outputs verified: every route returns 200, every JS module passes `node 
 
 | Issue | Title | Status | Notes |
 |-------|-------|--------|-------|
-| [#13](https://github.com/WalksWithASwagger/cmvan-keynote/issues/13) | Pattern Finder LLM | 🟡 fallback-only | Release Day path is copy-paste/local-only; Cloudflare Worker remains a later opt-in once model budget, rate limits, privacy copy, and abuse controls are accepted |
+| [#13](https://github.com/WalksWithASwagger/cmvan-keynote/issues/13) | Pattern Finder LLM | ✅ fallback-only for Release Day | Decision landed via #139/#144; Cloudflare Worker remains a later opt-in once model budget, rate limits, privacy copy, and abuse controls are accepted |
 | [#14](https://github.com/WalksWithASwagger/cmvan-keynote/issues/14) | Release Day portal | 🟡 live path, smoke needed | Vercel `/api/submissions` writes to Notion when env vars are configured; end-to-end production smoke test tracked in #135 / BC-51 |
 | [#15](https://github.com/WalksWithASwagger/cmvan-keynote/issues/15) | `/posse` audience map | 🔄 | 20 hand-curated profiles from `research/audience-rsvp-may1.md` |
 | [#16](https://github.com/WalksWithASwagger/cmvan-keynote/issues/16) | Decisions log | 🔄 | Renders `OPEN-QUESTIONS.md` + `SESSION-HANDOFF.md` |
@@ -151,6 +151,7 @@ Phase 1 outputs verified: every route returns 200, every JS module passes `node 
 - **R2 + slide imagery:** Cloudflare account with R2, an Object R/W token, bucket name, public URL prefix. Path to local slide source folder set as `SLIDES_SRC`. Once landed: `npm run ingest:slides`.
 - **ElevenLabs run:** `python3 dress-rehearsal/generate-audio.py` to generate mp3s, upload per-slide clips to R2, re-run `npm run build:audio`. The `/talk` page wires up automatically.
 - **Pattern Finder backend decision:** fallback-only for the Release Day push; revisit Cloudflare Worker or Vercel function only after accepting model budget, rate limits, privacy copy, and abuse controls (#139 / BC-56).
+- **Browser QA / Lighthouse:** draft PR #142 carries the current QA report and fixes; it still needs authenticated preview/browser evidence before #138 can close.
 - **OPEN-QUESTIONS.md Q6 + Q7** — fill in Adobe involvement and recording rights post-talk.
 - **punk.ceo / plump.co** — decide routing per domains table and configure at registrar.
 
