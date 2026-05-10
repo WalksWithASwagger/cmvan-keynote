@@ -47,6 +47,21 @@ Post-fix scores:
 
 ## Remaining Findings and Follow-Ups
 
+- Preview follow-up on 2026-05-10: the latest Vercel preview was deployed, but
+  unauthenticated `curl` requests to the preview returned `401`, so this agent
+  could not use it as browser evidence. Local route checks against
+  `python3 -m http.server 5177 --directory site` returned 200 for
+  `/library.html`, `/widgets/pattern-finder.html`, and `/release-day.html`.
+- Preview follow-up on 2026-05-10: Pattern Finder static copy now explicitly
+  says the live backend stays off until cost, privacy, and abuse controls are
+  accepted, and the fallback panel remains present for copy-paste use.
+- Preview follow-up on 2026-05-10: Release Day static form labels and fallback
+  copy are present; the local static server returns `501` for
+  `/api/submissions`, which exercises the browser's local queue/fallback path
+  but cannot prove the Vercel/Notion success path.
+- Preview follow-up on 2026-05-10: `/library.html` route and search markup are
+  present, but a fresh Lighthouse run could not be completed in this shell
+  because `npx --yes lighthouse` reported `No Chrome installations found`.
 - High follow-up: Mobile Lighthouse performance remains 58-71. LCP is 3.9-9.3s across tested pages. The dominant cost is large hero/background imagery and decorative WebP payloads, especially `weirdos-lineage-full.webp`, `posse-full.webp`, `taste-full.webp`, `release-day-full.webp`, `bhf-title-full.webp`, and `three-docs-full.webp`. Recommended follow-up: responsive image variants, lazy loading/defer for below-fold decorative backgrounds, and explicit LCP image preload or non-background hero treatment where appropriate.
 - Medium follow-up: CLS improved but remains 0.208-0.278 on tested pages. Header reservation helped, but JS-rendered sections and late-arriving content still shift. Recommended follow-up: skeleton/min-height reservations for dynamic sections such as Lineage beats, Talk reel, Three Documents progress state, and Release Day hero/countdown.
 - Medium follow-up: GA adds about 157 KiB of third-party JS and appears as unused JavaScript in Lighthouse. Recommended follow-up: defer analytics until idle or after a lightweight consent/engagement signal if analytics timing is not launch-critical.
