@@ -104,7 +104,7 @@ function render({ kind, item, idx }, dateISO) {
   if (prevEl) prevEl.setAttribute("href", signalHref(addUTCDays(dateISO, -1)));
   if (nextEl) nextEl.setAttribute("href", signalHref(addUTCDays(dateISO, 1)));
   if (todayEl) {
-    todayEl.setAttribute("href", "/signal.html");
+    todayEl.setAttribute("href", "/signal");
     if (dateISO === utcDateISO(new Date())) {
       todayEl.setAttribute("aria-current", "date");
     } else {
@@ -169,5 +169,5 @@ function formatUTCDate(dateISO) {
 }
 
 function signalHref(dateISO) {
-  return dateISO === utcDateISO(new Date()) ? "/signal.html" : `/signal.html?d=${dateISO}`;
+  return dateISO === utcDateISO(new Date()) ? "/signal" : `/signal?d=${dateISO}`;
 }
