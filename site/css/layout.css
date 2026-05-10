@@ -109,13 +109,13 @@
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
+  color: var(--accent-readable);
+  border-bottom-color: var(--accent-readable);
 }
 
 .site-nav a[aria-current="page"] {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
+  color: var(--accent-readable);
+  border-bottom-color: var(--accent-readable);
 }
 
 /* Site-nav primary persistent links — same as base, but explicit class
@@ -124,7 +124,7 @@
   color: var(--fg);
 }
 .site-nav__primary[aria-current="page"] {
-  color: var(--accent);
+  color: var(--accent-readable);
 }
 
 /* Categorized dropdown groups (MAKE / NAME / CONNECT / SHIP).
@@ -152,8 +152,8 @@
 .site-nav__group > summary:hover,
 .site-nav__group[open] > summary,
 .site-nav__group:focus-within > summary {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
+  color: var(--accent-readable);
+  border-bottom-color: var(--accent-readable);
 }
 .site-nav__group[data-nav-group="name"] > summary:hover,
 .site-nav__group[data-nav-group="name"][open] > summary {
@@ -161,8 +161,8 @@
   border-bottom-color: var(--accent-pink);
 }
 .site-nav__group[data-active="true"] > summary {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
+  color: var(--accent-readable);
+  border-bottom-color: var(--accent-readable);
 }
 .site-nav__caret {
   font-size: 0.7em;
