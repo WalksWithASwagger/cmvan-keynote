@@ -4,6 +4,9 @@ Scope: Linear BC-55, GitHub issue #138.
 
 Run date: 2026-05-07 18:29 PDT.
 
+Current-main addendum: 2026-05-09 23:28 PDT, after merging `origin/main`
+through the issue-swarm widget and Release Day operations batch.
+
 Environment:
 
 - Branch: `codex/bc-55-browser-qa-lighthouse`
@@ -24,6 +27,11 @@ Environment:
 | Three Documents | Filled all three textareas, Markdown preview rendered, prompt mode rendered, social generator produced 7 posts, and draft content was still present after reload. | Pass |
 | Both Hands | Filled critique, capability, and signature; moved a critique item down; PNG/share controls rendered; signature persisted after reload. Clipboard/download actions were not activated to avoid overwriting the user's clipboard or creating local downloads during QA. | Pass with note |
 | Release Day | Countdown rendered (`22` days at test time), required form fields rendered, draft values persisted after reload, and Clear draft removed the local draft. Submit was not activated because local `serve` intentionally falls back to queued local submissions when `/api/submissions` is unavailable. | Pass with note |
+| Signal date navigation | `/signal?d=2026-05-29` rendered May 29, 2026; prev/today/next links now emit clean `/signal?d=...` URLs so local clean-URL redirects do not drop the selected date. | Pass |
+| Issue-swarm widget routes | `/widgets/word-ban.html`, `/widgets/conductor-ratio.html`, `/widgets/cutting-room-buckets.html`, `/widgets/receipt-tells.html`, and `/widgets/tool-not-neutral-matrix.html` rendered their expected controls/content; the matrix rendered 25 cells on desktop and mobile. | Pass |
+| Pattern Finder states | Mocked `/api/pattern-finder` success rendered a pattern card without fallback; mocked `503` rendered the copy-paste fallback prompt. | Pass |
+| Release Day submit states | Mocked `/api/submissions` success rendered submitted status and cleared the draft; mocked `queued-no-backend` rendered the pending-local queue. | Pass |
+| Accessibility smoke | Desktop pass across home, talk, lineage, library, Release Day, Pattern Finder, and new widget routes found no unlabelled form controls and exposed keyboard focus on Tab. Mobile Release Day under `prefers-reduced-motion: reduce` matched the reduced-motion media query and kept form labels intact. | Pass |
 
 ## Lighthouse Summary
 
@@ -37,6 +45,7 @@ Post-fix scores:
 | `/widgets/three-documents.html` | 59 | 100 | 100 | 100 |
 | `/widgets/both-hands.html` | 63 | 100 | 100 | 100 |
 | `/release-day.html` | 61 | 100 | 96 | 100 |
+| `/library` | 65 | 100 | 100 | 100 |
 
 ## Fixed In This Pass
 
@@ -44,6 +53,8 @@ Post-fix scores:
 - High: Lighthouse contrast failures on small red accent text and Both Hands inputs reduced accessibility scores. Added an accessible red token for small dark-background text and explicit input/placeholder colors.
 - Medium: Three Documents used `role="tablist"` around pressed toggle buttons. Changed the wrapper to `role="group"`.
 - Medium: Header partial insertion caused visible load shift. Reserved the documented sticky header height before the partial loads.
+- Medium: Signal date navigation generated `.html?d=` links, which local clean-URL redirects stripped. Changed generated date links to `/signal?d=...`.
+- Medium: `/library` mobile Lighthouse found low-contrast small red nav/card labels and skipped heading order in dynamic result cards. Switched small red labels to `--accent-readable` and rendered library result titles as `h2`.
 
 ## Remaining Findings and Follow-Ups
 
@@ -59,10 +70,7 @@ Post-fix scores:
   copy are present; the local static server returns `501` for
   `/api/submissions`, which exercises the browser's local queue/fallback path
   but cannot prove the Vercel/Notion success path.
-- Preview follow-up on 2026-05-10: `/library.html` route and search markup are
-  present, but a fresh Lighthouse run could not be completed in this shell
-  because `npx --yes lighthouse` reported `No Chrome installations found`.
-- High follow-up: Mobile Lighthouse performance remains 58-71. LCP is 3.9-9.3s across tested pages. The dominant cost is large hero/background imagery and decorative WebP payloads, especially `weirdos-lineage-full.webp`, `posse-full.webp`, `taste-full.webp`, `release-day-full.webp`, `bhf-title-full.webp`, and `three-docs-full.webp`. Recommended follow-up: responsive image variants, lazy loading/defer for below-fold decorative backgrounds, and explicit LCP image preload or non-background hero treatment where appropriate.
+- High follow-up: Mobile Lighthouse performance remains 58-71 on the original route set and 65 on `/library`. LCP is 3.9-9.3s across tested pages, with `/library` at 6.9s. The dominant cost is large hero/background imagery and decorative WebP payloads, especially `weirdos-lineage-full.webp`, `posse-full.webp`, `taste-full.webp`, `release-day-full.webp`, `bhf-title-full.webp`, and `three-docs-full.webp`. Recommended follow-up: responsive image variants, lazy loading/defer for below-fold decorative backgrounds, and explicit LCP image preload or non-background hero treatment where appropriate.
 - Medium follow-up: CLS improved but remains 0.208-0.278 on tested pages. Header reservation helped, but JS-rendered sections and late-arriving content still shift. Recommended follow-up: skeleton/min-height reservations for dynamic sections such as Lineage beats, Talk reel, Three Documents progress state, and Release Day hero/countdown.
 - Medium follow-up: GA adds about 157 KiB of third-party JS and appears as unused JavaScript in Lighthouse. Recommended follow-up: defer analytics until idle or after a lightweight consent/engagement signal if analytics timing is not launch-critical.
 - Low follow-up: Local Lighthouse runs against `.html` URLs are redirected to clean URLs by `serve`, which Lighthouse reports as redirect overhead. Future audits should use clean URLs directly (`/talk`, `/lineage`, `/release-day`) when measuring performance.
@@ -99,3 +107,24 @@ npx --yes lighthouse "http://localhost:3000/" \
 ```
 
 Result: repeated for `/`, `/talk.html`, `/lineage.html`, `/widgets/three-documents.html`, `/widgets/both-hands.html`, and `/release-day.html`; scores are recorded above.
+
+```sh
+# Focused Playwright smoke against localhost:
+# - Signal clean date URL
+# - issue-swarm widget routes
+# - Pattern Finder connected/disconnected states
+# - Release Day submitted/queued states
+# - desktop/mobile form-label, focus, and reduced-motion checks
+```
+
+Result: passed.
+
+```sh
+CHROME_PATH=/Users/kk/Library/Caches/ms-playwright/chromium_headless_shell-1217/chrome-headless-shell-mac-arm64/chrome-headless-shell \
+npx --yes lighthouse "http://localhost:3000/library" \
+  --output=json --quiet \
+  --chrome-flags="--headless=new --no-sandbox" \
+  --only-categories=performance,accessibility,best-practices,seo
+```
+
+Result: `/library` scored 65 / 100 / 100 / 100.
