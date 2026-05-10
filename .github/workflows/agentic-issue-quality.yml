@@ -1,0 +1,79 @@
+name: Agentic Issue Quality
+
+on:
+  issues:
+    types: [labeled, edited, reopened]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: GitHub issue number to lint
+        required: true
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: agentic-issue-quality-${{ github.event.issue.number || inputs.issue_number }}
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensure standard labels
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/agentic/ensure_labels.py
+
+      - name: Fetch issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
+        run: |
+          gh issue view "$ISSUE_NUMBER" --json body --jq '.body // ""' > "$RUNNER_TEMP/issue.md"
+          gh issue view "$ISSUE_NUMBER" --json labels --jq '[.labels[].name] | join(",")' > "$RUNNER_TEMP/labels.txt"
+          echo "ISSUE_NUMBER=$ISSUE_NUMBER" >> "$GITHUB_ENV"
+
+      - name: Check for ready label
+        id: ready
+        run: |
+          python3 -c "import sys; labels=set(open('$RUNNER_TEMP/labels.txt').read().strip().split(',')); ready={'agent:ready','auto-implement','autonomous'}; print('has_ready=' + str(bool(labels & ready)).lower())" >> "$GITHUB_OUTPUT"
+
+      - name: Run issue quality linter
+        if: steps.ready.outputs.has_ready == 'true'
+        id: lint
+        run: |
+          set +e
+          python3 scripts/agentic/issue_lint.py \
+            --issue-file "$RUNNER_TEMP/issue.md" \
+            --labels "$(cat "$RUNNER_TEMP/labels.txt")" \
+            --json-output "$RUNNER_TEMP/lint.json"
+          rc=$?
+          echo "exit_code=$rc" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Normalize ready aliases
+        if: steps.ready.outputs.has_ready == 'true' && steps.lint.outputs.exit_code == '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue edit "$ISSUE_NUMBER" --add-label "agent:ready"
+          python3 -c "import json; print(' '.join(json.load(open('$RUNNER_TEMP/lint.json'))['alias_labels']))" > "$RUNNER_TEMP/aliases.txt"
+          for label in $(cat "$RUNNER_TEMP/aliases.txt"); do
+            gh issue edit "$ISSUE_NUMBER" --remove-label "$label" || true
+          done
+
+      - name: Block invalid ready issue
+        if: steps.ready.outputs.has_ready == 'true' && steps.lint.outputs.exit_code != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for label in "agent:ready" "auto-implement" "autonomous"; do
+            gh issue edit "$ISSUE_NUMBER" --remove-label "$label" || true
+          done
+          gh issue edit "$ISSUE_NUMBER" --add-label "needs-human"
+          python3 -c "import json; print('Agentic issue quality gate failed: ' + json.load(open('$RUNNER_TEMP/lint.json'))['message'])" > "$RUNNER_TEMP/comment.md"
+          gh issue comment "$ISSUE_NUMBER" --body-file "$RUNNER_TEMP/comment.md"

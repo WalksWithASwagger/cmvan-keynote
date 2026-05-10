@@ -1,0 +1,78 @@
+name: Agentic PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: Pull request number to review
+        required: true
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: agentic-pr-review-${{ github.event.pull_request.number || inputs.pr_number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    if: ${{ github.event_name == 'workflow_dispatch' || startsWith(github.event.pull_request.head.ref, 'codex/issue-') || startsWith(github.event.pull_request.head.ref, 'codex/BC-') || startsWith(github.event.pull_request.head.ref, 'codex/bc-') }}
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PR_NUMBER: ${{ github.event.pull_request.number || inputs.pr_number }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensure standard labels
+        run: python3 scripts/agentic/ensure_labels.py
+
+      - name: Fetch PR and linked issue
+        id: fetch
+        run: |
+          gh pr view "$PR_NUMBER" --json body --jq '.body // ""' > "$RUNNER_TEMP/pr-body.md"
+          gh pr view "$PR_NUMBER" --json additions --jq '.additions' > "$RUNNER_TEMP/additions.txt"
+          gh pr view "$PR_NUMBER" --json deletions --jq '.deletions' > "$RUNNER_TEMP/deletions.txt"
+          gh pr view "$PR_NUMBER" --json changedFiles --jq '.changedFiles' > "$RUNNER_TEMP/changed-files.txt"
+          ISSUE_NUMBER=$(python3 -c "import pathlib, re; match=re.search(r'\bCloses\s+#(\d+)', pathlib.Path('$RUNNER_TEMP/pr-body.md').read_text(), re.I); print(match.group(1) if match else '')")
+          echo "issue_number=$ISSUE_NUMBER" >> "$GITHUB_OUTPUT"
+          if [ -n "$ISSUE_NUMBER" ]; then
+            gh issue view "$ISSUE_NUMBER" --json body --jq '.body // ""' > "$RUNNER_TEMP/issue.md"
+          else
+            : > "$RUNNER_TEMP/issue.md"
+          fi
+
+      - name: Run acceptance review
+        id: review
+        run: |
+          set +e
+          python3 scripts/agentic/pr_review.py \
+            --issue-file "$RUNNER_TEMP/issue.md" \
+            --pr-body-file "$RUNNER_TEMP/pr-body.md" \
+            --additions "$(cat "$RUNNER_TEMP/additions.txt")" \
+            --deletions "$(cat "$RUNNER_TEMP/deletions.txt")" \
+            --changed-files "$(cat "$RUNNER_TEMP/changed-files.txt")" \
+            --json-output "$RUNNER_TEMP/pr-review.json"
+          rc=$?
+          echo "exit_code=$rc" >> "$GITHUB_OUTPUT"
+          python3 -c "import json; print(json.load(open('$RUNNER_TEMP/pr-review.json'))['comment'])" > "$RUNNER_TEMP/pr-review-comment.md"
+          exit 0
+
+      - name: Comment verdict
+        run: gh pr comment "$PR_NUMBER" --body-file "$RUNNER_TEMP/pr-review-comment.md"
+
+      - name: Mark review ready
+        if: steps.review.outputs.exit_code == '0'
+        run: |
+          gh pr edit "$PR_NUMBER" --add-label "review-ready"
+          gh pr edit "$PR_NUMBER" --remove-label "needs-human" || true
+
+      - name: Mark needs human
+        if: steps.review.outputs.exit_code != '0'
+        run: |
+          gh pr edit "$PR_NUMBER" --add-label "needs-human"
+          gh pr edit "$PR_NUMBER" --remove-label "review-ready" || true

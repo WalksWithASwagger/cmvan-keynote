@@ -1,0 +1,78 @@
+project:
+  id: "cmvan-keynote"
+  name: "Punk Rock AI Release Day"
+  type: "site"
+  owner: "kk"
+  production_surface: "Vercel-first punkrockai.com release-day portal with Cloudflare fallback/deferred infrastructure"
+  primary_repo: "/Users/kk/Code/cmvan-keynote"
+
+source_systems:
+  github: "WalksWithASwagger/cmvan-keynote"
+  linear: "Punk Rock AI Release Day Roadmap"
+  docs:
+    - "docs/ROADMAP-2026-05-07.md"
+    - "docs/LINEAR-GITHUB-PIPELINE.md"
+    - "docs/PROJECT-AUDIT-2026-05-08.md"
+    - "ops/roadmap/features.json"
+  analytics: []
+  crm: []
+
+loops:
+  - name: "release_day_readiness_sweep"
+    cadence: "weekly until release day, then before public pushes"
+    agent: "ai-native-company-os"
+    trigger: "scheduled sweep, Release Day readiness request, or queue review"
+    output_artifacts:
+      - "readiness brief"
+      - "blocked approval packet"
+      - "smoke-test evidence checklist"
+    approval_required_for:
+      - "submission test payloads"
+      - "recording rights and sponsor/legal copy"
+      - "deploy dashboard or DNS changes"
+
+  - name: "github_linear_release_loop"
+    cadence: "on demand"
+    agent: "github-linear-swarm"
+    trigger: "user asks to swarm cmvan GitHub/Linear work"
+    output_artifacts:
+      - "issue/PR map"
+      - "bounded implementation or review lanes"
+      - "npm run eval evidence"
+    approval_required_for:
+      - "merge decisions"
+      - "public comments when not explicitly requested"
+
+memory:
+  hot_sources:
+    - "docs/PROJECT-AUDIT-2026-05-08.md"
+    - "docs/LINEAR-GITHUB-PIPELINE.md"
+    - "ops/roadmap/features.json"
+    - "open GitHub issues and PRs"
+    - "Linear project: Punk Rock AI Release Day Roadmap"
+  durable_artifacts:
+    - "SESSION-HANDOFF.md"
+    - "docs/SESSION-HANDOFF.md"
+    - "docs/PROJECT-ROADMAP.md"
+    - "automation memory: ai-native-company-os-weekly-sweep"
+  lessons_path: ".company-os/lessons.md"
+
+validation:
+  commands:
+    - "npm run eval"
+  smoke_checks:
+    - "browser/Lighthouse evidence for core flows when touching UX"
+    - "live submission smoke only with explicit approval and credentials"
+
+risk_policy:
+  autonomous_allowed:
+    - "read/search"
+    - "draft internal artifacts"
+    - "run local evals"
+    - "prepare blocked approval packets"
+  approval_required:
+    - "external sends or public comments"
+    - "production deploys"
+    - "live submission test payloads"
+    - "recording rights or sponsor/legal commitments"
+    - "billing/legal/security/HR commitments"

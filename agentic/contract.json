@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "repo": {
+    "owner": "WalksWithASwagger",
+    "name": "cmvan-keynote",
+    "linear_team": "Bc-ai",
+    "linear_project": "Punk Rock AI Release Day Roadmap",
+    "canonical_local_root": "/Users/kk/Code/cmvan-keynote",
+    "non_canonical_local_roots": []
+  },
+  "labels": {
+    "ready": "agent:ready",
+    "ready_aliases": [
+      "auto-implement",
+      "autonomous"
+    ],
+    "review_ready": "review-ready",
+    "stop": [
+      "needs-human",
+      "blocked",
+      "in-progress"
+    ]
+  },
+  "limits": {
+    "max_changed_files": 20,
+    "max_changed_lines": 500
+  },
+  "branch_template": "codex/{linear_key_or_issue}-{slug}",
+  "provider": {
+    "default": "noop",
+    "allowed": [
+      "noop",
+      "command"
+    ],
+    "command_env": "AGENTIC_PROVIDER_COMMAND"
+  },
+  "verification": {
+    "commands": [
+      "npm run eval"
+    ]
+  },
+  "issue_quality": {
+    "required_sections": [
+      "Context",
+      "Acceptance Criteria",
+      "Tests/Evals",
+      "Verification",
+      "Agent Instructions",
+      "Out of Scope"
+    ],
+    "required_ready_labels": [
+      "agent:ready",
+      "auto-implement",
+      "autonomous"
+    ]
+  }
+}

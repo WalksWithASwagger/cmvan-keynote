@@ -12,6 +12,9 @@ planning. The current execution project is:
 
 ## Contract
 
+Agentic delivery contract: [`agentic/contract.json`](../agentic/contract.json). v1 opens PRs only; humans remain the merge gate. Ready work uses `agent:ready`; `auto-implement` and `autonomous` are migration aliases.
+
+
 1. Each roadmap implementation item gets a GitHub issue and a linked Linear
    issue.
 2. Linear owns project sequencing, milestones, status, due dates, and human
