@@ -12,7 +12,7 @@ from typing import Any
 CORE_REPOS = [
     "/Users/kk/Code/notion-local",
     "/Users/kk/Code/notion-local/bcai-website",
-    "/Users/kk/Code/notion-local/rafiki",
+    "/Users/kk/Code/rafiki",
     "/Users/kk/Code/cmvan-keynote",
     "/Users/kk/Code/futureproof-festival",
     "/Users/kk/Code/debbie-dots",
