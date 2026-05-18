@@ -87,7 +87,9 @@ Do not conflate the two on public copy or slide footers.
 
 | Asset | Path | Notes |
 |-------|------|-------|
-| **PRIMARY SCRIPT** (discussion-first) | [`script/talk-framework-v4.md`](../script/talk-framework-v4.md) | Delivered May 1; historical primary talk framework |
+| **Portal data source** (slides + quotes) | [`script/talk-framework-v6.md`](../script/talk-framework-v6.md) | Current — `build-quotes.mjs` → `site/data/slides.json`, `quotes.json` |
+| **Discussion-first framework** (May 1) | [`script/talk-framework-v4.md`](../script/talk-framework-v4.md) | Historical — room format per Mark's feedback |
+| **v3 monologue** (full prose) | [`archive/script/full-talk-script-v3-monologue.md`](../archive/script/full-talk-script-v3-monologue.md) | Archived reference |
 | Creativity biography reference | [`script/creativity-biography.md`](../script/creativity-biography.md) | 11 curated scenes; pull from in the room |
 | ElevenLabs audio script v3 | [`dress-rehearsal/elevenlabs-full-script.md`](../dress-rehearsal/elevenlabs-full-script.md) | ~28 min, full 28-section biography-forward prose |
 | HOPECODE v3 image prompts (28 slides) | [`assets/image-prompts/hope-code-v3-28-rafiki.md`](../assets/image-prompts/hope-code-v3-28-rafiki.md) | Solar punk / Aurora Borealis / mycelial |

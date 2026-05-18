@@ -51,7 +51,7 @@ Structure:
 - 15 min: Kris engages — truth bombs keyed to themes that emerge
 - 2 min: Close + Release Day CTA
 
-The existing `script/full-talk-script.md` (v3) becomes the **reference and fallback** — the full-prose version of all truth bombs. The primary script for May 1 is `script/talk-framework-v4.md`.
+The existing v3 monologue (archived as `archive/script/full-talk-script-v3-monologue.md`) remains the **reference prose** for truth-bomb density. The discussion-first plan for May 1 was `script/talk-framework-v4.md`. Post-portal work uses **`script/talk-framework-v6.md`** as the data source for slides and quotes.
 
 ---
 
@@ -85,7 +85,8 @@ Mark: "I like all three. Want to leave it with us to pick one?" → Kris: "That 
 
 ## Related Files
 
-- `script/talk-framework-v4.md` — the new primary script (discussion-first)
-- `script/full-talk-script.md` — the full monologue (reference/fallback)
+- `script/talk-framework-v4.md` — discussion-first framework (May 1 prep; historical reference for format)
+- `script/talk-framework-v6.md` — current portal data source (slides + quotes for `site/`)
+- `archive/script/full-talk-script-v3-monologue.md` — full v3 monologue prose (archived)
 - `script/creativity-biography.md` — curated scenes from the 30-year story
 - `source-material/life-love-internet/life-love-internet-book-draft.md` — book draft; primary biographical source

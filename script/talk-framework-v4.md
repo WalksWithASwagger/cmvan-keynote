@@ -4,7 +4,7 @@
 **Format:** Kris prompts → crowd discusses (~3–5 min) → Kris responds with truth bombs  
 **Timing:** 20–25 min total  
 **Primary script:** This document  
-**Full prose fallback:** `script/full-talk-script.md` (v3 monologue — all truth bombs written out in full)  
+**Full prose fallback:** `archive/script/full-talk-script-v3-monologue.md` (v3 monologue — all truth bombs written out in full)  
 **Biography reference:** `script/creativity-biography.md`  
 **Mark's feedback:** `docs/MARK-FEEDBACK.md`
 

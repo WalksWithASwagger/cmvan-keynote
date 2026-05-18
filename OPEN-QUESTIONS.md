@@ -25,8 +25,11 @@ The format is **not a straight monologue**. It's:
 4. Kris responds with truth bombs keyed to what the room raised (~15 min)
 5. Close + Release Day CTA (~2 min)
 
-**Primary script:** `script/talk-framework-v4.md`
-**Reference/fallback:** `script/full-talk-script.md` (v3 monologue — keeps all the prose)
+**What shipped on stage (May 1):** discussion-first framework in `script/talk-framework-v4.md` — the room format Mark asked for (crowd time first, then response).
+
+**What drives the portal today:** `script/talk-framework-v6.md` — parsed by `scripts/build-quotes.mjs` into `site/data/slides.json` and `site/data/quotes.json` (22-slide / quote contract).
+
+**Archived v3 monologue (full prose):** `archive/script/full-talk-script-v3-monologue.md` — reference only; not at `script/full-talk-script.md`.
 
 See `docs/MARK-FEEDBACK.md` for full context.
 

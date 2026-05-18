@@ -37,7 +37,11 @@ site/
   library.html               searchable knowledge base (#12)
   posse.html                 audience map (#15)
   release-day.html           countdown + ship rubric + submission portal (#14)
+  recap.html                 post-talk field notes + RSS source
+  signal.html                slide-of-the-day rotator
+  workshop.html              printable kit
   decisions.html             open questions + decision log (#16)
+  photos/                    photo galleries (committed assets + HTML)
   404.html                   branded fallback
   widgets/
     *.html                   29 widget pages; each real widget pairs with
@@ -242,5 +246,5 @@ npx --yes @lhci/cli@latest autorun --collect.url=http://localhost:3000
 
 ## What's `companion-site/` then?
 
-Historical static landing — kept in repo as reference for thesis copy and
-palette. Will deprecate once `punkrockai.com` is live and validated.
+Historical v1 static landing — kept as reference for thesis copy and palette.
+Production is `site/` on `punkrockai.com`; see `companion-site/README.md`.
