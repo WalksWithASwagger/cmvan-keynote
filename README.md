@@ -117,7 +117,8 @@ historical prompt-planning context.
 | `docs/MARK-FEEDBACK.md` | Mark Busse's feedback + brain dump, formalized |
 | `docs/PROJECT-ROADMAP.md` | Timeline and milestones |
 | `docs/ROADMAP-2026-05-07.md` | Current post-talk roadmap refresh and prioritized backlog |
-| `docs/PROJECT-AUDIT-2026-05-08.md` | Latest docs/project-file audit and remaining blockers |
+| `docs/DOCUMENTATION-AUDIT-2026-05-18.md` | Latest documentation sync, stale-reference audit, and tracker-status checkpoint |
+| `docs/PROJECT-AUDIT-2026-05-08.md` | May 8 project/code audit snapshot and historical blocker list |
 | `docs/LINEAR-GITHUB-PIPELINE.md` | Linear project, GitHub issue map, PR rules, and delivery contract |
 | `ops/roadmap/features.json` | Machine-readable Linear/GitHub roadmap map checked by `npm run eval` |
 | `DEPLOYMENT.md` | Vercel production runbook plus Cloudflare fallback runbook |

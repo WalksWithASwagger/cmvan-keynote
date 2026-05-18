@@ -3,7 +3,7 @@
 ## Open in Cursor (primary)
 
 **Repository root:** `/Users/kk/Code/cmvan-keynote`  
-**Remote:** `git@github.com:WalksWithASwagger/cmvan-keynote.git` · branch **`main`** (should match `origin/main`)
+**Remote:** `https://github.com/WalksWithASwagger/cmvan-keynote.git` · branch **`main`** (should match `origin/main`)
 
 Use this folder for: script/slides, image prompts, companion site, roadmap, Notion sync notes, pushes to `punkrockai.com` hosting.
 
@@ -19,7 +19,7 @@ CMVan assets also live under:
 
 `content/projects/02-bc-ai-ecosystem-nonprofit/speaking-engagements/2026/creative-mornings-vancouver-may-2026/`
 
-Recent commits are on branch **`chore/cmvan-2026-creative-mornings-mirror`**. Merge to `main` via PR when you want kb default branch updated.
+The older **`chore/cmvan-2026-creative-mornings-mirror`** branch note is historical. As of the latest repo audit, the local mirror path exists on the `kk-ai-ecosystem` main checkout; verify live Git state before reviving the branch name.
 
 ---
 
@@ -31,4 +31,4 @@ Under `kk-ai-ecosystem`, **pmfe-summit-2026** files may appear as untracked — 
 
 ## Last verified
 
-Run `git pull` in each repo after reopening Cursor so your machine matches `origin`.
+Run `git fetch --prune` and `git status -sb` in each repo after reopening Cursor so your machine matches `origin` without hiding untracked work.

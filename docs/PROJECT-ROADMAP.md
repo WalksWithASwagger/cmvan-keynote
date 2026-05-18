@@ -1,7 +1,8 @@
 # Punk Rock AI — project roadmap and publication hub
 
 **Canonical working repo:** [cmvan-keynote](https://github.com/WalksWithASwagger/cmvan-keynote)  
-**KB mirror:** [creative-mornings-vancouver-may-2026](file:///Users/kk/Code/notion-local/kk-ai-ecosystem/content/projects/02-bc-ai-ecosystem-nonprofit/speaking-engagements/2026/creative-mornings-vancouver-may-2026/) (kk-bb)  
+**KB mirror:** `/Users/kk/Code/notion-local/kk-ai-ecosystem/content/projects/02-bc-ai-ecosystem-nonprofit/speaking-engagements/2026/creative-mornings-vancouver-may-2026/` (kk-bb)
+
 **Tracking:** [kk-kb#1570](https://github.com/WalksWithASwagger/kk-kb/issues/1570)  
 **Linear project:** [Punk Rock AI Release Day Roadmap](https://linear.app/bc-ai/project/punk-rock-ai-release-day-roadmap-eeed425b8d78)  
 **Delivery pipeline:** [LINEAR-GITHUB-PIPELINE.md](./LINEAR-GITHUB-PIPELINE.md) with machine-readable map at [`ops/roadmap/features.json`](../ops/roadmap/features.json)
@@ -73,12 +74,12 @@ Do not conflate the two on public copy or slide footers.
 | **E — Post-publish** | After May 29 | 🔲 | Long article (Banff + BHF + CMVan arc); optional zine/PDF; talk recording posted |
 | **P — punkrockai.com portal** | May 1 → ongoing | 🟡 hardening | Interactive learning portal at `site/`; full visual treatment, widget rack, release ops scaffolds, and delivery contract are shipped; remaining work is QA/account proof |
 
-### Phase D — Release month blockers (updated May 10, 2026)
+### Phase D — Release month blockers (updated May 18, 2026)
 
 1. **Recording rights** — confirm with Mark: recorded? owner? release date? clips OK now?
 2. **Adobe involvement** — note what role they actually played on May 1
-3. **Release Day submissions** — credential-free smoke harness is merged; still needs a real browser-to-Notion row in preview or production. Backend live: Vercel `/api/submissions` → Notion DB `8b72685121ce499fbd0b4cceee9a0d52`
-4. **Social cadence** — #ReleaseDay2026 posts through May 29
+3. **Release Day submissions** — credential-free smoke harness is merged; still needs a real browser-to-Notion row in preview or production. GitHub #135 remains open; Linear BC-51 is in review and human-gated. Backend live: Vercel `/api/submissions` -> Notion DB `8b72685121ce499fbd0b4cceee9a0d52`
+4. **Moderation-to-gallery proof** — operator path is documented, but BC-53 is still in review until an approved/published Notion row is proven on `/release-day`.
 5. **punk.ceo / plump.co routing** — still TBD (see domains table above)
 
 ---
@@ -106,10 +107,12 @@ Do not conflate the two on public copy or slide footers.
 
 ---
 
-## Merge kb branch (optional)
+## KB mirror status
 
-CMVan folder on kk-bb may live on branch `chore/cmvan-2026-creative-mornings-mirror`. Open a PR when ready:  
-https://github.com/WalksWithASwagger/kk-kb/pull/new/chore/cmvan-2026-creative-mornings-mirror
+The kk-bb mirror path above exists on the local `kk-ai-ecosystem` main branch.
+The older `chore/cmvan-2026-creative-mornings-mirror` branch guidance is
+historical; do not create work from that branch name unless live Git state says
+it has been restored.
 
 ---
 

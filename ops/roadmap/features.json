@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-05-08",
+  "updatedAt": "2026-05-18",
   "repository": {
     "name": "cmvan-keynote",
     "github": "WalksWithASwagger/cmvan-keynote",
@@ -47,7 +47,7 @@
       "id": "vercel-cloudflare-docs",
       "priority": "P0",
       "wave": "Wave 0 - Repo trust and workflow",
-      "status": "needs-preview-qa",
+      "status": "done",
       "github": {
         "number": 133,
         "title": "[Roadmap P0] Reconcile Vercel production and Cloudflare fallback docs",
@@ -80,7 +80,7 @@
       "id": "release-day-submission-smoke",
       "priority": "P0",
       "wave": "Wave 1 - Release Day operations",
-      "status": "needs-human",
+      "status": "in-review-human-gated",
       "github": {
         "number": 135,
         "title": "[Roadmap P0] Smoke test Release Day submissions end to end",
@@ -116,7 +116,7 @@
       "id": "adobe-recording-rights",
       "priority": "P0",
       "wave": "Wave 1 - Release Day operations",
-      "status": "needs-human",
+      "status": "todo-human-gated",
       "github": {
         "number": 136,
         "title": "[Roadmap P0] Resolve Adobe involvement and recording rights",
@@ -143,7 +143,7 @@
       "id": "moderation-gallery-loop",
       "priority": "P1",
       "wave": "Wave 1 - Release Day operations",
-      "status": "needs-human",
+      "status": "in-review-human-gated",
       "github": {
         "number": 134,
         "title": "[Roadmap P1] Publish moderation-to-gallery loop for Release Day",
@@ -243,7 +243,7 @@
       "id": "pattern-finder-backend-decision",
       "priority": "P1",
       "wave": "Wave 3 - Connected intelligence and media",
-      "status": "in-review",
+      "status": "done",
       "github": {
         "number": 139,
         "title": "[Roadmap P1] Decide Pattern Finder production backend path",

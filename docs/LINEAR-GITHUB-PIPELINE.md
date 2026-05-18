@@ -31,12 +31,17 @@ Agentic delivery contract: [`agentic/contract.json`](../agentic/contract.json). 
 | Wave | GitHub | Linear | Priority | Status |
 | --- | --- | --- | --- | --- |
 | Wave 0 | [#133](https://github.com/WalksWithASwagger/cmvan-keynote/issues/133) | [BC-50](https://linear.app/bc-ai/issue/BC-50/roadmap-p0-reconcile-vercel-production-and-cloudflare-fallback-docs) | P0 | Done |
-| Wave 1 | [#135](https://github.com/WalksWithASwagger/cmvan-keynote/issues/135) | [BC-51](https://linear.app/bc-ai/issue/BC-51/roadmap-p0-smoke-test-release-day-submissions-end-to-end) | P0 | Needs human |
-| Wave 1 | [#136](https://github.com/WalksWithASwagger/cmvan-keynote/issues/136) | [BC-52](https://linear.app/bc-ai/issue/BC-52/roadmap-p0-resolve-adobe-involvement-and-recording-rights) | P0 | Needs human |
-| Wave 1 | [#134](https://github.com/WalksWithASwagger/cmvan-keynote/issues/134) | [BC-53](https://linear.app/bc-ai/issue/BC-53/roadmap-p1-publish-moderation-to-gallery-loop-for-release-day) | P1 | Needs human |
+| Wave 1 | [#135](https://github.com/WalksWithASwagger/cmvan-keynote/issues/135) | [BC-51](https://linear.app/bc-ai/issue/BC-51/roadmap-p0-smoke-test-release-day-submissions-end-to-end) | P0 | In Review, human-gated |
+| Wave 1 | [#136](https://github.com/WalksWithASwagger/cmvan-keynote/issues/136) | [BC-52](https://linear.app/bc-ai/issue/BC-52/roadmap-p0-resolve-adobe-involvement-and-recording-rights) | P0 | Todo, human-gated |
+| Wave 1 | [#134](https://github.com/WalksWithASwagger/cmvan-keynote/issues/134) | [BC-53](https://linear.app/bc-ai/issue/BC-53/roadmap-p1-publish-moderation-to-gallery-loop-for-release-day) | P1 | In Review, human-gated |
 | Wave 0 | [#137](https://github.com/WalksWithASwagger/cmvan-keynote/issues/137) | [BC-54](https://linear.app/bc-ai/issue/BC-54/roadmap-p1-add-route-nav-widget-contract-checker) | P1 | Done |
 | Wave 2 | [#138](https://github.com/WalksWithASwagger/cmvan-keynote/issues/138) | [BC-55](https://linear.app/bc-ai/issue/BC-55/roadmap-p1-browser-qa-and-lighthouse-pass-for-core-flows) | P1 | Done |
 | Wave 3 | [#139](https://github.com/WalksWithASwagger/cmvan-keynote/issues/139) | [BC-56](https://linear.app/bc-ai/issue/BC-56/roadmap-p1-decide-pattern-finder-production-backend-path) | P1 | Done |
+
+As of the 2026-05-18 documentation audit, GitHub #134, #136, and #139 are
+closed, while Linear still carries follow-through state for BC-53 and BC-52.
+Do not treat GitHub closure alone as proof that account-gated smoke tests,
+Adobe involvement, or recording rights are complete.
 
 ## Branch and PR rules
 

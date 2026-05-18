@@ -1,6 +1,6 @@
 # Release Day Operations
 
-Current as of 2026-05-08.
+Current as of 2026-05-18.
 
 ## Submission Path
 
@@ -76,6 +76,11 @@ Static fallback:
 
 ## Known Blockers
 
-- #135 still needs a real smoke test in preview or production with configured
-  Vercel env vars.
-- #136 still needs named answers for Adobe involvement and recording rights.
+- #135 / BC-51 still needs a real smoke test in preview or production with
+  configured Vercel env vars. GitHub #135 is open; Linear BC-51 is in review
+  and human-gated.
+- #134 / BC-53 still needs approved-row gallery proof on `/release-day`.
+  The operator path is documented, but Linear still tracks the proof in review.
+- #136 / BC-52 still needs named answers for Adobe involvement and recording
+  rights. GitHub #136 is closed, but Linear BC-52 remains the human-gated
+  follow-through item.
