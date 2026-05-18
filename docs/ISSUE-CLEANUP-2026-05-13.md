@@ -27,11 +27,13 @@ genuinely active work.
 - New file: `docs/drafts/adobe-recording-outreach.md`
 - New file: this log
 
+Merged to `main` on 2026-05-18 alongside the documentation audit refresh.
+
 ## Next concrete actions
 
 1. Run the live `/api/submissions` smoke against the Vercel preview or
    production environment (issue #135 acceptance).
 2. Send the message in `docs/drafts/adobe-recording-outreach.md` to Mark
    Busse; update `OPEN-QUESTIONS.md` Q6/Q7 when answers land.
-3. When ready, open a PR from `claude/cleanup-repo-7TlUv` to `main` to merge
-   the outreach draft and this log.
+3. After pushing `main`, delete the merged `claude/cleanup-repo-7TlUv` remote
+   branch if no external automation still references it.
