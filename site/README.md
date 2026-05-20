@@ -33,6 +33,7 @@ npx --yes serve site -l 3000
 site/
   index.html                 landing — thesis + four cards
   talk.html                  22-slide reel + quote wall + lightbox (#4)
+  field-course.html          guided five-module curriculum path
   lineage.html               Dada → AI scroll-driven timeline (#7)
   library.html               searchable knowledge base (#12)
   posse.html                 audience map (#15)

@@ -1,0 +1,204 @@
+.fc-hero {
+  min-height: clamp(620px, 78vh, 860px);
+  display: grid;
+  align-items: end;
+  position: relative;
+  overflow: hidden;
+  padding-block: calc(var(--space-9) + var(--header-offset)) var(--space-8);
+}
+
+.fc-hero .wrap {
+  position: relative;
+  z-index: 2;
+}
+
+.fc-hero h1 {
+  margin: var(--space-3) 0;
+  max-width: 920px;
+  color: var(--accent-pink);
+  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.95), 0 0 24px rgba(255, 61, 138, 0.35);
+}
+
+.fc-hero h1 span {
+  display: block;
+}
+
+.fc-hero__lede {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: var(--fs-lg);
+}
+
+.fc-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.fc-progress {
+  display: grid;
+  gap: var(--space-2);
+  max-width: 540px;
+  margin-top: var(--space-5);
+}
+
+.fc-progress__bar {
+  display: block;
+  height: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.fc-progress__bar span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-pink), var(--accent-yellow));
+  transition: width 0.25s ease;
+}
+
+.fc-progress__label {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-yellow);
+}
+
+.fc-path {
+  position: relative;
+  padding-block: var(--space-7);
+  background:
+    linear-gradient(90deg, rgba(255, 61, 138, 0.12), transparent 32%, rgba(255, 214, 0, 0.08)),
+    #0b0b0b;
+}
+
+.fc-path .wrap {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.fc-module {
+  display: grid;
+  grid-template-columns: minmax(72px, 0.16fr) minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: stretch;
+}
+
+.fc-module__marker {
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+  border: 2px solid var(--accent-pink);
+  color: var(--accent-pink);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  line-height: 1;
+  background:
+    linear-gradient(135deg, rgba(255, 61, 138, 0.16), rgba(0, 0, 0, 0.4)),
+    url("/public/punk/halftone-bias-text.webp") center / cover;
+}
+
+.fc-module__body {
+  padding: clamp(var(--space-4), 5vw, var(--space-7));
+  border-block: 2px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.42);
+}
+
+.fc-module__body h2 {
+  margin-block: var(--space-2) var(--space-3);
+  color: var(--accent-yellow);
+}
+
+.fc-module__body p {
+  max-width: 780px;
+  color: var(--muted);
+}
+
+.fc-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  padding: 0;
+  margin: var(--space-5) 0;
+  list-style: none;
+}
+
+.fc-actions a {
+  display: block;
+  min-height: 100%;
+  padding: var(--space-3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--fg);
+  background: rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+}
+
+.fc-actions a:hover,
+.fc-actions a:focus-visible {
+  border-color: var(--accent-pink);
+  color: var(--accent-pink);
+}
+
+.fc-check {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  padding: var(--space-3);
+  border: 1px dashed rgba(255, 214, 0, 0.45);
+  color: var(--fg);
+  cursor: pointer;
+}
+
+.fc-check input {
+  width: 1.4rem;
+  height: 1.4rem;
+  accent-color: var(--accent-pink);
+}
+
+.fc-module[data-complete="true"] .fc-module__marker {
+  border-color: var(--accent-yellow);
+  color: var(--accent-yellow);
+}
+
+.fc-module[data-complete="true"] .fc-check {
+  border-style: solid;
+  background: rgba(255, 214, 0, 0.08);
+}
+
+.fc-finale {
+  position: relative;
+  padding-block: var(--space-8);
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.88)),
+    url("/public/slides/release-day-full.webp") center / cover;
+}
+
+.fc-finale .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.fc-finale::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.66);
+}
+
+@media (max-width: 760px) {
+  .fc-module {
+    grid-template-columns: 1fr;
+  }
+
+  .fc-module__marker {
+    min-height: 92px;
+    justify-content: start;
+    padding-inline: var(--space-4);
+  }
+
+  .fc-actions {
+    grid-template-columns: 1fr;
+  }
+}

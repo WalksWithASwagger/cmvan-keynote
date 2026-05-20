@@ -2,6 +2,7 @@
 
 # Clean URL aliases (so /talk and /talk.html both work).
 /talk             /talk.html             200
+/field-course     /field-course.html     200
 /recap            /recap.html            200
 /lineage          /lineage.html          200
 /library          /library.html          200

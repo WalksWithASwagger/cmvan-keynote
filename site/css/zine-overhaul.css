@@ -141,6 +141,9 @@
 .photo-marquee {
   position: relative;
   overflow: hidden;
+  overflow-x: clip;
+  contain: paint;
+  max-width: 100vw;
   background: #000;
   border-top: 3px solid var(--accent-pink);
   border-bottom: 3px solid var(--accent-pink);
