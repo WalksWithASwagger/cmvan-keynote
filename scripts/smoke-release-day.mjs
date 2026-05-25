@@ -15,6 +15,7 @@ try {
   await smokeMissingBackend();
   await smokeValidationFailures();
   await smokeMockedNotionCreate();
+  await smokeMockedNotionCreateFailure();
   await smokeMockedNotionGalleryQuery();
   console.log("ok - Release Day submissions smoke");
 } finally {
@@ -135,6 +136,33 @@ async function smokeMockedNotionGalleryQuery() {
       },
     ],
   });
+}
+
+async function smokeMockedNotionCreateFailure() {
+  process.env.NOTION_TOKEN = "secret_local_smoke";
+  process.env.NOTION_DB_ID = "8b72685121ce499fbd0b4cceee9a0d52";
+
+  const originalConsoleError = console.error;
+  console.error = () => {};
+  globalThis.fetch = async () => {
+    return jsonResponse(404, {
+      code: "object_not_found",
+      message: "Could not find database with ID: test-db",
+    });
+  };
+
+  let res;
+  try {
+    res = await invoke({
+      method: "POST",
+      body: validSubmission(),
+    });
+  } finally {
+    console.error = originalConsoleError;
+  }
+
+  assert.equal(res.statusCode, 502);
+  assert.deepEqual(res.body, { error: "submission backend unavailable" });
 }
 
 function validSubmission() {

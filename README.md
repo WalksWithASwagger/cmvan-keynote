@@ -116,8 +116,8 @@ historical prompt-planning context.
 |------|-----------|
 | `docs/MARK-FEEDBACK.md` | Mark Busse's feedback + brain dump, formalized |
 | `docs/PROJECT-ROADMAP.md` | Timeline and milestones |
-| `docs/ROADMAP-2026-05-07.md` | Current post-talk roadmap refresh and prioritized backlog |
-| `docs/DOCUMENTATION-AUDIT-2026-05-18.md` | Latest documentation sync, stale-reference audit, and tracker-status checkpoint |
+| `docs/ROADMAP-2026-05-07.md` | May 7 roadmap snapshot (historical baseline for post-talk hardening) |
+| `docs/DOCUMENTATION-AUDIT-2026-05-25.md` | Latest documentation reliability closeout, full link audit, and live smoke checkpoint |
 | `docs/PROJECT-AUDIT-2026-05-08.md` | May 8 project/code audit snapshot and historical blocker list |
 | `docs/LINEAR-GITHUB-PIPELINE.md` | Linear project, GitHub issue map, PR rules, and delivery contract |
 | `ops/roadmap/features.json` | Machine-readable Linear/GitHub roadmap map checked by `npm run eval` |
@@ -130,10 +130,12 @@ historical prompt-planning context.
 
 Static site, no bundler. Each script reads source files in the repo and writes JSON/XML into `site/`. Re-run after editing the relevant inputs.
 
-Run `npm run eval` before pushing. It checks JavaScript syntax, JSON manifests, the Linear/GitHub roadmap map, local site references, header routes, and static Vercel config without needing credentials or a running server.
+Run `npm run eval` before pushing. It checks JavaScript syntax, JSON manifests, the Linear/GitHub roadmap map, local site references, header routes, static Vercel config, Release Day local smoke, and maintained documentation links without needing credentials or a running server.
 
 | Command | Output | Inputs |
 |---------|--------|--------|
+| `npm run docs:links` | Maintained-doc markdown link check | root docs, `docs/`, README/runbook surfaces |
+| `npm run docs:links:all` | Full tracked-markdown link check | every tracked `*.md` file |
 | `node scripts/build-rss.mjs` | `site/feed.xml` | `site/recap.html`, `site/notes/*.html` |
 | `node scripts/build-decisions.mjs` | `site/data/decisions.json` | `OPEN-QUESTIONS.md`, `SESSION-HANDOFF.md` |
 | `node scripts/build-quotes.mjs` | `site/data/quotes.json` | script + biography sources |

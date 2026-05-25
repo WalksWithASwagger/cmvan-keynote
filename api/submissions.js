@@ -85,6 +85,9 @@ export default async function handler(req, res) {
   });
 
   const data = await r.json();
-  if (!r.ok) return res.status(r.status).json({ error: data.message || 'submission failed' });
+  if (!r.ok) {
+    console.error('notion submission failed', r.status, data.code || data.message || 'unknown');
+    return res.status(502).json({ error: 'submission backend unavailable' });
+  }
   return res.status(200).json({ id: data.id, status: 'pending' });
 }

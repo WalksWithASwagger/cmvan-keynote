@@ -1,5 +1,8 @@
 # Project audit - May 8, 2026
 
+> Historical audit snapshot as of 2026-05-08. For current doc/repo truth, see
+> `docs/DOCUMENTATION-AUDIT-2026-05-24.md`.
+
 Scope: root docs, `docs/`, `site/README.md`, deployment docs, worker docs,
 roadmap config, static-site contracts, and package/config files.
 
