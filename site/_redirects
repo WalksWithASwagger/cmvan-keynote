@@ -51,9 +51,5 @@
 # If an old companion-site path leaks, route home.
 /companion-site/*           /                                  301
 
-# Worker proxies (deferred deploy — see worker/).
-/api/pattern-finder         https://pattern-finder.YOUR-WORKERS.workers.dev/  200
-/api/submissions            https://submissions.YOUR-WORKERS.workers.dev/     200
-
 # Catchall 404
 /*                          /404.html                          404

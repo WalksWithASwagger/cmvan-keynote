@@ -14,6 +14,7 @@ try {
   await smokeCorsPreflight();
   await smokeMissingBackend();
   await smokeValidationFailures();
+  await smokeBotGuard();
   await smokeMockedNotionCreate();
   await smokeMockedNotionCreateFailure();
   await smokeMockedNotionGalleryQuery();
@@ -63,6 +64,32 @@ async function smokeValidationFailures() {
     assert.equal(res.statusCode, 400);
     assert.deepEqual(res.body, { error });
   }
+}
+
+async function smokeBotGuard() {
+  process.env.NOTION_TOKEN = "secret_local_smoke";
+  process.env.NOTION_DB_ID = "8b72685121ce499fbd0b4cceee9a0d52";
+
+  let called = false;
+  globalThis.fetch = async () => {
+    called = true;
+    return jsonResponse(200, { id: "should-not-write" });
+  };
+
+  const honeypotRes = await invoke({
+    method: "POST",
+    body: { ...validSubmission(), company: "bot filled this" },
+  });
+  assert.equal(honeypotRes.statusCode, 200);
+  assert.deepEqual(honeypotRes.body, { id: null, status: "pending" });
+
+  const fastRes = await invoke({
+    method: "POST",
+    body: { ...validSubmission(), formStartedAt: Date.now() },
+  });
+  assert.equal(fastRes.statusCode, 200);
+  assert.deepEqual(fastRes.body, { id: null, status: "pending" });
+  assert.equal(called, false);
 }
 
 async function smokeMockedNotionCreate() {
@@ -172,6 +199,8 @@ function validSubmission() {
     url: "https://example.com/release-day-smoke",
     what: "a repeatable local smoke test",
     why: "To prove validation and the moderation payload without writing production data.",
+    company: "",
+    formStartedAt: Date.now() - 5000,
   };
 }
 

@@ -23,7 +23,7 @@ Theme: CREATE. Format: discussion-first. Duration: 20–25 min.
 | `script/talk-framework-v4.md` | **HISTORICAL LIVE FRAMEWORK** — discussion-first talk framework used during talk prep. |
 | `script/creativity-biography.md` | **REFERENCE** — curated scenes, usable lines, 30-year story archive. |
 | `dress-rehearsal/elevenlabs-full-script.md` | **AUDIO SCRIPT** — biography-forward rehearsal script. |
-| `dress-rehearsal/generate-audio.py` | Generates MP3 from the audio script. Run: `python3 dress-rehearsal/generate-audio.py` |
+| `dress-rehearsal/generate-audio.py` | Generates MP3 from the audio script. Run with `ELEVENLABS_API_KEY` set: `python3 dress-rehearsal/generate-audio.py` |
 
 ---
 
@@ -118,6 +118,7 @@ historical prompt-planning context.
 | `docs/PROJECT-ROADMAP.md` | Timeline and milestones |
 | `docs/ROADMAP-2026-05-07.md` | May 7 roadmap snapshot (historical baseline for post-talk hardening) |
 | `docs/DOCUMENTATION-AUDIT-2026-05-25.md` | Latest documentation reliability closeout, full link audit, and live smoke checkpoint |
+| `docs/TECH-DEBT-MODERNIZATION-PLAN-2026-05-24.md` | Grounded technical debt audit and modernization plan |
 | `docs/PROJECT-AUDIT-2026-05-08.md` | May 8 project/code audit snapshot and historical blocker list |
 | `docs/LINEAR-GITHUB-PIPELINE.md` | Linear project, GitHub issue map, PR rules, and delivery contract |
 | `ops/roadmap/features.json` | Machine-readable Linear/GitHub roadmap map checked by `npm run eval` |
@@ -130,12 +131,19 @@ historical prompt-planning context.
 
 Static site, no bundler. Each script reads source files in the repo and writes JSON/XML into `site/`. Re-run after editing the relevant inputs.
 
-Run `npm run eval` before pushing. It checks JavaScript syntax, JSON manifests, the Linear/GitHub roadmap map, local site references, header routes, static Vercel config, Release Day local smoke, and maintained documentation links without needing credentials or a running server.
+Run `npm run check` before pushing. It wraps the static-site eval, full
+markdown link check, agentic Python tests, Python compile check, and dependency
+audit. `npm run eval` remains the faster site/contract gate used by the
+agentic delivery loop.
 
 | Command | Output | Inputs |
 |---------|--------|--------|
+| `npm run check` | Full local confidence gate | site eval, docs, Python tests, audit |
+| `npm run eval` | Fast static-site and repo contract gate | JS syntax, JSON, routes, widget contracts, Vercel config, local smoke |
 | `npm run docs:links` | Maintained-doc markdown link check | root docs, `docs/`, README/runbook surfaces |
 | `npm run docs:links:all` | Full tracked-markdown link check | every tracked `*.md` file |
+| `npm run smoke:release-day` | Local submissions API smoke | `api/submissions.js` |
+| `npm run smoke:subscribe` | Local newsletter API smoke | `api/subscribe.js` |
 | `node scripts/build-rss.mjs` | `site/feed.xml` | `site/recap.html`, `site/notes/*.html` |
 | `node scripts/build-decisions.mjs` | `site/data/decisions.json` | `OPEN-QUESTIONS.md`, `SESSION-HANDOFF.md` |
 | `node scripts/build-quotes.mjs` | `site/data/quotes.json` | script + biography sources |

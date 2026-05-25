@@ -54,6 +54,7 @@ if (includes.length) {
 function initSubscribe() {
   const form = document.querySelector('.newsletter-band__form');
   if (!form) return;
+  const formStartedAt = Date.now();
   const input = form.querySelector('input[type="email"]');
   const btn = form.querySelector('button[type="submit"]');
   const msg = form.querySelector('.newsletter-band__msg');
@@ -69,7 +70,11 @@ function initSubscribe() {
       const r = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+          email,
+          company: form.elements.namedItem('company')?.value || '',
+          formStartedAt,
+        }),
       });
       const data = await r.json();
       if (data.ok) {

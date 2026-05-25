@@ -4,12 +4,19 @@
   "private": true,
   "description": "Interactive learning portal for the Punk Rock AI / Both Hands Full keynote.",
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "npx --yes serve site -l 3000",
+    "check": "npm run eval && npm run docs:links:all && npm run test:agentic && npm run check:python && npm audit --audit-level=moderate",
     "eval": "node scripts/eval.mjs",
     "docs:links": "node scripts/check-doc-links.mjs --maintained",
     "docs:links:all": "node scripts/check-doc-links.mjs --all",
+    "test:agentic": "python3 -m pytest tests/agentic",
+    "check:python": "python3 -m compileall -q scripts/agentic dress-rehearsal tests/agentic",
     "smoke:release-day": "node scripts/smoke-release-day.mjs",
+    "smoke:subscribe": "node scripts/smoke-subscribe.mjs",
     "build:quotes": "node scripts/build-quotes.mjs",
     "build:lineage": "node scripts/build-lineage.mjs",
     "build:library": "node scripts/build-library-index.mjs",

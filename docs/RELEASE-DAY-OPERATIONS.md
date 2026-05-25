@@ -33,14 +33,17 @@ Run this against a Vercel preview or production URL after confirming the env
 vars are configured:
 
 ```sh
+FORM_STARTED_AT="$(node -e 'console.log(Date.now() - 5000)')"
 curl -i https://punkrockai.com/api/submissions \
   -H 'content-type: application/json' \
-  -d '{"name":"Smoke Test","url":"https://example.com/release-day-smoke","what":"Smoke-test artifact","why":"Verifies the moderation queue."}'
+  -d "{\"name\":\"Smoke Test\",\"url\":\"https://example.com/release-day-smoke\",\"what\":\"Smoke-test artifact\",\"why\":\"Verifies the moderation queue.\",\"company\":\"\",\"formStartedAt\":$FORM_STARTED_AT}"
 ```
 
 Expected result:
 
 - HTTP 200 with `status: pending` and a Notion page id.
+- Requests with a filled `company` honeypot or impossible `formStartedAt` age
+  return a no-write pending response.
 - The Notion row has `Published: false`.
 - Invalid `name`, `url`, or `what` values return HTTP 400.
 - HTTP 502 with `submission backend unavailable` means the Notion backend is

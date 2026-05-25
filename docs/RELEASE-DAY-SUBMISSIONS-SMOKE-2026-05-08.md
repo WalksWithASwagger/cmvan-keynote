@@ -89,9 +89,10 @@ database is production-owned.
 ```sh
 curl -i https://<preview-or-production-host>/api/submissions
 
+FORM_STARTED_AT="$(node -e 'console.log(Date.now() - 5000)')"
 curl -i -X POST https://<preview-or-production-host>/api/submissions \
   -H 'content-type: application/json' \
-  -d '{"name":"Release Day smoke - May 8","handle":"@cmvan","url":"https://example.com/release-day-smoke","what":"a smoke test","why":"Verifying pending moderation path"}'
+  -d "{\"name\":\"Release Day smoke - May 8\",\"handle\":\"@cmvan\",\"url\":\"https://example.com/release-day-smoke\",\"what\":\"a smoke test\",\"why\":\"Verifying pending moderation path\",\"company\":\"\",\"formStartedAt\":$FORM_STARTED_AT}"
 ```
 
 Expected valid POST with env configured:

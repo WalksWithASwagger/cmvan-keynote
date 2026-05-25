@@ -47,7 +47,7 @@ Vercel provisions SSL automatically.
 
 ### Normal deploy
 
-1. Run `npm run eval`.
+1. Run `npm run check`.
 2. Commit and push to `main`.
 3. Confirm Vercel creates a production deployment for the pushed SHA.
 4. Smoke-test the public site and active API routes.
@@ -57,7 +57,7 @@ logged-in browser.
 
 ### Active production smoke test
 
-- [ ] `npm run eval` passes locally.
+- [ ] `npm run check` passes locally.
 - [ ] `https://punkrockai.com/` returns 200.
 - [ ] `https://www.punkrockai.com/` returns 200 or redirects intentionally.
 - [ ] `/talk`, `/release-day`, `/library`, and `/widgets/three-documents` load with clean URLs.
@@ -265,15 +265,16 @@ wrangler deploy
 
 ### 3c. Wire workers into the site
 
-After both workers are deployed, edit `site/_redirects` and replace the
-`YOUR-WORKERS` placeholders:
+After both workers are deployed, add explicit worker proxy routes to
+`site/_redirects`:
 
 ```
 /api/pattern-finder   https://pattern-finder.<account>.workers.dev/  200
 /api/submissions      https://submissions.<account>.workers.dev/     200
 ```
 
-Commit + push. Pages redeploys on push.
+Commit + push. Pages redeploys on push. `npm run eval` fails if deployment
+config contains placeholder worker URLs.
 
 Better long-term: add custom routes in each worker's dashboard
 (`api.punkrockai.com/pattern-finder/*`, etc.) and update `_redirects` to point

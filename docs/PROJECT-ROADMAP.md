@@ -97,7 +97,7 @@ Do not conflate the two on public copy or slide footers.
 | HOPECODE v3 image prompts (28 slides) | [`assets/image-prompts/hope-code-v3-28-rafiki.md`](../assets/image-prompts/hope-code-v3-28-rafiki.md) | Solar punk / Aurora Borealis / mycelial |
 | Punk v2 image prompts (28 slides) | [`assets/image-prompts/punk-v2-28-rafiki.md`](../assets/image-prompts/punk-v2-28-rafiki.md) | Xerox grain / blood red / cut-and-paste |
 | Generated slide images | `assets/generated/slides/` | gitignored; 8 runs; viewer at `assets/generated/slides/viewer.html` |
-| ElevenLabs audio generator | [`dress-rehearsal/generate-audio.py`](../dress-rehearsal/generate-audio.py) | Run: `python3 dress-rehearsal/generate-audio.py` |
+| ElevenLabs audio generator | [`dress-rehearsal/generate-audio.py`](../dress-rehearsal/generate-audio.py) | Run with `ELEVENLABS_API_KEY` set: `python3 dress-rehearsal/generate-audio.py` |
 | Dress rehearsal audio | `dress-rehearsal/punk-rock-ai-full-talk.mp3` | gitignored; ~28 min; regenerate with generator |
 | Book draft (biography source) | [`source-material/life-love-internet/life-love-internet-book-draft.md`](../source-material/life-love-internet/life-love-internet-book-draft.md) | Primary biographical source |
 | Mark's feedback | [`docs/MARK-FEEDBACK.md`](./MARK-FEEDBACK.md) | Discussion-first format direction; brain dump |
@@ -155,7 +155,7 @@ Phase 1 outputs verified: every route returns 200, every JS module passes `node 
 ### Outstanding handoffs (you-only)
 
 - **R2 + slide imagery:** Cloudflare account with R2, an Object R/W token, bucket name, public URL prefix. Path to local slide source folder set as `SLIDES_SRC`. Once landed: `npm run ingest:slides`.
-- **ElevenLabs run:** `python3 dress-rehearsal/generate-audio.py` to generate mp3s, upload per-slide clips to R2, re-run `npm run build:audio`. The `/talk` page wires up automatically.
+- **ElevenLabs run:** set `ELEVENLABS_API_KEY`, run `python3 dress-rehearsal/generate-audio.py` to generate mp3s, upload per-slide clips to R2, re-run `npm run build:audio`. The `/talk` page wires up automatically.
 - **Pattern Finder backend decision:** fallback-only for the Release Day push; revisit Cloudflare Worker or Vercel function only after accepting model budget, rate limits, privacy copy, and abuse controls (#139 / BC-56).
 - **Browser QA / Lighthouse:** PR #142 merged the current QA report, `/library` Lighthouse coverage, preview-access notes, safe fixes, and performance follow-up findings; #138 is complete.
 - **OPEN-QUESTIONS.md Q6 + Q7** — fill in Adobe involvement and recording rights post-talk.

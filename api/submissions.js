@@ -23,6 +23,10 @@ export default async function handler(req, res) {
       }),
     });
     const data = await r.json();
+    if (!r.ok) {
+      console.error('notion submissions query failed', r.status, data.code || data.message || 'unknown');
+      return res.status(502).json({ error: 'submission backend unavailable' });
+    }
     const submissions = (data.results || []).map((p) => ({
       id: p.id,
       name: p.properties.Name?.title?.[0]?.plain_text || '',
@@ -53,6 +57,7 @@ export default async function handler(req, res) {
   try { const u = new URL(url); if (!['http:', 'https:'].includes(u.protocol)) throw new Error(); }
   catch { return res.status(400).json({ error: 'valid http/https url required' }); }
   if (!what) return res.status(400).json({ error: 'what required' });
+  if (isLikelyBot(body)) return res.status(200).json({ id: null, status: 'pending' });
 
   // No backend configured — acknowledge without persisting
   if (!notionToken || !dbId) {
@@ -90,4 +95,17 @@ export default async function handler(req, res) {
     return res.status(502).json({ error: 'submission backend unavailable' });
   }
   return res.status(200).json({ id: data.id, status: 'pending' });
+}
+
+const MIN_FORM_AGE_MS = 1000;
+const MAX_FORM_AGE_MS = 24 * 60 * 60 * 1000;
+
+function isLikelyBot(body) {
+  if (String(body.company || '').trim()) return true;
+
+  const startedAt = Number(body.formStartedAt || 0);
+  if (!Number.isFinite(startedAt) || startedAt <= 0) return true;
+
+  const age = Date.now() - startedAt;
+  return age < MIN_FORM_AGE_MS || age > MAX_FORM_AGE_MS;
 }
