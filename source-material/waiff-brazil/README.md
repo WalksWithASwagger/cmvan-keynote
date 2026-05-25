@@ -61,12 +61,12 @@ These documents contain the earlier framework-heavy version. Still useful for re
 
 Ecosystem thinking, mycelial network metaphor, orchestration era framework, practical AI applications by production phase. Now superseded by the Both Hands Full script for delivery, but retains useful detail on the 80/20 Flip, Moltbot hook, and five fears framework.
 
-#### 5. [TALKING-POINTS-AND-EXAMPLES.md](./TALKING-POINTS-AND-EXAMPLES.md)
+#### 5. TALKING-POINTS-AND-EXAMPLES.md (external/not mirrored: ./TALKING-POINTS-AND-EXAMPLES.md)
 **Detailed talking points, examples, and storytelling techniques**
 
 Brazilian film context, cultural bridges, emergency backup examples, personal anecdotes. Useful as supplementary prep material alongside the new speaker notes.
 
-#### 6. [FILM-VIDEO-CASE-STUDIES.md](./FILM-VIDEO-CASE-STUDIES.md)
+#### 6. FILM-VIDEO-CASE-STUDIES.md (external/not mirrored: ./FILM-VIDEO-CASE-STUDIES.md)
 **Real-world examples and case studies for film/video AI integration**
 
 Nine detailed case studies (Vancouver Film Club, Alfonso Cuaron's Roma, Runway AI Film Festival, Indigenous AI, etc.). Useful for Q&A responses and follow-up discussions.
@@ -290,15 +290,15 @@ Like a forest, your visible work (films) is supported by underground networks (r
 ## Resource Links
 
 ### Related Documents
-- [WAIFF Planning Meeting Notes](../../../03-theupgrade-ai-training/speaking-engagements/uai-film-festival-brazil-2026/PLANNING-MEETING-2025-12-16.md)
-- [Festival README](../../../03-theupgrade-ai-training/speaking-engagements/uai-film-festival-brazil-2026/README.md)
+- WAIFF Planning Meeting Notes (external/not mirrored: ../../../03-theupgrade-ai-training/speaking-engagements/uai-film-festival-brazil-2026/PLANNING-MEETING-2025-12-16.md)
+- Festival README (external/not mirrored: ../../../03-theupgrade-ai-training/speaking-engagements/uai-film-festival-brazil-2026/README.md)
 - [World AI Film Festival Website](https://worldaifilmfestival.com/)
 - [GitHub Issue #778](https://github.com/WalksWithASwagger/kk-kb/issues/778)
 
 ### Vancouver AI Community Resources
-- [Film AI Community Portal](../../../08-community-groups/film-ai/README.md)
-- [BC + AI Film Club](../../../08-community-groups/film-ai/ai-film-club.md)
-- [BC + AI Ecosystem Founding Story](../../strategy/bcai-story-narrative.md)
+- Film AI Community Portal (external/not mirrored: ../../../08-community-groups/film-ai/README.md)
+- BC + AI Film Club (external/not mirrored: ../../../08-community-groups/film-ai/ai-film-club.md)
+- BC + AI Ecosystem Founding Story (external/not mirrored: ../../strategy/bcai-story-narrative.md)
 
 ### Original EA Talk Context
 - Delivered to Electronic Arts VPs, October 2025

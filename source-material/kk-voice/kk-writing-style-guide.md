@@ -17,7 +17,7 @@
 
 **Why it matters:** Proper attribution isn't just about ego—it's about searchability, credit, and professionalism. When someone looks up my work, they should be able to find it. When transcripts misattribute "Chris" without context, it creates confusion and loses the thread of who contributed what.
 
-For comprehensive name attribution guidelines across the ecosystem, see: [`reference/name-attribution-guide.md`](./name-attribution-guide.md)
+For comprehensive name attribution guidelines across the ecosystem, see: `reference/name-attribution-guide.md` (external/not mirrored: ./name-attribution-guide.md)
 
 ---
 

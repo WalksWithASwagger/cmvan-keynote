@@ -10,15 +10,15 @@ Single working area for **slide stills**, **walk-in b-roll**, and **HeyGen / Ele
 
 | Need | File |
 |------|------|
-| **Hero trio + Runway + HeyGen script** | [`../slides/image-gen-prompts.md`](../slides/image-gen-prompts.md) |
-| **10-slide zine prompts (+ 2 optional)** | [`punk-rock-ai-slide-prompts-zine.md`](./punk-rock-ai-slide-prompts-zine.md) — **canonical** for CMVan May 1 |
+| **Hero trio + Runway + HeyGen script** | [`../../archive/slides/image-gen-prompts.md`](../../archive/slides/image-gen-prompts.md) |
+| **10-slide zine prompts (+ 2 optional)** | [`../../archive/image-prompts/punk-rock-ai-slide-prompts-zine.md`](../../archive/image-prompts/punk-rock-ai-slide-prompts-zine.md) — **canonical** for CMVan May 1 |
 | **Design bible (texture / B/W/R rules)** | [`../../source-material/waiff-brazil/BOTH-HANDS-FULL-SLIDES.md`](../../source-material/waiff-brazil/BOTH-HANDS-FULL-SLIDES.md) — **style reference only** |
-| **Legacy BHF→CMV adaptation (deprecated)** | [`cmvan-slides-01-15.md`](./cmvan-slides-01-15.md) — stub pointer; do not generate from |
-| **Legacy redirect** | [`../media-gen-specs.md`](../media-gen-specs.md) → `slides/image-gen-prompts.md` |
+| **Legacy BHF→CMV adaptation (deprecated)** | [`../../archive/image-prompts/cmvan-slides-01-15.md`](../../archive/image-prompts/cmvan-slides-01-15.md) — stub pointer; do not generate from |
+| **Legacy redirect** | [`../media-gen-specs.md`](../media-gen-specs.md) -> `archive/slides/image-gen-prompts.md` |
 
 ## Deck scope
 
-- **v1 on-stage deck:** **10 slides** — [`../../slides/deck-outline-with-notes.md`](../../slides/deck-outline-with-notes.md).
+- **v1 on-stage deck:** **10 slides** — [`../../archive/slides/deck-outline-with-notes.md`](../../archive/slides/deck-outline-with-notes.md).
 - **Optional:** prompts **11–12** in `punk-rock-ai-slide-prompts-zine.md` for social square + walk-in card.
 
 ## Generation order (suggested)

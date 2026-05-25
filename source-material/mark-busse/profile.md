@@ -187,10 +187,10 @@ email: mark@markbusse.ca
 
 ### 2025
 
-- **[Vancouver Ai Meetup 20 Transcript](content/projects/01-vancouver-ai-community/meetups/2025/08-august/vancouver-ai-meetup-20-transcript.md)** (August 2025)
+- **Vancouver Ai Meetup 20 Transcript (external/not mirrored: content/projects/01-vancouver-ai-community/meetups/2025/08-august/vancouver-ai-meetup-20-transcript.md)** (August 2025)
   - Thank you brother.  Uh, VHD.  Thanks guys for buying like the 10 pack right out the gate of tickets,...
 
-- **[Vancouver Ai Meetup 17 Transcript](content/projects/01-vancouver-ai-community/meetups/2025/05-may/vancouver-ai-meetup-17-transcript.md)** (May 2025)
+- **Vancouver Ai Meetup 17 Transcript (external/not mirrored: content/projects/01-vancouver-ai-community/meetups/2025/05-may/vancouver-ai-meetup-17-transcript.md)** (May 2025)
   - We've released about 10 of them and we have two in the can. VPO's about to drop soon. Philippe Pasqu...
 
 ## Notable Quotes

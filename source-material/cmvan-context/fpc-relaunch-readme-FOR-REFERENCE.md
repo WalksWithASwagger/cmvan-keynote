@@ -234,10 +234,10 @@ The story Kris tells at Creative Mornings — and everywhere else — is this:
 
 ## Related Files
 
-- [Kris Krüg Profile](/content/people/kris-krug/profile.md)
-- [Mark Busse Profile](/content/people/mark-busse/profile.md)
-- [Creative Mornings Partnership (Oct 2025)](/content/projects/05-marketing-and-outreach/press-and-media/feature-articles/creative-mornings-bc-ai-partnership-announcement.md)
-- [AI Upgrade for Creative Pros](/content/projects/03-theupgrade-ai-training/certification-programs/ai-upgrade-creative-pros/README.md)
-- [Creative Pros Cohort 6 Meta-Analysis](/content/projects/03-theupgrade-ai-training/certification-programs/ai-upgrade-creative-pros/cohort-6/cohort6-meta-analysis.md)
-- [BC Studies Paper](/content/projects/01-vancouver-ai-community/community-resources/publications/bc-studies-grassroots-ai-cop-2024.md)
-- [Product Offerings & Pricing](/content/projects/03-theupgrade-ai-training/sales/PRODUCT_OFFERINGS.md)
+- Kris Krüg Profile (external/not mirrored: /content/people/kris-krug/profile.md)
+- Mark Busse Profile (external/not mirrored: /content/people/mark-busse/profile.md)
+- Creative Mornings Partnership (Oct 2025) (external/not mirrored: /content/projects/05-marketing-and-outreach/press-and-media/feature-articles/creative-mornings-bc-ai-partnership-announcement.md)
+- AI Upgrade for Creative Pros (external/not mirrored: /content/projects/03-theupgrade-ai-training/certification-programs/ai-upgrade-creative-pros/README.md)
+- Creative Pros Cohort 6 Meta-Analysis (external/not mirrored: /content/projects/03-theupgrade-ai-training/certification-programs/ai-upgrade-creative-pros/cohort-6/cohort6-meta-analysis.md)
+- BC Studies Paper (external/not mirrored: /content/projects/01-vancouver-ai-community/community-resources/publications/bc-studies-grassroots-ai-cop-2024.md)
+- Product Offerings & Pricing (external/not mirrored: /content/projects/03-theupgrade-ai-training/sales/PRODUCT_OFFERINGS.md)

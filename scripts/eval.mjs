@@ -22,6 +22,7 @@ const CHECKS = [
   ["data references", checkJavaScriptDataReferences],
   ["Vercel static config", checkVercelConfig],
   ["Release Day submissions smoke", checkReleaseDaySubmissions],
+  ["maintained doc links", checkMaintainedDocLinks],
 ];
 
 for (const [label, check] of CHECKS) {
@@ -263,6 +264,16 @@ function checkReleaseDaySubmissions() {
   });
   if (result.status !== 0) {
     failures.push(`scripts/smoke-release-day.mjs: ${firstLine(result.stderr || result.stdout)}`);
+  }
+}
+
+function checkMaintainedDocLinks() {
+  const result = spawnSync(process.execPath, ["scripts/check-doc-links.mjs", "--maintained"], {
+    cwd: ROOT,
+    encoding: "utf8",
+  });
+  if (result.status !== 0) {
+    failures.push(`scripts/check-doc-links.mjs --maintained: ${firstLine(result.stderr || result.stdout)}`);
   }
 }
 
