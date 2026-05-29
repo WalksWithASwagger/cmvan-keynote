@@ -6,7 +6,7 @@
 
 **All stills for slides / heroes: 16:9** (`--ar 16:9`).
 
-**Slide prompts:** [`../assets/image-prompts/punk-rock-ai-slide-prompts-zine.md`](../assets/image-prompts/punk-rock-ai-slide-prompts-zine.md)
+**Slide prompts:** [`../image-prompts/punk-rock-ai-slide-prompts-zine.md`](../image-prompts/punk-rock-ai-slide-prompts-zine.md)
 
 ---
 

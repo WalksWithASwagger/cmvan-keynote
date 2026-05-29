@@ -4,7 +4,10 @@ Build and ingest tooling for the punkrockai.com static site.
 
 | Script | What it does | Credentials |
 | --- | --- | --- |
-| `eval.mjs` | Runs the local repo gate: JS syntax, JSON parsing, roadmap map, site refs, header routes, widget contracts, Vercel config. | None |
+| `eval.mjs` | Runs the fast repo gate: JS syntax, JSON parsing, roadmap map, site refs, header routes, widget contracts, Vercel config, cache/deploy placeholders, and local API smokes. | None |
+| `check-doc-links.mjs` | Checks local Markdown links. Use `--maintained` for operational docs or `--all` for every tracked Markdown file. | None |
+| `smoke-release-day.mjs` | Exercises the local `/api/submissions` handler without writing production data. | None |
+| `smoke-subscribe.mjs` | Exercises the local `/api/subscribe` handler without writing production data. | None |
 | `build-quotes.mjs` | Seeds `site/data/quotes.json` and `site/data/slides.json` from `script/talk-framework-v6.md`. Run before `ingest-slides`. | None |
 | `build-lineage.mjs` | Generates lineage graph data. | None |
 | `build-library-index.mjs` | Indexes the reading-list / library page. | None |

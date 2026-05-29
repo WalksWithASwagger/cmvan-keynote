@@ -45,7 +45,7 @@ site/
   photos/                    photo galleries (committed assets + HTML)
   404.html                   branded fallback
   widgets/
-    *.html                   29 widget pages; each real widget pairs with
+    *.html                   widget pages; each real widget pairs with
                               site/js/widgets/<name>.js and
                               site/css/widgets/<name>.css
   partials/
@@ -113,8 +113,9 @@ package scripts do this:
 | `npm run build:decisions`| `OPEN-QUESTIONS.md`, `SESSION-HANDOFF.md`, `docs/MARK-FEEDBACK.md` | `data/decisions.json`         |
 | `npm run ingest:slides`  | `$SLIDES_SRC`                                             | `public/images/slides/*.webp`, `data/slides.json` (merged), R2 bucket |
 
-`ingest-slides.mjs` is the only one that needs credentials (R2). All others
-are pure file → JSON transforms; safe to run from any clone.
+`ingest-slides.mjs` needs R2 credentials for real uploads. The ElevenLabs
+generators need `ELEVENLABS_API_KEY` for real audio generation. The other
+build scripts are pure file → JSON transforms; safe to run from any clone.
 
 ---
 
@@ -216,6 +217,12 @@ coordinates in `assets/punk-asset-crops.json`.
 ## Verify
 
 After any edit, sanity-check:
+
+```sh
+npm run check
+```
+
+For browser checks:
 
 ```sh
 npm run dev                   # boot dev server

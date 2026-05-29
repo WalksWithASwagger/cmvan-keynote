@@ -1,5 +1,8 @@
 # Documentation audit - May 18, 2026
 
+> Historical snapshot as of 2026-05-18. For current operational doc truth, see
+> `docs/DOCUMENTATION-AUDIT-2026-05-24.md`.
+
 Scope: root docs, `docs/`, `site/README.md`, `scripts/README.md`,
 `ops/roadmap/features.json`, deployment notes, tracker-facing docs, and obvious
 agent handoff surfaces. Source-material and archive notes were scanned for link

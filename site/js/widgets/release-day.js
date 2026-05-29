@@ -8,6 +8,8 @@ const PORTAL_ENDPOINT = "/api/submissions";
 const STATIC_GALLERY_ENDPOINT = "/data/submissions.json";
 const PENDING_KEY = "rd:pending";
 const DRAFT_KEY = "rd:draft";
+const FORM_STARTED_AT = Date.now();
+const BOT_FIELD_NAMES = new Set(["company", "formStartedAt"]);
 
 const cdEl = document.getElementById("rd-countdown");
 const passedEl = document.getElementById("rd-passed");
@@ -76,20 +78,21 @@ function hydrateDraft() {
   const { value } = load(DRAFT_KEY, null);
   if (!value) return;
   for (const [k, v] of Object.entries(value)) {
+    if (BOT_FIELD_NAMES.has(k)) continue;
     const el = formEl.elements.namedItem(k);
     if (el) el.value = v;
   }
 }
 
 function captureDraft() {
-  const draft = Object.fromEntries(new FormData(formEl).entries());
+  const draft = submissionFromForm();
   save(DRAFT_KEY, draft);
   return draft;
 }
 
 function wireForm() {
   if (!formEl) return;
-  formEl.addEventListener("input", () => save(DRAFT_KEY, Object.fromEntries(new FormData(formEl).entries())));
+  formEl.addEventListener("input", () => save(DRAFT_KEY, submissionFromForm()));
   formEl.addEventListener("submit", onSubmit);
   clearBtn?.addEventListener("click", () => {
     formEl.reset();
@@ -102,12 +105,17 @@ async function onSubmit(e) {
   e.preventDefault();
   if (!formEl.reportValidity()) return;
   const submission = captureDraft();
+  const payload = {
+    ...submission,
+    company: botFieldValue(),
+    formStartedAt: FORM_STARTED_AT,
+  };
   flash("sending…");
   try {
     const res = await fetch(PORTAL_ENDPOINT, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(submission),
+      body: JSON.stringify(payload),
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
@@ -123,6 +131,19 @@ async function onSubmit(e) {
     queueLocally(submission);
     flash("portal not connected yet — saved locally");
   }
+}
+
+function submissionFromForm() {
+  const submission = {};
+  for (const [key, value] of new FormData(formEl).entries()) {
+    if (BOT_FIELD_NAMES.has(key)) continue;
+    submission[key] = value;
+  }
+  return submission;
+}
+
+function botFieldValue() {
+  return formEl.elements.namedItem("company")?.value || "";
 }
 
 function queueLocally(submission) {

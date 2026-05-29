@@ -333,6 +333,14 @@
   align-items: flex-start;
 }
 
+.form-trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .newsletter-band__input {
   background: var(--bg);
   border: 2px solid var(--border-strong);

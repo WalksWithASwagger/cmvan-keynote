@@ -6,7 +6,7 @@
 
 **Aesthetic:** DIY punk zine, black / white / **blood red**; borrow texture grammar from [`../../source-material/waiff-brazil/BOTH-HANDS-FULL-SLIDES.md`](../../source-material/waiff-brazil/BOTH-HANDS-FULL-SLIDES.md) — **look**, not BHF narrative.
 
-**Deck map:** [`../../slides/deck-outline-with-notes.md`](../../slides/deck-outline-with-notes.md)
+**Deck map:** [`../slides/deck-outline-with-notes.md`](../slides/deck-outline-with-notes.md)
 
 ---
 

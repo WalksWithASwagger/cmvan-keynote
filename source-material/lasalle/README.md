@@ -89,10 +89,10 @@ See [VIDEO-ASSETS.md](./VIDEO-ASSETS.md) for full documentation.
 
 ## Related KB Resources
 
-- [Kris Krüg profile](../../../people/kris-krug/profile.md) — Bio, publications, community roles
-- [Future Proof Creatives (Portfolio.YVR)](../../../projects/10-creative-practice/future-proof-creatives-relaunch/README.md) — Core messaging & mission
-- [Quotable Library (Creative Pros)](../../../projects/05-marketing-and-outreach/upgrade-marketing-hub/creative-pros/quotes/quotable-library.md) — Reusable quotes for creative-professional audiences
-- [EA Creative Innovation Keynote](../2025-09-ea-creative-innovation/) — Recent corporate talk with related themes
+- Kris Krüg profile (external/not mirrored: ../../../people/kris-krug/profile.md) — Bio, publications, community roles
+- Future Proof Creatives (Portfolio.YVR) (external/not mirrored: ../../../projects/10-creative-practice/future-proof-creatives-relaunch/README.md) — Core messaging & mission
+- Quotable Library (Creative Pros) (external/not mirrored: ../../../projects/05-marketing-and-outreach/upgrade-marketing-hub/creative-pros/quotes/quotable-library.md) — Reusable quotes for creative-professional audiences
+- EA Creative Innovation Keynote (external/not mirrored: ../2025-09-ea-creative-innovation/) — Recent corporate talk with related themes
 
 ---
 

@@ -159,10 +159,10 @@ RiP: A Remix Manifesto connection:
 
 ## Related Files
 
-- [transcript.txt](01-14%20Lecture_%20AI%20for%20Creatives%20and%20Professionals-transcript.txt) — Raw transcript
+- transcript.txt (external/not mirrored: 01-14%20Lecture_%20AI%20for%20Creatives%20and%20Professionals-transcript.txt) — Raw transcript
 - [feature-article.md](feature-article.md) — 2000-word thought leadership article
 - [social-content.md](social-content.md) — Social media library (LinkedIn, Twitter, Instagram)
 - [speaker-script.md](speaker-script.md) — Prepared script
 - [talk-outline.md](talk-outline.md) — Timing and structure
-- [presentation/](presentation/) — Slide deck
-- [presentation/screenshots/](presentation/screenshots/) — Key slide captures
+- presentation/ (external/not mirrored: presentation/) — Slide deck
+- presentation/screenshots/ (external/not mirrored: presentation/screenshots/) — Key slide captures

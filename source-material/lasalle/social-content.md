@@ -274,4 +274,4 @@ That's the spot worth defending.
 
 - [recap.md](recap.md) — Full keynote recap
 - [feature-article.md](feature-article.md) — 2000-word thought leadership article
-- [presentation/screenshots/](presentation/screenshots/) — Slide captures for graphics
+- presentation/screenshots/ (external/not mirrored: presentation/screenshots/) — Slide captures for graphics

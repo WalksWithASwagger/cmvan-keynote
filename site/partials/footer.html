@@ -5,6 +5,10 @@
       <p class="newsletter-band__lede">Punk Rock AI dispatches &mdash; when there's something worth saying.</p>
     </div>
     <form class="newsletter-band__form" novalidate>
+      <div class="form-trap" aria-hidden="true">
+        <label for="newsletter-company">Company</label>
+        <input id="newsletter-company" type="text" name="company" tabindex="-1" autocomplete="organization">
+      </div>
       <input type="email" name="email" placeholder="your@email.com" required autocomplete="email" class="newsletter-band__input" aria-label="email address">
       <button type="submit" class="newsletter-band__btn">subscribe</button>
       <p class="newsletter-band__msg" aria-live="polite"></p>

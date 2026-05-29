@@ -7,6 +7,7 @@ Output: dress-rehearsal/punk-rock-ai-full-talk.mp3
 
 import re
 import sys
+import os
 from pathlib import Path
 
 try:
@@ -15,7 +16,6 @@ except ImportError:
     print("ERROR: elevenlabs not installed. Run: pip3 install elevenlabs --break-system-packages")
     sys.exit(1)
 
-API_KEY = "0510b476d05adc003eb1dcba0afff2a77bbfdb23a7290caa5c57cd98f5bbe710"
 VOICE_ID = "h5o5VIOBAddU9BdX8t8E"
 MODEL = "eleven_multilingual_v2"
 
@@ -47,6 +47,14 @@ def clean_script(raw: str) -> str:
 
 
 MAX_CHARS = 9800  # ElevenLabs limit is 10000; leave buffer
+
+
+def required_env(name: str) -> str:
+    value = os.environ.get(name, "").strip()
+    if not value:
+        print(f"ERROR: {name} is required.")
+        sys.exit(1)
+    return value
 
 
 def split_text(text: str, max_chars: int = MAX_CHARS) -> list[str]:
@@ -97,7 +105,7 @@ def main():
     print(f"Split into {len(chunks)} chunks")
     print()
 
-    client = ElevenLabs(api_key=API_KEY)
+    client = ElevenLabs(api_key=required_env("ELEVENLABS_API_KEY"))
 
     part_files = []
     with tempfile.TemporaryDirectory() as tmp:

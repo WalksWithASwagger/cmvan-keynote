@@ -21,7 +21,11 @@ const CHECKS = [
   ["widget contracts", checkWidgetContracts],
   ["data references", checkJavaScriptDataReferences],
   ["Vercel static config", checkVercelConfig],
+  ["deployment placeholders", checkDeploymentPlaceholders],
+  ["cache policy", checkCachePolicy],
   ["Release Day submissions smoke", checkReleaseDaySubmissions],
+  ["newsletter subscribe smoke", checkNewsletterSubscribe],
+  ["maintained doc links", checkMaintainedDocLinks],
 ];
 
 for (const [label, check] of CHECKS) {
@@ -256,6 +260,59 @@ function checkVercelConfig() {
   }
 }
 
+function checkDeploymentPlaceholders() {
+  const files = [
+    "vercel.json",
+    "wrangler.toml",
+    "site/_headers",
+    "site/_redirects",
+  ];
+  const placeholders = [
+    "YOUR-WORKERS",
+    "YOUR_",
+    "example.com",
+  ];
+
+  for (const file of files) {
+    if (!existsSync(abs(file))) continue;
+    const source = readFileSync(abs(file), "utf8");
+    for (const placeholder of placeholders) {
+      if (source.includes(placeholder)) {
+        failures.push(`${file}: deployment config contains placeholder ${placeholder}`);
+      }
+    }
+  }
+}
+
+function checkCachePolicy() {
+  const vercelFile = "vercel.json";
+  let config;
+  try {
+    config = JSON.parse(readFileSync(abs(vercelFile), "utf8"));
+  } catch {
+    return;
+  }
+
+  for (const source of ["/css/(.*)", "/js/(.*)"]) {
+    const block = config.headers?.find((item) => item.source === source);
+    const cache = block?.headers?.find((header) => header.key.toLowerCase() === "cache-control")?.value || "";
+    if (/immutable/i.test(cache)) {
+      failures.push(`${vercelFile}: ${source} must not use immutable caching without content-hashed filenames`);
+    }
+  }
+
+  const headersFile = "site/_headers";
+  if (!existsSync(abs(headersFile))) return;
+  const headers = readFileSync(abs(headersFile), "utf8");
+  for (const route of ["/css/*", "/js/*"]) {
+    const pattern = new RegExp(`${escapeRegExp(route)}\\s+Cache-Control:\\s+([^\\n]+)`, "m");
+    const match = headers.match(pattern);
+    if (match && /immutable/i.test(match[1])) {
+      failures.push(`${headersFile}: ${route} must not use immutable caching without content-hashed filenames`);
+    }
+  }
+}
+
 function checkReleaseDaySubmissions() {
   const result = spawnSync(process.execPath, ["scripts/smoke-release-day.mjs"], {
     cwd: ROOT,
@@ -263,6 +320,26 @@ function checkReleaseDaySubmissions() {
   });
   if (result.status !== 0) {
     failures.push(`scripts/smoke-release-day.mjs: ${firstLine(result.stderr || result.stdout)}`);
+  }
+}
+
+function checkNewsletterSubscribe() {
+  const result = spawnSync(process.execPath, ["scripts/smoke-subscribe.mjs"], {
+    cwd: ROOT,
+    encoding: "utf8",
+  });
+  if (result.status !== 0) {
+    failures.push(`scripts/smoke-subscribe.mjs: ${firstLine(result.stderr || result.stdout)}`);
+  }
+}
+
+function checkMaintainedDocLinks() {
+  const result = spawnSync(process.execPath, ["scripts/check-doc-links.mjs", "--maintained"], {
+    cwd: ROOT,
+    encoding: "utf8",
+  });
+  if (result.status !== 0) {
+    failures.push(`scripts/check-doc-links.mjs --maintained: ${firstLine(result.stderr || result.stdout)}`);
   }
 }
 
@@ -392,4 +469,8 @@ function abs(file) {
 
 function firstLine(text) {
   return String(text).trim().split("\n")[0] || "unknown error";
+}
+
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }

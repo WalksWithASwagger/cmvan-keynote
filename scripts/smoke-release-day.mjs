@@ -14,7 +14,9 @@ try {
   await smokeCorsPreflight();
   await smokeMissingBackend();
   await smokeValidationFailures();
+  await smokeBotGuard();
   await smokeMockedNotionCreate();
+  await smokeMockedNotionCreateFailure();
   await smokeMockedNotionGalleryQuery();
   console.log("ok - Release Day submissions smoke");
 } finally {
@@ -62,6 +64,32 @@ async function smokeValidationFailures() {
     assert.equal(res.statusCode, 400);
     assert.deepEqual(res.body, { error });
   }
+}
+
+async function smokeBotGuard() {
+  process.env.NOTION_TOKEN = "secret_local_smoke";
+  process.env.NOTION_DB_ID = "8b72685121ce499fbd0b4cceee9a0d52";
+
+  let called = false;
+  globalThis.fetch = async () => {
+    called = true;
+    return jsonResponse(200, { id: "should-not-write" });
+  };
+
+  const honeypotRes = await invoke({
+    method: "POST",
+    body: { ...validSubmission(), company: "bot filled this" },
+  });
+  assert.equal(honeypotRes.statusCode, 200);
+  assert.deepEqual(honeypotRes.body, { id: null, status: "pending" });
+
+  const fastRes = await invoke({
+    method: "POST",
+    body: { ...validSubmission(), formStartedAt: Date.now() },
+  });
+  assert.equal(fastRes.statusCode, 200);
+  assert.deepEqual(fastRes.body, { id: null, status: "pending" });
+  assert.equal(called, false);
 }
 
 async function smokeMockedNotionCreate() {
@@ -137,6 +165,33 @@ async function smokeMockedNotionGalleryQuery() {
   });
 }
 
+async function smokeMockedNotionCreateFailure() {
+  process.env.NOTION_TOKEN = "secret_local_smoke";
+  process.env.NOTION_DB_ID = "8b72685121ce499fbd0b4cceee9a0d52";
+
+  const originalConsoleError = console.error;
+  console.error = () => {};
+  globalThis.fetch = async () => {
+    return jsonResponse(404, {
+      code: "object_not_found",
+      message: "Could not find database with ID: test-db",
+    });
+  };
+
+  let res;
+  try {
+    res = await invoke({
+      method: "POST",
+      body: validSubmission(),
+    });
+  } finally {
+    console.error = originalConsoleError;
+  }
+
+  assert.equal(res.statusCode, 502);
+  assert.deepEqual(res.body, { error: "submission backend unavailable" });
+}
+
 function validSubmission() {
   return {
     name: "Local Smoke Tester",
@@ -144,6 +199,8 @@ function validSubmission() {
     url: "https://example.com/release-day-smoke",
     what: "a repeatable local smoke test",
     why: "To prove validation and the moderation payload without writing production data.",
+    company: "",
+    formStartedAt: Date.now() - 5000,
   };
 }
 

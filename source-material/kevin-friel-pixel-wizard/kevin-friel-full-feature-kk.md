@@ -126,7 +126,7 @@ Kevin already paid the tuition in decades. He's busy paying it forward in public
 
 **Kris Krüg** is Executive Director of **BC + AI Ecosystem** and teaches creative professionals how to apply AI through **TheUpgrade.ai**, which runs certification programs and custom training.
 
-**Learn more:** [BC + AI Film Club portal](../../../08-community-groups/film-ai/ai-film-club.md) · [Kevin spotlight / SIGGRAPH materials](../../people/spotlights/kevin-friel/) · Vancouver AI at **vancouver.bcai.net** · BC + AI at **bc-ai.ca**
+**Learn more:** BC + AI Film Club portal (external/not mirrored: ../../../08-community-groups/film-ai/ai-film-club.md) · Kevin spotlight / SIGGRAPH materials (external/not mirrored: ../../people/spotlights/kevin-friel/) · Vancouver AI at **vancouver.bcai.net** · BC + AI at **bc-ai.ca**
 
 ---
 

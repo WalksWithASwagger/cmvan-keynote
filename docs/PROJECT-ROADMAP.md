@@ -9,7 +9,8 @@
 
 **Notion (share + staging):** [Punk CEO workspace](https://is.kriskrug.ai/punk-ceo?source=copy_link) — keep in sync with this repo using [NOTION-SYNC.md](./NOTION-SYNC.md).
 
-**Current roadmap refresh:** [ROADMAP-2026-05-07.md](./ROADMAP-2026-05-07.md) captures the post-talk project/code/doc review, the May 7 status, and the next Release Day / portal hardening waves.
+**Baseline roadmap snapshot:** [ROADMAP-2026-05-07.md](./ROADMAP-2026-05-07.md) captures the May 7 post-talk project/code/doc review and initial hardening waves.
+**Latest documentation reliability sweep:** [DOCUMENTATION-AUDIT-2026-05-25.md](./DOCUMENTATION-AUDIT-2026-05-25.md)
 
 ---
 
@@ -74,12 +75,12 @@ Do not conflate the two on public copy or slide footers.
 | **E — Post-publish** | After May 29 | 🔲 | Long article (Banff + BHF + CMVan arc); optional zine/PDF; talk recording posted |
 | **P — punkrockai.com portal** | May 1 → ongoing | 🟡 hardening | Interactive learning portal at `site/`; full visual treatment, widget rack, release ops scaffolds, and delivery contract are shipped; remaining work is QA/account proof |
 
-### Phase D — Release month blockers (updated May 18, 2026)
+### Phase D — Release month blockers (updated May 25, 2026)
 
 1. **Recording rights** — confirm with Mark: recorded? owner? release date? clips OK now?
 2. **Adobe involvement** — note what role they actually played on May 1
-3. **Release Day submissions** — credential-free smoke harness is merged; still needs a real browser-to-Notion row in preview or production. GitHub #135 remains open; Linear BC-51 is in review and human-gated. Backend live: Vercel `/api/submissions` -> Notion DB `8b72685121ce499fbd0b4cceee9a0d52`
-4. **Moderation-to-gallery proof** — operator path is documented, but BC-53 is still in review until an approved/published Notion row is proven on `/release-day`.
+3. **Release Day submissions** — credential-free smoke harness is merged; production GET and invalid POST smoke passed on 2026-05-25, but valid POST failed because the configured Notion database is not shared with the integration. GitHub #135 remains open; Linear BC-51 is In Review and human-gated.
+4. **Moderation-to-gallery proof** — operator path is documented, but BC-53 remains In Review until a real pending row can be approved/published on `/release-day` and rolled back. GitHub #134 closed on 2026-05-13.
 5. **punk.ceo / plump.co routing** — still TBD (see domains table above)
 
 ---
@@ -96,7 +97,7 @@ Do not conflate the two on public copy or slide footers.
 | HOPECODE v3 image prompts (28 slides) | [`assets/image-prompts/hope-code-v3-28-rafiki.md`](../assets/image-prompts/hope-code-v3-28-rafiki.md) | Solar punk / Aurora Borealis / mycelial |
 | Punk v2 image prompts (28 slides) | [`assets/image-prompts/punk-v2-28-rafiki.md`](../assets/image-prompts/punk-v2-28-rafiki.md) | Xerox grain / blood red / cut-and-paste |
 | Generated slide images | `assets/generated/slides/` | gitignored; 8 runs; viewer at `assets/generated/slides/viewer.html` |
-| ElevenLabs audio generator | [`dress-rehearsal/generate-audio.py`](../dress-rehearsal/generate-audio.py) | Run: `python3 dress-rehearsal/generate-audio.py` |
+| ElevenLabs audio generator | [`dress-rehearsal/generate-audio.py`](../dress-rehearsal/generate-audio.py) | Run with `ELEVENLABS_API_KEY` set: `python3 dress-rehearsal/generate-audio.py` |
 | Dress rehearsal audio | `dress-rehearsal/punk-rock-ai-full-talk.mp3` | gitignored; ~28 min; regenerate with generator |
 | Book draft (biography source) | [`source-material/life-love-internet/life-love-internet-book-draft.md`](../source-material/life-love-internet/life-love-internet-book-draft.md) | Primary biographical source |
 | Mark's feedback | [`docs/MARK-FEEDBACK.md`](./MARK-FEEDBACK.md) | Discussion-first format direction; brain dump |
@@ -118,7 +119,7 @@ it has been restored.
 
 ## Portal phase — `site/` (punkrockai.com)
 
-The interactive learning portal that turns the talk into a working set of widgets. Vanilla HTML/CSS/JS, zero runtime deps. Tracked as epic [#1](https://github.com/WalksWithASwagger/cmvan-keynote/issues/1). Dev onboarding lives at [`site/README.md`](../site/README.md).
+The interactive learning portal that turns the talk into a working set of widgets. Vanilla HTML/CSS/JS, zero runtime deps. Historical epic [#1](https://github.com/WalksWithASwagger/cmvan-keynote/issues/1) is closed (2026-05-13). Dev onboarding lives at [`site/README.md`](../site/README.md).
 
 ### Phase 1 — Foundation + four widgets (shipped)
 
@@ -139,22 +140,22 @@ Phase 1 outputs verified: every route returns 200, every JS module passes `node 
 |-------|-------|--------|-------|
 | [#9](https://github.com/WalksWithASwagger/cmvan-keynote/issues/9) | Taste Audit / Cutting Room Floor | ✅ | Text-first; image upload deferred to a future follow-up if needed |
 | [#10](https://github.com/WalksWithASwagger/cmvan-keynote/issues/10) | Name What You See | ✅ | Five hand-curated bias case studies |
-| [#11](https://github.com/WalksWithASwagger/cmvan-keynote/issues/11) | Audio sync | 🟡 scaffold | Cue extractor + player; mp3 hosting blocked on ElevenLabs run + R2 |
-| [#12](https://github.com/WalksWithASwagger/cmvan-keynote/issues/12) | `/library` searchable | 🔄 | 63 markdown files indexed; Fuse.js client-side fuzzy search |
+| [#11](https://github.com/WalksWithASwagger/cmvan-keynote/issues/11) | Audio sync | ✅ scaffold shipped | Cue extractor + player shipped; mp3 hosting still depends on ElevenLabs + R2 handoff |
+| [#12](https://github.com/WalksWithASwagger/cmvan-keynote/issues/12) | `/library` searchable | ✅ shipped | 63 markdown files indexed; Fuse.js client-side fuzzy search |
 
 ### Phase 3 — Community + intelligence (scaffolds + scopes)
 
 | Issue | Title | Status | Notes |
 |-------|-------|--------|-------|
 | [#13](https://github.com/WalksWithASwagger/cmvan-keynote/issues/13) | Pattern Finder LLM | ✅ fallback-only for Release Day | Decision landed via #139/#144; Cloudflare Worker remains a later opt-in once model budget, rate limits, privacy copy, and abuse controls are accepted |
-| [#14](https://github.com/WalksWithASwagger/cmvan-keynote/issues/14) | Release Day portal | 🟡 live path, smoke needed | Vercel `/api/submissions` writes to Notion when env vars are configured; end-to-end production smoke test tracked in #135 / BC-51 |
-| [#15](https://github.com/WalksWithASwagger/cmvan-keynote/issues/15) | `/posse` audience map | 🔄 | 20 hand-curated profiles from `research/audience-rsvp-may1.md` |
-| [#16](https://github.com/WalksWithASwagger/cmvan-keynote/issues/16) | Decisions log | 🔄 | Renders `OPEN-QUESTIONS.md` + `SESSION-HANDOFF.md` |
+| [#14](https://github.com/WalksWithASwagger/cmvan-keynote/issues/14) | Release Day portal | ✅ shipped; live smoke still pending | Vercel `/api/submissions` writes to Notion when env vars are configured; end-to-end production smoke test tracked in #135 / BC-51 |
+| [#15](https://github.com/WalksWithASwagger/cmvan-keynote/issues/15) | `/posse` audience map | ✅ shipped | 20 hand-curated profiles from `research/audience-rsvp-may1.md` |
+| [#16](https://github.com/WalksWithASwagger/cmvan-keynote/issues/16) | Decisions log | ✅ shipped | Renders `OPEN-QUESTIONS.md` + `SESSION-HANDOFF.md` |
 
 ### Outstanding handoffs (you-only)
 
 - **R2 + slide imagery:** Cloudflare account with R2, an Object R/W token, bucket name, public URL prefix. Path to local slide source folder set as `SLIDES_SRC`. Once landed: `npm run ingest:slides`.
-- **ElevenLabs run:** `python3 dress-rehearsal/generate-audio.py` to generate mp3s, upload per-slide clips to R2, re-run `npm run build:audio`. The `/talk` page wires up automatically.
+- **ElevenLabs run:** set `ELEVENLABS_API_KEY`, run `python3 dress-rehearsal/generate-audio.py` to generate mp3s, upload per-slide clips to R2, re-run `npm run build:audio`. The `/talk` page wires up automatically.
 - **Pattern Finder backend decision:** fallback-only for the Release Day push; revisit Cloudflare Worker or Vercel function only after accepting model budget, rate limits, privacy copy, and abuse controls (#139 / BC-56).
 - **Browser QA / Lighthouse:** PR #142 merged the current QA report, `/library` Lighthouse coverage, preview-access notes, safe fixes, and performance follow-up findings; #138 is complete.
 - **OPEN-QUESTIONS.md Q6 + Q7** — fill in Adobe involvement and recording rights post-talk.

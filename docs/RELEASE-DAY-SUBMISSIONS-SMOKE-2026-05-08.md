@@ -89,15 +89,22 @@ database is production-owned.
 ```sh
 curl -i https://<preview-or-production-host>/api/submissions
 
+FORM_STARTED_AT="$(node -e 'console.log(Date.now() - 5000)')"
 curl -i -X POST https://<preview-or-production-host>/api/submissions \
   -H 'content-type: application/json' \
-  -d '{"name":"Release Day smoke - May 8","handle":"@cmvan","url":"https://example.com/release-day-smoke","what":"a smoke test","why":"Verifying pending moderation path"}'
+  -d "{\"name\":\"Release Day smoke - May 8\",\"handle\":\"@cmvan\",\"url\":\"https://example.com/release-day-smoke\",\"what\":\"a smoke test\",\"why\":\"Verifying pending moderation path\",\"company\":\"\",\"formStartedAt\":$FORM_STARTED_AT}"
 ```
 
 Expected valid POST with env configured:
 
 ```json
 { "id": "<notion-page-id>", "status": "pending" }
+```
+
+Expected backend access failure:
+
+```json
+{ "error": "submission backend unavailable" }
 ```
 
 Expected invalid cases:
@@ -115,6 +122,8 @@ Expected invalid cases:
   and production should not need cross-origin browser access for normal use.
 - The handler currently returns `200` for a successful Notion-backed POST; the
   local smoke locks current behavior rather than changing API semantics.
+- The handler returns a generic `502` for upstream Notion access failures so
+  production does not expose database or integration details to visitors.
 - The static gallery still reads `site/data/submissions.json`; the
   moderation-to-gallery publishing loop remains a follow-up tracked outside
   this issue.

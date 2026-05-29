@@ -1,6 +1,6 @@
 # Slide Deck Outline: Punk Rock AI
 
-**v1 deck scope:** **10 slides** for the **May 1, 2026** CMVan field talk. **Punk Rock AI** zine image prompts (10 + 2 optional) live in [`../assets/image-prompts/punk-rock-ai-slide-prompts-zine.md`](../assets/image-prompts/punk-rock-ai-slide-prompts-zine.md) — written for **this** talk, not a BHF find-replace.
+**v1 deck scope:** **10 slides** for the **May 1, 2026** CMVan field talk. **Punk Rock AI** zine image prompts (10 + 2 optional) live in [`../image-prompts/punk-rock-ai-slide-prompts-zine.md`](../image-prompts/punk-rock-ai-slide-prompts-zine.md) — written for **this** talk, not a BHF find-replace.
 
 **Narrative spine (for design + images):** **Creativity story first** — making, community, photography, finishing, taste — with **AI as one important chapter**, not the only headline.
 
