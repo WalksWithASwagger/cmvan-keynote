@@ -117,6 +117,7 @@ historical prompt-planning context.
 | `docs/MARK-FEEDBACK.md` | Mark Busse's feedback + brain dump, formalized |
 | `docs/PROJECT-ROADMAP.md` | Timeline and milestones |
 | `docs/ROADMAP-2026-05-07.md` | May 7 roadmap snapshot (historical baseline for post-talk hardening) |
+| `docs/SESSION-HANDOFF.md` | Current restart and shutdown handoff note |
 | `docs/DOCUMENTATION-AUDIT-2026-05-25.md` | Latest documentation reliability closeout, full link audit, and live smoke checkpoint |
 | `docs/TECH-DEBT-MODERNIZATION-PLAN-2026-05-24.md` | Grounded technical debt audit and modernization plan |
 | `docs/PROJECT-AUDIT-2026-05-08.md` | May 8 project/code audit snapshot and historical blocker list |
