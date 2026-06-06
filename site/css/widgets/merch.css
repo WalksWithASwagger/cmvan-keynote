@@ -1,0 +1,52 @@
+.merch-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  margin-top: 2rem;
+}
+
+.merch-card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--paper-ink, #111);
+  background: var(--paper, #fff);
+  padding: 1.25rem;
+}
+
+.merch-card__name {
+  margin: 0;
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+}
+
+.merch-card__blurb {
+  flex: 1;
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  opacity: 0.85;
+}
+
+.merch-card__price {
+  margin: 0.75rem 0 0;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.merch-card__buy {
+  margin-top: 0.75rem;
+  min-height: 2.75rem;
+}
+
+.merch-card__soon {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  opacity: 0.6;
+}
+
+/* When live buttons mount, drop the placeholder text. */
+.merch-grid[data-state="ready"] .merch-card__soon {
+  display: none;
+}
