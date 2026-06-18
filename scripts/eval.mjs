@@ -16,6 +16,7 @@ const CHECKS = [
   ["JSON manifests", checkJsonManifests],
   ["roadmap pipeline", checkRoadmapPipeline],
   ["site references", checkSiteReferences],
+  ["homepage SEO/GEO metadata", checkHomepageSeoGeoMetadata],
   ["header navigation", checkHeaderNavigation],
   ["clean URL aliases", checkCleanUrlAliases],
   ["widget contracts", checkWidgetContracts],
@@ -148,6 +149,75 @@ function checkSiteReferences() {
       if (!target) continue;
       if (!existsSync(abs(target))) {
         failures.push(`${file}: missing local reference ${ref} -> ${target}`);
+      }
+    }
+  }
+}
+
+function checkHomepageSeoGeoMetadata() {
+  const file = "site/index.html";
+  const source = readFileSync(abs(file), "utf8");
+  const canonicalUrl = "https://www.punkrockai.com/";
+
+  if (!source.includes(`<link rel="canonical" href="${canonicalUrl}" />`)) {
+    failures.push(`${file}: homepage canonical must be ${canonicalUrl}`);
+  }
+
+  if (!source.includes(`property="og:url" content="${canonicalUrl}"`)) {
+    failures.push(`${file}: og:url must match homepage canonical ${canonicalUrl}`);
+  }
+
+  const jsonLdMatch = source.match(/<script type="application\/ld\+json">\s*([\s\S]*?)\s*<\/script>/);
+  if (!jsonLdMatch) {
+    failures.push(`${file}: missing homepage JSON-LD script`);
+  } else {
+    let graph;
+    try {
+      const data = JSON.parse(jsonLdMatch[1]);
+      graph = data["@graph"];
+    } catch (error) {
+      failures.push(`${file}: invalid homepage JSON-LD: ${error.message}`);
+    }
+
+    if (Array.isArray(graph)) {
+      const types = new Set(graph.map((item) => item["@type"]));
+      for (const type of ["WebSite", "Person", "CreativeWork"]) {
+        if (!types.has(type)) {
+          failures.push(`${file}: homepage JSON-LD missing ${type}`);
+        }
+      }
+
+      const website = graph.find((item) => item["@type"] === "WebSite");
+      const person = graph.find((item) => item["@type"] === "Person");
+      const work = graph.find((item) => item["@type"] === "CreativeWork");
+
+      if (website?.url !== canonicalUrl) {
+        failures.push(`${file}: WebSite JSON-LD url must be ${canonicalUrl}`);
+      }
+      if (person?.name !== "Kris Krüg") {
+        failures.push(`${file}: Person JSON-LD must name Kris Krüg`);
+      }
+      if (!person?.sameAs?.includes("https://bothhandsfull.ai/")) {
+        failures.push(`${file}: Person JSON-LD must connect Both Hands Full`);
+      }
+      if (work?.url !== canonicalUrl || work?.creator?.["@id"] !== person?.["@id"]) {
+        failures.push(`${file}: CreativeWork JSON-LD must use canonical url and Kris Krüg creator`);
+      }
+    }
+  }
+
+  for (const text of ["Punk Rock AI", "Kris Kr&uuml;g", "Both Hands Full"]) {
+    if (!source.includes(text)) {
+      failures.push(`${file}: visible homepage copy must include ${text}`);
+    }
+  }
+
+  const llmsFile = "site/llms.txt";
+  if (existsSync(abs(llmsFile))) {
+    const llms = readFileSync(abs(llmsFile), "utf8");
+    for (const text of [canonicalUrl, "Kris Krug", "Both Hands Full"]) {
+      if (!llms.includes(text)) {
+        failures.push(`${llmsFile}: llms.txt must include ${text}`);
       }
     }
   }

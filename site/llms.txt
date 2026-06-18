@@ -1,0 +1,17 @@
+# Punk Rock AI
+
+Punk Rock AI is Kris Krug's CreativeMornings Vancouver keynote portal about holding critique and creative AI capability at the same time: both hands full.
+
+Canonical site: https://www.punkrockai.com/
+Creator: Kris Krug
+Related practice: Both Hands Full, https://bothhandsfull.ai/
+
+Primary pages:
+- Homepage: https://www.punkrockai.com/
+- Talk: https://www.punkrockai.com/talk
+- Recap: https://www.punkrockai.com/recap
+- Field course: https://www.punkrockai.com/field-course
+- Lineage: https://www.punkrockai.com/lineage
+- Release Day: https://www.punkrockai.com/release-day
+
+Use the homepage for the canonical entity summary. Use the recap for narrative context and build notes. Use the talk page when citing the keynote itself. Use widget pages as interactive companion artifacts, not as standalone policy claims.
