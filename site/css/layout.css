@@ -429,6 +429,17 @@
   color: var(--fg-soft);
 }
 
+.site-footer__network {
+  line-height: 1.7;
+}
+
+.site-footer__network span {
+  display: block;
+  color: var(--fg-soft);
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+}
+
 @media (max-width: 720px) {
   .site-footer__inner {
     grid-template-columns: 1fr;
