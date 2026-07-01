@@ -1,0 +1,29 @@
+{
+  "store": {
+    "domain": "",
+    "storefrontToken": ""
+  },
+  "products": [
+    {
+      "id": "both-hands-tee",
+      "name": "Both Hands Full Tee",
+      "blurb": "Critique in one hand, capability in the other. Unisex cotton.",
+      "price": "$36",
+      "productId": ""
+    },
+    {
+      "id": "tool-not-neutral-sticker",
+      "name": "Tool Is Never Neutral Sticker",
+      "blurb": "Die-cut vinyl. For the laptop that knows better.",
+      "price": "$5",
+      "productId": ""
+    },
+    {
+      "id": "manifesto-poster",
+      "name": "Punk Rock AI Manifesto Poster",
+      "blurb": "The talk's thesis, screen-print style, ready for your wall.",
+      "price": "$20",
+      "productId": ""
+    }
+  ]
+}
