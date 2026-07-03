@@ -7,49 +7,49 @@
       "title": "Write your three documents.",
       "rationale": "Your AI keeps sounding like everyone else's AI because you've never told it who you are. Spend 20 minutes on the worldview / style / refuse-list trio. Save them. Reuse them in every prompt from now on.",
       "cta": "Open /three-documents",
-      "href": "/widgets/three-documents.html",
+      "href": "/widgets/three-documents",
       "kind": "portal"
     },
     "audit-taste": {
       "title": "Run a taste audit on your last ten outputs.",
       "rationale": "You're shipping fast but the room is starting to blur. Pull the last ten things the model made for you. Score each one against your style guide. Cut the bot tells. The hero of the dancehall is the one with taste.",
       "cta": "Open /taste-audit",
-      "href": "/widgets/taste-audit.html",
+      "href": "/widgets/taste-audit",
       "kind": "portal"
     },
     "both-hands": {
       "title": "Map your work onto Both Hands.",
       "rationale": "You're stuck because you're working with one hand. List what only you can do (the human hand) next to what the model can do (the machine hand). The seam between them is the work.",
       "cta": "Open /both-hands",
-      "href": "/widgets/both-hands.html",
+      "href": "/widgets/both-hands",
       "kind": "portal"
     },
     "build-set": {
       "title": "Build a Selector set on what you actually believe.",
       "rationale": "You don't have a distribution problem — you have a position problem. Drag the talk's quotes, your favourite beats, the slides that hit. Order them. That order is your point of view. Ship that.",
       "cta": "Open /selector",
-      "href": "/widgets/selector.html",
+      "href": "/widgets/selector",
       "kind": "portal"
     },
     "ship-zine": {
       "title": "Cut up something old. Ship a zine by Release Day.",
       "rationale": "Stop generating new. Take what's already in your drafts folder, run it through the cut-up tool, print one page, hand it to one person. That's a release. May 29 is the deadline you set yourself by being in the room.",
       "cta": "Open /cut-up",
-      "href": "/widgets/cut-up.html",
+      "href": "/widgets/cut-up",
       "kind": "portal"
     },
     "find-posse": {
       "title": "Find your posse of three.",
       "rationale": "You're trying to do this alone and it's why you keep stalling. Pick three people from the room — one ahead of you, one beside you, one behind you. Send each of them a sentence today. The work gets easier when somebody's watching.",
       "cta": "Open /posse",
-      "href": "/posse.html",
+      "href": "/posse",
       "kind": "portal"
     },
     "release-day": {
       "title": "Commit to Release Day. Pick the thing.",
       "rationale": "You don't need another framework. You need a deadline with a public on the other side. Open the Release Day page, name what you're shipping by May 29, paste the link to a friend before you close the tab.",
       "cta": "Open /release-day",
-      "href": "/release-day.html",
+      "href": "/release-day",
       "kind": "portal"
     },
     "meetup": {

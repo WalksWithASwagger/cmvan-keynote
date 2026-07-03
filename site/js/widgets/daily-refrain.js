@@ -36,7 +36,7 @@ function render(quote) {
   const citeEl = root.querySelector("[data-refrain-cite]");
   if (!linkEl || !quote) return;
   linkEl.textContent = quote.text || "";
-  if (quote.id) linkEl.setAttribute("href", `/talk.html#${quote.id}`);
+  if (quote.id) linkEl.setAttribute("href", `/talk#${quote.id}`);
   if (citeEl) {
     const parts = [];
     if (quote.slideTitle) parts.push(quote.slideTitle);

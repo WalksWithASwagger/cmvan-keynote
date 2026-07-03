@@ -89,7 +89,7 @@ function render({ kind, item, idx }, dateISO) {
     if (actEl) actEl.textContent = item.act || "";
     setNote(noteEl, item.slideTitle ? `Quote from slide ${item.slide}: ${item.slideTitle}` : "");
     if (indexEl) indexEl.textContent = `Quote ${item.n ?? idx + 1} of ${pool.length} signals`;
-    if (talkEl && item.id) talkEl.setAttribute("href", `/talk.html#${item.id}`);
+    if (talkEl && item.id) talkEl.setAttribute("href", `/talk#${item.id}`);
   } else {
     if (titleEl) titleEl.textContent = item.title || "Slide of the day";
     if (actEl) actEl.textContent = item.act || "";
@@ -98,7 +98,7 @@ function render({ kind, item, idx }, dateISO) {
       const n = typeof item.n === "number" ? item.n : idx + 1;
       indexEl.textContent = `Slide ${n} of ${pool.length} signals`;
     }
-    if (talkEl && item.id) talkEl.setAttribute("href", `/talk.html#${item.id}`);
+    if (talkEl && item.id) talkEl.setAttribute("href", `/talk#${item.id}`);
   }
 
   if (prevEl) prevEl.setAttribute("href", signalHref(addUTCDays(dateISO, -1)));
@@ -111,7 +111,7 @@ function render({ kind, item, idx }, dateISO) {
       todayEl.removeAttribute("aria-current");
     }
   }
-  if (recapEl) recapEl.setAttribute("href", "/recap.html#slides");
+  if (recapEl) recapEl.setAttribute("href", "/recap#slides");
 
   const photoLayer = document.getElementById("signal-photo-layer");
   if (photoLayer) {
