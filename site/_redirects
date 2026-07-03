@@ -52,5 +52,13 @@
 # If an old companion-site path leaks, route home.
 /companion-site/*           /                                  301
 
+# Repo docs belong on GitHub, not as crawlable site URLs.
+/README.md                  https://github.com/WalksWithASwagger/cmvan-keynote/blob/main/README.md  301
+/docs/PROJECT-ROADMAP.md    https://github.com/WalksWithASwagger/cmvan-keynote/blob/main/docs/PROJECT-ROADMAP.md  301
+/docs/ROADMAP-2026-05-07.md https://github.com/WalksWithASwagger/cmvan-keynote/blob/main/docs/ROADMAP-2026-05-07.md  301
+/docs/PROJECT-AUDIT-2026-05-08.md https://github.com/WalksWithASwagger/cmvan-keynote/blob/main/docs/PROJECT-AUDIT-2026-05-08.md  301
+/site/README.md             https://github.com/WalksWithASwagger/cmvan-keynote/blob/main/site/README.md  301
+/public/fonts/README.md     https://github.com/WalksWithASwagger/cmvan-keynote/blob/main/site/public/fonts/README.md  301
+
 # Catchall 404
 /*                          /404.html                          404

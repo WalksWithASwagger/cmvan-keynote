@@ -141,6 +141,7 @@ agentic delivery loop.
 |---------|--------|--------|
 | `npm run check` | Full local confidence gate | site eval, docs, Python tests, audit |
 | `npm run eval` | Fast static-site and repo contract gate | JS syntax, JSON, routes, widget contracts, Vercel config, local smoke |
+| `npm run seo:index-hygiene` | Search Console hygiene gate | public Markdown exposure, `.html` crawl targets, sitemap, canonical URLs |
 | `npm run docs:links` | Maintained-doc markdown link check | root docs, `docs/`, README/runbook surfaces |
 | `npm run docs:links:all` | Full tracked-markdown link check | every tracked `*.md` file |
 | `npm run smoke:release-day` | Local submissions API smoke | `api/submissions.js` |

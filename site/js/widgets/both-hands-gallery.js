@@ -4,7 +4,7 @@
 // Invalid hashes are skipped silently — never break the page on bad data.
 
 const SLOT_COUNT = 5;
-const EDITOR_PATH = "/widgets/both-hands.html";
+const EDITOR_PATH = "/widgets/both-hands";
 
 const gridEl = document.getElementById("bhg-grid");
 const statusEl = document.getElementById("bhg-status");

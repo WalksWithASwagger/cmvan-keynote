@@ -9,6 +9,12 @@
     { "source": "/widgets/posse-graph.html", "destination": "/widgets/posse-builder.html" }
   ],
   "redirects": [
+    { "source": "/README.md", "destination": "https://github.com/WalksWithASwagger/cmvan-keynote/blob/main/README.md", "statusCode": 301 },
+    { "source": "/docs/PROJECT-ROADMAP.md", "destination": "https://github.com/WalksWithASwagger/cmvan-keynote/blob/main/docs/PROJECT-ROADMAP.md", "statusCode": 301 },
+    { "source": "/docs/ROADMAP-2026-05-07.md", "destination": "https://github.com/WalksWithASwagger/cmvan-keynote/blob/main/docs/ROADMAP-2026-05-07.md", "statusCode": 301 },
+    { "source": "/docs/PROJECT-AUDIT-2026-05-08.md", "destination": "https://github.com/WalksWithASwagger/cmvan-keynote/blob/main/docs/PROJECT-AUDIT-2026-05-08.md", "statusCode": 301 },
+    { "source": "/site/README.md", "destination": "https://github.com/WalksWithASwagger/cmvan-keynote/blob/main/site/README.md", "statusCode": 301 },
+    { "source": "/public/fonts/README.md", "destination": "https://github.com/WalksWithASwagger/cmvan-keynote/blob/main/site/public/fonts/README.md", "statusCode": 301 },
     { "source": "/companion-site/:path*", "destination": "/", "statusCode": 301 }
   ],
   "headers": [

@@ -23,7 +23,7 @@ const RECAP = resolve(SITE, "recap.html");
 const NOTES_DIR = resolve(SITE, "notes");
 const OUT = resolve(SITE, "feed.xml");
 
-const SITE_URL = "https://punkrockai.com";
+const SITE_URL = "https://www.punkrockai.com";
 const FEED_TITLE = "Punk Rock AI — field notes";
 const FEED_DESC =
   "Field notes from Kris Krüg's Punk Rock AI / Both Hands Full keynote: the talk, the portal, the receipts.";
@@ -38,8 +38,8 @@ const recapDate = extractRecapDate(recapHtml) ?? new Date().toISOString().slice(
 
 items.push({
   title: "How we built Punk Rock AI",
-  link: `${SITE_URL}/recap.html`,
-  guid: `${SITE_URL}/recap.html`,
+  link: `${SITE_URL}/recap`,
+  guid: `${SITE_URL}/recap`,
   description:
     "A feature-length recap of the Punk Rock AI / Both Hands Full keynote — the talk, the building, the room, what came next. The whole arc, with receipts.",
   pubDate: recapDate,
@@ -48,8 +48,8 @@ items.push({
 for (const section of parseRecapSections(recapHtml)) {
   items.push({
     title: `Recap · ${section.title}`,
-    link: `${SITE_URL}/recap.html#${section.id}`,
-    guid: `${SITE_URL}/recap.html#${section.id}`,
+    link: `${SITE_URL}/recap#${section.id}`,
+    guid: `${SITE_URL}/recap#${section.id}`,
     description: section.description,
     pubDate: recapDate,
   });
@@ -127,7 +127,7 @@ function parseNote(html, filename) {
   )
     .replace(/\s+/g, " ")
     .trim();
-  const link = `${SITE_URL}/notes/${slug}.html`;
+  const link = `${SITE_URL}/notes/${slug}`;
   return {
     title,
     link,
