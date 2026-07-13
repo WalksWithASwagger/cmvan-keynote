@@ -11,6 +11,13 @@
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="canonical" href="https://www.punkrockai.com/" />
+    <link
+      rel="preload"
+      as="image"
+      href="/public/photos/michelle-diamond/195.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Punk Rock AI — Both hands full." />
     <meta property="og:description" content="Critique in one hand, capability in the other. The interactive portal for Kris Krüg's CMVan keynote." />
@@ -119,7 +126,83 @@
     </style>
   </head>
   <body class="shell">
-    <header class="site-header" data-include="header"></header>
+    <header class="site-header">
+      <div class="site-header__inner wrap">
+        <a class="site-header__brand" href="/">Punk Rock AI</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/talk" class="site-nav__primary" data-route="/talk">Talk</a>
+          <a href="/field-course" class="site-nav__primary" data-route="/field-course">Course</a>
+          <a href="/recap" class="site-nav__primary" data-route="/recap">Recap</a>
+          <a href="/merch" class="site-nav__primary" data-route="/merch">Merch</a>
+
+          <details class="site-nav__group" data-nav-group="make">
+            <summary>Make<span class="site-nav__caret" aria-hidden="true">&#9662;</span></summary>
+            <div class="site-nav__menu" role="menu">
+              <a href="/widgets/three-documents" data-route="/widgets/three-documents">Three Documents</a>
+              <a href="/widgets/both-hands" data-route="/widgets/both-hands">Both Hands</a>
+              <a href="/widgets/cut-up" data-route="/widgets/cut-up">Cut-up</a>
+              <a href="/widgets/selector" data-route="/widgets/selector">Selector</a>
+              <a href="/widgets/conductor" data-route="/widgets/conductor">Conductor</a>
+              <a href="/widgets/conductor-ratio" data-route="/widgets/conductor-ratio">Craft Ratio</a>
+              <a href="/widgets/voice-clone-booth" data-route="/widgets/voice-clone-booth">Voice Booth</a>
+              <a href="/widgets/manifesto" data-route="/widgets/manifesto">Manifesto</a>
+              <a href="/widgets/sig" data-route="/widgets/sig">Email Sig</a>
+              <a href="/widgets/receipt-print" data-route="/widgets/receipt-print">Receipt Printer</a>
+              <a href="/widgets/detournement" data-route="/widgets/detournement">D&eacute;tournement</a>
+            </div>
+          </details>
+
+          <details class="site-nav__group" data-nav-group="name">
+            <summary>Name<span class="site-nav__caret" aria-hidden="true">&#9662;</span></summary>
+            <div class="site-nav__menu" role="menu">
+              <a href="/widgets/bias-bingo" data-route="/widgets/bias-bingo">Bias Bingo</a>
+              <a href="/widgets/name-what-you-see" data-route="/widgets/name-what-you-see">Name What You See</a>
+              <a href="/widgets/word-ban" data-route="/widgets/word-ban">Word-ban</a>
+              <a href="/widgets/tool-not-neutral" data-route="/widgets/tool-not-neutral">Tool Is Never Neutral</a>
+              <a href="/widgets/tool-not-neutral-matrix" data-route="/widgets/tool-not-neutral-matrix">Tool Matrix</a>
+              <a href="/widgets/in-there" data-route="/widgets/in-there">Am I in There?</a>
+              <a href="/widgets/receipt-tells" data-route="/widgets/receipt-tells">Training Receipt</a>
+              <a href="/widgets/taste-audit" data-route="/widgets/taste-audit">Taste Audit</a>
+              <a href="/widgets/cutting-room" data-route="/widgets/cutting-room">Cutting Room</a>
+              <a href="/widgets/pattern-finder" data-route="/widgets/pattern-finder">Pattern Finder</a>
+              <a href="/widgets/pattern-graph" data-route="/widgets/pattern-graph">Pattern Graph</a>
+              <a href="/widgets/junior-pipeline" data-route="/widgets/junior-pipeline">Junior Pipeline</a>
+              <a href="/widgets/chainsaws" data-route="/widgets/chainsaws">Chainsaws</a>
+              <a href="/widgets/mastery-gym" data-route="/widgets/mastery-gym">Mastery Gym</a>
+              <a href="/widgets/receipt" data-route="/widgets/receipt">Open Source Receipt</a>
+            </div>
+          </details>
+
+          <details class="site-nav__group" data-nav-group="connect">
+            <summary>Connect<span class="site-nav__caret" aria-hidden="true">&#9662;</span></summary>
+            <div class="site-nav__menu" role="menu">
+              <a href="/posse" data-route="/posse">Posse</a>
+              <a href="/widgets/posse-builder" data-route="/widgets/posse-builder">Posse Builder</a>
+              <a href="/widgets/both-hands-gallery" data-route="/widgets/both-hands-gallery">Both Hands Gallery</a>
+              <a href="/widgets/releases-wall" data-route="/widgets/releases-wall">Releases Wall</a>
+              <a href="/widgets/crit" data-route="/widgets/crit">Crit Office</a>
+              <a href="/lineage" data-route="/lineage">Lineage</a>
+              <a href="/library" data-route="/library">Library</a>
+              <a href="/decisions" data-route="/decisions">Decisions</a>
+              <a href="/photos/michelle-diamond" data-route="/photos/michelle-diamond">CMVan Photos</a>
+            </div>
+          </details>
+
+          <details class="site-nav__group" data-nav-group="ship">
+            <summary>Ship<span class="site-nav__caret" aria-hidden="true">&#9662;</span></summary>
+            <div class="site-nav__menu" role="menu">
+              <a href="/release-day" data-route="/release-day">Release Day</a>
+              <a href="/widgets/action" data-route="/widgets/action">Action Chooser</a>
+              <a href="/workshop" data-route="/workshop">Workshop Kit</a>
+              <a href="/signal" data-route="/signal">Signal</a>
+              <a href="/feed.xml">RSS Feed</a>
+            </div>
+          </details>
+
+          <a href="/release-day" class="site-nav__cta" data-route="/release-day">May 29 &nearr;</a>
+        </nav>
+      </div>
+    </header>
 
     <main>
       <aside class="daily-refrain" id="daily-refrain" aria-label="Daily refrain" data-state="loading">

@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { execFile } from "node:child_process";
+import { readFileSync } from "node:fs";
 import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
@@ -68,6 +69,35 @@ test("rejects Twitter images that do not match Open Graph", async () => {
   assert.equal(result.code, 1, result.output);
   assert.match(result.output, /twitter:image .* should match og:image/);
 });
+
+test("keeps the homepage critical rendering path stable", () => {
+  const home = readFileSync(path.join(ROOT, "site/index.html"), "utf8");
+  const headerPartial = readFileSync(
+    path.join(ROOT, "site/partials/header.html"),
+    "utf8"
+  );
+  const refrainCss = readFileSync(
+    path.join(ROOT, "site/css/widgets/daily-refrain.css"),
+    "utf8"
+  );
+  const zineCss = readFileSync(path.join(ROOT, "site/css/zine-overhaul.css"), "utf8");
+
+  assert.match(
+    home,
+    /rel="preload"[\s\S]*href="\/public\/photos\/michelle-diamond\/195\.webp"[\s\S]*fetchpriority="high"/
+  );
+  assert.match(home, /<header class="site-header">[\s\S]*<nav class="site-nav"/);
+  assert.doesNotMatch(home, /<header[^>]+data-include="header"/);
+  const inlineHeader = home.match(/<header class="site-header">([\s\S]*?)<\/header>/)?.[1];
+  assert.ok(inlineHeader);
+  assert.deepEqual(extractHrefs(inlineHeader), extractHrefs(headerPartial));
+  assert.match(refrainCss, /--refrain-min-h:\s*7\.75rem/);
+  assert.match(zineCss, /\.punk-section,[\s\S]*content-visibility:\s*auto/);
+});
+
+function extractHrefs(source) {
+  return [...source.matchAll(/href="([^"]+)"/g)].map((match) => match[1]);
+}
 
 async function runChecker(pages) {
   const fixtureRoot = await mkdtemp(path.join(tmpdir(), "punk-rock-ai-index-hygiene-"));
