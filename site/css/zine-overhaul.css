@@ -453,3 +453,19 @@
 .hero--photo:hover .hero__photo-layer {
   filter: brightness(1.0) saturate(1.0);
 }
+
+@media (max-width: 720px) {
+  .hero__photo-layer,
+  .hero__slide-layer,
+  .hero__date,
+  .hero__title span:nth-child(1),
+  .hero__title span:nth-child(2),
+  .hero__title span:nth-child(3),
+  .hero__title em,
+  .hero__lede,
+  .hero__cta,
+  .btn.punk-shadow-pink {
+    animation: none;
+    will-change: auto;
+  }
+}
