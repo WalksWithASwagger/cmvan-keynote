@@ -93,6 +93,10 @@ test("keeps the homepage critical rendering path stable", () => {
   assert.deepEqual(extractHrefs(inlineHeader), extractHrefs(headerPartial));
   assert.match(refrainCss, /--refrain-min-h:\s*7\.75rem/);
   assert.match(zineCss, /\.punk-section,[\s\S]*content-visibility:\s*auto/);
+  assert.match(
+    zineCss,
+    /@media \(max-width: 720px\)[\s\S]*\.hero__photo-layer,[\s\S]*animation:\s*none/
+  );
 });
 
 function extractHrefs(source) {
