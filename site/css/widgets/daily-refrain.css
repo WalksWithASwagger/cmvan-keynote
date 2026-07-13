@@ -10,7 +10,8 @@
   padding: var(--space-3) var(--space-4);
   background: var(--bg-elevated);
   border-bottom: 1px solid var(--accent);
-  font-family: var(--font-mono);
+  font-family: ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   font-size: var(--fs-sm);
   color: var(--fg-soft);
   text-align: center;
@@ -25,7 +26,7 @@
 }
 
 .daily-refrain__tag {
-  font-family: var(--font-mono);
+  font-family: inherit;
   font-size: var(--fs-xs);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -37,7 +38,7 @@
   color: var(--fg);
   text-decoration: none;
   border-bottom: 1px solid transparent;
-  font-family: var(--font-display);
+  font-family: "Times New Roman", "Hoefler Text", Georgia, ui-serif, serif;
   font-size: var(--fs-md);
   line-height: 1.35;
   transition: border-color 120ms var(--ease-snap), color 120ms var(--ease-snap);
@@ -63,9 +64,37 @@
 
 @media (max-width: 560px) {
   .daily-refrain {
+    --refrain-min-h: 7.75rem;
     padding-block: var(--space-2);
+  }
+  .daily-refrain__inner {
+    display: grid;
+    grid-template-rows: 1.25rem 2.5rem 2.5rem;
+    align-items: stretch;
+    align-content: center;
+    gap: 0.25rem;
+    width: 100%;
+    min-height: 6.75rem;
+  }
+  .daily-refrain__tag,
+  .daily-refrain__link,
+  .daily-refrain__cite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
   .daily-refrain__link {
     font-size: var(--fs-sm);
+  }
+}
+
+@media (max-width: 340px) {
+  .daily-refrain {
+    --refrain-min-h: 9rem;
+  }
+  .daily-refrain__inner {
+    grid-template-rows: 1.25rem 3.75rem 2.5rem;
+    min-height: 8rem;
   }
 }

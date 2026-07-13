@@ -256,6 +256,12 @@
   z-index: 1;
 }
 
+.punk-section,
+.release-cta {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1800px;
+}
+
 /* ── 6. Section header — pink dominance + slide crop art ─────────────── */
 
 .punk-section-header {
