@@ -27,6 +27,7 @@ checkPublicMarkdownFiles();
 checkPublicMarkdownLinks();
 checkHtmlCrawlTargets();
 checkSitemapTargets();
+checkSitemapSocialPreviewImages();
 checkCanonicalOgDrift();
 
 if (BASE_URL) {
@@ -129,6 +130,63 @@ function checkSitemapTargets() {
   }
   summaries.push(["sitemap URLs", urls.length]);
   summaries.push(["sitemap canonical/.html issues", suspect]);
+}
+
+function checkSitemapSocialPreviewImages() {
+  const sitemapFile = path.join(SITE_DIR, "sitemap.xml");
+  if (!existsSync(abs(sitemapFile))) {
+    summaries.push(["sitemap HTML pages checked for social images", 0]);
+    summaries.push(["social preview image issues", 0]);
+    return;
+  }
+
+  const urls = extractSitemapUrls(readFileSync(abs(sitemapFile), "utf8"));
+  let checked = 0;
+  let issues = 0;
+
+  for (const url of urls) {
+    const parsed = parseUrl(url);
+    if (!parsed || parsed.origin !== CANONICAL_ORIGIN) continue;
+
+    const file = sitemapHtmlFile(parsed.pathname);
+    if (!existsSync(abs(file))) {
+      issues += 1;
+      failures.push({
+        check: "sitemap social preview",
+        file,
+        detail: `missing HTML source for ${url}`,
+      });
+      continue;
+    }
+
+    checked += 1;
+    const source = readFileSync(abs(file), "utf8");
+    const ogImage = extractTagUrl(source, "meta", "property", "og:image", "content");
+    const twitterImage = extractTagUrl(source, "meta", "name", "twitter:image", "content");
+
+    for (const [name, value] of [["og:image", ogImage], ["twitter:image", twitterImage]]) {
+      const problem = socialImageUrlProblem(value);
+      if (!problem) continue;
+      issues += 1;
+      failures.push({
+        check: "sitemap social preview",
+        file,
+        detail: `${name} ${problem}`,
+      });
+    }
+
+    if (ogImage && twitterImage && ogImage !== twitterImage) {
+      issues += 1;
+      failures.push({
+        check: "sitemap social preview",
+        file,
+        detail: `twitter:image ${twitterImage} should match og:image ${ogImage}`,
+      });
+    }
+  }
+
+  summaries.push(["sitemap HTML pages checked for social images", checked]);
+  summaries.push(["social preview image issues", issues]);
 }
 
 function checkCanonicalOgDrift() {
@@ -290,6 +348,28 @@ function extractTagUrl(source, tag, keyAttr, keyValue, valueAttr) {
   if (!match) return null;
   const valuePattern = new RegExp(`\\b${valueAttr}=["']([^"']+)["']`, "i");
   return match[0].match(valuePattern)?.[1] || null;
+}
+
+function sitemapHtmlFile(pathname) {
+  const route = pathname.replace(/^\/+|\/+$/g, "");
+  return path.join(SITE_DIR, route ? `${route}.html` : "index.html");
+}
+
+function socialImageUrlProblem(value) {
+  if (!value) return "is missing";
+  const parsed = parseUrl(value);
+  if (!parsed) return `${value} must be an absolute URL`;
+
+  const canonical = parseUrl(CANONICAL_ORIGIN);
+  const sameSiteHost = normalizeSiteHost(parsed.hostname) === normalizeSiteHost(canonical.hostname);
+  if (parsed.protocol !== canonical.protocol || parsed.port !== canonical.port || !sameSiteHost) {
+    return `${value} must use the ${normalizeSiteHost(canonical.hostname)} canonical site host (www optional)`;
+  }
+  return null;
+}
+
+function normalizeSiteHost(hostname) {
+  return hostname.toLowerCase().replace(/^www\./, "");
 }
 
 function expectedCanonicalUrl(file) {
