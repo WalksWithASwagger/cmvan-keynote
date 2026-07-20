@@ -4,7 +4,7 @@ Punk Rock AI is Kris Krug's CreativeMornings Vancouver keynote portal about hold
 
 Canonical site: https://www.punkrockai.com/
 Creator: Kris Krug
-Related practice: Both Hands Full, https://bothhandsfull.ai/
+Related practice: Both Hands Full, https://www.bothhandsfull.com/
 
 Primary pages:
 - Homepage: https://www.punkrockai.com/

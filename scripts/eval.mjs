@@ -158,6 +158,7 @@ function checkHomepageSeoGeoMetadata() {
   const file = "site/index.html";
   const source = readFileSync(abs(file), "utf8");
   const canonicalUrl = "https://www.punkrockai.com/";
+  const bothHandsFullUrl = "https://www.bothhandsfull.com/";
 
   if (!source.includes(`<link rel="canonical" href="${canonicalUrl}" />`)) {
     failures.push(`${file}: homepage canonical must be ${canonicalUrl}`);
@@ -197,7 +198,7 @@ function checkHomepageSeoGeoMetadata() {
       if (person?.name !== "Kris Krüg") {
         failures.push(`${file}: Person JSON-LD must name Kris Krüg`);
       }
-      if (!person?.sameAs?.includes("https://bothhandsfull.ai/")) {
+      if (!person?.sameAs?.includes(bothHandsFullUrl)) {
         failures.push(`${file}: Person JSON-LD must connect Both Hands Full`);
       }
       if (work?.url !== canonicalUrl || work?.creator?.["@id"] !== person?.["@id"]) {
@@ -211,6 +212,9 @@ function checkHomepageSeoGeoMetadata() {
       failures.push(`${file}: visible homepage copy must include ${text}`);
     }
   }
+  if (!source.includes(`href="${bothHandsFullUrl}"`)) {
+    failures.push(`${file}: visible Both Hands Full link must use ${bothHandsFullUrl}`);
+  }
 
   const llmsFile = "site/llms.txt";
   if (existsSync(abs(llmsFile))) {
@@ -219,6 +223,9 @@ function checkHomepageSeoGeoMetadata() {
       if (!llms.includes(text)) {
         failures.push(`${llmsFile}: llms.txt must include ${text}`);
       }
+    }
+    if (!llms.includes(bothHandsFullUrl)) {
+      failures.push(`${llmsFile}: Both Hands Full link must use ${bothHandsFullUrl}`);
     }
   }
 }
