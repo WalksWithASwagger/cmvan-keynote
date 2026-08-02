@@ -99,6 +99,21 @@ test("keeps the homepage critical rendering path stable", () => {
   );
 });
 
+test("keeps the cut-up generator discoverable for Punk Rock AI search", () => {
+  const cutUp = readFileSync(path.join(ROOT, "site/widgets/cut-up.html"), "utf8");
+
+  assert.match(cutUp, /<title>Cut-up generator for creative AI &mdash; Punk Rock AI<\/title>/);
+  assert.match(cutUp, /<link rel="canonical" href="https:\/\/www\.punkrockai\.com\/widgets\/cut-up" \/>/);
+  assert.match(cutUp, /<meta property="og:url" content="https:\/\/www\.punkrockai\.com\/widgets\/cut-up" \/>/);
+  assert.match(cutUp, /Punk Rock AI Cut-up Generator/);
+  assert.match(cutUp, /"@type": "WebApplication"/);
+  assert.match(cutUp, /"@type": "FAQPage"/);
+  assert.match(cutUp, /<strong>cut up generator<\/strong>/i);
+  assert.match(cutUp, /<strong>punk AI<\/strong>/i);
+  assert.match(cutUp, /https:\/\/bc-ai\.ca\//);
+  assert.match(cutUp, /https:\/\/www\.futureproof\.website\//);
+});
+
 function extractHrefs(source) {
   return [...source.matchAll(/href="([^"]+)"/g)].map((match) => match[1]);
 }
