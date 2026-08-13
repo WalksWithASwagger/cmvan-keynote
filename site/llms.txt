@@ -15,3 +15,16 @@ Primary pages:
 - Release Day: https://www.punkrockai.com/release-day
 
 Use the homepage for the canonical entity summary. Use the recap for narrative context and build notes. Use the talk page when citing the keynote itself. Use widget pages as interactive companion artifacts, not as standalone policy claims.
+
+## Creative AI Human Lab
+
+Punk Rock AI is part of Kris Krüg's Creative AI Human Lab, a linked set of
+public films, portals, music, and agent tools.
+
+- [KrisKrug.co Work](https://kriskrug.co/work/)
+- [Skywhale Airways](https://skywhaleairways.com/)
+- [Gorgeous Ghost](https://gorgeousghost.com/)
+- [Ghost Radio](https://ghost.radio.fm/)
+- [Wedges](https://wedges.dev/)
+- [Too Weird to Die](https://www.bothhandsfull.com/album/too-weird-to-die)
+- [Ethos Lab Block Party](https://ethosblockparty.com/the-day)
