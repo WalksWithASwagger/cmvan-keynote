@@ -22,6 +22,7 @@ Punk Rock AI is part of Kris Krüg's Creative AI Human Lab, a linked set of
 public films, portals, music, and agent tools.
 
 - [KrisKrug.co Work](https://kriskrug.co/work/)
+- [AI Garden](https://kriskrug.ai/)
 - [Skywhale Airways](https://skywhaleairways.com/)
 - [Gorgeous Ghost](https://gorgeousghost.com/)
 - [Ghost Radio](https://ghost.radio.fm/)
