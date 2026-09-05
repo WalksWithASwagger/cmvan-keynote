@@ -52,9 +52,14 @@
                 <span>Or seed it with:</span>
                 <button type="button" data-seed="quotes">19 key talk quotes</button>
                 <button type="button" data-seed="lineage">Lineage prose</button>
-                <button type="button" data-seed="manifesto">Punk Rock AI manifesto</button>
                 <button type="button" data-seed="tdoc" disabled title="Draft your Three Documents first to unlock this seed.">My Three Documents</button>
               </div>
+
+              <label for="cutup-credit">Source credit</label>
+              <input id="cutup-credit" type="text" placeholder="Author, title, or source — in your words" />
+              <label for="cutup-note">Editorial note (optional)</label>
+              <textarea id="cutup-note" rows="2" placeholder="What did you change or discover?"></textarea>
+              <p id="cutup-saved" role="status">One draft, saved only in this browser. Copy your work before clearing browser data.</p>
 
               <div class="cutup__controls">
                 <div class="cutup__row" role="group" aria-label="Cut size">
@@ -98,11 +103,21 @@
                 <div class="cutup__output-body" id="cutup-body">
                   <span class="cutup__output-empty">Paste something. Hit cut. Watch the room rearrange.</span>
                 </div>
+                <p class="cutup__credit" data-meta-credit hidden></p>
+                <p class="cutup__credit" data-meta-note hidden></p>
                 <div class="cutup__output-footer">
                   <span>punkrockai.com / cut-up</span>
                   <span data-meta-stamp></span>
                 </div>
               </div>
+              <label for="cutup-text">Your composition as text</label>
+              <textarea id="cutup-text" rows="6" readonly placeholder="Your retained fragments, credit, and note will appear here."></textarea>
+              <p>Select and copy this text if poster export or clipboard access is unavailable.</p>
+              <h2>Make it yours</h2>
+              <p>Remove pieces. Move the ones you keep. Removed fragments stay here to restore.
+                Source and cut-size changes take effect on your next Cut + shuffle.</p>
+              <ol class="cutup__fragments" id="cutup-fragments" aria-label="Edit composition"></ol>
+              <p>Keep going: <a href="/field-course">take the field course</a>.</p>
             </div>
           </div>
         </div>
