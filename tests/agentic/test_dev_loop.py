@@ -2,6 +2,8 @@ import json
 import os
 import subprocess
 import sys
+
+import pytest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts" / "agentic"))
@@ -124,7 +126,8 @@ def test_runner_exits_cleanly_when_loop_paused_env_is_set(tmp_path):
     assert payload["status"] == "paused"
 
 
-def test_runner_refuses_stop_labels(tmp_path):
+@pytest.mark.parametrize("stop_label", ["needs-human", "blocked", "in-progress"])
+def test_runner_refuses_stop_labels(tmp_path, stop_label):
     repo = copy_contract_repo(tmp_path)
     issue = complete_issue(tmp_path)
 
@@ -139,7 +142,7 @@ def test_runner_refuses_stop_labels(tmp_path):
             "--issue-file",
             str(issue),
             "--labels",
-            "agent:ready,needs-human",
+            f"agent:ready,{stop_label}",
         ],
         cwd=repo,
         text=True,

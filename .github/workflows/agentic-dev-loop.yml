@@ -54,18 +54,27 @@ jobs:
             echo "EOF"
           } >> "$GITHUB_ENV"
 
+      - name: Validate before claiming
+        run: |
+          python3 scripts/agentic/issue_lint.py \
+            --issue-file "$RUNNER_TEMP/issue.md" \
+            --labels "$(cat "$RUNNER_TEMP/labels.txt")"
+
       - name: Create work branch
         id: branch
         run: |
           SLUG=$(python3 -c "import pathlib, sys; sys.path.insert(0, 'scripts/agentic'); from common import slugify; print(slugify(pathlib.Path('$RUNNER_TEMP/issue-title.txt').read_text()))")
-          REF=$(python3 -c "import pathlib, re; text=pathlib.Path('$RUNNER_TEMP/issue-title.txt').read_text()+pathlib.Path('$RUNNER_TEMP/issue.md').read_text(); match=re.search(r'\b[A-Z]{2,}-[0-9]+\b', text); print(match.group(0) if match else 'issue-${ISSUE_NUMBER}')")
+          REF="issue-${ISSUE_NUMBER}"
           BRANCH="codex/${REF}-${SLUG}"
           git switch -c "$BRANCH"
           echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
 
       - name: Mark issue in progress
+        id: claim
+        if: env.AGENTIC_PROVIDER != 'noop'
         run: |
           gh issue edit "$ISSUE_NUMBER" --add-label "in-progress"
+          echo "claimed=true" >> "$GITHUB_OUTPUT"
           gh issue comment "$ISSUE_NUMBER" --body "Agentic dev loop started on branch \`${{ steps.branch.outputs.branch }}\` with provider \`${AGENTIC_PROVIDER}\`."
 
       - name: Run provider and verification
@@ -109,12 +118,12 @@ jobs:
           gh issue comment "$ISSUE_NUMBER" --body-file "$RUNNER_TEMP/comment.md"
 
       - name: Escalate failed run
-        if: steps.loop.outputs.exit_code != '0'
+        if: steps.loop.outputs.exit_code != '' && steps.loop.outputs.exit_code != '0'
         run: |
           gh issue edit "$ISSUE_NUMBER" --add-label "needs-human"
           python3 -c "import json; data=json.load(open('$RUNNER_TEMP/agentic-dev-loop-result.json')); print('Agentic dev loop failed: ' + data.get('message', data.get('status', 'unknown')))" > "$RUNNER_TEMP/comment.md"
           gh issue comment "$ISSUE_NUMBER" --body-file "$RUNNER_TEMP/comment.md"
 
       - name: Clear in-progress label
-        if: always()
+        if: always() && steps.claim.outputs.claimed == 'true'
         run: gh issue edit "$ISSUE_NUMBER" --remove-label "in-progress" || true
