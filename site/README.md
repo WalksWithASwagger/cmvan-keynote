@@ -153,9 +153,39 @@ Conventions worth keeping:
 - Widgets are local-first by default. No network calls except for fetching
   `/data/*.json` and `/partials/*.html`.
 - Autosave to `localStorage` is namespaced as `pra:v1:<widget>:<key>` via
-  `storage.js`. Bump the schema version (`v1` → `v2`) if you change the shape.
-- Every widget ships a Reset button that confirms before wiping state.
+  `storage.js`. Version and migrate a widget's own payload when its shape changes;
+  bumping the shared namespace would also hide every other widget's saved work.
+- Destructive reset actions must confirm before wiping saved state.
 - `prefers-reduced-motion: reduce` must disable any non-essential animation.
+
+---
+
+## Cut-up composition
+
+`/widgets/cut-up` keeps one complete browser draft at `pra:v1:cutup:draft`
+(payload version 1): source, pending cut settings, generated cut settings,
+stable fragment IDs/order/retention, seed, credit, and editorial note.
+Typing saves immediately. Source edits preserve the current composition;
+Cut + shuffle confirms replacement, while Re-shuffle preserves selection.
+Remove/Restore and Up/Down work without dragging. Poster and selectable text
+use the same retained composition, credit, and note. Storage and export errors
+leave work on screen with a persistent message. Clearing browser data loses it.
+The URL carries only settings and a seed; replay requires the same source and
+does not share manual edits. A saved local draft takes precedence over URL settings.
+
+**Keep this take** stores one independent snapshot at `pra:v1:cutup:keeper`.
+Edit or reshuffle the working draft, then open **Compare takes** to read both
+compositions with their credit and note. Copy protected text directly, or restore
+it to the editor for poster export. Replacing the protected take or restoring over
+different work requires confirmation. A failed write keeps the previous saved
+value; a failed restore also leaves the editor unchanged. This is one protected
+take, not history or cross-tab synchronization. Use one editor tab and copy work
+before clearing browser data. Existing draft keys and share links are unchanged.
+
+`npm run eval` includes `node --test tests/cut-up.test.mjs`. Before shipping UI
+changes, check keyboard editing, immediate reload, Three Documents import,
+clipboard/PNG failure fallback, and long scatter fragments at desktop and mobile
+widths. Scatter measures loaded fonts and falls back to flow below 480px.
 
 ---
 

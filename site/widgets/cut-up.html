@@ -112,9 +112,14 @@
                 <span>Or seed it with:</span>
                 <button type="button" data-seed="quotes">19 key talk quotes</button>
                 <button type="button" data-seed="lineage">Lineage prose</button>
-                <button type="button" data-seed="manifesto">Punk Rock AI manifesto</button>
                 <button type="button" data-seed="tdoc" disabled title="Draft your Three Documents first to unlock this seed.">My Three Documents</button>
               </div>
+
+              <label for="cutup-credit">Source credit</label>
+              <input id="cutup-credit" type="text" placeholder="Author, title, or source — in your words" />
+              <label for="cutup-note">Editorial note (optional)</label>
+              <textarea id="cutup-note" rows="2" placeholder="What did you change or discover?"></textarea>
+              <p id="cutup-saved" role="status">One draft, saved only in this browser. Copy your work before clearing browser data.</p>
 
               <div class="cutup__controls">
                 <div class="cutup__row" role="group" aria-label="Cut size">
@@ -158,11 +163,41 @@
                 <div class="cutup__output-body" id="cutup-body">
                   <span class="cutup__output-empty">Paste something. Hit cut. Watch the room rearrange.</span>
                 </div>
+                <p class="cutup__credit" data-meta-credit hidden></p>
+                <p class="cutup__credit" data-meta-note hidden></p>
                 <div class="cutup__output-footer">
                   <span>punkrockai.com / cut-up</span>
                   <span data-meta-stamp></span>
                 </div>
               </div>
+              <label for="cutup-text">Your composition as text</label>
+              <textarea id="cutup-text" rows="6" readonly placeholder="Your retained fragments, credit, and note will appear here."></textarea>
+              <p>Select and copy this text if poster export or clipboard access is unavailable.</p>
+              <button class="btn" type="button" id="cutup-keep" disabled>Keep this take</button>
+              <p id="cutup-keeper-status" role="status">Protect one take, then try something riskier. Saved in this browser only; copy it before clearing browser data.</p>
+              <details id="cutup-compare" hidden>
+                <summary>Compare takes</summary>
+                <p>Compare the words, credit, and note. Restoring a take brings its settings back into the editor for poster export.</p>
+                <div class="cutup__comparison">
+                  <div>
+                    <label for="cutup-keeper-text">Protected take</label>
+                    <textarea id="cutup-keeper-text" rows="8" readonly></textarea>
+                  </div>
+                  <div>
+                    <label for="cutup-working-text">Working composition</label>
+                    <textarea id="cutup-working-text" rows="8" readonly></textarea>
+                  </div>
+                </div>
+                <div class="cutup__row">
+                  <button class="btn" type="button" id="cutup-copy-keeper">Copy protected text</button>
+                  <button class="btn" type="button" id="cutup-restore-keeper">Restore protected take</button>
+                </div>
+              </details>
+              <h2>Make it yours</h2>
+              <p>Remove pieces. Move the ones you keep. Removed fragments stay here to restore.
+                Source and cut-size changes take effect on your next Cut + shuffle.</p>
+              <ol class="cutup__fragments" id="cutup-fragments" aria-label="Edit composition"></ol>
+              <p>Keep going: <a href="/field-course">take the field course</a>.</p>
             </div>
           </div>
         </div>
@@ -185,6 +220,15 @@
             <a href="https://bc-ai.ca/">BC + AI Ecosystem</a> &middot;
             <a href="https://www.futureproof.website/">FutureProof Festival</a>
           </p>
+        </div>
+      </section>
+      <section class="section section--compact" id="faq" aria-labelledby="cutup-faq-title">
+        <div class="wrap wrap--narrow">
+          <h2 id="cutup-faq-title">About the cut-up generator</h2>
+          <h3>What is a cut-up generator?</h3>
+          <p>A cut-up generator rearranges source text into new fragments so writers, artists, and AI experimenters can see unexpected language patterns. This one is built for the Punk Rock AI field course and exports zine-style posters.</p>
+          <h3>How does the Punk Rock AI cut-up tool connect to creative AI?</h3>
+          <p>It treats arrangement and selection as the medium: humans choose source material, cut size, punctuation, layout, and final edits while using the machine as a creative instrument rather than an autopilot.</p>
         </div>
       </section>
     </main>

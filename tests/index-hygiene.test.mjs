@@ -108,6 +108,13 @@ test("keeps the cut-up generator discoverable for Punk Rock AI search", () => {
   assert.match(cutUp, /Punk Rock AI Cut-up Generator/);
   assert.match(cutUp, /"@type": "WebApplication"/);
   assert.match(cutUp, /"@type": "FAQPage"/);
+  const graph = JSON.parse(cutUp.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])["@graph"];
+  const faq = graph.find((entry) => entry["@type"] === "FAQPage");
+  const visibleFaq = cutUp.match(/<section[^>]*id="faq"[\s\S]*?<\/section>/)[0];
+  for (const question of faq.mainEntity) {
+    assert.ok(visibleFaq.includes(`<h3>${question.name}</h3>`));
+    assert.ok(visibleFaq.includes(`<p>${question.acceptedAnswer.text}</p>`));
+  }
   assert.match(cutUp, /<strong>cut up generator<\/strong>/i);
   assert.match(cutUp, /<strong>punk AI<\/strong>/i);
   assert.match(cutUp, /https:\/\/bc-ai\.ca\//);

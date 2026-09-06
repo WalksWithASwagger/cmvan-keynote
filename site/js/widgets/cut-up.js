@@ -8,7 +8,8 @@
 // rotation/offset seeded by `currentSeed` so a share-link rehydrates the same
 // layout. Falls back to flow under 480px.
 
-import { load } from "/js/common/storage.js";
+import { load, save } from "/js/common/storage.js";
+import { splitText, makeRng, seededShuffle, moveFragment, compositionText, parseDraft, parseTake, saveTake } from "./cut-up-state.js";
 
 const TDOC_DOCS = [
   { id: "policy", title: "Personal AI policy" },
@@ -30,6 +31,19 @@ let marksMode = "off";
 let layoutMode = "flow";
 let lastFragments = null;
 let currentSeed = null;
+let generatedCutMode = "phrase";
+let generatedPunctMode = "keep";
+const creditEl = document.getElementById("cutup-credit");
+const noteEl = document.getElementById("cutup-note");
+const editorEl = document.getElementById("cutup-fragments");
+const textEl = document.getElementById("cutup-text");
+const savedEl = document.getElementById("cutup-saved");
+const keepEl = document.getElementById("cutup-keep");
+const keeperStatusEl = document.getElementById("cutup-keeper-status");
+const compareEl = document.getElementById("cutup-compare");
+const keeperTextEl = document.getElementById("cutup-keeper-text");
+const workingTextEl = document.getElementById("cutup-working-text");
+let keeper = null;
 // True when restoreFromHash() pulled a seed from the URL and no shuffle has
 // consumed it yet. The first cut() reuses that seed (share-link rehydrates
 // identically); subsequent cuts generate a fresh seed.
@@ -39,6 +53,8 @@ const SCATTER_MIN_WIDTH = 480;
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 restoreFromHash();
+restoreDraft();
+restoreKeeper();
 bindToggles();
 bindActions();
 bindSeeds();
@@ -46,6 +62,27 @@ refreshTdocSeed();
 bindResize();
 bindReducedMotion();
 stamp();
+for (const el of [inputEl, creditEl, noteEl]) {
+  el.addEventListener("input", () => { persistDraft(); renderCredits(); });
+}
+editorEl.addEventListener("click", (event) => {
+  const btn = event.target.closest("button[data-edit]");
+  if (!btn) return;
+  const id = Number(btn.dataset.id);
+  const action = btn.dataset.edit;
+  if (action === "toggle") {
+    const fragment = lastFragments.find((f) => f.id === id);
+    fragment.kept = !fragment.kept;
+  } else {
+    lastFragments = moveFragment(lastFragments, id, action === "up" ? -1 : 1);
+  }
+  renderFragments(lastFragments);
+  persistDraft();
+  const next = editorEl.querySelector(`[data-id="${id}"][data-edit="${action}"]`);
+  (next.disabled ? editorEl.querySelector(`[data-id="${id}"][data-edit="toggle"]`) : next).focus();
+  flash("composition updated");
+});
+document.fonts.ready.then(() => { if (lastFragments) renderFragments(lastFragments); });
 
 // ---------------------------------------------------------------------------
 
@@ -60,6 +97,7 @@ function bindToggles() {
     btn.addEventListener("click", () => {
       setMode("data-marks", btn.dataset.marks, (v) => (marksMode = v));
       if (lastFragments) renderFragments(lastFragments);
+      writeHash();
     });
   });
   document.querySelectorAll("[data-layout]").forEach((btn) => {
@@ -68,6 +106,9 @@ function bindToggles() {
       if (lastFragments) renderFragments(lastFragments);
       writeHash();
     });
+  });
+  document.querySelectorAll("[data-cut], [data-punct], [data-marks], [data-layout]").forEach((btn) => {
+    btn.addEventListener("click", persistDraft);
   });
 }
 
@@ -82,15 +123,20 @@ function bindActions() {
   document.querySelector('[data-action="cut"]').addEventListener("click", cut);
   document.querySelector('[data-action="recut"]').addEventListener("click", () => {
     if (!lastFragments) return cut();
+    if (!confirm("Re-shuffle this composition? Your selection stays; your current order will be replaced.")) return;
     currentSeed = makeSeed();
     const shuffled = seededShuffle([...lastFragments], currentSeed);
     lastFragments = shuffled;
     renderFragments(shuffled);
     writeHash();
-    flash("re-shuffled");
+    persistDraft();
+    flash("re-shuffled — selection preserved");
   });
   document.querySelector('[data-action="png"]').addEventListener("click", exportPng);
-  document.querySelector('[data-action="copy"]').addEventListener("click", copyText);
+  document.querySelector('[data-action="copy"]').addEventListener("click", () => copyText());
+  keepEl.addEventListener("click", keepTake);
+  document.getElementById("cutup-copy-keeper").addEventListener("click", () => copyText(keeperTextEl));
+  document.getElementById("cutup-restore-keeper").addEventListener("click", restoreTake);
 }
 
 function bindSeeds() {
@@ -127,10 +173,14 @@ function cut() {
     flash("nothing to cut");
     return;
   }
-  const fragments = seededShuffle(sourceFragments, nextCutSeed());
+  if (lastFragments && !confirm("Replace this composition with a new cut? Removed fragments and your current order will be replaced.")) return;
+  const fragments = seededShuffle(sourceFragments.map((text, id) => ({ id, text, kept: true })), nextCutSeed());
+  generatedCutMode = cutMode;
+  generatedPunctMode = punctMode;
   lastFragments = fragments;
   renderFragments(fragments);
   writeHash();
+  persistDraft();
   flash(`cut into ${fragments.length} fragment${fragments.length === 1 ? "" : "s"}`);
 }
 
@@ -143,55 +193,15 @@ function nextCutSeed() {
   return currentSeed;
 }
 
-function splitText(text, mode, punct) {
-  const cleaned = punct === "strip" ? text.replace(/[.,;:!?"'`*_()\[\]{}]/g, " ") : text;
-  if (mode === "word") {
-    return cleaned.split(/\s+/).filter(Boolean);
-  }
-  if (mode === "line") {
-    return cleaned
-      .split(/\r?\n/)
-      .map((s) => s.trim())
-      .filter(Boolean);
-  }
-  // phrase: split on sentence-ish boundaries + comma/semicolon
-  return cleaned
-    .split(/(?<=[.!?…])\s+|[,;]\s+|\n+/)
-    .map((s) => s.trim())
-    .filter(Boolean);
-}
-
-// mulberry32 — small deterministic PRNG so the same seed yields the same
-// shuffle + scatter layout (acceptance: share-link rehydrates identically).
-function makeRng(seed) {
-  let s = seed >>> 0;
-  return function () {
-    s = (s + 0x6d2b79f5) >>> 0;
-    let t = s;
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
 function makeSeed() {
   return (Math.random() * 2 ** 32) >>> 0;
 }
 
-function seededShuffle(arr, seed) {
-  const rng = makeRng(seed);
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(rng() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
 // ---------------------------------------------------------------------------
 
-function renderFragments(fragments) {
-  metaMode.textContent = `cut by ${cutMode}`;
+function renderFragments(items) {
+  const fragments = items.filter((f) => f.kept).map((f) => f.text);
+  metaMode.textContent = `cut by ${generatedCutMode}`;
   metaCount.textContent = `${fragments.length} fragment${fragments.length === 1 ? "" : "s"}`;
 
   const useScatter =
@@ -204,13 +214,15 @@ function renderFragments(fragments) {
     bodyEl.style.height = "";
     bodyEl.innerHTML = fragments
       .map((f) => `<span class="cut">${escapeHTML(f)}</span>`)
-      .join(" ");
+      .join(generatedCutMode === "line" ? "\n" : " ");
   } else {
     bodyEl.classList.remove("cutup__output-body--scatter");
     bodyEl.style.height = "";
-    const sep = cutMode === "line" ? "\n" : " ";
+    const sep = generatedCutMode === "line" ? "\n" : " ";
     bodyEl.textContent = fragments.join(sep);
   }
+  renderEditor();
+  renderCredits();
   stamp();
 }
 
@@ -223,35 +235,36 @@ function renderScatter(fragments) {
 
   const rng = makeRng((currentSeed ?? 0) ^ 0x5cabbed);
   const width = bodyEl.clientWidth || outputEl.clientWidth || 600;
-  const colCount = Math.max(2, Math.min(4, Math.round(width / 220)));
+  const colCount = Math.max(1, Math.min(4, Math.floor(width / 180)));
   const colWidth = width / colCount;
-  const rowHeight = 56;
-  const jitterX = colWidth * 0.18;
-  const jitterY = rowHeight * 0.45;
-
-  let maxBottom = 0;
+  let rowTop = 0;
+  let rowHeight = 0;
   fragments.forEach((text, i) => {
     const col = i % colCount;
-    const row = Math.floor(i / colCount);
-    const x = col * colWidth + (rng() * 2 - 1) * jitterX;
-    const y = row * rowHeight + (rng() * 2 - 1) * jitterY;
-    const rot = (rng() * 2 - 1) * (reducedMotionQuery.matches ? 0 : 8);
-    const w = colWidth - 12;
+    if (i && col === 0) { rowTop += rowHeight; rowHeight = 0; }
+    const x = col * colWidth + 16 + (rng() * 2 - 1) * 4;
+    const jitterY = rng() * 8;
+    const rotation = rng() * 2 - 1;
 
     const strip = document.createElement("span");
     strip.className = "cutup__strip" + (marksMode === "on" ? " cut" : "");
     strip.textContent = text;
-    strip.style.left = `${Math.max(0, x)}px`;
-    strip.style.top = `${Math.max(0, y)}px`;
-    strip.style.width = `${w}px`;
-    strip.style.transform = `rotate(${rot.toFixed(2)}deg)`;
+    strip.style.width = `${colWidth - 32}px`;
     bodyEl.appendChild(strip);
 
-    const bottom = Math.max(0, y) + rowHeight;
-    if (bottom > maxBottom) maxBottom = bottom;
+    const h = strip.offsetHeight;
+    const w = strip.offsetWidth;
+    // Tall strips need less rotation to stay inside their column.
+    const rot = reducedMotionQuery.matches ? 0 : rotation * Math.min(8, Math.atan(12 / h) * 180 / Math.PI);
+    const radians = Math.abs(rot) * Math.PI / 180;
+    const height = h * Math.cos(radians) + w * Math.sin(radians);
+    strip.style.left = `${x}px`;
+    strip.style.top = `${rowTop + (height - h) / 2 + 8 + jitterY}px`;
+    strip.style.transform = `rotate(${rot}deg)`;
+    rowHeight = Math.max(rowHeight, height + 32);
   });
 
-  bodyEl.style.height = `${maxBottom + 16}px`;
+  bodyEl.style.height = `${rowTop + rowHeight}px`;
 }
 
 function stamp() {
@@ -264,8 +277,8 @@ function stamp() {
 
 function writeHash() {
   const params = new URLSearchParams({
-    cut: cutMode,
-    punct: punctMode,
+    cut: lastFragments ? generatedCutMode : cutMode,
+    punct: lastFragments ? generatedPunctMode : punctMode,
     marks: marksMode,
     layout: layoutMode,
   });
@@ -311,54 +324,45 @@ function restoreFromHash() {
 
 async function seedFrom(kind) {
   try {
+    let text;
+    let credit;
     if (kind === "tdoc") {
       const sections = readTdocSections();
-      if (!sections.length) {
-        flash("no Three Documents drafts found in this browser");
-        return;
-      }
-      inputEl.value = sections.map((s) => `${s.title}\n${s.body}`).join("\n\n");
-      flash(`seeded with your ${sections.length} Three Document${sections.length === 1 ? "" : "s"}`);
-      return;
-    }
-    if (kind === "quotes") {
-      const r = await fetch("/data/quotes.json");
+      if (!sections.length) return flash("no Three Documents drafts found in this browser");
+      text = sections.map((s) => `${s.title}\n${s.body}`).join("\n\n");
+      credit = "My Three Documents";
+    } else {
+      const r = await fetch(kind === "quotes" ? "/data/quotes.json" : "/data/lineage.json");
+      if (!r.ok) throw new Error("seed unavailable");
       const j = await r.json();
-      inputEl.value = (j.quotes || []).map((q) => q.text).join("\n");
-    } else if (kind === "lineage") {
-      const r = await fetch("/data/lineage.json");
-      const j = await r.json();
-      inputEl.value = [
-        j.thesis,
-        j.subThesis,
-        ...(j.beats || []).map((b) => `${b.title}\n${b.body}`),
-      ]
-        .filter(Boolean)
-        .join("\n\n");
-    } else if (kind === "manifesto") {
-      const r = await fetch("/source-material/punk-rock-ai/punk-rock-ai-manifesto.md");
-      // not committed in repo? graceful fallback below
-      if (!r.ok) throw new Error(`manifesto: ${r.status}`);
-      inputEl.value = await r.text();
+      text = kind === "quotes" ? (j.quotes || []).map((q) => q.text).join("\n") :
+        [j.thesis, j.subThesis, ...(j.beats || []).map((b) => `${b.title}\n${b.body}`)].filter(Boolean).join("\n\n");
+      credit = kind === "quotes" ? "Kris Krüg · Punk Rock AI talk quotes" : "Punk Rock AI · Lineage prose";
     }
-    flash(`seeded with ${kind}`);
-  } catch (err) {
-    // graceful fallback
-    inputEl.value =
-      "Pick up the tool. Use it wrong. Share what you learn. Build a posse. The corporations build the infrastructure. The weirdos figure out what it's for. Both hands full — critique in one, capability in the other.";
-    flash(`seed unavailable — used a stub (${err.message || err})`);
+    if (!text) throw new Error("empty seed");
+    if ((inputEl.value || lastFragments) && !confirm("Replace the source text and credit? Your current fragments stay until you choose Cut + shuffle.")) return;
+    inputEl.value = text;
+    creditEl.value = credit;
+    persistDraft();
+    renderCredits();
+    flash("source loaded — choose Cut + shuffle to make a new composition");
+  } catch {
+    flash("seed unavailable — your work is unchanged; paste source text to continue");
   }
 }
 
 // ---------------------------------------------------------------------------
 
 async function exportPng() {
+  if (!lastFragments?.some((f) => f.kept)) return flash("keep at least one fragment to export");
   if (!window.htmlToImage) {
-    flash("html-to-image still loading — try again in a sec");
+    flash("poster export unavailable — use the selectable text below");
     return;
   }
   try {
     flash("rendering…");
+    await document.fonts.ready;
+    renderFragments(lastFragments);
     const dataUrl = await window.htmlToImage.toPng(outputEl, {
       pixelRatio: 2,
       backgroundColor: "#f4ede0",
@@ -371,15 +375,14 @@ async function exportPng() {
     a.click();
     a.remove();
     flash("PNG downloaded");
-  } catch (err) {
-    console.error(err);
-    flash("PNG export failed — see console");
+  } catch {
+    flash("poster export failed — use the selectable text below");
   }
 }
 
-async function copyText() {
-  const text = bodyEl.innerText.trim();
-  if (!text || text.startsWith("Paste something")) {
+async function copyText(target = textEl) {
+  const text = target.value;
+  if (!text || (target === textEl && !lastFragments?.some((f) => f.kept))) {
     flash("nothing to copy yet");
     return;
   }
@@ -387,11 +390,121 @@ async function copyText() {
     await navigator.clipboard.writeText(text);
     flash("copied to clipboard");
   } catch {
-    flash("copy failed — select manually");
+    target.focus();
+    target.select();
+    flash("copy unavailable — text selected below; use your browser’s Copy command");
   }
 }
 
 // ---------------------------------------------------------------------------
+
+function draft() {
+  return { version: 1, source: inputEl.value, credit: creditEl.value, note: noteEl.value,
+    cutMode, punctMode, marksMode, layoutMode, generatedCutMode, generatedPunctMode, currentSeed,
+    fragments: lastFragments };
+}
+
+function persistDraft() {
+  savedEl.textContent = save("cutup:draft", draft())
+    ? "Draft saved in this browser."
+    : "Draft could not be saved. Keep this page open and copy your text before leaving.";
+}
+
+function restoreDraft() {
+  try {
+    // Parse locally: a malformed JSON error from the shared loader can echo draft text to the console.
+    const raw = localStorage.getItem("pra:v1:cutup:draft");
+    if (raw === null) return;
+    const d = parseDraft(raw);
+    if (!d) { savedEl.textContent = "Saved draft could not be read. New edits will replace it."; return; }
+    applyDraft(d);
+    savedEl.textContent = "Draft restored from this browser. Links contain settings and a seed, never your text.";
+  } catch {
+    savedEl.textContent = "Draft storage unavailable. Keep this page open and copy your text before leaving.";
+  }
+}
+
+function applyDraft(d) {
+  inputEl.value = d.source;
+  creditEl.value = d.credit;
+  noteEl.value = d.note;
+  ({ cutMode, punctMode, marksMode, layoutMode, generatedCutMode, generatedPunctMode, currentSeed } = d);
+  lastFragments = d.fragments;
+  pendingRestoredSeed = lastFragments === null && currentSeed !== null;
+  for (const [attr, value] of [["cut", cutMode], ["punct", punctMode], ["marks", marksMode], ["layout", layoutMode]]) {
+    setMode(`data-${attr}`, value, () => {});
+  }
+  if (lastFragments) renderFragments(lastFragments);
+  else renderCredits();
+  writeHash();
+}
+
+function restoreKeeper() {
+  try {
+    const raw = localStorage.getItem("pra:v1:cutup:keeper");
+    keeper = parseTake(raw);
+    if (raw !== null) keeperStatusEl.textContent = keeper
+      ? "Protected take restored. Your working composition can change independently."
+      : "Protected take could not be read. Keeping a new take will ask before replacing it.";
+  } catch {
+    keeperStatusEl.textContent = "Take storage unavailable. Keep this page open and copy your work.";
+  }
+  renderTakeComparison();
+}
+
+function keepTake() {
+  const result = saveTake("keeper", draft(), () => confirm("Replace the protected take with this working composition? The previous protected take will be lost."));
+  if (result.status === "cancelled") return;
+  if (result.status !== "saved") {
+    keeperStatusEl.textContent = result.status === "empty" ? "Keep at least one fragment first."
+      : "Take could not be saved. The previous protected take is unchanged; copy your work before leaving.";
+    return;
+  }
+  keeper = result.take;
+  keeperStatusEl.textContent = "Take protected in this browser. Try another version, then compare.";
+  renderTakeComparison();
+}
+
+function restoreTake() {
+  if (JSON.stringify(draft()) !== JSON.stringify(keeper) &&
+      !confirm("Replace the working composition with the protected take? Copy your current work first if you want both. The protected take will stay saved.")) return;
+  const result = saveTake("draft", keeper, () => true);
+  if (result.status !== "saved") {
+    keeperStatusEl.textContent = "Restore could not be saved. Your working composition is unchanged.";
+    return;
+  }
+  applyDraft(result.take);
+  savedEl.textContent = "Protected take restored as your working draft. Both are saved in this browser.";
+  keeperStatusEl.textContent = "Protected take unchanged. You can edit this new working copy.";
+  textEl.focus();
+}
+
+function renderTakeComparison() {
+  keepEl.disabled = !lastFragments?.some((f) => f.kept);
+  compareEl.hidden = !keeper;
+  keeperTextEl.value = keeper ? compositionText(keeper) : "";
+  workingTextEl.value = textEl.value;
+}
+
+function renderCredits() {
+  for (const [name, el] of [["credit", creditEl], ["note", noteEl]]) {
+    const target = document.querySelector(`[data-meta-${name}]`);
+    target.textContent = el.value.trim() ? `${name === "credit" ? "Source" : "Note"}: ${el.value.trim()}` : "";
+    target.hidden = !target.textContent;
+  }
+  textEl.value = lastFragments ? compositionText({ ...draft(), fragments: lastFragments }) : "";
+  renderTakeComparison();
+}
+
+function renderEditor() {
+  const retained = lastFragments.filter((f) => f.kept);
+  editorEl.innerHTML = lastFragments.map((f, i) => `<li class="${f.kept ? "" : "cutup__removed"}">
+    <span>${escapeHTML(f.text)}</span><div class="cutup__row">
+    <button type="button" data-id="${f.id}" data-edit="toggle" aria-label="${f.kept ? "Remove" : "Restore"} fragment ${i + 1}">${f.kept ? "Remove" : "Restore"}</button>
+    <button type="button" data-id="${f.id}" data-edit="up" aria-label="Move fragment ${i + 1} up" ${!f.kept || retained[0] === f ? "disabled" : ""}>Up</button>
+    <button type="button" data-id="${f.id}" data-edit="down" aria-label="Move fragment ${i + 1} down" ${!f.kept || retained.at(-1) === f ? "disabled" : ""}>Down</button>
+    </div></li>`).join("");
+}
 
 function readTdocSections() {
   return TDOC_DOCS
@@ -418,10 +531,6 @@ function refreshTdocSeed() {
 function flash(msg) {
   if (!statusEl) return;
   statusEl.textContent = msg;
-  clearTimeout(flash._t);
-  flash._t = setTimeout(() => {
-    if (statusEl) statusEl.textContent = "";
-  }, 2500);
 }
 
 function escapeHTML(s) {
