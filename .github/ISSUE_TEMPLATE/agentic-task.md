@@ -30,6 +30,6 @@ assignees: ''
 
 <!-- What this issue is NOT doing. -->
 
-## Linear
+## Dependencies
 
-<!-- Linear key or project reference, when known. -->
+<!-- GitHub issues/PRs and evidence required before this task can start. -->

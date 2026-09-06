@@ -17,7 +17,7 @@
     "roadmapSource": "docs/ROADMAP-2026-05-07.md",
     "pipelineDoc": "docs/LINEAR-GITHUB-PIPELINE.md",
     "localGate": "npm run eval",
-    "branchPattern": "codex/BC-<issue>-<short-slug>",
+    "branchPattern": "codex/issue-<number>-<short-slug>",
     "closingRule": "Use Refs unless the PR satisfies every acceptance criterion."
   },
   "milestones": [
