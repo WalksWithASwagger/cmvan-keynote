@@ -1,12 +1,10 @@
 # Agentic Delivery Contract
 
-This repo uses GitHub as execution truth and Linear as planning/status truth. v1 turns a qualified GitHub issue into a tested PR. It does not auto-merge.
+This repo uses GitHub issues and PRs for planning, execution, and status. v1 turns a qualified GitHub issue into a tested PR. It does not auto-merge.
 
 ## Repo Identity
 
 - GitHub repo: `WalksWithASwagger/cmvan-keynote`
-- Linear team: `Bc-ai` (`BC`)
-- Linear project: `Punk Rock AI Release Day Roadmap`
 - Canonical local root: `/Users/kk/Code/cmvan-keynote`
 
 ## Labels
@@ -33,11 +31,11 @@ Acceptance criteria must include Markdown checkboxes. The linter rejects ready i
 
 ## Runner Flow
 
-1. A human or chat command creates a complete GitHub issue and matching Linear issue.
+1. A human or chat command creates a complete GitHub issue.
 2. `agent:ready` triggers `.github/workflows/agentic-issue-quality.yml`.
-3. If quality passes, `.github/workflows/agentic-dev-loop.yml` may run.
+3. The dev loop independently validates current issue quality before claiming work; intake and execution events can arrive in either order.
 4. The dev loop checks pause controls, stop labels, issue quality, clean worktree state, provider output, repo verification commands, and diff limits.
-5. If verification passes and the diff is within 20 files and 500 changed lines, the runner opens a PR on `codex/<linear-key-or-issue>-<slug>`.
+5. If verification passes and the diff is within 20 files and 500 changed lines, the runner opens a PR on `codex/issue-<number>-<slug>`.
 6. `.github/workflows/agentic-pr-review.yml` comments an acceptance verdict and applies `review-ready` or `needs-human`.
 7. A human reviews and merges. v1 never auto-merges.
 
@@ -61,7 +59,27 @@ Config lives in [`agentic/contract.json`](../agentic/contract.json). v1 supports
 - `noop`: deterministic dry-run with no file changes.
 - `command`: runs the command in `AGENTIC_PROVIDER_COMMAND`.
 
-Real providers must be selected through repo variables/secrets, not hardcoded in scripts.
+A successful `noop` run opens no PR and implements nothing. It never claims or clears
+`in-progress`. A failed preflight does not mutate labels. The command adapter only
+clears a claim made by that run.
+
+For hosted implementation, an operator must authorize and configure the `command`
+provider through `AGENTIC_PROVIDER` and `AGENTIC_PROVIDER_COMMAND`, then dispatch
+with `provider=command`. This can execute code and incur provider costs; a ready
+label alone does not configure a provider. No configuration or credentials are
+changed by intake. Alternatively, explicitly assign a native coding agent a
+GitHub issue in an isolated worktree, review its tests and diff, and open a PR;
+this does not require the hosted command adapter.
+
+Intake evaluates content without treating `in-progress` as a defect. Execution's
+linter still rejects all stop labels, including `in-progress`, to prevent duplicate
+work. Malformed content and explicit `blocked`/`needs-human` labels still remove
+ready labels and require review. Intake reads body, labels, and state together and
+rechecks immediately before a label edit, retrying a changed snapshot up to three
+times. Closed or no-longer-ready issues are untouched, and repeated events are
+idempotent. GitHub label edits have no compare-and-swap guarantee: an external
+edit after the final read can still race. Stop labels are never removed by intake;
+execution must retain its independent preflight check.
 
 ## Break Glass
 
