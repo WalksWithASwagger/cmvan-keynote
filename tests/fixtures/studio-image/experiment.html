@@ -1,0 +1,52 @@
+<!doctype html><meta charset="utf-8"><title>Studio image feasibility fixture</title>
+<style>
+body{margin:20px;background:#ddd;color:#111;font-family:Georgia,serif}article{box-sizing:border-box;width:640px;max-width:100%;padding:24px;background:#f4ede0}img{display:block;max-width:100%;height:auto}p{font-size:18px;line-height:1.5}textarea{width:90%;height:100px}@media print{body{margin:0;background:white}article{width:100%;padding:0}textarea,label,#status{display:none}img{max-height:70mm;width:auto}h1,img{break-inside:avoid}p{orphans:3;widows:3}}
+</style>
+<article id="edition"><h1>A deliberate interruption</h1><img id="image" alt="Synthetic red and blue quadrants"><p id="text"></p></article>
+<label>Selectable text fallback<textarea id="fallback" readonly></textarea></label><p role="status" id="status"></p>
+<script type="module">
+import { admission, normalizedSize, stripPngMetadata } from './policy.mjs';
+const status = document.querySelector('#status');
+const source = 'Keep the interruption. Change the rhythm. Leave enough room for someone else to answer. ';
+text.textContent = source.repeat(18); fallback.value = text.textContent;
+const canvas = document.createElement('canvas'); canvas.width = 2400; canvas.height = 1600;
+const context = canvas.getContext('2d'); context.fillStyle = '#e22'; context.fillRect(0,0,1200,1600);context.fillStyle='#25e';context.fillRect(1200,0,1200,1600);
+const blob = (type) => new Promise(resolve => canvas.toBlob(resolve,type,0.85));
+const exif = new Uint8Array([255,225,0,34,69,120,105,102,0,0,73,73,42,0,8,0,0,0,1,0,18,1,3,0,1,0,0,0,6,0,0,0,0,0,0,0]);
+async function decode(input) {
+ const url=URL.createObjectURL(input);const img=new Image();img.src=url;
+ try { await img.decode();return img; } finally { URL.revokeObjectURL(url); }
+}
+window.runExperiment = async () => {
+ const jpeg=await blob('image/jpeg');const bytes=new Uint8Array(await jpeg.arrayBuffer());
+ const rotated=new Blob([bytes.slice(0,2),exif,bytes.slice(2)],{type:'image/jpeg'});
+ context.clearRect(0,0,1200,1600);
+ const fixtures=[['normal',jpeg],['rotated-exif-6',rotated],['transparent',await blob('image/png')],['malformed',new Blob(['not an image'],{type:'image/png'})]];
+ const results=[];
+ for(const [name,input] of fixtures){
+  const start=performance.now();
+  try{
+   const img=await decode(input);const rejection=admission({type:input.type,size:input.size,width:img.naturalWidth,height:img.naturalHeight});if(rejection)throw Error(rejection);
+   const [width,height]=normalizedSize(img.naturalWidth,img.naturalHeight);const out=document.createElement('canvas');out.width=width;out.height=height;out.getContext('2d').drawImage(img,0,0,width,height);
+   const normalized=await new Promise(resolve=>out.toBlob(resolve,'image/png'));const original=new Uint8Array(await normalized.arrayBuffer());const raw=stripPngMetadata(original);
+   const chunks=[];for(let offset=8;offset<raw.length;){const view=new DataView(raw.buffer);const length=view.getUint32(offset);chunks.push(String.fromCharCode(...raw.slice(offset+4,offset+8)));offset+=length+12;}
+   const pixel=Array.from(out.getContext('2d').getImageData(10,10,1,1).data);
+   results.push({name,inputBytes:input.size,source:[img.naturalWidth,img.naturalHeight],normalized:[width,height],outputBytes:raw.length,removedMetadataBytes:original.length-raw.length,chunks,pixel,milliseconds:Math.round(performance.now()-start)});
+   if(name==='rotated-exif-6'){image.src='data:image/png;base64,'+btoa(Array.from(raw,b=>String.fromCharCode(b)).join(''));await image.decode();}
+  }catch(error){results.push({name,rejected:true,milliseconds:Math.round(performance.now()-start)});}
+ }
+ results.push({name:'oversized-header',rejected:!!admission({type:'image/png',size:128,width:40000,height:40000}),decoded:false});
+ window.fixtureResults=results;return results;
+};
+window.renderEdition = async (mode='normal') => {
+ try{
+  if(mode==='missing')throw Error('missing renderer');
+  const renderer=mode==='throwing'?()=>Promise.reject(Error('synthetic renderer failure')):window.htmlToImage?.toPng;
+  if(!renderer)throw Error('missing renderer');
+  const start=performance.now();const png=await renderer(edition,{pixelRatio:2,backgroundColor:'#f4ede0',cacheBust:true});
+  const img=new Image();img.src=png;await img.decode();status.textContent='PNG ready';
+  const proof=document.createElement('canvas');proof.width=img.naturalWidth;proof.height=img.naturalHeight;const proofContext=proof.getContext('2d');proofContext.drawImage(img,0,0);const rect=image.getBoundingClientRect(),frame=edition.getBoundingClientRect();const pixel=Array.from(proofContext.getImageData(Math.round((rect.left-frame.left+10)*2),Math.round((rect.top-frame.top+10)*2),1,1).data);
+  return {png,width:img.naturalWidth,height:img.naturalHeight,imagePresent:pixel[0]>200&&pixel[1]<80&&pixel[2]<80,pixel,milliseconds:Math.round(performance.now()-start)};
+ }catch(error){status.textContent='Poster export failed — use the selectable text below.';return {failed:true,text: fallback.value,error:String(error)};}
+};
+</script>
