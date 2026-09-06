@@ -20,6 +20,7 @@ const CHECKS = [
   ["header navigation", checkHeaderNavigation],
   ["clean URL aliases", checkCleanUrlAliases],
   ["widget contracts", checkWidgetContracts],
+  ["cut-up behavior", checkCutUpBehavior],
   ["data references", checkJavaScriptDataReferences],
   ["Vercel static config", checkVercelConfig],
   ["deployment placeholders", checkDeploymentPlaceholders],
@@ -388,6 +389,11 @@ function checkCachePolicy() {
       failures.push(`${headersFile}: ${route} must not use immutable caching without content-hashed filenames`);
     }
   }
+}
+
+function checkCutUpBehavior() {
+  const result = spawnSync(process.execPath, ["--test", "tests/cut-up.test.mjs"], { cwd: ROOT, encoding: "utf8" });
+  if (result.status !== 0) failures.push(`cut-up behavior: ${result.stderr || result.stdout}`);
 }
 
 function checkReleaseDaySubmissions() {

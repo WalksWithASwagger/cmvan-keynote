@@ -35,10 +35,29 @@
 }
 
 .cutup__panel {
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
 }
+
+.cutup__fragments { padding-left: 1.5rem; margin: 0; }
+.cutup__fragments li { padding-block: var(--space-2); border-bottom: 1px dashed var(--border-strong); overflow-wrap: anywhere; }
+.cutup__fragments .cutup__row { margin-top: var(--space-2); }
+.cutup__fragments button {
+  min-height: 44px;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--border-strong);
+  background: var(--bg);
+  color: var(--fg);
+  font: inherit;
+  cursor: pointer;
+}
+.cutup__fragments button:disabled { opacity: 0.4; cursor: not-allowed; }
+.cutup button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.cutup__removed > span { text-decoration: line-through; color: var(--muted); }
+.cutup__credit { position: relative; font-size: var(--fs-sm); white-space: pre-wrap; overflow-wrap: anywhere; }
+#cutup-saved { font-size: var(--fs-sm); color: var(--accent); }
 
 .cutup__panel h2 {
   font-family: var(--font-mono);

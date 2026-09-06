@@ -153,9 +153,30 @@ Conventions worth keeping:
 - Widgets are local-first by default. No network calls except for fetching
   `/data/*.json` and `/partials/*.html`.
 - Autosave to `localStorage` is namespaced as `pra:v1:<widget>:<key>` via
-  `storage.js`. Bump the schema version (`v1` → `v2`) if you change the shape.
-- Every widget ships a Reset button that confirms before wiping state.
+  `storage.js`. Version and migrate a widget's own payload when its shape changes;
+  bumping the shared namespace would also hide every other widget's saved work.
+- Destructive reset actions must confirm before wiping saved state.
 - `prefers-reduced-motion: reduce` must disable any non-essential animation.
+
+---
+
+## Cut-up composition
+
+`/widgets/cut-up` keeps one complete browser draft at `pra:v1:cutup:draft`
+(payload version 1): source, pending cut settings, generated cut settings,
+stable fragment IDs/order/retention, seed, credit, and editorial note.
+Typing saves immediately. Source edits preserve the current composition;
+Cut + shuffle confirms replacement, while Re-shuffle preserves selection.
+Remove/Restore and Up/Down work without dragging. Poster and selectable text
+use the same retained composition, credit, and note. Storage and export errors
+leave work on screen with a persistent message. Clearing browser data loses it.
+The URL carries only settings and a seed; replay requires the same source and
+does not share manual edits. A saved local draft takes precedence over URL settings.
+
+`npm run eval` includes `node --test tests/cut-up.test.mjs`. Before shipping UI
+changes, check keyboard editing, immediate reload, Three Documents import,
+clipboard/PNG failure fallback, and long scatter fragments at desktop and mobile
+widths. Scatter measures loaded fonts and falls back to flow below 480px.
 
 ---
 
