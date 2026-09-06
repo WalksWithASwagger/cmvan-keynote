@@ -92,9 +92,6 @@ function checkRoadmapPipeline() {
   if (roadmap.repository?.github !== "WalksWithASwagger/cmvan-keynote") {
     failures.push(`${file}: expected repository.github to be WalksWithASwagger/cmvan-keynote`);
   }
-  if (!roadmap.linear?.projectUrl?.startsWith("https://linear.app/")) {
-    failures.push(`${file}: missing Linear project URL`);
-  }
   if (roadmap.workflow?.localGate !== "npm run eval") {
     failures.push(`${file}: workflow.localGate must stay npm run eval`);
   }
@@ -106,7 +103,6 @@ function checkRoadmapPipeline() {
   }
 
   const githubNumbers = new Set();
-  const linearIds = new Set();
 
   for (const issue of issues) {
     const label = issue.id || issue.github?.title || "unnamed issue";
@@ -116,14 +112,6 @@ function checkRoadmapPipeline() {
       failures.push(`${file}: duplicate github.number ${issue.github.number}`);
     } else {
       githubNumbers.add(issue.github.number);
-    }
-
-    if (!/^BC-\d+$/.test(issue.linear?.identifier || "")) {
-      failures.push(`${file}: ${label} missing Linear BC identifier`);
-    } else if (linearIds.has(issue.linear.identifier)) {
-      failures.push(`${file}: duplicate Linear identifier ${issue.linear.identifier}`);
-    } else {
-      linearIds.add(issue.linear.identifier);
     }
 
     if (!Array.isArray(issue.acceptanceChecks) || !issue.acceptanceChecks.length) {

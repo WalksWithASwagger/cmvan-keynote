@@ -1,33 +1,35 @@
-# Linear/GitHub delivery pipeline
+# GitHub delivery pipeline
 
-This repo uses GitHub for public implementation scope and Linear for delivery
-planning. The current execution project is:
+GitHub issues and PRs are the sole planning, sequencing, status, and delivery
+tracker as of 2026-09-06. No Linear account, mirror, key, or synchronization is
+required. The filename stays stable for existing links and repo-doctor consumers.
 
-- Linear project: [Punk Rock AI Release Day Roadmap](https://linear.app/bc-ai/project/punk-rock-ai-release-day-roadmap-eeed425b8d78)
-- Linear team: `Bc-ai` (`BC`)
-- GitHub repo: [WalksWithASwagger/cmvan-keynote](https://github.com/WalksWithASwagger/cmvan-keynote)
-- Roadmap source: [ROADMAP-2026-05-07.md](./ROADMAP-2026-05-07.md)
-- Machine-readable map: [`ops/roadmap/features.json`](../ops/roadmap/features.json)
-- Local gate: `npm run eval`
-- Status snapshot in this file: verified against live GitHub and Linear on 2026-05-25.
+- Repository: [WalksWithASwagger/cmvan-keynote](https://github.com/WalksWithASwagger/cmvan-keynote)
+- Current Studio sequence: [#201](https://github.com/WalksWithASwagger/cmvan-keynote/issues/201)
+- Delivery contract: [`agentic/contract.json`](../agentic/contract.json)
+- Runner instructions: [AGENTIC-DELIVERY.md](./AGENTIC-DELIVERY.md)
+- Earlier roadmap snapshot: [`ops/roadmap/features.json`](../ops/roadmap/features.json)
 
 ## Contract
 
-Agentic delivery contract: [`agentic/contract.json`](../agentic/contract.json). v1 opens PRs only; humans remain the merge gate. Ready work uses `agent:ready`; `auto-implement` and `autonomous` are migration aliases.
+1. Each bounded implementation has one GitHub issue with scope, dependencies,
+   acceptance criteria, verification, and exclusions.
+2. Use GitHub issue links for ordering and PR links for completion evidence.
+   A closed issue alone does not prove account-gated or participant checks ran.
+3. Use `codex/issue-<number>-<slug>` branches and link the issue in the PR body.
+4. Use `Refs #<number>` for partial work; use `Closes #<number>` only when all
+   acceptance criteria are met. Preserve human gates and report unavailable checks.
+5. Run `npm run eval` and relevant focused checks before review. Merge only with
+   authorization and current CI/review evidence.
 
+## Maintaining the queue
 
-1. Each roadmap implementation item gets a GitHub issue and a linked Linear
-   issue.
-2. Linear owns project sequencing, milestones, status, due dates, and human
-   checkpoints.
-3. GitHub owns implementation discussion, acceptance criteria, PRs, and
-   merge history.
-4. `ops/roadmap/features.json` maps the two systems and is validated by
-   `npm run eval`.
-5. A PR must include the Linear key and GitHub issue number in the branch,
-   title, or body so both systems can link the work.
+Update the GitHub issue and parent sequence when scope, evidence, or status
+changes. Earlier roadmap records below and in the JSON map retain historical
+Linear links for traceability; they are not active dependencies or current status.
+No agent should reconnect Linear or create mirrors to execute this workflow.
 
-## Issue map (verified 2026-05-25)
+## Historical issue map (2026-05-25; not current queue state)
 
 | Wave | GitHub | Linear | Priority | GitHub state | Linear state |
 | --- | --- | --- | --- | --- | --- |
@@ -38,50 +40,3 @@ Agentic delivery contract: [`agentic/contract.json`](../agentic/contract.json). 
 | Wave 0 | [#137](https://github.com/WalksWithASwagger/cmvan-keynote/issues/137) | [BC-54](https://linear.app/bc-ai/issue/BC-54/roadmap-p1-add-route-nav-widget-contract-checker) | P1 | Closed (2026-05-08) | Done |
 | Wave 2 | [#138](https://github.com/WalksWithASwagger/cmvan-keynote/issues/138) | [BC-55](https://linear.app/bc-ai/issue/BC-55/roadmap-p1-browser-qa-and-lighthouse-pass-for-core-flows) | P1 | Closed (2026-05-10) | Done |
 | Wave 3 | [#139](https://github.com/WalksWithASwagger/cmvan-keynote/issues/139) | [BC-56](https://linear.app/bc-ai/issue/BC-56/roadmap-p1-decide-pattern-finder-production-backend-path) | P1 | Closed (2026-05-08) | Done |
-
-GitHub and Linear are expected to diverge for human-gated follow-through. Do
-not treat GitHub closure alone as proof that account-gated smoke tests, Adobe
-involvement, or recording-rights decisions are complete.
-
-## Branch and PR rules
-
-- Branch from current `main` unless the issue says otherwise.
-- Use `codex/BC-<issue>-<short-slug>` for Codex-authored branches.
-- Keep changes scoped to the GitHub issue and Linear acceptance criteria.
-- Run `npm run eval` before pushing.
-- Use `Refs #<github-issue>` when the PR is useful but narrower than the full
-  issue.
-- Use `Closes #<github-issue>` only when every acceptance criterion is met.
-
-## Issue quality rules
-
-Every new issue should include:
-
-- A concrete action title and deliverable.
-- A short description of why the work matters.
-- Numbered implementation phases.
-- Testable acceptance criteria.
-- Agent instructions with the local verification command.
-- Human-in-the-loop checkpoints for credentials, public publishing, legal
-  claims, DNS, deploy dashboards, or paid services.
-- Explicit "Do NOT" boundaries for likely overreach.
-
-## Review rules
-
-Review against the written acceptance criteria, not vibes. A ready PR should
-show:
-
-- Linked Linear issue and GitHub issue.
-- Summary of changed files and behavior.
-- Verification evidence, usually `npm run eval`.
-- Any live smoke-test proof for API, deploy, or production-flow work.
-- Follow-up issues when scope was intentionally left out.
-
-## Updating the map
-
-When a roadmap issue is added, closed, split, or superseded:
-
-1. Update the GitHub and Linear issues.
-2. Patch `ops/roadmap/features.json`.
-3. Update the table in this document when the visible roadmap changes.
-4. Run `npm run eval`.

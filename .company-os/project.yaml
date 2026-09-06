@@ -8,7 +8,6 @@ project:
 
 source_systems:
   github: "WalksWithASwagger/cmvan-keynote"
-  linear: "Punk Rock AI Release Day Roadmap"
   docs:
     - "docs/ROADMAP-2026-05-07.md"
     - "docs/LINEAR-GITHUB-PIPELINE.md"
@@ -31,10 +30,10 @@ loops:
       - "recording rights and sponsor/legal copy"
       - "deploy dashboard or DNS changes"
 
-  - name: "github_linear_release_loop"
+  - name: "github_release_loop"
     cadence: "on demand"
-    agent: "github-linear-swarm"
-    trigger: "user asks to swarm cmvan GitHub/Linear work"
+    agent: "agentic-swarm"
+    trigger: "user asks to swarm cmvan GitHub issues and PRs"
     output_artifacts:
       - "issue/PR map"
       - "bounded implementation or review lanes"
@@ -49,7 +48,6 @@ memory:
     - "docs/LINEAR-GITHUB-PIPELINE.md"
     - "ops/roadmap/features.json"
     - "open GitHub issues and PRs"
-    - "Linear project: Punk Rock AI Release Day Roadmap"
   durable_artifacts:
     - "SESSION-HANDOFF.md"
     - "docs/SESSION-HANDOFF.md"
