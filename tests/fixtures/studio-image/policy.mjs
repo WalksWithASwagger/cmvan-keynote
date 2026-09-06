@@ -11,7 +11,7 @@ export function admission({ type, size, width, height }) {
 
 export function normalizedSize(width, height) {
   const scale = Math.min(1, limits.normalizedEdge / Math.max(width, height));
-  return [Math.round(width * scale), Math.round(height * scale)];
+  return [Math.max(1, Math.round(width * scale)), Math.max(1, Math.round(height * scale))];
 }
 
 export function stripPngMetadata(bytes) {

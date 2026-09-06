@@ -14,6 +14,10 @@ assert.equal(admission({...valid,size:8*1024*1024,width:4000,height:3000}),null)
 assert.deepEqual(normalizedSize(2400,1600),[1600,1067]);
 assert.deepEqual(normalizedSize(1600,2400),[1067,1600]);
 assert.deepEqual(normalizedSize(100,50),[100,50]);
+assert.equal(admission({...valid,width:1,height:6000}),null);
+assert.equal(admission({...valid,width:6000,height:1}),null);
+assert.deepEqual(normalizedSize(1,6000),[1,1600]);
+assert.deepEqual(normalizedSize(6000,1),[1600,1]);
 const chunk=new Uint8Array([0,0,0,0,101,88,73,102,0,0,0,0]);
 assert.equal(stripPngMetadata(new Uint8Array([...new Uint8Array(8),...chunk])).length,8);
 assert.throws(()=>stripPngMetadata(new Uint8Array(9)),/Truncated/);
