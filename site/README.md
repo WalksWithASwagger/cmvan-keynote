@@ -173,6 +173,15 @@ leave work on screen with a persistent message. Clearing browser data loses it.
 The URL carries only settings and a seed; replay requires the same source and
 does not share manual edits. A saved local draft takes precedence over URL settings.
 
+**Keep this take** stores one independent snapshot at `pra:v1:cutup:keeper`.
+Edit or reshuffle the working draft, then open **Compare takes** to read both
+compositions with their credit and note. Copy protected text directly, or restore
+it to the editor for poster export. Replacing the protected take or restoring over
+different work requires confirmation. A failed write keeps the previous saved
+value; a failed restore also leaves the editor unchanged. This is one protected
+take, not history or cross-tab synchronization. Use one editor tab and copy work
+before clearing browser data. Existing draft keys and share links are unchanged.
+
 `npm run eval` includes `node --test tests/cut-up.test.mjs`. Before shipping UI
 changes, check keyboard editing, immediate reload, Three Documents import,
 clipboard/PNG failure fallback, and long scatter fragments at desktop and mobile

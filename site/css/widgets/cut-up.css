@@ -314,3 +314,14 @@
     transition: none;
   }
 }
+
+.cutup__comparison { display: grid; gap: var(--space-3); margin-block: var(--space-3); }
+.cutup__comparison > div { min-width: 0; }
+.cutup__comparison textarea { width: 100%; margin-top: var(--space-2); }
+#cutup-compare { border-block: 1px solid var(--border-strong); padding-block: var(--space-3); }
+#cutup-compare summary { cursor: pointer; min-height: 44px; padding-block: var(--space-2); }
+#cutup-compare summary:focus-visible { outline: 2px solid var(--accent-readable); outline-offset: 3px; }
+#cutup-keeper-status { font-size: var(--fs-sm); }
+@media (min-width: 1100px) {
+  .cutup__comparison { grid-template-columns: 1fr 1fr; }
+}
