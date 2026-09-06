@@ -22,6 +22,7 @@ const CHECKS = [
   ["widget contracts", checkWidgetContracts],
   ["cut-up behavior", checkCutUpBehavior],
   ["Studio image policy", checkStudioImage],
+  ["Studio critique contract", checkStudioCritique],
   ["data references", checkJavaScriptDataReferences],
   ["Vercel static config", checkVercelConfig],
   ["deployment placeholders", checkDeploymentPlaceholders],
@@ -388,6 +389,11 @@ function checkCutUpBehavior() {
 function checkStudioImage() {
   const result = spawnSync(process.execPath, ["scripts/check-studio-image.mjs", "--check"], { cwd: ROOT, encoding: "utf8" });
   if (result.status !== 0) failures.push(`Studio image policy: ${result.stderr || result.stdout}`);
+}
+
+function checkStudioCritique() {
+  const result = spawnSync(process.execPath, ["scripts/eval-studio-critique.mjs"], { cwd: ROOT, encoding: "utf8" });
+  if (result.status !== 0) failures.push(`Studio critique contract: ${result.stderr || result.stdout}`);
 }
 
 function checkReleaseDaySubmissions() {
