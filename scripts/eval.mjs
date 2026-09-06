@@ -21,6 +21,7 @@ const CHECKS = [
   ["clean URL aliases", checkCleanUrlAliases],
   ["widget contracts", checkWidgetContracts],
   ["cut-up behavior", checkCutUpBehavior],
+  ["Studio critique contract", checkStudioCritique],
   ["data references", checkJavaScriptDataReferences],
   ["Vercel static config", checkVercelConfig],
   ["deployment placeholders", checkDeploymentPlaceholders],
@@ -382,6 +383,11 @@ function checkCachePolicy() {
 function checkCutUpBehavior() {
   const result = spawnSync(process.execPath, ["--test", "tests/cut-up.test.mjs"], { cwd: ROOT, encoding: "utf8" });
   if (result.status !== 0) failures.push(`cut-up behavior: ${result.stderr || result.stdout}`);
+}
+
+function checkStudioCritique() {
+  const result = spawnSync(process.execPath, ["scripts/eval-studio-critique.mjs"], { cwd: ROOT, encoding: "utf8" });
+  if (result.status !== 0) failures.push(`Studio critique contract: ${result.stderr || result.stdout}`);
 }
 
 function checkReleaseDaySubmissions() {
