@@ -9,7 +9,7 @@
 // layout. Falls back to flow under 480px.
 
 import { load, save } from "/js/common/storage.js";
-import { splitText, makeRng, seededShuffle, moveFragment, compositionText, parseDraft } from "./cut-up-state.js";
+import { splitText, makeRng, seededShuffle, moveFragment, compositionText, parseDraft, parseTake, saveTake } from "./cut-up-state.js";
 
 const TDOC_DOCS = [
   { id: "policy", title: "Personal AI policy" },
@@ -38,6 +38,12 @@ const noteEl = document.getElementById("cutup-note");
 const editorEl = document.getElementById("cutup-fragments");
 const textEl = document.getElementById("cutup-text");
 const savedEl = document.getElementById("cutup-saved");
+const keepEl = document.getElementById("cutup-keep");
+const keeperStatusEl = document.getElementById("cutup-keeper-status");
+const compareEl = document.getElementById("cutup-compare");
+const keeperTextEl = document.getElementById("cutup-keeper-text");
+const workingTextEl = document.getElementById("cutup-working-text");
+let keeper = null;
 // True when restoreFromHash() pulled a seed from the URL and no shuffle has
 // consumed it yet. The first cut() reuses that seed (share-link rehydrates
 // identically); subsequent cuts generate a fresh seed.
@@ -48,6 +54,7 @@ const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
 
 restoreFromHash();
 restoreDraft();
+restoreKeeper();
 bindToggles();
 bindActions();
 bindSeeds();
@@ -126,7 +133,10 @@ function bindActions() {
     flash("re-shuffled — selection preserved");
   });
   document.querySelector('[data-action="png"]').addEventListener("click", exportPng);
-  document.querySelector('[data-action="copy"]').addEventListener("click", copyText);
+  document.querySelector('[data-action="copy"]').addEventListener("click", () => copyText());
+  keepEl.addEventListener("click", keepTake);
+  document.getElementById("cutup-copy-keeper").addEventListener("click", () => copyText(keeperTextEl));
+  document.getElementById("cutup-restore-keeper").addEventListener("click", restoreTake);
 }
 
 function bindSeeds() {
@@ -370,9 +380,9 @@ async function exportPng() {
   }
 }
 
-async function copyText() {
-  const text = textEl.value;
-  if (!lastFragments?.some((f) => f.kept)) {
+async function copyText(target = textEl) {
+  const text = target.value;
+  if (!text || (target === textEl && !lastFragments?.some((f) => f.kept))) {
     flash("nothing to copy yet");
     return;
   }
@@ -380,8 +390,8 @@ async function copyText() {
     await navigator.clipboard.writeText(text);
     flash("copied to clipboard");
   } catch {
-    textEl.focus();
-    textEl.select();
+    target.focus();
+    target.select();
     flash("copy unavailable — text selected below; use your browser’s Copy command");
   }
 }
@@ -407,22 +417,73 @@ function restoreDraft() {
     if (raw === null) return;
     const d = parseDraft(raw);
     if (!d) { savedEl.textContent = "Saved draft could not be read. New edits will replace it."; return; }
-    inputEl.value = d.source;
-    creditEl.value = d.credit;
-    noteEl.value = d.note;
-    ({ cutMode, punctMode, marksMode, layoutMode, generatedCutMode, generatedPunctMode, currentSeed } = d);
-    lastFragments = d.fragments;
-    pendingRestoredSeed = lastFragments === null && currentSeed !== null;
-    for (const [attr, value] of [["cut", cutMode], ["punct", punctMode], ["marks", marksMode], ["layout", layoutMode]]) {
-      setMode(`data-${attr}`, value, () => {});
-    }
-    if (lastFragments) renderFragments(lastFragments);
-    else renderCredits();
-    writeHash();
+    applyDraft(d);
     savedEl.textContent = "Draft restored from this browser. Links contain settings and a seed, never your text.";
   } catch {
     savedEl.textContent = "Draft storage unavailable. Keep this page open and copy your text before leaving.";
   }
+}
+
+function applyDraft(d) {
+  inputEl.value = d.source;
+  creditEl.value = d.credit;
+  noteEl.value = d.note;
+  ({ cutMode, punctMode, marksMode, layoutMode, generatedCutMode, generatedPunctMode, currentSeed } = d);
+  lastFragments = d.fragments;
+  pendingRestoredSeed = lastFragments === null && currentSeed !== null;
+  for (const [attr, value] of [["cut", cutMode], ["punct", punctMode], ["marks", marksMode], ["layout", layoutMode]]) {
+    setMode(`data-${attr}`, value, () => {});
+  }
+  if (lastFragments) renderFragments(lastFragments);
+  else renderCredits();
+  writeHash();
+}
+
+function restoreKeeper() {
+  try {
+    const raw = localStorage.getItem("pra:v1:cutup:keeper");
+    keeper = parseTake(raw);
+    if (raw !== null) keeperStatusEl.textContent = keeper
+      ? "Protected take restored. Your working composition can change independently."
+      : "Protected take could not be read. Keeping a new take will ask before replacing it.";
+  } catch {
+    keeperStatusEl.textContent = "Take storage unavailable. Keep this page open and copy your work.";
+  }
+  renderTakeComparison();
+}
+
+function keepTake() {
+  const result = saveTake("keeper", draft(), () => confirm("Replace the protected take with this working composition? The previous protected take will be lost."));
+  if (result.status === "cancelled") return;
+  if (result.status !== "saved") {
+    keeperStatusEl.textContent = result.status === "empty" ? "Keep at least one fragment first."
+      : "Take could not be saved. The previous protected take is unchanged; copy your work before leaving.";
+    return;
+  }
+  keeper = result.take;
+  keeperStatusEl.textContent = "Take protected in this browser. Try another version, then compare.";
+  renderTakeComparison();
+}
+
+function restoreTake() {
+  if (JSON.stringify(draft()) !== JSON.stringify(keeper) &&
+      !confirm("Replace the working composition with the protected take? Copy your current work first if you want both. The protected take will stay saved.")) return;
+  const result = saveTake("draft", keeper, () => true);
+  if (result.status !== "saved") {
+    keeperStatusEl.textContent = "Restore could not be saved. Your working composition is unchanged.";
+    return;
+  }
+  applyDraft(result.take);
+  savedEl.textContent = "Protected take restored as your working draft. Both are saved in this browser.";
+  keeperStatusEl.textContent = "Protected take unchanged. You can edit this new working copy.";
+  textEl.focus();
+}
+
+function renderTakeComparison() {
+  keepEl.disabled = !lastFragments?.some((f) => f.kept);
+  compareEl.hidden = !keeper;
+  keeperTextEl.value = keeper ? compositionText(keeper) : "";
+  workingTextEl.value = textEl.value;
 }
 
 function renderCredits() {
@@ -432,6 +493,7 @@ function renderCredits() {
     target.hidden = !target.textContent;
   }
   textEl.value = lastFragments ? compositionText({ ...draft(), fragments: lastFragments }) : "";
+  renderTakeComparison();
 }
 
 function renderEditor() {

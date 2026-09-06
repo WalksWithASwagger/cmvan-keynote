@@ -113,6 +113,26 @@
               <label for="cutup-text">Your composition as text</label>
               <textarea id="cutup-text" rows="6" readonly placeholder="Your retained fragments, credit, and note will appear here."></textarea>
               <p>Select and copy this text if poster export or clipboard access is unavailable.</p>
+              <button class="btn" type="button" id="cutup-keep" disabled>Keep this take</button>
+              <p id="cutup-keeper-status" role="status">Protect one take, then try something riskier. Saved in this browser only; copy it before clearing browser data.</p>
+              <details id="cutup-compare" hidden>
+                <summary>Compare takes</summary>
+                <p>Compare the words, credit, and note. Restoring a take brings its settings back into the editor for poster export.</p>
+                <div class="cutup__comparison">
+                  <div>
+                    <label for="cutup-keeper-text">Protected take</label>
+                    <textarea id="cutup-keeper-text" rows="8" readonly></textarea>
+                  </div>
+                  <div>
+                    <label for="cutup-working-text">Working composition</label>
+                    <textarea id="cutup-working-text" rows="8" readonly></textarea>
+                  </div>
+                </div>
+                <div class="cutup__row">
+                  <button class="btn" type="button" id="cutup-copy-keeper">Copy protected text</button>
+                  <button class="btn" type="button" id="cutup-restore-keeper">Restore protected take</button>
+                </div>
+              </details>
               <h2>Make it yours</h2>
               <p>Remove pieces. Move the ones you keep. Removed fragments stay here to restore.
                 Source and cut-size changes take effect on your next Cut + shuffle.</p>

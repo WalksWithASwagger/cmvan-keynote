@@ -67,3 +67,23 @@ export function parseDraft(raw) {
     return null;
   }
 }
+
+export function parseTake(raw) {
+  const take = parseDraft(raw);
+  return take?.fragments?.some((f) => f.kept) ? take : null;
+}
+
+export function saveTake(name, value, confirmReplace) {
+  try {
+    const encoded = JSON.stringify(value);
+    const take = parseTake(encoded);
+    if (!take) return { status: "empty" };
+    const key = `pra:v1:cutup:${name}`;
+    const previous = localStorage.getItem(key);
+    if (previous !== null && previous !== encoded && !confirmReplace()) return { status: "cancelled" };
+    localStorage.setItem(key, encoded);
+    return { status: "saved", take };
+  } catch {
+    return { status: "failed" };
+  }
+}

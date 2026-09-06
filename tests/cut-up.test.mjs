@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { splitText, seededShuffle, moveFragment, compositionText, parseDraft } from "../site/js/widgets/cut-up-state.js";
+import { splitText, seededShuffle, moveFragment, compositionText, parseDraft, parseTake, saveTake } from "../site/js/widgets/cut-up-state.js";
 import { save } from "../site/js/common/storage.js";
 
 const fragments = ["same", "same", "third", "fourth"].map((text, id) => ({ id, text, kept: true }));
@@ -77,4 +77,78 @@ test("draft saves synchronously under its own namespace; failure leaves exportab
   globalThis.localStorage.setItem = () => { throw new Error("quota exceeded"); };
   assert.equal(save("cutup:draft", draft), false);
   assert.match(compositionText(draft), /Source: An author\n\nNote: My intervention$/);
+});
+
+function takeStorage(t, entries = []) {
+  const memory = new Map(entries);
+  const prior = Object.getOwnPropertyDescriptor(globalThis, "localStorage");
+  Object.defineProperty(globalThis, "localStorage", { configurable: true, value: {
+    getItem(key) { return memory.get(key) ?? null; },
+    setItem(key, value) { memory.set(key, value); },
+  } });
+  t.after(() => { if (prior) Object.defineProperty(globalThis, "localStorage", prior); else delete globalThis.localStorage; });
+  return memory;
+}
+
+test("keeper and working draft reload independently with exact pending settings and duplicate IDs", (t) => {
+  const memory = takeStorage(t);
+  const working = structuredClone(draft);
+  const result = saveTake("keeper", working, () => assert.fail("first keeper needs no replacement"));
+  assert.equal(result.status, "saved");
+  working.source = "Pending new source";
+  working.fragments[0].text = "changed";
+  working.fragments[1].kept = true;
+  working.fragments = moveFragment(working.fragments, 0, -1);
+  working.fragments = seededShuffle(working.fragments, 99);
+  assert.equal(saveTake("draft", working, () => true).status, "saved");
+  assert.deepEqual(result.take, draft);
+  assert.deepEqual(parseTake(memory.get("pra:v1:cutup:keeper")), draft);
+  assert.deepEqual(parseDraft(memory.get("pra:v1:cutup:draft")), working);
+  const restored = saveTake("draft", result.take, () => true);
+  assert.equal(restored.status, "saved");
+  restored.take.fragments[0].kept = false;
+  assert.deepEqual(result.take, draft);
+  assert.deepEqual(parseDraft(memory.get("pra:v1:cutup:draft")), draft);
+  assert.deepEqual(parseTake(memory.get("pra:v1:cutup:keeper")), draft);
+});
+
+test("replacement requires confirmation; cancellation changes neither record", (t) => {
+  const raw = JSON.stringify(draft);
+  const memory = takeStorage(t, [["pra:v1:cutup:keeper", raw], ["pra:v1:cutup:draft", raw]]);
+  let asked = 0;
+  const changed = { ...draft, note: "A different take" };
+  assert.equal(saveTake("keeper", changed, () => { asked++; return false; }).status, "cancelled");
+  assert.equal(asked, 1);
+  assert.equal(memory.get("pra:v1:cutup:keeper"), raw);
+  assert.equal(memory.get("pra:v1:cutup:draft"), raw);
+  assert.equal(saveTake("keeper", draft, () => assert.fail("same take needs no confirmation")).status, "saved");
+  assert.equal(saveTake("keeper", changed, () => true).status, "saved");
+  assert.deepEqual(parseTake(memory.get("pra:v1:cutup:keeper")), changed);
+});
+
+test("quota or read failure preserves saved takes and returns no successful snapshot", (t) => {
+  const raw = JSON.stringify(draft);
+  const memory = takeStorage(t, [["pra:v1:cutup:keeper", raw], ["pra:v1:cutup:draft", raw]]);
+  t.mock.method(console, "warn", () => assert.fail("private storage errors must not be logged"));
+  globalThis.localStorage.setItem = () => { throw new Error("PRIVATE storage failure"); };
+  for (const name of ["keeper", "draft"]) {
+    assert.deepEqual(saveTake(name, { ...draft, note: "changed" }, () => true), { status: "failed" });
+    assert.equal(memory.get(`pra:v1:cutup:${name}`), raw);
+  }
+  globalThis.localStorage.getItem = () => { throw new Error("PRIVATE read failure"); };
+  assert.deepEqual(saveTake("keeper", draft, () => true), { status: "failed" });
+});
+
+test("unreadable keepers are preserved until explicit replacement; empty takes cannot be kept", (t) => {
+  const memory = takeStorage(t, [["pra:v1:cutup:keeper", "PRIVATE broken JSON"]]);
+  assert.equal(parseTake(memory.get("pra:v1:cutup:keeper")), null);
+  assert.equal(saveTake("keeper", draft, () => false).status, "cancelled");
+  assert.equal(memory.get("pra:v1:cutup:keeper"), "PRIVATE broken JSON");
+  for (const fragments of [null, [], draft.fragments.map((f) => ({ ...f, kept: false }))]) {
+    const empty = { ...draft, fragments };
+    assert.equal(parseTake(JSON.stringify(empty)), null);
+    assert.deepEqual(saveTake("keeper", empty, () => assert.fail("empty take must not replace")), { status: "empty" });
+    assert.equal(memory.get("pra:v1:cutup:keeper"), "PRIVATE broken JSON");
+  }
+  assert.equal(saveTake("keeper", draft, () => true).status, "saved");
 });
