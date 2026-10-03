@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> **This repository is archived (read-only) as of 2026-10-03.** The canonical source now lives in [`WalksWithASwagger/kk-kb`](https://github.com/WalksWithASwagger/kk-kb) at [`kk-kb/apps/cmvan-keynote`](https://github.com/WalksWithASwagger/kk-kb/tree/main/apps/cmvan-keynote). The live site (https://www.punkrockai.com) deploys from kk-kb. Open issues, PRs and history stay here for reference. Make new changes in kk-kb.
+
 # Punk Rock AI
 ## Creative Mornings Vancouver — May 1, 2026
 
